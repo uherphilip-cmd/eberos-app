@@ -1,0 +1,25 @@
+{
+  "id": "./eberos-charakter-builder.html",
+  "name": "Eberos Charakter-Builder",
+  "short_name": "Eberos",
+  "description": "Modularer Charakter-Builder und druckbarer Charakterbogen für Eberos.",
+  "lang": "de",
+  "start_url": "./eberos-charakter-builder.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f3e7c5",
+  "theme_color": "#1f3b2c",
+  "categories": [
+    "games",
+    "utilities"
+  ],
+  "icons": [
+    {
+      "src": "icons/eberos-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
