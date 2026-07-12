@@ -4,7 +4,7 @@
   "short_name": "Eberos",
   "description": "Modularer Charakter-Builder und druckbarer Charakterbogen für Eberos.",
   "lang": "de",
-  "start_url": "./eberos-charakter-builder.html?v=1.4.0",
+  "start_url": "./eberos-charakter-builder.html?v=1.5.0",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
