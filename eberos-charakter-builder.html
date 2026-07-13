@@ -106,82 +106,93 @@ document.querySelector('.brand small').textContent='v'+APP_VERSION;
 const ATTRS=[['ST','Stärke'],['KS','Konstitution'],['GS','Geschick'],['RF','Reflexe'],['FF','Fingerfertigkeit'],['WL','Wille'],['IT','Intelligenz'],['IN','Intuition'],['WN','Wahrnehmung'],['CR','Charisma']];
 const COUNTERS=[['L','Leben'],['A','Ausdauer'],['FO','Fokus'],['M','Mana'],['GB','Glaube'],['HS','Herrschaft'],['FS','Finsternis'],['GL','Glück']];
 const DICE=['—','W3 · Unfähig','W4 · Hilflos','W5 · Ungeübt','W6 · Schwach','W7 · Anfänger','W8 · Lernend','W9 · Brauchbar','W10 · Geübt','W11 · Sicher','W12 · Solide','W13 · Kompetent','W14 · Routiniert','W15 · Erfahren','W16 · Versiert','W17 · Stark','W19 · Überlegen','W20 · Herausragend','W21 · Außergewöhnlich','W24 · Elite','W25 · Meisterlich','W30 · Großmeisterlich','W36 · Heroisch','W50 · Legendär','W60 · Mythisch','W100 · Gottgleich'];
-const SKILL_RAW=`Kampf|Initiative|RF, WN, IN|—|Kampfbeginn und Reaktionsfolge
-Kampf|Nahkampf – leichte Waffen|ST, RF|A|Dolche, Kurzschwerter, Rapiere
-Kampf|Nahkampf – schwere Waffen|ST, KS|A|Zweihänder und schwere Waffen
-Kampf|Nahkampf – Raufen & Ringen|ST, GS|A|Faustkampf, Griff und Wurf
-Kampf|Kampf – Hinterhalt|RF, GS|A|Angriff aus Deckung
-Kampf|Fernkampf – leichte Waffen|FF, GS|A|Wurfmesser, Kurzbögen, Schleudern
-Kampf|Fernkampf – schwere Waffen|ST, FF|A|Langbogen, Armbrust, Wurfspeer
-Kampf|Verteidigung & Blocken|KS, WL|A|Parieren, Schild und Deckung
-Kampf|Vermeiden & Ausweichen|GS, RF|A|Ausweichen und Deckung
-Körper|Akrobatik & Klettern|ST, GS|A|Balance, Sprünge, Seile und Dächer
-Körper|Athletik & Schwimmen|ST, KS|A|Rennen, Kraftakte und Tauchen
-Körper|Heimlichkeit & Schleichen|GS, RF|A|Lautlos bewegen und tarnen
-Körper|Taschendiebstahl & Schlösser knacken|FF, WN|A|Schlösser und Diebstahl
-Körper|Fesseln & Sichern|ST, FF|A|Fixieren und Knoten
-Körper|Entfesseln & Befreien|GS, RF|A|Fesseln entkommen
-Wildnis|Wildniskunde & Wildnisleben|WN, GS|A|Lager, Feuer, Nahrung und Wetter
-Wildnis|Trapper & Fallensteller|FF, IN|A|Fallen bauen und entschärfen
-Wildnis|Fährtenlesen & Spurensuche|WN, KS|FO / A|Spuren und Verfolgung
-Wildnis|Orientierung & Navigation|WN, FF|FO|Karten, Sterne und Wegfindung
-Wildnis|Reiten & Tierführung|GS, WL|A|Reiten und Versorgen
-Wildnis|Tierkunde & Tierpflege|WN, IN|FO / A|Verhalten und Abrichtung
-Sozial|Überreden & Belügen|CR, IT|HS|Argumente, Täuschung und Verhandlung
-Sozial|Ablenken & Verwirren|GS, FF|HS|Tricks und Irreführung
-Sozial|Beruhigen & Trösten|CR, IN|HS / GB|Panik und Verzweiflung mildern
-Sozial|Einschüchtern & Zermürben|WL, ST|FS|Drohung und Druck
-Sozial|Foltern & Verhören|FF, IT|FS|Information durch Zwang
-Sozial|Betören & Verzaubern|CR, IN|HS|Charme und Verführung
-Sozial|Menschenkenntnis & Wesen erkennen|IN, WN|HS|Moral und Gefährlichkeit
-Sozial|Lügen erkennen & Motive verstehen|IT, WN|HS|Körpersprache und Absicht
-Sozial|Etikette & höfisches Auftreten|IT, CR|HS|Rangordnung und Diplomatie
-Sozial|Führung & Befehlsgewalt|CR, WL|HS|Gruppen leiten
-Sozial|Musizieren & Auftreten|CR, FF|HS|Gesang, Musik und Bühne
-Religion|Bannung & Schutzriten|WL, KS|GB|Flüche, Geister und Dämonen abwehren
-Religion|Heilrituale & Heilwunder|WL, IN|GB|Segnung und Heilung
-Religion|Religion & Theologie|IT, KS|FO / GB|Götter, Kulte und Dogmen
-Religion|Spiritismus & Geisterkunde|KS, IN|FO|Geister, Ahnen und Seelen
-Religion|Spiritismus & Seelenmagie|IN, WL|GB|Seelenführung und Ahnenkontakt
-Religion|Licht- & Sonnenmagie|CR, WL|GB|Licht, Hoffnung und Bannung
-Religion|Seelische Schutzmagie & Thanaturgie|WL, KS|GB / M|Schutz gegen Todesmagie
-Wissen|Folklore & Gassenwissen|IT, IN|FO|Gerüchte, Sagen und Unterwelt
-Wissen|Okkultismus & Arkane Kunde|IT, WL|FO|Magietheorie und verbotene Lehren
-Wissen|Heraldik & Geschichte|IT, IN|FO|Wappen, Dynastien und Kriege
-Wissen|Rechtskunde & Verwaltung|IT, CR|FO / HS|Gesetze, Ämter und Urkunden
-Wissen|Sprachen & Schriftkunde|IT, WN|FO|Lesen, Übersetzen und Codes
-Wissen|Geographie & Kulturen|IT, IN|FO|Länder, Routen und Völker
-Wissen|Historie & Ruinenkunde|IT, WN|FO|Alte Reiche und Ruinen
-Wissen|Astronomie & Mathematik|IT, FF|FO|Sterne, Kalender und Geometrie
-Untersuchung|Aufmerksamkeit & Wachsamkeit|WN, IN|FO|Geräusche und versteckte Details
-Untersuchung|Erforschen & Untersuchen|WN, IT|FO|Orte, Spuren, Texte und Rätsel
-Untersuchung|Magiewahrnehmung & Wahrnehmung für Übernatürliches|WN, WL|GB / M / FS|Auren, Flüche und Geister
-Handwerk|Handwerk & Baukunst|IT, FF|A|Konstruktion und Reparatur
-Handwerk|Waffenschmied & Bogenbauer|ST, FF|A|Waffen, Bögen und Klingen
-Handwerk|Rüstungsschmied & Schildmacher|ST, FF|A|Rüstungen und Schilde
-Handwerk|Schreiber & Fälscher|WN, FF|FO|Dokumente, Siegel und Karten
-Handwerk|Alchemist & Apotheker|IT, FF|FO|Tränke, Gifte und Essenzen
-Handwerk|Heiler & Helfer|IT, WN|FO|Erste Hilfe und Wundversorgung
-Finsternis|Nekromantie & Totenmagie|KS, WL|FS|Untote, Nekrose und Grabflüche
-Finsternis|Dämonologie & Höllen-Beschwörungen|WL, CR|FS|Dämonen, Pakte und Bannkreise
-Finsternis|Flüche & Blut-Hexerei|FF, IN|FS|Verwünschung und Blutritual
-Finsternis|Vampirismus & Lebensraub|IT, CR|FS|Lebenskraft und Blutmacht
-Finsternis|Wechselbalg & Formwandlerei|IN, KS|FS / M|Fremde Gestalt und Körpertausch
-Magie|Feuermagie & Pyrokinetik|WL, RF|M|Feuer, Hitze und Explosion
-Magie|Erdmagie & Geomantie|WL, KS|M|Stein, Erde, Metall und Kristall
-Magie|Windmagie & Aeromantie|GS, IN|M|Wind, Sturm und Schweben
-Magie|Wassermagie & Hydromantie|IN, WN|M|Wasser, Nebel, Eis und Regen
-Magie|Blitzmagie & Micaturgie|RF, IT|M|Blitz, Ladung und Schock
-Magie|Empathische Magie & Thymoturgie|CR, IN|M / FS|Gefühle, Angst und Mut
-Magie|Hermetische Magie & Telekinetik|IT, WL|M|Siegel, Kraftfelder und Bewegen
-Magie|Psychische Magie & Telepathie|IN, WL|M / FS|Gedanken und Erinnerungen
-Magie|Trugbild-Magie & Illusionistik|CR, IT|M|Trugbilder und Sinnestäuschung
-Magie|Meta-Magie & Arkane Ordnung|IT, WL|M|Magie analysieren und auflösen
-Magie|Naturmagie & Druidenlehren|WN, IN|GB / M|Pflanzen, Tiere und Jahreszeiten
-Magie|Traummagie & Oneiromantie|IN, WL|GB / M / FS|Träume, Visionen und Schlaf
-Magie|Gestaltwandler & Polymorphmagie|KS, WL|M|Körperform und tierische Merkmale
-Magie|Ritualistik & Volksmagie|CR, FF|FO|Schutzzeichen und kleine Rituale`;
-const SKILLS=SKILL_RAW.trim().split('\n').map((x,i)=>{const [category,name,attrs,use,scope]=x.split('|');return{id:'skill_'+i,category,name,attrs,use,scope}});
+const SKILL_RAW=`Kampf|Initiative|RF, WN, IN|—|Beschreibt Kampfbeginn, Reaktionsfolge und plötzliche Lagewechsel.
+Kampf|Nahkampf – leichte Waffen|ST, RF|A|Beschreibt den Umgang mit schnellen, präzisen oder einhändig geführten Nahkampfwaffen wie Dolchen, Kurzschwertern, Rapieren, Keulen, leichten Äxten und Speeren.
+Kampf|Nahkampf – schwere Waffen|ST, KS|A|Beschreibt den Umgang mit großen, wuchtigen oder beidhändig geführten Nahkampfwaffen wie Zweihändern, Streitäxten, Kriegshämmern und schweren Stangenwaffen.
+Kampf|Nahkampf – Raufen & Ringen|ST, GS|A|Beschreibt Faustkampf, Griffe, Würfe, Halten und Niederdrücken im unbewaffneten Nahkampf.
+Kampf|Kampf – Hinterhalt|RF, GS|A|Beschreibt Angriffe aus Deckung, Überraschung, günstige Eröffnungen und das Ausnutzen unvorbereiteter Gegner.
+Kampf|Fernkampf – leichte Waffen|FF, GS|A|Beschreibt den Einsatz handlicher Fernkampfwaffen wie Wurfmessern, Kurzbögen, Schleudern und Blasrohren.
+Kampf|Fernkampf – schwere Waffen|ST, FF|A|Beschreibt den Einsatz schwerer Fernkampfwaffen wie Langbögen, schweren Armbrüsten, Wurfäxten, Wurfspeeren sowie großen Belagerungs- und Jagdwaffen.
+Kampf|Verteidigung & Blocken|KS, WL|A|Beschreibt die Fähigkeit, Angriffe zu stoppen, Schläge abzufangen, Deckung zu nutzen, zu parieren oder sich im Kampf defensiv zu behaupten.
+Kampf|Vermeiden & Ausweichen|GS, RF|A|Beschreibt die Fähigkeit, Angriffen zu entgehen, Schlägen auszuweichen, Deckung zu nutzen oder sich einer Attacke geschickt zu entziehen.
+Körper|Akrobatik & Klettern|ST, GS|A|Beschreibt körperliche Beweglichkeit, Balance, Sprünge, Rollen, geschickte Körpermanöver sowie das Überwinden von Wänden, Felsen, Bäumen, Seilen und anderen schwierigen Hindernissen.
+Körper|Athletik & Schwimmen|ST, KS|A|Beschreibt körperliche Kraft, Ausdauer, Schnelligkeit, kraftvolle Bewegungen, Richtungswechsel sowie Schwimmen, Tauchen und das Überwinden von Gewässern.
+Körper|Heimlichkeit & Schleichen|GS, RF|A|Beschreibt lautloses Bewegen, Verstecken, Tarnen, unauffälliges Verhalten und das Umgehen von Wachen oder Gegnern.
+Körper|Taschendiebstahl & Schlösser knacken|FF, WN|A|Beschreibt Fingerfertigkeit bei Diebstahl, das Öffnen von Schlössern, das Entschärfen kleiner Mechanismen und das unbemerkte Entwenden von Gegenständen.
+Körper|Fesseln & Sichern|ST, FF|A|Beschreibt das Fixieren einer Kreatur, das Anbinden von Gegenständen und das sichere Setzen von Knoten.
+Körper|Entfesseln & Befreien|GS, RF|A|Beschreibt die Fähigkeit, sich aus einem Griff, einer Fesselung oder einer engen Lage zu befreien.
+Wildnis|Wildniskunde & Wildnisleben|WN, GS|A|Beschreibt das Überleben in der Natur, den Bau einfacher Lager, Nahrungssuche, Wetterkunde, Feuer machen und den Umgang mit natürlichen Gefahren.
+Wildnis|Trapper & Fallensteller|FF, IN|A|Beschreibt das Bauen, Verstecken, Erkennen und Entschärfen einfacher Jagd-, Alarm- oder Überlebensfallen in Wildnis und Ruinen.
+Wildnis|Fährtenlesen & Spurensuche|WN, KS|FO / A|Beschreibt das Finden, Deuten und Verfolgen von Spuren, Fährten, Lagerplätzen, Abdrücken, Blutspuren und anderen Hinweisen.
+Wildnis|Orientierung & Navigation|WN, FF|FO|Beschreibt das Finden von Wegen anhand von Karten, Sternen, Landschaftsmerkmalen, Kompass, Erinnerung oder Beschreibungen.
+Wildnis|Reiten & Tierführung|GS, WL|A|Beschreibt den Umgang mit Reittieren, das Reiten unter schwierigen Bedingungen sowie das Beruhigen, Lenken und Versorgen von Tieren.
+Wildnis|Tierkunde & Tierpflege|WN, IN|FO / A|Beschreibt Wissen über Tiere, ihr Verhalten, ihre Bedürfnisse, Krankheiten, Pflege, Abrichtung und den sicheren Umgang mit ihnen.
+Sozial|Überreden & Belügen|CR, IT|HS|Beschreibt die Fähigkeit, andere durch Argumente, Täuschung, Halbwahrheiten oder geschickte Gesprächsführung zu beeinflussen.
+Sozial|Ablenken & Verwirren|GS, FF|HS|Beschreibt das gezielte Stören der Aufmerksamkeit anderer durch Gesten, Tricks, Bewegung, Irreführung, Schauspiel oder chaotisches Verhalten.
+Sozial|Beruhigen & Trösten|CR, IN|HS / GB|Beschreibt die Fähigkeit, Verzweiflung zu mildern, Panik zu lösen und Stimmung oder Tonus zu beruhigen.
+Sozial|Einschüchtern & Zermürben|WL, ST|FS|Beschreibt Drohungen, körperliche Präsenz, psychischen Druck, Einschüchterung und das Brechen des Widerstands anderer.
+Sozial|Foltern & Verhören|FF, IT|FS|Beschreibt das Erzwingen von Informationen durch Zwang, Schmerz, Gewalt und gezielten psychischen Druck.
+Sozial|Betören & Verzaubern|CR, IN|HS|Beschreibt Charme, Anziehungskraft, emotionale Einflussnahme, Verführung und die Fähigkeit, andere für sich einzunehmen.
+Sozial|Menschenkenntnis & Wesen erkennen|IN, WN|HS|Beschreibt die Grundausstrahlung eines Gegenübers, seine Moral, Gefährlichkeit und wozu es generell fähig oder bereit wäre.
+Sozial|Lügen erkennen & Motive verstehen|IT, WN|HS|Beschreibt das Lesen von Körpersprache, Tonfall, Verhalten und Stimmungen, um Lügen, Absichten, Unsicherheit oder verborgene Motive zu erkennen.
+Sozial|Etikette & höfisches Auftreten|IT, CR|HS|Beschreibt Benehmen, Rangordnung, höfische Sitten, angemessene Ansprache, diplomatisches Auftreten und Verhalten in bestimmten Kreisen.
+Sozial|Führung & Befehlsgewalt|CR, WL|HS|Beschreibt die Fähigkeit, Gruppen zu leiten, Befehle durchzusetzen, Gefolgsleute zu motivieren und in Krisen Autorität auszustrahlen.
+Sozial|Musizieren & Auftreten|CR, FF|HS|Beschreibt musikalisches Können, Gesang, Schauspiel, Tanz, Bühnenpräsenz, Unterhaltung und das Fesseln eines Publikums.
+Religion|Bannung & Schutzriten|WL, KS|GB|Beschreibt Rituale und heilige oder spirituelle Handlungen, die Flüche, Geister, Dämonen, Finsternis oder schädliche Magie abwehren oder bannen.
+Religion|Heilrituale & Heilwunder|WL, IN|GB|Beschreibt spirituelle oder wundersame Heilung, Segnungen, Gebete, Reinigung und die Wiederherstellung von Körper, Geist oder Seele.
+Religion|Religion & Theologie|IT, KS|FO / GB|Beschreibt Wissen über Götter, Kulte, heilige Schriften, Rituale, Dogmen, religiöse Gesetze, Orden, Ketzerlehren und spirituelle Traditionen.
+Religion|Spiritismus & Geisterkunde|KS, IN|FO|Beschreibt Wissen über Geister, Ahnen, Seelen, Besessenheit, Jenseitskontakte, Spukphänomene und den Umgang mit ruhelosen Toten.
+Religion|Spiritismus & Seelenmagie|IN, WL|GB|Beschreibt Kontakt zu Geistern, Ahnen und Seelen, das Deuten jenseitiger Zeichen, Seelenführung, Besänftigung Verstorbener und spirituelle Kommunikation.
+Religion|Licht- & Sonnenmagie|CR, WL|GB|Beschreibt heilige oder reinigende Lichtmagie, Sonnenkraft, Blendung, Wärme, Hoffnung, Offenbarung, Bannung von Finsternis und Stärkung des Lebens.
+Religion|Seelische Schutzmagie & Thanaturgie|WL, KS|GB / M|Beschreibt magischen Schutz für Geist, Seele und Lebenskraft sowie das Abwehren von Todesmagie, Seelenraub, Besessenheit, Furcht, Verfall und spiritueller Zersetzung.
+Wissen|Folklore & Gassenwissen|IT, IN|FO|Beschreibt Volkswissen, Gerüchte, Sagen, lokale Bräuche, Straßenerfahrung, Unterweltwissen und informelle Informationsquellen.
+Wissen|Okkultismus & Arkane Kunde|IT, WL|FO|Beschreibt theoretisches Wissen über Magie, Zauberzeichen, arkane Gesetze, magische Wesen, übernatürliche Phänomene und verbotene Lehren sowie deren Analyse.
+Wissen|Heraldik & Geschichte|IT, IN|FO|Beschreibt Wissen über Adelslinien, Wappen, Reiche, Dynastien, historische Ereignisse, Kriege, Herrscher und alte Bündnisse.
+Wissen|Rechtskunde & Verwaltung|IT, CR|FO / HS|Beschreibt Wissen über Gesetze, Verträge, Besitzrechte, Steuern, Ämter, Urkunden, Gerichtsverfahren, Bürokratie und den Umgang mit offiziellen Stellen.
+Wissen|Sprachen & Schriftkunde|IT, WN|FO|Beschreibt das Verstehen, Lesen, Schreiben, Übersetzen und Entziffern von Sprachen, Dialekten, alten Schriften, Symbolen, Codes und fremden Alphabeten.
+Wissen|Geographie & Kulturen|IT, IN|FO|Beschreibt Wissen über Länder, Regionen, Städte, Handelswege, Völker, Bräuche, Sitten, politische Grenzen, Landschaften und kulturelle Eigenheiten.
+Wissen|Historie & Ruinenkunde|IT, WN|FO|Beschreibt Wissen über alte Reiche, vergangene Kulturen, Ruinen, Grabstätten und historische Ereignisse sowie das Erkennen von Alter, Zweck und Herkunft alter Strukturen oder Fundstücke.
+Wissen|Astronomie & Mathematik|IT, FF|FO|Beschreibt Wissen über Sterne, Himmelskörper, Kalender, Zeitrechnung, Zahlen, Geometrie, Vermessung sowie die Berechnung von Entfernungen, Winkeln und Mustern.
+Untersuchung|Aufmerksamkeit & Wachsamkeit|WN, IN|FO|Beschreibt die Fähigkeit, Geräusche, Bewegungen, Hinterhalte, versteckte Personen, Gefahren oder ungewöhnliche Details rechtzeitig zu bemerken.
+Untersuchung|Erforschen & Untersuchen|WN, IT|FO|Beschreibt systematisches Analysieren, Durchsuchen und Verstehen von Orten, Gegenständen, Spuren, Texten, Rätseln oder unbekannten Phänomenen.
+Untersuchung|Magiewahrnehmung & Wahrnehmung für Übernatürliches|WN, WL|GB / M / FS|Beschreibt das Erspüren, Erkennen und Einordnen magischer Auren, übernatürlicher Präsenzen, verborgener Zauber, Flüche, Geister, Dämonen und heiliger oder finsterer Kräfte.
+Handwerk|Handwerk & Baukunst|IT, FF|A|Beschreibt allgemeines handwerkliches Geschick, Konstruktion, Reparatur, Materialkunde, einfache Mechanik, Bauwerke und praktische Herstellung.
+Handwerk|Waffenschmied & Bogenbauer|ST, FF|A|Beschreibt die Herstellung, Wartung, Verbesserung und Reparatur von Waffen, Bögen, Armbrüsten, Klingen, Schäften und Kampfgerät.
+Handwerk|Rüstungsschmied & Schildmacher|ST, FF|A|Beschreibt die Herstellung, Anpassung, Wartung und Reparatur von Rüstungen, Helmen, Schilden, Kettenzeug und Schutzkleidung.
+Handwerk|Schreiber & Fälscher|WN, FF|FO|Beschreibt Lesen und Anfertigen von Dokumenten, Abschriften, Siegeln, Urkunden, Karten und Briefen sowie das Erkennen oder Erstellen von Fälschungen.
+Handwerk|Alchemist & Apotheker|IT, FF|FO|Beschreibt das Herstellen, Erkennen und Anwenden von Tränken, Salben, Giften, Gegengiften, Essenzen, Pulvern und alchemistischen Stoffen.
+Handwerk|Heiler & Helfer|IT, WN|FO|Beschreibt weltliche Medizin, Erste Hilfe, Wundversorgung, Kräuterkunde, Pflege, Diagnose, Geburtshilfe und das Stabilisieren verletzter oder kranker Personen.
+Finsternis|Nekromantie & Totenmagie|KS, WL|FS|Beschreibt Magie des Todes, der Verwesung, Untoten, Wiederkehrer, Vampirismus, Nekrose, Seelenreste, Grabflüche und das gewaltsame Binden oder Erheben Verstorbener.
+Finsternis|Dämonologie & Höllen-Beschwörungen|WL, CR|FS|Beschreibt Wissen um Dämonen, Höllenwesen, Pakte, Beschwörungskreise, Namen, Bannformeln, Opfergaben und die riskante Kontrolle finsterer Entitäten.
+Finsternis|Flüche & Blut-Hexerei|FF, IN|FS|Beschreibt Schadenszauber, Verwünschungen, Blutrituale, Opfermagie, Krankheiten, Pech, Bindungen, Schmerz, langsamen Verfall und magische Vergeltung.
+Finsternis|Vampirismus & Lebensraub|IT, CR|FS|Beschreibt das Entziehen von Lebenskraft, Blutmacht, Verfall und unheilige Bindungen.
+Finsternis|Wechselbalg & Formwandlerei|IN, KS|FS / M|Beschreibt fremde Gestalten, Feenblut, Körpertausch und instabile Identitäten.
+Magie|Feuermagie & Pyrokinetik|WL, RF|M|Beschreibt das Erzeugen, Formen, Lenken und Löschen von Feuer, Hitze, Glut, Rauch, Funken, Explosionen und brennender magischer Energie.
+Magie|Erdmagie & Geomantie|WL, KS|M|Beschreibt Magie über Stein, Erde, Metall, Kristall, Standfestigkeit, Erschütterungen, Mauern, Schutz, Geländeformung und unterirdische Kräfte.
+Magie|Windmagie & Aeromantie|GS, IN|M|Beschreibt das Lenken von Wind, Luftdruck, Atem, Sturm, Schall, Schweben, Stürzen, Geschwindigkeit und unsichtbaren Bewegungen in der Luft.
+Magie|Wassermagie & Hydromantie|IN, WN|M|Beschreibt das Formen, Bewegen und Verändern von Wasser, Nebel, Eis, Strömungen, Regen, Blutflüssigkeit, Reinigung und wechselnden Zuständen.
+Magie|Blitzmagie & Micaturgie|RF, IT|M|Beschreibt das Erzeugen und Lenken von Blitzen, elektrischer Ladung, plötzlichen Entladungen, Schockwirkungen, Lichtbögen und extrem schneller Energie.
+Magie|Empathische Magie & Thymoturgie|CR, IN|M / FS|Beschreibt das magische Erspüren, Verstärken, Dämpfen oder Verändern von Gefühlen, Stimmungen, Bindungen, Begierden, Angst, Mut, Liebe oder Hass.
+Magie|Hermetische Magie & Telekinetik|IT, WL|M|Beschreibt strukturierte, formelhafte Magie, arkane Ordnung, Symbole, Siegel, Kraftfelder und das Bewegen, Halten oder Stoßen von Objekten durch Willenskraft.
+Magie|Psychische Magie & Telepathie|IN, WL|M / FS|Beschreibt das Lesen, Senden, Verschleiern oder Angreifen von Gedanken, mentale Verbindungen, Erinnerungseinfluss, geistigen Druck und psychische Manipulation.
+Magie|Trugbild-Magie & Illusionistik|CR, IT|M|Beschreibt das Erzeugen von Trugbildern, falschen Geräuschen, Täuschungen, Scheingestalten, unsichtbaren Schleiern und Sinnesverwirrungen.
+Magie|Meta-Magie & Arkane Ordnung|IT, WL|M|Beschreibt das Analysieren, Stabilisieren, Verstärken, Schwächen, Umlenken oder Auflösen anderer Magie sowie das Verstehen arkaner Strukturen und Gesetzmäßigkeiten.
+Magie|Naturmagie & Druidenlehren|WN, IN|GB / M|Beschreibt Magie der Pflanzen, Tiere, Jahreszeiten, Wälder, Heilkräuter, Wachstum, Verfall, natürlicher Kreisläufe und der Kräfte wilder Orte.
+Magie|Traummagie & Oneiromantie|IN, WL|GB / M / FS|Beschreibt das Deuten, Betreten und Beeinflussen von Träumen, Albträumen, Visionen, Schlaf, Unterbewusstsein, Vorahnungen und traumhaften Zwischenwelten.
+Magie|Gestaltwandler & Polymorphmagie|KS, WL|M|Beschreibt das Verändern von Körperformen, Gliedmaßen, Haut, Stimme, Größe, tierischen Merkmalen oder ganzer Gestalten durch magische Wandlung.
+Magie|Ritualistik & Volksmagie|CR, FF|FO|Beschreibt praktische Überlieferungen wie Schutzzeichen, Segnungen, kleine Rituale, Flüche, Kräuterbräuche und Dorfmagie sowie deren Vorbereitung und Anwendung.
+Religion|Meditation & mentaler Selbstschutz|WL, IN|FO|Beschreibt innere Ruhe, geistige Abschirmung und die Fähigkeit, Angst, Manipulation, Verwirrung, Versuchung oder geistigen Angriffen zu widerstehen.
+Wissen|Konzentration & Gedächtnis|KS, IT|FO|Beschreibt die Fähigkeit, wichtige Details zu behalten, geistig bei einer Aufgabe zu bleiben und auch unter Ablenkung dem roten Faden folgen zu können.
+Wissen|Strategie & Taktik|IT, IN|FO|Beschreibt Planung, Schlachtordnung, Hinterhalte, Truppenführung, Geländeausnutzung, Kriegslisten und taktische Entscheidungen im Kampf.
+Wissen|Monsterkunde & Jägerwissen|IT, IN|FO|Beschreibt Wissen über Kreaturen, Bestien, Ungeheuer, ihre Schwächen, Spuren, Verhaltensweisen, Lebensräume und geeignete Jagdmethoden.`;
+const NEW_SKILL_IDS={
+  'Meditation & mentaler Selbstschutz':'skill_meditation_self_protection',
+  'Konzentration & Gedächtnis':'skill_concentration_memory',
+  'Strategie & Taktik':'skill_strategy_tactics',
+  'Monsterkunde & Jägerwissen':'skill_monster_lore_hunting'
+};
+const SKILL_CATEGORY_ORDER=['Kampf','Körper','Wildnis','Sozial','Religion','Wissen','Untersuchung','Handwerk','Finsternis','Magie'];
+const SKILLS=SKILL_RAW.trim().split('\n').map((x,i)=>{const [category,name,attrs,use,scope]=x.split('|');return{id:NEW_SKILL_IDS[name]||'skill_'+i,category,name,attrs,use,scope,sourceOrder:i}}).sort((a,b)=>SKILL_CATEGORY_ORDER.indexOf(a.category)-SKILL_CATEGORY_ORDER.indexOf(b.category)||a.sourceOrder-b.sourceOrder);
 const THEMES={Waldkrone:['#14261b','#ead9ad','#fff4d2','#dbc590','#332a1d','#75684e','#376c43','#b88938','#8b713e','#183d27','#fff7da','#a83b34','#327b50'],Sternenarchiv:['#050b1d','#0d1730','#152444','#1d3158','#eaf3ff','#a7bbd7','#5d8fe8','#d4b86b','#47658f','#070e24','#f8fbff','#ff6b84','#62d1ba'],Blutmond:['#12060a','#241016','#32171d','#48232a','#fff0e9','#d8b0aa','#b7434e','#e09a54','#79434a','#1a080d','#fff5ed','#ff6670','#6ac092'],Frostmeer:['#9fc7d3','#e8f5f7','#fbfeff','#d5e9ef','#183542','#58737d','#397f94','#86b8c8','#78a3af','#1e4b5a','#f6fdff','#b54859','#3f8068'],Feenhof:['#c9b7df','#f7efff','#fff9ff','#e8dcf4','#3e3450','#746681','#8f79bd','#ef9fba','#b7a3d0','#7863a0','#fffaff','#bc5277','#5f9c7e'],Tintenchronik:['#2b2117','#e5cca0','#fff0c9','#d5b77e','#3a291b','#766247','#67442d','#a54b36','#9a784a','#392619','#fff0c9','#a33b32','#44724e']};
 const CARD_TYPES={identity:'Charakteridentität',auxProfile:'Profil',portrait:'Bild / Porträt',concept:'Konzept',origin:'Herkunft und Gesellschaft',family:'Herkunft – Familie',goals:'Ziele',bonds:'Bindungen',attributes:'Grundwerte',counters:'Counter',fatePath:'Schicksalspfad',derived:'Abgeleitete Werte',skills:'Fähigkeiten',modules:'Herkunftskäufe & Nachteile',equipment:'Ausrüstung und Besitz',gold:'Gold',rations:'Rationen',notes:'Freie Notizen',text:'Freitext',divider:'Ornamentaler Trenner'};
 Object.assign(THEMES,{Magus:['#090817','#17102e','#211744','#2d2057','#f1ecff','#bdb1dc','#8067d6','#43c7d3','#655597','#110b29','#fbf8ff','#ed668d','#55c4a2'],Glaube:['#6d5423','#f5e9c9','#fffdf3','#ead7a5','#3b301d','#786a4c','#a77b20','#e0b94f','#b89a58','#5c4217','#fff9df','#b24742','#4d835e'],Finsternis:['#08070d','#121019','#1d1824','#2a2232','#f7f1fb','#c3b6cc','#9a5fc0','#d34f73','#725d80','#0d0912','#fffaff','#ff657a','#62c995'],Royal:['#0b1740','#eee0bc','#fff7dc','#d9c28b','#251e36','#74644f','#3c4f9e','#c99a31','#9d7f48','#111f55','#fff4cf','#ae3e4e','#3d7b5c'],Drachenglut:['#0d0b0a','#1d1714','#2b201b','#3b2a22','#fff0df','#d4b49e','#d75a27','#f0a33c','#7e5540','#160e0b','#fff5e8','#ff604d','#75bd83'],Wüstenorakel:['#a86635','#f0d7a6','#fff1cf','#dfbd7d','#44301d','#816645','#1c807a','#c97832','#a77c48','#5a351f','#fff0c8','#b84d3c','#3e8061'],Tiefenreich:['#03151e','#082e3a','#0d4250','#145867','#e7fbff','#9cc9d1','#23a0ac','#7bd2c4','#357888','#041f2a','#edfeff','#ff7081','#55c78e'],Runenschmiede:['#182127','#263238','#34434a','#46575d','#f2e8dc','#bfb0a3','#b3653f','#d79a53','#755b4e','#11191d','#fff3e5','#db5b55','#60aa7b'],Traumweber:['#b6c6ed','#f2efff','#fff9ff','#deddf8','#3a3659','#716c91','#7187cf','#e69cc8','#a7a9d7','#5668a7','#fffaff','#c75a89','#62a58a']});
@@ -685,6 +696,26 @@ const migrateStateBeforeR12=migrateState;migrateState=function(data){return ensu
 
 function runTestsR12(){const tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),counts=Object.fromEntries(ITEM_CATEGORIES_V174.map(category=>[category.id,ITEM_CATALOG_V174.filter(item=>item.category===category.id).length]));eq('Version bleibt 1.7.4','1.7.4',APP_VERSION);eq('Katalog vollständig',95,ITEM_CATALOG_V174.length);[['weapon.melee',17],['weapon.ranged',8],['weapon.ammunition',5],['armor.body',9],['armor.part',25],['armor.shield',3],['gear.container',4],['gear.travel',7],['gear.light',4],['gear.tool',5],['gear.medical',2],['gear.writing',3],['gear.consumable',3]].forEach(([key,count])=>eq('Katalog '+key,count,counts[key]||0));let categoryFailures=0,technicalIds=0,duplicateNotes=0;for(const source of ITEM_CATALOG_V174){const owner=newCharacter();owner.equipment=[normalizeItemV174({...source,catalogId:source.id})];const node=renderEquipmentV174(owner),text=node.textContent;if(text.includes(source.category))technicalIds++;if((text.match(/Freie Notizen/g)||[]).length!==1)duplicateNotes++;if(source.category==='weapon.melee'&&(text.includes('Munitionsart')||text.includes('Nachladeaktionen')))categoryFailures++;if(source.category==='weapon.ranged'&&(!text.includes('Schaden')||!text.includes('Munitionsart')||!text.includes('Nachladeaktionen')))categoryFailures++;if(source.itemType==='armor'&&(!text.includes('Schutzwert')||!text.includes('Körperzonen')))categoryFailures++;if(source.category==='armor.shield'&&!text.includes('Blockbonus'))categoryFailures++}eq('Alle 95 Items kategoriegerecht',0,categoryFailures);eq('Keine technische Kategorie-ID sichtbar',0,technicalIds);eq('Notizen genau einmal je Item',0,duplicateNotes);const handAxe=ITEM_CATALOG_V174.find(x=>x.name==='Handaxt'),axeOwner=newCharacter();axeOwner.equipment=[normalizeItemV174({...handAxe,catalogId:handAxe.id})];const axeText=renderEquipmentV174(axeOwner).textContent;eq('Handaxt ohne leere Munitionsfelder',false,axeText.includes('Munitionsart')||axeText.includes('Nachladeaktionen'));eq('Handaxt mit Kernwerten',true,['Schaden','Schadensart','Kampffähigkeit','Mindeststärke'].every(x=>axeText.includes(x)));const armorOwner=newCharacter();armorOwner.equipment=[normalizeItemV174({name:'Leder',itemType:'armor',category:'armor.part',protection:2,zones:['Torso','Arme'],quantity:2,equippedQuantity:2,loadState:'equipped',weightKg:3}),normalizeItemV174({name:'Schild',itemType:'armor',category:'armor.shield',protection:1,blockBonus:2,zones:['Front'],quantity:1,equippedQuantity:1,loadState:'equipped',weightKg:4}),normalizeItemV174({name:'Getragen',itemType:'armor',category:'armor.body',protection:9,zones:['Torso'],quantity:1,equippedQuantity:0,loadState:'carried',weightKg:8}),normalizeItemV174({name:'Inaktiv',itemType:'armor',category:'armor.body',protection:9,zones:['Torso'],quantity:1,equippedQuantity:1,loadState:'equipped',active:false,weightKg:8})];const armor=combatEquipmentSummaryV174(armorOwner);eq('Rohschutz nur ausgerüstet',5,armor.protection);eq('Torso zonengenau und mit Anzahl',4,armor.zones.get('Torso')?.protection);eq('Schildblock getrennt',2,armor.blockBonus);eq('Rüstungsgewicht korrekt',10,armor.armorWeight);armorOwner.equipment[0].equippedQuantity=1;eq('Neuberechnung nach Mengenänderung',2,combatEquipmentSummaryV174(armorOwner).zones.get('Torso')?.protection);const old={characters:[newCharacter()],migrationLog:[],v174ArmorSummaryDone:true};old.characters[0].layout=old.characters[0].layout.filter(card=>card.type!=='armorSummary');delete old.v174CompactItemsR12Done;ensureArmorSummaryR12(old,false);eq('Alte Markierung blockiert Reparatur nicht',1,old.characters[0].layout.filter(card=>card.type==='armorSummary').length);ensureArmorSummaryR12(old,false);eq('Reparatur idempotent',1,old.characters[0].layout.filter(card=>card.type==='armorSummary').length);const body=el('tbody',{},tests.map(([name,expected,actual,ok])=>el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)})))));testResults.replaceChildren(el('table',{},[el('thead',{},[el('tr',{},['Test','Erwartet','Berechnet','Status'].map(x=>el('th',{text:x})))]),body]));testsDialog.showModal();return tests.every(x=>x[3])}
 runTests=runTestsR12;
+
+/* v1.7.4 r13: vollständige Fähigkeitenliste mit stabilen IDs */
+document.head.append(el('style',{text:`
+.skill-name-r13{min-width:245px}.skill-name-r13>strong{display:block}.skill-description-r13{margin-top:.28rem;max-width:520px}.skill-description-r13 summary{cursor:pointer;color:var(--accent);font-size:.84rem}.skill-description-r13 p{margin:.35rem 0 0;line-height:1.42;white-space:normal}.skills-r13 td{vertical-align:top}.skills-r13 .skill-level{min-width:64px}
+@media(max-width:390px){.skill-name-r13{min-width:210px}.skill-description-r13{max-width:280px}}
+@media print{.skill-description-r13 summary{display:none}.skill-description-r13:not([open])>:not(summary){display:block!important}.skill-description-r13 p{font-size:.9em}}
+`}));
+
+function ensureOwnerSkillsR13(owner){owner.skills=owner.skills&&typeof owner.skills==='object'&&!Array.isArray(owner.skills)?owner.skills:{};for(const skill of SKILLS)if(!owner.skills[skill.id]||typeof owner.skills[skill.id]!=='object')owner.skills[skill.id]={level:0,fav:false,note:''};return owner}
+function ensureSkillStateR13(data,log=true){for(const character of data.characters||[]){ensureOwnerSkillsR13(character);for(const entry of character.auxiliaryTabs||[])ensureOwnerSkillsR13(entry)}if(!data.v174SkillsR13Done){data.v174SkillsR13Done=true;if(log){data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];data.migrationLog.push({from:12,to:12,at:new Date().toISOString(),changes:['Fähigkeitenkatalog auf 79 vollständige Einträge erweitert','Vier neue Fähigkeiten mit stabilen IDs ergänzt']})}}return data}
+const migrateStateBeforeR13=migrateState;migrateState=function(data){return ensureSkillStateR13(migrateStateBeforeR13(data),true)};state=ensureSkillStateR13(state,true);
+
+function skillNameCellR13(skill){return el('div',{class:'skill-name-r13'},[el('strong',{text:skill.name}),el('details',{class:'skill-description-r13'},[el('summary',{text:'Beschreibung'}),el('p',{text:skill.scope})])])}
+renderSkills=function(){ensureOwnerSkillsR13(ch());const owner=ch(),box=el('div'),filters=el('div',{class:'filters'}),search=el('input',{placeholder:'Fähigkeiten und Beschreibungen suchen…'}),cat=el('select'),mods=skillModifiers(owner);cat.append(el('option',{value:'',text:'Alle Kategorien'}));[...new Set(SKILLS.map(x=>x.category))].forEach(x=>cat.append(el('option',{value:x,text:x})));filters.append(search,cat);const scroll=el('div',{class:'scroll'}),table=el('table',{class:'skills-r13'}),body=el('tbody');table.append(el('thead',{},[el('tr',{},['★','Fähigkeit','Kategorie','Grundwerte','Verbrauch','Gekauft','Mod','Wirksam','CBP gesamt','Nächste Stufe','Notiz'].map(x=>el('th',{text:x})))]),body);scroll.append(table);box.append(filters,scroll);function rows(){body.replaceChildren();const q=search.value.toLowerCase();SKILLS.filter(s=>(!q||(s.name+' '+s.scope+' '+s.attrs+' '+s.use).toLowerCase().includes(q))&&(!cat.value||s.category===cat.value)).sort((a,b)=>Number(!!owner.skills[b.id]?.fav)-Number(!!owner.skills[a.id]?.fav)||SKILLS.indexOf(a)-SKILLS.indexOf(b)).forEach(s=>{const d=owner.skills[s.id],effective=Math.max(0,Math.min(25,(+d.level||0)+(mods[s.id]||0))),tr=el('tr'),fav=el('button',{class:'fav',text:d.fav?'★':'☆','aria-label':s.name+' als Favorit markieren',onclick:()=>updateState(c=>{ensureOwnerSkillsR13(c);c.skills[s.id].fav=!c.skills[s.id].fav})}),level=el('input',{class:'skill-level',type:'number',min:0,max:25,value:d.level,'aria-label':s.name+' gekaufte Stufe'}),note=el('input',{value:d.note||'',placeholder:'Notiz'});level.onchange=e=>updateState(c=>{ensureOwnerSkillsR13(c);c.skills[s.id].level=Math.max(0,Math.min(25,+e.target.value||0))});note.oninput=e=>updateState(c=>{ensureOwnerSkillsR13(c);c.skills[s.id].note=e.target.value},{render:false});const next=+d.level>=25?'Maximum':`+${skillNextLevelCost(d.level)} CBP`;[fav,skillNameCellR13(s),s.category,s.attrs,s.use,level,((mods[s.id]||0)>0?'+':'')+(mods[s.id]||0),effective,skillCost(d.level),next,note].forEach(value=>tr.append(el('td',{},[value?.nodeType?value:String(value)])));body.append(tr)})}search.oninput=rows;cat.onchange=rows;rows();return box};
+
+renderAuxSkillsV17=function(owner){ensureOwnerSkillsR13(owner);const box=el('div'),filters=el('div',{class:'filters'}),search=el('input',{placeholder:'Fähigkeiten und Beschreibungen suchen…'}),cat=el('select');cat.append(el('option',{value:'',text:'Alle Kategorien'}));[...new Set(SKILLS.map(x=>x.category))].forEach(x=>cat.append(el('option',{value:x,text:x})));filters.append(search,cat);const scroll=el('div',{class:'scroll'}),table=el('table',{class:'skills-r13'}),body=el('tbody');table.append(el('thead',{},[el('tr',{},['★','Fähigkeit','Kategorie','Grundwerte','Verbrauch','Stufe','CBP gesamt','Nächste Stufe','Notiz'].map(x=>el('th',{text:x})))]),body);scroll.append(table);box.append(filters,scroll);function rows(){body.replaceChildren();const q=search.value.toLowerCase();SKILLS.filter(s=>(!q||(s.name+' '+s.scope).toLowerCase().includes(q))&&(!cat.value||s.category===cat.value)).sort((a,b)=>Number(!!owner.skills[b.id]?.fav)-Number(!!owner.skills[a.id]?.fav)||SKILLS.indexOf(a)-SKILLS.indexOf(b)).forEach(s=>{const d=owner.skills[s.id],tr=el('tr'),fav=el('button',{class:'fav',text:d.fav?'★':'☆','aria-label':s.name+' als Favorit markieren',onclick:()=>{d.fav=!d.fav;saveAux();rows()}}),level=el('input',{class:'skill-level',type:'number',min:0,max:25,value:d.level,'aria-label':s.name+' gekaufte Stufe'}),note=el('input',{value:d.note||'',placeholder:'Notiz'});level.onchange=e=>{d.level=Math.max(0,Math.min(25,+e.target.value||0));saveAux();renderCards()};note.oninput=e=>{d.note=e.target.value;saveAux()};const next=+d.level>=25?'Maximum':`+${skillNextLevelCost(d.level)} CBP`;[fav,skillNameCellR13(s),s.category,s.attrs,s.use,level,skillCost(d.level),next,note].forEach(value=>tr.append(el('td',{},[value?.nodeType?value:String(value)])));body.append(tr)})}search.oninput=rows;cat.onchange=rows;rows();return box};
+
+const runTestsBeforeR13=runTests;
+function runTestsR13(){const baseOk=runTestsBeforeR13(),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),byName=name=>SKILLS.find(x=>x.name===name);eq('79 Fähigkeiten',79,SKILLS.length);eq('79 eindeutige IDs',79,new Set(SKILLS.map(x=>x.id)).size);eq('79 eindeutige Namen',79,new Set(SKILLS.map(x=>x.name)).size);eq('Initiative behält skill_0','skill_0',byName('Initiative')?.id);eq('Tierkunde behält skill_20','Tierkunde & Tierpflege',SKILLS.find(x=>x.id==='skill_20')?.name);eq('Handwerk behält skill_50','Handwerk & Baukunst',SKILLS.find(x=>x.id==='skill_50')?.name);eq('Ritualistik behält skill_74','Ritualistik & Volksmagie',SKILLS.find(x=>x.id==='skill_74')?.name);const expected=[['Meditation & mentaler Selbstschutz','skill_meditation_self_protection','WL, IN','FO'],['Konzentration & Gedächtnis','skill_concentration_memory','KS, IT','FO'],['Strategie & Taktik','skill_strategy_tactics','IT, IN','FO'],['Monsterkunde & Jägerwissen','skill_monster_lore_hunting','IT, IN','FO']];for(const[name,id,attrs,use]of expected){const skill=byName(name);eq(name+' ID',id,skill?.id);eq(name+' Grundwerte',attrs,skill?.attrs);eq(name+' Verbrauch',use,skill?.use);eq(name+' Beschreibung vorhanden',true,(skill?.scope||'').length>40)}eq('Kein Platzhalter Mechanik?',false,SKILLS.some(x=>x.scope.includes('Mechanik?')));eq('Kein einzelner Herrschaftscode H',false,SKILLS.some(x=>x.use.split(/\s*\/\s*/).includes('H')));eq('Alle Beschreibungen vollständig befüllt',true,SKILLS.every(x=>x.scope&&x.scope.length>35));const legacy=newCharacter();legacy.skills.skill_0.level=2;legacy.skills.skill_20.level=3;legacy.skills.skill_50.level=4;legacy.skills.skill_74.level=5;for(const[,id]of expected)delete legacy.skills[id];const migrated={characters:[legacy],migrationLog:[]};ensureSkillStateR13(migrated,false);eq('Migration skill_0 unverändert',2,legacy.skills.skill_0.level);eq('Migration skill_20 unverändert',3,legacy.skills.skill_20.level);eq('Migration skill_50 unverändert',4,legacy.skills.skill_50.level);eq('Migration skill_74 unverändert',5,legacy.skills.skill_74.level);eq('Neue Fähigkeiten starten mit 0',true,expected.every(([,id])=>legacy.skills[id]?.level===0));const npc=newAuxEntry('npc','Test'),familiar=newAuxEntry('familiar','Test');npc.skills.skill_strategy_tactics.level=4;eq('NPC und Vertrauter getrennt',0,familiar.skills.skill_strategy_tactics.level);eq('Beschreibung im Charakterrenderer',true,renderSkills().textContent.includes(byName('Meditation & mentaler Selbstschutz').scope));eq('Beschreibung im NPC-Renderer',true,renderAuxSkillsV17(npc).textContent.includes(byName('Monsterkunde & Jägerwissen').scope));const body=testResults.querySelector('tbody');tests.forEach(([name,expectedValue,actual,ok])=>body.append(el('tr',{},[name,expectedValue,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)})))));return baseOk&&tests.every(x=>x[3])}
+runTests=runTestsR13;
 
 /* 15. Initialisierung */
 renderAddCards();
