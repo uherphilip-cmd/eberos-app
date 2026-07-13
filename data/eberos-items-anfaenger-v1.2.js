@@ -1,0 +1,2995 @@
+window.EBEROS_ITEM_DB={
+  "meta": {
+    "id": "eberos-beginner-items",
+    "name": "Eberos – Erweiterte Anfänger-Itemdatenbank",
+    "version": "1.2.0",
+    "language": "de",
+    "system": "Eberos",
+    "valueUnit": "Kupfer",
+    "weightUnit": "kg",
+    "distanceUnit": "Feld",
+    "designNotes": [
+      "Die fünf vorgegebenen Waffenwerte wurden unverändert übernommen.",
+      "Schutzwert beschreibt eine einfache Schadensminderung in bedeckten Körperzonen.",
+      "Blockbonus gehört zu aktiv geführten Schilden.",
+      "Alle Datensätze besitzen stabile IDs und frei beschreibbare Felder.",
+      "Rationen werden außerhalb dieser Itemdatenbank über das eigene Rationssystem dargestellt.",
+      "Rüstungen und Rüstungsteile führen Schutzwert, Körperzonen und Mindeststärke.",
+      "Modulare Rüstungsteile decken Kopf, Schultern, Arme, Hände, Beine und Füße ab."
+    ]
+  },
+  "categories": [
+    {
+      "id": "weapon.melee",
+      "label": "Nahkampfwaffen",
+      "itemType": "weapon"
+    },
+    {
+      "id": "weapon.ranged",
+      "label": "Fernkampfwaffen",
+      "itemType": "weapon"
+    },
+    {
+      "id": "weapon.ammunition",
+      "label": "Munition",
+      "itemType": "ammunition"
+    },
+    {
+      "id": "armor.body",
+      "label": "Körperrüstungen",
+      "itemType": "armor"
+    },
+    {
+      "id": "armor.part",
+      "label": "Rüstungsteile",
+      "itemType": "armor"
+    },
+    {
+      "id": "armor.shield",
+      "label": "Schilde",
+      "itemType": "armor"
+    },
+    {
+      "id": "gear.container",
+      "label": "Behälter",
+      "itemType": "gear"
+    },
+    {
+      "id": "gear.travel",
+      "label": "Reiseausrüstung",
+      "itemType": "gear"
+    },
+    {
+      "id": "gear.light",
+      "label": "Licht und Feuer",
+      "itemType": "gear"
+    },
+    {
+      "id": "gear.tool",
+      "label": "Werkzeuge",
+      "itemType": "gear"
+    },
+    {
+      "id": "gear.medical",
+      "label": "Heilbedarf",
+      "itemType": "gear"
+    },
+    {
+      "id": "gear.writing",
+      "label": "Schrift und Karten",
+      "itemType": "gear"
+    },
+    {
+      "id": "gear.consumable",
+      "label": "Verbrauchsgüter",
+      "itemType": "gear"
+    },
+    {
+      "id": "custom",
+      "label": "Eigene Items",
+      "itemType": "custom"
+    }
+  ],
+  "customItem": {
+    "allowCreate": true,
+    "allowEdit": true,
+    "allowDuplicate": true,
+    "allowDelete": true,
+    "defaultCategory": "custom",
+    "fields": [
+      {
+        "key": "name",
+        "label": "Name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "key": "itemType",
+        "label": "Itemart",
+        "type": "select",
+        "options": [
+          "weapon",
+          "armor",
+          "ammunition",
+          "gear",
+          "custom"
+        ]
+      },
+      {
+        "key": "category",
+        "label": "Kategorie",
+        "type": "category"
+      },
+      {
+        "key": "subcategory",
+        "label": "Unterkategorie",
+        "type": "text"
+      },
+      {
+        "key": "description",
+        "label": "Beschreibung",
+        "type": "textarea"
+      },
+      {
+        "key": "quantity",
+        "label": "Anzahl",
+        "type": "number",
+        "default": 1,
+        "min": 0
+      },
+      {
+        "key": "weightKg",
+        "label": "Gewicht in kg",
+        "type": "number",
+        "default": 0,
+        "min": 0,
+        "step": 0.1
+      },
+      {
+        "key": "valueCopper",
+        "label": "Wert in Kupfer",
+        "type": "number",
+        "default": 0,
+        "min": 0
+      },
+      {
+        "key": "cbpCost",
+        "label": "CBP-Kosten",
+        "type": "number",
+        "default": 0,
+        "min": 0
+      },
+      {
+        "key": "quality",
+        "label": "Qualität",
+        "type": "select",
+        "options": [
+          "miserabel",
+          "einfach",
+          "solide",
+          "gut",
+          "meisterlich",
+          "legendär"
+        ],
+        "default": "einfach"
+      },
+      {
+        "key": "condition",
+        "label": "Zustand",
+        "type": "select",
+        "options": [
+          "zerbrochen",
+          "schwer beschädigt",
+          "gebraucht",
+          "gepflegt",
+          "neu"
+        ],
+        "default": "gepflegt"
+      },
+      {
+        "key": "material",
+        "label": "Material",
+        "type": "text"
+      },
+      {
+        "key": "storageLocation",
+        "label": "Aufbewahrungsort",
+        "type": "text"
+      },
+      {
+        "key": "owner",
+        "label": "Eigentümer",
+        "type": "text"
+      },
+      {
+        "key": "origin",
+        "label": "Herkunft",
+        "type": "text"
+      },
+      {
+        "key": "legalStatus",
+        "label": "Rechtsstatus",
+        "type": "text"
+      },
+      {
+        "key": "notes",
+        "label": "Freie Notizen",
+        "type": "textarea"
+      },
+      {
+        "key": "damage",
+        "label": "Schaden",
+        "type": "text",
+        "visibleFor": [
+          "weapon"
+        ]
+      },
+      {
+        "key": "damageType",
+        "label": "Schadensart",
+        "type": "text",
+        "visibleFor": [
+          "weapon"
+        ]
+      },
+      {
+        "key": "range",
+        "label": "Reichweite",
+        "type": "range",
+        "visibleFor": [
+          "weapon"
+        ]
+      },
+      {
+        "key": "hands",
+        "label": "Hände",
+        "type": "number",
+        "visibleFor": [
+          "weapon"
+        ],
+        "min": 0,
+        "max": 2
+      },
+      {
+        "key": "combatSkill",
+        "label": "Kampffähigkeit",
+        "type": "text",
+        "visibleFor": [
+          "weapon",
+          "armor"
+        ]
+      },
+      {
+        "key": "staminaCost",
+        "label": "Ausdauerkosten",
+        "type": "number",
+        "visibleFor": [
+          "weapon"
+        ],
+        "min": 0
+      },
+      {
+        "key": "minStrength",
+        "label": "Mindeststärke",
+        "type": "number",
+        "visibleFor": [
+          "weapon",
+          "armor"
+        ],
+        "min": 0
+      },
+      {
+        "key": "ammoType",
+        "label": "Munitionsart",
+        "type": "text",
+        "visibleFor": [
+          "weapon"
+        ]
+      },
+      {
+        "key": "reloadActions",
+        "label": "Ladeaktionen",
+        "type": "number",
+        "visibleFor": [
+          "weapon"
+        ],
+        "min": 0
+      },
+      {
+        "key": "protection",
+        "label": "Schutzwert",
+        "type": "number",
+        "visibleFor": [
+          "armor"
+        ],
+        "min": 0
+      },
+      {
+        "key": "zones",
+        "label": "Bedeckte Körperzonen",
+        "type": "tags",
+        "visibleFor": [
+          "armor"
+        ]
+      },
+      {
+        "key": "blockBonus",
+        "label": "Blockbonus",
+        "type": "number",
+        "visibleFor": [
+          "armor"
+        ],
+        "min": 0
+      },
+      {
+        "key": "capacity",
+        "label": "Kapazität",
+        "type": "text",
+        "visibleFor": [
+          "gear"
+        ]
+      },
+      {
+        "key": "uses",
+        "label": "Anwendungen",
+        "type": "number",
+        "visibleFor": [
+          "gear"
+        ],
+        "min": 0
+      },
+      {
+        "key": "effect",
+        "label": "Wirkung",
+        "type": "textarea",
+        "visibleFor": [
+          "gear"
+        ]
+      }
+    ]
+  },
+  "items": [
+    {
+      "id": "wpn_melee_dagger",
+      "name": "Dolch",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "Klinge",
+      "description": "Kurze Stichklinge für enge Räume und schnelle Angriffe.",
+      "quantity": 1,
+      "weightKg": 0.4,
+      "valueCopper": 18,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl",
+      "tags": [
+        "klein",
+        "verbergbar"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W4",
+      "damageType": "Stich oder Schnitt",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "hands": 1,
+      "combatSkill": "Nahkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 1
+    },
+    {
+      "id": "wpn_melee_hand_axe",
+      "name": "Handaxt",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "Axt",
+      "description": "Kurze Axt für Kampf, Holzarbeit und Wurf.",
+      "quantity": 1,
+      "weightKg": 1.1,
+      "valueCopper": 24,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Stahl",
+      "tags": [
+        "einhändig",
+        "werfbar"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W6",
+      "damageType": "Schnitt",
+      "range": {
+        "min": 1,
+        "max": 1
+      },
+      "hands": 1,
+      "combatSkill": "Nahkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 3
+    },
+    {
+      "id": "wpn_melee_halberd",
+      "name": "Hellebarde",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "Stangenwaffe",
+      "description": "Stangenwaffe mit Axtblatt, Spitze und Haken.",
+      "quantity": 1,
+      "weightKg": 3.5,
+      "valueCopper": 72,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Stahl",
+      "tags": [
+        "schwer",
+        "zweihändig",
+        "Reichweite 2",
+        "Haken"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W8",
+      "damageType": "Schnitt oder Stich",
+      "range": {
+        "min": 2,
+        "max": 2
+      },
+      "hands": 2,
+      "combatSkill": "Nahkampf – schwere Waffen",
+      "staminaCost": 2,
+      "minStrength": 6
+    },
+    {
+      "id": "wpn_melee_improvised",
+      "name": "Improvisierte Nahkampfwaffe",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "improvisiert",
+      "description": "Flasche, Ast, Werkzeug oder ähnlich handlicher Gegenstand.",
+      "quantity": 1,
+      "weightKg": 0.5,
+      "valueCopper": 0,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "variabel",
+      "tags": [
+        "improvisiert",
+        "einfach"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W3",
+      "damageType": "variabel",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "hands": 1,
+      "combatSkill": "Nahkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 1
+    },
+    {
+      "id": "wpn_melee_quarterstaff",
+      "name": "Kampfstab",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "Stangenwaffe",
+      "description": "Langer Holzstab für Distanz, Hebel und defensive Führung.",
+      "quantity": 1,
+      "weightKg": 1.5,
+      "valueCopper": 12,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Hartholz",
+      "tags": [
+        "zweihändig",
+        "Reichweite 2",
+        "defensiv"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W5",
+      "damageType": "Wucht",
+      "range": {
+        "min": 1,
+        "max": 2
+      },
+      "hands": 2,
+      "combatSkill": "Nahkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 2
+    },
+    {
+      "id": "wpn_melee_club",
+      "name": "Keule",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "Wuchtwaffe",
+      "description": "Einfache Wuchtwaffe aus Hartholz.",
+      "quantity": 1,
+      "weightKg": 1.0,
+      "valueCopper": 8,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Hartholz",
+      "tags": [
+        "leicht",
+        "einfach"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W5",
+      "damageType": "Wucht",
+      "range": {
+        "min": 1,
+        "max": 1
+      },
+      "hands": 1,
+      "combatSkill": "Nahkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 2
+    },
+    {
+      "id": "wpn_melee_small_simple",
+      "name": "Kleine simple Nahkampfwaffe",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "klein",
+      "description": "Dolch, Messer, Schlagring oder kleine Keule.",
+      "quantity": 1,
+      "weightKg": 0.5,
+      "valueCopper": 15,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz, Knochen oder Metall",
+      "tags": [
+        "klein",
+        "einfach"
+      ],
+      "source": "Benutzervorgabe",
+      "customizable": true,
+      "damage": "1x W4",
+      "damageType": "variabel",
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "hands": 1,
+      "combatSkill": "Nahkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 1
+    },
+    {
+      "id": "wpn_melee_warhammer",
+      "name": "Kriegshammer",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "Wuchtwaffe",
+      "description": "Schwerer Hammerkopf mit Schlagfläche und Dorn.",
+      "quantity": 1,
+      "weightKg": 2.0,
+      "valueCopper": 42,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Stahl",
+      "tags": [
+        "schwer",
+        "rüstungsbrechend"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W7",
+      "damageType": "Wucht oder Stich",
+      "range": {
+        "min": 1,
+        "max": 1
+      },
+      "hands": 1,
+      "combatSkill": "Nahkampf – schwere Waffen",
+      "staminaCost": 2,
+      "minStrength": 5
+    },
+    {
+      "id": "wpn_melee_short_sword",
+      "name": "Kurzschwert",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "Klinge",
+      "description": "Handliche Klinge für Stadtwache, Reisende und enge Gefechte.",
+      "quantity": 1,
+      "weightKg": 1.0,
+      "valueCopper": 28,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl",
+      "tags": [
+        "leicht",
+        "einhändig"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W5",
+      "damageType": "Schnitt oder Stich",
+      "range": {
+        "min": 1,
+        "max": 1
+      },
+      "hands": 1,
+      "combatSkill": "Nahkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 2
+    },
+    {
+      "id": "wpn_melee_long_sword",
+      "name": "Langschwert",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "Klinge",
+      "description": "Ausgewogene Klinge mit vielseitiger Führung.",
+      "quantity": 1,
+      "weightKg": 1.4,
+      "valueCopper": 40,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl",
+      "tags": [
+        "einhändig",
+        "vielseitig"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W6",
+      "damageType": "Schnitt oder Stich",
+      "range": {
+        "min": 1,
+        "max": 1
+      },
+      "hands": 1,
+      "combatSkill": "Nahkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 3
+    },
+    {
+      "id": "wpn_melee_light_simple",
+      "name": "Leichte simple Nahkampfwaffe",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "leicht",
+      "description": "Kurzschwert, Beil, Keule oder ähnliche einhändige Waffe.",
+      "quantity": 1,
+      "weightKg": 1.0,
+      "valueCopper": 20,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz, Knochen oder Metall",
+      "tags": [
+        "leicht",
+        "einfach"
+      ],
+      "source": "Benutzervorgabe",
+      "customizable": true,
+      "damage": "1x W5",
+      "damageType": "variabel",
+      "range": {
+        "min": 1,
+        "max": 1
+      },
+      "hands": 1,
+      "combatSkill": "Nahkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 2
+    },
+    {
+      "id": "wpn_melee_rapier",
+      "name": "Rapier",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "Klinge",
+      "description": "Schmale Stichklinge für präzise Duelle.",
+      "quantity": 1,
+      "weightKg": 1.0,
+      "valueCopper": 45,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl",
+      "tags": [
+        "präzise",
+        "Duell"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W6",
+      "damageType": "Stich",
+      "range": {
+        "min": 1,
+        "max": 1
+      },
+      "hands": 1,
+      "combatSkill": "Nahkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 2
+    },
+    {
+      "id": "wpn_melee_heavy_simple",
+      "name": "Schwere simple Nahkampfwaffe",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "schwer",
+      "description": "Große Axt, schwerer Hammer oder grobe zweihändige Klinge.",
+      "quantity": 1,
+      "weightKg": 2.0,
+      "valueCopper": 40,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Metall",
+      "tags": [
+        "schwer",
+        "zweihändig",
+        "einfach"
+      ],
+      "source": "Benutzervorgabe",
+      "customizable": true,
+      "damage": "1x W8",
+      "damageType": "variabel",
+      "range": {
+        "min": 1,
+        "max": 2
+      },
+      "hands": 2,
+      "combatSkill": "Nahkampf – schwere Waffen",
+      "staminaCost": 2,
+      "minStrength": 5
+    },
+    {
+      "id": "wpn_melee_spear",
+      "name": "Speer",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "Stangenwaffe",
+      "description": "Vielseitige Stoßwaffe für Jagd, Formation und Einzelkampf.",
+      "quantity": 1,
+      "weightKg": 1.8,
+      "valueCopper": 22,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Stahl",
+      "tags": [
+        "zweihändig",
+        "Reichweite 2",
+        "werfbar"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W6",
+      "damageType": "Stich",
+      "range": {
+        "min": 1,
+        "max": 2
+      },
+      "hands": 2,
+      "combatSkill": "Nahkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 3
+    },
+    {
+      "id": "wpn_melee_mace",
+      "name": "Streitkolben",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "Wuchtwaffe",
+      "description": "Metallkopf auf kurzem Schaft für kräftige Schläge.",
+      "quantity": 1,
+      "weightKg": 1.5,
+      "valueCopper": 30,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Stahl",
+      "tags": [
+        "einhändig",
+        "rüstungsbrechend"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W6",
+      "damageType": "Wucht",
+      "range": {
+        "min": 1,
+        "max": 1
+      },
+      "hands": 1,
+      "combatSkill": "Nahkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 4
+    },
+    {
+      "id": "wpn_melee_greataxe",
+      "name": "Zweihandaxt",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "Axt",
+      "description": "Breite Axtklinge für gewaltige Hiebe.",
+      "quantity": 1,
+      "weightKg": 3.2,
+      "valueCopper": 58,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Stahl",
+      "tags": [
+        "schwer",
+        "zweihändig",
+        "Reichweite 2"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W8",
+      "damageType": "Schnitt",
+      "range": {
+        "min": 1,
+        "max": 2
+      },
+      "hands": 2,
+      "combatSkill": "Nahkampf – schwere Waffen",
+      "staminaCost": 2,
+      "minStrength": 7
+    },
+    {
+      "id": "wpn_melee_greatsword",
+      "name": "Zweihänder",
+      "itemType": "weapon",
+      "category": "weapon.melee",
+      "subcategory": "Klinge",
+      "description": "Große zweihändige Klinge für weite Hiebe.",
+      "quantity": 1,
+      "weightKg": 2.8,
+      "valueCopper": 65,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl",
+      "tags": [
+        "schwer",
+        "zweihändig",
+        "Reichweite 2"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W8",
+      "damageType": "Schnitt",
+      "range": {
+        "min": 1,
+        "max": 2
+      },
+      "hands": 2,
+      "combatSkill": "Nahkampf – schwere Waffen",
+      "staminaCost": 2,
+      "minStrength": 6
+    },
+    {
+      "id": "wpn_ranged_hand_crossbow",
+      "name": "Handarmbrust",
+      "itemType": "weapon",
+      "category": "weapon.ranged",
+      "subcategory": "Armbrust",
+      "description": "Kompakte Armbrust für kurze Distanzen.",
+      "quantity": 1,
+      "weightKg": 1.5,
+      "valueCopper": 55,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Stahl",
+      "tags": [
+        "einhändig",
+        "Ladezeit 1"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W5",
+      "damageType": "Stich",
+      "range": {
+        "min": 2,
+        "max": 10
+      },
+      "hands": 1,
+      "combatSkill": "Fernkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 2,
+      "ammoType": "Kurzer Bolzen",
+      "reloadActions": 1
+    },
+    {
+      "id": "wpn_ranged_shortbow",
+      "name": "Kurzbogen",
+      "itemType": "weapon",
+      "category": "weapon.ranged",
+      "subcategory": "Bogen",
+      "description": "Kurzer Bogen für beweglichen Einsatz und mittlere Distanzen.",
+      "quantity": 1,
+      "weightKg": 1.0,
+      "valueCopper": 15,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz, Horn und Sehne",
+      "tags": [
+        "leicht",
+        "zweihändig"
+      ],
+      "source": "Benutzervorgabe",
+      "customizable": true,
+      "damage": "1x W4",
+      "damageType": "Stich",
+      "range": {
+        "min": 2,
+        "max": 12
+      },
+      "hands": 2,
+      "combatSkill": "Fernkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 2,
+      "ammoType": "Pfeil",
+      "reloadActions": 0
+    },
+    {
+      "id": "wpn_ranged_longbow",
+      "name": "Langbogen",
+      "itemType": "weapon",
+      "category": "weapon.ranged",
+      "subcategory": "Bogen",
+      "description": "Großer Bogen für starke Schüsse über weite Distanzen.",
+      "quantity": 1,
+      "weightKg": 2.0,
+      "valueCopper": 30,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Eibenholz und Sehne",
+      "tags": [
+        "schwer",
+        "zweihändig",
+        "weite Reichweite"
+      ],
+      "source": "Benutzervorgabe",
+      "customizable": true,
+      "damage": "1x W6",
+      "damageType": "Stich",
+      "range": {
+        "min": 3,
+        "max": 24
+      },
+      "hands": 2,
+      "combatSkill": "Fernkampf – schwere Waffen",
+      "staminaCost": 2,
+      "minStrength": 5,
+      "ammoType": "Pfeil",
+      "reloadActions": 0
+    },
+    {
+      "id": "wpn_ranged_light_crossbow",
+      "name": "Leichte Armbrust",
+      "itemType": "weapon",
+      "category": "weapon.ranged",
+      "subcategory": "Armbrust",
+      "description": "Zuverlässige Armbrust für Jagd und Stadtwache.",
+      "quantity": 1,
+      "weightKg": 3.0,
+      "valueCopper": 40,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Stahl",
+      "tags": [
+        "zweihändig",
+        "Ladezeit 1"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W6",
+      "damageType": "Stich",
+      "range": {
+        "min": 2,
+        "max": 18
+      },
+      "hands": 2,
+      "combatSkill": "Fernkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 3,
+      "ammoType": "Bolzen",
+      "reloadActions": 1
+    },
+    {
+      "id": "wpn_ranged_sling",
+      "name": "Schleuder",
+      "itemType": "weapon",
+      "category": "weapon.ranged",
+      "subcategory": "Schleuder",
+      "description": "Lederschlinge für Steine oder Bleigeschosse.",
+      "quantity": 1,
+      "weightKg": 0.2,
+      "valueCopper": 5,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leder",
+      "tags": [
+        "leicht",
+        "günstig"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W4",
+      "damageType": "Wucht",
+      "range": {
+        "min": 2,
+        "max": 10
+      },
+      "hands": 1,
+      "combatSkill": "Fernkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 1,
+      "ammoType": "Schleuderstein",
+      "reloadActions": 0
+    },
+    {
+      "id": "wpn_ranged_heavy_crossbow",
+      "name": "Schwere Armbrust",
+      "itemType": "weapon",
+      "category": "weapon.ranged",
+      "subcategory": "Armbrust",
+      "description": "Kräftige Armbrust mit Spannhilfe für hohe Durchschlagskraft.",
+      "quantity": 1,
+      "weightKg": 6.0,
+      "valueCopper": 75,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Stahl",
+      "tags": [
+        "schwer",
+        "zweihändig",
+        "Ladezeit 2",
+        "rüstungsbrechend"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W8",
+      "damageType": "Stich",
+      "range": {
+        "min": 3,
+        "max": 24
+      },
+      "hands": 2,
+      "combatSkill": "Fernkampf – schwere Waffen",
+      "staminaCost": 2,
+      "minStrength": 5,
+      "ammoType": "Schwerer Bolzen",
+      "reloadActions": 2
+    },
+    {
+      "id": "wpn_ranged_throwing_knife",
+      "name": "Wurfmesser",
+      "itemType": "weapon",
+      "category": "weapon.ranged",
+      "subcategory": "Wurfwaffe",
+      "description": "Ausgewogenes Messer für kurze Distanzen.",
+      "quantity": 1,
+      "weightKg": 0.3,
+      "valueCopper": 10,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl",
+      "tags": [
+        "leicht",
+        "werfbar"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W4",
+      "damageType": "Stich",
+      "range": {
+        "min": 1,
+        "max": 6
+      },
+      "hands": 1,
+      "combatSkill": "Fernkampf – leichte Waffen",
+      "staminaCost": 1,
+      "minStrength": 1,
+      "ammoType": "Wurfmesser",
+      "reloadActions": 0
+    },
+    {
+      "id": "wpn_ranged_javelin",
+      "name": "Wurfspeer",
+      "itemType": "weapon",
+      "category": "weapon.ranged",
+      "subcategory": "Wurfwaffe",
+      "description": "Leichter Speer für Jagd und Gefecht.",
+      "quantity": 1,
+      "weightKg": 1.2,
+      "valueCopper": 15,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Stahl",
+      "tags": [
+        "werfbar",
+        "Jagd"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "damage": "1x W5",
+      "damageType": "Stich",
+      "range": {
+        "min": 2,
+        "max": 8
+      },
+      "hands": 1,
+      "combatSkill": "Fernkampf – schwere Waffen",
+      "staminaCost": 1,
+      "minStrength": 3,
+      "ammoType": "Wurfspeer",
+      "reloadActions": 0
+    },
+    {
+      "id": "ammo_bolt_12",
+      "name": "Bolzen, 12 Stück",
+      "itemType": "ammunition",
+      "category": "weapon.ammunition",
+      "subcategory": "Bolzen",
+      "description": "Ein Bündel gebrauchsfertiger Armbrustbolzen.",
+      "quantity": 12,
+      "weightKg": 1.0,
+      "valueCopper": 8,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Stahl",
+      "tags": [
+        "Munition",
+        "12 Stück"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "compatibleWith": [
+        "wpn_ranged_light_crossbow"
+      ]
+    },
+    {
+      "id": "ammo_short_bolt_12",
+      "name": "Kurze Bolzen, 12 Stück",
+      "itemType": "ammunition",
+      "category": "weapon.ammunition",
+      "subcategory": "Bolzen",
+      "description": "Kompakte Bolzen für Handarmbrüste.",
+      "quantity": 12,
+      "weightKg": 0.6,
+      "valueCopper": 8,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Stahl",
+      "tags": [
+        "Munition",
+        "12 Stück"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "compatibleWith": [
+        "wpn_ranged_hand_crossbow"
+      ]
+    },
+    {
+      "id": "ammo_arrow_12",
+      "name": "Pfeile, 12 Stück",
+      "itemType": "ammunition",
+      "category": "weapon.ammunition",
+      "subcategory": "Pfeile",
+      "description": "Ein Bündel gebrauchsfertiger Pfeile.",
+      "quantity": 12,
+      "weightKg": 0.8,
+      "valueCopper": 6,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz, Federn und Stahl",
+      "tags": [
+        "Munition",
+        "12 Stück"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "compatibleWith": [
+        "wpn_ranged_shortbow",
+        "wpn_ranged_longbow"
+      ]
+    },
+    {
+      "id": "ammo_sling_stone_20",
+      "name": "Schleudersteine, 20 Stück",
+      "itemType": "ammunition",
+      "category": "weapon.ammunition",
+      "subcategory": "Schleudersteine",
+      "description": "Ausgewählte runde Steine für Schleudern.",
+      "quantity": 20,
+      "weightKg": 2.0,
+      "valueCopper": 1,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stein",
+      "tags": [
+        "Munition",
+        "20 Stück"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "compatibleWith": [
+        "wpn_ranged_sling"
+      ]
+    },
+    {
+      "id": "ammo_heavy_bolt_8",
+      "name": "Schwere Bolzen, 8 Stück",
+      "itemType": "ammunition",
+      "category": "weapon.ammunition",
+      "subcategory": "Bolzen",
+      "description": "Kräftige Bolzen für schwere Armbrüste.",
+      "quantity": 8,
+      "weightKg": 1.2,
+      "valueCopper": 10,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Stahl",
+      "tags": [
+        "Munition",
+        "8 Stück"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "compatibleWith": [
+        "wpn_ranged_heavy_crossbow"
+      ]
+    },
+    {
+      "id": "armor_breastplate",
+      "name": "Brustplatte",
+      "itemType": "armor",
+      "category": "armor.body",
+      "subcategory": "Plattenrüstung",
+      "description": "Geformte Metallplatte für Brust, Rücken und Seiten.",
+      "quantity": 1,
+      "weightKg": 10.0,
+      "valueCopper": 300,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl",
+      "tags": [
+        "Platte",
+        "Torso"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "protection": 4,
+      "zones": [
+        "Torso"
+      ],
+      "minStrength": 4,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_padded_jacket",
+      "name": "Gepolsterte Jacke",
+      "itemType": "armor",
+      "category": "armor.body",
+      "subcategory": "Textilrüstung",
+      "description": "Mehrlagige, gesteppt vernähte Schutzkleidung.",
+      "quantity": 1,
+      "weightKg": 4.0,
+      "valueCopper": 25,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leinen, Wolle und Leder",
+      "tags": [
+        "leicht",
+        "gepolstert"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "protection": 1,
+      "zones": [
+        "Torso",
+        "Arme"
+      ],
+      "minStrength": 1,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_half_plate",
+      "name": "Halbplatte",
+      "itemType": "armor",
+      "category": "armor.body",
+      "subcategory": "Plattenrüstung",
+      "description": "Brustplatte, Arm- und Beinschienen mit gepolsterter Unterkleidung.",
+      "quantity": 1,
+      "weightKg": 19.0,
+      "valueCopper": 450,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl, Leder und Textil",
+      "tags": [
+        "schwer",
+        "Platte"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "protection": 4,
+      "zones": [
+        "Torso",
+        "Arme",
+        "Beine"
+      ],
+      "minStrength": 6,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_chain_shirt",
+      "name": "Kettenhemd",
+      "itemType": "armor",
+      "category": "armor.body",
+      "subcategory": "Kettenrüstung",
+      "description": "Kettengeflecht bis Hüfte und Oberarme.",
+      "quantity": 1,
+      "weightKg": 8.0,
+      "valueCopper": 120,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahlringe",
+      "tags": [
+        "mittel",
+        "Kette"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "protection": 2,
+      "zones": [
+        "Torso",
+        "Oberarme"
+      ],
+      "minStrength": 3,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_chain_hauberk",
+      "name": "Kettenpanzer",
+      "itemType": "armor",
+      "category": "armor.body",
+      "subcategory": "Kettenrüstung",
+      "description": "Langer Kettenpanzer mit Schutz für Torso, Arme und Oberschenkel.",
+      "quantity": 1,
+      "weightKg": 14.0,
+      "valueCopper": 200,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahlringe",
+      "tags": [
+        "schwer",
+        "Kette"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "protection": 3,
+      "zones": [
+        "Torso",
+        "Arme",
+        "Oberschenkel"
+      ],
+      "minStrength": 4,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_leather_jerkin",
+      "name": "Lederwams",
+      "itemType": "armor",
+      "category": "armor.body",
+      "subcategory": "Lederrüstung",
+      "description": "Festes Leder für grundlegenden Schutz bei guter Beweglichkeit.",
+      "quantity": 1,
+      "weightKg": 3.0,
+      "valueCopper": 35,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Gehärtetes Leder",
+      "tags": [
+        "leicht",
+        "Leder"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "protection": 1,
+      "zones": [
+        "Torso"
+      ],
+      "minStrength": 1,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_scale",
+      "name": "Schuppenpanzer",
+      "itemType": "armor",
+      "category": "armor.body",
+      "subcategory": "Schuppenrüstung",
+      "description": "Überlappende Metall- oder Hornschuppen auf festem Träger.",
+      "quantity": 1,
+      "weightKg": 16.0,
+      "valueCopper": 240,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Metall oder Horn auf Leder",
+      "tags": [
+        "schwer",
+        "Schuppen"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "protection": 3,
+      "zones": [
+        "Torso",
+        "Arme",
+        "Oberschenkel"
+      ],
+      "minStrength": 5,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_reinforced_leather",
+      "name": "Verstärkte Lederrüstung",
+      "itemType": "armor",
+      "category": "armor.body",
+      "subcategory": "Lederrüstung",
+      "description": "Lederlagen mit Metallbeschlägen und verstärkten Nähten.",
+      "quantity": 1,
+      "weightKg": 6.0,
+      "valueCopper": 70,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leder und Metall",
+      "tags": [
+        "mittel",
+        "verstärkt"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "protection": 2,
+      "zones": [
+        "Torso",
+        "Arme"
+      ],
+      "minStrength": 2,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_full_plate",
+      "name": "Vollplatte",
+      "itemType": "armor",
+      "category": "armor.body",
+      "subcategory": "Plattenrüstung",
+      "description": "Vollständiger Plattenharnisch mit geschlossenem Schutz.",
+      "quantity": 1,
+      "weightKg": 28.0,
+      "valueCopper": 700,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl, Leder und Textil",
+      "tags": [
+        "sehr schwer",
+        "Vollschutz",
+        "Platte"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "protection": 5,
+      "zones": [
+        "Kopf",
+        "Hals",
+        "Torso",
+        "Arme",
+        "Hände",
+        "Beine",
+        "Füße"
+      ],
+      "minStrength": 8,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_padded_hood",
+      "name": "Gepolsterte Haube",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Kopf und Hals",
+      "description": "Mehrlagige Stoffhaube für Kopf, Ohren und Nacken.",
+      "quantity": 1,
+      "weightKg": 0.5,
+      "valueCopper": 8,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leinen und Wolle",
+      "tags": [
+        "leicht",
+        "Kopf",
+        "Hals"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 1,
+      "zones": [
+        "Kopf",
+        "Nacken"
+      ],
+      "minStrength": 0,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_leather_cap",
+      "name": "Lederkappe",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Kopf und Hals",
+      "description": "Gehärtete Lederkappe mit Wangenriemen.",
+      "quantity": 1,
+      "weightKg": 0.7,
+      "valueCopper": 12,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Gehärtetes Leder",
+      "tags": [
+        "leicht",
+        "Kopf",
+        "Leder"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 1,
+      "zones": [
+        "Kopf"
+      ],
+      "minStrength": 0,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_iron_helmet",
+      "name": "Eisenhelm",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Kopf und Hals",
+      "description": "Offener Metallhelm mit Stirn- und Nasenschutz.",
+      "quantity": 1,
+      "weightKg": 1.5,
+      "valueCopper": 30,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Eisen oder Stahl",
+      "tags": [
+        "mittel",
+        "Kopf",
+        "Metall"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 2,
+      "zones": [
+        "Kopf"
+      ],
+      "minStrength": 1,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_chain_coif",
+      "name": "Kettenhaube",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Kopf und Hals",
+      "description": "Kettengeflecht für Kopf, Hals und obere Schultern.",
+      "quantity": 1,
+      "weightKg": 2.0,
+      "valueCopper": 40,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahlringe",
+      "tags": [
+        "mittel",
+        "Kopf",
+        "Hals",
+        "Kette"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 2,
+      "zones": [
+        "Kopf",
+        "Hals",
+        "Schultern"
+      ],
+      "minStrength": 2,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_closed_helmet",
+      "name": "Geschlossener Plattenhelm",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Kopf und Hals",
+      "description": "Geschlossener Helm mit Visier und verstärktem Nackenschutz.",
+      "quantity": 1,
+      "weightKg": 3.0,
+      "valueCopper": 75,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl und Leder",
+      "tags": [
+        "schwer",
+        "Kopf",
+        "Gesicht",
+        "Platte"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 3,
+      "zones": [
+        "Kopf",
+        "Gesicht",
+        "Nacken"
+      ],
+      "minStrength": 3,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_padded_shoulder_collar",
+      "name": "Gepolsterter Schulterkragen",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Schultern",
+      "description": "Gesteppter Kragen für Schultern, Schlüsselbein und oberen Rücken.",
+      "quantity": 1,
+      "weightKg": 0.8,
+      "valueCopper": 10,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leinen und Wolle",
+      "tags": [
+        "leicht",
+        "Schultern",
+        "gepolstert"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 1,
+      "zones": [
+        "Schultern",
+        "Schlüsselbein",
+        "oberer Rücken"
+      ],
+      "minStrength": 0,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_leather_shoulders",
+      "name": "Lederschultern",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Schultern",
+      "description": "Überlappende Lederstücke für Schultern und Oberarme.",
+      "quantity": 1,
+      "weightKg": 1.2,
+      "valueCopper": 20,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Gehärtetes Leder",
+      "tags": [
+        "leicht",
+        "Schultern",
+        "Leder"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 1,
+      "zones": [
+        "Schultern",
+        "Oberarme"
+      ],
+      "minStrength": 1,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_chain_shoulders",
+      "name": "Kettenschultern",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Schultern",
+      "description": "Kurzer Kettenkragen mit Schutz für Schultern und Schlüsselbein.",
+      "quantity": 1,
+      "weightKg": 2.5,
+      "valueCopper": 42,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahlringe und Leder",
+      "tags": [
+        "mittel",
+        "Schultern",
+        "Kette"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 2,
+      "zones": [
+        "Schultern",
+        "Schlüsselbein",
+        "oberer Rücken"
+      ],
+      "minStrength": 2,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_plate_shoulders",
+      "name": "Schulterplatten",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Schultern",
+      "description": "Gelenkige Metallplatten für Schultern und obere Arme.",
+      "quantity": 1,
+      "weightKg": 3.0,
+      "valueCopper": 55,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl und Leder",
+      "tags": [
+        "schwer",
+        "Schultern",
+        "Platte"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 3,
+      "zones": [
+        "Schultern",
+        "Oberarme"
+      ],
+      "minStrength": 3,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_padded_sleeves",
+      "name": "Gepolsterte Ärmel",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Arme und Hände",
+      "description": "Gesteppte Ärmel für Ober- und Unterarme.",
+      "quantity": 1,
+      "weightKg": 1.0,
+      "valueCopper": 12,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leinen und Wolle",
+      "tags": [
+        "leicht",
+        "Arme",
+        "gepolstert"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 1,
+      "zones": [
+        "Oberarme",
+        "Unterarme"
+      ],
+      "minStrength": 0,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_leather_bracers",
+      "name": "Lederarmschienen",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Arme und Hände",
+      "description": "Gehärtete Armschienen für Unterarme und Ellenbogen.",
+      "quantity": 1,
+      "weightKg": 0.6,
+      "valueCopper": 14,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Gehärtetes Leder",
+      "tags": [
+        "leicht",
+        "Arme",
+        "Leder"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 1,
+      "zones": [
+        "Unterarme",
+        "Ellenbogen"
+      ],
+      "minStrength": 0,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_reinforced_gloves",
+      "name": "Verstärkte Lederhandschuhe",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Arme und Hände",
+      "description": "Dicke Handschuhe mit verstärkten Knöcheln und Handrücken.",
+      "quantity": 1,
+      "weightKg": 0.5,
+      "valueCopper": 16,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leder und Metallnieten",
+      "tags": [
+        "leicht",
+        "Hände",
+        "Leder"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 1,
+      "zones": [
+        "Hände",
+        "Finger"
+      ],
+      "minStrength": 0,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_chain_gloves",
+      "name": "Kettenhandschuhe",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Arme und Hände",
+      "description": "Lederhandschuhe mit aufgenähtem Kettengeflecht.",
+      "quantity": 1,
+      "weightKg": 0.8,
+      "valueCopper": 28,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leder und Stahlringe",
+      "tags": [
+        "mittel",
+        "Hände",
+        "Kette"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 2,
+      "zones": [
+        "Hände",
+        "Finger"
+      ],
+      "minStrength": 1,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_chain_sleeves",
+      "name": "Kettenärmel",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Arme und Hände",
+      "description": "Kettengeflecht für Oberarme, Ellenbogen und Unterarme.",
+      "quantity": 1,
+      "weightKg": 3.5,
+      "valueCopper": 60,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahlringe",
+      "tags": [
+        "mittel",
+        "Arme",
+        "Kette"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 2,
+      "zones": [
+        "Oberarme",
+        "Ellenbogen",
+        "Unterarme"
+      ],
+      "minStrength": 2,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_plate_gauntlets",
+      "name": "Panzerhandschuhe",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Arme und Hände",
+      "description": "Gelenkige Metallhandschuhe für Hände, Finger und Handgelenke.",
+      "quantity": 1,
+      "weightKg": 1.0,
+      "valueCopper": 35,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl und Leder",
+      "tags": [
+        "schwer",
+        "Hände",
+        "Platte"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 3,
+      "zones": [
+        "Hände",
+        "Finger",
+        "Handgelenke"
+      ],
+      "minStrength": 2,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_plate_arms",
+      "name": "Plattenarme",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Arme und Hände",
+      "description": "Gelenkige Platten für Oberarme, Ellenbogen und Unterarme.",
+      "quantity": 1,
+      "weightKg": 4.5,
+      "valueCopper": 90,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl und Leder",
+      "tags": [
+        "schwer",
+        "Arme",
+        "Platte"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 3,
+      "zones": [
+        "Oberarme",
+        "Ellenbogen",
+        "Unterarme"
+      ],
+      "minStrength": 4,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_padded_leggings",
+      "name": "Gepolsterte Beinlinge",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Beine",
+      "description": "Gesteppte Beinlinge für Ober- und Unterschenkel.",
+      "quantity": 1,
+      "weightKg": 1.8,
+      "valueCopper": 18,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leinen und Wolle",
+      "tags": [
+        "leicht",
+        "Beine",
+        "gepolstert"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 1,
+      "zones": [
+        "Oberschenkel",
+        "Knie",
+        "Unterschenkel"
+      ],
+      "minStrength": 0,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_leather_legs",
+      "name": "Lederbeinschienen",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Beine",
+      "description": "Gehärtete Lederstücke für Knie und Schienbeine.",
+      "quantity": 1,
+      "weightKg": 1.5,
+      "valueCopper": 22,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Gehärtetes Leder",
+      "tags": [
+        "leicht",
+        "Beine",
+        "Leder"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 1,
+      "zones": [
+        "Knie",
+        "Unterschenkel"
+      ],
+      "minStrength": 1,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_chain_leggings",
+      "name": "Kettenbeinlinge",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Beine",
+      "description": "Kettengeflecht für Hüfte, Oberschenkel und Knie.",
+      "quantity": 1,
+      "weightKg": 5.5,
+      "valueCopper": 85,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahlringe und Leder",
+      "tags": [
+        "mittel",
+        "Beine",
+        "Kette"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 2,
+      "zones": [
+        "Hüfte",
+        "Oberschenkel",
+        "Knie"
+      ],
+      "minStrength": 3,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_metal_greaves",
+      "name": "Metallbeinschienen",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Beine",
+      "description": "Geformte Metallschienen für Knie und Unterschenkel.",
+      "quantity": 1,
+      "weightKg": 2.0,
+      "valueCopper": 30,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl und Leder",
+      "tags": [
+        "mittel",
+        "Beine",
+        "Metall"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 2,
+      "zones": [
+        "Knie",
+        "Unterschenkel"
+      ],
+      "minStrength": 2,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_plate_legs",
+      "name": "Plattenbeine",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Beine",
+      "description": "Gelenkige Platten für Oberschenkel, Knie und Unterschenkel.",
+      "quantity": 1,
+      "weightKg": 7.0,
+      "valueCopper": 130,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl und Leder",
+      "tags": [
+        "schwer",
+        "Beine",
+        "Platte"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 3,
+      "zones": [
+        "Oberschenkel",
+        "Knie",
+        "Unterschenkel"
+      ],
+      "minStrength": 5,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_leather_boots",
+      "name": "Feste Lederstiefel",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Schuhe und Füße",
+      "description": "Hohe Lederstiefel mit verstärkter Sohle und Schaft.",
+      "quantity": 1,
+      "weightKg": 1.2,
+      "valueCopper": 14,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leder",
+      "tags": [
+        "leicht",
+        "Schuhe",
+        "Leder"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 1,
+      "zones": [
+        "Füße",
+        "Knöchel"
+      ],
+      "minStrength": 0,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_reinforced_boots",
+      "name": "Verstärkte Stiefel",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Schuhe und Füße",
+      "description": "Lederstiefel mit Metallkappen und verstärkten Knöcheln.",
+      "quantity": 1,
+      "weightKg": 1.8,
+      "valueCopper": 26,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leder und Metall",
+      "tags": [
+        "leicht",
+        "Schuhe",
+        "verstärkt"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 1,
+      "zones": [
+        "Füße",
+        "Zehen",
+        "Knöchel"
+      ],
+      "minStrength": 1,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_chain_shoes",
+      "name": "Kettenschuhe",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Schuhe und Füße",
+      "description": "Stabile Schuhe mit Kettengeflecht über Spann und Knöchel.",
+      "quantity": 1,
+      "weightKg": 2.2,
+      "valueCopper": 42,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leder und Stahlringe",
+      "tags": [
+        "mittel",
+        "Schuhe",
+        "Kette"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 2,
+      "zones": [
+        "Füße",
+        "Knöchel"
+      ],
+      "minStrength": 2,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_part_plate_sabatons",
+      "name": "Plattenschuhe",
+      "itemType": "armor",
+      "category": "armor.part",
+      "subcategory": "Schuhe und Füße",
+      "description": "Gelenkige Metallplatten für Zehen, Spann und Knöchel.",
+      "quantity": 1,
+      "weightKg": 3.0,
+      "valueCopper": 65,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl und Leder",
+      "tags": [
+        "schwer",
+        "Schuhe",
+        "Platte"
+      ],
+      "source": "Erweiterte Anfängerliste V1.2",
+      "customizable": true,
+      "protection": 3,
+      "zones": [
+        "Füße",
+        "Zehen",
+        "Knöchel"
+      ],
+      "minStrength": 3,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_shield_buckler",
+      "name": "Buckler",
+      "itemType": "armor",
+      "category": "armor.shield",
+      "subcategory": "Schild",
+      "description": "Kleiner Faustschild für schnelle Paraden.",
+      "quantity": 1,
+      "weightKg": 1.0,
+      "valueCopper": 15,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz oder Stahl",
+      "tags": [
+        "klein",
+        "einhändig",
+        "Block +1"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "protection": 0,
+      "zones": [
+        "Front"
+      ],
+      "minStrength": 1,
+      "blockBonus": 1,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_shield_round",
+      "name": "Rundschild",
+      "itemType": "armor",
+      "category": "armor.shield",
+      "subcategory": "Schild",
+      "description": "Vielseitiger Schild für Reise, Wache und Schlacht.",
+      "quantity": 1,
+      "weightKg": 3.0,
+      "valueCopper": 30,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz, Leder und Metall",
+      "tags": [
+        "mittel",
+        "einhändig",
+        "Block +2"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "protection": 1,
+      "zones": [
+        "Front",
+        "Schildarm"
+      ],
+      "minStrength": 2,
+      "blockBonus": 2,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "armor_shield_tower",
+      "name": "Turmschild",
+      "itemType": "armor",
+      "category": "armor.shield",
+      "subcategory": "Schild",
+      "description": "Großer Schild für Deckung und Formationskampf.",
+      "quantity": 1,
+      "weightKg": 7.0,
+      "valueCopper": 60,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Stahl",
+      "tags": [
+        "groß",
+        "schwer",
+        "Block +3",
+        "Deckung"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "protection": 2,
+      "zones": [
+        "Front",
+        "Schildarm",
+        "Torso"
+      ],
+      "minStrength": 5,
+      "blockBonus": 3,
+      "combatSkill": "Verteidigung & Blocken"
+    },
+    {
+      "id": "gear_pouch",
+      "name": "Gürteltasche",
+      "itemType": "gear",
+      "category": "gear.container",
+      "subcategory": "Tragebehälter",
+      "description": "Kleine Tasche für Münzen, Kräuter oder Werkzeug.",
+      "quantity": 1,
+      "weightKg": 0.1,
+      "valueCopper": 2,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leder",
+      "tags": [
+        "Gürtel",
+        "2 kg"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "capacity": "2 kg"
+    },
+    {
+      "id": "gear_quiver",
+      "name": "Köcher",
+      "itemType": "gear",
+      "category": "gear.container",
+      "subcategory": "Munitionsbehälter",
+      "description": "Köcher für Pfeile oder Bolzen.",
+      "quantity": 1,
+      "weightKg": 0.5,
+      "valueCopper": 8,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leder oder Holz",
+      "tags": [
+        "Munition",
+        "24 Stück"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "capacity": "24 Pfeile oder Bolzen"
+    },
+    {
+      "id": "gear_backpack",
+      "name": "Rucksack",
+      "itemType": "gear",
+      "category": "gear.container",
+      "subcategory": "Tragebehälter",
+      "description": "Leder- oder Segeltuchrucksack mit Riemen und Deckel.",
+      "quantity": 1,
+      "weightKg": 1.0,
+      "valueCopper": 12,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leder oder Segeltuch",
+      "tags": [
+        "Tragen",
+        "15 kg"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "capacity": "15 kg"
+    },
+    {
+      "id": "gear_waterskin",
+      "name": "Wasserschlauch",
+      "itemType": "gear",
+      "category": "gear.container",
+      "subcategory": "Flüssigkeitsbehälter",
+      "description": "Verschließbarer Lederschlauch für Wasser.",
+      "quantity": 1,
+      "weightKg": 0.2,
+      "valueCopper": 4,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leder und Wachs",
+      "tags": [
+        "Wasser",
+        "2 Liter"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "capacity": "2 Liter"
+    },
+    {
+      "id": "gear_rope_fine_10m",
+      "name": "Feines Seil, 10 m",
+      "itemType": "gear",
+      "category": "gear.travel",
+      "subcategory": "Seil",
+      "description": "Leichtes, eng geflochtenes Seil für Reise und Klettern.",
+      "quantity": 1,
+      "weightKg": 2.0,
+      "valueCopper": 30,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leinen oder Seide",
+      "tags": [
+        "Seil",
+        "10 m",
+        "leicht"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "capacity": "10 m"
+    },
+    {
+      "id": "gear_rope_hemp_10m",
+      "name": "Hanfseil, 10 m",
+      "itemType": "gear",
+      "category": "gear.travel",
+      "subcategory": "Seil",
+      "description": "Robustes Seil für Sichern, Ziehen und Klettern.",
+      "quantity": 1,
+      "weightKg": 5.0,
+      "valueCopper": 12,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Hanf",
+      "tags": [
+        "Seil",
+        "10 m"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "capacity": "10 m"
+    },
+    {
+      "id": "gear_cooking_pot",
+      "name": "Kochkessel",
+      "itemType": "gear",
+      "category": "gear.travel",
+      "subcategory": "Lager",
+      "description": "Kleiner Metallkessel für Lagermahlzeiten.",
+      "quantity": 1,
+      "weightKg": 2.0,
+      "valueCopper": 10,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Eisen",
+      "tags": [
+        "Kochen",
+        "Lager"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "capacity": "4 Liter"
+    },
+    {
+      "id": "gear_shovel",
+      "name": "Schaufel",
+      "itemType": "gear",
+      "category": "gear.travel",
+      "subcategory": "Grabwerkzeug",
+      "description": "Kurze Schaufel für Lagerbau, Gräber und Erdarbeiten.",
+      "quantity": 1,
+      "weightKg": 2.0,
+      "valueCopper": 8,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Eisen",
+      "tags": [
+        "Werkzeug",
+        "Erde"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true
+    },
+    {
+      "id": "gear_bedroll",
+      "name": "Schlafrolle",
+      "itemType": "gear",
+      "category": "gear.travel",
+      "subcategory": "Lager",
+      "description": "Gerollte Schlafunterlage mit einfacher Decke.",
+      "quantity": 1,
+      "weightKg": 2.0,
+      "valueCopper": 8,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Wolle und Segeltuch",
+      "tags": [
+        "Lager",
+        "Schlafen"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true
+    },
+    {
+      "id": "gear_blanket",
+      "name": "Wolldecke",
+      "itemType": "gear",
+      "category": "gear.travel",
+      "subcategory": "Lager",
+      "description": "Dicke Decke für kalte Nächte und Verletztenversorgung.",
+      "quantity": 1,
+      "weightKg": 1.5,
+      "valueCopper": 6,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Wolle",
+      "tags": [
+        "Lager",
+        "Wärme"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true
+    },
+    {
+      "id": "gear_tent_2p",
+      "name": "Zweierzelt",
+      "itemType": "gear",
+      "category": "gear.travel",
+      "subcategory": "Lager",
+      "description": "Einfaches Zelt für zwei Personen.",
+      "quantity": 1,
+      "weightKg": 4.0,
+      "valueCopper": 25,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Segeltuch, Holz und Seil",
+      "tags": [
+        "Lager",
+        "2 Personen"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "capacity": "2 Personen"
+    },
+    {
+      "id": "gear_torch",
+      "name": "Fackel",
+      "itemType": "gear",
+      "category": "gear.light",
+      "subcategory": "Lichtquelle",
+      "description": "Harzgetränkter Holzschaft für etwa eine Stunde Licht.",
+      "quantity": 1,
+      "weightKg": 0.5,
+      "valueCopper": 1,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz, Stoff und Harz",
+      "tags": [
+        "Licht",
+        "Verbrauch"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "uses": 1,
+      "effect": "Erzeugt helles Licht für etwa 1 Stunde."
+    },
+    {
+      "id": "gear_tinderbox",
+      "name": "Feuerzeugkasten",
+      "itemType": "gear",
+      "category": "gear.light",
+      "subcategory": "Feuer",
+      "description": "Feuerstein, Stahl und Zunder in kleiner Dose.",
+      "quantity": 1,
+      "weightKg": 0.2,
+      "valueCopper": 4,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl, Stein und Zunder",
+      "tags": [
+        "Feuer",
+        "20 Anwendungen"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "uses": 20,
+      "effect": "Hilft beim Entfachen eines Feuers."
+    },
+    {
+      "id": "gear_oil_flask",
+      "name": "Lampenöl",
+      "itemType": "gear",
+      "category": "gear.light",
+      "subcategory": "Brennstoff",
+      "description": "Verschlossene Flasche mit Lampenöl.",
+      "quantity": 1,
+      "weightKg": 0.5,
+      "valueCopper": 3,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Öl und Glas",
+      "tags": [
+        "Brennstoff",
+        "Verbrauch"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "uses": 1,
+      "effect": "Versorgt eine Laterne für mehrere Stunden."
+    },
+    {
+      "id": "gear_lantern",
+      "name": "Laterne",
+      "itemType": "gear",
+      "category": "gear.light",
+      "subcategory": "Lichtquelle",
+      "description": "Geschützte Öllampe mit Tragebügel.",
+      "quantity": 1,
+      "weightKg": 1.0,
+      "valueCopper": 20,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Metall und Glas",
+      "tags": [
+        "Licht",
+        "Öl"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "uses": 1,
+      "effect": "Erzeugt gerichtetes oder rundes Licht."
+    },
+    {
+      "id": "gear_crowbar",
+      "name": "Brecheisen",
+      "itemType": "gear",
+      "category": "gear.tool",
+      "subcategory": "Hebelwerkzeug",
+      "description": "Metallstange für Hebeln, Aufbrechen und Sichern.",
+      "quantity": 1,
+      "weightKg": 2.0,
+      "valueCopper": 12,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Eisen",
+      "tags": [
+        "Werkzeug",
+        "Hebel"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "effect": "Unterstützt passende Kraft- und Handwerksproben."
+    },
+    {
+      "id": "gear_toolkit_basic",
+      "name": "Einfacher Werkzeugkasten",
+      "itemType": "gear",
+      "category": "gear.tool",
+      "subcategory": "Handwerk",
+      "description": "Hammer, Zange, Feile, Ahle, Nägel und Kleinmaterial.",
+      "quantity": 1,
+      "weightKg": 5.0,
+      "valueCopper": 30,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz und Metall",
+      "tags": [
+        "Handwerk",
+        "Reparatur"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "uses": 20,
+      "effect": "Arbeitsgrundlage für allgemeines Handwerk und Reparaturen."
+    },
+    {
+      "id": "gear_armor_repair",
+      "name": "Rüstungsreparatur-Set",
+      "itemType": "gear",
+      "category": "gear.tool",
+      "subcategory": "Rüstungspflege",
+      "description": "Nieten, Draht, Lederriemen, Ahle und kleine Zange.",
+      "quantity": 1,
+      "weightKg": 2.0,
+      "valueCopper": 25,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leder und Metall",
+      "tags": [
+        "Rüstung",
+        "Reparatur"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "uses": 10,
+      "effect": "Ermöglicht einfache Reparaturen an Rüstungen und Schilden."
+    },
+    {
+      "id": "gear_lockpicks",
+      "name": "Schlosswerkzeug",
+      "itemType": "gear",
+      "category": "gear.tool",
+      "subcategory": "Feinwerkzeug",
+      "description": "Haken, Spanner, feine Zangen und Draht.",
+      "quantity": 1,
+      "weightKg": 0.5,
+      "valueCopper": 50,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stahl und Leder",
+      "tags": [
+        "Feinwerkzeug",
+        "Schlösser"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "uses": 20,
+      "effect": "Arbeitsgrundlage für Schlösser und kleine Mechanismen."
+    },
+    {
+      "id": "gear_weapon_care",
+      "name": "Waffenpflege-Set",
+      "itemType": "gear",
+      "category": "gear.tool",
+      "subcategory": "Waffenpflege",
+      "description": "Öl, Schleifstein, Lappen und kleine Feile.",
+      "quantity": 1,
+      "weightKg": 1.0,
+      "valueCopper": 15,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Stein, Öl, Stoff und Metall",
+      "tags": [
+        "Waffen",
+        "Pflege"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "uses": 10,
+      "effect": "Pflegt Klingen, Bögen und Metallteile."
+    },
+    {
+      "id": "gear_healer_kit",
+      "name": "Heilerbesteck",
+      "itemType": "gear",
+      "category": "gear.medical",
+      "subcategory": "Medizin",
+      "description": "Medizinisches Besteck, Gegengiftmaterial, Salben und Hilfsmittel gegen anhaltende negative Effekte.",
+      "quantity": 1,
+      "weightKg": 2.0,
+      "valueCopper": 35,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leinen, Metall, Glas und Kräuter",
+      "tags": [
+        "Heilung",
+        "Bluten",
+        "Gift",
+        "Säure",
+        "5 Anwendungen"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "uses": 5,
+      "effect": "Wird gegen negative Effekte wie Bluten, Gift und Säure verwendet."
+    },
+    {
+      "id": "gear_bandage",
+      "name": "Verbandspaket",
+      "itemType": "gear",
+      "category": "gear.medical",
+      "subcategory": "Wundversorgung",
+      "description": "Verbände und Wundauflagen zur Versorgung verlorener Lebenspunkte.",
+      "quantity": 1,
+      "weightKg": 0.3,
+      "valueCopper": 4,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leinen",
+      "tags": [
+        "Heilung",
+        "Lebenspunkte",
+        "3 Anwendungen"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "uses": 3,
+      "effect": "Wird für Heilung und Wiederherstellung von Lebenspunkten verwendet."
+    },
+    {
+      "id": "gear_map_case",
+      "name": "Kartenrolle",
+      "itemType": "gear",
+      "category": "gear.writing",
+      "subcategory": "Karten",
+      "description": "Feste Rolle für Karten, Briefe und Urkunden.",
+      "quantity": 1,
+      "weightKg": 0.5,
+      "valueCopper": 10,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Leder und Holz",
+      "tags": [
+        "Karten",
+        "Dokumente"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "capacity": "10 Dokumente"
+    },
+    {
+      "id": "gear_chalk_10",
+      "name": "Kreide, 10 Stück",
+      "itemType": "gear",
+      "category": "gear.writing",
+      "subcategory": "Markieren",
+      "description": "Weiße Kreidestücke für Zeichen, Wege und Skizzen.",
+      "quantity": 10,
+      "weightKg": 0.2,
+      "valueCopper": 2,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Kreide",
+      "tags": [
+        "Schrift",
+        "10 Stück"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "uses": 10,
+      "effect": "Markiert Stein, Holz und dunkle Flächen."
+    },
+    {
+      "id": "gear_writing_set",
+      "name": "Schreibzeug",
+      "itemType": "gear",
+      "category": "gear.writing",
+      "subcategory": "Schrift",
+      "description": "Tinte, Feder, Messer, Kreide und einige Blätter.",
+      "quantity": 1,
+      "weightKg": 0.5,
+      "valueCopper": 20,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Holz, Metall, Tinte und Papier",
+      "tags": [
+        "Schrift",
+        "20 Anwendungen"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "uses": 20,
+      "effect": "Arbeitsgrundlage für Schreiben, Karten und Dokumente."
+    },
+    {
+      "id": "gear_candle_5",
+      "name": "Kerzen, 5 Stück",
+      "itemType": "gear",
+      "category": "gear.consumable",
+      "subcategory": "Licht",
+      "description": "Talgkerzen für ruhiges Licht.",
+      "quantity": 5,
+      "weightKg": 0.5,
+      "valueCopper": 3,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Talg und Docht",
+      "tags": [
+        "Licht",
+        "5 Stück"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "uses": 5,
+      "effect": "Jede Kerze spendet mehrere Stunden schwaches Licht."
+    },
+    {
+      "id": "gear_soap",
+      "name": "Seife",
+      "itemType": "gear",
+      "category": "gear.consumable",
+      "subcategory": "Hygiene",
+      "description": "Ein Stück einfacher Kräuter- oder Ascheseife.",
+      "quantity": 1,
+      "weightKg": 0.2,
+      "valueCopper": 2,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Fett, Asche und Kräuter",
+      "tags": [
+        "Hygiene",
+        "10 Anwendungen"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "uses": 10,
+      "effect": "Unterstützt Hygiene und Reinigung."
+    },
+    {
+      "id": "gear_wax",
+      "name": "Siegelwachs",
+      "itemType": "gear",
+      "category": "gear.consumable",
+      "subcategory": "Dokumente",
+      "description": "Wachs für Siegel, Markierungen und kleine Abdichtungen.",
+      "quantity": 1,
+      "weightKg": 0.1,
+      "valueCopper": 3,
+      "cbpCost": 0,
+      "quality": "einfach",
+      "condition": "gepflegt",
+      "material": "Wachs und Farbstoff",
+      "tags": [
+        "Dokumente",
+        "10 Anwendungen"
+      ],
+      "source": "Anfängerliste V1",
+      "customizable": true,
+      "uses": 10,
+      "effect": "Versiegelt Briefe, Behälter und Fäden."
+    }
+  ]
+};
