@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='eberos-pwa-v2.0.0-r2';
+const CACHE='eberos-pwa-v1.7.2';
 const OFFLINE='./eberos-charakter-builder.html';
 const ASSETS=['./','./index.html',OFFLINE,'./manifest.webmanifest','./icons/eberos-icon.svg','./icons/eberos-icon-180.png','./icons/eberos-icon-192.png','./icons/eberos-icon-512.png'];
 
