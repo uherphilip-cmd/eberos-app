@@ -71,11 +71,11 @@ html[data-theme="Traumweber"]{--ornament-image:url("./assets/ornaments/traumwebe
 html{--ornament-blend:multiply;--ornament-filter:grayscale(1) contrast(1.35)}
 html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Magus"],html[data-theme="Finsternis"],html[data-theme="Royal"],html[data-theme="Drachenglut"],html[data-theme="Tiefenreich"],html[data-theme="Runenschmiede"]{--ornament-blend:screen;--ornament-filter:invert(1) grayscale(1) contrast(1.4)}
 .app{position:relative;isolation:isolate}
-.app::before,.app::after{content:"";position:fixed;z-index:0;pointer-events:none;width:min(22vw,330px);height:min(58vh,570px);background-image:var(--ornament-image);background-repeat:no-repeat;background-position:center;background-size:contain;opacity:.06;mix-blend-mode:var(--ornament-blend);filter:var(--ornament-filter)}
-.app::before{left:max(8px,calc((100vw - 1500px)/2 + 8px));top:17vh}
-.app::after{right:max(8px,calc((100vw - 1500px)/2 + 8px));bottom:4vh;transform:rotate(180deg) scale(.82);opacity:.035}
+.app::before,.app::after{content:"";position:fixed;z-index:0;pointer-events:none;width:min(44vw,660px);height:min(116vh,1140px);top:50%;transform:translateY(-50%);background-image:var(--ornament-image);background-repeat:no-repeat;background-position:center;background-size:contain;opacity:.06;mix-blend-mode:var(--ornament-blend);filter:var(--ornament-filter)}
+.app::before{left:max(8px,calc((100vw - 1500px)/2 + 8px))}
+.app::after{right:max(8px,calc((100vw - 1500px)/2 + 8px));opacity:.035}
 .topbar,.tabs,.workspace,.screen-title{z-index:1}
-@media(max-width:900px){.app::before{width:155px;height:260px;left:auto;right:-30px;top:22vh;opacity:.045}.app::after{display:none}}
+@media(max-width:900px){.app::before{width:310px;height:520px;left:auto;right:-70px;top:50%;transform:translateY(-50%);opacity:.045}.app::after{display:none}}
 @media(max-width:600px){.app::before{display:none}}
 @media print{.app::before,.app::after{display:none!important}}
 @media(max-width:640px){.repeat-row.variable{grid-template-columns:1fr}.accounting-panel .grid{grid-template-columns:1fr}.module-entry .grid{grid-template-columns:1fr}}
