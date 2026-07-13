@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='eberos-pwa-v1.7.4-r5';
+const CACHE='eberos-pwa-v1.7.4-r6';
 const OFFLINE='./eberos-charakter-builder.html';
 const ASSETS=['./','./index.html',OFFLINE,'./manifest.webmanifest','./data/eberos-items-anfaenger-v1.2.js','./data/eberos-items-anfaenger-v1.2.json','./icons/eberos-icon.svg','./icons/eberos-icon-180.png','./icons/eberos-icon-192.png','./icons/eberos-icon-512.png','./assets/ornaments/waldkrone.jpg','./assets/ornaments/sternenarchiv.jpg','./assets/ornaments/blutmond.jpg','./assets/ornaments/frostmeer.jpg','./assets/ornaments/feenhof.jpg','./assets/ornaments/tintenchronik.jpg','./assets/ornaments/magus.jpg','./assets/ornaments/glaube.jpg','./assets/ornaments/finsternis.jpg','./assets/ornaments/royal.jpg','./assets/ornaments/drachenglut.jpg','./assets/ornaments/wuestenorakel.jpg','./assets/ornaments/tiefenreich.jpg','./assets/ornaments/runenschmiede.jpg','./assets/ornaments/traumweber.jpg'];
 
