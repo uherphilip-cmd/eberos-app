@@ -50,6 +50,31 @@ html[data-theme="Drachenglut"] body{background:radial-gradient(circle at 85% 5%,
 html[data-theme="Wüstenorakel"] body{background:linear-gradient(150deg,#ead09b,#a86635)}
 html[data-theme="Tiefenreich"] body{background:radial-gradient(circle at 50% 0,#176875 0,#082e3a 35%,#03151e 76%)}
 html[data-theme="Runenschmiede"] body{background:linear-gradient(145deg,#182127,#7a4930)}
+html[data-theme="Waldkrone"]{--ornament-image:url("./assets/ornaments/waldkrone.jpg")}
+html[data-theme="Sternenarchiv"]{--ornament-image:url("./assets/ornaments/sternenarchiv.jpg")}
+html[data-theme="Blutmond"]{--ornament-image:url("./assets/ornaments/blutmond.jpg")}
+html[data-theme="Frostmeer"]{--ornament-image:url("./assets/ornaments/frostmeer.jpg")}
+html[data-theme="Feenhof"]{--ornament-image:url("./assets/ornaments/feenhof.jpg")}
+html[data-theme="Tintenchronik"]{--ornament-image:url("./assets/ornaments/tintenchronik.jpg")}
+html[data-theme="Magus"]{--ornament-image:url("./assets/ornaments/magus.jpg")}
+html[data-theme="Glaube"]{--ornament-image:url("./assets/ornaments/glaube.jpg")}
+html[data-theme="Finsternis"]{--ornament-image:url("./assets/ornaments/finsternis.jpg")}
+html[data-theme="Royal"]{--ornament-image:url("./assets/ornaments/royal.jpg")}
+html[data-theme="Drachenglut"]{--ornament-image:url("./assets/ornaments/drachenglut.jpg")}
+html[data-theme="Wüstenorakel"]{--ornament-image:url("./assets/ornaments/wuestenorakel.jpg")}
+html[data-theme="Tiefenreich"]{--ornament-image:url("./assets/ornaments/tiefenreich.jpg")}
+html[data-theme="Runenschmiede"]{--ornament-image:url("./assets/ornaments/runenschmiede.jpg")}
+html[data-theme="Traumweber"]{--ornament-image:url("./assets/ornaments/traumweber.jpg")}
+html{--ornament-blend:multiply;--ornament-filter:grayscale(1) contrast(1.35)}
+html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Magus"],html[data-theme="Finsternis"],html[data-theme="Royal"],html[data-theme="Drachenglut"],html[data-theme="Tiefenreich"],html[data-theme="Runenschmiede"]{--ornament-blend:screen;--ornament-filter:invert(1) grayscale(1) contrast(1.4)}
+.app{position:relative;isolation:isolate}
+.app::before,.app::after{content:"";position:fixed;z-index:0;pointer-events:none;width:min(22vw,330px);height:min(58vh,570px);background-image:var(--ornament-image);background-repeat:no-repeat;background-position:center;background-size:contain;opacity:.06;mix-blend-mode:var(--ornament-blend);filter:var(--ornament-filter)}
+.app::before{left:max(8px,calc((100vw - 1500px)/2 + 8px));top:17vh}
+.app::after{right:max(8px,calc((100vw - 1500px)/2 + 8px));bottom:4vh;transform:rotate(180deg) scale(.82);opacity:.035}
+.topbar,.tabs,.workspace,.screen-title{z-index:1}
+@media(max-width:900px){.app::before{width:155px;height:260px;left:auto;right:-30px;top:22vh;opacity:.045}.app::after{display:none}}
+@media(max-width:600px){.app::before{display:none}}
+@media print{.app::before,.app::after{display:none!important}}
 @media(max-width:640px){.repeat-row.variable{grid-template-columns:1fr}.accounting-panel .grid{grid-template-columns:1fr}.module-entry .grid{grid-template-columns:1fr}}
 @media print{.auto-grow{height:auto!important;min-height:0;overflow:visible!important;resize:none}.accounting-panel select,.accounting-panel input[type=number]{border:0;background:transparent}}
 </style>
