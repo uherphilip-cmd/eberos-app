@@ -1768,6 +1768,106 @@ runTests=function(){
   return baseOk&&tests.every(test=>test[3]);
 };
 
+/* Revision 8: bedienbare Counter und kollisionsfreie Regelhinweise. */
+const counterInterfaceStyleR8=el('style',{text:`
+.rule-info-r5{background:var(--panel-bg,#fff8e5);color:var(--text,#2d261b);pointer-events:none;opacity:1;overflow-wrap:anywhere}
+.info-button-r5{width:44px;min-width:44px;max-width:44px;justify-self:end}
+.value-row.info-value-row-r8{grid-template-columns:minmax(0,1fr) auto auto;grid-template-areas:"name level info" "controls cost meta" "warning warning warning";gap:.45rem .65rem}
+.info-value-row-r8>strong{grid-area:name}.info-value-row-r8>.die{grid-area:level}.info-value-row-r8>.step{grid-area:controls}.info-value-row-r8>.cost{grid-area:cost}.info-value-row-r8>.muted,.info-value-row-r8>.notice:not(.error){grid-area:meta;margin:0;padding:.35rem}.info-value-row-r8>.notice.error{grid-area:warning;margin:.25rem 0}.info-value-row-r8>.info-button-r5{grid-area:info}
+.value-row.counter-row-r8{grid-template-columns:minmax(0,1fr) auto auto;grid-template-areas:"name level info" "controls controls controls" "cost modifier modifier" "dots dots dots";gap:.45rem .65rem;align-items:center}
+.counter-row-r8>strong{grid-area:name}.counter-row-r8>.die{grid-area:level}.counter-row-r8>.counter-controls-r5{grid-area:controls}.counter-row-r8>.cost{grid-area:cost;text-align:left}.counter-row-r8>.counter-modifier-r8{grid-area:modifier;margin:0;padding:.35rem}.counter-row-r8>.counter-dots{grid-area:dots}.counter-row-r8>.info-button-r5{grid-area:info}
+.counter-level-step-r8{display:grid;grid-template-columns:36px minmax(4.5rem,5.2rem) 36px;gap:.25rem;align-items:center}.counter-level-step-r8 button{width:36px;min-height:42px;padding:0}.counter-level-step-r8 input{text-align:center}.counter-controls-r5{align-items:end}.counter-controls-r5 label{min-width:0}.counter-controls-r5 input{width:5.2rem}
+@media(max-width:560px){.value-row.info-value-row-r8{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name info" "level level" "controls cost" "meta meta" "warning warning"}.value-row.counter-row-r8{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name info" "level level" "controls controls" "cost cost" "modifier modifier" "dots dots"}.counter-controls-r5{width:100%}.rule-info-r5{max-height:55vh}}
+`});document.head.append(counterInterfaceStyleR8);
+
+showRuleInfoR5=function(anchor,title,build){
+  clearTimeout(infoDelayR5);
+  const box=rulePopoverR5(),content=typeof build==='function'?build():build;
+  box.replaceChildren(el('h3',{text:title}),content,el('p',{class:'rule-source-r5',text:'Quelle: EBEROS-Spielerhandbuch 2.0'}));
+  box.hidden=false;infoAnchorR5=anchor;
+  const rect=anchor.getBoundingClientRect(),margin=12,width=box.offsetWidth,height=box.offsetHeight;
+  const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
+  let left=rect.right+8+width<=innerWidth-margin?rect.right+8:rect.left-width-8>=margin?rect.left-width-8:clamp(rect.left,margin,innerWidth-width-margin);
+  let top=rect.bottom+8+height<=innerHeight-margin?rect.bottom+8:rect.top-height-8>=margin?rect.top-height-8:clamp(rect.top,margin,innerHeight-height-margin);
+  box.style.left=left+'px';box.style.top=top+'px';
+};
+
+function bindRuleInfoR8(node,title,build){
+  const interactive=target=>!!target.closest?.('input,select,textarea,button,a');
+  const schedule=()=>{clearTimeout(infoDelayR5);infoDelayR5=setTimeout(()=>showRuleInfoR5(node,title,build),2000)};
+  node.classList.add('info-ready-r5');
+  node.addEventListener('mouseenter',schedule);
+  node.addEventListener('mouseover',event=>{if(interactive(event.target)){clearTimeout(infoDelayR5);infoDelayR5=0;if(infoAnchorR5===node)hideRuleInfoR5()}});
+  node.addEventListener('mouseleave',()=>hideRuleInfoR5());
+  node.addEventListener('focusin',event=>{if(interactive(event.target))hideRuleInfoR5()});
+  node.addEventListener('click',event=>{if(interactive(event.target)&&!event.target.closest('.info-button-r5'))return;event.stopPropagation();showRuleInfoR5(node,title,build)});
+  node.addEventListener('keydown',event=>{if(event.target===node&&(event.key==='Enter'||event.key===' ')){event.preventDefault();showRuleInfoR5(node,title,build)}});
+}
+
+function counterNumberR8(value){const number=Number(value);return Math.max(0,Math.min(25,Number.isFinite(number)?number:0))}
+function setCounterMaximumR8(owner,id,value){ensureOwnerV175(owner);const next=counterNumberR8(value),counter=owner.counters[id];counter.max=next;counter.current=Math.min(counter.current,next);return next}
+function setCounterCurrentR8(owner,id,value){ensureOwnerV175(owner);const counter=owner.counters[id],next=Math.max(0,Math.min(counter.max,Number.isFinite(+value)?+value:0));counter.current=next;return next}
+function saveCounterR8(owner,rerender){persistOwnerR5(owner,rerender)}
+
+function renderCountersR8(owner){
+  ensureOwnerV175(owner);
+  const box=el('div'),effective=effectiveCounters(owner),mods=counterModifiers(owner);
+  box.append(el('p',{class:'notice',text:'Regelstartwert: 2. Maximum und aktueller Vorrat dürfen trotzdem bis auf 0 gesetzt werden; CBP richten sich nur nach dem Maximum.'}));
+  for(const[id,name]of COUNTERS){
+    const counter=owner.counters[id],row=el('div',{class:'value-row counter-row-r8',tabindex:0}),maximum=el('input',{type:'number',min:0,max:25,step:1,value:counter.max,'aria-label':name+' Maximum'}),current=el('input',{type:'number',min:0,max:counter.max,step:1,value:counter.current,'aria-label':name+' aktuell'}),build=()=>counterInfoContentR5(id);
+    const syncMaximum=rerender=>{if(!rerender&&maximum.value==='')return;const value=setCounterMaximumR8(owner,id,maximum.value);maximum.value=value;current.max=value;if(+current.value>value)current.value=counter.current;saveCounterR8(owner,rerender)};
+    const syncCurrent=rerender=>{if(!rerender&&current.value==='')return;const value=setCounterCurrentR8(owner,id,current.value);current.value=value;saveCounterR8(owner,rerender)};
+    maximum.addEventListener('input',()=>syncMaximum(false));maximum.addEventListener('change',()=>syncMaximum(true));maximum.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();syncMaximum(true)}});
+    current.addEventListener('input',()=>syncCurrent(false));current.addEventListener('change',()=>syncCurrent(true));current.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();syncCurrent(true)}});
+    const maximumStep=el('div',{class:'counter-level-step-r8'},[
+      tool('−',name+' Maximum verringern',()=>{setCounterMaximumR8(owner,id,counter.max-1);saveCounterR8(owner,true)}),
+      maximum,
+      tool('+',name+' Maximum erhöhen',()=>{setCounterMaximumR8(owner,id,counter.max+1);saveCounterR8(owner,true)})
+    ]);
+    const controls=el('div',{class:'counter-controls-r5'},[
+      el('label',{},[el('span',{text:'Maximum / Stufe'}),maximumStep]),
+      el('label',{},[el('span',{text:'Aktueller Vorrat'}),current])
+    ]),dots=el('div',{class:'counter-dots'});
+    dots.append(el('button',{class:'dot '+(counter.current===0?'on ':'')+'power-zero-r5',text:'0','aria-label':name+' auf 0 setzen',onclick:()=>{setCounterCurrentR8(owner,id,0);saveCounterR8(owner,true)}}));
+    for(let i=1;i<=Math.min(25,counter.max);i++)dots.append(el('button',{class:'dot '+(i<=counter.current?'on':''),'aria-label':name+' auf '+i+' setzen',onclick:()=>{setCounterCurrentR8(owner,id,i);saveCounterR8(owner,true)}}));
+    row.append(el('strong',{text:`${name} (${id})`}),el('span',{class:'die',text:'Stufe '+effective[id],title:'Wirksamer Counterwert'}),controls,el('span',{class:'cost',text:counterCost(counter.max)+' CBP'}),el('span',{class:(mods[id]?'notice':'muted')+' counter-modifier-r8',text:`Mod ${mods[id]>0?'+':''}${mods[id]} · Wirksam ${effective[id]}`}),dots,infoButtonR5(row,name,build));
+    bindRuleInfoR8(row,`${name} (${id})`,build);box.append(row);
+  }
+  return box;
+}
+renderCountersR5=renderCountersR8;
+
+renderValues=function(kind){
+  if(kind==='counter')return renderCountersR8(ch());
+  const box=renderValuesBeforeR5(kind);
+  [...box.querySelectorAll('.value-row')].forEach((row,index)=>{const[id,name]=ATTRS[index],build=()=>attributeInfoContentR5(id);row.classList.add('info-value-row-r8');row.tabIndex=0;row.append(infoButtonR5(row,name,build));bindRuleInfoR8(row,`${name} (${id})`,build)});
+  return box;
+};
+renderAuxValuesV17=function(kind,owner){
+  if(kind==='counter')return renderCountersR8(owner);
+  const box=renderAuxValuesBeforeR5(kind,owner);
+  [...box.querySelectorAll('.value-row')].forEach((row,index)=>{const[id,name]=ATTRS[index],build=()=>attributeInfoContentR5(id);row.classList.add('info-value-row-r8');row.tabIndex=0;row.append(infoButtonR5(row,name,build));bindRuleInfoR8(row,`${name} (${id})`,build)});
+  return box;
+};
+
+const runTestsBeforeR8=runTests;
+runTests=function(){
+  const baseOk=runTestsBeforeR8(),body=testResults.querySelector('tbody'),tests=[];
+  const eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]);
+  const owner=newCharacter();setCounterMaximumR8(owner,'FO',5);setCounterCurrentR8(owner,'FO',4);
+  eq('Counter-Maximum lässt sich bis 25 ändern',5,owner.counters.FO.max);
+  eq('Aktueller Counterstand lässt sich getrennt ändern',4,owner.counters.FO.current);
+  setCounterMaximumR8(owner,'FO',3);eq('Aktueller Stand wird beim Senken des Maximums begrenzt',3,owner.counters.FO.current);
+  const counters=renderCountersR8(owner),attributes=renderValues('attribute');
+  eq('Alle Counter verwenden das responsive Counterraster',COUNTERS.length,counters.querySelectorAll('.counter-row-r8').length);
+  eq('Jeder Counter besitzt wieder Minus und Plus für die Stufe',COUNTERS.length*2,counters.querySelectorAll('.counter-level-step-r8 button').length);
+  eq('Jeder Counter besitzt genau einen sichtbaren Infobutton',COUNTERS.length,counters.querySelectorAll('.info-button-r5').length);
+  eq('Grundwert-Infobuttons verwenden ein eigenes Raster',ATTRS.length,attributes.querySelectorAll('.info-value-row-r8').length);
+  eq('Regelhinweis besitzt einen deckenden Themenhintergrund',true,counterInterfaceStyleR8.textContent.includes('background:var(--panel-bg'));
+  for(const[name,expected,actual,ok]of tests)body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));
+  return baseOk&&tests.every(test=>test[3]);
+};
+
 /* 15. Initialisierung */
 renderAddCards();
 mainTabs.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.id==='addAuxTabBtn'||b.dataset.dynamicAux!==undefined)return;if(b.dataset.view==='aux'){activeAuxId=ch().auxiliaryTabs?.[0]?.id;openAux(activeAuxId);return}document.querySelectorAll('#mainTabs button').forEach(x=>x.classList.toggle('active',x===b));app.className=b.dataset.view==='build'?'app':'app '+b.dataset.view;renderCards()});renderAuxTabs();

@@ -4,7 +4,7 @@
   "short_name": "Eberos",
   "description": "Eberos Charakter-Builder v1.7.5 mit flexiblen Schicksalspfaden, sortierbaren Fähigkeiten und zentralem Rüstungswert.",
   "lang": "de",
-  "start_url": "./eberos-charakter-builder.html?v=1.7.5-r7",
+  "start_url": "./eberos-charakter-builder.html?v=1.7.5-r8",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
