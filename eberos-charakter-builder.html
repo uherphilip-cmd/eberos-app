@@ -90,7 +90,7 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 </head>
 <body><div class="app" id="app">
 <div id="updateBanner" class="update-banner hidden no-print" role="status"><strong>Eine neue Version ist verfügbar.</strong><button id="applyUpdateBtn">Jetzt aktualisieren</button></div>
-<header class="topbar no-print"><div class="brand">✦ Eberos <small>v1.7.4</small></div><div class="stats"><span class="pill" id="namePill">Unbenannt</span><span class="pill">Budget <strong id="budget">144</strong></span><span class="pill">Zusatz <strong id="bonus">0</strong></span><span class="pill">Ausgegeben <strong id="spent">0</strong></span><span class="pill" id="restPill">Rest <strong id="rest">144</strong></span><span class="pill" id="saveStatus" aria-live="polite">gespeichert</span></div><div class="toolbar"><button id="installBtn" class="hidden">📲 App installieren</button><button id="adventureCbpBtn">＋ Abenteuer-CBP</button><button id="pluginsBtn">🧩 Erweiterungen</button><button id="backupBtn">🛡 Alle sichern</button><button id="resetBuilderBtn" class="danger">↺ Builder zurücksetzen</button><button id="saveBtn">💾 Speichern</button><button id="exportBtn">⇩ Export</button><button id="importBtn">⇧ Import</button><button id="pdfExportBtn">PDF exportieren</button><button id="printBtn">⎙ Drucken</button><button id="settingsBtn">⚙ Einstellungen</button></div></header>
+<header class="topbar no-print"><div class="brand">✦ Eberos <small>v1.7.5</small></div><div class="stats"><span class="pill" id="namePill">Unbenannt</span><span class="pill">Budget <strong id="budget">144</strong></span><span class="pill">Zusatz <strong id="bonus">0</strong></span><span class="pill">Ausgegeben <strong id="spent">0</strong></span><span class="pill" id="restPill">Rest <strong id="rest">144</strong></span><span class="pill" id="saveStatus" aria-live="polite">gespeichert</span></div><div class="toolbar"><button id="installBtn" class="hidden">📲 App installieren</button><button id="adventureCbpBtn">＋ Abenteuer-CBP</button><button id="pluginsBtn">🧩 Erweiterungen</button><button id="backupBtn">🛡 Alle sichern</button><button id="resetBuilderBtn" class="danger">↺ Builder zurücksetzen</button><button id="saveBtn">💾 Speichern</button><button id="exportBtn">⇩ Export</button><button id="importBtn">⇧ Import</button><button id="pdfExportBtn">PDF exportieren</button><button id="printBtn">⎙ Drucken</button><button id="settingsBtn">⚙ Einstellungen</button></div></header>
 <nav class="tabs no-print" id="mainTabs" aria-label="Hauptansichten"><button data-view="build" class="active">Charakterbau</button><button data-view="aux" data-aux-default="npc">NPC</button><button data-view="print-preview">Druckvorschau</button><button id="addAuxTabBtn">＋ Reiter</button></nav>
 <h1 class="screen-title" id="documentTitle">Eberos-Charakter</h1><main class="workspace"><aside class="sidebar edit-only"><h2>Karten</h2><div class="add-list" id="addCards"></div><hr><h3>Budget</h3><label>Startbudget<select id="budgetPreset"><option value="120">Karg · 120</option><option value="144">Standard · 144</option><option value="160">Erfahren · 160</option><option value="180">Heroisch · 180</option><option value="200">Episch · 200</option></select></label><label>Eigener Wert<input id="startBudget" type="number" min="0" max="9999"></label><button id="auditBtn">✓ Abschlussprüfung</button><details class="cost-details"><summary>Kostenanalyse</summary><div id="costDetails"></div></details><hr><button id="rulesBtn">⚖ Regeln bearbeiten</button><button id="testsBtn">🧪 Interne Tests</button></aside><section class="sheet" id="sheet" aria-label="Charakterkarten"></section></main></div>
 <input type="file" id="fileInput" accept="application/json" hidden><input type="file" id="pluginFileInput" accept="application/json,.eberos-pack" hidden><div id="errorBox" class="errorbox hidden" role="alert"></div>
@@ -106,7 +106,7 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 <script>
 'use strict';
 /* 1. Konstanten und Seed-Daten */
-const APP_VERSION='1.7.4',SCHEMA_VERSION=12,RULES_VERSION=3,STORE='eberos.builder.v1',SAFE_MODE=new URLSearchParams(location.search).get('safe')==='1';
+const APP_VERSION='1.7.5',SCHEMA_VERSION=13,RULES_VERSION=4,STORE='eberos.builder.v1',SAFE_MODE=new URLSearchParams(location.search).get('safe')==='1';
 document.querySelector('.brand small').textContent='v'+APP_VERSION;
 const ATTRS=[['ST','Stärke'],['KS','Konstitution'],['GS','Geschick'],['RF','Reflexe'],['FF','Fingerfertigkeit'],['WL','Wille'],['IT','Intelligenz'],['IN','Intuition'],['WN','Wahrnehmung'],['CR','Charisma']];
 const COUNTERS=[['L','Leben'],['A','Ausdauer'],['FO','Fokus'],['M','Mana'],['GB','Glaube'],['HS','Herrschaft'],['FS','Finsternis'],['GL','Glück']];
@@ -781,6 +781,993 @@ window.addEventListener('afterprint',()=>cleanupPrintDocumentR15(true));
 const runTestsBeforeR15=runTests;
 runTests=function(){const baseOk=runTestsBeforeR15(),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),character=newCharacter(),emptyNpc=newAuxEntry('npc','NPC'),filledNpc=newAuxEntry('npc','Händlerin');filledNpc.description='Kontakt in der Hafenstadt';const skillCard=character.layout.find(card=>card.type==='skills')||cardObject('skills'),skills=renderPrintSkillsR15(skillCard,character,{format:'compact',descriptions:false},true),printOwner={...character,auxiliaryTabs:[emptyNpc,filledNpc]};eq('Druck kennt vier Formate',4,Object.keys(PRINT_FORMAT_HELP_R15).length);eq('Fähigkeiten vollständig',SKILLS.length,skills.querySelectorAll('tbody tr').length);eq('79 Fähigkeiten im Druck',79,skills.querySelectorAll('tbody tr').length);eq('Fähigkeiten ohne Scrollcontainer',0,skills.querySelectorAll('.scroll').length);eq('Leerer NPC wird erkannt',false,ownerHasPrintableContentR15(emptyNpc,false));eq('Befüllter NPC wird erkannt',true,ownerHasPrintableContentR15(filledNpc,false));eq('Leere Notizkarte entfällt',false,hasPrintableContentR15(cardObject('notes'),character,true));const quest=cardObject('quest');quest.data.questName='Die verlorene Krone';eq('Befüllte Quest erscheint',true,hasPrintableContentR15(quest,character,true));eq('Eingeklappte Fähigkeiten bleiben druckbar',true,hasPrintableContentR15({...skillCard,collapsed:true},character,true));eq('Fähigkeiten ignorieren Druck-Abwahl',true,({print:false,type:'skills'}).type==='skills');eq('Alle vier Kernfelder einer Fähigkeit',true,SKILLS.every(skill=>meaningfulValueR15(skill.name)&&meaningfulValueR15(skill.category)&&meaningfulValueR15(skill.attrs)&&meaningfulValueR15(skill.use)));const oldCharacters=state.characters,oldActiveId=state.activeCharacterId;try{state.characters=[printOwner];state.activeCharacterId=printOwner.id;eq('Leerer und befüllter Zusatzreiter gefiltert',2,printableOwnersR15().length)}finally{state.characters=oldCharacters;state.activeCharacterId=oldActiveId}const body=testResults.querySelector('tbody');tests.forEach(([name,expected,actual,ok])=>body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)})))));return baseOk&&tests.every(test=>test[3])};
 
+/* v1.7.5: mehrere Schicksalspfade und regelkonforme Mehrfachsynergien */
+const FATE_COUNTER_ORDER_V175=['M','GB','HS','FS'];
+const FATE_SYNERGY_RULES_V175={2:{kind:'Verknüpfung',threshold:5},3:{kind:'Konvergenz',threshold:10},4:{kind:'Schicksalsknoten',threshold:15}};
+const FATE_TRIPLE_INSPIRATIONS_V175={
+  'M+GB+FS':['Dämmerungsmagie','verbotene Theurgie','Läuterung durch Verderbnis'],
+  'M+GB+HS':['geweihter Magierkönig','theurgischer Heerführer','lebendes Schutzsiegel'],
+  'M+HS+FS':['schwarzer Hexenkönig','dämonischer Kriegsmagus','Herr eines arkanen Kultes'],
+  'GB+HS+FS':['dunkler Prophet','heiliger Schreckensrichter','Herr einer apokalyptischen Glaubensbewegung']
+};
+const FATE_NODE_INSPIRATIONS_V175=['König der Dämmerung','lebender Weltenbund','Herr der vier Kronen','Prophet des letzten Zeitalters','gebundener Weltenrichter','Verkörperung des großen Gleichgewichts','magischer Gottkönig','Fürst zwischen Himmel, Hölle und Sterblichen'];
+const FATE_PATH_TEXT_FIELDS_V175=['pathName','specialization','tradition','mentor','origin','obligations','reputation','risks','notes'];
+
+function emptyFatePathV175(counter){return{counter,pathType:FATE_PATHS[counter]?.name||'',pathName:'',specialization:'',tradition:'',mentor:'',origin:'',techniques:[],obligations:'',reputation:'',risks:'',notes:''}}
+function normalizeFatePath(raw,counter){
+  const source=raw&&typeof raw==='object'?raw:{},path={...emptyFatePathV175(counter),...source,counter};
+  path.pathType=path.pathType||FATE_PATHS[counter]?.name||'';
+  path.techniques=Array.isArray(path.techniques)?path.techniques.map(value=>String(value).trim()).filter(Boolean):String(path.techniques||'').split('\n').map(value=>value.trim()).filter(Boolean);
+  for(const key of FATE_PATH_TEXT_FIELDS_V175)path[key]=String(path[key]||'');
+  return path;
+}
+function meaningfulFatePathV175(path){return!!path&&(FATE_PATH_TEXT_FIELDS_V175.some(key=>String(path[key]||'').trim())||(path.techniques||[]).length>0)}
+function canonicalFateCountersV175(values){return FATE_COUNTER_ORDER_V175.filter(counter=>[...new Set(Array.isArray(values)?values:[])].includes(counter))}
+function normalizeFateSynergy(raw={}){
+  const pathCounters=canonicalFateCountersV175(raw.pathCounters),primaryCounter=pathCounters.includes(raw.primaryCounter)?raw.primaryCounter:(pathCounters[0]||''),contributions={};
+  for(const counter of pathCounters)if(counter!==primaryCounter)contributions[counter]=String(raw.secondaryContributions?.[counter]||'');
+  return{id:raw.id||uid(),pathCounters,primaryCounter,costCounter:raw.costCounter||primaryCounter,name:String(raw.name||''),connection:String(raw.connection||''),appearance:String(raw.appearance||''),effect:String(raw.effect||''),secondaryContributions:contributions,necessity:String(raw.necessity||''),limitation:String(raw.limitation||raw.limit||''),price:String(raw.price||''),centralMotif:String(raw.centralMotif||''),binding:String(raw.binding||''),signature:String(raw.signature||''),notes:String(raw.notes||'')};
+}
+function personCanUseFatePathsV175(owner){return!!owner&&owner.type!=='possession'}
+function ensureFatePathCardV175(owner){
+  if(!personCanUseFatePathsV175(owner)||!Array.isArray(owner.layout)||owner.layout.some(card=>card.type==='fatePath'))return;
+  const counters=owner.layout.find(card=>card.type==='counters'),card=cardObject('fatePath',counters?(+counters.order||0)+.1:owner.layout.length,12);card.title='Schicksalspfade & Synergien';owner.layout.push(card);
+}
+function ensureOwnerV175(owner){
+  if(!owner||typeof owner!=='object')return owner;
+  if(!personCanUseFatePathsV175(owner)){owner.fateSynergies=Array.isArray(owner.fateSynergies)?owner.fateSynergies:[];return owner}
+  const existing=owner.fatePaths&&typeof owner.fatePaths==='object'?owner.fatePaths:{};
+  owner.fatePaths=Object.fromEntries(FATE_COUNTER_ORDER_V175.map(counter=>[counter,normalizeFatePath(existing[counter],counter)]));
+  if(!owner.v175FateMigrated){
+    const legacy=owner.fatePath&&typeof owner.fatePath==='object'?owner.fatePath:null,counter=legacy?.counter;
+    if(FATE_COUNTER_ORDER_V175.includes(counter)&&!meaningfulFatePathV175(owner.fatePaths[counter]))owner.fatePaths[counter]=normalizeFatePath(legacy,counter);
+    owner.v175FateMigrated=true;
+  }
+  const seen=new Set();owner.fateSynergies=(Array.isArray(owner.fateSynergies)?owner.fateSynergies:[]).map(normalizeFateSynergy).map(entry=>{if(seen.has(entry.id))entry.id=uid();seen.add(entry.id);return entry});
+  ensureFatePathCardV175(owner);
+  const card=owner.layout?.find(entry=>entry.type==='fatePath');if(card&&(!card.title||card.title==='Schicksalspfad'))card.title='Schicksalspfade & Synergien';
+  return owner;
+}
+function ensureStateV175(data,log=true){
+  const first=!data.v175MigrationDone;
+  for(const character of data.characters||[]){ensureOwnerV175(character);for(const entry of character.auxiliaryTabs||[])ensureOwnerV175(entry)}
+  data.appVersion=APP_VERSION;data.schemaVersion=SCHEMA_VERSION;data.v175MigrationDone=true;
+  if(first&&log){data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];data.migrationLog.push({from:12,to:13,at:new Date().toISOString(),changes:['Einzelpfad verlustfrei in vier getrennte Schicksalspfade überführt','Mehrfachsynergien mit Verknüpfung, Konvergenz und Schicksalsknoten ergänzt']})}
+  return data;
+}
+const migrateStateBeforeV175=migrateState;
+migrateState=function(data){return ensureStateV175(migrateStateBeforeV175(data),true)};
+state=ensureStateV175(state,true);
+const newCharacterBeforeV175=newCharacter,newAuxEntryBeforeV175=newAuxEntry;
+newCharacter=function(){return ensureOwnerV175(newCharacterBeforeV175())};
+newAuxEntry=function(type,name){return ensureOwnerV175(newAuxEntryBeforeV175(type,name))};
+CARD_TYPES.fatePath='Schicksalspfade & Synergien';
+
+function fatePathLevel(owner,counter){if(!personCanUseFatePathsV175(owner)||!FATE_COUNTER_ORDER_V175.includes(counter))return 0;try{return+effectiveCounters(owner)[counter]||0}catch{return 0}}
+function openedFatePaths(owner){return FATE_COUNTER_ORDER_V175.filter(counter=>fatePathLevel(owner,counter)>=5)}
+function synergyKind(pathCounters){return FATE_SYNERGY_RULES_V175[canonicalFateCountersV175(pathCounters).length]?.kind||'Ungültige Synergie'}
+function synergyThreshold(pathCounters){return FATE_SYNERGY_RULES_V175[canonicalFateCountersV175(pathCounters).length]?.threshold||0}
+function synergyLevel(owner,pathCounters){const counters=canonicalFateCountersV175(pathCounters);return counters.length?Math.min(...counters.map(counter=>fatePathLevel(owner,counter))):0}
+function synergyUnlocked(owner,pathCounters){const counters=canonicalFateCountersV175(pathCounters),threshold=synergyThreshold(counters);return!!threshold&&counters.every(counter=>fatePathLevel(owner,counter)>=threshold)}
+function synergySummary(owner,synergy){
+  const counters=canonicalFateCountersV175(synergy?.pathCounters),level=synergyLevel(owner,counters),threshold=synergyThreshold(counters),unlocked=synergyUnlocked(owner,counters),minimum=counters.filter(counter=>fatePathLevel(owner,counter)===level);
+  return{pathCounters:counters,kind:synergyKind(counters),threshold,level,unlocked,minimum,status:unlocked?'Mechanisch freigeschaltet':'Freie Darstellung / Entwurf'};
+}
+function validateFateSynergy(owner,synergy={}){
+  const errors=[],warnings=[],raw=Array.isArray(synergy.pathCounters)?synergy.pathCounters:[],valid=raw.filter(counter=>FATE_COUNTER_ORDER_V175.includes(counter)),unique=[...new Set(valid)],summary=synergySummary(owner,synergy);
+  if(raw.length<2||raw.length>4)errors.push('Es müssen zwei bis vier Pfade beteiligt sein.');
+  if(valid.length!==raw.length)errors.push('Die Auswahl enthält einen ungültigen Macht-Counter.');
+  if(unique.length!==raw.length)errors.push('Jeder Pfad darf nur einmal gewählt werden.');
+  for(const counter of unique)if(fatePathLevel(owner,counter)<5)errors.push(`${FATE_PATHS[counter].label} ist noch nicht geöffnet.`);
+  if(!unique.includes(synergy.primaryCounter))errors.push('Der Primärpfad gehört nicht zur Auswahl.');
+  if(!unique.includes(synergy.costCounter))errors.push('Der Kosten-Counter gehört nicht zur Auswahl.');
+  if(synergy.costCounter!==synergy.primaryCounter)errors.push('Ohne eigenes Regelmodul muss der Kosten-Counter dem Primärpfad entsprechen.');
+  [['name','Name'],['connection','Verbindung'],['effect','Hauptwirkung'],['necessity','Notwendigkeit'],['limitation','Grenze'],['price','Preis']].forEach(([key,label])=>{if(!String(synergy[key]||'').trim())errors.push(`${label} fehlt.`)});
+  for(const counter of unique)if(counter!==synergy.primaryCounter&&!String(synergy.secondaryContributions?.[counter]||'').trim())errors.push(`Beitrag von ${FATE_PATHS[counter].label} fehlt.`);
+  if(unique.length===4)for(const[key,label]of[['centralMotif','Zentrales Motiv'],['binding','Bindung'],['signature','Signatur']])if(!String(synergy[key]||'').trim())errors.push(`${label} fehlt.`);
+  if(!summary.unlocked&&summary.threshold)warnings.push(`${summary.kind} benötigt alle beteiligten Pfade mindestens auf Stufe ${summary.threshold}.`);
+  return{errors,warnings,valid:errors.length===0,summary};
+}
+function synergyInspirationsV175(pathCounters){const counters=canonicalFateCountersV175(pathCounters),key=counters.join('+');return counters.length===4?[...FATE_NODE_INSPIRATIONS_V175]:[...(FATE_TRIPLE_INSPIRATIONS_V175[key]||[])]}
+function saveOwnerV175(owner,rerender=false){owner.updatedAt=new Date().toISOString();save();if(rerender)renderCards()}
+
+const fateStyleV175=el('style',{text:`
+.fate-overview-v175{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}.fate-path-v175{border:1px solid var(--border);border-radius:var(--radius);padding:.75rem;background:var(--panel-alt);min-width:0}.fate-path-v175.locked{opacity:.72}.fate-path-head-v175{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}.fate-path-head-v175 strong{font-family:var(--font-section);font-size:1.05rem}.fate-level-v175,.fate-status-v175,.fate-chip-v175{display:inline-flex;align-items:center;border:1px solid var(--border);border-radius:999px;padding:.16rem .5rem;background:var(--panel-bg);font-size:.84rem}.fate-status-v175.ok{border-color:var(--success);color:var(--success)}.fate-status-v175.warning{border-color:var(--accent-2)}.fate-path-fields-v175{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem;margin-top:.65rem}.fate-path-fields-v175 .wide{grid-column:1/-1}.fate-thresholds-v175{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.5rem}.fate-thresholds-v175 span{font-size:.75rem;color:var(--muted)}.fate-thresholds-v175 .reached{color:var(--success);font-weight:700}.synergy-toolbar-v175{display:flex;justify-content:space-between;align-items:center;gap:.7rem;flex-wrap:wrap;margin:1rem 0 .6rem}.synergy-list-v175{display:grid;gap:.65rem}.synergy-entry-v175{border:1px solid var(--border);border-radius:var(--radius);background:var(--panel-alt);padding:.65rem}.synergy-entry-v175 summary{cursor:pointer;font-weight:700}.synergy-meta-v175{display:flex;gap:.35rem;flex-wrap:wrap;margin:.5rem 0}.synergy-sections-v175{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}.synergy-section-v175{padding:.55rem;background:var(--panel-bg);border-radius:8px;min-width:0}.synergy-section-v175.wide{grid-column:1/-1}.synergy-section-v175 h4{margin:.1rem 0 .35rem}.synergy-actions-v175{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.65rem}.fate-dialog-v175{width:min(980px,96vw)}.fate-editor-v175{display:grid;gap:.75rem}.fate-select-v175{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.45rem}.fate-select-v175 label{display:flex;align-items:center;gap:.4rem;border:1px solid var(--border);border-radius:8px;padding:.55rem;background:var(--panel-alt)}.fate-select-v175 input{width:auto;min-height:0}.fate-editor-grid-v175{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}.fate-editor-grid-v175 .wide{grid-column:1/-1}.fate-preview-v175{border-left:5px solid var(--accent-2);background:var(--panel-alt);padding:.7rem}.fate-preview-v175.ok{border-color:var(--success)}.fate-errors-v175{margin:.35rem 0;padding-left:1.2rem}.inspiration-list-v175{display:flex;gap:.4rem;flex-wrap:wrap}.inspiration-list-v175 button{min-height:36px}.fate-rule-v175{border-left:5px solid var(--accent);padding:.7rem;background:var(--panel-alt)}
+@media(max-width:720px){.fate-overview-v175,.synergy-sections-v175,.fate-editor-grid-v175{grid-template-columns:1fr}.synergy-section-v175.wide,.fate-editor-grid-v175 .wide{grid-column:auto}.fate-select-v175{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:390px){.fate-overview-v175,.fate-path-fields-v175,.fate-select-v175{grid-template-columns:1fr}.fate-path-fields-v175 .wide{grid-column:auto}.fate-dialog-v175{width:96vw;padding:.7rem}.synergy-toolbar-v175>button{width:100%}}
+@media print{.fate-path-v175.empty-path,.synergy-actions-v175,.synergy-toolbar-v175 button{display:none!important}.fate-overview-v175,.synergy-sections-v175{grid-template-columns:1fr 1fr}.fate-path-v175,.synergy-entry-v175{break-inside:avoid}.fate-editor-v175{display:none}}
+`});document.head.append(fateStyleV175);
+
+function fatePathFieldV175(owner,path,label,key,long=false){
+  const control=el(long?'textarea':'input',{value:path[key]||'','aria-label':`${FATE_PATHS[path.counter].label}: ${label}`});control.value=path[key]||'';control.oninput=event=>{path[key]=event.target.value;saveOwnerV175(owner,false)};
+  return el('label',{class:'field '+(long?'wide':'')},[el('span',{text:label}),control]);
+}
+function renderFatePathTileV175(owner,counter){
+  const path=owner.fatePaths[counter],level=fatePathLevel(owner,counter),opened=level>=5,tile=el('section',{class:`fate-path-v175 ${opened?'opened':'locked'} ${meaningfulFatePathV175(path)?'':'empty-path'}`}),head=el('div',{class:'fate-path-head-v175'});
+  head.append(el('strong',{text:FATE_PATHS[counter].label}),el('span',{class:'fate-level-v175',text:`${counter} · Stufe ${level}`}),el('span',{class:'fate-status-v175 '+(opened?'ok':'warning'),text:opened?'Geöffnet':'Gesperrt'}));tile.append(head);
+  const thresholds=el('div',{class:'fate-thresholds-v175'});for(const[number,label]of FATE_THRESHOLDS)thresholds.append(el('span',{class:level>=number?'reached':'',text:`${level>=number?'✓':'○'} ${number} ${label}`}));tile.append(thresholds);
+  if(!opened){tile.append(el('p',{class:'muted',text:'Dieser Pfad öffnet sich ab wirksamer Stufe 5.'}));return tile}
+  const fields=el('div',{class:'fate-path-fields-v175'});fields.append(fatePathFieldV175(owner,path,'Pfadname','pathName'),fatePathFieldV175(owner,path,'Pfadtyp','pathType'),fatePathFieldV175(owner,path,'Spezialisierung','specialization'),fatePathFieldV175(owner,path,'Tradition / Orden','tradition'),fatePathFieldV175(owner,path,'Lehrmeister','mentor'),fatePathFieldV175(owner,path,'Herkunft','origin'),fatePathFieldV175(owner,path,'Verpflichtungen','obligations',true),fatePathFieldV175(owner,path,'Ruf','reputation',true),fatePathFieldV175(owner,path,'Risiken','risks',true));
+  const techniques=el('textarea',{'aria-label':`${FATE_PATHS[counter].label}: Freigeschaltete Techniken`});techniques.value=(path.techniques||[]).join('\n');techniques.oninput=event=>{path.techniques=event.target.value.split('\n').map(value=>value.trim()).filter(Boolean);saveOwnerV175(owner,false)};fields.append(el('label',{class:'field wide'},[el('span',{text:'Freigeschaltete Techniken · eine Zeile je Technik'}),techniques]),fatePathFieldV175(owner,path,'Freie Notizen','notes',true));tile.append(fields);return tile;
+}
+function labeledSynergyValueV175(label,value,wide=false){return el('section',{class:'synergy-section-v175 '+(wide?'wide':'')},[el('h4',{text:label}),el('p',{text:String(value||'—')})])}
+function renderSynergyEntryV175(owner,synergy){
+  const summary=synergySummary(owner,synergy),validation=validateFateSynergy(owner,synergy),details=el('details',{class:'synergy-entry-v175'}),heading=el('summary',{text:`${synergy.name||'Unbenannte Synergie'} · ${summary.kind} Stufe ${summary.level}`}),meta=el('div',{class:'synergy-meta-v175'});
+  meta.append(...summary.pathCounters.map(counter=>el('span',{class:'fate-chip-v175',text:`${FATE_PATHS[counter].label} ${fatePathLevel(owner,counter)}`})),el('span',{class:'fate-status-v175 '+(summary.unlocked?'ok':'warning'),text:summary.status}),el('span',{class:'fate-chip-v175',text:`Primär: ${FATE_PATHS[synergy.primaryCounter]?.label||'—'}`}),el('span',{class:'fate-chip-v175',text:`Kosten: ${synergy.costCounter||'—'}`}));
+  const sections=el('div',{class:'synergy-sections-v175'});sections.append(labeledSynergyValueV175('Verbindung',synergy.connection),labeledSynergyValueV175('Erscheinung',synergy.appearance),labeledSynergyValueV175('Hauptwirkung',synergy.effect,true));
+  for(const counter of summary.pathCounters)if(counter!==synergy.primaryCounter)sections.append(labeledSynergyValueV175(`Beitrag ${FATE_PATHS[counter].label}`,synergy.secondaryContributions?.[counter],true));
+  sections.append(labeledSynergyValueV175('Warum alle Pfade notwendig sind',synergy.necessity,true),labeledSynergyValueV175('Grenze',synergy.limitation),labeledSynergyValueV175('Preis',synergy.price));
+  if(summary.pathCounters.length===4)sections.append(labeledSynergyValueV175('Zentrales Motiv',synergy.centralMotif),labeledSynergyValueV175('Bindung',synergy.binding),labeledSynergyValueV175('Signatur',synergy.signature,true));
+  if(synergy.notes)sections.append(labeledSynergyValueV175('Notizen',synergy.notes,true));
+  if(validation.errors.length)sections.append(el('section',{class:'synergy-section-v175 wide notice error'},[el('strong',{text:'Unvollständig'}),el('p',{text:validation.errors.join(' · ')})]));
+  const actions=el('div',{class:'synergy-actions-v175'},[el('button',{text:'Bearbeiten',onclick:()=>openFateSynergyDialogV175(owner,synergy)}),el('button',{text:'Duplizieren',onclick:()=>{const copy=normalizeFateSynergy({...structuredClone(synergy),id:uid(),name:(synergy.name||'Synergie')+' – Kopie'});owner.fateSynergies.push(copy);saveOwnerV175(owner,true)}}),el('button',{class:'danger',text:'Löschen',onclick:()=>{if(confirm(`Synergie „${synergy.name||'Unbenannt'}“ wirklich löschen?`)){owner.fateSynergies=owner.fateSynergies.filter(entry=>entry.id!==synergy.id);saveOwnerV175(owner,true)}}})]);
+  details.append(heading,meta,sections,actions);return details;
+}
+function renderFatePathsV175(owner){
+  ensureOwnerV175(owner);const box=el('div');if(!personCanUseFatePathsV175(owner)){box.append(el('p',{class:'notice',text:'Besitzreiter besitzen keine eigenen Macht-Counter und erzeugen deshalb keine mechanischen Schicksalspfadsynergien.'}));return box}
+  const overview=el('div',{class:'fate-overview-v175'});for(const counter of FATE_COUNTER_ORDER_V175)overview.append(renderFatePathTileV175(owner,counter));
+  const opened=openedFatePaths(owner),toolbar=el('div',{class:'synergy-toolbar-v175'},[el('div',{},[el('h3',{text:'Mehrfachsynergien'}),el('p',{class:'muted',text:'Mehr Pfade schaffen thematische Tiefe – nicht automatisch mehr Schaden, Einzeleffekte oder mehrere Counterzahlungen.'})])]),add=el('button',{class:'primary',text:'+ Synergie erschaffen',disabled:opened.length<2,onclick:()=>openFateSynergyDialogV175(owner)});toolbar.append(add);box.append(el('div',{class:'fate-rule-v175',text:'Grundregel: Die Synergiestufe ist immer die niedrigste wirksame Stufe aller beteiligten Pfade. Nebenpfade verändern genau eine Hauptwirkung.'}),overview,toolbar);
+  if(opened.length<2)box.append(el('p',{class:'notice',text:'Für eine Verknüpfung müssen mindestens zwei Schicksalspfade auf Stufe 5 geöffnet sein.'}));
+  const list=el('div',{class:'synergy-list-v175'});for(const synergy of owner.fateSynergies)list.append(renderSynergyEntryV175(owner,synergy));if(!owner.fateSynergies.length)list.append(el('p',{class:'muted',text:'Noch keine Mehrfachsynergie angelegt.'}));box.append(list);return box;
+}
+const renderUniversalBeforeV175=renderUniversalCardBodyV173;
+renderUniversalCardBodyV173=function(card,owner){if(card.type==='fatePath')return renderFatePathsV175(owner);return renderUniversalBeforeV175(card,owner)};
+
+function ensureFateSynergyDialogV175(){
+  let dialog=document.getElementById('fateSynergyDialogV175');if(dialog)return dialog;
+  dialog=el('dialog',{id:'fateSynergyDialogV175',class:'fate-dialog-v175'});dialog.append(el('div',{class:'dialog-head'},[el('h2',{id:'fateSynergyTitleV175',text:'Mehrfachsynergie'}),el('button',{'aria-label':'Synergiefenster schließen',text:'×',onclick:()=>dialog.close()})]),el('div',{id:'fateSynergyEditorV175'}));document.body.append(dialog);return dialog;
+}
+function synergyEditorFieldV175(draft,label,key,long=false){
+  const control=el(long?'textarea':'input',{'aria-label':label});control.value=draft[key]||'';control.oninput=event=>draft[key]=event.target.value;
+  return el('label',{class:'field '+(long?'wide':'')},[el('span',{text:label}),control]);
+}
+function openFateSynergyDialogV175(owner,existing=null){
+  ensureOwnerV175(owner);const opened=openedFatePaths(owner);if(!existing&&opened.length<2)return alert('Mindestens zwei geöffnete Pfade werden benötigt.');
+  const initial=existing?structuredClone(existing):normalizeFateSynergy({pathCounters:opened.slice(0,2),primaryCounter:opened[0],costCounter:opened[0]});
+  const draft={...initial,secondaryContributions:{...(initial.secondaryContributions||{})}};draft.costCounter=draft.primaryCounter;
+  const dialog=ensureFateSynergyDialogV175(),editor=document.getElementById('fateSynergyEditorV175');document.getElementById('fateSynergyTitleV175').textContent=existing?'Synergie bearbeiten':'Synergie erschaffen';
+  const draw=()=>{
+    editor.replaceChildren();const root=el('div',{class:'fate-editor-v175'}),selection=el('section',{},[el('h3',{text:'1. Beteiligte Pfade auswählen'})]),choices=el('div',{class:'fate-select-v175'});
+    for(const counter of FATE_COUNTER_ORDER_V175){const selected=draft.pathCounters.includes(counter),isOpened=opened.includes(counter),input=el('input',{type:'checkbox',checked:selected,disabled:!isOpened&&!selected,'aria-label':FATE_PATHS[counter].label});input.checked=selected;input.onchange=event=>{draft.pathCounters=canonicalFateCountersV175(event.target.checked?[...draft.pathCounters,counter]:draft.pathCounters.filter(value=>value!==counter));if(!draft.pathCounters.includes(draft.primaryCounter))draft.primaryCounter=draft.pathCounters[0]||'';draft.costCounter=draft.primaryCounter;draw()};choices.append(el('label',{class:!isOpened?'locked':''},[input,el('span',{text:`${FATE_PATHS[counter].label} · Stufe ${fatePathLevel(owner,counter)}${isOpened?'':' · gesperrt'}`})]))}
+    selection.append(choices);root.append(selection);
+    const summary=synergySummary(owner,draft),primary=el('select',{'aria-label':'Primärpfad'});for(const counter of draft.pathCounters)primary.append(el('option',{value:counter,text:`${FATE_PATHS[counter].label} · ${counter}`}));primary.value=draft.primaryCounter;primary.onchange=event=>{draft.primaryCounter=event.target.value;draft.costCounter=draft.primaryCounter;draw()};
+    const definition=el('section',{},[el('h3',{text:'2. Primärpfad und Hauptwirkung'})]),grid=el('div',{class:'fate-editor-grid-v175'});grid.append(el('label',{class:'field'},[el('span',{text:'Primärpfad'}),primary]),el('label',{class:'field'},[el('span',{text:'Kosten-Counter'}),el('input',{value:draft.costCounter||'—',readonly:true,'aria-label':'Kosten-Counter'})]),synergyEditorFieldV175(draft,'Name','name'),synergyEditorFieldV175(draft,'Verbindung','connection'),synergyEditorFieldV175(draft,'Erscheinung','appearance',true),synergyEditorFieldV175(draft,'Genau eine Hauptwirkung','effect',true));definition.append(grid);root.append(definition);
+    const contributions=el('section',{},[el('h3',{text:'3. Verändernde Beiträge der Nebenpfade'})]),contributionGrid=el('div',{class:'fate-editor-grid-v175'});for(const counter of draft.pathCounters)if(counter!==draft.primaryCounter){draft.secondaryContributions[counter]??='';const control=el('textarea',{'aria-label':`Beitrag ${FATE_PATHS[counter].label}`});control.value=draft.secondaryContributions[counter];control.oninput=event=>draft.secondaryContributions[counter]=event.target.value;contributionGrid.append(el('label',{class:'field wide'},[el('span',{text:`${FATE_PATHS[counter].label} verändert die Hauptwirkung durch …`}),control]))}if(!contributionGrid.children.length)contributionGrid.append(el('p',{class:'muted',text:'Nach Auswahl eines Primärpfades erscheinen hier die Nebenpfade.'}));contributions.append(contributionGrid);root.append(contributions);
+    const limits=el('section',{},[el('h3',{text:'4. Notwendigkeit, Grenze und Preis'})]),limitGrid=el('div',{class:'fate-editor-grid-v175'});limitGrid.append(synergyEditorFieldV175(draft,'Warum sind alle Pfade notwendig?','necessity',true),synergyEditorFieldV175(draft,'Klare Grenze: Was leistet die Technik nicht?','limitation',true),synergyEditorFieldV175(draft,'Preis, Verpflichtung, Gefahr oder Verwundbarkeit','price',true));if(draft.pathCounters.length===4)limitGrid.append(synergyEditorFieldV175(draft,'Zentrales Motiv','centralMotif',true),synergyEditorFieldV175(draft,'Bindung der widersprüchlichen Kräfte','binding',true),synergyEditorFieldV175(draft,'Signatur: Woran erkennt die Welt diese Verbindung?','signature',true));limitGrid.append(synergyEditorFieldV175(draft,'Freie Notizen','notes',true));limits.append(limitGrid);root.append(limits);
+    const inspirations=synergyInspirationsV175(draft.pathCounters);if(inspirations.length){const section=el('section',{},[el('h3',{text:'Inspirationen'})]),list=el('div',{class:'inspiration-list-v175'});for(const name of inspirations)list.append(el('button',{type:'button',text:name,onclick:()=>{draft.name=name;draw()}}));section.append(el('p',{class:'muted',text:'Die Auswahl übernimmt nur den Namen und erfindet keine Wirkung, Kosten oder Zahlenwerte.'}),list);root.append(section)}
+    const validation=validateFateSynergy(owner,draft),preview=el('section',{class:'fate-preview-v175 '+(validation.valid&&summary.unlocked?'ok':'')},[el('strong',{text:`${summary.kind} · Stufe ${summary.level} · ${summary.status}`}),el('p',{text:`Beteiligte Pfade: ${summary.pathCounters.map(counter=>FATE_PATHS[counter].label).join(' + ')||'noch keine gültige Auswahl'} · Voraussetzung: Stufe ${summary.threshold||'—'}`})]);if(validation.errors.length)preview.append(el('div',{class:'notice error'},[el('strong',{text:'Strukturell unvollständig'}),el('ul',{class:'fate-errors-v175'},validation.errors.map(message=>el('li',{text:message})))]));if(validation.warnings.length)preview.append(el('div',{class:'notice'},[el('strong',{text:'Entwurf'}),el('p',{text:validation.warnings.join(' ')})]));root.append(preview);
+    const actions=el('div',{class:'synergy-actions-v175'},[el('button',{class:'primary',text:'Synergie speichern',onclick:()=>{const normalized=normalizeFateSynergy(draft),index=owner.fateSynergies.findIndex(entry=>entry.id===normalized.id);if(index>=0)owner.fateSynergies[index]=normalized;else owner.fateSynergies.push(normalized);saveOwnerV175(owner,true);dialog.close()}}),el('button',{text:'Abbrechen',onclick:()=>dialog.close()})]);root.append(actions);editor.append(root);
+  };draw();dialog.showModal();
+}
+
+const ownerHasPrintableContentBeforeV175=ownerHasPrintableContentR15;
+ownerHasPrintableContentR15=function(owner,isCharacter=false){ensureOwnerV175(owner);if((owner.fateSynergies||[]).length||Object.values(owner.fatePaths||{}).some(meaningfulFatePathV175))return true;return ownerHasPrintableContentBeforeV175(owner,isCharacter)};
+const hasPrintableContentBeforeV175=hasPrintableContentR15;
+hasPrintableContentR15=function(card,owner,isCharacter=owner===ch()){if(card.type==='fatePath'){ensureOwnerV175(owner);return(owner.fateSynergies||[]).length>0||Object.values(owner.fatePaths||{}).some(meaningfulFatePathV175)}return hasPrintableContentBeforeV175(card,owner,isCharacter)};
+
+const auditBeforeV175=audit;
+audit=function(){
+  auditBeforeV175();[...auditResults.children].filter(node=>node.textContent.includes('Nur ein entwickelter Macht-Counter')||node.textContent.includes('Schicksalspfad passt')).forEach(node=>node.remove());
+  const owner=ch();ensureOwnerV175(owner);auditResults.append(el('h3',{text:'Schicksalspfade & Synergien'}));
+  for(const counter of openedFatePaths(owner)){const path=owner.fatePaths[counter],complete=!!path.pathName.trim();auditResults.append(el('div',{class:'notice '+(complete?'ok':''),text:`${complete?'✓':'⚠'} ${FATE_PATHS[counter].label}: ${complete?path.pathName:'geöffnet, aber noch nicht benannt'}`}))}
+  if(!owner.fateSynergies.length)auditResults.append(el('div',{class:'notice ok',text:'✓ Mehrfachsynergien sind optional.'}));
+  for(const synergy of owner.fateSynergies){const validation=validateFateSynergy(owner,synergy),summary=validation.summary,severity=validation.errors.length?'error':validation.warnings.length?'':'ok',detail=validation.errors.length?validation.errors.join(' · '):validation.warnings.length?validation.warnings.join(' '):'regelkonform freigeschaltet';auditResults.append(el('div',{class:'notice '+severity,text:`${severity==='error'?'✕':severity==='ok'?'✓':'⚠'} ${synergy.name||'Unbenannte Synergie'} · ${summary.kind} Stufe ${summary.level} · ${detail}`}))}
+};
+
+function completeSynergyForTestsV175(counters){const primary=counters[0],secondaryContributions=Object.fromEntries(counters.slice(1).map(counter=>[counter,`${FATE_PATHS[counter].label} verändert die Hauptwirkung.`]));return normalizeFateSynergy({pathCounters:counters,primaryCounter:primary,costCounter:primary,name:'Testsynergie',connection:'Gemeinsames Schicksal',appearance:'Sichtbare Aura',effect:'Eine gemeinsame Hauptwirkung',secondaryContributions,necessity:'Jeder Pfad ermöglicht einen notwendigen Teil.',limitation:'Keine zusätzlichen Einzeltechniken.',price:'Eine bindende Verpflichtung.',centralMotif:'Gleichgewicht',binding:'Ein gemeinsamer Eid',signature:'Vierfarbige Krone'})}
+function ownerWithFateLevelsV175(levels,type='character'){const owner=type==='character'?newCharacter():newAuxEntry(type,'Test');for(const counter of FATE_COUNTER_ORDER_V175){const level=levels[counter]??2;owner.counters[counter]={max:level,current:level}}return ensureOwnerV175(owner)}
+
+const runTestsBeforeV175=runTests;
+runTests=function(){
+  runTestsBeforeV175();const body=testResults.querySelector('tbody'),obsolete=new Set(['Version 1.7.4','Schema 12','Regelstand 3','Version bleibt 1.7.4']);[...body.querySelectorAll('tr')].filter(row=>obsolete.has(row.cells[0]?.textContent)).forEach(row=>row.remove());
+  const previousOk=[...body.querySelectorAll('tr')].every(row=>row.cells[3]?.textContent==='Bestanden'),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]);
+  eq('Version 1.7.5','1.7.5',APP_VERSION);eq('Schema 13',13,SCHEMA_VERSION);eq('Regelstand 4',4,RULES_VERSION);
+  eq('Vier kanonische Schicksalspfade','M,GB,HS,FS',Object.keys(FATE_PATHS).filter(key=>FATE_COUNTER_ORDER_V175.includes(key)).join(','));
+  const gate=ownerWithFateLevelsV175({M:4,GB:5});eq('Stufe 4 öffnet keinen Pfad',false,openedFatePaths(gate).includes('M'));eq('Stufe 5 öffnet einen Pfad',true,openedFatePaths(gate).includes('GB'));
+  gate.counters.GB.current=0;eq('Aktueller Counterstand beeinflusst Pfadstufe nicht',5,fatePathLevel(gate,'GB'));
+  const pair=ownerWithFateLevelsV175({M:5,GB:5});eq('Zwei Pfade Stufe 5 ergeben Verknüpfung','Verknüpfung',synergyKind(['M','GB']));eq('Verknüpfung auf Stufe 5 freigeschaltet',true,synergyUnlocked(pair,['M','GB']));
+  const pairMixed=ownerWithFateLevelsV175({M:12,GB:7});eq('Verknüpfungsstufe ist der niedrigste Pfad',7,synergyLevel(pairMixed,['M','GB']));
+  const tripleLow=ownerWithFateLevelsV175({M:15,GB:12,HS:7});eq('Dreifachsynergie mit 15, 12, 7 hat Stufe 7',7,synergyLevel(tripleLow,['M','GB','HS']));eq('Dreifachsynergie unter Stufe 10 bleibt Entwurf',false,synergyUnlocked(tripleLow,['M','GB','HS']));
+  const triple=ownerWithFateLevelsV175({M:10,GB:10,HS:10});eq('Drei Pfade Stufe 10 ergeben Konvergenz',true,synergyUnlocked(triple,['M','GB','HS']));
+  const node=ownerWithFateLevelsV175({M:18,GB:16,FS:15,HS:20});eq('Vierfachsynergie wird Schicksalsknoten','Schicksalsknoten',synergyKind(['M','GB','FS','HS']));eq('Schicksalsknoten-Beispiel hat Stufe 15',15,synergyLevel(node,['M','GB','FS','HS']));node.counters.FS.max=20;eq('Nach Steigerung von Finsternis steigt Stufe auf 16',16,synergyLevel(node,['M','GB','FS','HS']));node.counters.FS.max=14;eq('Vierfachpfad Stufe 14 bleibt Entwurf',false,synergyUnlocked(node,['M','GB','FS','HS']));
+  eq('Auswahlreihenfolge verändert Kombination nicht','M+GB+FS',normalizeFateSynergy({pathCounters:['FS','M','GB']}).pathCounters.join('+'));
+  const validPair=completeSynergyForTestsV175(['M','GB']),duplicateRaw={...validPair,pathCounters:['M','GB','M']};eq('Doppelte Counter werden als Fehler erkannt',true,validateFateSynergy(pair,duplicateRaw).errors.some(message=>message.includes('nur einmal')));
+  eq('Primärpfad außerhalb Auswahl ist ungültig',true,validateFateSynergy(pair,{...validPair,primaryCounter:'FS'}).errors.some(message=>message.includes('Primärpfad')));
+  eq('Kosten-Counter folgt dem Primärpfad','M',validPair.costCounter);eq('Abweichender Kosten-Counter ist ungültig',true,validateFateSynergy(pair,{...validPair,costCounter:'GB'}).errors.some(message=>message.includes('Kosten-Counter')));
+  eq('Genau ein Kosten-Counter wird gespeichert','string',typeof validPair.costCounter);eq('Jeder Nebenpfad besitzt einen Beitrag',1,Object.keys(validPair.secondaryContributions).length);
+  const draft=completeSynergyForTestsV175(['M','GB','HS']);tripleLow.fateSynergies=[draft];eq('Entwurf bleibt unter Schwelle gespeichert','Testsynergie',tripleLow.fateSynergies[0].name);tripleLow.counters.HS.max=10;eq('Steigerung schaltet denselben Entwurf frei',true,synergyUnlocked(tripleLow,draft.pathCounters));eq('Steigerung erhält den Text','Testsynergie',tripleLow.fateSynergies[0].name);tripleLow.counters.HS.max=9;eq('Späteres Unterschreiten löscht keine Daten','Testsynergie',tripleLow.fateSynergies[0].name);
+  const incompleteNode={...completeSynergyForTestsV175(['M','GB','HS','FS']),centralMotif:'',binding:'',signature:'',price:''};eq('Schicksalsknoten verlangt vier Sonderangaben',true,validateFateSynergy(ownerWithFateLevelsV175({M:15,GB:15,HS:15,FS:15}),incompleteNode).errors.length>=4);eq('Zweifachsynergie benötigt keine Knotenfelder',false,validateFateSynergy(pair,validPair).errors.some(message=>message.includes('Motiv')||message.includes('Bindung')||message.includes('Signatur')));
+  const legacy=newCharacterBeforeV175();legacy.fatePath={counter:'GB',pathType:'Kleriker',pathName:'Bewahrer des Lichts',specialization:'Sonne',tradition:'Orden',mentor:'Alar',origin:'Tempel',techniques:['Segen'],obligations:'Gelübde',reputation:'Geachtet',risks:'Ketzer',notes:'Alttext'};delete legacy.fatePaths;delete legacy.fateSynergies;delete legacy.v175FateMigrated;ensureOwnerV175(legacy);eq('Alter Einzelpfad wird richtig zugeordnet','Bewahrer des Lichts',legacy.fatePaths.GB.pathName);eq('Alte Techniken bleiben erhalten','Segen',legacy.fatePaths.GB.techniques[0]);eq('Alte Notizen bleiben erhalten','Alttext',legacy.fatePaths.GB.notes);
+  const migratedState={characters:[legacy],migrationLog:[]};delete migratedState.v175MigrationDone;ensureStateV175(migratedState,true);const logCount=migratedState.migrationLog.length,idCount=legacy.fateSynergies.length;ensureStateV175(migratedState,true);eq('Schema-13-Migration ist idempotent',`${logCount}:${idCount}`,`${migratedState.migrationLog.length}:${legacy.fateSynergies.length}`);
+  const noSynergies=newCharacterBeforeV175();delete noSynergies.fateSynergies;delete noSynergies.fatePaths;delete noSynergies.v175FateMigrated;ensureOwnerV175(noSynergies);eq('Alter Import erhält leere Synergieliste',0,noSynergies.fateSynergies.length);
+  const npc=ownerWithFateLevelsV175({M:10,GB:10},'npc'),familiar=ownerWithFateLevelsV175({M:10,GB:10},'familiar');npc.fateSynergies.push(completeSynergyForTestsV175(['M','GB']));eq('NPC und Vertrauter führen getrennte Synergien',0,familiar.fateSynergies.length);
+  const possession=newAuxEntry('possession','Lager');eq('Besitz schaltet keine Synergie frei',false,synergyUnlocked(possession,['M','GB']));
+  const stable=completeSynergyForTestsV175(['M','GB']),roundtrip=JSON.parse(JSON.stringify(stable));eq('Export und Reimport erhalten stabile Synergie-ID',stable.id,roundtrip.id);eq('Export und Reimport erhalten alle Kernfelder',stable.effect,roundtrip.effect);
+  eq('Alle vier Dreifachkombinationen besitzen Inspirationen',4,Object.keys(FATE_TRIPLE_INSPIRATIONS_V175).length);eq('Acht Vierfachinspirationen vorhanden',8,FATE_NODE_INSPIRATIONS_V175.length);eq('Inspirationen erfinden keine Zahlenwerte',false,/\d/.test(JSON.stringify(FATE_TRIPLE_INSPIRATIONS_V175)+JSON.stringify(FATE_NODE_INSPIRATIONS_V175)));
+  const completeValidation=validateFateSynergy(pair,validPair),draftValidation=validateFateSynergy(tripleLow,draft),errorValidation=validateFateSynergy(pair,{...validPair,name:''});eq('Prüfung unterscheidet gültig, Entwurf und Fehler','true:true:true',`${completeValidation.valid&&completeValidation.summary.unlocked}:${draftValidation.warnings.length>0}:${errorValidation.errors.length>0}`);
+  const printOwner=ownerWithFateLevelsV175({M:10,GB:10});printOwner.fatePaths.M.pathName='Flammenwirker';printOwner.fateSynergies=[validPair];const printCard=renderPrintableCardR15(cardObject('fatePath'),printOwner,{images:true},true),printText=printCard.textContent;eq('Druckrenderer enthält Pfad und Synergie','true:true',`${printText.includes('Flammenwirker')}:${printText.includes('Testsynergie')}`);eq('Mobilregel für 390 Pixel vorhanden',true,fateStyleV175.textContent.includes('@media(max-width:390px)'));
+  for(const[name,expected,actual,ok]of tests)body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return previousOk&&tests.every(test=>test[3]);
+};
+
+/* 14.6 v1.7.5 Paketrevision 2: strukturierte Startpaket-Tabellen */
+const spCatalogR2=(catalogId,quantity=1)=>({kind:'item',catalogId,quantity});
+const spCustomR2=(key,name,category,subcategory,weightKg,valueCopper,description,extra={})=>({kind:'item',key,name,category,itemType:category==='custom'?'custom':'gear',subcategory,quantity:1,weightKg,minStrength:0,valueCopper,description,...extra});
+const spBenefitR2=(key,name,categoryLabel,description)=>({kind:'benefit',key,name,categoryLabel,quantity:1,weightKg:null,minStrength:0,valueCopper:0,description});
+const spFixedR2=(id,entry)=>({id,entry});
+const spChoiceR2=(id,label,options)=>({id,label,options});
+const spOptionR2=(id,label,...entries)=>({id,label,entries});
+
+const SP_CLOTHING_R2={
+  simple:spCustomR2('clothes-simple','Einfache Kleidung','custom','Kleidung',1.5,12,'Schlichtes Hemd, Hose oder Rock, Gürtel und einfache Schuhe.'),
+  travel:spCustomR2('clothes-travel','Reisekleidung','custom','Kleidung',2,22,'Strapazierfähige Kleidung für längere Wege und wechselndes Wetter.'),
+  robust:spCustomR2('clothes-robust','Robuste Kleidung','custom','Kleidung',2.5,28,'Verstärkte Alltagskleidung für Reise und körperliche Belastung.'),
+  work:spCustomR2('clothes-work','Arbeitskleidung','custom','Kleidung',2.5,20,'Abriebfeste Arbeitskleidung mit Schürze oder Überwurf.'),
+  proper:spCustomR2('clothes-proper','Ordentliche Kleidung','custom','Kleidung',2,45,'Gepflegte Kleidung für Beruf, Lehre oder gesellschaftliche Anlässe.'),
+  weather:spCustomR2('clothes-weather','Wetterfeste Kleidung','custom','Kleidung',3,38,'Dichte, robuste Kleidung mit Schutz gegen Regen, Wind und Gestrüpp.'),
+  order:spCustomR2('clothes-order','Schlichte Ordenskleidung','custom','Kleidung',2,18,'Unauffällige Kleidung in Farben und Schnitt der Gemeinschaft.'),
+  status:spCustomR2('clothes-status','Standesgemäße Kleidung','custom','Kleidung',2.5,90,'Gute Kleidung, deren Stoff und Verarbeitung den gesellschaftlichen Rang zeigen.'),
+  noble:spCustomR2('clothes-noble','Hochwertige Kleidung','custom','Kleidung',2.5,180,'Feine, aufwendig verarbeitete Kleidung aus hochwertigen Stoffen.')
+};
+const SP_COMMON_R2={
+  coat:spCustomR2('coat','Mantel','gear.travel','Reisekleidung',2,24,'Woll- oder Leinenmantel gegen Kälte und Niederschlag.'),
+  walkingStaff:spCustomR2('walking-staff','Wanderstab','gear.travel','Reiseausrüstung',1.2,5,'Stabiler Holzstab zum Wandern und Abstützen; keine regeltechnische Waffe.'),
+  professionalTools:spCustomR2('professional-tools','Vollständiges Berufsgerät','gear.tool','Berufswerkzeug',6,85,'Vollständiger, auf ein gewähltes Handwerk abgestimmter Werkzeugsatz.'),
+  toolBag:spCustomR2('tool-bag','Werkzeugtasche','gear.container','Behälter',0.8,18,'Verstärkte Tasche mit Schlaufen und Fächern für Handwerkzeug.'),
+  trapMaterial:spCustomR2('trap-material','Fallenmaterial','gear.tool','Wildniswerkzeug',2,20,'Draht, Schnüre, Haken und Kleinteile zum Bau einfacher Fallen.'),
+  waxTablets:spCustomR2('wax-tablets','Wachstafeln','gear.writing','Schrift und Karten',0.6,10,'Mehrere wiederverwendbare Wachstafeln mit Griffel.'),
+  parchment:spCustomR2('parchment','Pergamentblätter','gear.writing','Schrift und Karten',0.2,18,'Ein kleines Bündel beschreibbarer Pergamentblätter.'),
+  ink:spCustomR2('ink','Tintenfläschchen','gear.writing','Schrift und Karten',0.15,8,'Verschließbares Fläschchen mit Schreibtinte.'),
+  book:spCustomR2('book','Fachbuch','gear.writing','Schrift und Karten',1.5,55,'Gebundenes Grundlagenwerk zu einem gewählten Fachgebiet.'),
+  shoulderBag:spCustomR2('shoulder-bag','Umhängetasche','gear.container','Behälter',0.5,16,'Kleine Tasche mit Schulterriemen für Bücher und persönliche Gegenstände.'),
+  pilgrimStaff:spCustomR2('pilgrim-staff','Pilgerstab','gear.travel','Reiseausrüstung',1.5,8,'Kennzeichnender Stab für lange Wege; keine regeltechnische Waffe.'),
+  holySymbol:spCustomR2('holy-symbol','Heiliges Symbol','custom','Religiöser Gegenstand',0.2,25,'Persönliches Symbol des verehrten Kultes oder Ordens.'),
+  prayerBand:spCustomR2('prayer-band','Gebetsband','custom','Religiöser Gegenstand',0.1,6,'Band mit Knoten, Zeichen oder Versen für Andacht und Gebet.'),
+  reliquary:spCustomR2('reliquary','Reliquienkapsel','custom','Religiöser Gegenstand',0.2,30,'Kleine verschließbare Kapsel für eine geweihte Erinnerung oder Reliquie.'),
+  seal:spCustomR2('official-seal','Siegel','custom','Insignie',0.1,40,'Persönlicher Siegelstempel; Rechte entstehen nur aus der zugehörigen Stellung.'),
+  badge:spCustomR2('official-badge','Amtszeichen','custom','Insignie',0.3,35,'Sichtbares Zeichen eines Amtes; seine Gültigkeit hängt von der Stellung ab.'),
+  signetRing:spCustomR2('signet-ring','Siegelring','custom','Insignie',0.05,120,'Hochwertiger Ring mit persönlicher oder familiärer Siegelgravur.')
+};
+
+const START_PACKAGE_TABLES_R2={
+  'Vagabund':[
+    spFixedR2('clothing',SP_CLOTHING_R2.simple),spFixedR2('blanket',spCatalogR2('gear_blanket')),spFixedR2('pouch',spCatalogR2('gear_pouch')),
+    spChoiceR2('simple-weapon','Messer oder Knüppel',[spOptionR2('dagger','Dolch',spCatalogR2('wpn_melee_dagger')),spOptionR2('club','Keule',spCatalogR2('wpn_melee_club'))])
+  ],
+  'Reisender':[
+    spFixedR2('clothing',SP_CLOTHING_R2.travel),spFixedR2('coat',SP_COMMON_R2.coat),spFixedR2('backpack',spCatalogR2('gear_backpack')),spFixedR2('bedroll',spCatalogR2('gear_bedroll')),spFixedR2('cooking',spCatalogR2('gear_cooking_pot')),spFixedR2('water',spCatalogR2('gear_waterskin')),
+    spChoiceR2('staff-or-sidearm','Wanderstab oder Seitenwaffe',[spOptionR2('staff','Wanderstab',SP_COMMON_R2.walkingStaff),spOptionR2('dagger','Dolch',spCatalogR2('wpn_melee_dagger'))])
+  ],
+  'Abenteurer':[
+    spFixedR2('clothing',SP_CLOTHING_R2.robust),spFixedR2('backpack',spCatalogR2('gear_backpack')),spFixedR2('bedroll',spCatalogR2('gear_bedroll')),spFixedR2('cooking',spCatalogR2('gear_cooking_pot')),spFixedR2('water',spCatalogR2('gear_waterskin')),spFixedR2('rope',spCatalogR2('gear_rope_fine_10m')),
+    spChoiceR2('light','Lichtquelle',[spOptionR2('torch','Fackel',spCatalogR2('gear_torch')),spOptionR2('lantern','Laterne',spCatalogR2('gear_lantern'))]),
+    spChoiceR2('main-weapon','Hauptwaffe',[spOptionR2('shortsword','Kurzschwert',spCatalogR2('wpn_melee_short_sword')),spOptionR2('spear','Speer',spCatalogR2('wpn_melee_spear')),spOptionR2('handaxe','Handaxt',spCatalogR2('wpn_melee_hand_axe'))]),
+    spChoiceR2('side-or-shield','Nebenwaffe oder Schild',[spOptionR2('dagger','Dolch',spCatalogR2('wpn_melee_dagger')),spOptionR2('buckler','Buckler',spCatalogR2('armor_shield_buckler')),spOptionR2('roundshield','Rundschild',spCatalogR2('armor_shield_round'))]),
+    spChoiceR2('light-armor','Leichte Rüstung',[spOptionR2('padded','Gepolsterte Jacke',spCatalogR2('armor_padded_jacket')),spOptionR2('leather','Lederwams',spCatalogR2('armor_leather_jerkin'))]),
+    spFixedR2('healing',spCatalogR2('gear_bandage'))
+  ],
+  'Arbeiter / Tagelöhner':[
+    spFixedR2('clothing',SP_CLOTHING_R2.work),spFixedR2('boots',spCatalogR2('armor_part_leather_boots')),spFixedR2('tools',spCatalogR2('gear_toolkit_basic')),spFixedR2('knife',spCatalogR2('wpn_melee_dagger')),spFixedR2('blanket',spCatalogR2('gear_blanket'))
+  ],
+  'Handwerker':[
+    spFixedR2('clothing',SP_CLOTHING_R2.proper),spFixedR2('professional-tools',SP_COMMON_R2.professionalTools),spFixedR2('tool-bag',SP_COMMON_R2.toolBag),
+    spChoiceR2('sidearm','Messer oder Seitenwaffe',[spOptionR2('dagger','Dolch',spCatalogR2('wpn_melee_dagger')),spOptionR2('simple','Leichte simple Nahkampfwaffe',spCatalogR2('wpn_melee_light_simple'))])
+  ],
+  'Wildnisläufer':[
+    spFixedR2('clothing',SP_CLOTHING_R2.weather),spFixedR2('backpack',spCatalogR2('gear_backpack')),spFixedR2('bedroll',spCatalogR2('gear_bedroll')),spFixedR2('fire',spCatalogR2('gear_tinderbox')),spFixedR2('rope',spCatalogR2('gear_rope_fine_10m')),spFixedR2('knife',spCatalogR2('wpn_melee_dagger')),
+    spChoiceR2('ranged-set','Fernkampfwaffe mit Munition',[spOptionR2('shortbow','Kurzbogen + 12 Pfeile',spCatalogR2('wpn_ranged_shortbow'),spCatalogR2('ammo_arrow_12')),spOptionR2('sling','Schleuder + 20 Steine',spCatalogR2('wpn_ranged_sling'),spCatalogR2('ammo_sling_stone_20')),spOptionR2('hand-crossbow','Handarmbrust + 12 kurze Bolzen',spCatalogR2('wpn_ranged_hand_crossbow'),spCatalogR2('ammo_short_bolt_12'))]),
+    spFixedR2('traps',SP_COMMON_R2.trapMaterial)
+  ],
+  'Gelehrter':[
+    spFixedR2('clothing',SP_CLOTHING_R2.proper),spFixedR2('writing',spCatalogR2('gear_writing_set')),
+    spChoiceR2('writing-surface','Wachstafeln oder Pergament',[spOptionR2('wax',SP_COMMON_R2.waxTablets.name,SP_COMMON_R2.waxTablets),spOptionR2('parchment',SP_COMMON_R2.parchment.name,SP_COMMON_R2.parchment)]),
+    spFixedR2('ink',SP_COMMON_R2.ink),spFixedR2('book',SP_COMMON_R2.book),spFixedR2('bag',SP_COMMON_R2.shoulderBag),
+    spChoiceR2('simple-weapon','Einfache Waffe',[spOptionR2('small','Kleine simple Nahkampfwaffe',spCatalogR2('wpn_melee_small_simple')),spOptionR2('staff','Kampfstab',spCatalogR2('wpn_melee_quarterstaff'))])
+  ],
+  'Pilger / Akolyth':[
+    spFixedR2('clothing',SP_CLOTHING_R2.order),spFixedR2('coat',SP_COMMON_R2.coat),spFixedR2('staff',SP_COMMON_R2.pilgrimStaff),spFixedR2('symbol',SP_COMMON_R2.holySymbol),
+    spChoiceR2('devotional-item','Gebetsband oder Reliquienkapsel',[spOptionR2('prayer-band',SP_COMMON_R2.prayerBand.name,SP_COMMON_R2.prayerBand),spOptionR2('reliquary',SP_COMMON_R2.reliquary.name,SP_COMMON_R2.reliquary)]),spFixedR2('healing',spCatalogR2('gear_bandage'))
+  ],
+  'Söldner':[
+    spFixedR2('clothing',SP_CLOTHING_R2.robust),
+    spChoiceR2('main-weapon','Hauptwaffe',[spOptionR2('longsword','Langschwert',spCatalogR2('wpn_melee_long_sword')),spOptionR2('spear','Speer',spCatalogR2('wpn_melee_spear')),spOptionR2('warhammer','Kriegshammer',spCatalogR2('wpn_melee_warhammer'))]),
+    spChoiceR2('sidearm','Nebenwaffe',[spOptionR2('shortsword','Kurzschwert',spCatalogR2('wpn_melee_short_sword')),spOptionR2('dagger','Dolch',spCatalogR2('wpn_melee_dagger'))]),
+    spChoiceR2('shield-or-spare','Schild oder Ersatzwaffe',[spOptionR2('shield','Rundschild',spCatalogR2('armor_shield_round')),spOptionR2('spare','Handaxt',spCatalogR2('wpn_melee_hand_axe'))]),
+    spChoiceR2('armor','Leichte oder mittlere Rüstung',[spOptionR2('reinforced','Verstärkte Lederrüstung',spCatalogR2('armor_reinforced_leather')),spOptionR2('chain','Kettenhemd',spCatalogR2('armor_chain_shirt'))]),
+    spChoiceR2('helmet','Helm',[spOptionR2('padded','Gepolsterte Haube',spCatalogR2('armor_part_padded_hood')),spOptionR2('iron','Eisenhelm',spCatalogR2('armor_part_iron_helmet'))]),spFixedR2('care',spCatalogR2('gear_weapon_care'))
+  ],
+  'Standesträger':[
+    spFixedR2('clothing',SP_CLOTHING_R2.status),spChoiceR2('insignia','Siegel oder Amtszeichen',[spOptionR2('seal',SP_COMMON_R2.seal.name,SP_COMMON_R2.seal),spOptionR2('badge',SP_COMMON_R2.badge.name,SP_COMMON_R2.badge)]),
+    spChoiceR2('main-weapon','Gute Hauptwaffe',[spOptionR2('rapier','Rapier',spCatalogR2('wpn_melee_rapier')),spOptionR2('longsword','Langschwert',spCatalogR2('wpn_melee_long_sword')),spOptionR2('warhammer','Kriegshammer',spCatalogR2('wpn_melee_warhammer'))]),
+    spChoiceR2('armor','Leichte oder mittlere Rüstung',[spOptionR2('leather','Lederwams',spCatalogR2('armor_leather_jerkin')),spOptionR2('reinforced','Verstärkte Lederrüstung',spCatalogR2('armor_reinforced_leather')),spOptionR2('chain','Kettenhemd',spCatalogR2('armor_chain_shirt'))]),spFixedR2('writing',spCatalogR2('gear_writing_set'))
+  ],
+  'Adeliger Start':[
+    spFixedR2('clothing',SP_CLOTHING_R2.noble),spFixedR2('signet',SP_COMMON_R2.signetRing),spFixedR2('coat-of-arms',spBenefitR2('coat-of-arms','Wappenrecht','Recht','Das Recht, ein anerkanntes Wappen zu führen; kein tragbarer Gegenstand.')),
+    spChoiceR2('main-weapon','Gute Hauptwaffe',[spOptionR2('rapier','Rapier',spCatalogR2('wpn_melee_rapier')),spOptionR2('longsword','Langschwert',spCatalogR2('wpn_melee_long_sword')),spOptionR2('warhammer','Kriegshammer',spCatalogR2('wpn_melee_warhammer'))]),
+    spChoiceR2('armor','Rüstung nach Stand',[spOptionR2('reinforced','Verstärkte Lederrüstung',spCatalogR2('armor_reinforced_leather')),spOptionR2('chain','Kettenhemd',spCatalogR2('armor_chain_shirt')),spOptionR2('breastplate','Brustplatte',spCatalogR2('armor_breastplate'))]),
+    spChoiceR2('retinue','Reittier oder Bediensteter',[spOptionR2('mount','Reittier',spBenefitR2('mount','Reittier','Begleiter','Ein passendes Reittier; Werte werden auf einem eigenen Besitz- oder NPC-Reiter geführt.')),spOptionR2('servant','Bediensteter',spBenefitR2('servant','Bediensteter','Begleiter','Eine dienende Person; Werte werden auf einem eigenen NPC-Reiter geführt.'))]),spFixedR2('writing',spCatalogR2('gear_writing_set'))
+  ]
+};
+START_PACKAGES.forEach(p=>p.itemTable=START_PACKAGE_TABLES_R2[p.name]||[]);
+const PACKAGE_DEFINED_ITEMS_R3=[...new Map(Object.values(START_PACKAGE_TABLES_R2).flat().flatMap(row=>row.options?.flatMap(option=>option.entries)||[row.entry]).filter(entry=>entry?.kind==='item'&&!entry.catalogId&&entry.key).map(entry=>[entry.key,entry])).values()];
+
+function packageDefinitionR2(name){return START_PACKAGES.find(p=>p.name===name)}
+function packageCatalogEntryR2(entry){return entry?.catalogId?ITEM_CATALOG_V174.find(item=>item.id===entry.catalogId):null}
+function packageResolvedEntryR2(entry){const catalog=packageCatalogEntryR2(entry);return catalog?{...catalog,...entry,name:catalog.name,category:catalog.category,itemType:catalog.itemType,weightKg:catalog.weightKg,minStrength:catalog.minStrength??0,valueCopper:catalog.valueCopper??0,description:catalog.description||''}:entry}
+function selectedPackageOptionR2(row,selections={}){if(!row.options?.length)return null;return row.options.find(option=>option.id===selections[row.id])||row.options[0]}
+function packageItemTokenR3(entry){return entry?.catalogId?`catalog:${entry.catalogId}`:entry?.key?`package:${entry.key}`:''}
+function packageItemSlotKeyR3(row,index){return`${row.id}::${index}`}
+function packageChoicePoolR3(base,row,index,resolvedEntries=[]){
+  if(base?.kind!=='item')return[];
+  let catalog=ITEM_CATALOG_V174.filter(item=>item.category===base.category);
+  if(row.id==='ranged-set'&&base.category==='weapon.ranged')catalog=catalog.filter(weapon=>ITEM_CATALOG_V174.some(ammo=>ammo.category==='weapon.ammunition'&&Array.isArray(ammo.compatibleWith)&&ammo.compatibleWith.includes(weapon.id)));
+  if(row.id==='ranged-set'&&base.category==='weapon.ammunition'){
+    const weapon=resolvedEntries.find(entry=>entry.category==='weapon.ranged');
+    catalog=catalog.filter(ammo=>weapon?.catalogId&&Array.isArray(ammo.compatibleWith)&&ammo.compatibleWith.includes(weapon.catalogId));
+  }
+  const custom=base.catalogId?[]:base.category==='custom'?PACKAGE_DEFINED_ITEMS_R3.filter(item=>item.category===base.category&&item.subcategory===base.subcategory):[base];
+  const candidates=[...custom,...catalog.map(item=>packageResolvedEntryR2({kind:'item',catalogId:item.id,quantity:base.quantity||1}))],unique=[];
+  for(const candidate of candidates){const token=packageItemTokenR3(candidate);if(token&&!unique.some(item=>packageItemTokenR3(item)===token))unique.push(packageResolvedEntryR2(candidate))}
+  return unique;
+}
+function packageOptionStructureR3(option){return(option?.entries||[]).map(entry=>entry.kind==='benefit'?`benefit:${entry.categoryLabel||entry.key}`:`item:${entry.category}:${entry.subcategory||''}`).join('|')}
+function packageNeedsOptionSelectR3(row){if(!row.options?.length)return false;if(row.options.some(option=>option.entries?.some(entry=>entry.kind==='benefit')))return true;return new Set(row.options.map(packageOptionStructureR3)).size>1}
+function resolvedPackageRowsR2(p,selections={}){
+  return(p?.itemTable||[]).map(row=>{
+    const option=selectedPackageOptionR2(row,selections),baseEntries=(option?.entries||[row.entry]).filter(Boolean).map(packageResolvedEntryR2),entries=[],catalogSlots=[];
+    for(const[index,base]of baseEntries.entries()){
+      if(base.kind!=='item'){entries.push(base);continue}
+      const pool=packageChoicePoolR3(base,row,index,entries),key=packageItemSlotKeyR3(row,index),selected=pool.find(entry=>packageItemTokenR3(entry)===selections[key]),fallback=pool.find(entry=>packageItemTokenR3(entry)===packageItemTokenR3(base))||pool[0],entry=selected||fallback;
+      if(entry){entries.push(entry);catalogSlots.push({key,index,base,entry,pool})}
+    }
+    return{...row,option,entries,catalogSlots};
+  })
+}
+function packageCategoryLabelR2(entry){if(entry.kind==='benefit')return entry.categoryLabel||'Vorteil';return categoryLabelCompactV174(entry)}
+function packageRuleTextR2(entry){if(entry.kind==='benefit')return entry.description||'—';const values=[];if(entry.damage)values.push(`Schaden ${entry.damage}`);if(entry.protection!==null&&entry.protection!==undefined)values.push(`Schutz ${entry.protection}`);if(entry.blockBonus)values.push(`Block +${entry.blockBonus}`);if(entry.capacity)values.push(`Kapazität ${entry.capacity}`);if(entry.uses)values.push(`Anwendungen ${entry.uses}`);return values.join(' · ')||entry.effect||entry.description||'—'}
+function formatPackageWeightR2(entries){if(entries.some(entry=>entry.kind==='item'&&finiteOrNullV174(entry.weightKg)===null))return'Gewicht offen';const value=entries.reduce((sum,entry)=>sum+(entry.kind==='item'?(+entry.weightKg||0)*(+entry.quantity||1):0),0);return value?`${value.toLocaleString('de-AT',{maximumFractionDigits:2})} kg`:'—'}
+function packageRowDisplayR2(resolved){const entries=resolved.entries,names=entries.map(entry=>entry.name).join(' + '),categories=[...new Set(entries.map(packageCategoryLabelR2))].join(' / '),quantities=entries.map(entry=>entry.quantity||1).join(' + '),minStrength=Math.max(0,...entries.filter(entry=>entry.kind==='item').map(entry=>+entry.minStrength||0)),rules=entries.map(packageRuleTextR2).filter(value=>value&&value!=='—'),value=entries.reduce((sum,entry)=>sum+(entry.kind==='item'?(+entry.valueCopper||0)*(+entry.quantity||1):0),0),sources=[...new Set(entries.map(entry=>entry.kind==='benefit'?'Regel / Begleiter':entry.catalogId?'Katalog':'Paketdefinition'))];return{names,categories,quantities,minStrength,rules:rules.join(' · ')||'—',weight:formatPackageWeightR2(entries),value:`${value} K · ${sources.join(' / ')}`}}
+function packageSelectionDefaultsR2(p,selections={}){const result={...selections};for(const row of p?.itemTable||[])if(row.options?.length&&!row.options.some(option=>option.id===result[row.id]))result[row.id]=row.options[0].id;for(const row of resolvedPackageRowsR2(p,result))for(const slot of row.catalogSlots||[])result[slot.key]=packageItemTokenR3(slot.entry);return result}
+function packageBenefitsR2(p,selections={}){return resolvedPackageRowsR2(p,selections).flatMap(row=>row.entries.filter(entry=>entry.kind==='benefit').map(entry=>({id:entry.key||row.id,name:entry.name,category:entry.categoryLabel||'Vorteil',description:entry.description||'',packageItemId:row.id,packageOptionId:row.option?.id||''})))}
+function packagePreservedItemR2(previous,rowId,entry){const key=entry.catalogId||entry.key||entry.name;return previous.find(item=>item.packageItemId===rowId&&(item.catalogId||item.packageDefinitionId||item.name)===key)||previous.find(item=>(item.catalogId||item.packageDefinitionId||item.name)===key)}
+function buildPackageItemsR2(p,selections={},previous=[]){const result=[];for(const row of resolvedPackageRowsR2(p,selections)){for(const entry of row.entries){if(entry.kind!=='item')continue;const old=packagePreservedItemR2(previous,row.id,entry),quantity=Math.max(1,+entry.quantity||1),instanceId=uid(),raw={...entry,id:undefined,instanceId,catalogId:entry.catalogId||'',packageDefinitionId:entry.key||'',quantity,qty:quantity,cbpCost:0,cbp:0,cbpRelevant:false,source:'startPackage',packageName:p.name,packageItemId:row.id,packageOptionId:row.option?.id||'',loadState:old?.loadState||'carried',equippedQuantity:Math.min(quantity,+old?.equippedQuantity||0),active:old?.active!==false,storageLocation:old?.storageLocation||'',notes:old?.notes||''};result.push(normalizeItemV174(raw))}}return result}
+function rebuildStartPackageItemsR2(owner,p,selections={},previous=null){owner.equipment=Array.isArray(owner.equipment)?owner.equipment:[];const old=previous||owner.equipment.filter(item=>item.source==='startPackage'&&item.packageName===p.name),manual=owner.equipment.filter(item=>item.source!=='startPackage');const normalizedSelections=packageSelectionDefaultsR2(p,selections);owner.equipment=[...manual,...buildPackageItemsR2(p,normalizedSelections,old)];owner.startPackage.itemSelections=normalizedSelections;owner.startPackage.benefits=packageBenefitsR2(p,normalizedSelections);return owner}
+
+applyStartPackageV173=function(owner,index){
+  ensureUniversalOwnerV173(owner);owner.equipment=Array.isArray(owner.equipment)?owner.equipment:[];const p=START_PACKAGES[index],oldPackage=owner.startPackage,oldItems=owner.equipment.filter(item=>item.source==='startPackage');
+  if(!p){owner.equipment=owner.equipment.filter(item=>item.source!=='startPackage');owner.startPackage=null;owner.startMoneyExpression='';saveOwnerV173(owner,true);return}
+  const same=oldPackage?.name===p.name,accounting=oldPackage?.accounting||{mode:'inherit'},choices=same?(oldPackage.choices||''):'',itemSelections=packageSelectionDefaultsR2(p,same?(oldPackage.itemSelections||{}):{});
+  owner.startPackage={...p,choices,itemSelections,accounting,active:true};owner.startMoneyExpression=p.money;rebuildStartPackageItemsR2(owner,p,itemSelections,same?oldItems:[]);owner.rationTracker=owner.rationTracker||{max:0,current:0,note:''};owner.rationTracker.max=p.rations;owner.rationTracker.current=p.rations;saveOwnerV173(owner,true)
+};
+
+const packageStyleR2=el('style',{text:`
+.start-package-list-r2{display:grid;gap:.7rem}.start-package-r2{border:1px solid var(--line);border-radius:12px;background:color-mix(in srgb,var(--panel) 92%,var(--accent) 8%);overflow:hidden}.start-package-r2[open]{box-shadow:0 8px 24px #0002}.start-package-summary-r2{display:grid;grid-template-columns:auto minmax(10rem,1fr) auto auto;gap:.7rem;align-items:center;padding:.8rem 1rem;cursor:pointer}.start-package-summary-r2::marker{color:var(--accent)}.start-package-summary-r2 input{width:auto}.package-cost-r2,.package-meta-r2{white-space:nowrap}.package-cost-r2{font-weight:700;color:var(--accent)}.package-meta-r2{font-size:.88rem;color:var(--muted)}.start-package-body-r2{padding:0 1rem 1rem}.start-package-table-r2{min-width:760px}.start-package-table-r2 th,.start-package-table-r2 td{vertical-align:top}.start-package-table-r2 select{min-width:12rem}.package-select-stack-r3{display:grid;gap:.45rem;min-width:15rem}.package-select-stack-r3 label{display:grid;gap:.2rem}.package-select-stack-r3 label>span{font-size:.76rem;color:var(--muted)}.package-choice-note-r2{display:block;margin-top:.25rem;color:var(--muted);font-size:.8rem}.package-benefits-r2{display:grid;gap:.35rem;margin:.7rem 0}.package-benefits-r2 .notice{margin:0}@media(max-width:760px){.start-package-summary-r2{grid-template-columns:auto 1fr auto}.package-meta-r2{grid-column:2/-1}.start-package-body-r2{padding-inline:.55rem}}
+`});document.head.append(packageStyleR2);
+
+function packageOptionTextR3(entry){const stats=[];if(entry.damage)stats.push(entry.damage);if(entry.protection!==null&&entry.protection!==undefined)stats.push(`Schutz ${entry.protection}`);if(entry.blockBonus)stats.push(`Block +${entry.blockBonus}`);stats.push(`${(+entry.weightKg||0).toLocaleString('de-AT',{maximumFractionDigits:2})} kg`);return`${entry.name} · ${stats.join(' · ')}`}
+function updatePackageSelectionR3(owner,p,key,value){owner.startPackage.itemSelections[key]=value;owner.startPackage.itemSelections=packageSelectionDefaultsR2(p,owner.startPackage.itemSelections);rebuildStartPackageItemsR2(owner,p,owner.startPackage.itemSelections);saveOwnerV173(owner,true)}
+function renderPackageRowsTableR2(owner,p,interactive=false){
+  const selections=packageSelectionDefaultsR2(p,interactive?owner.startPackage?.itemSelections||{}:{});if(interactive)owner.startPackage.itemSelections=selections;
+  const table=el('table',{class:'start-package-table-r2'}),body=el('tbody');table.append(el('thead',{},[el('tr',{},['Kategorie','Gegenstand / Auswahl','Anzahl','Gewicht','Min-ST','Regelwerte','Wert / Quelle'].map(label=>el('th',{text:label})))]),body);
+  for(const resolved of resolvedPackageRowsR2(p,selections)){
+    const display=packageRowDisplayR2(resolved),nameCell=el('td');
+    if(interactive){
+      const stack=el('div',{class:'package-select-stack-r3'});
+      if(packageNeedsOptionSelectR3(resolved)){
+        const structure=el('select',{'aria-label':`${p.name}: ${resolved.label}`});for(const option of resolved.options)structure.append(el('option',{value:option.id,text:option.label}));structure.value=resolved.option.id;structure.onchange=event=>updatePackageSelectionR3(owner,p,resolved.id,event.target.value);stack.append(el('label',{},[el('span',{text:resolved.label||'Paketwahl'}),structure]));
+      }
+      for(const slot of resolved.catalogSlots||[]){
+        const select=el('select',{'aria-label':`${p.name}: ${resolved.label||resolved.id} – ${packageCategoryLabelR2(slot.base)}`});for(const entry of slot.pool)select.append(el('option',{value:packageItemTokenR3(entry),text:packageOptionTextR3(entry)}));select.value=packageItemTokenR3(slot.entry);select.onchange=event=>updatePackageSelectionR3(owner,p,slot.key,event.target.value);stack.append(el('label',{},[el('span',{text:`${packageCategoryLabelR2(slot.base)} · ${slot.pool.length} wählbare Items`}),select]));
+      }
+      if(stack.children.length)nameCell.append(stack);else nameCell.append(el('strong',{text:display.names}));
+      if(resolved.label&&!packageNeedsOptionSelectR3(resolved))nameCell.append(el('small',{class:'package-choice-note-r2',text:resolved.label}));
+    }else{nameCell.append(el('strong',{text:display.names}));if(resolved.catalogSlots?.length)nameCell.append(el('small',{class:'package-choice-note-r2',text:resolved.catalogSlots.map(slot=>`${packageCategoryLabelR2(slot.base)}: ${slot.pool.length} Items`).join(' · ')}));if(resolved.options?.length&&packageNeedsOptionSelectR3(resolved))nameCell.append(el('small',{class:'package-choice-note-r2',text:`Paketwahl: ${resolved.options.map(option=>option.label).join(' / ')}`}))}
+    body.append(el('tr',{},[el('td',{text:display.categories}),nameCell,el('td',{text:display.quantities}),el('td',{text:display.weight}),el('td',{text:String(display.minStrength)}),el('td',{text:display.rules}),el('td',{text:display.value})]));
+  }
+  return table
+}
+renderStartPackageV173=function(owner,card){ensureUniversalOwnerV173(owner);const box=el('div');box.append(el('p',{class:'notice',text:'Im aktiven Startpaket ist jeder Gegenstand aus der vorhandenen Itemliste seiner Kategorie wählbar. Die Auswahl übernimmt automatisch alle Katalogwerte. Fernkampfmunition wird passend zur gewählten Waffe gefiltert; Sondereinträge ohne Kataloggegenstück bleiben als Paketdefinition verfügbar.'}));const list=el('div',{class:'start-package-list-r2'}),group='start-'+owner.id+'-'+card.id;for(const[pIndex,p]of START_PACKAGES.entries()){const active=owner.startPackage?.name===p.name,details=el('details',{class:'start-package-r2'});details.open=active;const radio=el('input',{type:'radio',name:group,value:pIndex,'aria-label':p.name});radio.checked=active;radio.onclick=event=>event.stopPropagation();radio.onchange=()=>applyStartPackageV173(owner,pIndex);const summary=el('summary',{class:'start-package-summary-r2'},[radio,el('strong',{text:p.name}),el('span',{class:'package-cost-r2',text:`${p.cost} CBP`}),el('span',{class:'package-meta-r2',text:`${p.rations} Rationen · ${p.money}`})]),body=el('div',{class:'start-package-body-r2'});body.append(el('div',{class:'scroll'},[renderPackageRowsTableR2(owner,p,active)]));details.append(summary,body);list.append(details)}box.append(list);if(owner.startPackage){const p=packageDefinitionR2(owner.startPackage.name),benefits=packageBenefitsR2(p,owner.startPackage.itemSelections||{});if(benefits.length){const benefitBox=el('div',{class:'package-benefits-r2'});benefitBox.append(el('strong',{text:'Nicht tragbare Paketbestandteile'}));for(const benefit of benefits)benefitBox.append(el('div',{class:'notice ok',text:`${benefit.category}: ${benefit.name} · ${benefit.description}`}));box.append(benefitBox)}const choices=variableTextV173(owner.startPackage.choices||'','Weitere Festlegungen und Notizen',value=>{owner.startPackage.choices=value;saveOwnerV173(owner)});box.append(el('label',{class:'field'},[el('span',{text:'Weitere Festlegungen / Notizen'}),choices]),renderEntryAccountingV173(owner.startPackage,owner,()=>owner.startPackage.cost),el('button',{class:'danger',text:'Startpaket entfernen',onclick:()=>applyStartPackageV173(owner,-1)}))}return box};
+
+function ensureStartPackageTablesR2(data,log=true){if(data.v175StartPackageTablesR2Done)return data;let changed=0;const owners=[];for(const character of data.characters||[]){owners.push(character,...(character.auxiliaryTabs||[]))}for(const owner of owners){const p=packageDefinitionR2(owner.startPackage?.name);if(!p)continue;const oldPackage=owner.startPackage,oldItems=(owner.equipment||[]).filter(item=>item.source==='startPackage');owner.startPackage={...p,...oldPackage,cost:p.cost,items:p.items,itemTable:p.itemTable,itemSelections:packageSelectionDefaultsR2(p,oldPackage.itemSelections||{}),accounting:oldPackage.accounting||{mode:'inherit'},active:oldPackage.active!==false};rebuildStartPackageItemsR2(owner,p,owner.startPackage.itemSelections,oldItems);owner.startMoneyExpression=owner.startMoneyExpression||p.money;changed++}data.v175StartPackageTablesR2Done=true;if(log){data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];data.migrationLog.push({from:13,to:13,at:new Date().toISOString(),changes:[changed?`${changed} Startpaket(e) auf kategorisierte Gegenstandstabellen umgestellt`:'Strukturierte Startpaket-Tabellen aktiviert']})}return data}
+const migrateStateBeforeStartPackagesR2=migrateState;migrateState=function(data){return ensureStartPackageTablesR2(migrateStateBeforeStartPackagesR2(data),true)};
+if(!state.v175StartPackageTablesR2Done){try{localStorage.setItem(STORE+'.backup.startpackages-r2.'+Date.now(),JSON.stringify(state))}catch{}}
+state=ensureStartPackageTablesR2(state,true);
+
+function ensureStartPackageCatalogChoicesR3(data,log=true){if(data.v175StartPackageCatalogChoicesR3Done)return data;let changed=0;const owners=[];for(const character of data.characters||[])owners.push(character,...(character.auxiliaryTabs||[]));for(const owner of owners){const p=packageDefinitionR2(owner.startPackage?.name);if(!p)continue;const oldItems=(owner.equipment||[]).filter(item=>item.source==='startPackage');owner.startPackage.itemSelections=packageSelectionDefaultsR2(p,owner.startPackage.itemSelections||{});rebuildStartPackageItemsR2(owner,p,owner.startPackage.itemSelections,oldItems);changed++}data.v175StartPackageCatalogChoicesR3Done=true;if(log){data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];data.migrationLog.push({from:13,to:13,at:new Date().toISOString(),changes:[changed?`${changed} Startpaket(e) für kategorieweite Itemauswahl vorbereitet`:'Kategorieweite Itemauswahl für Startpakete aktiviert']})}return data}
+const migrateStateBeforeStartPackageChoicesR3=migrateState;migrateState=function(data){return ensureStartPackageCatalogChoicesR3(migrateStateBeforeStartPackageChoicesR3(data),true)};
+if(!state.v175StartPackageCatalogChoicesR3Done){try{localStorage.setItem(STORE+'.backup.startpackages-r3.'+Date.now(),JSON.stringify(state))}catch{}}
+state=ensureStartPackageCatalogChoicesR3(state,true);
+
+const renderPrintPackageBeforeR2=renderPrintPackageR15;
+renderPrintPackageR15=function(card,owner){const p=packageDefinitionR2(owner.startPackage?.name);if(!p)return renderPrintPackageBeforeR2(card,owner);const content=el('div'),lead=el('p',{text:`${p.name} · ${p.cost} CBP · ${p.rations} Rationen · Startgeld ${owner.startMoneyExpression||p.money}`}),table=el('table'),body=el('tbody');table.append(el('thead',{},[el('tr',{},['Kategorie','Gegenstand / Auswahl','Anzahl','Gewicht','Min-ST','Regelwerte','Wert'].map(label=>el('th',{text:label})))]),body);for(const row of resolvedPackageRowsR2(p,owner.startPackage.itemSelections||{})){const display=packageRowDisplayR2(row);body.append(el('tr',{},[display.categories,display.names,display.quantities,display.weight,display.minStrength,display.rules,display.value].map(value=>el('td',{text:String(value)}))))}content.append(lead,table);if(owner.startPackage.choices)content.append(el('p',{text:`Weitere Festlegungen: ${owner.startPackage.choices}`}));return printStaticCardR15(card,'startPackage',card.title||'Startpaket',content)};
+
+const runTestsBeforeStartPackagesR2=runTests;
+runTests=function(){const baseOk=runTestsBeforeStartPackagesR2(),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),allRows=START_PACKAGES.flatMap(p=>p.itemTable||[]),allEntries=allRows.flatMap(row=>row.options?.flatMap(option=>option.entries)||[row.entry]).filter(Boolean),itemEntries=allEntries.filter(entry=>entry.kind==='item');eq('Alle 11 Startpakete besitzen Tabellen',11,START_PACKAGES.filter(p=>p.itemTable?.length).length);eq('Startpaket-Tabellen enthalten mindestens 60 Zeilen',true,allRows.length>=60);eq('Alle Katalogverweise existieren',0,itemEntries.filter(entry=>entry.catalogId&&!packageCatalogEntryR2(entry)).length);eq('Alle Paketitems haben eine gültige Kategorie',0,itemEntries.map(packageResolvedEntryR2).filter(entry=>!ITEM_CATEGORIES_V174.some(category=>category.id===entry.category)).length);eq('Alle Paketitems haben ein definiertes Gewicht',0,itemEntries.map(packageResolvedEntryR2).filter(entry=>finiteOrNullV174(entry.weightKg)===null).length);eq('Alle Paketitems haben einen definierten Kupferwert',0,itemEntries.map(packageResolvedEntryR2).filter(entry=>finiteOrNullV174(entry.valueCopper)===null).length);const adventurer=packageDefinitionR2('Abenteurer'),adventurerOwner=newCharacter(),adventurerSelections=packageSelectionDefaultsR2(adventurer,{});adventurerOwner.startPackage={...adventurer,itemSelections:adventurerSelections};rebuildStartPackageItemsR2(adventurerOwner,adventurer,adventurerSelections,[]);eq('Abenteurer erzeugt ausschließlich kategorisierte Paketitems',true,adventurerOwner.equipment.every(item=>item.source==='startPackage'&&item.category&&item.weightKg!==null));eq('Paketitems verursachen keine zusätzlichen Item-CBP',0,adventurerOwner.equipment.reduce((sum,item)=>sum+(+item.cbpCost||0),0));const shortSword=adventurerOwner.equipment.some(item=>item.catalogId==='wpn_melee_short_sword');adventurerOwner.startPackage.itemSelections['main-weapon::0']='catalog:wpn_melee_spear';rebuildStartPackageItemsR2(adventurerOwner,adventurer,adventurerOwner.startPackage.itemSelections);eq('Waffenauswahl ersetzt das erzeugte Item','true:true',`${shortSword}:${adventurerOwner.equipment.some(item=>item.catalogId==='wpn_melee_spear')}`);const noble=packageDefinitionR2('Adeliger Start'),nobleSelections=packageSelectionDefaultsR2(noble,{}),nobleItems=buildPackageItemsR2(noble,nobleSelections,[]),nobleBenefits=packageBenefitsR2(noble,nobleSelections);eq('Wappenrecht wird nicht als Ausrüstung erzeugt',false,nobleItems.some(item=>item.name==='Wappenrecht'));eq('Wappenrecht und Reittier werden als Vorteile geführt','Wappenrecht,Reittier',nobleBenefits.map(item=>item.name).join(','));const oldOwner=newCharacter();oldOwner.startPackage={...adventurer};oldOwner.equipment=[normalizeItemV174({name:'Hauptwaffe',category:'custom',weightKg:null,source:'startPackage',packageName:'Abenteurer'})];const migrated={characters:[oldOwner],migrationLog:[]};ensureStartPackageTablesR2(migrated,false);eq('Alte Freitext-Paketitems werden vollständig ersetzt',0,oldOwner.equipment.filter(item=>item.source==='startPackage'&&item.weightKg===null).length);const uiOwner=newCharacter();uiOwner.startPackage={...adventurer,itemSelections:adventurerSelections,accounting:{mode:'inherit'},active:true};rebuildStartPackageItemsR2(uiOwner,adventurer,adventurerSelections,[]);const ui=renderStartPackageV173(uiOwner,cardObject('startPackage',0,12));eq('Oberfläche zeigt elf einzelne Pakettabellen',11,ui.querySelectorAll('.start-package-table-r2').length);eq('Aktives Paket zeigt strukturierte Auswahllisten',true,ui.querySelectorAll('select').length>=4);const body=testResults.querySelector('tbody');for(const[name,expected,actual,ok]of tests)body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return baseOk&&tests.every(test=>test[3])};
+
+const runTestsBeforeStartPackageChoicesR3=runTests;
+runTests=function(){const baseOk=runTestsBeforeStartPackageChoicesR3(),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),adventurer=packageDefinitionR2('Abenteurer'),adventurerSelections=packageSelectionDefaultsR2(adventurer,{}),adventurerRows=resolvedPackageRowsR2(adventurer,adventurerSelections),mainWeapon=adventurerRows.find(row=>row.id==='main-weapon');eq('Hauptwaffe bietet die vollständige Nahkampfwaffenliste',17,mainWeapon.catalogSlots[0].pool.length);const vagabund=packageDefinitionR2('Vagabund'),vagabundRows=resolvedPackageRowsR2(vagabund,packageSelectionDefaultsR2(vagabund,{})),clothing=vagabundRows.find(row=>row.id==='clothing');eq('Paketdefinierte Kleidung ist auswählbar',9,clothing.catalogSlots[0].pool.length);let missingPools=0,categoryMixes=0;for(const p of START_PACKAGES){const defaults=packageSelectionDefaultsR2(p,{});for(const row of resolvedPackageRowsR2(p,defaults))for(const slot of row.catalogSlots||[]){if(!slot.pool.length)missingPools++;if(slot.pool.some(item=>item.category!==slot.base.category))categoryMixes++}}eq('Jede materielle Paketposition besitzt eine Auswahlliste',0,missingPools);eq('Auswahllisten bleiben in ihrer Kategorie',0,categoryMixes);adventurerSelections['main-weapon::0']='catalog:wpn_melee_greatsword';const changedItems=buildPackageItemsR2(adventurer,packageSelectionDefaultsR2(adventurer,adventurerSelections),[]);eq('Beliebiges vorhandenes Kategorie-Item wird übernommen',true,changedItems.some(item=>item.catalogId==='wpn_melee_greatsword'&&item.damage==='1x W8'));const wild=packageDefinitionR2('Wildnisläufer'),wildSelections=packageSelectionDefaultsR2(wild,{});wildSelections['ranged-set::0']='catalog:wpn_ranged_heavy_crossbow';const normalizedWild=packageSelectionDefaultsR2(wild,wildSelections),wildItems=buildPackageItemsR2(wild,normalizedWild,[]);eq('Fernkampfwahl erhält kompatible Munition','Schwere Armbrust|Schwere Bolzen, 8 Stück',wildItems.filter(item=>item.packageItemId==='ranged-set').map(item=>item.name).join('|'));const migrationOwner=newCharacter();migrationOwner.startPackage={...adventurer,itemSelections:{},accounting:{mode:'inherit'},active:true};migrationOwner.equipment=[];const migrationState={characters:[migrationOwner],migrationLog:[],v175StartPackageTablesR2Done:true};ensureStartPackageCatalogChoicesR3(migrationState,false);eq('Kategorieauswahl-Migration ist markiert',true,migrationState.v175StartPackageCatalogChoicesR3Done);eq('Migration erzeugt gespeicherte Katalogauswahlen',true,Object.keys(migrationOwner.startPackage.itemSelections).some(key=>key.includes('::')));const uiOwner=newCharacter();uiOwner.startPackage={...adventurer,itemSelections:packageSelectionDefaultsR2(adventurer,{}),accounting:{mode:'inherit'},active:true};rebuildStartPackageItemsR2(uiOwner,adventurer,uiOwner.startPackage.itemSelections,[]);const ui=renderStartPackageV173(uiOwner,cardObject('startPackage',0,12));eq('Item-Auswahl nennt Anzahl vorhandener Items',true,ui.textContent.includes('17 wählbare Items'));const body=testResults.querySelector('tbody');for(const[name,expected,actual,ok]of tests)body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return baseOk&&tests.every(test=>test[3])};
+
+/* Revision 4: zentraler Armor-Wert und vollständige NPC-/Vertrautenkarten. */
+const armorNpcStyleR4=el('style',{text:`
+.armor-total-r4{grid-column:1/-1;display:grid;grid-template-columns:minmax(7rem,auto) auto 1fr;align-items:center;gap:.45rem 1rem;padding:.8rem 1rem;border:2px solid var(--accent-2);border-radius:var(--radius);background:color-mix(in srgb,var(--accent-2) 12%,var(--panel));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent-2) 28%,transparent)}
+.armor-total-r4 span{font-family:var(--font-head);font-size:1.05rem;font-weight:700;letter-spacing:.04em}
+.armor-total-r4 strong{font-family:var(--font-head);font-size:2rem;line-height:1;color:var(--accent-2)}
+.armor-total-r4 small{color:var(--muted)}
+@media(max-width:560px){.armor-total-r4{grid-template-columns:1fr auto}.armor-total-r4 small{grid-column:1/-1}}
+`});document.head.append(armorNpcStyleR4);
+
+const combatEquipmentSummaryBeforeR4=combatEquipmentSummaryV174;
+combatEquipmentSummaryV174=function(owner){const data=combatEquipmentSummaryBeforeR4(owner);return{...data,armorTotal:data.protection}};
+
+const derivedBeforeArmorR4=derived;
+derived=function(owner){const values=derivedBeforeArmorR4(owner).filter(row=>row.n!=='Armor');let armor=0;try{armor=combatEquipmentSummaryV174(owner).armorTotal||0}catch{}values.push({n:'Armor',v:armor,f:'Summe Schutz × ausgerüstete Anzahl'});return values};
+
+const renderCombatEquipmentBeforeR4=renderCombatEquipmentV174;
+renderCombatEquipmentV174=function(owner){const data=combatEquipmentSummaryV174(owner),box=renderCombatEquipmentBeforeR4(owner),summary=box.querySelector('.load-summary');if(summary){for(const metric of [...summary.children])if(metric.querySelector('span')?.textContent==='Rohschutzsumme')metric.remove();summary.prepend(el('div',{class:'armor-total-r4'},[el('span',{text:'Armor'}),el('strong',{text:String(data.armorTotal)}),el('small',{text:'Komplettwert aller aktiven, ausgerüsteten Rüstungen und Schilde'})]))}const notice=box.querySelector('.notice');if(notice)notice.textContent='Armor addiert die Schutzwerte aller aktiven, tatsächlich ausgerüsteten Rüstungen und Schilde. Der Blockbonus bleibt ein eigener Wert; die Tabellen darunter zeigen die Zusammensetzung und die Körperzonen.';return box};
+
+const NPC_FEATURE_CARDS_R4=[['fatePath','counters',12],['derived','fatePath',12],['armorSummary','equipment',12],['encumbrance','armorSummary',6]];
+function ensureNpcFeatureCardR4(owner,type,afterType,width){if(!Array.isArray(owner.layout)||owner.layout.some(card=>card.type===type))return false;const anchor=owner.layout.find(card=>card.type===afterType),card=cardObject(type,anchor?(+anchor.order||0)+.1:owner.layout.length,width);if(type==='fatePath')card.title='Schicksalspfade & Synergien';owner.layout.push(card);return true}
+function ensureNpcFeatureCardsR4(owner){if(!owner||!['npc','familiar'].includes(owner.type))return 0;ensureOwnerV175(owner);ensureOwnerV174(owner,false);let added=0;for(const[type,afterType,width]of NPC_FEATURE_CARDS_R4)if(ensureNpcFeatureCardR4(owner,type,afterType,width))added++;return added}
+function ensureNpcArmorStateR4(data,log=true){if(data.v175NpcArmorR4Done)return data;let added=0;for(const character of data.characters||[])for(const owner of character.auxiliaryTabs||[])added+=ensureNpcFeatureCardsR4(owner);data.v175NpcArmorR4Done=true;if(log){data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];data.migrationLog.push({from:13,to:13,at:new Date().toISOString(),changes:[added?`${added} fehlende NPC-/Vertrautenkarten ergänzt`:'NPC-/Vertrautenkarten und zentralen Armor-Wert geprüft']})}return data}
+const migrateStateBeforeNpcArmorR4=migrateState;
+migrateState=function(data){return ensureNpcArmorStateR4(migrateStateBeforeNpcArmorR4(data),true)};
+if(!state.v175NpcArmorR4Done){try{localStorage.setItem(STORE+'.backup.npc-armor-r4.'+Date.now(),JSON.stringify(state))}catch{}}
+state=ensureNpcArmorStateR4(state,true);
+const newAuxEntryBeforeNpcArmorR4=newAuxEntry;
+newAuxEntry=function(type,name){const owner=newAuxEntryBeforeNpcArmorR4(type,name);ensureNpcFeatureCardsR4(owner);return owner};
+
+const runTestsBeforeNpcArmorR4=runTests;
+runTests=function(){const baseOk=runTestsBeforeNpcArmorR4(),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),owner=newCharacter();owner.equipment=[normalizeItemV174({name:'Brustpanzer',itemType:'armor',category:'armor.body',protection:2,quantity:1,equippedQuantity:1,loadState:'equipped',weightKg:4}),normalizeItemV174({name:'Armschienen',itemType:'armor',category:'armor.part',protection:1,quantity:2,equippedQuantity:2,loadState:'equipped',weightKg:1}),normalizeItemV174({name:'Schild',itemType:'armor',category:'armor.shield',protection:1,blockBonus:2,quantity:1,equippedQuantity:1,loadState:'equipped',weightKg:3}),normalizeItemV174({name:'Getragene Rüstung',itemType:'armor',category:'armor.body',protection:9,quantity:1,equippedQuantity:0,loadState:'carried',weightKg:8}),normalizeItemV174({name:'Inaktive Rüstung',itemType:'armor',category:'armor.body',protection:9,quantity:1,equippedQuantity:1,loadState:'equipped',active:false,weightKg:8})];const summary=combatEquipmentSummaryV174(owner),armorCard=renderCombatEquipmentV174(owner);eq('Armor ist der Komplettwert aller ausgerüsteten Rüstungen',5,summary.armorTotal);eq('Blockbonus bleibt getrennt',2,summary.blockBonus);eq('Abgeleitete Werte zeigen Armor',5,derived(owner).find(row=>row.n==='Armor')?.v);eq('Kampfkarte zeigt genau einen zentralen Armor-Wert',1,armorCard.querySelectorAll('.armor-total-r4').length);eq('Alter Rohschutz-Gesamtwert wird nicht doppelt angezeigt',false,armorCard.textContent.includes('Rohschutzsumme'));const oldNpc=newAuxEntry('npc','Alt-NPC');oldNpc.layout=oldNpc.layout.filter(card=>!NPC_FEATURE_CARDS_R4.some(([type])=>type===card.type));const migration={characters:[{auxiliaryTabs:[oldNpc]}],migrationLog:[]};ensureNpcArmorStateR4(migration,false);eq('NPC-Reparatur ergänzt alle vorgesehenen Karten',true,NPC_FEATURE_CARDS_R4.every(([type])=>oldNpc.layout.some(card=>card.type===type)));const cardCount=oldNpc.layout.length;delete migration.v175NpcArmorR4Done;ensureNpcArmorStateR4(migration,false);eq('NPC-Reparatur bleibt idempotent',cardCount,oldNpc.layout.length);eq('Neue NPCs besitzen abgeleitete Werte',true,newAuxEntry('npc','Test').layout.some(card=>card.type==='derived'));eq('Neue Vertraute besitzen alle vorgesehenen Karten',true,NPC_FEATURE_CARDS_R4.every(([type])=>newAuxEntry('familiar','Test').layout.some(card=>card.type===type)));const body=testResults.querySelector('tbody');for(const[name,expected,actual,ok]of tests)body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return baseOk&&tests.every(test=>test[3])};
+
+/* Revision 5: Bedienbare Reihenfolgen, Regelhinweise und fünf Machtbereiche. */
+const POWER_COUNTER_ORDER_R5=['M','GB','FS','HS','GL'];
+const POWER_PATHS_R5={
+  M:{title:'Magie & Mana',type:'Wirker',core:'Zauber, arkane Kräfte und magische Verstärkung.',choices:[
+    {id:'zauber',label:'Zauber',description:'Formt Mana zu einer klar umrissenen magischen Wirkung.'},
+    {id:'arkane-kraft',label:'Arkane Kraft',description:'Bündelt und lenkt rohe oder überlieferte magische Kräfte.'},
+    {id:'magische-verstaerkung',label:'Magische Verstärkung',description:'Verstärkt, stabilisiert oder erweitert eine bestehende magische Wirkung.'}
+  ]},
+  GB:{title:'Glaube & Schöpfung',type:'Kleriker',core:'Wunder, Segen und die schöpferische Abwehr unheiliger Einflüsse.',choices:[
+    {id:'wunder',label:'Wunder',description:'Wirkt durch Glauben eine außergewöhnliche, heilige Veränderung.'},
+    {id:'segen',label:'Segen',description:'Stärkt, schützt oder weiht Personen, Orte oder Vorhaben.'},
+    {id:'bannung',label:'Bannung',description:'Wehrt Flüche, Finsternis und andere schädliche Einflüsse ab.'}
+  ]},
+  FS:{title:'Finsternis & Zerstörung',type:'Schattenwirker',core:'Flüche, Tod, Schatten, Zerstörung und Makel.',choices:[
+    {id:'fluch',label:'Fluch',description:'Bindet eine schädliche Wirkung an ein Ziel, einen Ort oder eine Bedingung.'},
+    {id:'schatten',label:'Schatten',description:'Nutzt Verbergen, Dunkelheit und die Zwischenräume der Wahrnehmung.'},
+    {id:'makel',label:'Makel',description:'Verändert oder zeichnet Lebendes, Totes oder Übernatürliches durch Finsternis.'}
+  ]},
+  HS:{title:'Herrschaft & Ruhm',type:'Prominence',core:'Autorität, Befehle, Einfluss und Gefolgschaft.',choices:[
+    {id:'autoritaet',label:'Autorität',description:'Setzt Rang, Auftreten und anerkannte Macht als wirksame Herrschaft ein.'},
+    {id:'einfluss',label:'Einfluss',description:'Lenkt Entscheidungen, Beziehungen und gesellschaftliche Kräfte.'},
+    {id:'gefolgschaft',label:'Gefolgschaft',description:'Bindet, führt und koordiniert Menschen, Gruppen oder Institutionen.'}
+  ]},
+  GL:{title:'Glück & Schicksal',type:'Schicksalsbegünstigter',core:'Würfe verändern, erleichtern oder überraschend wenden.',choices:[
+    {id:'wuerfelglueck',label:'Würfelglück',description:'Verändert den unmittelbaren Ausgang eines riskanten Augenblicks.'},
+    {id:'guenstige-wendung',label:'Günstige Wendung',description:'Öffnet eine hilfreiche Gelegenheit oder mildert eine ungünstige Entwicklung.'},
+    {id:'schicksalswende',label:'Schicksalswende',description:'Lenkt eine bedeutsame Situation in eine unerwartete neue Richtung.'}
+  ]}
+};
+FATE_PATHS.GL={name:POWER_PATHS_R5.GL.type,label:'Glück'};
+const ATTRIBUTE_GUIDES_R5={
+  ST:{name:'Stärke',text:'Beschreibt, wie viel körperliche Kraft eine Figur entfalten kann. Wirkt bei Heben, Tragen, Ringen, Drücken und kraftvoll geführten Waffen.'},
+  KS:{name:'Konstitution',text:'Beschreibt Widerstandskraft, Zähigkeit und Durchhaltevermögen. Wirkt gegen Krankheit, Gift, Hunger, Kälte, Erschöpfung und körperlichen Zusammenbruch.'},
+  GS:{name:'Geschick',text:'Beschreibt Gewandtheit, Balance und kontrollierte Bewegung. Wirkt bei Schleichen, Akrobatik, Ausweichen und Bewegung durch schwieriges Gelände.'},
+  RF:{name:'Reflexe',text:'Beschreiben die Geschwindigkeit einer Reaktion auf Gefahr und Bewegung. Sie prägen Initiative, Ausweichen und Entscheidungen im richtigen Augenblick.'},
+  FF:{name:'Fingerfertigkeit',text:'Beschreibt Genauigkeit, ruhige Hände und Werkzeuggefühl. Wirkt bei Schlössern, Schreiben, Handwerk, Alchemie und anderen feinen Arbeiten.'},
+  WL:{name:'Wille',text:'Beschreibt Entschlossenheit und innere Festigkeit. Wirkt gegen Angst, Verführung, Folter und geistigen Druck und trägt viele magische Disziplinen.'},
+  IT:{name:'Intelligenz',text:'Beschreibt Wissen, Analyse und die Fähigkeit, Zusammenhänge zu erkennen. Wirkt bei Forschung, Strategie, Sprachen, Recht, Verwaltung und Magietheorie.'},
+  IN:{name:'Intuition',text:'Beschreibt Gespür, Vorahnung und Erkenntnis vor dem Beweis. Wirkt bei Motiven, Gefahren, Lügen, Omen und schnellen Einschätzungen.'},
+  WN:{name:'Wahrnehmung',text:'Beschreibt, wie gut eine Figur sieht, hört, riecht, sucht und Unstimmigkeiten bemerkt. Wirkt bei Spuren, Geräuschen, Hinterhalten und Untersuchungen.'},
+  CR:{name:'Charisma',text:'Beschreibt Ausstrahlung und Wirkung auf andere. Wirkt bei Auftreten, Überreden, Führung, Diplomatie und gesellschaftlichem Einfluss.'}
+};
+const COUNTER_GUIDES_R5={
+  L:{name:'Leben',text:'Steht für Schaden, Verwundung und Überleben.'},A:{name:'Ausdauer',text:'Wird für Kampf, Reise und körperliche Belastung eingesetzt.'},
+  FO:{name:'Fokus',text:'Wird für Konzentration, Wissen, Analyse und geistige Belastung eingesetzt.'},M:{name:'Mana',text:'Speist Zauber, arkane Kräfte und magische Verstärkung.'},
+  GB:{name:'Glaube',text:'Speist Wunder, Segen und die Abwehr unheiliger Einflüsse.'},HS:{name:'Herrschaft',text:'Speist Autorität, Befehle, Einfluss und Gefolgschaft.'},
+  FS:{name:'Finsternis',text:'Speist Flüche, Tod, Schatten und Makel.'},GL:{name:'Glück',text:'Kann Würfe verändern, erleichtern oder überraschend wenden.'}
+};
+const interfaceStyleR5=el('style',{text:`
+.rule-info-r5{position:fixed;z-index:10000;width:min(410px,calc(100vw - 24px));max-height:min(70vh,620px);overflow:auto;padding:.85rem;border:2px solid var(--accent-2);border-radius:var(--radius);background:var(--panel);box-shadow:0 14px 40px #0008;color:var(--ink)}
+.rule-info-r5[hidden]{display:none}.rule-info-r5 h3{margin:.05rem 0 .55rem}.rule-info-r5 h4{margin:.65rem 0 .15rem}.rule-info-r5 p{margin:.15rem 0 .45rem}.rule-info-r5 .rule-source-r5{font-size:.8rem;color:var(--muted)}
+.info-button-r5,.order-button-r5{min-width:44px;min-height:44px;padding:.25rem .45rem;touch-action:manipulation}.order-controls-r5{display:flex;gap:.25rem;white-space:nowrap}.value-row.info-ready-r5,.skills-r5 tr.info-ready-r5{cursor:help}.skills-r5 td{vertical-align:middle}
+.counter-controls-r5{display:flex;gap:.45rem;align-items:end;flex-wrap:wrap}.counter-controls-r5 label{display:grid;gap:.12rem;font-size:.78rem}.counter-controls-r5 input{width:5.2rem}.zero-dot-r5{min-width:32px}
+.power-choice-r5{margin-top:.65rem}.power-choice-r5 select{width:100%}.power-choice-description-r5{margin:.35rem 0 0;padding:.55rem;border-left:4px solid var(--accent-2);background:var(--panel-bg)}
+.power-progress-r5{display:grid;gap:.55rem;margin-top:.65rem}.power-progress-row-r5{border:1px solid var(--border);border-radius:9px;padding:.55rem;background:var(--panel-bg)}.power-progress-head-r5{display:grid;grid-template-columns:minmax(9rem,1fr) 8rem auto;gap:.4rem;align-items:end}.power-progress-row-r5 textarea{width:100%;margin-top:.4rem;min-height:5rem}.power-progress-actions-r5{display:flex;gap:.25rem}.power-progress-locked-r5{opacity:.72}.power-more-r5{margin-top:.65rem}.power-details-r5{margin-top:.7rem}.power-details-r5>summary{cursor:pointer;font-weight:700}.fate-path-v175{position:relative}
+@media(max-width:700px){.power-progress-head-r5{grid-template-columns:1fr}.power-progress-actions-r5{justify-content:flex-start}.order-controls-r5{flex-direction:column}.rule-info-r5{left:12px!important;right:12px!important;width:auto}}
+`});document.head.append(interfaceStyleR5);
+
+let infoDelayR5=0,infoAnchorR5=null;
+function rulePopoverR5(){let box=document.getElementById('ruleInfoR5');if(!box){box=el('aside',{id:'ruleInfoR5',class:'rule-info-r5',hidden:true,role:'dialog','aria-live':'polite'});box.addEventListener('click',event=>event.stopPropagation());document.body.append(box)}return box}
+function hideRuleInfoR5(){clearTimeout(infoDelayR5);infoDelayR5=0;infoAnchorR5=null;const box=document.getElementById('ruleInfoR5');if(box)box.hidden=true}
+function showRuleInfoR5(anchor,title,build){clearTimeout(infoDelayR5);const box=rulePopoverR5(),content=typeof build==='function'?build():build;box.replaceChildren(el('h3',{text:title}),content,el('p',{class:'rule-source-r5',text:'Quelle: EBEROS-Spielerhandbuch 2.0'}));box.hidden=false;infoAnchorR5=anchor;const rect=anchor.getBoundingClientRect(),margin=12;let left=Math.min(rect.left,window.innerWidth-box.offsetWidth-margin),top=rect.bottom+8;if(top+box.offsetHeight>window.innerHeight-margin)top=Math.max(margin,rect.top-box.offsetHeight-8);box.style.left=Math.max(margin,left)+'px';box.style.top=Math.max(margin,top)+'px'}
+function bindRuleInfoR5(node,title,build){node.classList.add('info-ready-r5');node.addEventListener('mouseenter',()=>{clearTimeout(infoDelayR5);infoDelayR5=setTimeout(()=>showRuleInfoR5(node,title,build),2000)});node.addEventListener('mouseleave',()=>hideRuleInfoR5());node.addEventListener('click',event=>{if(event.target.closest('input,select,textarea,button,a')&&!event.target.closest('.info-button-r5'))return;event.stopPropagation();showRuleInfoR5(node,title,build)});node.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();showRuleInfoR5(node,title,build)}})}
+document.addEventListener('click',event=>{if(!event.target.closest('#ruleInfoR5'))hideRuleInfoR5()});document.addEventListener('keydown',event=>{if(event.key==='Escape')hideRuleInfoR5()});
+function guideContentR5(entries,lead=''){const box=el('div');if(lead)box.append(el('p',{text:lead}));for(const[id,guide]of entries)box.append(el('h4',{text:`${guide.name} (${id})`}),el('p',{text:guide.text}));return box}
+function parsedGuideEntriesR5(value,map){const ids=String(value||'').match(/[A-Z]{1,2}/g)||[],seen=new Set();return ids.filter(id=>map[id]&&!seen.has(id)&&(seen.add(id),true)).map(id=>[id,map[id]])}
+function skillInfoContentR5(skill){return guideContentR5([...parsedGuideEntriesR5(skill.attrs,ATTRIBUTE_GUIDES_R5),...parsedGuideEntriesR5(skill.use,COUNTER_GUIDES_R5)],skill.scope||'')}
+function infoButtonR5(node,title,build){const button=el('button',{class:'info-button-r5',type:'button',text:'ⓘ','aria-label':title+' erklären'});button.onclick=event=>{event.stopPropagation();showRuleInfoR5(button,title,build)};return button}
+const bindInfoR5=bindRuleInfoR5;
+
+function defaultProgressFieldsR5(path,counter){const old=Array.isArray(path.techniques)?path.techniques:[];return FATE_THRESHOLDS.map(([threshold,label],index)=>({id:uid(),title:label,counter,threshold,content:String(old[index]||''),order:index}))}
+function normalizeProgressFieldsR5(path,counter){let source=Array.isArray(path.progressFields)?path.progressFields:Array.isArray(path.milestones)?path.milestones:null;if(!path.progressFieldsInitialized){source=source||defaultProgressFieldsR5(path,counter);path.progressFieldsInitialized=true}source=source||[];path.progressFields=source.map((field,index)=>{const raw=field&&typeof field==='object'?field:{content:String(field||'')},threshold=FATE_THRESHOLDS.some(([n])=>n===+raw.threshold)?+raw.threshold:5;return{id:raw.id||uid(),title:String(raw.title||FATE_THRESHOLDS.find(([n])=>n===threshold)?.[1]||'Entwicklung'),counter,threshold,content:String(raw.content??raw.value??''),order:Number.isFinite(+raw.order)?+raw.order:index}}).sort((a,b)=>a.order-b.order).map((field,index)=>({...field,order:index}));const definition=POWER_PATHS_R5[counter],valid=definition.choices.some(choice=>choice.id===path.pathChoice);path.pathChoice=valid?path.pathChoice:'';return path}
+function ensureOwnerExtrasR5(owner){if(!owner||typeof owner!=='object')return owner;ensureOwnerSkillsR13(owner);const baseOrder=SKILLS.map(skill=>skill.id),given=Array.isArray(owner.skillOrder)?owner.skillOrder:[],valid=given.filter((id,index)=>baseOrder.includes(id)&&given.indexOf(id)===index);owner.skillOrder=[...valid,...baseOrder.filter(id=>!valid.includes(id))];owner.counters=owner.counters||{};for(const[id]of COUNTERS){const raw=owner.counters[id],maxRaw=raw&&typeof raw==='object'?(raw.max??raw.current??2):(raw??2),currentRaw=raw&&typeof raw==='object'?(raw.current??maxRaw):maxRaw,max=Math.max(0,Math.min(25,Number.isFinite(+maxRaw)?+maxRaw:2)),current=Math.max(0,Math.min(max,Number.isFinite(+currentRaw)?+currentRaw:max));owner.counters[id]={...(raw&&typeof raw==='object'?raw:{}),max,current}}if(personCanUseFatePathsV175(owner)){owner.fatePaths=owner.fatePaths||{};for(const counter of POWER_COUNTER_ORDER_R5){owner.fatePaths[counter]=normalizeFatePath(owner.fatePaths[counter],counter);normalizeProgressFieldsR5(owner.fatePaths[counter],counter)}}for(const card of owner.layout||[])if(typeof card.title==='string')card.title=card.title.replace(/\bArmor\b/g,'Rüstung');return owner}
+const ensureOwnerBeforeR5=ensureOwnerV175;
+ensureOwnerV175=function(owner){const luck=owner?.fatePaths?.GL,ready=ensureOwnerBeforeR5(owner);if(ready&&personCanUseFatePathsV175(ready))ready.fatePaths.GL=luck||ready.fatePaths.GL||emptyFatePathV175('GL');return ensureOwnerExtrasR5(ready)};
+const meaningfulFatePathBeforeR5=meaningfulFatePathV175;
+meaningfulFatePathV175=function(path){return meaningfulFatePathBeforeR5(path)||!!path?.pathChoice||(path?.progressFields||[]).some(field=>String(field.content||'').trim())};
+function ensureStateR5(data,log=true){const first=!data.v175InterfaceR5Done;for(const character of data.characters||[]){ensureOwnerV175(character);for(const owner of character.auxiliaryTabs||[])ensureOwnerV175(owner)}data.v175InterfaceR5Done=true;if(first&&log){data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];data.migrationLog.push({from:13,to:13,at:new Date().toISOString(),changes:['Fähigkeitsreihenfolge gespeichert','Regelhinweise ergänzt','Fünf Machtbereiche mit frei verwaltbaren Entwicklungen ergänzt','Counterwerte bis 0 freigegeben','Armor-Anzeige in Rüstung umbenannt']})}return data}
+const migrateStateBeforeR5=migrateState;migrateState=function(data){return ensureStateR5(migrateStateBeforeR5(data),true)};
+if(!state.v175InterfaceR5Done){try{localStorage.setItem(STORE+'.backup.interface-r5.'+Date.now(),JSON.stringify(state))}catch{}}state=ensureStateR5(state,true);
+const newCharacterBeforeR5=newCharacter,newAuxEntryBeforeR5=newAuxEntry;newCharacter=function(){return ensureOwnerV175(newCharacterBeforeR5())};newAuxEntry=function(type,name){return ensureOwnerV175(newAuxEntryBeforeR5(type,name))};
+
+function persistOwnerR5(owner,rerender=false){owner.updatedAt=new Date().toISOString();save();renderStatus();renderCosts();if(rerender)renderCards()}
+effectiveCounters=function(owner){const mods=counterModifiers(owner);return Object.fromEntries(COUNTERS.map(([id])=>[id,Math.max(0,Math.min(25,(Number.isFinite(+owner.counters?.[id]?.max)?+owner.counters[id].max:2)+(mods[id]||0)))]))};
+setValue=function(kind,id,n){const minimum=kind==='attribute'?1:0,value=Math.max(minimum,Math.min(25,Number.isFinite(+n)?+n:minimum));updateState(owner=>{if(kind==='attribute')owner.attributes[id]=value;else{owner.counters[id].max=value;owner.counters[id].current=Math.min(owner.counters[id].current,value)}})};
+changeValue=function(kind,id,delta){const value=kind==='attribute'?ch().attributes[id]:ch().counters[id].max;setValue(kind,id,value+delta)};
+function counterInfoContentR5(id){return guideContentR5([[id,COUNTER_GUIDES_R5[id]]])}
+function attributeInfoContentR5(id){return guideContentR5([[id,ATTRIBUTE_GUIDES_R5[id]]])}
+function renderCountersR5(owner){ensureOwnerV175(owner);const box=el('div'),effective=effectiveCounters(owner),mods=counterModifiers(owner);box.append(el('p',{class:'notice',text:'Regelstartwert: 2. Maximum und aktueller Vorrat dürfen trotzdem bis auf 0 gesetzt werden; CBP richten sich nur nach dem Maximum.'}));for(const[id,name]of COUNTERS){const counter=owner.counters[id],row=el('div',{class:'value-row',tabindex:0}),maximum=el('input',{type:'number',min:0,max:25,value:counter.max,'aria-label':name+' Maximum'}),current=el('input',{type:'number',min:0,max:counter.max,value:counter.current,'aria-label':name+' aktuell'}),build=()=>counterInfoContentR5(id);maximum.onchange=event=>{counter.max=Math.max(0,Math.min(25,+event.target.value||0));counter.current=Math.min(counter.current,counter.max);persistOwnerR5(owner,true)};current.onchange=event=>{counter.current=Math.max(0,Math.min(counter.max,+event.target.value||0));persistOwnerR5(owner,true)};const controls=el('div',{class:'counter-controls-r5'},[el('label',{},[el('span',{text:'Maximum'}),maximum]),el('label',{},[el('span',{text:'Aktuell'}),current])]),dots=el('div',{class:'counter-dots'}),zero=el('button',{class:'dot '+(counter.current===0?'on ':'')+'power-zero-r5',text:'0','aria-label':name+' auf 0 setzen',onclick:()=>{counter.current=0;persistOwnerR5(owner,true)}});dots.append(zero);for(let i=1;i<=Math.min(25,counter.max);i++)dots.append(el('button',{class:'dot '+(i<=counter.current?'on':''),'aria-label':name+' auf '+i+' setzen',onclick:()=>{counter.current=i;persistOwnerR5(owner,true)}}));row.append(el('strong',{text:`${name} (${id})`}),el('span',{class:'die',text:String(effective[id]),title:'Wirksamer Counterwert'}),controls,el('span',{class:'cost',text:counterCost(counter.max)+' CBP'}),el('span',{class:mods[id]?'notice':'muted',text:`Mod ${mods[id]>0?'+':''}${mods[id]} · Wirksam ${effective[id]}`}),dots,infoButtonR5(row,name,build));bindInfoR5(row,`${name} (${id})`,build);box.append(row)}return box}
+const renderValuesBeforeR5=renderValues;
+renderValues=function(kind){if(kind==='counter')return renderCountersR5(ch());const box=renderValuesBeforeR5(kind);[...box.querySelectorAll('.value-row')].forEach((row,index)=>{const[id,name]=ATTRS[index],build=()=>attributeInfoContentR5(id);row.tabIndex=0;row.append(infoButtonR5(row,name,build));bindInfoR5(row,`${name} (${id})`,build)});return box};
+const renderAuxValuesBeforeR5=renderAuxValuesV17;
+renderAuxValuesV17=function(kind,owner){if(kind==='counter')return renderCountersR5(owner);const box=renderAuxValuesBeforeR5(kind,owner);[...box.querySelectorAll('.value-row')].forEach((row,index)=>{const[id,name]=ATTRS[index],build=()=>attributeInfoContentR5(id);row.tabIndex=0;row.append(infoButtonR5(row,name,build));bindInfoR5(row,`${name} (${id})`,build)});return box};
+function orderedSkillsR5(owner){ensureOwnerV175(owner);const rank=new Map(owner.skillOrder.map((id,index)=>[id,index]));return [...SKILLS].sort((a,b)=>(rank.get(a.id)??9999)-(rank.get(b.id)??9999))}
+function moveSkillR5(owner,id,delta){ensureOwnerV175(owner);const index=owner.skillOrder.indexOf(id),target=index+delta;if(index<0||target<0||target>=owner.skillOrder.length)return false;[owner.skillOrder[index],owner.skillOrder[target]]=[owner.skillOrder[target],owner.skillOrder[index]];persistOwnerR5(owner,true);return true}
+function skillOrderControlsR5(owner,skill){const index=owner.skillOrder.indexOf(skill.id),box=el('div',{class:'order-controls-r5'}),up=el('button',{class:'order-button-r5',type:'button',text:'↑','aria-label':skill.name+' nach oben',disabled:index<=0}),down=el('button',{class:'order-button-r5',type:'button',text:'↓','aria-label':skill.name+' nach unten',disabled:index>=owner.skillOrder.length-1});up.onclick=event=>{event.stopPropagation();moveSkillR5(owner,skill.id,-1)};down.onclick=event=>{event.stopPropagation();moveSkillR5(owner,skill.id,1)};box.append(up,down);return box}
+function renderSkillsOwnerR5(owner,isAux=false){ensureOwnerV175(owner);const box=el('div'),filters=el('div',{class:'filters'}),search=el('input',{placeholder:'Fähigkeiten und Beschreibungen suchen…'}),cat=el('select'),mods=isAux?{}:skillModifiers(owner);cat.append(el('option',{value:'',text:'Alle Kategorien'}));for(const category of[...new Set(SKILLS.map(skill=>skill.category))])cat.append(el('option',{value:category,text:category}));filters.append(search,cat);const scroll=el('div',{class:'scroll'}),table=el('table',{class:'skills-r13 skills-r5'}),body=el('tbody'),headers=isAux?['★','Reihenfolge','Fähigkeit','Kategorie','Grundwerte','Verbrauch','Stufe','CBP gesamt','Nächste','Notiz','Info']:['★','Reihenfolge','Fähigkeit','Kategorie','Grundwerte','Verbrauch','Gekauft','Mod','Wirksam','CBP','Nächste','Notiz','Info'];table.append(el('thead',{},[el('tr',{},headers.map(label=>el('th',{text:label})))]),body);scroll.append(table);box.append(filters,scroll);function draw(){body.replaceChildren();const query=search.value.toLowerCase();for(const skill of orderedSkillsR5(owner)){if(query&&!(skill.name+' '+skill.scope+' '+skill.attrs+' '+skill.use).toLowerCase().includes(query))continue;if(cat.value&&skill.category!==cat.value)continue;const data=owner.skills[skill.id],modifier=mods[skill.id]||0,effective=Math.max(0,Math.min(25,(+data.level||0)+modifier)),row=el('tr',{tabindex:0}),favorite=el('button',{class:'fav',text:data.fav?'★':'☆','aria-label':skill.name+' als Favorit markieren'}),level=el('input',{class:'skill-level',type:'number',min:0,max:25,value:data.level,'aria-label':skill.name+' Stufe'}),note=el('input',{value:data.note||'',placeholder:'Notiz'}),build=()=>skillInfoContentR5(skill),info=infoButtonR5(row,skill.name,build);favorite.onclick=event=>{event.stopPropagation();data.fav=!data.fav;persistOwnerR5(owner,false);draw()};level.onchange=event=>{data.level=Math.max(0,Math.min(25,+event.target.value||0));persistOwnerR5(owner,false);draw()};note.oninput=event=>{data.note=event.target.value;persistOwnerR5(owner,false)};const next=+data.level>=25?'Maximum':`+${skillNextLevelCost(data.level)} CBP`,cells=isAux?[favorite,skillOrderControlsR5(owner,skill),skillNameCellR13(skill),skill.category,skill.attrs,skill.use,level,skillCost(data.level),next,note,info]:[favorite,skillOrderControlsR5(owner,skill),skillNameCellR13(skill),skill.category,skill.attrs,skill.use,level,(modifier>0?'+':'')+modifier,effective,skillCost(data.level),next,note,info];for(const value of cells)row.append(el('td',{},[value?.nodeType?value:String(value)]));bindInfoR5(row,skill.name,build);body.append(row)}}search.oninput=draw;cat.onchange=draw;draw();return box}
+renderSkills=function(){return renderSkillsOwnerR5(ch(),false)};
+renderAuxSkillsV17=function(owner){return renderSkillsOwnerR5(owner,true)};
+
+function progressFieldMoveR5(owner,path,id,delta){const index=path.progressFields.findIndex(field=>field.id===id),target=index+delta;if(index<0||target<0||target>=path.progressFields.length)return;[path.progressFields[index],path.progressFields[target]]=[path.progressFields[target],path.progressFields[index]];path.progressFields.forEach((field,order)=>field.order=order);saveOwnerV175(owner,true)}
+function renderProgressFieldR5(owner,path,field){
+  const row=el('section',{class:'power-progress-row-r5'});
+  const title=el('input',{value:field.title,'aria-label':'Bezeichnung des Fortschritts'});
+  const threshold=el('select',{'aria-label':'Benötigte Stufe'});
+  const content=el('textarea',{'aria-label':field.title+' Inhalt'});
+  for(const [number,label] of FATE_THRESHOLDS){
+    threshold.append(el('option',{value:number,text:'Stufe '+number+' · '+label}));
+  }
+  threshold.value=field.threshold;
+  title.oninput=event=>{field.title=event.target.value;content.setAttribute('aria-label',field.title+' Inhalt');saveOwnerV175(owner,false)};
+  threshold.onchange=event=>{field.threshold=+event.target.value;saveOwnerV175(owner,true)};
+  content.value=field.content;
+  content.oninput=event=>{field.content=event.target.value;saveOwnerV175(owner,false)};
+  const index=path.progressFields.findIndex(item=>item.id===field.id);
+  const actions=el('div',{class:'power-progress-actions-r5'},[
+    el('button',{class:'order-button-r5',type:'button',text:'↑','aria-label':'Fortschritt nach oben',disabled:index<=0,onclick:()=>progressFieldMoveR5(owner,path,field.id,-1)}),
+    el('button',{class:'order-button-r5',type:'button',text:'↓','aria-label':'Fortschritt nach unten',disabled:index>=path.progressFields.length-1,onclick:()=>progressFieldMoveR5(owner,path,field.id,1)}),
+    el('button',{class:'danger order-button-r5',type:'button',text:'×','aria-label':'Fortschritt löschen',onclick:()=>{
+      if(confirm('„'+(field.title||'Fortschritt')+'“ wirklich löschen?')){
+        path.progressFields=path.progressFields.filter(item=>item.id!==field.id);
+        path.progressFields.forEach((item,order)=>item.order=order);
+        saveOwnerV175(owner,true);
+      }
+    }})
+  ]);
+  row.append(
+    el('div',{class:'power-progress-head-r5'},[
+      el('label',{class:'field'},[el('span',{text:'Bezeichnung'}),title]),
+      el('label',{class:'field'},[el('span',{text:'Freischaltung'}),threshold]),
+      actions
+    ]),
+    content
+  );
+  return row;
+}
+function powerPathLevelR5(owner,counter){
+  try{return Math.max(0,+effectiveCounters(owner)[counter]||0)}
+  catch{return 0}
+}
+function renderPowerPathR5(owner,counter){
+  ensureOwnerV175(owner);
+  const definition=POWER_PATHS_R5[counter];
+  const path=owner.fatePaths[counter];
+  const level=powerPathLevelR5(owner,counter);
+  const opened=level>=5;
+  const section=el('section',{class:'fate-path-v175 '+(opened?'opened':'locked')+' '+(meaningfulFatePathV175(path)?'':'empty-path')});
+  const head=el('div',{class:'fate-path-head-v175'},[
+    el('strong',{text:definition.title}),
+    el('span',{class:'fate-level-v175',text:counter+' · Stufe '+level}),
+    el('span',{class:'fate-status-v175 '+(opened?'ok':'warning'),text:opened?'Geöffnet':'Noch nicht geöffnet'})
+  ]);
+  const thresholds=el('div',{class:'fate-thresholds-v175'});
+  for(const [number,label] of FATE_THRESHOLDS){
+    thresholds.append(el('span',{class:level>=number?'reached':'',text:(level>=number?'✓':'○')+' '+number+' '+label}));
+  }
+  const choice=el('select',{'aria-label':definition.title+' Ausrichtung'});
+  choice.append(el('option',{value:'',text:'Ausrichtung wählen…'}));
+  for(const option of definition.choices)choice.append(el('option',{value:option.id,text:option.label}));
+  choice.value=path.pathChoice||'';
+  choice.onchange=event=>{
+    path.pathChoice=event.target.value;
+    const selected=definition.choices.find(option=>option.id===path.pathChoice);
+    if(selected&&!String(path.pathName||'').trim())path.pathName=selected.label;
+    saveOwnerV175(owner,true);
+  };
+  const selected=definition.choices.find(option=>option.id===path.pathChoice);
+  const choiceArea=el('div',{class:'power-choice-r5'},[
+    el('label',{class:'field'},[el('span',{text:'Eine von drei Ausrichtungen'}),choice]),
+    el('p',{class:'muted',text:definition.core})
+  ]);
+  if(selected)choiceArea.append(el('p',{class:'power-choice-description-r5',text:selected.description}));
+  section.append(head,thresholds,choiceArea);
+  if(!opened)section.append(el('p',{class:'notice',text:'Die Ausrichtung darf bereits gewählt werden. Fortschritte werden ab Stufe 5 wirksam.'}));
+  const reached=path.progressFields.filter(field=>field.threshold<=level);
+  const locked=path.progressFields.filter(field=>field.threshold>level);
+  const progress=el('div',{class:'power-progress-r5'});
+  for(const field of reached)progress.append(renderProgressFieldR5(owner,path,field));
+  if(!reached.length)progress.append(el('p',{class:'muted',text:'Auf der aktuellen Stufe ist noch kein Fortschritt freigeschaltet.'}));
+  section.append(progress);
+  if(locked.length){
+    const details=el('details',{class:'power-more-r5'},[el('summary',{text:'Noch nicht freigeschaltet ('+locked.length+')'})]);
+    const lockedBox=el('div',{class:'power-progress-r5 power-progress-locked-r5'});
+    for(const field of locked)lockedBox.append(renderProgressFieldR5(owner,path,field));
+    details.append(lockedBox);
+    section.append(details);
+  }
+  const next=FATE_THRESHOLDS.find(([number])=>number>level);
+  const nextThreshold=next?next[0]:FATE_THRESHOLDS[FATE_THRESHOLDS.length-1][0];
+  section.append(el('button',{type:'button',text:'+ Fortschritt hinzufügen',onclick:()=>{
+    path.progressFields.push({id:uid(),title:'Neuer Fortschritt',counter,threshold:nextThreshold,content:'',order:path.progressFields.length});
+    saveOwnerV175(owner,true);
+  }}));
+  const more=el('details',{class:'power-details-r5'},[el('summary',{text:'Weitere Angaben zum Machtpfad'})]);
+  const fields=el('div',{class:'fate-path-fields-v175'});
+  fields.append(
+    fatePathFieldV175(owner,path,'Pfadname','pathName'),
+    fatePathFieldV175(owner,path,'Pfadtyp','pathType'),
+    fatePathFieldV175(owner,path,'Spezialisierung','specialization'),
+    fatePathFieldV175(owner,path,'Tradition / Orden','tradition'),
+    fatePathFieldV175(owner,path,'Lehrperson','mentor'),
+    fatePathFieldV175(owner,path,'Herkunft','origin'),
+    fatePathFieldV175(owner,path,'Verpflichtungen','obligations',true),
+    fatePathFieldV175(owner,path,'Ruf','reputation',true),
+    fatePathFieldV175(owner,path,'Risiken','risks',true),
+    fatePathFieldV175(owner,path,'Notizen','notes',true)
+  );
+  more.append(fields);
+  section.append(more);
+  return section;
+}
+renderFatePathsV175=function(owner){
+  ensureOwnerV175(owner);
+  const box=el('div');
+  if(!personCanUseFatePathsV175(owner)){
+    box.append(el('p',{class:'notice',text:'Besitz hat keine eigenen Machtpfade.'}));
+    return box;
+  }
+  const overview=el('div',{class:'fate-overview-v175'});
+  for(const counter of POWER_COUNTER_ORDER_R5)overview.append(renderPowerPathR5(owner,counter));
+  const opened=openedFatePaths(owner);
+  const toolbar=el('div',{class:'synergy-toolbar-v175'},[
+    el('div',{},[
+      el('h3',{text:'Mehrfachsynergien'}),
+      el('p',{class:'muted',text:'Die bestehenden Synergieregeln verwenden weiterhin Magie, Glaube, Herrschaft und Finsternis.'})
+    ])
+  ]);
+  toolbar.append(el('button',{class:'primary',text:'+ Synergie erschaffen',disabled:opened.length<2,onclick:()=>openFateSynergyDialogV175(owner)}));
+  box.append(
+    el('div',{class:'fate-rule-v175',text:'Jeder Machtbereich bietet drei Ausrichtungen. Die wirksame Stufe des zugehörigen Counters schaltet die Fortschritte bei 5, 10, 15, 20 und 25 frei.'}),
+    overview,
+    toolbar
+  );
+  if(opened.length<2)box.append(el('p',{class:'notice',text:'Für eine Verknüpfung müssen mindestens zwei der vier synergierelevanten Schicksalspfade auf Stufe 5 geöffnet sein.'}));
+  const list=el('div',{class:'synergy-list-v175'});
+  for(const synergy of owner.fateSynergies)list.append(renderSynergyEntryV175(owner,synergy));
+  if(!owner.fateSynergies.length)list.append(el('p',{class:'muted',text:'Noch keine Mehrfachsynergie angelegt.'}));
+  box.append(list);
+  return box;
+};
+const derivedBeforeR5=derived;derived=function(owner){return derivedBeforeR5(owner).map(row=>row.n==='Armor'?{...row,n:'Rüstung'}:row)};
+const renderArmorBeforeR5=renderCombatEquipmentV174;renderCombatEquipmentV174=function(owner){const box=renderArmorBeforeR5(owner),total=box.querySelector('.armor-total-r4 span'),notice=box.querySelector('.notice');if(total)total.textContent='Rüstung';if(notice)notice.textContent=notice.textContent.replace(/\bArmor\b/g,'Rüstung');return box};
+
+const ensureStateR5BeforeWording=ensureStateR5;
+ensureStateR5=function(data,log=true){
+  const ready=ensureStateR5BeforeWording(data,log);
+  for(const entry of ready.migrationLog||[]){
+    if(Array.isArray(entry.changes))entry.changes=entry.changes.map(text=>String(text).replace(/\bArmor\b/g,'Rüstung'));
+  }
+  return ready;
+};
+state=ensureStateR5(state,false);
+
+renderPrintSkillsR15=function(card,owner,options,isCharacter){
+  ensureOwnerV175(owner);
+  const ordered=orderedSkillsR5(owner);
+  const mods=skillModifiersForPrintR15(owner,isCharacter);
+  const hasNotes=ordered.some(skill=>meaningfulValueR15(owner.skills?.[skill.id]?.note));
+  const showNotes=options.format!=='compact'||hasNotes;
+  const columns=['Fähigkeit','Kategorie','Grundwerte','Verbrauch','Gekauft','Mod','Wirksam','CBP'];
+  if(showNotes)columns.push('Notiz');
+  const table=el('table',{class:'print-skills-table'});
+  const head=el('thead',{},[el('tr',{},columns.map(name=>el('th',{text:name})))]);
+  const body=el('tbody');
+  for(const skill of ordered){
+    const current=owner.skills?.[skill.id]||{level:0,note:''};
+    const level=+current.level||0;
+    const mod=+mods[skill.id]||0;
+    const effective=Math.max(0,Math.min(25,level+mod));
+    const values=[skill.name,skill.category,skill.attrs,skill.use,level,(mod>0?'+':'')+mod,effective,skillCost(level)];
+    if(showNotes)values.push(current.note||'');
+    body.append(el('tr',{},values.map((value,index)=>el('td',{class:index>=4&&index<=7?'num':'',text:String(value)}))));
+  }
+  table.append(head,body);
+  const container=el('div',{},[table]);
+  if(options.descriptions){
+    const appendix=el('section',{class:'print-skill-appendix'},[el('h3',{text:'Fähigkeitenbeschreibungen'})]);
+    for(const skill of ordered)appendix.append(el('article',{class:'print-skill-description'},[
+      el('h4',{text:skill.name+' · '+skill.category}),
+      el('p',{text:skill.scope})
+    ]));
+    container.append(appendix);
+  }
+  return printStaticCardR15(card,'skills',card.title||'Fähigkeiten',container);
+};
+
+const runTestsBeforeR5=runTests;
+runTests=function(){
+  runTestsBeforeR5();
+  const body=testResults.querySelector('tbody');
+  for(const row of [...body.rows]){
+    const name=row.cells[0]?.textContent||'';
+    if(name==='Abgeleitete Werte zeigen Armor'){
+      row.remove();
+      continue;
+    }
+    for(const cell of row.cells)cell.textContent=cell.textContent.replace(/\bArmor\b/g,'Rüstung');
+  }
+  const previousOk=[...body.rows].every(row=>row.cells[row.cells.length-1]?.textContent==='Bestanden');
+  const tests=[];
+  const eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]);
+
+  const owner=newCharacter();
+  ensureOwnerV175(owner);
+  const standardOrder=SKILLS.map(skill=>skill.id);
+  eq('Alte Figuren erhalten die Standardreihenfolge',standardOrder.join('|'),owner.skillOrder.join('|'));
+  owner.skillOrder=[standardOrder[1],standardOrder[0],...standardOrder.slice(2)];
+  const imported=JSON.parse(JSON.stringify(owner));
+  ensureOwnerV175(imported);
+  eq('Fähigkeitsreihenfolge überlebt Export und Import',owner.skillOrder.join('|'),imported.skillOrder.join('|'));
+  const skillNode=renderSkillsOwnerR5(imported,false);
+  eq('Hoch- und Runter-Buttons für alle Fähigkeiten',SKILLS.length*2,skillNode.querySelectorAll('.order-button-r5').length);
+  eq('Klick-Infobutton für alle Fähigkeiten',SKILLS.length,skillNode.querySelectorAll('.info-button-r5').length);
+  eq('Hover-Verzögerung beträgt zwei Sekunden',true,String(bindRuleInfoR5).includes('2000'));
+  const example=SKILLS.find(skill=>skill.name.toLowerCase().includes('nahkampf')&&skill.name.toLowerCase().includes('leichte'));
+  const exampleText=example?skillInfoContentR5(example).textContent:'';
+  eq('Nahkampf-Infobox erklärt ST, RF und A',true,['Stärke (ST)','Reflexe (RF)','Ausdauer (A)'].every(text=>exampleText.includes(text)));
+
+  eq('Fünf Machtbereiche vorhanden',5,POWER_COUNTER_ORDER_R5.length);
+  eq('Machtbereiche korrekt benannt',
+    'Magie & Mana|Glaube & Schöpfung|Finsternis & Zerstörung|Herrschaft & Ruhm|Glück & Schicksal',
+    POWER_COUNTER_ORDER_R5.map(counter=>POWER_PATHS_R5[counter].title).join('|'));
+  eq('Jeder Machtbereich hat drei Ausrichtungen',true,POWER_COUNTER_ORDER_R5.every(counter=>POWER_PATHS_R5[counter].choices.length===3));
+  owner.fatePaths.M.pathChoice=POWER_PATHS_R5.M.choices[0].id;
+  const pathNode=renderPowerPathR5(owner,'M');
+  eq('Beschreibung der gewählten Ausrichtung sichtbar',true,pathNode.textContent.includes(POWER_PATHS_R5.M.choices[0].description));
+  eq('Fortschrittsfelder sind bedienbar',true,pathNode.textContent.includes('Fortschritt hinzufügen')&&pathNode.querySelectorAll('.power-progress-row-r5').length===5);
+
+  const legacy=newCharacterBeforeR5();
+  legacy.fatePaths.M.techniques=['Rang fünf','Rang zehn','Rang fünfzehn','Rang zwanzig','Rang fünfundzwanzig'];
+  delete legacy.fatePaths.M.progressFields;
+  delete legacy.fatePaths.M.progressFieldsInitialized;
+  ensureOwnerV175(legacy);
+  eq('Alte Rangfelder werden vollständig migriert',5,legacy.fatePaths.M.progressFields.length);
+  eq('Alter Ranginhalt bleibt erhalten','Rang fünf',legacy.fatePaths.M.progressFields[0].content);
+  eq('Flexible Felder speichern das vollständige Schema',true,legacy.fatePaths.M.progressFields.every(field=>['id','title','counter','threshold','content','order'].every(key=>Object.hasOwn(field,key))));
+
+  const numeric=newCharacterBeforeR5();
+  numeric.counters.M=0;
+  numeric.counters.GB={max:0,current:7};
+  ensureOwnerV175(numeric);
+  eq('Alter Zahlen-Counter 0 wird als Maximum 0 migriert',0,numeric.counters.M.max);
+  eq('Alter Zahlen-Counter 0 wird als aktueller Stand 0 migriert',0,numeric.counters.M.current);
+  eq('Aktueller Stand wird auf Maximum begrenzt',0,numeric.counters.GB.current);
+  eq('Wirksamer Counter darf 0 sein',0,effectiveCounters(numeric).M);
+  const counterNode=renderCountersR5(numeric);
+  eq('Maximum und aktueller Stand haben Minimum 0',true,[...counterNode.querySelectorAll('input[type="number"]')].every(input=>input.min==='0'));
+
+  const armorOwner=newCharacter();
+  armorOwner.equipment=[normalizeItemV174({name:'Testpanzer',itemType:'armor',category:'armor.body',protection:3,quantity:1,equippedQuantity:1,loadState:'equipped'})];
+  eq('Abgeleiteter Komplettwert heißt Rüstung',3,derived(armorOwner).find(row=>row.n==='Rüstung')?.v);
+  eq('Kein sichtbarer Armor-Wert in der Rüstungskarte',false,/\bArmor\b/.test(renderCombatEquipmentV174(armorOwner).textContent));
+  eq('NPCs behalten die ergänzten Karten',true,NPC_FEATURE_CARDS_R4.every(([type])=>newAuxEntry('npc','Test-NPC').layout.some(card=>card.type===type)));
+  eq('Vertraute behalten die ergänzten Karten',true,NPC_FEATURE_CARDS_R4.every(([type])=>newAuxEntry('familiar','Test-Vertrauter').layout.some(card=>card.type===type)));
+
+  for(const [name,expected,actual,ok] of tests){
+    body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));
+  }
+  return previousOk&&tests.every(test=>test[3]);
+};
+
+/* Revision 6: eindeutige Bedeutung und CBP-Aufschlüsselung der NPC-Stufe. */
+const npcLevelStyleR6=el('style',{text:`
+.npc-level-explanation-r6{display:grid;gap:.45rem;margin-top:.75rem}
+.npc-level-explanation-r6 h3{margin:0;font-size:1.05rem}
+.npc-level-costs-r6{display:flex;flex-wrap:wrap;gap:.4rem}
+.npc-level-costs-r6 span{padding:.35rem .55rem;border:1px solid var(--border);border-radius:999px;background:var(--panel-bg);font-weight:700}
+`});document.head.append(npcLevelStyleR6);
+
+function npcLevelSourceTextR6(owner){
+  if(owner.accounting?.costSource==='manual')return 'Als Kostenquelle ist „Manuelle Kosten“ gewählt. Deshalb ersetzt der eingetragene manuelle Wert den CBP-Grundwert der NPC-Stufe.';
+  if(owner.accounting?.costSource==='calculated')return 'Als Kostenquelle ist „Berechnet“ gewählt. Deshalb bestimmt der Vergleich der eigenen Grundwerte, Counter, Fähigkeiten und Items den Wert; die NPC-Stufe bleibt eine Regel- und Beziehungsbeschreibung.';
+  return 'Als Kostenquelle ist „Spielerhandbuch“ gewählt. Daher entspricht der CBP-Grundwert genau der NPC-Stufe: Stufe 5 kostet beispielsweise 5 CBP.';
+}
+function npcLevelExplanationR6(owner){
+  const level=Math.max(0,Math.min(10,+owner.contactLevel||0));
+  const definition=NPC_EFFECTS[level]||NPC_EFFECTS[0];
+  const kind=owner.type==='npc'?'NPC-Stufe':'Bindungsstufe';
+  const box=el('section',{class:'notice npc-level-explanation-r6'},[
+    el('h3',{text:kind+' '+level+' = '+level+' CBP Handbuch-Grundwert · '+(definition[0]||'kein bezahlter Kontakt')}),
+    el('p',{text:definition[1]||'Kein zusätzlicher Kontaktvorteil.'}),
+    el('p',{text:(NPC_TYPE_EFFECTS[owner.npcType]||'Die konkrete NPC-Art und ihr Einsatzgebiet können oben gewählt werden.')+' Höhere Stufen enthalten die passenden Vorteile niedrigerer Stufen.'}),
+    el('div',{class:'npc-level-costs-r6'},[
+      el('span',{text:kind+': '+level+' CBP'}),
+      el('span',{text:'Gesamter Vergleichswert: '+auxDisplayCost(owner)+' CBP'}),
+      el('span',{text:'Abzug vom Charakter: '+auxChargedCost(owner)+' CBP'})
+    ]),
+    el('p',{class:'muted',text:npcLevelSourceTextR6(owner)}),
+    el('p',{class:'muted',text:'„Eigenstufe / Rang“ ist nur eine frei verwendbare Notiz zur persönlichen Macht oder Erfahrung des NPCs und verändert selbst keine CBP.'})
+  ]);
+  return box;
+}
+const renderAuxProfileBeforeR6=renderAuxProfileV171;
+renderAuxProfileV171=function(owner){
+  const box=renderAuxProfileBeforeR6(owner);
+  if(owner.type==='possession')return box;
+  const labels=[...box.querySelectorAll('label.field')];
+  for(const label of labels){
+    const caption=label.querySelector('span');
+    if(!caption)continue;
+    if(caption.textContent==='Stufe / Rang'){
+      caption.textContent='Eigenstufe / Rang · nur Notiz (0 CBP)';
+      const input=label.querySelector('input');
+      if(input)input.title='Dieses freie Rangfeld verändert keine CBP.';
+    }
+    if(caption.textContent==='Kontaktstufe'){
+      caption.textContent=owner.type==='npc'?'NPC-Stufe · CBP-Grundwert':'Bindungsstufe · CBP-Grundwert';
+      const select=label.querySelector('select');
+      if(select){
+        select.title='Die Handbuchkosten entsprechen der gewählten Stufe in CBP.';
+        const zero=select.querySelector('option[value="0"]');
+        if(zero)zero.textContent='0 CBP · kein bezahlter Kontakt';
+      }
+    }
+  }
+  for(const notice of [...box.querySelectorAll('.notice')]){
+    const strong=notice.querySelector('strong');
+    if(strong?.textContent?.startsWith('Stufe '))notice.remove();
+  }
+  box.append(npcLevelExplanationR6(owner));
+  return box;
+};
+
+const runTestsBeforeR6=runTests;
+runTests=function(){
+  const baseOk=runTestsBeforeR6();
+  const body=testResults.querySelector('tbody');
+  const tests=[];
+  const eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]);
+  const npc=newAuxEntry('npc','Stufenprüfung');
+  npc.contactLevel=5;
+  npc.npcType='Händler';
+  npc.accounting={mode:'character',costSource:'handbook',manualCost:0,active:true};
+  const profile=renderAuxProfileV171(npc);
+  eq('NPC-Stufe erklärt den CBP-Grundwert',true,profile.textContent.includes('NPC-Stufe 5 = 5 CBP Handbuch-Grundwert'));
+  eq('NPC-Stufe zeigt ihre Regelwirkung',true,profile.textContent.includes(NPC_EFFECTS[5][1]));
+  eq('NPC-Stufe zeigt Vergleichswert und Charakterabzug',true,profile.textContent.includes('Gesamter Vergleichswert: 5 CBP')&&profile.textContent.includes('Abzug vom Charakter: 5 CBP'));
+  eq('Freie Eigenstufe ist eindeutig kostenfrei',true,profile.textContent.includes('Eigenstufe / Rang · nur Notiz (0 CBP)'));
+  const levelOptions=[...profile.querySelectorAll('select option')].map(option=>option.textContent);
+  eq('Alle bezahlten NPC-Stufen nennen CBP',true,levelOptions.filter(text=>/^\d+ CBP/.test(text)).length>=11);
+  for(const [name,expected,actual,ok] of tests)body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));
+  return baseOk&&tests.every(test=>test[3]);
+};
+
+/* Revision 7: NPC-Stufen werden bei der Charaktererschaffung automatisch abgerechnet. */
+function ensureNpcCreationAccountingR7(owner){
+  if(!owner||!['npc','familiar'].includes(owner.type))return owner;
+  owner.accounting=owner.accounting&&typeof owner.accounting==='object'?owner.accounting:{};
+  if(!owner.npcCreationCostInitialized){
+    const looksLikeOldDefault=(owner.accounting.mode===undefined||owner.accounting.mode==='free')&&
+      (owner.accounting.costSource===undefined||owner.accounting.costSource==='manual')&&
+      Math.max(0,+owner.accounting.manualCost||0)===0&&!String(owner.accounting.reason||'').trim();
+    if(looksLikeOldDefault){
+      owner.accounting.mode='character';
+      owner.accounting.costSource='handbook';
+      owner.accounting.manualCost=0;
+    }
+    owner.npcCreationCostInitialized=true;
+  }
+  return owner;
+}
+const ensureAuxBeforeR7=ensureAuxV171;
+ensureAuxV171=function(owner){return ensureNpcCreationAccountingR7(ensureAuxBeforeR7(owner))};
+
+function ensureStateR7(data,log=true){
+  let changed=0;
+  for(const character of data.characters||[]){
+    for(const owner of character.auxiliaryTabs||[]){
+      const before=!!owner.npcCreationCostInitialized;
+      ensureNpcCreationAccountingR7(owner);
+      if(!before&&['npc','familiar'].includes(owner.type))changed++;
+    }
+  }
+  const first=!data.v175NpcCreationCostsR7Done;
+  data.v175NpcCreationCostsR7Done=true;
+  if(first&&log){
+    data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];
+    data.migrationLog.push({from:13,to:13,at:new Date().toISOString(),changes:[
+      changed+' NPC-/Vertrauteneinträge für die Charaktererschaffung geprüft',
+      'NPC-Stufen standardmäßig dem Charakterbudget und der Handbuch-Kostenquelle zugeordnet'
+    ]});
+  }
+  return data;
+}
+const migrateStateBeforeR7=migrateState;
+migrateState=function(data){return ensureStateR7(migrateStateBeforeR7(data),true)};
+if(!state.v175NpcCreationCostsR7Done){
+  try{localStorage.setItem(STORE+'.backup.npc-costs-r7.'+Date.now(),JSON.stringify(state))}catch{}
+}
+state=ensureStateR7(state,true);
+
+const newAuxEntryBeforeR7=newAuxEntry;
+newAuxEntry=function(type,name){return ensureNpcCreationAccountingR7(newAuxEntryBeforeR7(type,name))};
+
+function chargedNpcCreationCostsR7(character){
+  return(character.auxiliaryTabs||[])
+    .filter(owner=>['npc','familiar'].includes(owner.type))
+    .reduce((sum,owner)=>sum+auxChargedCost(ensureNpcCreationAccountingR7(owner)),0);
+}
+const costsBeforeR7=costs;
+costs=function(character){
+  const result=costsBeforeR7(character);
+  result['Davon NPCs & Vertraute']=chargedNpcCreationCostsR7(character);
+  return result;
+};
+
+function npcAccountingModeTextR7(owner){
+  const charged=auxChargedCost(owner);
+  if(owner.accounting?.mode==='character')return 'Die Kosten werden bei der Charaktererschaffung automatisch wie Grundwerte, Counter, Fähigkeiten und andere Käufe vom Charakterbudget abgezogen: '+charged+' CBP.';
+  if(owner.accounting?.mode==='free')return 'Sonderfall „Kostenlos erhalten“: Der Vergleichswert bleibt sichtbar, wird aber nicht vom Charakterbudget abgezogen.';
+  if(owner.accounting?.mode==='own-budget')return 'Sonderfall „Eigenes Budget“: Die Kosten werden im Budget dieses Reiters geführt und nicht vom Charakterbudget abgezogen.';
+  return 'Sonderfall „Nur dokumentieren“: Die Kosten dienen nur als Vergleichswert und werden nicht vom Charakterbudget abgezogen.';
+}
+const npcLevelExplanationBeforeR7=npcLevelExplanationR6;
+npcLevelExplanationR6=function(owner){
+  const box=npcLevelExplanationBeforeR7(owner);
+  box.append(el('p',{class:'notice '+(owner.accounting?.mode==='character'?'ok':''),text:npcAccountingModeTextR7(owner)}));
+  return box;
+};
+
+const runTestsBeforeR7=runTests;
+runTests=function(){
+  const baseOk=runTestsBeforeR7();
+  const body=testResults.querySelector('tbody');
+  const tests=[];
+  const eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]);
+  const character=newCharacter();
+  const paid=newAuxEntry('npc','Bezahlter Kontakt');
+  paid.contactLevel=5;
+  character.auxiliaryTabs=[paid];
+  const withoutNpc=newCharacter();
+  withoutNpc.auxiliaryTabs=[];
+  const paidCosts=costs(character);
+  const emptyCosts=costs(withoutNpc);
+  eq('Neue NPCs werden standardmäßig vom Charakterbudget bezahlt','character',paid.accounting.mode);
+  eq('Neue NPCs verwenden standardmäßig den Handbuchwert','handbook',paid.accounting.costSource);
+  eq('NPC-Stufe 5 erhöht ausgegebene Charakter-CBP um 5',5,paidCosts.spent-emptyCosts.spent);
+  eq('NPC-Kosten erscheinen separat in der Kostenübersicht',5,paidCosts['Davon NPCs & Vertraute']);
+  eq('NPC-Stufe 5 senkt den Rest um 5',5,emptyCosts.rest-paidCosts.rest);
+  paid.accounting.mode='free';
+  ensureNpcCreationAccountingR7(paid);
+  eq('Später ausdrücklich kostenlos bleibt kostenlos',0,auxChargedCost(paid));
+  paid.accounting.mode='character';
+  paid.accounting.costSource='manual';
+  paid.accounting.manualCost=7;
+  eq('Ausdrücklich manuelle NPC-Kosten bleiben möglich',7,auxChargedCost(paid));
+  for(const [name,expected,actual,ok] of tests)body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));
+  return baseOk&&tests.every(test=>test[3]);
+};
+
 /* 15. Initialisierung */
 renderAddCards();
 mainTabs.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.id==='addAuxTabBtn'||b.dataset.dynamicAux!==undefined)return;if(b.dataset.view==='aux'){activeAuxId=ch().auxiliaryTabs?.[0]?.id;openAux(activeAuxId);return}document.querySelectorAll('#mainTabs button').forEach(x=>x.classList.toggle('active',x===b));app.className=b.dataset.view==='build'?'app':'app '+b.dataset.view;renderCards()});renderAuxTabs();
@@ -794,6 +1781,7 @@ const fonts=['Palatino, Georgia, serif','Georgia, serif','Cormorant Garamond, Ge
 applyRules.onclick=()=>{try{const n=JSON.parse(rulesJson.value);n.rulesVersion=RULES_VERSION;if(!n.attributeBands||!n.counterBands||!n.skillBands)throw Error('Kostenbänder fehlen');if(JSON.stringify(n.skillBands)!==JSON.stringify(HANDBOOK_SKILL_BANDS))throw Error('Die Fähigkeitenkosten sind durch das Spielerhandbuch fest vorgegeben.');previousRules=structuredClone(rules);rules=n;localStorage.setItem(STORE+'.rules',JSON.stringify(rules));rulesDialog.close();renderAll()}catch(e){showError('Regeln ungültig: '+e.message)}};resetRules.onclick=()=>{previousRules=structuredClone(rules);rules=structuredClone(DEFAULT_RULES);localStorage.setItem(STORE+'.rules',JSON.stringify(rules));rulesJson.value=JSON.stringify(rules,null,2);renderAll()};undoRules.onclick=()=>{if(previousRules){[rules,previousRules]=[previousRules,rules];rules.skillBands=structuredClone(HANDBOOK_SKILL_BANDS);rules.rulesVersion=RULES_VERSION;localStorage.setItem(STORE+'.rules',JSON.stringify(rules));rulesJson.value=JSON.stringify(rules,null,2);renderAll()}};exportRules.onclick=()=>download(rules,'eberos-regeln.json');
 ['Cinzel, Georgia, serif','Marcellus, Georgia, serif','Libre Baskerville, Georgia, serif','EB Garamond, Georgia, serif','Merriweather, Georgia, serif','Noto Serif, Georgia, serif','system-ui, sans-serif'].forEach(font=>document.querySelectorAll('[data-setting^=font]').forEach(select=>{if(![...select.options].some(o=>o.value===font))select.append(el('option',{value:font,text:font.split(',')[0]}))}));
 try{const key=STORE+'.rules',stored=localStorage.getItem(key);if(stored){const parsed=JSON.parse(stored);if(validStoredRules(parsed))rules=parsed;else{localStorage.setItem(key+'.backup.'+Date.now(),stored);rules=structuredClone(DEFAULT_RULES);localStorage.setItem(key,JSON.stringify(rules))}}}catch{rules=structuredClone(DEFAULT_RULES)}renderAll();save();window.Eberos={state:()=>state,costs:()=>costs(ch()),runTests,attributeCost,counterCost,skillCost,skillNextLevelCost,auxDisplayCost,auxChargedCost,validatePlugin,formulaValue,version:APP_VERSION};
+Object.assign(window.Eberos,{schemaVersion:SCHEMA_VERSION,rulesVersion:RULES_VERSION,ensureStateV175,normalizeFatePath,normalizeFateSynergy,fatePathLevel,openedFatePaths,synergyKind,synergyThreshold,synergyLevel,synergyUnlocked,synergySummary,validateFateSynergy,runTests:()=>runTests()});
 /* PWA-Installation und Offlinebetrieb */
 let installPrompt=null;
 window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event;installBtn.classList.remove('hidden')});
