@@ -2056,6 +2056,79 @@ runTests=function(){
   for(const[name,expected,actual,ok]of tests)body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return baseOk&&tests.every(test=>test[3]);
 };
 
+/* Revision 11: Fähigkeiten nach Grundwert und wirksamem Wert sortieren und filtern. */
+const skillSortStyleR11=el('style',{text:`
+.skill-sort-count-r11{display:flex;align-items:center;justify-content:center;min-height:42px;padding:.4rem .65rem;border:1px solid var(--border);border-radius:7px;background:var(--panel-alt);font-weight:700;white-space:nowrap}.skill-sort-help-r11{margin:-.2rem 0 .6rem;font-size:.82rem}.skills-r5 tr[hidden]{display:none}
+@media(max-width:520px){.filters.skill-filters-r11>*{flex-basis:100%;min-width:0}.skill-sort-count-r11{justify-content:flex-start}}
+`});document.head.append(skillSortStyleR11);
+
+const SKILL_SORT_OPTIONS_R11=[['manual','Eigene Reihenfolge'],['attribute','Grundwert-Kürzel (ST → CR)'],['value-desc','Grundwert absteigend'],['value-asc','Grundwert aufsteigend']],ATTRIBUTE_RANK_R11=new Map(ATTRS.map(([id],index)=>[id,index]));
+function skillSortViewR11(owner){
+  const current=owner.skillSortView&&typeof owner.skillSortView==='object'?owner.skillSortView:{};
+  const sort=SKILL_SORT_OPTIONS_R11.some(([value])=>value===current.sort)?current.sort:'manual',attribute=ATTRIBUTE_NAMES_R10[current.attribute]?current.attribute:'';
+  return owner.skillSortView={sort,attribute};
+}
+function skillPrimaryAttributeR11(skill){return skillAttributeIdsR10(skill)[0]||''}
+function skillSortValueR11(owner,skill,attribute=''){
+  const ids=skillAttributeIdsR10(skill),id=attribute&&ids.includes(attribute)?attribute:ids[0];
+  return id?skillAttributeValuesR10(owner,id).effective:0;
+}
+function orderedSkillsForViewR11(owner,skills,view){
+  const manualRank=new Map((owner.skillOrder||[]).map((id,index)=>[id,index])),name=(a,b)=>a.name.localeCompare(b.name,'de'),primary=skill=>ATTRIBUTE_RANK_R11.get(skillPrimaryAttributeR11(skill))??999;
+  const filtered=skills.filter(skill=>!view.attribute||skillAttributeIdsR10(skill).includes(view.attribute));
+  return filtered.sort((a,b)=>{
+    if(view.sort==='manual')return(manualRank.get(a.id)??9999)-(manualRank.get(b.id)??9999)||name(a,b);
+    if(view.sort==='attribute')return primary(a)-primary(b)||name(a,b);
+    const direction=view.sort==='value-asc'?1:-1,difference=skillSortValueR11(owner,a,view.attribute)-skillSortValueR11(owner,b,view.attribute);
+    return difference*direction||primary(a)-primary(b)||name(a,b);
+  });
+}
+function decorateSkillSortingR11(box,owner){
+  const filters=box.querySelector('.filters'),body=box.querySelector('.skills-r5 tbody'),scroll=box.querySelector('.scroll');
+  if(!filters||!body)return box;
+  filters.classList.add('skill-filters-r11');
+  const view=skillSortViewR11(owner),sort=el('select',{'aria-label':'Fähigkeiten sortieren'}),attribute=el('select',{'aria-label':'Fähigkeiten nach Grundwert filtern'}),count=el('span',{class:'skill-sort-count-r11','aria-live':'polite'}),help=el('p',{class:'muted skill-sort-help-r11',text:'Bei mehreren Grundwerten bestimmt das erste Kürzel die allgemeine Gruppierung. Der Filter zeigt jede passende Fähigkeit genau einmal.'});
+  for(const[value,label]of SKILL_SORT_OPTIONS_R11)sort.append(el('option',{value,text:label}));
+  attribute.append(el('option',{value:'',text:'Alle Grundwerte'}));for(const[id,name]of ATTRS)attribute.append(el('option',{value:id,text:`${name} (${id})`}));
+  sort.value=view.sort;attribute.value=view.attribute;filters.append(sort,attribute,count);if(scroll)box.insertBefore(help,scroll);
+  let applying=false;
+  function apply(){
+    if(applying)return;applying=true;
+    const mapped=[...body.rows].map(row=>({row,skill:SKILLS.find(entry=>entry.name===row.querySelector('.skill-name-r13 strong')?.textContent)})).filter(entry=>entry.skill),visible=orderedSkillsForViewR11(owner,mapped.map(entry=>entry.skill),view),visibleIds=new Set(visible.map(skill=>skill.id)),rowById=new Map(mapped.map(entry=>[entry.skill.id,entry.row])),ordered=[...visible.map(skill=>rowById.get(skill.id)),...mapped.filter(entry=>!visibleIds.has(entry.skill.id)).map(entry=>entry.row)];
+    for(const entry of mapped)entry.row.hidden=!visibleIds.has(entry.skill.id);
+    const current=[...body.rows];if(ordered.some((row,index)=>row!==current[index]))body.append(...ordered);
+    count.textContent=`${visible.length} von ${mapped.length} Fähigkeiten`;applying=false;
+  }
+  const saveView=()=>{persistOwnerR5(owner,false);apply()};sort.onchange=()=>{view.sort=sort.value;saveView()};attribute.onchange=()=>{view.attribute=attribute.value;saveView()};
+  apply();new MutationObserver(apply).observe(body,{childList:true});return box;
+}
+const renderSkillsOwnerBeforeR11=renderSkillsOwnerR5;
+renderSkillsOwnerR5=function(owner,isAux=false){return decorateSkillSortingR11(renderSkillsOwnerBeforeR11(owner,isAux),owner)};
+
+const runTestsBeforeR11=runTests;
+runTests=function(){
+  const baseOk=runTestsBeforeR11(),body=testResults.querySelector('tbody'),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]);
+  const owner=newCharacter();owner.attributes.ST=5;owner.attributes.FF=9;owner.attributes.CR=3;
+  const sample=[{id:'skill-a',name:'Alpha',attrs:'FF, ST'},{id:'skill-b',name:'Beta',attrs:'ST'},{id:'skill-c',name:'Gamma',attrs:'CR'}];owner.skillOrder=['skill-c','skill-a','skill-b'];
+  eq('Mehrfach-Grundwert verwendet erstes Kürzel als Gruppierung','FF',skillPrimaryAttributeR11(sample[0]));
+  eq('Eigene Reihenfolge bleibt als Sortiermodus erhalten','skill-c|skill-a|skill-b',orderedSkillsForViewR11(owner,[...sample],{sort:'manual',attribute:''}).map(skill=>skill.id).join('|'));
+  eq('Grundwert-Kürzel sortieren in Attributreihenfolge','skill-b|skill-a|skill-c',orderedSkillsForViewR11(owner,[...sample],{sort:'attribute',attribute:''}).map(skill=>skill.id).join('|'));
+  eq('Wirksamer Grundwert sortiert absteigend','skill-a|skill-b|skill-c',orderedSkillsForViewR11(owner,[...sample],{sort:'value-desc',attribute:''}).map(skill=>skill.id).join('|'));
+  eq('ST-Filter zeigt Mehrfachzuordnung ohne Duplikat','skill-a|skill-b',orderedSkillsForViewR11(owner,[...sample],{sort:'attribute',attribute:'ST'}).map(skill=>skill.id).sort().join('|'));
+  owner.skillOrder=SKILLS.map(skill=>skill.id);const table=renderSkillsOwnerR5(owner,false),sort=table.querySelector('[aria-label="Fähigkeiten sortieren"]'),attribute=table.querySelector('[aria-label="Fähigkeiten nach Grundwert filtern"]');
+  eq('Sortierauswahl ist in der Fähigkeitenkarte vorhanden','SELECT',sort?.tagName);
+  eq('Grundwertfilter ist in der Fähigkeitenkarte vorhanden','SELECT',attribute?.tagName);
+  sort.value='attribute';sort.onchange();const primaryRanks=[...table.querySelectorAll('tbody tr')].map(row=>SKILLS.find(skill=>skill.name===row.querySelector('.skill-name-r13 strong')?.textContent)).filter(Boolean).map(skill=>ATTRIBUTE_RANK_R11.get(skillPrimaryAttributeR11(skill)));
+  eq('Gerenderte Grundwertsortierung ist durchgehend geordnet',true,primaryRanks.every((rank,index)=>!index||rank>=primaryRanks[index-1]));
+  attribute.value='ST';attribute.onchange();const visibleRows=[...table.querySelectorAll('tbody tr')].filter(row=>!row.hidden);
+  eq('ST-Filter zeigt exakt alle ST-Fähigkeiten',SKILLS.filter(skill=>skillAttributeIdsR10(skill).includes('ST')).length,visibleRows.length);
+  eq('Auswahl wird am Besitzer gespeichert','attribute|ST',`${owner.skillSortView.sort}|${owner.skillSortView.attribute}`);
+  const npc=newAuxEntry('npc','Sortiertest'),npcTable=renderSkillsOwnerR5(npc,true);
+  eq('NPC-Fähigkeiten erhalten dieselbe Sortieransicht',2,npcTable.querySelectorAll('.skill-filters-r11 select[aria-label^="Fähigkeiten"]').length);
+  eq('Mobilansicht stapelt alle Sortierfelder',true,skillSortStyleR11.textContent.includes('flex-basis:100%'));
+  for(const[name,expected,actual,ok]of tests)body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return baseOk&&tests.every(test=>test[3]);
+};
+
 /* 15. Initialisierung */
 renderAddCards();
 mainTabs.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.id==='addAuxTabBtn'||b.dataset.dynamicAux!==undefined)return;if(b.dataset.view==='aux'){activeAuxId=ch().auxiliaryTabs?.[0]?.id;openAux(activeAuxId);return}document.querySelectorAll('#mainTabs button').forEach(x=>x.classList.toggle('active',x===b));app.className=b.dataset.view==='build'?'app':'app '+b.dataset.view;renderCards()});renderAuxTabs();
