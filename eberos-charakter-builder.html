@@ -1971,6 +1971,91 @@ runTests=function(){
   for(const[name,expected,actual,ok]of tests)body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return baseOk&&tests.every(test=>test[3]);
 };
 
+/* Revision 10: aktuelle Grundwerte und Würfel direkt an den Fähigkeiten. */
+const skillAttributeStyleR10=el('style',{text:`
+.skill-attribute-list-r10{display:flex;align-items:center;gap:.35rem;flex-wrap:wrap;min-width:7rem}.skill-attribute-chip-r10{min-width:42px;min-height:34px;padding:.28rem .55rem;border:1px solid var(--accent-2);border-radius:999px;background:var(--panel-alt);color:var(--ink);font-family:var(--font-number);font-weight:800;line-height:1;cursor:help;touch-action:manipulation}.skill-attribute-chip-r10:hover,.skill-attribute-chip-r10:focus-visible{background:var(--accent-2);color:var(--panel-bg);outline:3px solid color-mix(in srgb,var(--accent-2),transparent 58%);outline-offset:2px}.skill-attribute-info-r10{display:grid;gap:.55rem}.skill-attribute-current-r10{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;margin:0!important;padding:.65rem;border:1px solid var(--border);border-radius:10px;background:var(--panel-alt)}.skill-attribute-current-r10 strong{margin-right:auto}.skill-attribute-current-r10 .die{white-space:nowrap}.skill-attribute-breakdown-r10{margin:0!important}.skill-attribute-info-r10 .muted{margin:0!important}
+@media(max-width:520px){.skill-attribute-list-r10{min-width:5.5rem}.skill-attribute-chip-r10{min-width:44px;min-height:44px}}
+@media print{.skill-attribute-chip-r10{min-width:0;min-height:0;padding:0;border:0;background:none;color:inherit;outline:0}.skill-attribute-list-r10{display:inline}.skill-attribute-chip-r10+.skill-attribute-chip-r10::before{content:', ';font-weight:400}}
+`});document.head.append(skillAttributeStyleR10);
+
+const ATTRIBUTE_NAMES_R10=Object.fromEntries(ATTRS);
+function skillAttributeIdsR10(skill){
+  const seen=new Set();
+  return(String(skill?.attrs||'').match(/[A-ZÄÖÜ]{2}/g)||[]).filter(id=>ATTRIBUTE_NAMES_R10[id]&&!seen.has(id)&&(seen.add(id),true));
+}
+function skillAttributeValuesR10(owner,id){
+  ensureOwnerV175(owner);
+  const bought=Math.max(0,Math.min(25,Number.isFinite(+owner.attributes?.[id])?+owner.attributes[id]:1));
+  const modifier=+(attributeModifiers(owner)?.[id]||0),base=baseAttributesV174(owner),load=base?loadSummaryV174(owner,base).penalty:0;
+  const effective=Math.max(0,Math.min(25,+(effectiveAttributes(owner)?.[id]??bought)));
+  return{bought,modifier,load,effective,die:DICE[effective]||'—'};
+}
+function skillAttributeInfoContentR10(owner,id){
+  const name=ATTRIBUTE_NAMES_R10[id]||id,{bought,modifier,load,effective,die}=skillAttributeValuesR10(owner,id),parts=[`Gekauft ${bought}`];
+  if(modifier)parts.push(`Modifikator ${modifier>0?'+':''}${modifier}`);
+  if(load)parts.push(`Belastung −${load}`);
+  if(parts.length===1&&bought===effective)parts.push('keine Modifikatoren');
+  return el('div',{class:'skill-attribute-info-r10'},[
+    el('p',{class:'skill-attribute-current-r10'},[el('strong',{text:`${name} (${id})`}),el('span',{text:`Grundwert ${effective}`}),el('span',{class:'die',text:die})]),
+    el('p',{class:'skill-attribute-breakdown-r10',text:parts.join(' · ')}),
+    el('p',{class:'muted',text:'Dieser wirksame Grundwert und Würfel gelten für Proben mit dieser Fähigkeit.'})
+  ]);
+}
+function bindSkillAttributeInfoR10(chip,owner,id){
+  const title=`${ATTRIBUTE_NAMES_R10[id]} (${id})`,build=()=>skillAttributeInfoContentR10(owner,id),schedule=()=>{clearTimeout(infoDelayR5);infoDelayR5=setTimeout(()=>showRuleInfoR5(chip,title,build),500)};
+  chip.addEventListener('mouseenter',schedule);
+  chip.addEventListener('mouseleave',()=>hideRuleInfoR5());
+  chip.addEventListener('focus',()=>showRuleInfoR5(chip,title,build));
+  chip.addEventListener('blur',()=>hideRuleInfoR5());
+  chip.addEventListener('click',event=>{event.stopPropagation();showRuleInfoR5(chip,title,build)});
+  chip.addEventListener('keydown',event=>{if(event.key==='Escape'){event.stopPropagation();hideRuleInfoR5()}});
+}
+function skillAttributeChipsR10(owner,skill){
+  const box=el('div',{class:'skill-attribute-list-r10'});
+  for(const id of skillAttributeIdsR10(skill)){
+    const values=skillAttributeValuesR10(owner,id),name=ATTRIBUTE_NAMES_R10[id],chip=el('button',{type:'button',class:'skill-attribute-chip-r10',text:id,'aria-label':`${name} (${id}): Grundwert ${values.effective}, ${values.die}`});
+    bindSkillAttributeInfoR10(chip,owner,id);box.append(chip);
+  }
+  return box;
+}
+function decorateSkillAttributesR10(box,owner){
+  const body=box.querySelector('.skills-r5 tbody');
+  if(!body)return box;
+  const apply=()=>{
+    for(const row of body.rows){
+      const name=row.querySelector('.skill-name-r13 strong')?.textContent,skill=SKILLS.find(entry=>entry.name===name),cell=row.cells[4];
+      if(!skill||!cell||cell.dataset.attributeSkillR10===skill.id)continue;
+      cell.dataset.attributeSkillR10=skill.id;cell.replaceChildren(skillAttributeChipsR10(owner,skill));
+    }
+  };
+  apply();new MutationObserver(apply).observe(body,{childList:true});return box;
+}
+const renderSkillsOwnerBeforeR10=renderSkillsOwnerR5;
+renderSkillsOwnerR5=function(owner,isAux=false){return decorateSkillAttributesR10(renderSkillsOwnerBeforeR10(owner,isAux),owner)};
+
+const runTestsBeforeR10=runTests;
+runTests=function(){
+  const baseOk=runTestsBeforeR10(),body=testResults.querySelector('tbody'),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]);
+  const owner=newCharacter();owner.attributes.ST=6;owner.attributes.FF=8;
+  const pair={attrs:'ST, FF'},ids=skillAttributeIdsR10(pair),chips=skillAttributeChipsR10(owner,pair),info=skillAttributeInfoContentR10(owner,'ST'),table=renderSkillsOwnerR5(owner,false);
+  eq('Mehrere Grundwerte werden getrennt erkannt','ST|FF',ids.join('|'));
+  eq('ST und FF erhalten je ein eigenes Infoelement',2,chips.querySelectorAll('.skill-attribute-chip-r10').length);
+  eq('Grundwert-Kürzel sind echte bedienbare Schaltflächen','BUTTON',chips.firstElementChild?.tagName);
+  eq('ST zeigt den aktuellen Grundwert',true,info.textContent.includes('Grundwert 6'));
+  eq('ST zeigt den passenden Würfel',true,info.textContent.includes(DICE[6]));
+  eq('Barrierefreie Beschriftung enthält Wert und Würfel',true,chips.firstElementChild?.getAttribute('aria-label').includes(`Grundwert 6, ${DICE[6]}`));
+  eq('Alle Fähigkeits-Grundwerte sind bekannte Kürzel',true,SKILLS.every(skill=>skillAttributeIdsR10(skill).length>0));
+  eq('Alle sichtbaren Fähigkeitszeilen besitzen Grundwert-Schaltflächen',SKILLS.length,table.querySelectorAll('tbody tr .skill-attribute-list-r10').length);
+  eq('Jede Fähigkeitszuordnung wird als Schaltfläche dargestellt',SKILLS.reduce((sum,skill)=>sum+skillAttributeIdsR10(skill).length,0),table.querySelectorAll('.skill-attribute-chip-r10').length);
+  const npc=newAuxEntry('npc','Info-Test');npc.attributes.ST=9;const npcChip=skillAttributeChipsR10(npc,{attrs:'ST'}).firstElementChild;
+  eq('NPC-Grundwerte werden aus dem jeweiligen NPC gelesen',true,npcChip.getAttribute('aria-label').includes(`Grundwert 9, ${DICE[9]}`));
+  const familiar=newAuxEntry('familiar','Info-Test');familiar.attributes.FF=7;const familiarChip=skillAttributeChipsR10(familiar,{attrs:'FF'}).firstElementChild;
+  eq('Vertrauten-Grundwerte werden getrennt gelesen',true,familiarChip.getAttribute('aria-label').includes(`Grundwert 7, ${DICE[7]}`));
+  eq('Hover öffnet das Infofenster nach kurzer Verzögerung',true,bindSkillAttributeInfoR10.toString().includes('500'));
+  eq('Mobilansicht bietet mindestens 44 Pixel große Ziele',true,skillAttributeStyleR10.textContent.includes('min-width:44px')&&skillAttributeStyleR10.textContent.includes('min-height:44px'));
+  for(const[name,expected,actual,ok]of tests)body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return baseOk&&tests.every(test=>test[3]);
+};
+
 /* 15. Initialisierung */
 renderAddCards();
 mainTabs.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.id==='addAuxTabBtn'||b.dataset.dynamicAux!==undefined)return;if(b.dataset.view==='aux'){activeAuxId=ch().auxiliaryTabs?.[0]?.id;openAux(activeAuxId);return}document.querySelectorAll('#mainTabs button').forEach(x=>x.classList.toggle('active',x===b));app.className=b.dataset.view==='build'?'app':'app '+b.dataset.view;renderCards()});renderAuxTabs();
