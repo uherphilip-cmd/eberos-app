@@ -8,7 +8,12 @@ const POWER_BY_ID_V176=new Map(POWER_ENTRIES_V176.map(entry=>[entry.id,entry]));
 const POWER_SCHOOL_BY_SKILL_V176=new Map(POWER_SCHOOLS_V176.map(school=>[school.skillId,school]));
 const POWER_PATH_LABELS_V176={M:'Zauber',GB:'Wunder',FS:'Flüche'};
 const POWER_KIND_LABELS_V176={spell:'Zauber',miracle:'Wunder',curse:'Fluch'};
+const POWER_COUNTER_LABELS_V176={M:'Mana',GB:'Glaube',FS:'Finsternis'};
 const POWER_SKILL_IDS_V176=new Set(POWER_SCHOOLS_V176.map(school=>school.skillId));
+const POWER_PATH_OPTIONS_BY_SKILL_V176=new Map(POWER_SCHOOLS_V176.map(school=>{
+  const skill=SKILLS.find(entry=>entry.id===school.skillId),options=[...new Set(String(skill?.use||'').match(/\b(?:M|GB|FS)\b/g)||[])];
+  return[school.skillId,options];
+}).filter(([,options])=>options.length>1));
 const LEGACY_DRUID_SKILL_ID_V176='skill_71';
 const LEGACY_DRUID_SKILL_NAME_V176='Naturmagie & Druidenlehren';
 const DRUID_SKILL_IDS_V176=['skill_druid_flora','skill_druid_fauna'];
@@ -30,16 +35,20 @@ const powerStyleV176=el('style',{text:`
 .power-actions-v176{display:flex;gap:.3rem;align-items:center}
 .power-select-row-v176{display:grid;grid-template-columns:minmax(12rem,1fr) minmax(10rem,1.4fr) auto;gap:.5rem;align-items:end;padding:.6rem;border:1px dashed var(--accent-2);border-radius:9px;background:color-mix(in srgb,var(--panel-bg) 85%,var(--accent-2))}
 .power-select-preview-v176{margin:0;font-size:.86rem;color:var(--muted)}
+.power-select-detail-v176,.power-inline-detail-v176{grid-column:1/-1;min-width:0;padding-top:.55rem;border-top:1px solid var(--border)}
+.power-inline-detail-v176[hidden]{display:none}
 .power-detail-v176{display:grid;gap:.55rem}.power-detail-grid-v176{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem}
 .power-detail-section-v176{padding:.55rem;border:1px solid var(--border);border-radius:8px;background:var(--panel-bg)}
 .power-detail-section-v176 h4{margin:.05rem 0 .25rem}.power-detail-section-v176 p{white-space:pre-wrap}
 .power-current-v176{display:flex;gap:.35rem;flex-wrap:wrap}
 .power-warning-v176{border-left:5px solid var(--danger)}
+.power-path-choice-v176{margin:.65rem 0;padding:.75rem;border:2px solid var(--accent-2);border-radius:10px;background:var(--panel-alt)}
+.power-path-choice-v176 h3{margin:.05rem 0 .35rem}.power-path-choice-list-v176{display:grid;gap:.55rem}.power-path-choice-row-v176{display:flex;align-items:center;justify-content:space-between;gap:.55rem;flex-wrap:wrap;padding:.55rem;border:1px solid var(--border);border-radius:8px;background:var(--panel-bg)}.power-path-choice-actions-v176{display:flex;gap:.35rem;flex-wrap:wrap}
 .druid-migration-v176{margin:.65rem 0;padding:.75rem;border:2px solid var(--accent-2);border-radius:10px;background:var(--panel-alt)}
 .druid-migration-v176 h3{margin:.05rem 0 .35rem}.druid-migration-actions-v176{display:flex;gap:.5rem;flex-wrap:wrap}
 @media(max-width:760px){.power-row-v176,.power-select-row-v176{grid-template-columns:1fr}.power-actions-v176{justify-content:flex-start}.power-detail-grid-v176{grid-template-columns:1fr}}
 @media(max-width:390px){.power-skill-group-v176>summary{align-items:flex-start}.power-badge-v176{white-space:normal}.power-row-v176{padding:.5rem}}
-@media print{.power-select-row-v176,.druid-migration-v176,.power-actions-v176,.power-library-head-v176 .muted{display:none!important}.power-skill-group-v176.has-no-learned{display:none!important}.power-library-v176{break-before:auto}.power-skill-group-v176{break-inside:avoid}.power-skill-group-v176>summary{list-style:none}.power-skill-group-v176>summary::-webkit-details-marker{display:none}.power-row-v176{grid-template-columns:auto 1fr 2fr;border:0;border-bottom:1px solid #999}.power-row-v176 .power-actions-v176{display:none!important}}
+@media print{.power-select-row-v176,.power-path-choice-v176,.druid-migration-v176,.power-actions-v176,.power-library-head-v176 .muted,.power-inline-detail-v176{display:none!important}.power-skill-group-v176.has-no-learned{display:none!important}.power-library-v176{break-before:auto}.power-skill-group-v176{break-inside:avoid}.power-skill-group-v176>summary{list-style:none}.power-skill-group-v176>summary::-webkit-details-marker{display:none}.power-row-v176{grid-template-columns:auto 1fr 2fr;border:0;border-bottom:1px solid #999}.power-row-v176 .power-actions-v176{display:none!important}}
 `});
 document.head.append(powerStyleV176);
 
@@ -84,6 +93,35 @@ function normalizeSkillPowerDataV176(data){
   const ids=Array.isArray(value.learnedPowerIds)?value.learnedPowerIds.filter(id=>typeof id==='string'&&id.trim()):[];
   value.learnedPowerIds=[...new Set(ids)];
   return value;
+}
+
+function normalizePowerPathChoicesV176(owner){
+  const source=owner.powerPathChoicesV176&&typeof owner.powerPathChoicesV176==='object'&&!Array.isArray(owner.powerPathChoicesV176)?owner.powerPathChoicesV176:{};
+  owner.powerPathChoicesV176={};
+  for(const[skillId,options]of POWER_PATH_OPTIONS_BY_SKILL_V176){
+    if(options.includes(source[skillId]))owner.powerPathChoicesV176[skillId]=source[skillId];
+  }
+  return owner.powerPathChoicesV176;
+}
+
+function powerPathOptionsV176(skillId){
+  const options=POWER_PATH_OPTIONS_BY_SKILL_V176.get(skillId);
+  return options?.length?options:[POWER_SCHOOL_BY_SKILL_V176.get(skillId)?.pathId].filter(Boolean);
+}
+
+function resolvedPowerPathV176(owner,skillOrSchool){
+  const skillId=typeof skillOrSchool==='string'?skillOrSchool:skillOrSchool?.skillId,options=POWER_PATH_OPTIONS_BY_SKILL_V176.get(skillId);
+  if(!options)return POWER_SCHOOL_BY_SKILL_V176.get(skillId)?.pathId||skillOrSchool?.pathId||null;
+  const choice=owner?.powerPathChoicesV176?.[skillId];
+  return options.includes(choice)?choice:null;
+}
+
+function assignPowerPathV176(owner,skillId,pathId){
+  ensureOwnerPowersV176(owner);
+  const options=POWER_PATH_OPTIONS_BY_SKILL_V176.get(skillId);
+  if(!options?.includes(pathId)||owner.powerPathChoicesV176[skillId])return false;
+  owner.powerPathChoicesV176[skillId]=pathId;
+  return true;
 }
 
 function canonicalSkillOrderV176(owner){
@@ -156,6 +194,7 @@ function ensureOwnerPowersV176(owner){
   if(!owner||typeof owner!=='object'||owner.type==='possession')return owner;
   ensureOwnerSkillsR13(owner);
   for(const skill of SKILLS)owner.skills[skill.id]=normalizeSkillPowerDataV176(owner.skills[skill.id]);
+  normalizePowerPathChoicesV176(owner);
   if(Array.isArray(owner.spells)&&owner.spells.length&&!owner.legacySpellsV176)owner.legacySpellsV176=structuredClone(owner.spells);
   prepareDruidMigrationV176(owner);
   canonicalSkillOrderV176(owner);
@@ -165,7 +204,7 @@ function ensureOwnerPowersV176(owner){
 }
 
 function ensureStateV176(data,log=true){
-  const first=!data.v176PowerSystemDone;
+  const first=!data.v176PowerSystemDone,counterFixFirst=!data.v176CounterMinimumR3Done,pathBindingFirst=!data.v176PowerPathBindingR5Done;
   for(const character of data.characters||[]){
     ensureOwnerPowersV176(character);
     for(const owner of character.auxiliaryTabs||[])ensureOwnerPowersV176(owner);
@@ -173,16 +212,26 @@ function ensureStateV176(data,log=true){
   data.appVersion=APP_VERSION;
   data.schemaVersion=SCHEMA_VERSION;
   data.v176PowerSystemDone=true;
+  data.v176CounterMinimumR3Done=true;
+  data.v176PowerPathBindingR5Done=true;
   if(first&&log){
     data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];
     data.migrationLog.push({from:13,to:14,at:new Date().toISOString(),changes:['270 Zauber, Wunder und Flüche integriert','Sechs neue beziehungsweise aufgeteilte Fähigkeiten ergänzt','Druidenmigration vorbereitet','Gelernte Powers auf stabile IDs umgestellt']});
+  }
+  if(counterFixFirst&&log){
+    data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];
+    data.migrationLog.push({from:14,to:14,at:new Date().toISOString(),changes:['Counter-Maximum regelkonform auf mindestens 2 begrenzt','Aktueller Countervorrat bleibt bis 0 nutzbar','Dauerhaften Counter-Hilfstext entfernt']});
+  }
+  if(pathBindingFirst&&log){
+    data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];
+    data.migrationLog.push({from:14,to:14,at:new Date().toISOString(),changes:['Mehrdeutige Machtfähigkeiten erfordern eine einmalige Counter-Zuordnung','Thanaturgie wird nicht mehr automatisch Finsternis zugeordnet','Kraftdetails vor dem Lernen vollständig eingeblendet']});
   }
   return data;
 }
 
 const migrateStateBeforeV176=migrateState;
 migrateState=function(data){return ensureStateV176(migrateStateBeforeV176(data),true)};
-if(!state.v176PowerSystemDone){
+if(!state.v176PowerSystemDone||!state.v176CounterMinimumR3Done||!state.v176PowerPathBindingR5Done){
   try{localStorage.setItem(STORE+'.backup.v176.'+Date.now(),JSON.stringify(state))}catch{}
 }
 state=ensureStateV176(state,true);
@@ -289,6 +338,36 @@ function druidMigrationNoticeV176(owner){
   box.append(actions);return box;
 }
 
+function pendingPowerPathSchoolsV176(owner){
+  return POWER_SCHOOLS_V176.filter(school=>{
+    if(!POWER_PATH_OPTIONS_BY_SKILL_V176.has(school.skillId)||resolvedPowerPathV176(owner,school))return false;
+    const data=owner.skills?.[school.skillId];
+    return(+data?.level||0)>0||(data?.learnedPowerIds||[]).length>0;
+  });
+}
+
+function renderPowerPathChoicesV176(owner,onAssigned=()=>{}){
+  ensureOwnerPowersV176(owner);
+  const pending=pendingPowerPathSchoolsV176(owner);
+  if(!pending.length)return null;
+  const box=el('section',{class:'power-path-choice-v176'});
+  box.append(el('h3',{text:'Counter einmalig zuordnen'}),el('p',{text:'Diese Fähigkeiten können mehrere Macht-Counter verwenden. Wähle einmal den Counter; erst danach erscheint die zugehörige Kraftliste im gewählten Schicksalsfenster.'}));
+  const list=el('div',{class:'power-path-choice-list-v176'});
+  for(const school of pending){
+    const actions=el('div',{class:'power-path-choice-actions-v176'});
+    for(const pathId of powerPathOptionsV176(school.skillId)){
+      actions.append(el('button',{class:'primary',type:'button',text:`${POWER_COUNTER_LABELS_V176[pathId]} (${pathId})`,onclick:()=>{
+        if(!assignPowerPathV176(owner,school.skillId,pathId))return;
+        persistOwnerR5(owner,false);
+        for(const target of powerPathOptionsV176(school.skillId))replacePowerLibraryV176(owner,target);
+        onAssigned();
+      }}));
+    }
+    list.append(el('div',{class:'power-path-choice-row-v176'},[el('strong',{text:school.skillName}),actions]));
+  }
+  box.append(list);return box;
+}
+
 function safeArithmeticV176(expression){
   const source=String(expression||'').replace(/,/g,'.').replace(/×/g,'*').replace(/\s+/g,''),tokens=source.match(/\d+(?:\.\d+)?|[()+\-*/]/g);
   if(!tokens||tokens.join('')!==source)return null;
@@ -328,6 +407,8 @@ function detailSectionV176(title,value){
 function powerInfoContentV176(entry,owner){
   const s=effectiveSkillLevelV176(owner,entry.skillId),b=bonusValueV176(s),w=dieValueV176(s),box=el('div',{class:'power-detail-v176'}),current=el('div',{class:'power-current-v176'});
   current.append(el('span',{class:'power-badge-v176',text:`S ${s}`}),el('span',{class:'power-badge-v176',text:`W ${w}`}),el('span',{class:'power-badge-v176',text:`B ${b}`}),el('span',{class:'power-badge-v176',text:POWER_KIND_LABELS_V176[entry.powerKind]||entry.powerKind}),el('span',{class:'power-badge-v176',text:entry.counterCostText}));
+  const assignedPath=resolvedPowerPathV176(owner,entry.skillId);
+  if(POWER_PATH_OPTIONS_BY_SKILL_V176.has(entry.skillId)&&assignedPath)current.append(el('span',{class:'power-badge-v176',text:`Gebunden: ${POWER_COUNTER_LABELS_V176[assignedPath]}`}));
   const grid=el('div',{class:'power-detail-grid-v176'});
   grid.append(
     detailSectionV176('Schule und Fähigkeit',`${entry.schoolLabel} · ${entry.skillName}`),
@@ -362,31 +443,44 @@ function renderLearnedPowerV176(owner,skillId,powerId){
       el('span',{class:'power-summary-v176',text:'Die Roh-ID bleibt erhalten und wurde nicht automatisch zugeordnet.'})
     ]);
   }
-  const row=el('article',{class:'power-row-v176',tabindex:0}),info=infoButtonR5(row,entry.displayName,()=>powerInfoContentV176(entry,owner)),remove=el('button',{class:'danger',type:'button',text:'Entfernen','aria-label':entry.displayName+' verlernen'});
-  remove.onclick=event=>{event.stopPropagation();if(confirm(`„${entry.displayName}“ wirklich aus der Lernliste entfernen?`)){unlearnPowerV176(owner,skillId,powerId);persistPowerLibraryV176(owner,entry.pathId)}};
+  const row=el('article',{class:'power-row-v176'}),detail=el('div',{class:'power-inline-detail-v176',hidden:true}),info=el('button',{type:'button',text:'Details','aria-label':entry.displayName+' Details anzeigen','aria-expanded':'false'}),remove=el('button',{class:'danger',type:'button',text:'Entfernen','aria-label':entry.displayName+' verlernen'});
+  info.onclick=()=>{
+    const opening=detail.hidden;
+    detail.hidden=!opening;
+    info.setAttribute('aria-expanded',String(opening));
+    info.textContent=opening?'Details schließen':'Details';
+    if(opening&&!detail.childNodes.length)detail.append(powerInfoContentV176(entry,owner));
+  };
+  remove.onclick=event=>{event.stopPropagation();if(confirm(`„${entry.displayName}“ wirklich aus der Lernliste entfernen?`)){unlearnPowerV176(owner,skillId,powerId);persistPowerLibraryV176(owner,resolvedPowerPathV176(owner,skillId))}};
   row.append(
     el('span',{class:'power-code-v176',text:entry.code}),
     el('div',{class:'power-name-v176'},[el('strong',{text:entry.displayName}),el('small',{text:`${POWER_KIND_LABELS_V176[entry.powerKind]} · ${entry.counterCostText}`})]),
     el('span',{class:'power-summary-v176',text:powerShortTextV176(entry,owner)}),
-    el('div',{class:'power-actions-v176'},[info,remove])
+    el('div',{class:'power-actions-v176'},[info,remove]),
+    detail
   );
-  bindInfoR5(row,entry.displayName,()=>powerInfoContentV176(entry,owner));return row;
+  return row;
 }
 
 function renderPowerSelectionV176(owner,school,slotIndex){
-  const learned=new Set(learnedPowerIdsV176(owner,school.skillId)),available=powersForSkillV176(school.skillId).filter(entry=>!learned.has(entry.id)),select=el('select',{'aria-label':`${POWER_PATH_LABELS_V176[school.pathId]} für ${school.skillName} wählen`}),preview=el('p',{class:'power-select-preview-v176',text:'Wähle einen Eintrag für diesen freien Lernplatz.'}),button=el('button',{class:'primary',type:'button',text:'Lernen',disabled:true});
+  const pathId=resolvedPowerPathV176(owner,school),learned=new Set(learnedPowerIdsV176(owner,school.skillId)),available=powersForSkillV176(school.skillId).filter(entry=>!learned.has(entry.id)),select=el('select',{'aria-label':`Kraft für ${school.skillName} wählen`}),preview=el('div',{class:'power-select-detail-v176'},[el('p',{class:'power-select-preview-v176',text:'Wähle einen Eintrag. Die vollständigen Regeln erscheinen hier vor dem Lernen.'})]),button=el('button',{class:'primary',type:'button',text:'Lernen',disabled:true});
   select.append(el('option',{value:'',text:`Freier Lernplatz ${slotIndex+1} · Eintrag wählen…`}));
   for(const entry of available)select.append(el('option',{value:entry.id,text:`${entry.code} · ${entry.displayName}`}));
-  select.onchange=()=>{const entry=POWER_BY_ID_V176.get(select.value);button.disabled=!entry;preview.textContent=entry?`${entry.counterCostText} · ${entry.explanation}`:'Wähle einen Eintrag für diesen freien Lernplatz.'};
-  button.onclick=()=>{if(learnPowerV176(owner,school.skillId,select.value))persistPowerLibraryV176(owner,school.pathId)};
-  return el('section',{class:'power-select-row-v176'},[el('label',{class:'field'},[el('span',{text:`Neuen ${POWER_PATH_LABELS_V176[school.pathId].replace(/e$/,'')} wählen`}),select]),preview,button]);
+  select.onchange=()=>{
+    const entry=POWER_BY_ID_V176.get(select.value);
+    button.disabled=!entry;
+    preview.replaceChildren(entry?powerInfoContentV176(entry,owner):el('p',{class:'power-select-preview-v176',text:'Wähle einen Eintrag. Die vollständigen Regeln erscheinen hier vor dem Lernen.'}));
+  };
+  button.onclick=()=>{if(learnPowerV176(owner,school.skillId,select.value))persistPowerLibraryV176(owner,pathId)};
+  return el('section',{class:'power-select-row-v176'},[el('label',{class:'field'},[el('span',{text:'Neue Kraft wählen'}),select]),button,preview]);
 }
 
 function renderPowerLibraryV176(owner,pathId){
   ensureOwnerPowersV176(owner);
   const box=el('section',{class:'power-library-v176','data-owner-id':owner.id||'','data-path-id':pathId}),head=el('div',{class:'power-library-head-v176'});
-  head.append(el('div',{},[el('h3',{text:`Gelernte ${POWER_PATH_LABELS_V176[pathId]}`}),el('p',{class:'muted',text:'Lernplätze entstehen aus der gekauften Stufe der jeweils zugeordneten Fähigkeit. Z1 bis Z10 dürfen frei gewählt werden.'})]),el('span',{class:'power-badge-v176',text:`Katalog ${POWER_DB_V176.meta?.catalogVersion||'1.0'} · ${POWER_ENTRIES_V176.filter(entry=>entry.pathId===pathId).length} Einträge`}));
-  const list=el('div',{class:'power-skill-list-v176'}),schools=POWER_SCHOOLS_V176.filter(school=>school.pathId===pathId);
+  const schools=POWER_SCHOOLS_V176.filter(school=>resolvedPowerPathV176(owner,school)===pathId),entryCount=schools.reduce((sum,school)=>sum+powersForSkillV176(school.skillId).length,0);
+  head.append(el('div',{},[el('h3',{text:'Gelernte Kräfte'}),el('p',{class:'muted',text:'Lernplätze entstehen aus der gekauften Stufe der jeweils zugeordneten Fähigkeit. Z1 bis Z10 dürfen frei gewählt werden.'})]),el('span',{class:'power-badge-v176',text:`Katalog ${POWER_DB_V176.meta?.catalogVersion||'1.0'} · ${entryCount} zugeordnete Einträge`}));
+  const list=el('div',{class:'power-skill-list-v176'});
   let visible=0;
   for(const school of schools){
     const data=owner.skills[school.skillId],learned=data.learnedPowerIds||[],capacity=learningCapacityV176(owner,school.skillId),free=Math.max(0,capacity-learned.length);
@@ -397,7 +491,8 @@ function renderPowerLibraryV176(owner,pathId){
       el('span',{class:'power-badge-v176',text:`Gelernt ${learned.length}/${capacity}`}),
       el('span',{class:'power-badge-v176',text:`S ${s}`}),
       el('span',{class:'power-badge-v176',text:w}),
-      el('span',{class:'power-badge-v176',text:`B ${b}`})
+      el('span',{class:'power-badge-v176',text:`B ${b}`}),
+      ...(POWER_PATH_OPTIONS_BY_SKILL_V176.has(school.skillId)?[el('span',{class:'power-badge-v176',text:`Gebunden: ${POWER_COUNTER_LABELS_V176[pathId]}`})]:[])
     ]));
     const body=el('div',{class:'power-group-body-v176'});
     for(const powerId of learned)body.append(renderLearnedPowerV176(owner,school.skillId,powerId));
@@ -405,7 +500,7 @@ function renderPowerLibraryV176(owner,pathId){
     if(learned.length>capacity)body.append(el('p',{class:'notice error',text:`${learned.length-capacity} gespeicherte Einträge überschreiten die aktuell gekaufte Stufe. Senke oder erhöhe die Stufe über die Fähigkeitenkarte und bestätige dort die Bereinigung.`}));
     group.append(summary,body);list.append(group);
   }
-  if(!visible)list.append(el('p',{class:'muted',text:`Noch keine ${POWER_PATH_LABELS_V176[pathId]} gelernt und keine freien Lernplätze vorhanden.`}));
+  if(!visible)list.append(el('p',{class:'muted',text:'Noch keine Kräfte gelernt oder diesem Counter zugeordnet.'}));
   box.append(head,list);return box;
 }
 
@@ -466,7 +561,10 @@ renderPowerPathR5=function(owner,counter){
 const renderSkillsOwnerBeforeV176=renderSkillsOwnerR5;
 renderSkillsOwnerR5=function(owner,isAux=false){
   ensureOwnerPowersV176(owner);
-  const box=renderSkillsOwnerBeforeV176(owner,isAux),notice=druidMigrationNoticeV176(owner);
+  const box=renderSkillsOwnerBeforeV176(owner,isAux),notice=druidMigrationNoticeV176(owner),choiceHost=el('div',{class:'power-path-choice-host-v176'});
+  const refreshChoices=()=>{choiceHost.replaceChildren();const choices=renderPowerPathChoicesV176(owner,refreshChoices);if(choices)choiceHost.append(choices)};
+  refreshChoices();
+  box.prepend(choiceHost);
   if(notice)box.prepend(notice);
   for(const input of box.querySelectorAll('tbody .skill-level')){
     const row=input.closest('tr'),name=row?.querySelector('.skill-name-r13 strong')?.textContent,skill=SKILLS.find(entry=>entry.name===name);
@@ -478,7 +576,8 @@ renderSkillsOwnerR5=function(owner,isAux=false){
         updateSkillRowV176(row,owner,skill,isAux);
         persistOwnerR5(owner,false);
         const school=POWER_SCHOOLS_V176.find(entry=>entry.skillId===skill.id);
-        if(school)replacePowerLibraryV176(owner,school.pathId);
+        if(school)for(const pathId of powerPathOptionsV176(school.skillId))replacePowerLibraryV176(owner,pathId);
+        refreshChoices();
       },()=>findSkillRowV176(skill));
     };
   }
@@ -529,6 +628,9 @@ runTests=function(){
   eq('Alle Verstärkungen klassifiziert',true,POWER_ENTRIES_V176.filter(entry=>entry.reinforceable).every(entry=>entry.reinforcement?.ruleType));
   eq('84 sichtbare Fähigkeiten',84,SKILLS.length);
   eq('84 eindeutige Skill-IDs',84,new Set(SKILLS.map(skill=>skill.id)).size);
+  eq('Sieben mehrdeutige Machtfähigkeiten',7,POWER_PATH_OPTIONS_BY_SKILL_V176.size);
+  eq('Thanaturgie verwendet Glaube oder Finsternis','GB|FS',powerPathOptionsV176('skill_38').join('|'));
+  eq('Traummagie bietet drei Counter','GB|M|FS',powerPathOptionsV176('skill_72').join('|'));
   eq('Bestehende Skill-ID bleibt erhalten','Ritualistik & Volksmagie',SKILLS.find(skill=>skill.id==='skill_74')?.name);
   eq('Druiden-Flora vorhanden',true,!!SKILLS.find(skill=>skill.id==='skill_druid_flora'));
   eq('Druiden-Fauna vorhanden',true,!!SKILLS.find(skill=>skill.id==='skill_druid_fauna'));
@@ -557,10 +659,30 @@ runTests=function(){
   eq('Druidenentscheidung wird gespeichert',true,resolveDruidMigrationV176(legacy,'skill_druid_flora'));
   eq('Druidenwert vollständig übertragen','4|0',`${legacy.skills.skill_druid_flora.level}|${legacy.skills.skill_druid_fauna.level}`);
   eq('Alter aktiver Skill nach Wahl entfernt',false,Object.hasOwn(legacy.skills,LEGACY_DRUID_SKILL_ID_V176));
+  const ambiguous=newCharacter();ambiguous.skills.skill_38.level=1;ensureOwnerPowersV176(ambiguous);
+  eq('Thanaturgie startet ohne automatische Zuordnung',null,resolvedPowerPathV176(ambiguous,'skill_38'));
+  eq('Unzugeordnete Thanaturgie fehlt im Finsternisfenster',false,renderPowerLibraryV176(ambiguous,'FS').textContent.includes('Seelische Schutzmagie & Thanaturgie'));
+  eq('Einmalige Counterwahl wird angeboten',true,renderPowerPathChoicesV176(ambiguous)?.textContent.includes('Glaube (GB)'));
+  eq('Thanaturgie lässt sich Glaube zuordnen',true,assignPowerPathV176(ambiguous,'skill_38','GB'));
+  eq('Zweite Zuordnung wird blockiert',false,assignPowerPathV176(ambiguous,'skill_38','FS'));
+  eq('Thanaturgie erscheint nach Wahl im Glaubensfenster',true,renderPowerLibraryV176(ambiguous,'GB').textContent.includes('Seelische Schutzmagie & Thanaturgie'));
+  const choiceUiOwner=newCharacter(),choiceUi=renderSkillsOwnerR5(choiceUiOwner,false),choiceUiInput=choiceUi.querySelector('input[aria-label="Seelische Schutzmagie & Thanaturgie Stufe"]');
+  choiceUiInput.value='1';choiceUiInput.dispatchEvent(new Event('change',{bubbles:true}));
+  eq('Steigern blendet die Counterwahl direkt ein',true,choiceUi.textContent.includes('Counter einmalig zuordnen'));
+  const faithChoiceButton=[...choiceUi.querySelectorAll('.power-path-choice-v176 button')].find(button=>button.textContent.includes('Glaube'));
+  faithChoiceButton?.click();
+  eq('Auswahlknopf speichert Thanaturgie im Glaubenspfad','GB',resolvedPowerPathV176(choiceUiOwner,'skill_38'));
   const rendered=renderPowerLibraryV176(learner,'M');
   eq('Gelernte Power wird im Machtpfad gerendert',true,rendered.textContent.includes(fireZ8.displayName));
   eq('Power-Info enthält S/W/B',true,['S ','W ','B '].every(token=>powerInfoContentV176(fireZ8,learner).textContent.includes(token)));
   eq('Quellenstatus bleibt in Power-Info verborgen',false,powerInfoContentV176(fireZ8,learner).textContent.includes(fireZ8.sourceStatus));
+  const fireSchool=POWER_SCHOOL_BY_SKILL_V176.get('skill_61'),selection=renderPowerSelectionV176(learner,fireSchool,0),selectionInput=selection.querySelector('select');
+  selectionInput.value=selectionInput.options[1]?.value||'';selectionInput.dispatchEvent(new Event('change'));
+  eq('Auswahl zeigt vor dem Lernen vollständige Regeln',true,['Grundwirkung','Regeln & Grenzen','Widerstand / Probe','Verstärkung'].every(label=>selection.textContent.includes(label)));
+  const learnedInline=renderLearnedPowerV176(learner,'skill_61',learner.skills.skill_61.learnedPowerIds[0]),detailsButton=[...learnedInline.querySelectorAll('button')].find(button=>button.textContent==='Details');
+  detailsButton?.click();
+  eq('Gelernte Kraft öffnet Details innerhalb der Karte',true,learnedInline.textContent.includes('Regeln & Grenzen')&&!learnedInline.classList.contains('info-ready-r5'));
+  eq('Schwebende Regelfenster haben keinen Schieber','visible',getComputedStyle(rulePopoverR5()).overflowY);
   const stableOwner=newCharacter(),stableSkills=renderSkillsOwnerR5(stableOwner,false),stableInput=stableSkills.querySelector('input[aria-label="Initiative Stufe"]'),stableRow=stableInput.closest('tr');
   stableInput.value='1';stableInput.dispatchEvent(new Event('change',{bubbles:true}));
   eq('Skill-Steigerung behält dieselbe Tabellenzeile',true,stableSkills.contains(stableRow)&&stableInput.closest('tr')===stableRow);
@@ -585,6 +707,8 @@ Object.assign(window.Eberos,{
   learnPower:learnPowerV176,
   unlearnPower:unlearnPowerV176,
   setPurchasedSkillLevel:setPurchasedSkillLevelV176,
+  assignPowerPath:assignPowerPathV176,
+  resolvedPowerPath:resolvedPowerPathV176,
   resolveDruidMigration:resolveDruidMigrationV176,
   ensureStateV176
 });

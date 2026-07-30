@@ -14,6 +14,9 @@
 ## Stabilität und Kompatibilität
 
 - Patch r2: Beim Steigern einer Fähigkeit bleibt die aktuelle Bildschirmposition stabil; Charakterbild und übrige Karten werden nicht mehr vollständig neu aufgebaut.
+- Patch r3: Der dauerhafte Counter-Hilfstext wurde entfernt. Counter-Maxima beginnen regelkonform bei 2 und können nicht darunter gesetzt werden; der aktuelle Vorrat darf weiterhin 0 erreichen.
+- Patch r5: Machtfähigkeiten mit mehreren möglichen Countern verlangen einmalig eine Zuordnung, bevor ihre Kräfte in einem Schicksalsfenster erscheinen. Thanaturgie wird nicht mehr automatisch Finsternis zugeordnet.
+- Patch r5: Kraftregeln werden bereits vor dem Lernen vollständig eingeblendet. Gelernte Kraftdetails öffnen innerhalb der Karte; Schwebefenster besitzen keinen eigenen Schieber mehr.
 - Alte Druiden-Fähigkeit wird beim Laden verlustfrei Flora oder Fauna zugeordnet.
 - Bestehende Charaktere bleiben kompatibel; gelernte Kräfte werden mit stabilen IDs gespeichert.
 - Beim Senken einer Pfadstufe werden zuletzt gelernte Kräfte nach Bestätigung entfernt.
@@ -26,5 +29,5 @@
 - 270/270 Katalogeinträge eindeutig und vollständig.
 - Alle 15 Quellfelder wurden übernommen.
 - 162 verstärkbare und 108 nicht verstärkbare Kräfte validiert.
-- 290/290 automatische Builder-Tests bestanden.
+- 307/307 automatische Builder-Tests bestanden.
 - Desktop- und Mobilansicht ohne Seitenüberlauf geprüft.
