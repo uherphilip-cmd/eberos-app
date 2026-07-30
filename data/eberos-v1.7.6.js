@@ -204,7 +204,7 @@ function ensureOwnerPowersV176(owner){
 }
 
 function ensureStateV176(data,log=true){
-  const first=!data.v176PowerSystemDone,counterFixFirst=!data.v176CounterMinimumR3Done,pathBindingFirst=!data.v176PowerPathBindingR5Done;
+  const first=!data.v176PowerSystemDone,counterFixFirst=!data.v176CounterMinimumR3Done,pathBindingFirst=!data.v176PowerPathBindingR5Done,r6First=!data.v176WechselbalgFateR6Done;
   for(const character of data.characters||[]){
     ensureOwnerPowersV176(character);
     for(const owner of character.auxiliaryTabs||[])ensureOwnerPowersV176(owner);
@@ -214,6 +214,7 @@ function ensureStateV176(data,log=true){
   data.v176PowerSystemDone=true;
   data.v176CounterMinimumR3Done=true;
   data.v176PowerPathBindingR5Done=true;
+  data.v176WechselbalgFateR6Done=true;
   if(first&&log){
     data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];
     data.migrationLog.push({from:13,to:14,at:new Date().toISOString(),changes:['270 Zauber, Wunder und Flüche integriert','Sechs neue beziehungsweise aufgeteilte Fähigkeiten ergänzt','Druidenmigration vorbereitet','Gelernte Powers auf stabile IDs umgestellt']});
@@ -226,12 +227,16 @@ function ensureStateV176(data,log=true){
     data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];
     data.migrationLog.push({from:14,to:14,at:new Date().toISOString(),changes:['Mehrdeutige Machtfähigkeiten erfordern eine einmalige Counter-Zuordnung','Thanaturgie wird nicht mehr automatisch Finsternis zugeordnet','Kraftdetails vor dem Lernen vollständig eingeblendet']});
   }
+  if(r6First&&log){
+    data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];
+    data.migrationLog.push({from:14,to:14,at:new Date().toISOString(),changes:['Wechselbalg ausschließlich Finsternis zugeordnet','Wirkungslose Ausrichtungswahl aus Schicksalspfaden entfernt']});
+  }
   return data;
 }
 
 const migrateStateBeforeV176=migrateState;
 migrateState=function(data){return ensureStateV176(migrateStateBeforeV176(data),true)};
-if(!state.v176PowerSystemDone||!state.v176CounterMinimumR3Done||!state.v176PowerPathBindingR5Done){
+if(!state.v176PowerSystemDone||!state.v176CounterMinimumR3Done||!state.v176PowerPathBindingR5Done||!state.v176WechselbalgFateR6Done){
   try{localStorage.setItem(STORE+'.backup.v176.'+Date.now(),JSON.stringify(state))}catch{}
 }
 state=ensureStateV176(state,true);
@@ -628,9 +633,10 @@ runTests=function(){
   eq('Alle Verstärkungen klassifiziert',true,POWER_ENTRIES_V176.filter(entry=>entry.reinforceable).every(entry=>entry.reinforcement?.ruleType));
   eq('84 sichtbare Fähigkeiten',84,SKILLS.length);
   eq('84 eindeutige Skill-IDs',84,new Set(SKILLS.map(skill=>skill.id)).size);
-  eq('Sieben mehrdeutige Machtfähigkeiten',7,POWER_PATH_OPTIONS_BY_SKILL_V176.size);
+  eq('Sechs mehrdeutige Machtfähigkeiten',6,POWER_PATH_OPTIONS_BY_SKILL_V176.size);
   eq('Thanaturgie verwendet Glaube oder Finsternis','GB|FS',powerPathOptionsV176('skill_38').join('|'));
   eq('Traummagie bietet drei Counter','GB|M|FS',powerPathOptionsV176('skill_72').join('|'));
+  eq('Wechselbalg gehört ausschließlich zu Finsternis','FS',powerPathOptionsV176('skill_60').join('|'));
   eq('Bestehende Skill-ID bleibt erhalten','Ritualistik & Volksmagie',SKILLS.find(skill=>skill.id==='skill_74')?.name);
   eq('Druiden-Flora vorhanden',true,!!SKILLS.find(skill=>skill.id==='skill_druid_flora'));
   eq('Druiden-Fauna vorhanden',true,!!SKILLS.find(skill=>skill.id==='skill_druid_fauna'));

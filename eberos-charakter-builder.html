@@ -172,7 +172,7 @@ Finsternis|Nekromantie & Totenmagie|KS, WL|FS|Beschreibt Magie des Todes, der Ve
 Finsternis|Dämonologie & Höllen-Beschwörungen|WL, CR|FS|Beschreibt Wissen um Dämonen, Höllenwesen, Pakte, Beschwörungskreise, Namen, Bannformeln, Opfergaben und die riskante Kontrolle finsterer Entitäten.
 Finsternis|Flüche & Blut-Hexerei|FF, IN|FS|Beschreibt Schadenszauber, Verwünschungen, Blutrituale, Opfermagie, Krankheiten, Pech, Bindungen, Schmerz, langsamen Verfall und magische Vergeltung.
 Finsternis|Vampirismus & Lebensraub|IT, CR|FS|Beschreibt das Entziehen von Lebenskraft, Blutmacht, Verfall und unheilige Bindungen.
-Finsternis|Wechselbalg & Formwandlerei|IN, KS|FS / M|Beschreibt fremde Gestalten, Feenblut, Körpertausch und instabile Identitäten.
+Finsternis|Wechselbalg & Formwandlerei|IN, KS|FS|Beschreibt fremde Gestalten, Feenblut, Körpertausch und instabile Identitäten.
 Magie|Feuermagie & Pyrokinetik|WL, RF|M|Beschreibt das Erzeugen, Formen, Lenken und Löschen von Feuer, Hitze, Glut, Rauch, Funken, Explosionen und brennender magischer Energie.
 Magie|Erdmagie & Geomantie|WL, KS|M|Beschreibt Magie über Stein, Erde, Metall, Kristall, Standfestigkeit, Erschütterungen, Mauern, Schutz, Geländeformung und unterirdische Kräfte.
 Magie|Windmagie & Aeromantie|GS, IN|M|Beschreibt das Lenken von Wind, Luftdruck, Atem, Sturm, Schall, Schweben, Stürzen, Geschwindigkeit und unsichtbaren Bewegungen in der Luft.
@@ -1283,7 +1283,6 @@ const interfaceStyleR5=el('style',{text:`
 .rule-info-r5[hidden]{display:none}.rule-info-r5 h3{margin:.05rem 0 .55rem}.rule-info-r5 h4{margin:.65rem 0 .15rem}.rule-info-r5 p{margin:.15rem 0 .45rem}.rule-info-r5 .rule-source-r5{font-size:.8rem;color:var(--muted)}
 .info-button-r5,.order-button-r5{min-width:44px;min-height:44px;padding:.25rem .45rem;touch-action:manipulation}.order-controls-r5{display:flex;gap:.25rem;white-space:nowrap}.value-row.info-ready-r5,.skills-r5 tr.info-ready-r5{cursor:help}.skills-r5 td{vertical-align:middle}
 .counter-controls-r5{display:flex;gap:.45rem;align-items:end;flex-wrap:wrap}.counter-controls-r5 label{display:grid;gap:.12rem;font-size:.78rem}.counter-controls-r5 input{width:5.2rem}.zero-dot-r5{min-width:32px}
-.power-choice-r5{margin-top:.65rem}.power-choice-r5 select{width:100%}.power-choice-description-r5{margin:.35rem 0 0;padding:.55rem;border-left:4px solid var(--accent-2);background:var(--panel-bg)}
 .power-progress-r5{display:grid;gap:.55rem;margin-top:.65rem}.power-progress-row-r5{border:1px solid var(--border);border-radius:9px;padding:.55rem;background:var(--panel-bg)}.power-progress-head-r5{display:grid;grid-template-columns:minmax(9rem,1fr) 8rem auto;gap:.4rem;align-items:end}.power-progress-row-r5 textarea{width:100%;margin-top:.4rem;min-height:5rem}.power-progress-actions-r5{display:flex;gap:.25rem}.power-progress-locked-r5{opacity:.72}.power-more-r5{margin-top:.65rem}.power-details-r5{margin-top:.7rem}.power-details-r5>summary{cursor:pointer;font-weight:700}.fate-path-v175{position:relative}
 @media(max-width:700px){.power-progress-head-r5{grid-template-columns:1fr}.power-progress-actions-r5{justify-content:flex-start}.order-controls-r5{flex-direction:column}.rule-info-r5{left:12px!important;right:12px!important;width:auto}}
 `});document.head.append(interfaceStyleR5);
@@ -1301,12 +1300,12 @@ function infoButtonR5(node,title,build){const button=el('button',{class:'info-bu
 const bindInfoR5=bindRuleInfoR5;
 
 function defaultProgressFieldsR5(path,counter){const old=Array.isArray(path.techniques)?path.techniques:[];return FATE_THRESHOLDS.map(([threshold,label],index)=>({id:uid(),title:label,counter,threshold,content:String(old[index]||''),order:index}))}
-function normalizeProgressFieldsR5(path,counter){let source=Array.isArray(path.progressFields)?path.progressFields:Array.isArray(path.milestones)?path.milestones:null;if(!path.progressFieldsInitialized){source=source||defaultProgressFieldsR5(path,counter);path.progressFieldsInitialized=true}source=source||[];path.progressFields=source.map((field,index)=>{const raw=field&&typeof field==='object'?field:{content:String(field||'')},threshold=FATE_THRESHOLDS.some(([n])=>n===+raw.threshold)?+raw.threshold:5;return{id:raw.id||uid(),title:String(raw.title||FATE_THRESHOLDS.find(([n])=>n===threshold)?.[1]||'Entwicklung'),counter,threshold,content:String(raw.content??raw.value??''),order:Number.isFinite(+raw.order)?+raw.order:index}}).sort((a,b)=>a.order-b.order).map((field,index)=>({...field,order:index}));const definition=POWER_PATHS_R5[counter],valid=definition.choices.some(choice=>choice.id===path.pathChoice);path.pathChoice=valid?path.pathChoice:'';return path}
+function normalizeProgressFieldsR5(path,counter){let source=Array.isArray(path.progressFields)?path.progressFields:Array.isArray(path.milestones)?path.milestones:null;if(!path.progressFieldsInitialized){source=source||defaultProgressFieldsR5(path,counter);path.progressFieldsInitialized=true}source=source||[];path.progressFields=source.map((field,index)=>{const raw=field&&typeof field==='object'?field:{content:String(field||'')},threshold=FATE_THRESHOLDS.some(([n])=>n===+raw.threshold)?+raw.threshold:5;return{id:raw.id||uid(),title:String(raw.title||FATE_THRESHOLDS.find(([n])=>n===threshold)?.[1]||'Entwicklung'),counter,threshold,content:String(raw.content??raw.value??''),order:Number.isFinite(+raw.order)?+raw.order:index}}).sort((a,b)=>a.order-b.order).map((field,index)=>({...field,order:index}));delete path.pathChoice;return path}
 function ensureOwnerExtrasR5(owner){if(!owner||typeof owner!=='object')return owner;ensureOwnerSkillsR13(owner);const baseOrder=SKILLS.map(skill=>skill.id),given=Array.isArray(owner.skillOrder)?owner.skillOrder:[],valid=given.filter((id,index)=>baseOrder.includes(id)&&given.indexOf(id)===index);owner.skillOrder=[...valid,...baseOrder.filter(id=>!valid.includes(id))];owner.counters=owner.counters||{};for(const[id]of COUNTERS){const raw=owner.counters[id],maxRaw=raw&&typeof raw==='object'?(raw.max??raw.current??2):(raw??2),currentRaw=raw&&typeof raw==='object'?(raw.current??maxRaw):maxRaw,max=Math.max(2,Math.min(25,Number.isFinite(+maxRaw)?+maxRaw:2)),current=Math.max(0,Math.min(max,Number.isFinite(+currentRaw)?+currentRaw:max));owner.counters[id]={...(raw&&typeof raw==='object'?raw:{}),max,current}}if(personCanUseFatePathsV175(owner)){owner.fatePaths=owner.fatePaths||{};for(const counter of POWER_COUNTER_ORDER_R5){owner.fatePaths[counter]=normalizeFatePath(owner.fatePaths[counter],counter);normalizeProgressFieldsR5(owner.fatePaths[counter],counter)}}for(const card of owner.layout||[])if(typeof card.title==='string')card.title=card.title.replace(/\bArmor\b/g,'Rüstung');return owner}
 const ensureOwnerBeforeR5=ensureOwnerV175;
 ensureOwnerV175=function(owner){const luck=owner?.fatePaths?.GL,ready=ensureOwnerBeforeR5(owner);if(ready&&personCanUseFatePathsV175(ready))ready.fatePaths.GL=luck||ready.fatePaths.GL||emptyFatePathV175('GL');return ensureOwnerExtrasR5(ready)};
 const meaningfulFatePathBeforeR5=meaningfulFatePathV175;
-meaningfulFatePathV175=function(path){return meaningfulFatePathBeforeR5(path)||!!path?.pathChoice||(path?.progressFields||[]).some(field=>String(field.content||'').trim())};
+meaningfulFatePathV175=function(path){return meaningfulFatePathBeforeR5(path)||(path?.progressFields||[]).some(field=>String(field.content||'').trim())};
 function ensureStateR5(data,log=true){const first=!data.v175InterfaceR5Done;for(const character of data.characters||[]){ensureOwnerV175(character);for(const owner of character.auxiliaryTabs||[])ensureOwnerV175(owner)}data.v175InterfaceR5Done=true;if(first&&log){data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];data.migrationLog.push({from:13,to:13,at:new Date().toISOString(),changes:['Fähigkeitsreihenfolge gespeichert','Regelhinweise ergänzt','Fünf Machtbereiche mit frei verwaltbaren Entwicklungen ergänzt','Counterwerte bis 0 freigegeben','Armor-Anzeige in Rüstung umbenannt']})}return data}
 const migrateStateBeforeR5=migrateState;migrateState=function(data){return ensureStateR5(migrateStateBeforeR5(data),true)};
 if(!state.v175InterfaceR5Done){try{localStorage.setItem(STORE+'.backup.interface-r5.'+Date.now(),JSON.stringify(state))}catch{}}state=ensureStateR5(state,true);
@@ -1386,24 +1385,8 @@ function renderPowerPathR5(owner,counter){
   for(const [number,label] of FATE_THRESHOLDS){
     thresholds.append(el('span',{class:level>=number?'reached':'',text:(level>=number?'✓':'○')+' '+number+' '+label}));
   }
-  const choice=el('select',{'aria-label':definition.title+' Ausrichtung'});
-  choice.append(el('option',{value:'',text:'Ausrichtung wählen…'}));
-  for(const option of definition.choices)choice.append(el('option',{value:option.id,text:option.label}));
-  choice.value=path.pathChoice||'';
-  choice.onchange=event=>{
-    path.pathChoice=event.target.value;
-    const selected=definition.choices.find(option=>option.id===path.pathChoice);
-    if(selected&&!String(path.pathName||'').trim())path.pathName=selected.label;
-    saveOwnerV175(owner,true);
-  };
-  const selected=definition.choices.find(option=>option.id===path.pathChoice);
-  const choiceArea=el('div',{class:'power-choice-r5'},[
-    el('label',{class:'field'},[el('span',{text:'Eine von drei Ausrichtungen'}),choice]),
-    el('p',{class:'muted',text:definition.core})
-  ]);
-  if(selected)choiceArea.append(el('p',{class:'power-choice-description-r5',text:selected.description}));
-  section.append(head,thresholds,choiceArea);
-  if(!opened)section.append(el('p',{class:'notice',text:'Die Ausrichtung darf bereits gewählt werden. Fortschritte werden ab Stufe 5 wirksam.'}));
+  section.append(head,thresholds,el('p',{class:'muted',text:definition.core}));
+  if(!opened)section.append(el('p',{class:'notice',text:'Fortschritte werden ab Stufe 5 wirksam.'}));
   const reached=path.progressFields.filter(field=>field.threshold<=level);
   const locked=path.progressFields.filter(field=>field.threshold>level);
   const progress=el('div',{class:'power-progress-r5'});
@@ -1459,7 +1442,7 @@ renderFatePathsV175=function(owner){
   ]);
   toolbar.append(el('button',{class:'primary',text:'+ Synergie erschaffen',disabled:opened.length<2,onclick:()=>openFateSynergyDialogV175(owner)}));
   box.append(
-    el('div',{class:'fate-rule-v175',text:'Jeder Machtbereich bietet drei Ausrichtungen. Die wirksame Stufe des zugehörigen Counters schaltet die Fortschritte bei 5, 10, 15, 20 und 25 frei.'}),
+    el('div',{class:'fate-rule-v175',text:'Die wirksame Stufe des zugehörigen Counters schaltet die Fortschritte bei 5, 10, 15, 20 und 25 frei.'}),
     overview,
     toolbar
   );
@@ -1552,10 +1535,9 @@ runTests=function(){
   eq('Machtbereiche korrekt benannt',
     'Magie & Mana|Glaube & Schöpfung|Finsternis & Zerstörung|Herrschaft & Ruhm|Glück & Schicksal',
     POWER_COUNTER_ORDER_R5.map(counter=>POWER_PATHS_R5[counter].title).join('|'));
-  eq('Jeder Machtbereich hat drei Ausrichtungen',true,POWER_COUNTER_ORDER_R5.every(counter=>POWER_PATHS_R5[counter].choices.length===3));
-  owner.fatePaths.M.pathChoice=POWER_PATHS_R5.M.choices[0].id;
   const pathNode=renderPowerPathR5(owner,'M');
-  eq('Beschreibung der gewählten Ausrichtung sichtbar',true,pathNode.textContent.includes(POWER_PATHS_R5.M.choices[0].description));
+  eq('Wirkungslose Ausrichtungswahl entfernt',false,pathNode.textContent.includes('Eine von drei Ausrichtungen'));
+  eq('Schicksalspfad besitzt keine Ausrichtungs-Auswahl',0,pathNode.querySelectorAll('select[aria-label$=" Ausrichtung"]').length);
   eq('Fortschrittsfelder sind bedienbar',true,pathNode.textContent.includes('Fortschritt hinzufügen')&&pathNode.querySelectorAll('.power-progress-row-r5').length===5);
 
   const legacy=newCharacterBeforeR5();
@@ -2162,5 +2144,5 @@ installBtn.addEventListener('click',async()=>{if(installPrompt){installPrompt.pr
 window.addEventListener('appinstalled',()=>installBtn.classList.add('hidden'));
 if('serviceWorker' in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',async()=>{try{const registration=await navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'});let refreshing=false;const showUpdate=worker=>{if(!worker)return;updateBanner.classList.remove('hidden');applyUpdateBtn.onclick=()=>{applyUpdateBtn.disabled=true;applyUpdateBtn.textContent='Aktualisierung läuft…';worker.postMessage({type:'SKIP_WAITING'})}};if(registration.waiting)showUpdate(registration.waiting);registration.addEventListener('updatefound',()=>{const worker=registration.installing;worker?.addEventListener('statechange',()=>{if(worker.state==='installed'&&navigator.serviceWorker.controller)showUpdate(worker)})});navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload()});await registration.update()}catch(e){showError('Offline-Modus konnte nicht aktiviert werden: '+e.message)}});
 </script>
-<script src="./data/eberos-v1.7.6.js?v=1.7.6-r5"></script>
+<script src="./data/eberos-v1.7.6.js?v=1.7.6-r6"></script>
 </body></html>
