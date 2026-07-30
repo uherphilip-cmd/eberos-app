@@ -13,6 +13,7 @@
 
 ## Stabilität und Kompatibilität
 
+- Patch r2: Beim Steigern einer Fähigkeit bleibt die aktuelle Bildschirmposition stabil; Charakterbild und übrige Karten werden nicht mehr vollständig neu aufgebaut.
 - Alte Druiden-Fähigkeit wird beim Laden verlustfrei Flora oder Fauna zugeordnet.
 - Bestehende Charaktere bleiben kompatibel; gelernte Kräfte werden mit stabilen IDs gespeichert.
 - Beim Senken einer Pfadstufe werden zuletzt gelernte Kräfte nach Bestätigung entfernt.

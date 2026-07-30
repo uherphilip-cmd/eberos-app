@@ -363,7 +363,7 @@ function renderLearnedPowerV176(owner,skillId,powerId){
     ]);
   }
   const row=el('article',{class:'power-row-v176',tabindex:0}),info=infoButtonR5(row,entry.displayName,()=>powerInfoContentV176(entry,owner)),remove=el('button',{class:'danger',type:'button',text:'Entfernen','aria-label':entry.displayName+' verlernen'});
-  remove.onclick=event=>{event.stopPropagation();if(confirm(`„${entry.displayName}“ wirklich aus der Lernliste entfernen?`)){unlearnPowerV176(owner,skillId,powerId);persistOwnerR5(owner,true)}};
+  remove.onclick=event=>{event.stopPropagation();if(confirm(`„${entry.displayName}“ wirklich aus der Lernliste entfernen?`)){unlearnPowerV176(owner,skillId,powerId);persistPowerLibraryV176(owner,entry.pathId)}};
   row.append(
     el('span',{class:'power-code-v176',text:entry.code}),
     el('div',{class:'power-name-v176'},[el('strong',{text:entry.displayName}),el('small',{text:`${POWER_KIND_LABELS_V176[entry.powerKind]} · ${entry.counterCostText}`})]),
@@ -378,13 +378,13 @@ function renderPowerSelectionV176(owner,school,slotIndex){
   select.append(el('option',{value:'',text:`Freier Lernplatz ${slotIndex+1} · Eintrag wählen…`}));
   for(const entry of available)select.append(el('option',{value:entry.id,text:`${entry.code} · ${entry.displayName}`}));
   select.onchange=()=>{const entry=POWER_BY_ID_V176.get(select.value);button.disabled=!entry;preview.textContent=entry?`${entry.counterCostText} · ${entry.explanation}`:'Wähle einen Eintrag für diesen freien Lernplatz.'};
-  button.onclick=()=>{if(learnPowerV176(owner,school.skillId,select.value))persistOwnerR5(owner,true)};
+  button.onclick=()=>{if(learnPowerV176(owner,school.skillId,select.value))persistPowerLibraryV176(owner,school.pathId)};
   return el('section',{class:'power-select-row-v176'},[el('label',{class:'field'},[el('span',{text:`Neuen ${POWER_PATH_LABELS_V176[school.pathId].replace(/e$/,'')} wählen`}),select]),preview,button]);
 }
 
 function renderPowerLibraryV176(owner,pathId){
   ensureOwnerPowersV176(owner);
-  const box=el('section',{class:'power-library-v176'}),head=el('div',{class:'power-library-head-v176'});
+  const box=el('section',{class:'power-library-v176','data-owner-id':owner.id||'','data-path-id':pathId}),head=el('div',{class:'power-library-head-v176'});
   head.append(el('div',{},[el('h3',{text:`Gelernte ${POWER_PATH_LABELS_V176[pathId]}`}),el('p',{class:'muted',text:'Lernplätze entstehen aus der gekauften Stufe der jeweils zugeordneten Fähigkeit. Z1 bis Z10 dürfen frei gewählt werden.'})]),el('span',{class:'power-badge-v176',text:`Katalog ${POWER_DB_V176.meta?.catalogVersion||'1.0'} · ${POWER_ENTRIES_V176.filter(entry=>entry.pathId===pathId).length} Einträge`}));
   const list=el('div',{class:'power-skill-list-v176'}),schools=POWER_SCHOOLS_V176.filter(school=>school.pathId===pathId);
   let visible=0;
@@ -409,6 +409,53 @@ function renderPowerLibraryV176(owner,pathId){
   box.append(head,list);return box;
 }
 
+function currentPowerLibraryV176(owner,pathId){
+  return [...document.querySelectorAll('.power-library-v176')].find(node=>node.dataset.ownerId===(owner.id||'')&&node.dataset.pathId===pathId)||null;
+}
+
+function replacePowerLibraryV176(owner,pathId){
+  const current=currentPowerLibraryV176(owner,pathId);
+  if(!current)return false;
+  current.replaceWith(renderPowerLibraryV176(owner,pathId));
+  return true;
+}
+
+function preserveViewportV176(anchor,mutate,recoverAnchor=()=>null){
+  const scrollXBefore=window.scrollX,scrollYBefore=window.scrollY,topBefore=anchor?.getBoundingClientRect?.().top;
+  const result=mutate();
+  const currentAnchor=anchor?.isConnected?anchor:recoverAnchor();
+  if(Number.isFinite(topBefore)&&currentAnchor)window.scrollBy(0,currentAnchor.getBoundingClientRect().top-topBefore);
+  else window.scrollTo(scrollXBefore,scrollYBefore);
+  return result;
+}
+
+function persistPowerLibraryV176(owner,pathId){
+  const current=currentPowerLibraryV176(owner,pathId);
+  preserveViewportV176(current,()=>{
+    persistOwnerR5(owner,false);
+    replacePowerLibraryV176(owner,pathId);
+  },()=>currentPowerLibraryV176(owner,pathId));
+}
+
+function updateSkillRowV176(row,owner,skill,isAux){
+  const data=owner.skills[skill.id],cells=row?.cells;
+  if(!data||!cells)return;
+  const level=row.querySelector('.skill-level');
+  if(level)level.value=data.level;
+  if(isAux){
+    if(cells[7])cells[7].textContent=skillCost(data.level);
+    if(cells[8])cells[8].textContent=+data.level>=25?'Maximum':`+${skillNextLevelCost(data.level)} CBP`;
+    return;
+  }
+  if(cells[7])cells[7].textContent=effectiveSkillLevelV176(owner,skill.id);
+  if(cells[8])cells[8].textContent=skillCost(data.level);
+  if(cells[9])cells[9].textContent=+data.level>=25?'Maximum':`+${skillNextLevelCost(data.level)} CBP`;
+}
+
+function findSkillRowV176(skill){
+  return [...document.querySelectorAll('tbody .skill-level')].find(input=>input.getAttribute('aria-label')===skill.name+' Stufe')?.closest('tr')||null;
+}
+
 const renderPowerPathBeforeV176=renderPowerPathR5;
 renderPowerPathR5=function(owner,counter){
   const section=renderPowerPathBeforeV176(owner,counter);
@@ -427,7 +474,12 @@ renderSkillsOwnerR5=function(owner,isAux=false){
     input.onchange=event=>{
       const previous=+owner.skills[skill.id].level||0,next=Math.max(0,Math.min(25,+event.target.value||0));
       if(!setPurchasedSkillLevelV176(owner,skill.id,next)){event.target.value=previous;return}
-      persistOwnerR5(owner,true);
+      preserveViewportV176(row,()=>{
+        updateSkillRowV176(row,owner,skill,isAux);
+        persistOwnerR5(owner,false);
+        const school=POWER_SCHOOLS_V176.find(entry=>entry.skillId===skill.id);
+        if(school)replacePowerLibraryV176(owner,school.pathId);
+      },()=>findSkillRowV176(skill));
     };
   }
   return box;
@@ -509,6 +561,10 @@ runTests=function(){
   eq('Gelernte Power wird im Machtpfad gerendert',true,rendered.textContent.includes(fireZ8.displayName));
   eq('Power-Info enthält S/W/B',true,['S ','W ','B '].every(token=>powerInfoContentV176(fireZ8,learner).textContent.includes(token)));
   eq('Quellenstatus bleibt in Power-Info verborgen',false,powerInfoContentV176(fireZ8,learner).textContent.includes(fireZ8.sourceStatus));
+  const stableOwner=newCharacter(),stableSkills=renderSkillsOwnerR5(stableOwner,false),stableInput=stableSkills.querySelector('input[aria-label="Initiative Stufe"]'),stableRow=stableInput.closest('tr');
+  stableInput.value='1';stableInput.dispatchEvent(new Event('change',{bubbles:true}));
+  eq('Skill-Steigerung behält dieselbe Tabellenzeile',true,stableSkills.contains(stableRow)&&stableInput.closest('tr')===stableRow);
+  eq('Skill-Steigerung wird ohne Vollaufbau gespeichert',1,stableOwner.skills.skill_0.level);
   for(const[name,expected,actual,ok]of tests)body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));
   return previousOk&&tests.every(test=>test[3]);
 };

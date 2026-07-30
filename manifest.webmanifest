@@ -4,7 +4,7 @@
   "short_name": "Eberos",
   "description": "Eberos Charakter-Builder v1.7.6 mit vollständig integriertem Zauber-, Wunder- und Fluchsystem.",
   "lang": "de",
-  "start_url": "./eberos-charakter-builder.html?v=1.7.6-r1",
+  "start_url": "./eberos-charakter-builder.html?v=1.7.6-r2",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
