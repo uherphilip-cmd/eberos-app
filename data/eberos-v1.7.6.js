@@ -43,7 +43,7 @@ const powerStyleV176=el('style',{text:`
 .power-current-v176{display:flex;gap:.35rem;flex-wrap:wrap}
 .power-warning-v176{border-left:5px solid var(--danger)}
 .power-path-choice-v176{margin:.65rem 0;padding:.75rem;border:2px solid var(--accent-2);border-radius:10px;background:var(--panel-alt)}
-.power-path-choice-v176 h3{margin:.05rem 0 .35rem}.power-path-choice-list-v176{display:grid;gap:.55rem}.power-path-choice-row-v176{display:flex;align-items:center;justify-content:space-between;gap:.55rem;flex-wrap:wrap;padding:.55rem;border:1px solid var(--border);border-radius:8px;background:var(--panel-bg)}.power-path-choice-actions-v176{display:flex;gap:.35rem;flex-wrap:wrap}
+.power-path-choice-v176 h3{margin:.05rem 0 .35rem}.power-path-choice-list-v176{display:grid;gap:.55rem}.power-path-choice-row-v176{display:flex;align-items:center;justify-content:space-between;gap:.55rem;flex-wrap:wrap;padding:.55rem;border:1px solid var(--border);border-radius:8px;background:var(--panel-bg)}.power-path-choice-row-v176 p{flex:1 1 22rem;margin:0}.power-path-choice-actions-v176{display:flex;gap:.35rem;flex-wrap:wrap}
 .druid-migration-v176{margin:.65rem 0;padding:.75rem;border:2px solid var(--accent-2);border-radius:10px;background:var(--panel-alt)}
 .druid-migration-v176 h3{margin:.05rem 0 .35rem}.druid-migration-actions-v176{display:flex;gap:.5rem;flex-wrap:wrap}
 @media(max-width:760px){.power-row-v176,.power-select-row-v176{grid-template-columns:1fr}.power-actions-v176{justify-content:flex-start}.power-detail-grid-v176{grid-template-columns:1fr}}
@@ -204,7 +204,7 @@ function ensureOwnerPowersV176(owner){
 }
 
 function ensureStateV176(data,log=true){
-  const first=!data.v176PowerSystemDone,counterFixFirst=!data.v176CounterMinimumR3Done,pathBindingFirst=!data.v176PowerPathBindingR5Done,r6First=!data.v176WechselbalgFateR6Done;
+  const first=!data.v176PowerSystemDone,counterFixFirst=!data.v176CounterMinimumR3Done,pathBindingFirst=!data.v176PowerPathBindingR5Done,r6First=!data.v176WechselbalgFateR6Done,r7First=!data.v176PendingPowerNoticeR7Done;
   for(const character of data.characters||[]){
     ensureOwnerPowersV176(character);
     for(const owner of character.auxiliaryTabs||[])ensureOwnerPowersV176(owner);
@@ -215,6 +215,7 @@ function ensureStateV176(data,log=true){
   data.v176CounterMinimumR3Done=true;
   data.v176PowerPathBindingR5Done=true;
   data.v176WechselbalgFateR6Done=true;
+  data.v176PendingPowerNoticeR7Done=true;
   if(first&&log){
     data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];
     data.migrationLog.push({from:13,to:14,at:new Date().toISOString(),changes:['270 Zauber, Wunder und Flüche integriert','Sechs neue beziehungsweise aufgeteilte Fähigkeiten ergänzt','Druidenmigration vorbereitet','Gelernte Powers auf stabile IDs umgestellt']});
@@ -231,12 +232,16 @@ function ensureStateV176(data,log=true){
     data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];
     data.migrationLog.push({from:14,to:14,at:new Date().toISOString(),changes:['Wechselbalg ausschließlich Finsternis zugeordnet','Wirkungslose Ausrichtungswahl aus Schicksalspfaden entfernt']});
   }
+  if(r7First&&log){
+    data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];
+    data.migrationLog.push({from:14,to:14,at:new Date().toISOString(),changes:['Offene Machtzuordnungen direkt im Schicksalspfad sichtbar','Counterwahl in den betroffenen Fenstern bedienbar','Abschlussprüfung meldet unvollständige Machtzuordnungen']});
+  }
   return data;
 }
 
 const migrateStateBeforeV176=migrateState;
 migrateState=function(data){return ensureStateV176(migrateStateBeforeV176(data),true)};
-if(!state.v176PowerSystemDone||!state.v176CounterMinimumR3Done||!state.v176PowerPathBindingR5Done||!state.v176WechselbalgFateR6Done){
+if(!state.v176PowerSystemDone||!state.v176CounterMinimumR3Done||!state.v176PowerPathBindingR5Done||!state.v176WechselbalgFateR6Done||!state.v176PendingPowerNoticeR7Done){
   try{localStorage.setItem(STORE+'.backup.v176.'+Date.now(),JSON.stringify(state))}catch{}
 }
 state=ensureStateV176(state,true);
@@ -343,20 +348,27 @@ function druidMigrationNoticeV176(owner){
   box.append(actions);return box;
 }
 
-function pendingPowerPathSchoolsV176(owner){
+function pendingPowerPathSchoolsV176(owner,pathId=null){
   return POWER_SCHOOLS_V176.filter(school=>{
     if(!POWER_PATH_OPTIONS_BY_SKILL_V176.has(school.skillId)||resolvedPowerPathV176(owner,school))return false;
     const data=owner.skills?.[school.skillId];
-    return(+data?.level||0)>0||(data?.learnedPowerIds||[]).length>0;
+    const active=(+data?.level||0)>0||(data?.learnedPowerIds||[]).length>0;
+    return active&&(!pathId||powerPathOptionsV176(school.skillId).includes(pathId));
   });
 }
 
-function renderPowerPathChoicesV176(owner,onAssigned=()=>{}){
+function powerPathChoicePromptV176(school){
+  const names=powerPathOptionsV176(school.skillId).map(pathId=>POWER_COUNTER_LABELS_V176[pathId]),last=names.pop();
+  return`${school.skillName} wurde gesteigert, aber noch keinem Macht-Counter zugeordnet. Wähle ${names.length?names.join(', ')+' oder ':''}${last}.`;
+}
+
+function renderPowerPathChoicesV176(owner,onAssigned=()=>{},contextPathId=null){
   ensureOwnerPowersV176(owner);
-  const pending=pendingPowerPathSchoolsV176(owner);
+  const pending=pendingPowerPathSchoolsV176(owner,contextPathId);
   if(!pending.length)return null;
   const box=el('section',{class:'power-path-choice-v176'});
-  box.append(el('h3',{text:'Counter einmalig zuordnen'}),el('p',{text:'Diese Fähigkeiten können mehrere Macht-Counter verwenden. Wähle einmal den Counter; erst danach erscheint die zugehörige Kraftliste im gewählten Schicksalsfenster.'}));
+  box.append(el('h3',{text:contextPathId?'Unvollständige Machtzuordnung':'Counter einmalig zuordnen'}));
+  if(!contextPathId)box.append(el('p',{text:'Diese Fähigkeiten können mehrere Macht-Counter verwenden. Wähle einmal den Counter; erst danach erscheint die zugehörige Kraftliste im gewählten Schicksalsfenster.'}));
   const list=el('div',{class:'power-path-choice-list-v176'});
   for(const school of pending){
     const actions=el('div',{class:'power-path-choice-actions-v176'});
@@ -368,9 +380,36 @@ function renderPowerPathChoicesV176(owner,onAssigned=()=>{}){
         onAssigned();
       }}));
     }
-    list.append(el('div',{class:'power-path-choice-row-v176'},[el('strong',{text:school.skillName}),actions]));
+    list.append(el('div',{class:'power-path-choice-row-v176'},[contextPathId?el('p',{text:powerPathChoicePromptV176(school)}):el('strong',{text:school.skillName}),actions]));
   }
   box.append(list);return box;
+}
+
+function fillPowerPathChoiceHostV176(host,owner,pathId=null){
+  host.replaceChildren();
+  host.dataset.ownerId=owner.id||'';
+  host.dataset.pathId=pathId||'';
+  const choices=renderPowerPathChoicesV176(owner,()=>{
+    if(host.isConnected)refreshPowerPathChoiceHostsV176(owner);
+    else fillPowerPathChoiceHostV176(host,owner,pathId);
+  },pathId);
+  if(choices)host.append(choices);
+}
+
+function refreshPowerPathChoiceHostsV176(owner){
+  for(const host of document.querySelectorAll('.power-path-choice-host-v176')){
+    if(host.dataset.ownerId!==(owner.id||''))continue;
+    fillPowerPathChoiceHostV176(host,owner,host.dataset.pathId||null);
+  }
+}
+
+function incompletePowerAssignmentsV176(owner){
+  return pendingPowerPathSchoolsV176(owner).map(school=>school.skillName);
+}
+
+function incompletePowerAssignmentAuditTextV176(owner){
+  const names=incompletePowerAssignmentsV176(owner);
+  return names.length?'Unvollständige Machtzuordnung: '+names.join(', '):'';
 }
 
 function safeArithmeticV176(expression){
@@ -559,7 +598,11 @@ function findSkillRowV176(skill){
 const renderPowerPathBeforeV176=renderPowerPathR5;
 renderPowerPathR5=function(owner,counter){
   const section=renderPowerPathBeforeV176(owner,counter);
-  if(['M','GB','FS'].includes(counter))section.append(renderPowerLibraryV176(owner,counter));
+  if(['M','GB','FS'].includes(counter)){
+    const choiceHost=el('div',{class:'power-path-choice-host-v176'});
+    fillPowerPathChoiceHostV176(choiceHost,owner,counter);
+    section.append(choiceHost,renderPowerLibraryV176(owner,counter));
+  }
   return section;
 };
 
@@ -567,8 +610,7 @@ const renderSkillsOwnerBeforeV176=renderSkillsOwnerR5;
 renderSkillsOwnerR5=function(owner,isAux=false){
   ensureOwnerPowersV176(owner);
   const box=renderSkillsOwnerBeforeV176(owner,isAux),notice=druidMigrationNoticeV176(owner),choiceHost=el('div',{class:'power-path-choice-host-v176'});
-  const refreshChoices=()=>{choiceHost.replaceChildren();const choices=renderPowerPathChoicesV176(owner,refreshChoices);if(choices)choiceHost.append(choices)};
-  refreshChoices();
+  fillPowerPathChoiceHostV176(choiceHost,owner);
   box.prepend(choiceHost);
   if(notice)box.prepend(notice);
   for(const input of box.querySelectorAll('tbody .skill-level')){
@@ -582,7 +624,8 @@ renderSkillsOwnerR5=function(owner,isAux=false){
         persistOwnerR5(owner,false);
         const school=POWER_SCHOOLS_V176.find(entry=>entry.skillId===skill.id);
         if(school)for(const pathId of powerPathOptionsV176(school.skillId))replacePowerLibraryV176(owner,pathId);
-        refreshChoices();
+        if(choiceHost.isConnected)refreshPowerPathChoiceHostsV176(owner);
+        else fillPowerPathChoiceHostV176(choiceHost,owner);
       },()=>findSkillRowV176(skill));
     };
   }
@@ -608,8 +651,11 @@ audit=function(){
   auditResults.append(el('div',{class:'notice '+(POWER_VALIDATION_V176.ok?'ok':'error'),text:`${POWER_VALIDATION_V176.ok?'✓':'✕'} Katalog: ${POWER_ENTRIES_V176.length} Einträge · ${POWER_SCHOOLS_V176.length} Schulen · M ${POWER_VALIDATION_V176.pathCounts.M} / GB ${POWER_VALIDATION_V176.pathCounts.GB} / FS ${POWER_VALIDATION_V176.pathCounts.FS}`}));
   const owners=[ch(),...(ch().auxiliaryTabs||[]).filter(owner=>owner.type!=='possession')];
   for(const owner of owners){
-    const pending=owner.migrations?.druidSplit?.status==='pending',unknown=[...POWER_SKILL_IDS_V176].flatMap(skillId=>(owner.skills?.[skillId]?.learnedPowerIds||[]).filter(id=>!POWER_BY_ID_V176.has(id)));
-    auditResults.append(el('div',{class:'notice '+(!pending&&!unknown.length?'ok':''),text:`${!pending&&!unknown.length?'✓':'⚠'} ${owner.name||owner.type||'Charakter'}: ${pending?'Druidenmigration offen · ':''}${unknown.length?unknown.length+' unbekannte Power-IDs':'Power-Daten gültig'}`}));
+    const pending=owner.migrations?.druidSplit?.status==='pending',unknown=[...POWER_SKILL_IDS_V176].flatMap(skillId=>(owner.skills?.[skillId]?.learnedPowerIds||[]).filter(id=>!POWER_BY_ID_V176.has(id))),incomplete=incompletePowerAssignmentsV176(owner),issues=[];
+    if(pending)issues.push('Druidenmigration offen');
+    if(incomplete.length)issues.push(incompletePowerAssignmentAuditTextV176(owner));
+    if(unknown.length)issues.push(unknown.length+' unbekannte Power-IDs');
+    auditResults.append(el('div',{class:'notice '+(!issues.length?'ok':''),text:`${!issues.length?'✓':'⚠'} ${owner.name||owner.type||'Charakter'}: ${issues.length?issues.join(' · '):'Power-Daten gültig'}`}));
   }
 };
 
@@ -672,6 +718,16 @@ runTests=function(){
   eq('Thanaturgie lässt sich Glaube zuordnen',true,assignPowerPathV176(ambiguous,'skill_38','GB'));
   eq('Zweite Zuordnung wird blockiert',false,assignPowerPathV176(ambiguous,'skill_38','FS'));
   eq('Thanaturgie erscheint nach Wahl im Glaubensfenster',true,renderPowerLibraryV176(ambiguous,'GB').textContent.includes('Seelische Schutzmagie & Thanaturgie'));
+  const telepathy=newCharacter();telepathy.skills.skill_68.level=1;ensureOwnerPowersV176(telepathy);
+  const telepathyManaPath=renderPowerPathR5(telepathy,'M'),telepathyDarkPath=renderPowerPathR5(telepathy,'FS'),telepathyPrompt='Psychische Magie & Telepathie wurde gesteigert, aber noch keinem Macht-Counter zugeordnet. Wähle Mana oder Finsternis.';
+  eq('Telepathie-Hinweis erscheint im Manafenster',true,telepathyManaPath.textContent.includes(telepathyPrompt));
+  eq('Telepathie-Hinweis erscheint im Finsternisfenster',true,telepathyDarkPath.textContent.includes(telepathyPrompt));
+  eq('Telepathie-Hinweis bietet beide Counter',2,telepathyManaPath.querySelectorAll('.power-path-choice-actions-v176 button').length);
+  eq('Abschlussprüfung meldet unvollständige Telepathie-Zuordnung','Unvollständige Machtzuordnung: Psychische Magie & Telepathie',incompletePowerAssignmentAuditTextV176(telepathy));
+  const telepathyDarkChoice=[...telepathyManaPath.querySelectorAll('.power-path-choice-actions-v176 button')].find(button=>button.textContent.includes('Finsternis'));
+  telepathyDarkChoice?.click();
+  eq('Direkte Wahl ordnet Telepathie Finsternis zu','FS',resolvedPowerPathV176(telepathy,'skill_68'));
+  eq('Hinweis verschwindet nach der Wahl',false,telepathyManaPath.textContent.includes('Unvollständige Machtzuordnung'));
   const choiceUiOwner=newCharacter(),choiceUi=renderSkillsOwnerR5(choiceUiOwner,false),choiceUiInput=choiceUi.querySelector('input[aria-label="Seelische Schutzmagie & Thanaturgie Stufe"]');
   choiceUiInput.value='1';choiceUiInput.dispatchEvent(new Event('change',{bubbles:true}));
   eq('Steigern blendet die Counterwahl direkt ein',true,choiceUi.textContent.includes('Counter einmalig zuordnen'));
