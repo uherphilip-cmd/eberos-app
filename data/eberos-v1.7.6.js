@@ -204,7 +204,7 @@ function ensureOwnerPowersV176(owner){
 }
 
 function ensureStateV176(data,log=true){
-  const first=!data.v176PowerSystemDone,counterFixFirst=!data.v176CounterMinimumR3Done,pathBindingFirst=!data.v176PowerPathBindingR5Done,r6First=!data.v176WechselbalgFateR6Done,r7First=!data.v176PendingPowerNoticeR7Done;
+  const first=!data.v176PowerSystemDone,counterFixFirst=!data.v176CounterMinimumR3Done,pathBindingFirst=!data.v176PowerPathBindingR5Done,r6First=!data.v176WechselbalgFateR6Done,r7First=!data.v176PendingPowerNoticeR7Done,r8First=!data.v176DreamMagicR8Done;
   for(const character of data.characters||[]){
     ensureOwnerPowersV176(character);
     for(const owner of character.auxiliaryTabs||[])ensureOwnerPowersV176(owner);
@@ -216,6 +216,7 @@ function ensureStateV176(data,log=true){
   data.v176PowerPathBindingR5Done=true;
   data.v176WechselbalgFateR6Done=true;
   data.v176PendingPowerNoticeR7Done=true;
+  data.v176DreamMagicR8Done=true;
   if(first&&log){
     data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];
     data.migrationLog.push({from:13,to:14,at:new Date().toISOString(),changes:['270 Zauber, Wunder und Flüche integriert','Sechs neue beziehungsweise aufgeteilte Fähigkeiten ergänzt','Druidenmigration vorbereitet','Gelernte Powers auf stabile IDs umgestellt']});
@@ -236,12 +237,16 @@ function ensureStateV176(data,log=true){
     data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];
     data.migrationLog.push({from:14,to:14,at:new Date().toISOString(),changes:['Offene Machtzuordnungen direkt im Schicksalspfad sichtbar','Counterwahl in den betroffenen Fenstern bedienbar','Abschlussprüfung meldet unvollständige Machtzuordnungen']});
   }
+  if(r8First&&log){
+    data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];
+    data.migrationLog.push({from:14,to:14,at:new Date().toISOString(),changes:['Traummagie ausschließlich Magie und Mana zugeordnet','Frühere Glaube- und Finsternis-Zuordnungen für Traummagie entfernt','Verbindung zu Mana-Schicksalspfad und Zauberskript abgesichert']});
+  }
   return data;
 }
 
 const migrateStateBeforeV176=migrateState;
 migrateState=function(data){return ensureStateV176(migrateStateBeforeV176(data),true)};
-if(!state.v176PowerSystemDone||!state.v176CounterMinimumR3Done||!state.v176PowerPathBindingR5Done||!state.v176WechselbalgFateR6Done||!state.v176PendingPowerNoticeR7Done){
+if(!state.v176PowerSystemDone||!state.v176CounterMinimumR3Done||!state.v176PowerPathBindingR5Done||!state.v176WechselbalgFateR6Done||!state.v176PendingPowerNoticeR7Done||!state.v176DreamMagicR8Done){
   try{localStorage.setItem(STORE+'.backup.v176.'+Date.now(),JSON.stringify(state))}catch{}
 }
 state=ensureStateV176(state,true);
@@ -679,9 +684,9 @@ runTests=function(){
   eq('Alle Verstärkungen klassifiziert',true,POWER_ENTRIES_V176.filter(entry=>entry.reinforceable).every(entry=>entry.reinforcement?.ruleType));
   eq('84 sichtbare Fähigkeiten',84,SKILLS.length);
   eq('84 eindeutige Skill-IDs',84,new Set(SKILLS.map(skill=>skill.id)).size);
-  eq('Sechs mehrdeutige Machtfähigkeiten',6,POWER_PATH_OPTIONS_BY_SKILL_V176.size);
+  eq('Fünf mehrdeutige Machtfähigkeiten',5,POWER_PATH_OPTIONS_BY_SKILL_V176.size);
   eq('Thanaturgie verwendet Glaube oder Finsternis','GB|FS',powerPathOptionsV176('skill_38').join('|'));
-  eq('Traummagie bietet drei Counter','GB|M|FS',powerPathOptionsV176('skill_72').join('|'));
+  eq('Traummagie gehört ausschließlich zu Mana','M',powerPathOptionsV176('skill_72').join('|'));
   eq('Wechselbalg gehört ausschließlich zu Finsternis','FS',powerPathOptionsV176('skill_60').join('|'));
   eq('Bestehende Skill-ID bleibt erhalten','Ritualistik & Volksmagie',SKILLS.find(skill=>skill.id==='skill_74')?.name);
   eq('Druiden-Flora vorhanden',true,!!SKILLS.find(skill=>skill.id==='skill_druid_flora'));
@@ -734,6 +739,25 @@ runTests=function(){
   const faithChoiceButton=[...choiceUi.querySelectorAll('.power-path-choice-v176 button')].find(button=>button.textContent.includes('Glaube'));
   faithChoiceButton?.click();
   eq('Auswahlknopf speichert Thanaturgie im Glaubenspfad','GB',resolvedPowerPathV176(choiceUiOwner,'skill_38'));
+  const dreamSchool=POWER_SCHOOL_BY_SKILL_V176.get('skill_72'),dreamEntries=powersForSkillV176('skill_72'),dreamOwner=newCharacter();
+  dreamOwner.skills.skill_72.level=1;
+  dreamOwner.powerPathChoicesV176.skill_72='FS';
+  ensureOwnerPowersV176(dreamOwner);
+  eq('Traummagie-Schule ist statisch dem Manapfad zugeordnet','M',dreamSchool?.pathId);
+  eq('Traummagie besitzt zehn Zauber',10,dreamEntries.length);
+  eq('Traummagie enthält Z1 bis Z10','Z1|Z2|Z3|Z4|Z5|Z6|Z7|Z8|Z9|Z10',dreamEntries.map(entry=>entry.code).join('|'));
+  eq('Alle Traummagie-Zauber führen zum Manapfad',true,dreamEntries.every(entry=>entry.pathId==='M'));
+  eq('Alle Traummagie-Zauber verbrauchen ausschließlich Mana',true,dreamEntries.every(entry=>entry.counterOptions?.length===1&&entry.counterOptions[0]==='M'));
+  eq('Alle Traummagie-Einträge sind Zauber',true,dreamEntries.every(entry=>entry.powerKind==='spell'));
+  eq('Frühere falsche Traummagie-Wahl wird entfernt',false,Object.hasOwn(dreamOwner.powerPathChoicesV176,'skill_72'));
+  eq('Traummagie wird ohne Counterwahl als Mana aufgelöst','M',resolvedPowerPathV176(dreamOwner,'skill_72'));
+  eq('Traummagie erzeugt keine unvollständige Machtzuordnung',false,incompletePowerAssignmentsV176(dreamOwner).includes('Traummagie & Oneiromantie'));
+  eq('Traummagie erscheint im Mana-Schicksalspfad',true,renderPowerLibraryV176(dreamOwner,'M').textContent.includes('Traummagie & Oneiromantie'));
+  eq('Traummagie erscheint nicht im Glaubens-Schicksalspfad',false,renderPowerLibraryV176(dreamOwner,'GB').textContent.includes('Traummagie & Oneiromantie'));
+  eq('Traummagie erscheint nicht im Finsternis-Schicksalspfad',false,renderPowerLibraryV176(dreamOwner,'FS').textContent.includes('Traummagie & Oneiromantie'));
+  const dreamZ10=dreamEntries.find(entry=>entry.code==='Z10');
+  eq('Traummagie-Zauber lässt sich über den Manapfad lernen',true,learnPowerV176(dreamOwner,'skill_72',dreamZ10.id));
+  eq('Gelernter Traummagie-Zauber wird im Manapfad dargestellt',true,renderPowerLibraryV176(dreamOwner,'M').textContent.includes(dreamZ10.displayName));
   const rendered=renderPowerLibraryV176(learner,'M');
   eq('Gelernte Power wird im Machtpfad gerendert',true,rendered.textContent.includes(fireZ8.displayName));
   eq('Power-Info enthält S/W/B',true,['S ','W ','B '].every(token=>powerInfoContentV176(fireZ8,learner).textContent.includes(token)));

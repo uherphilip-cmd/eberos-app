@@ -21,6 +21,8 @@
 - Patch r6: Die wirkungslose Auswahl „Eine von drei Ausrichtungen“ wurde aus allen Schicksalspfaden entfernt.
 - Patch r7: Gesteigerte, aber noch nicht zugeordnete Machtfähigkeiten werden direkt in allen passenden Schicksalspfaden erklärt und können dort zugeordnet werden.
 - Patch r7: Die Abschlussprüfung meldet unvollständige Machtzuordnungen mit dem Namen der betroffenen Fähigkeit.
+- Patch r8: Traummagie & Oneiromantie gehört ausschließlich zu Magie und Mana. Frühere falsche Glaube- oder Finsternis-Zuordnungen werden beim Laden entfernt.
+- Patch r8: Die Verbindung von Traummagie zum Mana-Schicksalspfad, zu allen zehn Zaubern Z1 bis Z10 und zur Lernansicht wird automatisch geprüft.
 - Alte Druiden-Fähigkeit wird beim Laden verlustfrei Flora oder Fauna zugeordnet.
 - Bestehende Charaktere bleiben kompatibel; gelernte Kräfte werden mit stabilen IDs gespeichert.
 - Beim Senken einer Pfadstufe werden zuletzt gelernte Kräfte nach Bestätigung entfernt.
@@ -33,5 +35,5 @@
 - 270/270 Katalogeinträge eindeutig und vollständig.
 - Alle 15 Quellfelder wurden übernommen.
 - 162 verstärkbare und 108 nicht verstärkbare Kräfte validiert.
-- 314/314 automatische Builder-Tests bestanden.
+- 328/328 automatische Builder-Tests bestanden.
 - Desktop- und Mobilansicht ohne Seitenüberlauf geprüft.
