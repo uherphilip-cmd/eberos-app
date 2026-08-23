@@ -1,5 +1,14 @@
 # Eberos Charakter-Builder v1.7.6
 
+## Patch r9 – Kampftechniken
+
+- 48 Kampftechniken für leichten und schweren Nahkampf, leichten und schweren Fernkampf, Verteidigung & Blocken sowie Vermeiden & Ausweichen ergänzt.
+- Jeder Kampfskill besitzt acht frei wählbare Techniken in fünf Graden. Lernplätze werden auf den Kaufstufen 1, 5, 10, 15, 20 und 25 freigeschaltet; höchstens sechs der acht Techniken können gleichzeitig gelernt sein.
+- Techniken skalieren mit der wirksamen Fähigkeitsstufe `S`, dem Stufenwürfel `W` und dem kontrollierten Stufenbonus `B` von 1 bis 5.
+- Aktivierungen kosten je nach Grad 1 bis 4 Ausdauer zusätzlich zu Waffen- oder Aktionskosten. Spitzenwirkungen mit zusätzlichem W-Schaden sind gedeckelt und auf einmal pro Kampf begrenzt.
+- Vollständige Regeln, aktuelle ausgerechnete Wirkung, Aktivierung, Gegenwehr und Grenzen werden vor dem Lernen und bei gelernten Techniken angezeigt.
+- Kampftechniken funktionieren für Charaktere, NPCs und Vertraute, werden gespeichert, migriert, gedruckt und in der Abschlussprüfung validiert.
+
 ## Neu
 
 - Voll integriertes Zauber-, Wunder- und Fluchsystem mit 270 Kräften aus der freigegebenen Gesamtfassung.
