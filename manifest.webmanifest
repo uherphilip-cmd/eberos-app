@@ -1,8 +1,8 @@
 {
   "id": "./eberos-charakter-builder.html",
-  "name": "Eberos Charakter-Builder v1.7.7",
+  "name": "Eberos Charakter-Builder v1.7.8",
   "short_name": "Eberos",
-  "description": "Eberos Charakter-Builder v1.7.7 mit globaler Suche und modularen aktiven Effekten.",
+  "description": "Eberos Charakter-Builder v1.7.8 mit eigenen Fähigkeiten, skalierenden Kampftechniken und sicherer Altstand-Migration.",
   "lang": "de",
   "start_url": "./eberos-charakter-builder.html",
   "scope": "./",
