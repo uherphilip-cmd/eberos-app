@@ -107,7 +107,7 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 <script>
 'use strict';
 /* 1. Konstanten und Seed-Daten */
-const APP_VERSION='1.7.8',SCHEMA_VERSION=16,RULES_VERSION=6,STORE='eberos.builder.v1',SAFE_MODE=new URLSearchParams(location.search).get('safe')==='1';
+const APP_VERSION='1.7.8',SCHEMA_VERSION=17,RULES_VERSION=7,STORE='eberos.builder.v1',SAFE_MODE=new URLSearchParams(location.search).get('safe')==='1';
 try{const rawV178=localStorage.getItem(STORE);window.__EBEROS_PRE_V178_RAW__=rawV178||'';if(rawV178){const parsedV178=JSON.parse(rawV178);if(parsedV178?.appVersion!==APP_VERSION||+parsedV178?.schemaVersion!==SCHEMA_VERSION||!parsedV178?.v178MigrationDone)localStorage.setItem(STORE+'.backup.pre-v178.'+Date.now(),rawV178)}}catch{}
 document.querySelector('.brand small').textContent='v'+APP_VERSION;
 const ATTRS=[['ST','Stärke'],['KS','Konstitution'],['GS','Geschick'],['RF','Reflexe'],['FF','Fingerfertigkeit'],['WL','Wille'],['IT','Intelligenz'],['IN','Intuition'],['WN','Wahrnehmung'],['CR','Charisma']];
@@ -817,9 +817,10 @@ function normalizeFatePath(raw,counter){
 function meaningfulFatePathV175(path){return!!path&&(FATE_PATH_TEXT_FIELDS_V175.some(key=>String(path[key]||'').trim())||(path.techniques||[]).length>0)}
 function canonicalFateCountersV175(values){return FATE_COUNTER_ORDER_V175.filter(counter=>[...new Set(Array.isArray(values)?values:[])].includes(counter))}
 function normalizeFateSynergy(raw={}){
-  const pathCounters=canonicalFateCountersV175(raw.pathCounters),primaryCounter=pathCounters.includes(raw.primaryCounter)?raw.primaryCounter:(pathCounters[0]||''),contributions={};
+  const pathCounters=canonicalFateCountersV175(raw.pathCounters),primaryCounter=pathCounters.includes(raw.primaryCounter)?raw.primaryCounter:(pathCounters[0]||''),contributions={},linkedPowerIds={};
   for(const counter of pathCounters)if(counter!==primaryCounter)contributions[counter]=String(raw.secondaryContributions?.[counter]||'');
-  return{id:raw.id||uid(),pathCounters,primaryCounter,costCounter:raw.costCounter||primaryCounter,name:String(raw.name||''),connection:String(raw.connection||''),appearance:String(raw.appearance||''),effect:String(raw.effect||''),secondaryContributions:contributions,necessity:String(raw.necessity||''),limitation:String(raw.limitation||raw.limit||''),price:String(raw.price||''),centralMotif:String(raw.centralMotif||''),binding:String(raw.binding||''),signature:String(raw.signature||''),notes:String(raw.notes||'')};
+  for(const counter of ['M','GB','FS'])if(pathCounters.includes(counter)&&typeof raw.linkedPowerIds?.[counter]==='string'&&raw.linkedPowerIds[counter].trim())linkedPowerIds[counter]=raw.linkedPowerIds[counter].trim();
+  return{id:raw.id||uid(),pathCounters,primaryCounter,costCounter:raw.costCounter||primaryCounter,name:String(raw.name||''),connection:String(raw.connection||''),appearance:String(raw.appearance||''),effect:String(raw.effect||''),secondaryContributions:contributions,necessity:String(raw.necessity||''),limitation:String(raw.limitation||raw.limit||''),price:String(raw.price||''),centralMotif:String(raw.centralMotif||''),binding:String(raw.binding||''),signature:String(raw.signature||''),notes:String(raw.notes||''),powerLinkMode:raw.powerLinkMode==='catalog'?'catalog':'manual',linkedPowerIds};
 }
 function personCanUseFatePathsV175(owner){return!!owner&&owner.type!=='possession'}
 function ensureFatePathCardV175(owner){
@@ -2145,10 +2146,11 @@ installBtn.addEventListener('click',async()=>{if(installPrompt){installPrompt.pr
 window.addEventListener('appinstalled',()=>installBtn.classList.add('hidden'));
 if('serviceWorker' in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',async()=>{try{const registration=await navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'});let refreshing=false;const showUpdate=worker=>{if(!worker)return;updateBanner.classList.remove('hidden');applyUpdateBtn.onclick=()=>{applyUpdateBtn.disabled=true;applyUpdateBtn.textContent='Aktualisierung läuft…';worker.postMessage({type:'SKIP_WAITING'})}};if(registration.waiting)showUpdate(registration.waiting);registration.addEventListener('updatefound',()=>{const worker=registration.installing;worker?.addEventListener('statechange',()=>{if(worker.state==='installed'&&navigator.serviceWorker.controller)showUpdate(worker)})});navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload()});await registration.update()}catch(e){showError('Offline-Modus konnte nicht aktiviert werden: '+e.message)}});
 </script>
-<script src="./data/eberos-v1.7.6.js?v=1.7.8-r3"></script>
-<script src="./data/eberos-kampftechniken-v1.0.js?v=1.7.8-r3"></script>
-<script src="./data/eberos-effekte-v1.7.7.js?v=1.7.8-r3"></script>
-<script src="./data/eberos-v1.7.7.js?v=1.7.8-r3"></script>
-<script src="./data/eberos-kampftechniken-v1.1.js?v=1.7.8-r3"></script>
-<script src="./data/eberos-v1.7.8.js?v=1.7.8-r3"></script>
+<script src="./data/eberos-v1.7.6.js?v=1.7.8-r4"></script>
+<script src="./data/eberos-kampftechniken-v1.0.js?v=1.7.8-r4"></script>
+<script src="./data/eberos-effekte-v1.7.7.js?v=1.7.8-r4"></script>
+<script src="./data/eberos-v1.7.7.js?v=1.7.8-r4"></script>
+<script src="./data/eberos-kampftechniken-v1.1.js?v=1.7.8-r4"></script>
+<script src="./data/eberos-v1.7.8.js?v=1.7.8-r4"></script>
+<script src="./data/eberos-v1.7.8-r4.js?v=1.7.8-r4"></script>
 </body></html>

@@ -16,8 +16,15 @@
 - Der bisherige Spalthieb wird kontrolliert auf Brechender Gegenhieb migriert.
 - Alle W-, B- und S-Werte werden aus der aktuellen wirksamen Skillstufe aufgelöst.
 
+## Revision r4 – Kräfte in Synergien
+
+- Neue Mehrfachsynergien können bereits gelernte Zauber, Wunder und Flüche über stabile Power-IDs verknüpfen.
+- Primär- und Nebenkräfte werden nach ihrer tatsächlichen Counterzuordnung gefiltert und mit vollständiger Regelvorschau angezeigt.
+- Bestehende Synergien bleiben als gültiger manueller Altbestand erhalten und werden nicht automatisch umgedeutet.
+- Verlernte oder unbekannte Kräfte bleiben referenziert und werden verständlich als unvollständig gekennzeichnet.
+
 ## Kompatibilität
 
-- Schema 16 führt Altstände über die vorhandene Migrationskette zusammen.
+- Schema 17 und Regelversion 7 führen Altstände über die vorhandene Migrationskette zusammen.
 - Charaktere, NPCs, Vertraute, Kräfte, Effekte, Items und eigene Fähigkeiten bleiben erhalten.
 - Die öffentliche GitHub-Pages-Adresse bleibt unverändert.

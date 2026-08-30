@@ -2,7 +2,7 @@
 window.EBEROS_COMBAT_TECHNIQUE_DB_V178={
   "meta": {
     "catalogVersion": "1.1",
-    "builderRevision": "1.7.8-r3",
+    "builderRevision": "1.7.8-r4",
     "schools": 7,
     "entries": 56
   },

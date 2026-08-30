@@ -1,7 +1,7 @@
 'use strict';
 
-/* Eberos v1.7.8 r1: Kampfsystem, eigene Fähigkeiten und Schema 16 */
-const V178_VERSION='1.7.8',V178_SCHEMA=16,V178_RULES=6;
+/* Eberos v1.7.8 r4: Kampfsystem, eigene Fähigkeiten und Schema 17 */
+const V178_VERSION='1.7.8',V178_SCHEMA=17,V178_RULES=7;
 const RETIRED_SKILLS_V178=new Map([['skill_0','Initiative'],['skill_4','Kampf – Hinterhalt']]);
 const SYSTEM_SKILLS_BEFORE_V178=SKILLS.length;
 for(let index=SKILLS.length-1;index>=0;index--)if(RETIRED_SKILLS_V178.has(SKILLS[index].id))SKILLS.splice(index,1);
@@ -319,7 +319,7 @@ audit=function(){auditBeforeV178();for(const heading of[...auditResults.querySel
 
 function runTestsV178(){
   const tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]);
-  eq('Version 1.7.8',V178_VERSION,APP_VERSION);eq('Schema 16',16,SCHEMA_VERSION);eq('Regelversion 6',6,RULES_VERSION);eq('Ausgangskatalog erkannt',84,SYSTEM_SKILLS_BEFORE_V178);eq('82 erhaltene Systemfähigkeiten',82,SYSTEM_SKILL_COUNT_V178);eq('Initiative nicht kaufbar',false,SKILLS.some(skill=>skill.id==='skill_0'));eq('Hinterhalt nicht kaufbar',false,SKILLS.some(skill=>skill.id==='skill_4'));
+  eq('Version 1.7.8',V178_VERSION,APP_VERSION);eq('Schema 17',17,SCHEMA_VERSION);eq('Regelversion 7',7,RULES_VERSION);eq('Ausgangskatalog erkannt',84,SYSTEM_SKILLS_BEFORE_V178);eq('82 erhaltene Systemfähigkeiten',82,SYSTEM_SKILL_COUNT_V178);eq('Initiative nicht kaufbar',false,SKILLS.some(skill=>skill.id==='skill_0'));eq('Hinterhalt nicht kaufbar',false,SKILLS.some(skill=>skill.id==='skill_4'));
   const initiativeOwner=newCharacter();initiativeOwner.attributes.RF=7;initiativeOwner.attributes.WN=6;initiativeOwner.attributes.IN=8;const initiative=derived(initiativeOwner).find(row=>row.n==='Initiative');eq('Initiative-Basis 21',21,initiative.v);eq('Initiativeprobe W9 + W8 + W10','Probe: W9 + W8 + W10',initiative.roll);eq('Ersticken nicht abgeleitet',false,derived(initiativeOwner).some(row=>row.n==='Ersticken & Würgen'));
   eq('Technikkatalog gültig',true,COMBAT_VALIDATION_V178.ok);eq('56 Techniken',56,COMBAT_ENTRIES_V178.length);eq('Sieben Schulen',7,COMBAT_SCHOOLS_V178.length);eq('Je acht Techniken',true,COMBAT_SCHOOLS_V178.every(school=>combatTechniquesForSkillV176(school.skillId).length===8));eq('Alle ab Kaufstufe 1',true,COMBAT_ENTRIES_V178.every(entry=>entry.minLevel===1));
   const levels=[0,1,6,8,11,16,17,21,25],capacityOwner=newCharacter();eq('Plätze 0/1/2/3/4/5/6/7/8','0|1|2|3|4|5|6|7|8',levels.map(level=>{capacityOwner.skills.skill_1.level=level;return combatTechniqueCapacityV176(capacityOwner,'skill_1')}).join('|'));eq('S14 = W16/B3','W16|3',`${dieValueV176(14)}|${bonusValueV176(14)}`);eq('S25 = W100/B5','W100|5',`${dieValueV176(25)}|${bonusValueV176(25)}`);
