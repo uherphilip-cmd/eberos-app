@@ -2,7 +2,7 @@ window.EBEROS_ITEM_DB={
   "meta": {
     "id": "eberos-beginner-items",
     "name": "Eberos – Erweiterte Anfänger-Itemdatenbank",
-    "version": "1.3.0",
+    "version": "1.3.1",
     "language": "de",
     "system": "Eberos",
     "valueUnit": "Kupfer",
@@ -12,9 +12,9 @@ window.EBEROS_ITEM_DB={
       "Die Tabellen A–Q wurden vollständig und verlustfrei in 145 kanonische Quellgegenstände überführt.",
       "Wurfaxt, Franziska und Wurfspeer erscheinen in mehreren Filtern, besitzen aber jeweils nur einen Datensatz.",
       "Bestehende Katalog-IDs bleiben erhalten; ältere, nicht ersetzte Gegenstände bleiben verfügbar.",
-      "Neue Waffen ohne autorisiertes Gewicht verwenden weightKg null und weightUnknown true.",
       "Rüstungen und Schilde übernehmen Schutz, Block, Gewicht, Mindeststärke und Preis exakt aus der Quelle.",
-      "100 Kupfer entsprechen 1 Silber; 100 Silber entsprechen 1 Gold."
+      "100 Kupfer entsprechen 1 Silber; 100 Silber entsprechen 1 Gold.",
+      "Version 1.7.9 ergänzt plausible, systemintern konsistente Gewichte für die zuvor 70 unbekannten Waffen; diese Werte sind als system-estimate-v1.7.9 gekennzeichnet."
     ],
     "sourceRows": 148,
     "sourceCanonicalItems": 145,
@@ -601,8 +601,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 0.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_sax",
@@ -642,8 +643,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 0.7,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_dagger",
@@ -733,8 +735,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 0.5,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_short_sword",
@@ -824,8 +827,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_long_sword",
@@ -915,8 +919,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 0.9,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_rapier",
@@ -1006,8 +1011,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.1,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_katzbalger",
@@ -1047,8 +1053,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_kriegsmesser",
@@ -1088,8 +1095,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.5,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_tulwar",
@@ -1129,8 +1137,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_krummschwert",
@@ -1170,8 +1179,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_panzerstecher",
@@ -1211,8 +1221,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.3,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_handbeil",
@@ -1252,8 +1263,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 0.7,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_wurfaxt",
@@ -1311,8 +1323,9 @@ window.EBEROS_ITEM_DB={
         "melee",
         "thrown"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 0.8,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_franziska",
@@ -1370,8 +1383,9 @@ window.EBEROS_ITEM_DB={
         "melee",
         "thrown"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 0.9,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_bartaxt",
@@ -1411,8 +1425,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_breitaxt",
@@ -1452,8 +1467,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.6,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_daenenaxt",
@@ -1493,8 +1509,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_kriegsaxt",
@@ -1534,8 +1551,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_langstielaxt",
@@ -1575,8 +1593,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2.4,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_zweihand_streitaxt",
@@ -1616,8 +1635,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 3.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_grosse_kriegsaxt",
@@ -1657,8 +1677,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 4.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_knueppel",
@@ -1698,8 +1719,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 0.8,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_club",
@@ -1839,8 +1861,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.5,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_flegel",
@@ -1880,8 +1903,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.4,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_warhammer",
@@ -1971,8 +1995,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.8,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_schwerer_morgenstern",
@@ -2012,8 +2037,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_schwerer_flegel",
@@ -2053,8 +2079,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2.4,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_grosser_kriegshammer",
@@ -2094,8 +2121,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 3,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_langstieliger_kriegshammer",
@@ -2135,8 +2163,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 3.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_belagerungshammer",
@@ -2176,8 +2205,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 5,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_anderthalbhaender",
@@ -2217,8 +2247,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.8,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_greatsword",
@@ -2309,8 +2340,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 3.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_riesenzweihaender",
@@ -2350,8 +2382,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 4.5,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_javelin",
@@ -2461,8 +2494,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.5,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_kriegsspeer",
@@ -2502,8 +2536,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_fluegellanze",
@@ -2543,8 +2578,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_stosslanze",
@@ -2584,8 +2620,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2.5,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_reiterlanze",
@@ -2625,8 +2662,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 3,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_spiess",
@@ -2666,8 +2704,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2.8,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_pike",
@@ -2707,8 +2746,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 3.5,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_grosse_pike",
@@ -2748,8 +2788,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 4.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_schwerer_kriegsspiess",
@@ -2789,8 +2830,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 4.5,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_kriegssense",
@@ -2830,8 +2872,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2.5,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_bec_de_corbin",
@@ -2871,8 +2914,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2.8,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_glefe",
@@ -2912,8 +2956,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2.5,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_partisane",
@@ -2953,8 +2998,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2.6,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_bardiche",
@@ -2994,8 +3040,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 3.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_luzerner_hammer",
@@ -3035,8 +3082,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 3.5,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_schwere_partisane",
@@ -3076,8 +3124,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 3.4,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_grosse_hellebarde",
@@ -3117,8 +3166,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 4.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_grosse_bardiche",
@@ -3158,8 +3208,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 4.3,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_schlachtglefe",
@@ -3199,8 +3250,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 3.8,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_schwerer_rabenschnabel",
@@ -3240,8 +3292,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 4,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_schwere_poleaxe",
@@ -3281,8 +3334,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 4.5,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_melee_schwerer_kriegsspitz",
@@ -3322,8 +3376,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 4.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_throwing_knife",
@@ -3415,8 +3470,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "thrown"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 0.25,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_chakram",
@@ -3456,8 +3512,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "thrown"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 0.4,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_pilum",
@@ -3497,8 +3554,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "thrown"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_schwere_wurfaxt",
@@ -3538,8 +3596,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "thrown"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.3,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_uebungsbogen",
@@ -3579,8 +3638,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "ranged"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 0.8,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_shortbow",
@@ -3672,8 +3732,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "ranged"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_reflexbogen",
@@ -3713,8 +3774,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "ranged"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.3,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_longbow",
@@ -3807,8 +3869,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "ranged"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 1.6,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_kriegsbogen",
@@ -3848,8 +3911,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "ranged"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_schwerer_kriegsbogen",
@@ -3889,8 +3953,9 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "ranged"
       ],
-      "weightKg": null,
-      "weightUnknown": true
+      "weightKg": 2.4,
+      "weightUnknown": false,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_pistolenarmbrust",
@@ -3930,9 +3995,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "ranged"
       ],
-      "weightKg": null,
-      "weightUnknown": true,
-      "reloadActions": 1
+      "weightKg": 1,
+      "weightUnknown": false,
+      "reloadActions": 1,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_light_crossbow",
@@ -4024,9 +4090,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "ranged"
       ],
-      "weightKg": null,
-      "weightUnknown": true,
-      "reloadActions": 1
+      "weightKg": 2.5,
+      "weightUnknown": false,
+      "reloadActions": 1,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_heavy_crossbow",
@@ -4120,9 +4187,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "ranged"
       ],
-      "weightKg": null,
-      "weightUnknown": true,
-      "reloadActions": 2
+      "weightKg": 4.5,
+      "weightUnknown": false,
+      "reloadActions": 2,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_windenarmbrust",
@@ -4162,9 +4230,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "ranged"
       ],
-      "weightKg": null,
-      "weightUnknown": true,
-      "reloadActions": 3
+      "weightKg": 6.5,
+      "weightUnknown": false,
+      "reloadActions": 3,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "wpn_ranged_schwere_windenarmbrust",
@@ -4204,9 +4273,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "ranged"
       ],
-      "weightKg": null,
-      "weightUnknown": true,
-      "reloadActions": 4
+      "weightKg": 9,
+      "weightUnknown": false,
+      "reloadActions": 4,
+      "weightSource": "system-estimate-v1.7.9"
     },
     {
       "id": "armor_part_stoffhaube",
