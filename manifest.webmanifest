@@ -1,8 +1,8 @@
 {
   "id": "./eberos-charakter-builder.html",
-  "name": "Eberos Charakter-Builder v1.7.9",
+  "name": "Eberos Charakter-Builder v1.7.10",
   "short_name": "Eberos",
-  "description": "Eberos Charakter-Builder v1.7.9 mit direktem Fähigkeitsverbrauch, zwei Rastarten, vollständigen Itemgewichten, gemeinsamen Kontakt-/NPC-Daten und schwebender Suche.",
+  "description": "Eberos Charakter-Builder v1.7.10 mit strukturierten aktiven Effekten, eindeutigen Fähigkeitsmodifikatoren und gemeinsamer Zeitfortschreibung.",
   "lang": "de",
   "start_url": "./eberos-charakter-builder.html",
   "scope": "./",
