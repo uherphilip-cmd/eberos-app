@@ -10,6 +10,13 @@ const v179Style=el('style',{text:`
 .rest-actions-v179 p{flex-basis:100%;margin:0;color:var(--muted)}
 .contact-card-v179{display:grid;gap:.7rem}.contact-actions-v179{display:flex;gap:.55rem;flex-wrap:wrap;align-items:center}.contact-cost-v179{margin:0}
 .contact-entity-badge-v179{display:inline-flex;align-items:center;padding:.2rem .5rem;border:1px solid var(--border);border-radius:999px;background:var(--panel-alt);font-size:.82rem}
+.skill-use-cell-v179{min-width:9.5rem}.skill-use-trigger-v179{display:flex;gap:.3rem;flex-wrap:wrap;align-items:center;justify-content:center;width:100%;min-width:7rem;padding:.35rem .5rem;border-color:var(--accent-2);background:var(--panel-alt)}
+.skill-use-trigger-v179:hover,.skill-use-trigger-v179:focus-visible{background:color-mix(in srgb,var(--accent-2) 22%,var(--panel-alt))}.skill-use-trigger-v179.is-empty-v179{border-color:var(--danger);color:var(--danger)}
+.skill-use-token-v179{white-space:nowrap}.rule-info-r5.rule-info-pinned-v179{max-height:calc(100vh - 24px);overflow:auto;cursor:default;pointer-events:auto!important;z-index:10001}
+.counter-spend-v179{display:grid;gap:.65rem;margin-top:.75rem;padding-top:.65rem;border-top:1px solid var(--border)}.counter-spend-v179 h4{margin:0}.counter-choice-v179{display:flex;gap:.4rem;flex-wrap:wrap}
+.counter-choice-v179 button[aria-pressed="true"]{background:var(--accent);color:var(--header-text)}.counter-choice-v179 button:disabled{opacity:.55}.counter-amount-v179{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap}
+.counter-amount-v179 output{display:inline-grid;place-items:center;min-width:3rem;min-height:44px;padding:.3rem .55rem;border:1px solid var(--border);border-radius:7px;background:var(--panel-alt);font-family:var(--font-number);font-weight:700}
+.counter-spend-message-v179{margin:0}.counter-spend-close-v179{justify-self:end}.toast-v179.counter-spend-toast-host-v179{z-index:10020}.counter-spend-toast-v179{display:flex;gap:.65rem;align-items:center;flex-wrap:wrap}.counter-spend-toast-v179 button{min-height:36px;background:var(--panel-alt);color:var(--text)}
 .global-search-v179{position:fixed!important;z-index:1600!important;right:14px!important;bottom:14px!important;top:auto!important;left:auto!important;width:min(34rem,calc(100vw - 28px))!important;max-width:none!important;min-width:0!important;padding:.45rem;border:1px solid var(--border);border-radius:12px;background:var(--header-bg);box-shadow:0 12px 36px #0008;color:var(--header-text)}
 .global-search-v179 .global-search-box-v177{grid-template-columns:1fr auto}.global-search-v179 .global-search-box-v177 input{background:var(--panel-bg);color:var(--text)}
 .global-search-v179 .global-search-results-v177{position:absolute!important;left:0!important;right:0!important;bottom:calc(100% + .35rem)!important;top:auto!important;max-height:min(62vh,34rem)!important;color:var(--text)}
@@ -17,7 +24,7 @@ const v179Style=el('style',{text:`
 .search-target-v179{animation:searchTargetPulseV179 1.9s ease!important;outline:4px solid var(--accent-2)!important;outline-offset:4px!important;scroll-margin:7rem 1rem}
 .toast-v179{position:fixed;z-index:1800;left:50%;bottom:82px;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 24px);padding:.7rem 1rem;border-radius:10px;background:var(--header-bg);color:var(--header-text);box-shadow:0 8px 28px #0008}
 @keyframes searchTargetPulseV179{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent-2),transparent 25%)}35%{box-shadow:0 0 0 10px transparent}}
-@media(max-width:600px){.global-search-v179{right:6px!important;bottom:6px!important;width:calc(100vw - 12px)!important}.global-search-v179 .global-search-results-v177{max-height:55vh!important}.toast-v179{bottom:72px}}
+@media(max-width:600px){.global-search-v179{right:6px!important;bottom:6px!important;width:calc(100vw - 12px)!important}.global-search-v179 .global-search-results-v177{max-height:55vh!important}.toast-v179{bottom:72px}.skill-use-cell-v179{min-width:8rem}.counter-spend-v179,.counter-choice-v179,.counter-amount-v179{min-width:0}.counter-amount-v179 .primary{flex:1 1 100%}}
 @media print{.rest-actions-v179,.contact-actions-v179,.global-search-v179,.toast-v179{display:none!important}}
 `});document.head.append(v179Style);
 
@@ -219,6 +226,115 @@ function installGlobalSearchV179(){
 }
 installGlobalSearchV179();
 
+const COUNTER_NAMES_V179=Object.fromEntries(COUNTERS),COUNTER_IDS_V179=new Set(COUNTERS.map(([id])=>id));
+let ruleInfoPinnedV179=false,ruleInfoPinnedAnchorV179=null,lastCounterSpendV179=null,counterSpendGuardV179={key:'',at:0};
+const showRuleInfoBeforeSpendV179=showRuleInfoR5,hideRuleInfoBeforeSpendV179=hideRuleInfoR5;
+
+hideRuleInfoR5=function(force=false){
+  if(ruleInfoPinnedV179&&!force)return;ruleInfoPinnedV179=false;ruleInfoPinnedAnchorV179=null;const box=document.getElementById('ruleInfoR5');box?.classList.remove('rule-info-pinned-v179');return hideRuleInfoBeforeSpendV179();
+};
+showRuleInfoR5=function(anchor,title,build){
+  if(ruleInfoPinnedV179&&anchor!==ruleInfoPinnedAnchorV179)return rulePopoverR5();const box=rulePopoverR5();if(!ruleInfoPinnedV179)box.classList.remove('rule-info-pinned-v179');showRuleInfoBeforeSpendV179(anchor,title,build);return box;
+};
+function forceHideRuleInfoV179(){return hideRuleInfoR5(true)}
+function showPinnedRuleInfoV179(anchor,title,build){
+  ruleInfoPinnedV179=true;ruleInfoPinnedAnchorV179=anchor;const box=rulePopoverR5();box.classList.add('rule-info-pinned-v179');showRuleInfoBeforeSpendV179(anchor,title,build);return box;
+}
+document.addEventListener('pointerdown',event=>{if(ruleInfoPinnedV179&&!rulePopoverR5().contains(event.target)&&!ruleInfoPinnedAnchorV179?.contains(event.target))forceHideRuleInfoV179()},true);
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&ruleInfoPinnedV179)forceHideRuleInfoV179()},true);
+
+function skillCounterIdsV179(use){
+  const tokens=String(use||'').toUpperCase().match(/[A-ZÄÖÜ]+/g)||[],seen=new Set();return tokens.filter(token=>COUNTER_IDS_V179.has(token)&&!seen.has(token)&&(seen.add(token),true));
+}
+function counterStateV179(owner,id){
+  ensureOwnerV178(owner);const counter=owner.counters?.[id]||{max:0,current:0},max=Math.max(0,+counter.max||0),current=Math.max(0,Math.min(max,+counter.current||0));return{id,name:COUNTER_NAMES_V179[id]||id,max,current};
+}
+function counterSpendPlanV179(owner,counterId,amount){
+  const value=Math.floor(+amount||0),counter=owner?.counters?.[counterId],primary=counterStateV179(owner,counterId),mayUseLP=(counterId==='A'||counterId==='FO')&&!!owner?.counters?.L,lp=counterStateV179(owner,'L'),counterSpent=Math.min(primary.current,Math.max(0,value)),lpSpent=mayUseLP?Math.max(0,value-counterSpent):0,available=primary.current+(mayUseLP?lp.current:0);
+  return{valid:!!counter&&COUNTER_IDS_V179.has(counterId)&&value>0&&available>=value,value,primary,lp,mayUseLP,counterSpent,lpSpent,available,after:primary.current-counterSpent,lpAfter:lp.current-lpSpent};
+}
+function ownerByIdV179(id){
+  for(const character of state.characters||[]){if(character.id===id)return character;const found=(character.auxiliaryTabs||[]).find(owner=>owner.id===id);if(found)return found}return null;
+}
+function reopenSkillSpendV179(ownerId,skillId){
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{const trigger=document.querySelector(`.skill-use-trigger-v179[data-owner-id-v179="${CSS.escape(String(ownerId))}"][data-skill-id-v179="${CSS.escape(String(skillId))}"]`),owner=ownerByIdV179(ownerId),skill=owner&&allSkillsV178(owner).find(entry=>entry.id===skillId);if(trigger&&owner&&skill)showPinnedRuleInfoV179(trigger,skill.name,()=>skillSpendInfoV179(owner,skill))}));
+}
+function showCounterSpendToastV179(transaction){
+  let toast=document.getElementById('toastV179');if(!toast){toast=el('div',{id:'toastV179',class:'toast-v179 no-print',role:'status','aria-live':'polite'});document.body.append(toast)}
+  const content=el('div',{class:'counter-spend-toast-v179'}),label=COUNTER_NAMES_V179[transaction.counterId]||transaction.counterId,undo=el('button',{type:'button',text:'Rückgängig','aria-label':`Rückgängig: ${transaction.amount} ${transaction.counterId} wiederherstellen`}),payment=transaction.lpSpent?`${transaction.amount} ${transaction.counterId} bezahlt: ${transaction.counterSpent} ${transaction.counterId} + ${transaction.lpSpent} LP`:`${transaction.amount} ${transaction.counterId} ausgegeben: ${transaction.before} → ${transaction.after}`;undo.onclick=()=>undoCounterSpendV179(transaction.id);content.append(el('span',{text:payment}),undo);toast.classList.add('counter-spend-toast-host-v179');toast.replaceChildren(content);toast.hidden=false;clearTimeout(showToastV179.timer);showToastV179.timer=setTimeout(()=>toast.hidden=true,5200);undo.title=transaction.lpSpent?`${label} und Lebenspunkte wiederherstellen`:`${label} wiederherstellen`;
+}
+function spendCounterV179(owner,counterId,amount,skillId='',options={}){
+  ensureOwnerV178(owner);const counter=owner.counters?.[counterId],plan=counterSpendPlanV179(owner,counterId,amount),label=COUNTER_NAMES_V179[counterId]||counterId;if(!counter||!COUNTER_IDS_V179.has(counterId)||plan.value<1)return false;
+  if(!plan.valid){if(options.notify!==false)showToastV179(plan.mayUseLP?`Nicht genügend ${label} und Lebenspunkte: benötigt ${plan.value}, zusammen verfügbar ${plan.available}.`:`Nicht genügend ${label}: benötigt ${plan.value}, verfügbar ${plan.primary.current}.`);return false}
+  const now=Date.now(),key=`${owner.id}|${skillId}|${counterId}|${plan.value}`;if(options.debounce!==false&&counterSpendGuardV179.key===key&&now-counterSpendGuardV179.at<500)return false;counterSpendGuardV179={key,at:now};
+  counter.current=plan.after;if(plan.lpSpent)owner.counters.L.current=plan.lpAfter;const transaction={id:uid(),ownerId:owner.id,counterId,amount:plan.value,counterSpent:plan.counterSpent,lpSpent:plan.lpSpent,before:plan.primary.current,after:counter.current,lpBefore:plan.lp.current,lpAfter:plan.lpAfter,skillId,used:false};if(options.recordUndo!==false)lastCounterSpendV179=transaction;
+  if(options.render!==false){forceHideRuleInfoV179();saveOwnerV173(owner,true)}else saveOwnerV173(owner,false);
+  if(options.notify!==false)showCounterSpendToastV179(transaction);if(options.render!==false&&options.reopen!==false&&skillId)reopenSkillSpendV179(owner.id,skillId);return true;
+}
+function undoCounterSpendV179(transactionId=lastCounterSpendV179?.id){
+  const transaction=lastCounterSpendV179;if(!transaction||transaction.used||transaction.id!==transactionId)return false;const owner=ownerByIdV179(transaction.ownerId),counter=owner?.counters?.[transaction.counterId],lp=owner?.counters?.L;if(!owner||!counter||transaction.lpSpent&&!lp)return false;transaction.used=true;const counterRestore=transaction.counterSpent??transaction.amount;counter.current=Math.min(Math.max(0,+counter.max||0),Math.max(0,+counter.current||0)+counterRestore);if(transaction.lpSpent)lp.current=Math.min(Math.max(0,+lp.max||0),Math.max(0,+lp.current||0)+transaction.lpSpent);lastCounterSpendV179=null;forceHideRuleInfoV179();saveOwnerV173(owner,true);showToastV179(transaction.lpSpent?`Rückgängig: ${counterRestore} ${transaction.counterId} und ${transaction.lpSpent} LP wiederhergestellt.`:`Rückgängig: ${transaction.amount} ${transaction.counterId} wiederhergestellt.`);return true;
+}
+function skillSpendInfoV179(owner,skill){
+  const root=el('div'),guide=skillInfoContentR5(skill),ids=skillCounterIdsV179(skill.use);
+  root.append(guide);
+  if(!ids.length)return root;
+  const panel=el('section',{class:'counter-spend-v179'});
+  const choices=el('div',{class:'counter-choice-v179'});
+  const controls=el('div',{class:'counter-amount-v179'});
+  const message=el('p',{class:'counter-spend-message-v179','aria-live':'polite'});
+  const close=el('button',{type:'button',class:'counter-spend-close-v179',text:'Infobox schließen','aria-label':'Verbrauchsinfobox schließen',onclick:forceHideRuleInfoV179});
+  let selected=ids.find(id=>counterSpendPlanV179(owner,id,1).valid)||ids[0],amount=1,busy=false;
+  const draw=()=>{
+    const states=ids.map(id=>counterStateV179(owner,id));
+    const active=states.find(state=>state.id===selected)||states[0];
+    selected=active.id;
+    const plan=counterSpendPlanV179(owner,active.id,amount),spendable=plan.available;
+    amount=Math.max(1,Math.min(amount,Math.max(1,spendable)));
+    choices.replaceChildren();
+    for(const state of states){
+      const button=el('button',{type:'button',text:`${state.name} (${state.id}) · ${state.current}/${state.max}`,'aria-label':`${state.name} auswählen, ${state.current} von ${state.max} verfügbar`,'aria-pressed':String(state.id===selected),'data-counter-choice-v179':state.id});
+      if(state.current===0)button.classList.add('is-empty-v179');
+      button.onclick=()=>{selected=state.id;amount=1;draw()};
+      choices.append(button);
+    }
+    const minus=el('button',{type:'button',text:'−','aria-label':'Verbrauch verringern',disabled:amount<=1});
+    const value=el('output',{text:String(amount),'aria-label':`Verbrauch ${amount}`});
+    const currentPlan=counterSpendPlanV179(owner,active.id,amount);
+    const plus=el('button',{type:'button',text:'+','aria-label':'Verbrauch erhöhen',disabled:spendable===0||amount>=spendable});
+    const spend=el('button',{type:'button',class:'primary',text:currentPlan.lpSpent?`${amount} ${active.name} (${active.id}) ausgeben · ${currentPlan.lpSpent} LP`:`${amount} ${active.name} (${active.id}) ausgeben`,'aria-label':currentPlan.lpSpent?`${amount} ${active.name} ausgeben, davon ${currentPlan.lpSpent} mit Lebenspunkten bezahlen`:`${amount} ${active.name} ausgeben`,disabled:!currentPlan.valid||busy});
+    minus.onclick=()=>{amount=Math.max(1,amount-1);draw()};
+    plus.onclick=()=>{amount=Math.min(spendable,amount+1);draw()};
+    spend.onclick=()=>{if(busy)return;busy=true;if(!spendCounterV179(owner,active.id,amount,skill.id)){busy=false;draw()}};
+    controls.replaceChildren(minus,value,plus,spend);
+    message.textContent=currentPlan.mayUseLP?`${active.name}: ${active.current} von ${active.max}. Fehlender ${active.id}-Verbrauch wird 1:1 mit LP bezahlt; LP: ${currentPlan.lp.current} von ${currentPlan.lp.max}.`:(active.current?`${active.name}: ${active.current} von ${active.max} verfügbar.`:`Nicht genügend ${active.name}: verfügbar 0.`);
+  };
+  panel.append(el('h4',{text:'Counter ausgeben'}),el('p',{class:'muted',text:ids.length>1?'Wähle den verwendeten Counter. Ein Schrägstrich bezeichnet Alternativen.':'Der erste Klick öffnet nur diese Bestätigung und verbraucht noch nichts.'}),choices,controls,message,close);
+  root.append(panel);
+  draw();
+  return root;
+}
+function skillUseTriggerV179(owner,skill){
+  const ids=skillCounterIdsV179(skill.use);
+  if(!ids.length)return el('span',{class:'muted',text:skill.use||'—'});
+  const button=el('button',{type:'button',class:'skill-use-trigger-v179','data-owner-id-v179':owner.id,'data-skill-id-v179':skill.id,'data-counter-ids-v179':ids.join(' ')}),states=ids.map(id=>counterStateV179(owner,id));
+  for(const[index,state]of states.entries()){
+    if(index)button.append(el('span',{text:'/'}));
+    button.append(el('span',{class:'skill-use-token-v179',text:`${state.id} · ${state.current}/${state.max}`}));
+  }
+  if(states.every(state=>state.current===0))button.classList.add('is-empty-v179');
+  button.setAttribute('aria-label',`Verbrauch für ${skill.name} buchen: ${states.map(state=>`${state.name} ${state.current} von ${state.max}`).join(' oder ')}`);
+  button.title='Infobox öffnen und Counter ausgeben';
+  const open=event=>{event.stopPropagation();showPinnedRuleInfoV179(button,skill.name,()=>skillSpendInfoV179(owner,skill))};
+  button.onclick=open;
+  button.onkeydown=event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open(event)}};
+  return button;
+}
+const renderSkillsBeforeSpendV179=renderSkillsOwnerR5;
+function renderSkillsSpendV179(owner,isAux=false){
+  const box=renderSkillsBeforeSpendV179(owner,isAux),body=box.querySelector('.skills-r5 tbody');if(!body)return box;const enhance=()=>{const definitions=new Map(allSkillsV178(owner).map(skill=>[skill.id,skill]));for(const row of body.querySelectorAll('tr[data-skill-id]:not([data-spend-ready-v179])')){const skill=definitions.get(row.dataset.skillId),cell=row.children[5];if(!skill||!cell)continue;row.dataset.spendReadyV179='true';cell.classList.add('skill-use-cell-v179');cell.replaceChildren(skillUseTriggerV179(owner,skill))}};enhance();new MutationObserver(enhance).observe(body,{childList:true});return box;
+}
+renderSkillsOwnerR5=renderSkillsSpendV179;renderSkills=function(){return renderSkillsSpendV179(ch(),false)};renderAuxSkillsV17=function(owner){return renderSkillsSpendV179(owner,true)};
+
 const runTestsBeforeV179=runTests;
 function runTestsV179(){
   runTestsBeforeV179();let body=testResults.querySelector('tbody');if(!body){const table=el('table',{},[el('thead',{},[el('tr',{},['Test','Erwartet','Berechnet','Status'].map(value=>el('th',{text:value})))]),el('tbody')]);testResults.replaceChildren(table);body=table.querySelector('tbody')}
@@ -233,4 +349,4 @@ function runTestsV179(){
 runTests=runTestsV179;testsBtn.onclick=runTestsV179;
 
 state.appVersion=V179_VERSION;state.schemaVersion=V179_SCHEMA;state.rulesVersion=V179_RULES;save();renderAll();
-Object.assign(window.Eberos,{version:V179_VERSION,schemaVersion:V179_SCHEMA,rulesVersion:V179_RULES,runTests:runTestsV179,ensureStateV179,refillOwnerV179,visibleAuxOwnersV179,contactCardsV179,npcByIdV179,navigateTo:navigateToV179,searchIndex:searchIndexV177});
+Object.assign(window.Eberos,{version:V179_VERSION,schemaVersion:V179_SCHEMA,rulesVersion:V179_RULES,runTests:runTestsV179,ensureStateV179,refillOwnerV179,visibleAuxOwnersV179,contactCardsV179,npcByIdV179,navigateTo:navigateToV179,searchIndex:searchIndexV177,skillCounterIdsV179,spendCounterV179,undoCounterSpendV179,lastCounterSpendV179:()=>lastCounterSpendV179});

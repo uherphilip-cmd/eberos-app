@@ -20,9 +20,11 @@
 - Lagerrast verbraucht genau eine Ration und wird ohne Vorrat blockiert
 - Beide Rastarten setzen den Fünf-Runden-Zähler zurück
 - Suche bleibt im Sichtbereich und navigiert mit Hervorhebung zum Ziel
+- Fähigkeitsverbrauch kann aus einer fixierten Infobox owner-sicher abgebucht und einmal rückgängig gemacht werden
+- Fehlende Ausdauer oder fehlender Fokus werden 1:1 aus LP bezahlt; die Transaktion und Rückgängig-Funktion erfassen beide Counter gemeinsam
 - Eigene Rüstungen verwenden dieselbe Schutzberechnung wie Katalogrüstung
 
 ## Veröffentlichung
 
 - Kanonische URL: https://uherphilip-cmd.github.io/eberos-app/eberos-charakter-builder.html
-- Versionslink: https://uherphilip-cmd.github.io/eberos-app/eberos-charakter-builder.html?v=1.7.9-r2
+- Versionslink: https://uherphilip-cmd.github.io/eberos-app/eberos-charakter-builder.html?v=1.7.9-r3
