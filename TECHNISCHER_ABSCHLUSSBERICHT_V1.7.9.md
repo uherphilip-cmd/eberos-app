@@ -25,4 +25,4 @@
 ## Veröffentlichung
 
 - Kanonische URL: https://uherphilip-cmd.github.io/eberos-app/eberos-charakter-builder.html
-- Versionslink: https://uherphilip-cmd.github.io/eberos-app/eberos-charakter-builder.html?v=1.7.9-r1
+- Versionslink: https://uherphilip-cmd.github.io/eberos-app/eberos-charakter-builder.html?v=1.7.9-r2

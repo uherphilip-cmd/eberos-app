@@ -102,7 +102,7 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 <dialog id="pluginsDialog"><div class="dialog-head"><h2>🧩 Eberos-Erweiterungen</h2><button data-close>✕</button></div><p class="notice">Erweiterungspakete dürfen nur Daten, Karten und sichere Formeln enthalten. Fremder JavaScript-Code wird abgelehnt.</p><div class="toolbar"><button id="installPlugin" class="primary">Paket importieren</button><button id="examplePlugin">Beispielpaket exportieren</button><button id="safeModeBtn">Im sicheren Modus neu starten</button></div><div id="pluginList"></div><details><summary>Unterstütztes Paketformat</summary><p class="muted">Kartenarten: <code>text</code>, <code>divider</code> und <code>calculated</code>. Formeln dürfen Kürzel wie ST, KS oder M sowie +, −, ×, ÷, Klammern, min, max, floor, ceil und round verwenden.</p></details></dialog>
 <dialog id="auxDialog"><div class="dialog-head"><h2>Neuen Reiter anlegen</h2><button data-close>✕</button></div><label>Art<select id="auxType"><option value="npc">NPC</option><option value="familiar">Vertrauter</option><option value="possession">Besitz</option></select></label><label>Name<input id="auxName" placeholder="Name des Reiters"></label><button id="createAuxTab" class="primary">Reiter anlegen</button></dialog>
 <dialog id="adventureCbpDialog"><div class="dialog-head"><h2>Abenteuer-CBP gutschreiben</h2><button data-close>✕</button></div><p class="notice">Die Gutschrift erhöht dauerhaft das verfügbare Gesamtbudget und bleibt mit Datum und Anlass nachvollziehbar.</p><div class="settings-grid"><label>Erhaltene CBP<input id="adventureCbpAmount" type="number" min="1" max="999" value="1"></label><label>Anlass<input id="adventureCbpLabel" placeholder="z. B. Die Nebelburg"></label></div><button id="grantAdventureCbp" class="primary">CBP gutschreiben</button><h3>Bisherige Gutschriften</h3><div id="adventureCbpList"></div></dialog>
-<script src="./data/eberos-items-anfaenger-v1.3.js?v=1.7.9-r1"></script>
+<script src="./data/eberos-items-anfaenger-v1.3.js?v=1.7.9-r2"></script>
 <script src="./data/eberos-magie-wunder-flueche-v1.0.js"></script>
 <script>
 'use strict';
@@ -2146,12 +2146,12 @@ installBtn.addEventListener('click',async()=>{if(installPrompt){installPrompt.pr
 window.addEventListener('appinstalled',()=>installBtn.classList.add('hidden'));
 if('serviceWorker' in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',async()=>{try{const registration=await navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'});let refreshing=false;const showUpdate=worker=>{if(!worker)return;updateBanner.classList.remove('hidden');applyUpdateBtn.onclick=()=>{applyUpdateBtn.disabled=true;applyUpdateBtn.textContent='Aktualisierung läuft…';worker.postMessage({type:'SKIP_WAITING'})}};if(registration.waiting)showUpdate(registration.waiting);registration.addEventListener('updatefound',()=>{const worker=registration.installing;worker?.addEventListener('statechange',()=>{if(worker.state==='installed'&&navigator.serviceWorker.controller)showUpdate(worker)})});navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload()});await registration.update()}catch(e){showError('Offline-Modus konnte nicht aktiviert werden: '+e.message)}});
 </script>
-<script src="./data/eberos-v1.7.6.js?v=1.7.9-r1"></script>
-<script src="./data/eberos-kampftechniken-v1.0.js?v=1.7.9-r1"></script>
-<script src="./data/eberos-effekte-v1.7.7.js?v=1.7.9-r1"></script>
-<script src="./data/eberos-v1.7.7.js?v=1.7.9-r1"></script>
-<script src="./data/eberos-kampftechniken-v1.1.js?v=1.7.9-r1"></script>
-<script src="./data/eberos-v1.7.8.js?v=1.7.9-r1"></script>
-<script src="./data/eberos-v1.7.8-r4.js?v=1.7.9-r1"></script>
-<script src="./data/eberos-v1.7.9.js?v=1.7.9-r1"></script>
+<script src="./data/eberos-v1.7.6.js?v=1.7.9-r2"></script>
+<script src="./data/eberos-kampftechniken-v1.0.js?v=1.7.9-r2"></script>
+<script src="./data/eberos-effekte-v1.7.7.js?v=1.7.9-r2"></script>
+<script src="./data/eberos-v1.7.7.js?v=1.7.9-r2"></script>
+<script src="./data/eberos-kampftechniken-v1.1.js?v=1.7.9-r2"></script>
+<script src="./data/eberos-v1.7.8.js?v=1.7.9-r2"></script>
+<script src="./data/eberos-v1.7.8-r4.js?v=1.7.9-r2"></script>
+<script src="./data/eberos-v1.7.9.js?v=1.7.9-r2"></script>
 </body></html>

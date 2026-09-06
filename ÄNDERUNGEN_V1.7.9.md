@@ -4,6 +4,8 @@
 
 - Zwei getrennte Rastarten: normale Rast und Lagerrast mit automatischem Verbrauch einer Ration.
 - Schwebende, tastaturbedienbare Suche mit zuverlässiger Zielnavigation und kurzzeitiger Hervorhebung.
+- Die Suche findet „Kontakt und Herkunft“ auch ohne bereits angelegtes Kontaktfenster und führt dann zur passenden Hinzufügen-Schaltfläche.
+- Vorhandene Kontakte lassen sich über ihren Namen sowie über „Kontakt“ oder „Kontaktfenster“ direkt öffnen.
 - Kontakte und ausgearbeitete NPCs verwenden ein gemeinsames Datenmodell mit stabilen NPC-IDs.
 - Kontakte können ohne Datenkopie zu vollständigen NPCs ausgearbeitet werden.
 

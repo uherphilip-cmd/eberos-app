@@ -156,6 +156,13 @@ addCard=function(type){
   const character=ch(),npc=createContactNpcV179(character),card=cardObject('contact',character.layout.length,12);card.data.npcIdV179=npc.id;npc.contactCardIdsV179=[card.id];character.layout.push(card);contactPersistV179(npc,true);showToastV179('Unabhängiger Kontakt angelegt.');
 };
 
+function decorateAddCardsV179(){
+  for(const button of addCards.querySelectorAll('button'))if(button.textContent.trim()===`+ ${CARD_TYPES.contact}`)button.dataset.addCardTypeV179='contact';
+}
+const renderAddCardsBeforeV179=renderAddCards;
+renderAddCards=function(){renderAddCardsBeforeV179();decorateAddCardsV179()};
+decorateAddCardsV179();
+
 const deleteCardBeforeV179=deleteCard;
 deleteCard=function(card,owner=activeLayoutOwner()){
   if(owner===ch()&&card.type==='contact'){
@@ -182,7 +189,9 @@ printableOwnersR15=function(){return printableOwnersBeforeV179().filter(descript
 
 const searchIndexBeforeV179=searchIndexV177;
 searchIndexV177=function(){
-  const character=ch(),compactIds=new Set((character.auxiliaryTabs||[]).filter(isCompactNpcV179).map(owner=>owner.id)),entries=searchIndexBeforeV179().filter(entry=>!compactIds.has(entry.target?.ownerId));
+  const character=ch(),cards=contactCardsV179(character),contactCardIds=new Set(cards.map(card=>card.id)),compactIds=new Set((character.auxiliaryTabs||[]).filter(isCompactNpcV179).map(owner=>owner.id)),entries=searchIndexBeforeV179().filter(entry=>!compactIds.has(entry.target?.ownerId)&&!contactCardIds.has(entry.target?.cardId)),ownerName=character.name||'Hauptcharakter';
+  if(cards.length){const first=cards[0];entries.push({label:'Kontakt und Herkunft',kind:'Kontaktfenster',owner:ownerName,target:{ownerId:character.id,cardId:first.id,cardType:'contact'},search:normalizeSearchV177('Kontakt Kontaktfenster Kontakte NPC Herkunft Ansprechpartner Beziehungen')})}
+  else entries.push({label:'Kontakt und Herkunft hinzufügen',kind:'Karte hinzufügen',owner:ownerName,target:{ownerId:character.id,cardType:'contact',selector:'[data-add-card-type-v179="contact"]'},search:normalizeSearchV177('Kontakt Kontaktfenster Kontakte NPC Herkunft Ansprechpartner Beziehungen hinzufügen anlegen')});
   for(const card of contactCardsV179(character)){const npc=linkContactCardV179(character,card),label=npc.name||'Unbenannter Kontakt';entries.push({label,kind:'Kontakt / NPC',owner:character.name||'Hauptcharakter',target:{ownerId:character.id,cardId:card.id,cardType:'contact',selector:`[data-contact-npc-id="${npc.id}"]`},search:normalizeSearchV177(`${label} Kontakt NPC ${npc.npcType||''} ${npc.roleV179||''} ${npc.location||''} ${npc.relationship||''} ${npc.availability||''} ${npc.description||''} ${npc.notes||''}`)})}
   return entries;
 };
