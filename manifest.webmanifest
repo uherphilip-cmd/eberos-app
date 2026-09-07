@@ -1,8 +1,8 @@
 {
   "id": "./eberos-charakter-builder.html",
-  "name": "Eberos Charakter-Builder v1.7.10",
+  "name": "Eberos Charakter-Builder v1.7.11",
   "short_name": "Eberos",
-  "description": "Eberos Charakter-Builder v1.7.10 mit strukturierten aktiven Effekten, eindeutigen Fähigkeitsmodifikatoren und gemeinsamer Zeitfortschreibung.",
+  "description": "Eberos Charakter-Builder v1.7.11 mit bereinigter Oberfläche, vollständiger Vorteilsübersicht und verlustfreier Altimport-Migration.",
   "lang": "de",
   "start_url": "./eberos-charakter-builder.html",
   "scope": "./",

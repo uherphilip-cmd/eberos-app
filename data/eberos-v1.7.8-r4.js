@@ -135,6 +135,32 @@ audit=function(){auditBeforeV178R4();auditResults.append(el('h3',{text:'Synergie
 auditBtn.onclick=audit;
 
 function seedLearnedPowerV178R4(owner,counter){const school=POWER_SCHOOLS_V176.find(item=>powerPathOptionsV176(item.skillId).length===1&&resolvedPowerPathV176(owner,item)===counter),entry=school&&powersForSkillV176(school.skillId)[0];if(!school||!entry)return null;owner.skills[school.skillId].level=Math.max(1,+owner.skills[school.skillId].level||0);owner.skills[school.skillId].learnedPowerIds=[entry.id];return entry}
+function exhaustiveSynergyPowerCoverageV178R4(){
+  const failures=[],visibleIds=new Set(),kindCounts={spell:0,miracle:0,curse:0};let assignmentCases=0,individualCases=0;
+  for(const entry of POWER_ENTRIES_V176)kindCounts[entry.powerKind]=(kindCounts[entry.powerKind]||0)+1;
+  for(const school of POWER_SCHOOLS_V176){
+    const expected=powersForSkillV176(school.skillId),expectedIds=expected.map(entry=>entry.id).sort(),counters=powerPathOptionsV176(school.skillId);
+    if(expected.length!==10)failures.push(`${school.schoolLabel}: ${expected.length} statt 10 Datenbankkräfte`);
+    if(!counters.length){failures.push(`${school.schoolLabel}: keine Counterzuordnung`);continue}
+    for(const counter of counters){
+      assignmentCases++;const owner=ownerWithFateLevelsV175({M:10,GB:10,FS:10});ensureOwnerPowersV176(owner);owner.skills[school.skillId].level=25;owner.skills[school.skillId].learnedPowerIds=[...expectedIds];
+      if(counters.length>1)owner.powerPathChoicesV176[school.skillId]=counter;
+      const filtered=learnedPowerEntriesForCounterV178R4(owner,counter),filteredIds=filtered.map(entry=>entry.id).sort(),draft={primaryCounter:counter,linkedPowerIds:{}};
+      const selectorIds=[...renderSynergyPowerChoiceV178R4(owner,draft,counter,()=>{}).querySelectorAll('option')].map(option=>option.value).filter(Boolean).sort();
+      for(const id of filteredIds)visibleIds.add(id);
+      if(filteredIds.join('|')!==expectedIds.join('|'))failures.push(`${school.schoolLabel} → ${counter}: Filter ${filteredIds.length}/${expectedIds.length}`);
+      if(selectorIds.join('|')!==expectedIds.join('|'))failures.push(`${school.schoolLabel} → ${counter}: Auswahl ${selectorIds.length}/${expectedIds.length}`);
+      for(const entry of expected)if(!synergyPowerStatusV178R4(owner,counter,entry.id).ok)failures.push(`${entry.id} → ${counter}: Status ungültig`);
+      for(const other of SYNERGY_POWER_COUNTERS_V178_R4.filter(value=>value!==counter))if(learnedPowerEntriesForCounterV178R4(owner,other).some(entry=>expectedIds.includes(entry.id)))failures.push(`${school.schoolLabel}: erscheint zusätzlich unter ${other}`);
+      for(const entry of expected){
+        individualCases++;const learner=ownerWithFateLevelsV175({M:10,GB:10,FS:10});ensureOwnerPowersV176(learner);learner.skills[school.skillId].level=1;if(counters.length>1)learner.powerPathChoicesV176[school.skillId]=counter;
+        if(!learnPowerV176(learner,school.skillId,entry.id))failures.push(`${entry.id} → ${counter}: Lernen fehlgeschlagen`);
+        else if(!learnedPowerEntriesForCounterV178R4(learner,counter).some(candidate=>candidate.id===entry.id))failures.push(`${entry.id} → ${counter}: nach Lernen nicht im Filter`);
+      }
+    }
+  }
+  return{failures,visibleIds:[...visibleIds],kindCounts,assignmentCases,individualCases};
+}
 const runTestsBeforeV178R4=runTests;
 function runTestsV178R4(){
   const previousOk=runTestsBeforeV178R4(),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]);
@@ -151,9 +177,10 @@ function runTestsV178R4(){
   const multiSchool=POWER_SCHOOLS_V176.find(item=>powerPathOptionsV176(item.skillId).length>1),multiOptions=multiSchool?powerPathOptionsV176(multiSchool.skillId):[],multiEntry=multiSchool&&powersForSkillV176(multiSchool.skillId)[0],multiOwner=ownerWithFateLevelsV175({M:10,GB:10,FS:10});if(multiSchool&&multiEntry){multiOwner.skills[multiSchool.skillId].level=1;multiOwner.skills[multiSchool.skillId].learnedPowerIds=[multiEntry.id];assignPowerPathV176(multiOwner,multiSchool.skillId,multiOptions[0])}eq('Mehrfach-Counter-Kraft nur unter Zuordnung',true,!multiEntry||learnedPowerEntriesForCounterV178R4(multiOwner,multiOptions[0]).some(entry=>entry.id===multiEntry.id));eq('Mehrfach-Counter-Kraft nicht im anderen Pfad',false,!!multiEntry&&multiOptions.slice(1).some(counter=>learnedPowerEntriesForCounterV178R4(multiOwner,counter).some(entry=>entry.id===multiEntry.id)));
   const migrationOwner=ownerWithFateLevelsV175({M:10,GB:10});migrationOwner.fateSynergies=[{...completeSynergyForTestsV175(['M','GB'])}];delete migrationOwner.fateSynergies[0].powerLinkMode;delete migrationOwner.fateSynergies[0].linkedPowerIds;delete migrationOwner.migrations.v178r4SynergyPowers;const migrationState={appVersion:'1.7.8',schemaVersion:16,rulesVersion:6,characters:[migrationOwner],migrationLog:[]};ensureStateV178R4(migrationState,true);const migratedOnce=JSON.stringify(migrationState);ensureStateV178R4(migrationState,true);eq('r4-Migration setzt manuellen Altbestand','manual',migrationOwner.fateSynergies[0].powerLinkMode);eq('r4-Migration ist idempotent',migratedOnce,JSON.stringify(migrationState));
   const npc=ownerWithFateLevelsV175({M:10,GB:10},'npc'),familiar=ownerWithFateLevelsV175({M:10,GB:10},'familiar');npc.fateSynergies=[catalog];eq('NPC- und Vertrautenverknüpfungen getrennt',0,familiar.fateSynergies.length);eq('JSON erhält Power-IDs',spell.id,JSON.parse(JSON.stringify(catalog)).linkedPowerIds.M);
+  const coverage=exhaustiveSynergyPowerCoverageV178R4();eq('Volltest: 32 Schul-Counter-Kombinationen',32,coverage.assignmentCases);eq('Volltest: 320 einzelne Lern- und Filterfälle',320,coverage.individualCases);eq('Volltest: alle 140 Zauber erfasst',140,coverage.kindCounts.spell);eq('Volltest: alle 50 Wunder erfasst',50,coverage.kindCounts.miracle);eq('Volltest: alle 80 Flüche erfasst',80,coverage.kindCounts.curse);eq('Volltest: alle 270 IDs in Synergieauswahlen sichtbar',270,coverage.visibleIds.length);eq('Volltest: kein Lern-, Filter-, Auswahl- oder Statusfehler',0,coverage.failures.length);
   const body=testResults.querySelector('tbody');for(const[name,expected,actual,ok]of tests)body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return previousOk&&tests.every(test=>test[3]);
 }
 runTests=runTestsV178R4;testsBtn.onclick=runTestsV178R4;
 
 backupIncomingStateV178R4(state);state=ensureStateV178R4(state,true);state.appVersion='1.7.8';state.schemaVersion=V178_R4_SCHEMA;state.rulesVersion=V178_R4_RULES;save();renderAll();
-Object.assign(window.Eberos,{version:'1.7.8',schemaVersion:V178_R4_SCHEMA,rulesVersion:V178_R4_RULES,runTests:runTestsV178R4,ensureStateV178R4,ensureOwnerSynergyPowersV178R4,learnedPowerEntriesForCounterV178R4,synergyPowerStatusV178R4,migrationReportR4:()=>state.v178r4SynergyPowerMigrationReport});
+Object.assign(window.Eberos,{version:'1.7.8',schemaVersion:V178_R4_SCHEMA,rulesVersion:V178_R4_RULES,runTests:runTestsV178R4,ensureStateV178R4,ensureOwnerSynergyPowersV178R4,learnedPowerEntriesForCounterV178R4,synergyPowerStatusV178R4,exhaustiveSynergyPowerCoverageV178R4,migrationReportR4:()=>state.v178r4SynergyPowerMigrationReport});

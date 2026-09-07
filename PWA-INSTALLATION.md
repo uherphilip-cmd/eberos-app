@@ -1,4 +1,4 @@
-# Eberos v1.7.10 als App installieren
+# Eberos v1.7.11 als App installieren
 
 ## Windows - lokale Installation
 
