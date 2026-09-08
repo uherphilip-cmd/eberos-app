@@ -90,7 +90,7 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 </head>
 <body><div class="app" id="app">
 <div id="updateBanner" class="update-banner hidden no-print" role="status"><strong>Eine neue Version ist verfügbar.</strong><button id="applyUpdateBtn">Jetzt aktualisieren</button></div>
-<header class="topbar no-print"><div class="brand">✦ Eberos <small>v1.7.11</small></div><div class="stats"><span class="pill" id="namePill">Unbenannt</span><span class="pill">Budget <strong id="budget">144</strong></span><span class="pill">Zusatz <strong id="bonus">0</strong></span><span class="pill">Ausgegeben <strong id="spent">0</strong></span><span class="pill" id="restPill">Rest <strong id="rest">144</strong></span><span class="pill" id="saveStatus" aria-live="polite">gespeichert</span></div><div class="toolbar"><button id="installBtn" class="hidden">📲 App installieren</button><button id="adventureCbpBtn">＋ Abenteuer-CBP</button><button id="resetBuilderBtn" class="danger">↺ Builder zurücksetzen</button><button id="exportBtn">⇩ Export</button><button id="importBtn">⇧ Import</button><button id="pdfExportBtn">PDF exportieren</button><button id="printBtn">⎙ Drucken</button><button id="settingsBtn">⚙ Einstellungen</button></div></header>
+<header class="topbar no-print"><div class="brand">✦ Eberos <small>v1.7.12</small></div><div class="stats"><span class="pill" id="namePill">Unbenannt</span><span class="pill">Budget <strong id="budget">144</strong></span><span class="pill">Zusatz <strong id="bonus">0</strong></span><span class="pill">Ausgegeben <strong id="spent">0</strong></span><span class="pill" id="restPill">Rest <strong id="rest">144</strong></span><span class="pill" id="saveStatus" aria-live="polite">gespeichert</span></div><div class="toolbar"><button id="installBtn" class="hidden">📲 App installieren</button><button id="adventureCbpBtn">＋ Abenteuer-CBP</button><button id="resetBuilderBtn" class="danger">↺ Builder zurücksetzen</button><button id="exportBtn">⇩ Export</button><button id="importBtn">⇧ Import</button><button id="pdfExportBtn">PDF exportieren</button><button id="printBtn">⎙ Drucken</button><button id="settingsBtn">⚙ Einstellungen</button></div></header>
 <nav class="tabs no-print" id="mainTabs" aria-label="Hauptansichten"><button data-view="build" class="active">Charakterbau</button><button data-view="aux" data-aux-default="npc">NPC</button><button data-view="print-preview">Druckvorschau</button><button id="addAuxTabBtn">＋ Reiter</button></nav>
 <h1 class="screen-title" id="documentTitle">Eberos-Charakter</h1><main class="workspace"><aside class="sidebar edit-only"><h2>Karten</h2><div class="add-list" id="addCards"></div><hr><h3>Budget</h3><label>Startbudget<select id="budgetPreset"><option value="120">Karg · 120</option><option value="144">Standard · 144</option><option value="160">Erfahren · 160</option><option value="180">Heroisch · 180</option><option value="200">Episch · 200</option></select></label><label>Eigener Wert<input id="startBudget" type="number" min="0" max="9999"></label><button id="auditBtn">✓ Abschlussprüfung</button><details class="cost-details"><summary>Kostenanalyse</summary><div id="costDetails"></div></details><hr></aside><section class="sheet" id="sheet" aria-label="Charakterkarten"></section></main></div>
 <input type="file" id="fileInput" accept="application/json" hidden><div id="errorBox" class="errorbox hidden" role="alert"></div>
@@ -103,12 +103,12 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 <dialog id="auxDialog"><div class="dialog-head"><h2>Neuen Reiter anlegen</h2><button data-close>✕</button></div><label>Art<select id="auxType"><option value="npc">NPC</option><option value="familiar">Vertrauter</option><option value="possession">Besitz</option></select></label><label>Name<input id="auxName" placeholder="Name des Reiters"></label><button id="createAuxTab" class="primary">Reiter anlegen</button></dialog>
 <dialog id="adventureCbpDialog"><div class="dialog-head"><h2>Abenteuer-CBP gutschreiben</h2><button data-close>✕</button></div><p class="notice">Die Gutschrift erhöht dauerhaft das verfügbare Gesamtbudget und bleibt mit Datum und Anlass nachvollziehbar.</p><div class="settings-grid"><label>Erhaltene CBP<input id="adventureCbpAmount" type="number" min="1" max="999" value="1"></label><label>Anlass<input id="adventureCbpLabel" placeholder="z. B. Die Nebelburg"></label></div><button id="grantAdventureCbp" class="primary">CBP gutschreiben</button><h3>Bisherige Gutschriften</h3><div id="adventureCbpList"></div></dialog>
 <button id="testsBtn" type="button" hidden aria-hidden="true" tabindex="-1"></button>
-<script src="./data/eberos-items-anfaenger-v1.3.js?v=1.7.11-r2"></script>
-<script src="./data/eberos-magie-wunder-flueche-v1.0.js"></script>
+<script src="./data/eberos-items-anfaenger-v1.3.js?v=1.7.12-r1"></script>
+<script src="./data/eberos-magie-wunder-flueche-v1.1.js?v=1.7.12-r1"></script>
 <script>
 'use strict';
 /* 1. Konstanten und Seed-Daten */
-const APP_VERSION='1.7.11',SCHEMA_VERSION=20,RULES_VERSION=7,STORE='eberos.builder.v1';
+const APP_VERSION='1.7.12',SCHEMA_VERSION=20,RULES_VERSION=7,STORE='eberos.builder.v1';
 try{const rawV1711=localStorage.getItem(STORE);window.__EBEROS_PRE_V1711_RAW__=rawV1711||'';if(rawV1711){const parsedV1711=JSON.parse(rawV1711);if(parsedV1711?.appVersion!==APP_VERSION||+parsedV1711?.schemaVersion!==SCHEMA_VERSION||!parsedV1711?.v1711NotesCleanupDone)localStorage.setItem(STORE+'.backup.pre-v1711.'+Date.now(),rawV1711)}}catch{}
 document.querySelector('.brand small').textContent='v'+APP_VERSION;
 const ATTRS=[['ST','Stärke'],['KS','Konstitution'],['GS','Geschick'],['RF','Reflexe'],['FF','Fingerfertigkeit'],['WL','Wille'],['IT','Intelligenz'],['IN','Intuition'],['WN','Wahrnehmung'],['CR','Charisma']];
@@ -2134,14 +2134,15 @@ installBtn.addEventListener('click',async()=>{if(installPrompt){installPrompt.pr
 window.addEventListener('appinstalled',()=>installBtn.classList.add('hidden'));
 if('serviceWorker' in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',async()=>{try{const registration=await navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'});let refreshing=false;const showUpdate=worker=>{if(!worker)return;updateBanner.classList.remove('hidden');applyUpdateBtn.onclick=()=>{applyUpdateBtn.disabled=true;applyUpdateBtn.textContent='Aktualisierung läuft…';worker.postMessage({type:'SKIP_WAITING'})}};if(registration.waiting)showUpdate(registration.waiting);registration.addEventListener('updatefound',()=>{const worker=registration.installing;worker?.addEventListener('statechange',()=>{if(worker.state==='installed'&&navigator.serviceWorker.controller)showUpdate(worker)})});navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload()});await registration.update()}catch(e){showError('Offline-Modus konnte nicht aktiviert werden: '+e.message)}});
 </script>
-<script src="./data/eberos-v1.7.6.js?v=1.7.11-r2"></script>
-<script src="./data/eberos-kampftechniken-v1.0.js?v=1.7.11-r2"></script>
-<script src="./data/eberos-effekte-v1.7.7.js?v=1.7.11-r2"></script>
-<script src="./data/eberos-v1.7.7.js?v=1.7.11-r2"></script>
-<script src="./data/eberos-kampftechniken-v1.1.js?v=1.7.11-r2"></script>
-<script src="./data/eberos-v1.7.8.js?v=1.7.11-r2"></script>
-<script src="./data/eberos-v1.7.8-r4.js?v=1.7.11-r2"></script>
-<script src="./data/eberos-v1.7.9.js?v=1.7.11-r2"></script>
-<script src="./data/eberos-v1.7.10.js?v=1.7.11-r2"></script>
-<script src="./data/eberos-v1.7.11.js?v=1.7.11-r2"></script>
+<script src="./data/eberos-v1.7.6.js?v=1.7.12-r1"></script>
+<script src="./data/eberos-kampftechniken-v1.0.js?v=1.7.12-r1"></script>
+<script src="./data/eberos-effekte-v1.7.7.js?v=1.7.12-r1"></script>
+<script src="./data/eberos-v1.7.7.js?v=1.7.12-r1"></script>
+<script src="./data/eberos-kampftechniken-v1.1.js?v=1.7.12-r1"></script>
+<script src="./data/eberos-v1.7.8.js?v=1.7.12-r1"></script>
+<script src="./data/eberos-v1.7.8-r4.js?v=1.7.12-r1"></script>
+<script src="./data/eberos-v1.7.9.js?v=1.7.12-r1"></script>
+<script src="./data/eberos-v1.7.10.js?v=1.7.12-r1"></script>
+<script src="./data/eberos-v1.7.11.js?v=1.7.12-r1"></script>
+<script src="./data/eberos-v1.7.12.js?v=1.7.12-r1"></script>
 </body></html>

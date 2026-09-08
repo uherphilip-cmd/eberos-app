@@ -54,7 +54,7 @@ document.head.append(powerStyleV176);
 
 function validatePowerCatalogV176(){
   const errors=[],ids=new Set(),schoolCodes=new Map(),pathCounts={M:0,GB:0,FS:0},reinforcement={yes:0,no:0};
-  if(POWER_ENTRIES_V176.length!==270)errors.push(`270 Einträge erwartet, ${POWER_ENTRIES_V176.length} gefunden`);
+  if(POWER_ENTRIES_V176.length!==405)errors.push(`405 Einträge erwartet, ${POWER_ENTRIES_V176.length} gefunden`);
   if(POWER_SCHOOLS_V176.length!==27)errors.push(`27 Schulen erwartet, ${POWER_SCHOOLS_V176.length} gefunden`);
   for(const entry of POWER_ENTRIES_V176){
     if(!entry?.id||ids.has(entry.id))errors.push(`Doppelte oder leere Power-ID: ${entry?.id||'—'}`);
@@ -74,10 +74,10 @@ function validatePowerCatalogV176(){
   for(const school of POWER_SCHOOLS_V176){
     const entries=POWER_ENTRIES_V176.filter(entry=>entry.schoolId===school.schoolId);
     const codes=entries.map(entry=>entry.code).sort((a,b)=>Number(a.slice(1))-Number(b.slice(1))).join(',');
-    if(entries.length!==10||codes!=='Z1,Z2,Z3,Z4,Z5,Z6,Z7,Z8,Z9,Z10')errors.push(`${school.schoolLabel}: Z1 bis Z10 unvollständig`);
+    if(entries.length!==15||codes!=='Z1,Z2,Z3,Z4,Z5,Z6,Z7,Z8,Z9,Z10,Z11,Z12,Z13,Z14,Z15')errors.push(`${school.schoolLabel}: Z1 bis Z15 unvollständig`);
   }
-  if(`${pathCounts.M}|${pathCounts.GB}|${pathCounts.FS}`!=='140|50|80')errors.push(`Pfadverteilung ${pathCounts.M}/${pathCounts.GB}/${pathCounts.FS}`);
-  if(`${reinforcement.yes}|${reinforcement.no}`!=='162|108')errors.push(`Verstärkungsverteilung ${reinforcement.yes}/${reinforcement.no}`);
+  if(`${pathCounts.M}|${pathCounts.GB}|${pathCounts.FS}`!=='210|75|120')errors.push(`Pfadverteilung ${pathCounts.M}/${pathCounts.GB}/${pathCounts.FS}`);
+  if(`${reinforcement.yes}|${reinforcement.no}`!=='297|108')errors.push(`Verstärkungsverteilung ${reinforcement.yes}/${reinforcement.no}`);
   const renamed=POWER_ENTRIES_V176.find(entry=>entry.schoolLabel==='Schutz- & Bewahrungswunder'&&entry.code==='Z8');
   if(renamed?.displayName!=='Hand der Fürsprache'||renamed?.sourceName!=='Schützende Hand')errors.push('Namenskorrektur für Schutz- & Bewahrungswunder Z8 fehlt');
   return{ok:errors.length===0,errors,pathCounts,reinforcement,ids:ids.size};
@@ -282,7 +282,7 @@ function effectiveSkillLevelV176(owner,skillId){
 }
 function bonusValueV176(level){const s=Math.max(0,Math.min(25,+level||0));return s<=0?0:Math.ceil(s/5)}
 function dieValueV176(level){return String(DICE[Math.max(0,Math.min(25,+level||0))]||'—').split(' · ')[0]}
-function learningCapacityV176(owner,skillId){return Math.min(10,Math.max(0,+owner.skills?.[skillId]?.level||0))}
+function learningCapacityV176(owner,skillId){return Math.min(15,Math.max(0,+owner.skills?.[skillId]?.level||0))}
 function learnedPowerIdsV176(owner,skillId){return normalizeSkillPowerDataV176(owner.skills?.[skillId]).learnedPowerIds}
 function powersForSkillV176(skillId){return POWER_ENTRIES_V176.filter(entry=>entry.skillId===skillId).sort((a,b)=>Number(a.code.slice(1))-Number(b.code.slice(1)))}
 
@@ -304,7 +304,7 @@ function unlearnPowerV176(owner,skillId,powerId){
 
 function setPurchasedSkillLevelV176(owner,skillId,nextLevel,confirmRemoval=message=>confirm(message)){
   ensureOwnerPowersV176(owner);
-  const data=owner.skills[skillId],previous=+data.level||0,next=Math.max(0,Math.min(25,+nextLevel||0)),capacity=Math.min(10,next);
+  const data=owner.skills[skillId],previous=+data.level||0,next=Math.max(0,Math.min(25,+nextLevel||0)),capacity=Math.min(15,next);
   if(next<previous&&data.learnedPowerIds.length>capacity){
     const removed=data.learnedPowerIds.slice(capacity).reverse(),labels=removed.map(id=>POWER_BY_ID_V176.get(id)?.displayName||id);
     const accepted=confirmRemoval(`Durch die niedrigere Stufe werden zuletzt gelernte Einträge entfernt:\n\n${labels.map(label=>'• '+label).join('\n')}\n\nÄnderung übernehmen?`);
@@ -528,7 +528,7 @@ function renderPowerLibraryV176(owner,pathId){
   ensureOwnerPowersV176(owner);
   const box=el('section',{class:'power-library-v176','data-owner-id':owner.id||'','data-path-id':pathId}),head=el('div',{class:'power-library-head-v176'});
   const schools=POWER_SCHOOLS_V176.filter(school=>resolvedPowerPathV176(owner,school)===pathId),entryCount=schools.reduce((sum,school)=>sum+powersForSkillV176(school.skillId).length,0);
-  head.append(el('div',{},[el('h3',{text:'Gelernte Kräfte'}),el('p',{class:'muted',text:'Lernplätze entstehen aus der gekauften Stufe der jeweils zugeordneten Fähigkeit. Z1 bis Z10 dürfen frei gewählt werden.'})]),el('span',{class:'power-badge-v176',text:`Katalog ${POWER_DB_V176.meta?.catalogVersion||'1.0'} · ${entryCount} zugeordnete Einträge`}));
+  head.append(el('div',{},[el('h3',{text:'Gelernte Kräfte'}),el('p',{class:'muted',text:'Lernplätze entstehen aus der gekauften Stufe der jeweils zugeordneten Fähigkeit. Z1 bis Z15 dürfen frei gewählt werden.'})]),el('span',{class:'power-badge-v176',text:`Katalog ${POWER_DB_V176.meta?.catalogVersion||'1.0'} · ${entryCount} zugeordnete Einträge`}));
   const list=el('div',{class:'power-skill-list-v176'});
   let visible=0;
   for(const school of schools){
@@ -675,11 +675,11 @@ runTests=function(){
   eq('Schema 14',14,SCHEMA_VERSION);
   eq('Regelstand 5',5,RULES_VERSION);
   eq('Power-Katalog validiert',true,POWER_VALIDATION_V176.ok);
-  eq('270 Power-Einträge',270,POWER_ENTRIES_V176.length);
+  eq('405 Power-Einträge',405,POWER_ENTRIES_V176.length);
   eq('27 Power-Schulen',27,POWER_SCHOOLS_V176.length);
-  eq('270 eindeutige Power-IDs',270,new Set(POWER_ENTRIES_V176.map(entry=>entry.id)).size);
-  eq('Pfadverteilung 140/50/80','140|50|80',`${POWER_VALIDATION_V176.pathCounts.M}|${POWER_VALIDATION_V176.pathCounts.GB}|${POWER_VALIDATION_V176.pathCounts.FS}`);
-  eq('Verstärkungen 162/108','162|108',`${POWER_VALIDATION_V176.reinforcement.yes}|${POWER_VALIDATION_V176.reinforcement.no}`);
+  eq('405 eindeutige Power-IDs',405,new Set(POWER_ENTRIES_V176.map(entry=>entry.id)).size);
+  eq('Pfadverteilung 210/75/120','210|75|120',`${POWER_VALIDATION_V176.pathCounts.M}|${POWER_VALIDATION_V176.pathCounts.GB}|${POWER_VALIDATION_V176.pathCounts.FS}`);
+  eq('Verstärkungen 297/108','297|108',`${POWER_VALIDATION_V176.reinforcement.yes}|${POWER_VALIDATION_V176.reinforcement.no}`);
   eq('Alle 15 Quellfelder erhalten',true,POWER_ENTRIES_V176.every(entry=>entry.sourceRecord.length===15));
   eq('Alle Verstärkungen klassifiziert',true,POWER_ENTRIES_V176.filter(entry=>entry.reinforceable).every(entry=>entry.reinforcement?.ruleType));
   eq('84 sichtbare Fähigkeiten',84,SKILLS.length);
@@ -744,8 +744,8 @@ runTests=function(){
   dreamOwner.powerPathChoicesV176.skill_72='FS';
   ensureOwnerPowersV176(dreamOwner);
   eq('Traummagie-Schule ist statisch dem Manapfad zugeordnet','M',dreamSchool?.pathId);
-  eq('Traummagie besitzt zehn Zauber',10,dreamEntries.length);
-  eq('Traummagie enthält Z1 bis Z10','Z1|Z2|Z3|Z4|Z5|Z6|Z7|Z8|Z9|Z10',dreamEntries.map(entry=>entry.code).join('|'));
+  eq('Traummagie besitzt fünfzehn Zauber',15,dreamEntries.length);
+  eq('Traummagie enthält Z1 bis Z15','Z1|Z2|Z3|Z4|Z5|Z6|Z7|Z8|Z9|Z10|Z11|Z12|Z13|Z14|Z15',dreamEntries.map(entry=>entry.code).join('|'));
   eq('Alle Traummagie-Zauber führen zum Manapfad',true,dreamEntries.every(entry=>entry.pathId==='M'));
   eq('Alle Traummagie-Zauber verbrauchen ausschließlich Mana',true,dreamEntries.every(entry=>entry.counterOptions?.length===1&&entry.counterOptions[0]==='M'));
   eq('Alle Traummagie-Einträge sind Zauber',true,dreamEntries.every(entry=>entry.powerKind==='spell'));
@@ -755,9 +755,9 @@ runTests=function(){
   eq('Traummagie erscheint im Mana-Schicksalspfad',true,renderPowerLibraryV176(dreamOwner,'M').textContent.includes('Traummagie & Oneiromantie'));
   eq('Traummagie erscheint nicht im Glaubens-Schicksalspfad',false,renderPowerLibraryV176(dreamOwner,'GB').textContent.includes('Traummagie & Oneiromantie'));
   eq('Traummagie erscheint nicht im Finsternis-Schicksalspfad',false,renderPowerLibraryV176(dreamOwner,'FS').textContent.includes('Traummagie & Oneiromantie'));
-  const dreamZ10=dreamEntries.find(entry=>entry.code==='Z10');
-  eq('Traummagie-Zauber lässt sich über den Manapfad lernen',true,learnPowerV176(dreamOwner,'skill_72',dreamZ10.id));
-  eq('Gelernter Traummagie-Zauber wird im Manapfad dargestellt',true,renderPowerLibraryV176(dreamOwner,'M').textContent.includes(dreamZ10.displayName));
+  const dreamZ15=dreamEntries.find(entry=>entry.code==='Z15');
+  eq('Traummagie-Zauber lässt sich über den Manapfad lernen',true,learnPowerV176(dreamOwner,'skill_72',dreamZ15.id));
+  eq('Gelernter Traummagie-Zauber wird im Manapfad dargestellt',true,renderPowerLibraryV176(dreamOwner,'M').textContent.includes(dreamZ15.displayName));
   const rendered=renderPowerLibraryV176(learner,'M');
   eq('Gelernte Power wird im Machtpfad gerendert',true,rendered.textContent.includes(fireZ8.displayName));
   eq('Power-Info enthält S/W/B',true,['S ','W ','B '].every(token=>powerInfoContentV176(fireZ8,learner).textContent.includes(token)));

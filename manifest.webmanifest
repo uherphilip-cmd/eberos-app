@@ -1,8 +1,8 @@
 {
   "id": "./eberos-charakter-builder.html",
-  "name": "Eberos Charakter-Builder v1.7.11",
+  "name": "Eberos Charakter-Builder v1.7.12",
   "short_name": "Eberos",
-  "description": "Eberos Charakter-Builder v1.7.11 mit bereinigter Oberfläche, vollständiger Vorteilsübersicht und verlustfreier Altimport-Migration.",
+  "description": "Eberos Charakter-Builder v1.7.12 mit 405 Zaubern, Wundern und Flüchen bis Z15.",
   "lang": "de",
   "start_url": "./eberos-charakter-builder.html",
   "scope": "./",
