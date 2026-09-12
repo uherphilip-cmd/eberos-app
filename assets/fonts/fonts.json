@@ -1,0 +1,162 @@
+{
+  "version": "1.7.13-r1",
+  "families": [
+    {
+      "family": "Cinzel Decorative",
+      "slug": "cinzel-decorative",
+      "repo": "cinzeldecorative",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "MedievalSharp",
+      "slug": "medievalsharp",
+      "repo": "medievalsharp",
+      "weights": [
+        400
+      ]
+    },
+    {
+      "family": "Uncial Antiqua",
+      "slug": "uncial-antiqua",
+      "repo": "uncialantiqua",
+      "weights": [
+        400
+      ]
+    },
+    {
+      "family": "Pirata One",
+      "slug": "pirata-one",
+      "repo": "pirataone",
+      "weights": [
+        400
+      ]
+    },
+    {
+      "family": "Almendra",
+      "slug": "almendra",
+      "repo": "almendra",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Grenze Gotisch",
+      "slug": "grenze-gotisch",
+      "repo": "grenzegotisch",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Cinzel",
+      "slug": "cinzel",
+      "repo": "cinzel",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Marcellus",
+      "slug": "marcellus",
+      "repo": "marcellus",
+      "weights": [
+        400
+      ]
+    },
+    {
+      "family": "Cormorant Garamond",
+      "slug": "cormorant-garamond",
+      "repo": "cormorantgaramond",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "IM Fell English",
+      "slug": "im-fell-english",
+      "repo": "imfellenglish",
+      "weights": [
+        400
+      ]
+    },
+    {
+      "family": "Alegreya",
+      "slug": "alegreya",
+      "repo": "alegreya",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "EB Garamond",
+      "slug": "eb-garamond",
+      "repo": "ebgaramond",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Caudex",
+      "slug": "caudex",
+      "repo": "caudex",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Vollkorn",
+      "slug": "vollkorn",
+      "repo": "vollkorn",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Spectral",
+      "slug": "spectral",
+      "repo": "spectral",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Noto Serif",
+      "slug": "noto-serif",
+      "repo": "notoserif",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Libre Baskerville",
+      "slug": "libre-baskerville",
+      "repo": "librebaskerville",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Merriweather",
+      "slug": "merriweather",
+      "repo": "merriweather",
+      "weights": [
+        400,
+        700
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "version": "1.7.13-r1",
+  "assetRoot": "assets/backgrounds",
+  "backgrounds": [
+    {
+      "id": "celestial-sword",
+      "name": "Himmelsklinge",
+      "file": "celestial-sword.png",
+      "tone": "color",
+      "recommendedOpacity": 0.07,
+      "recommendedScale": 70
+    },
+    {
+      "id": "horned-blade-beast",
+      "name": "Klingenbestie",
+      "file": "horned-blade-beast.png",
+      "tone": "color",
+      "recommendedOpacity": 0.055,
+      "recommendedScale": 62
+    },
+    {
+      "id": "arcane-hourglass",
+      "name": "Arkane Sanduhr",
+      "file": "arcane-hourglass.png",
+      "tone": "dark-line",
+      "recommendedOpacity": 0.055,
+      "recommendedScale": 72
+    },
+    {
+      "id": "moon-spirit",
+      "name": "Mondgeist",
+      "file": "moon-spirit.png",
+      "tone": "dark-line",
+      "recommendedOpacity": 0.05,
+      "recommendedScale": 62
+    },
+    {
+      "id": "ritual-moth",
+      "name": "Ritualmotte",
+      "file": "ritual-moth.png",
+      "tone": "dark-line",
+      "recommendedOpacity": 0.045,
+      "recommendedScale": 48
+    },
+    {
+      "id": "oracle-eye",
+      "name": "Orakelauge",
+      "file": "oracle-eye.png",
+      "tone": "dark-line",
+      "recommendedOpacity": 0.045,
+      "recommendedScale": 82
+    },
+    {
+      "id": "night-owl",
+      "name": "Nachteule",
+      "file": "night-owl.png",
+      "tone": "dark-line",
+      "recommendedOpacity": 0.05,
+      "recommendedScale": 68
+    },
+    {
+      "id": "shadow-rooster",
+      "name": "Schattenhahn",
+      "file": "shadow-rooster.png",
+      "tone": "dark-line",
+      "recommendedOpacity": 0.05,
+      "recommendedScale": 62
+    },
+    {
+      "id": "fractured-skull",
+      "name": "Geborstener Schädel",
+      "file": "fractured-skull.png",
+      "tone": "light-line",
+      "recommendedOpacity": 0.055,
+      "recommendedScale": 62
+    },
+    {
+      "id": "sword-skull-shield",
+      "name": "Schwert, Schädel und Schild",
+      "file": "sword-skull-shield.png",
+      "tone": "color",
+      "recommendedOpacity": 0.06,
+      "recommendedScale": 62
+    }
+  ]
+}
