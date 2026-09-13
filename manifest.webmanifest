@@ -1,8 +1,8 @@
 {
   "id": "./eberos-charakter-builder.html",
-  "name": "Eberos Charakter-Builder v1.7.14",
-  "short_name": "Eberos 1.7.14",
-  "description": "Eberos Charakter-Builder mit präzisierten Heimlichkeitsfähigkeiten, frei wählbaren Hintergründen und vollständiger Offline-Nutzung.",
+  "name": "Eberos Charakter-Builder v1.7.15",
+  "short_name": "Eberos 1.7.15",
+  "description": "Eberos Charakter-Builder mit nachvollziehbar ausbalancierten Grundwertzuordnungen und verlustfreier Altstandmigration.",
   "lang": "de",
   "start_url": "./eberos-charakter-builder.html",
   "scope": "./",
