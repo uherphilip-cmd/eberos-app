@@ -23,12 +23,12 @@ function runTestsV1712(){
   eq('Version 1.7.12',V1712_VERSION,APP_VERSION);
   eq('Schema bleibt 20',V1712_SCHEMA,SCHEMA_VERSION);
   eq('Regelstand bleibt 7',V1712_RULES,RULES_VERSION);
-  eq('Katalogversion 1.1.0','1.1.0',POWER_DB_V176.meta?.catalogVersion);
-  eq('405 Power-Einträge',405,POWER_ENTRIES_V176.length);
-  eq('27 Power-Schulen',27,POWER_SCHOOLS_V176.length);
-  eq('405 eindeutige Power-IDs',405,new Set(POWER_ENTRIES_V176.map(entry=>entry.id)).size);
-  eq('Pfadverteilung 210/75/120','210|75|120',`${POWER_VALIDATION_V176.pathCounts.M}|${POWER_VALIDATION_V176.pathCounts.GB}|${POWER_VALIDATION_V176.pathCounts.FS}`);
-  eq('Verstärkungen 297/108','297|108',`${POWER_VALIDATION_V176.reinforcement.yes}|${POWER_VALIDATION_V176.reinforcement.no}`);
+  eq('Katalogversion 1.2.0','1.2.0',POWER_DB_V176.meta?.catalogVersion);
+  eq('435 Power-Einträge',435,POWER_ENTRIES_V176.length);
+  eq('29 Power-Schulen',29,POWER_SCHOOLS_V176.length);
+  eq('435 eindeutige Power-IDs',435,new Set(POWER_ENTRIES_V176.map(entry=>entry.id)).size);
+  eq('Pfadverteilung 240/75/120','240|75|120',`${POWER_VALIDATION_V176.pathCounts.M}|${POWER_VALIDATION_V176.pathCounts.GB}|${POWER_VALIDATION_V176.pathCounts.FS}`);
+  eq('Verstärkungen 327/108','327|108',`${POWER_VALIDATION_V176.reinforcement.yes}|${POWER_VALIDATION_V176.reinforcement.no}`);
   eq('Jede Schule enthält Z1 bis Z15',true,POWER_SCHOOLS_V176.every(school=>powersForSkillV176(school.skillId).map(entry=>entry.code).join('|')===Array.from({length:15},(_,index)=>`Z${index+1}`).join('|')));
   const capacityOwner=newCharacter();
   ensureOwnerPowersV176(capacityOwner);
@@ -271,7 +271,7 @@ renderLearnedCombatTechniqueV176=function(owner,skillId,techniqueId){
 const runTestsBeforeV1712R2=runTests;
 function runTestsV1712R2(){
   runTestsBeforeV1712R2();const historicalBody=testResults.querySelector('tbody'),baseOk=![...historicalBody.querySelectorAll('tr')].some(row=>row.cells[row.cells.length-1]?.textContent==='Fehler'),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]);
-  eq('Revision r2','r2',V1712_REVISION);eq('405 Kraftkosten klassifiziert',405,POWER_PAYMENT_VALIDATION_V1712R2.classified);eq('Keine unklassifizierten Kraftkosten',true,POWER_PAYMENT_VALIDATION_V1712R2.ok);
+  eq('Revision r2','r2',V1712_REVISION);eq('435 Kraftkosten klassifiziert',435,POWER_PAYMENT_VALIDATION_V1712R2.classified);eq('Keine unklassifizierten Kraftkosten',true,POWER_PAYMENT_VALIDATION_V1712R2.ok);
   const main=newCharacter(),mainEntry={active:true,accounting:{mode:'inherit'}},mainPanel=renderEntryAccountingV173(mainEntry,main,()=>5);eq('Hauptcharakter hat zwei Abrechnungsarten',2,mainPanel.querySelectorAll('select option').length);
   const aux=newAuxEntry('npc','Abrechnung');aux.accounting.mode='own-budget';const nested={active:true,accounting:{mode:'inherit'}},auxPanel=renderEntryAccountingV173(nested,aux,()=>5);eq('Untereintrag hat drei Abrechnungsarten',3,auxPanel.querySelectorAll('select option').length);
   const beforeMode=entryModeV173(nested,aux);aux.accounting.mode='free';eq('Wie Reiter folgt dem Reitermodus','own-budget|free',`${beforeMode}|${entryModeV173(nested,aux)}`);

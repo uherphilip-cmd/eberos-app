@@ -1,8 +1,8 @@
 {
   "id": "./eberos-charakter-builder.html",
-  "name": "Eberos Charakter-Builder v1.7.15",
-  "short_name": "Eberos 1.7.15",
-  "description": "Eberos Charakter-Builder mit nachvollziehbar ausbalancierten Grundwertzuordnungen und verlustfreier Altstandmigration.",
+  "name": "Eberos Charakter-Builder v1.7.16",
+  "short_name": "Eberos 1.7.16",
+  "description": "Eberos Charakter-Builder mit Hellsicht & Vorhersagen sowie Umbramantie, jeweils 15 frei wählbaren und stufenskalierenden Mana-Zaubern.",
   "lang": "de",
   "start_url": "./eberos-charakter-builder.html",
   "scope": "./",

@@ -54,8 +54,8 @@ document.head.append(powerStyleV176);
 
 function validatePowerCatalogV176(){
   const errors=[],ids=new Set(),schoolCodes=new Map(),pathCounts={M:0,GB:0,FS:0},reinforcement={yes:0,no:0};
-  if(POWER_ENTRIES_V176.length!==405)errors.push(`405 Einträge erwartet, ${POWER_ENTRIES_V176.length} gefunden`);
-  if(POWER_SCHOOLS_V176.length!==27)errors.push(`27 Schulen erwartet, ${POWER_SCHOOLS_V176.length} gefunden`);
+  if(POWER_ENTRIES_V176.length!==435)errors.push(`435 Einträge erwartet, ${POWER_ENTRIES_V176.length} gefunden`);
+  if(POWER_SCHOOLS_V176.length!==29)errors.push(`29 Schulen erwartet, ${POWER_SCHOOLS_V176.length} gefunden`);
   for(const entry of POWER_ENTRIES_V176){
     if(!entry?.id||ids.has(entry.id))errors.push(`Doppelte oder leere Power-ID: ${entry?.id||'—'}`);
     ids.add(entry?.id);
@@ -76,8 +76,8 @@ function validatePowerCatalogV176(){
     const codes=entries.map(entry=>entry.code).sort((a,b)=>Number(a.slice(1))-Number(b.slice(1))).join(',');
     if(entries.length!==15||codes!=='Z1,Z2,Z3,Z4,Z5,Z6,Z7,Z8,Z9,Z10,Z11,Z12,Z13,Z14,Z15')errors.push(`${school.schoolLabel}: Z1 bis Z15 unvollständig`);
   }
-  if(`${pathCounts.M}|${pathCounts.GB}|${pathCounts.FS}`!=='210|75|120')errors.push(`Pfadverteilung ${pathCounts.M}/${pathCounts.GB}/${pathCounts.FS}`);
-  if(`${reinforcement.yes}|${reinforcement.no}`!=='297|108')errors.push(`Verstärkungsverteilung ${reinforcement.yes}/${reinforcement.no}`);
+  if(`${pathCounts.M}|${pathCounts.GB}|${pathCounts.FS}`!=='240|75|120')errors.push(`Pfadverteilung ${pathCounts.M}/${pathCounts.GB}/${pathCounts.FS}`);
+  if(`${reinforcement.yes}|${reinforcement.no}`!=='327|108')errors.push(`Verstärkungsverteilung ${reinforcement.yes}/${reinforcement.no}`);
   const renamed=POWER_ENTRIES_V176.find(entry=>entry.schoolLabel==='Schutz- & Bewahrungswunder'&&entry.code==='Z8');
   if(renamed?.displayName!=='Hand der Fürsprache'||renamed?.sourceName!=='Schützende Hand')errors.push('Namenskorrektur für Schutz- & Bewahrungswunder Z8 fehlt');
   return{ok:errors.length===0,errors,pathCounts,reinforcement,ids:ids.size};
@@ -675,15 +675,15 @@ runTests=function(){
   eq('Schema 14',14,SCHEMA_VERSION);
   eq('Regelstand 5',5,RULES_VERSION);
   eq('Power-Katalog validiert',true,POWER_VALIDATION_V176.ok);
-  eq('405 Power-Einträge',405,POWER_ENTRIES_V176.length);
-  eq('27 Power-Schulen',27,POWER_SCHOOLS_V176.length);
-  eq('405 eindeutige Power-IDs',405,new Set(POWER_ENTRIES_V176.map(entry=>entry.id)).size);
-  eq('Pfadverteilung 210/75/120','210|75|120',`${POWER_VALIDATION_V176.pathCounts.M}|${POWER_VALIDATION_V176.pathCounts.GB}|${POWER_VALIDATION_V176.pathCounts.FS}`);
-  eq('Verstärkungen 297/108','297|108',`${POWER_VALIDATION_V176.reinforcement.yes}|${POWER_VALIDATION_V176.reinforcement.no}`);
+  eq('435 Power-Einträge',435,POWER_ENTRIES_V176.length);
+  eq('29 Power-Schulen',29,POWER_SCHOOLS_V176.length);
+  eq('435 eindeutige Power-IDs',435,new Set(POWER_ENTRIES_V176.map(entry=>entry.id)).size);
+  eq('Pfadverteilung 240/75/120','240|75|120',`${POWER_VALIDATION_V176.pathCounts.M}|${POWER_VALIDATION_V176.pathCounts.GB}|${POWER_VALIDATION_V176.pathCounts.FS}`);
+  eq('Verstärkungen 327/108','327|108',`${POWER_VALIDATION_V176.reinforcement.yes}|${POWER_VALIDATION_V176.reinforcement.no}`);
   eq('Alle 15 Quellfelder erhalten',true,POWER_ENTRIES_V176.every(entry=>entry.sourceRecord.length===15));
   eq('Alle Verstärkungen klassifiziert',true,POWER_ENTRIES_V176.filter(entry=>entry.reinforceable).every(entry=>entry.reinforcement?.ruleType));
-  eq('84 sichtbare Fähigkeiten',84,SKILLS.length);
-  eq('84 eindeutige Skill-IDs',84,new Set(SKILLS.map(skill=>skill.id)).size);
+  eq('85 sichtbare Fähigkeiten',85,SKILLS.length);
+  eq('85 eindeutige Skill-IDs',85,new Set(SKILLS.map(skill=>skill.id)).size);
   eq('Fünf mehrdeutige Machtfähigkeiten',5,POWER_PATH_OPTIONS_BY_SKILL_V176.size);
   eq('Thanaturgie verwendet Glaube oder Finsternis','GB|FS',powerPathOptionsV176('skill_38').join('|'));
   eq('Traummagie gehört ausschließlich zu Mana','M',powerPathOptionsV176('skill_72').join('|'));
