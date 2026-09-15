@@ -1,8 +1,8 @@
 {
   "id": "./eberos-charakter-builder.html",
-  "name": "Eberos Charakter-Builder v1.7.16",
-  "short_name": "Eberos 1.7.16",
-  "description": "Eberos Charakter-Builder mit Hellsicht & Vorhersagen sowie Umbramantie, jeweils 15 frei wählbaren und stufenskalierenden Mana-Zaubern.",
+  "name": "Eberos Charakter-Builder v1.7.17",
+  "short_name": "Eberos 1.7.17",
+  "description": "Eberos Charakter-Builder mit Runenmagie & Verzauberungen, 15 Runenzaubern und gebundenem Mana.",
   "lang": "de",
   "start_url": "./eberos-charakter-builder.html",
   "scope": "./",
