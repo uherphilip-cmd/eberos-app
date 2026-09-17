@@ -104,11 +104,12 @@ actionPaymentPlanV1712R2=function(owner,components){
   plan.changes=(plan.changes||[]).filter(function(change){return change.counterId!=='M'});if(spent)plan.changes.push({counterId:'M',name:COUNTER_NAMES_V179.M||'Mana',before:mana.current,spent,after:mana.current-spent});plan.missing=(plan.missing||[]).filter(function(item){return item.counterId!=='M'});if(spent<amount)plan.missing.push({counterId:'M',amount:amount-spent});plan.valid=plan.missing.length===0;return plan;
 };
 
+function hasPurchasedRuneMagicV1719(owner){return(+owner?.skills?.[V1717_SKILL.id]?.level||0)>0}
 const counterInfoBeforeV1717=counterInfoContentR5;
-counterInfoContentR5=function(id){const box=counterInfoBeforeV1717(id);if(id==='M')box.append(el('h4',{text:'Gebundenes Mana'}),el('p',{text:'Aktive Runen geben Mana nicht aus, sondern binden es. Verfügbar ist der aktuelle Manavorrat abzüglich aller aktiven Bindungen. Eine Rast füllt ausgegebenes Mana auf, löst Runen jedoch nicht. Mana kann nicht mit Lebenspunkten ersetzt werden.'}));return box};
+counterInfoContentR5=function(id,owner){const box=counterInfoBeforeV1717(id,owner);if(id==='M'&&hasPurchasedRuneMagicV1719(owner))box.append(el('h4',{text:'Gebundenes Mana'}),el('p',{text:'Aktive Runen geben Mana nicht aus, sondern binden es. Verfügbar ist der aktuelle Manavorrat abzüglich aller aktiven Bindungen. Eine Rast füllt ausgegebenes Mana auf, löst Runen jedoch nicht. Mana kann nicht mit Lebenspunkten ersetzt werden.'}));return box};
 const renderCountersBeforeV1717=renderCountersR8;
 renderCountersR8=function(owner){
-  const box=renderCountersBeforeV1717(owner),input=box.querySelector('input[aria-label="Mana aktuell"]'),row=input?.closest('.value-row');if(row){const mana=manaStateV1717(owner);row.append(el('div',{class:'mana-binding-v1717'},[el('strong',{text:`Mana: ${mana.current}/${mana.maximum} aktuell · ${mana.bound} gebunden · ${mana.available} verfügbar`}),el('small',{class:'muted',text:'Rast füllt ausgegebenes Mana auf; aktive Runenbindungen bleiben bestehen.'})]))}return box;
+  const box=renderCountersBeforeV1717(owner),input=box.querySelector('input[aria-label="Mana aktuell"]'),row=input?.closest('.value-row');if(row&&hasPurchasedRuneMagicV1719(owner)){const mana=manaStateV1717(owner);row.append(el('div',{class:'mana-binding-v1717'},[el('strong',{text:`Mana: ${mana.current}/${mana.maximum} aktuell · ${mana.bound} gebunden · ${mana.available} verfügbar`}),el('small',{class:'muted',text:'Rast füllt ausgegebenes Mana auf; aktive Runenbindungen bleiben bestehen.'})]))}return box;
 };
 renderCountersR5=renderCountersR8;
 

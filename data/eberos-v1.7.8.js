@@ -283,7 +283,7 @@ function renderSkillsV178(owner,isAux=false){
       const data=owner.skills[skill.id],modifier=mods[skill.id]||0,effective=Math.max(0,Math.min(25,(+data.level||0)+modifier));
       const row=el('tr',{tabindex:0,'data-skill-id':skill.id}),favorite=el('button',{class:'fav',text:data.fav?'★':'☆','aria-label':skill.name+' als Favorit markieren'}),level=el('input',{class:'skill-level',type:'number',min:0,max:25,value:data.level,'aria-label':skill.name+' Stufe'}),note=el('input',{value:data.note||'',placeholder:'Notiz'}),build=()=>skillInfoContentR5(skill),info=infoButtonR5(row,skill.name,build),actions=el('div',{class:'custom-skill-actions-v178'});
       favorite.onclick=()=>{data.fav=!data.fav;persistOwnerR5(owner,false);draw()};
-      const commitLevel=event=>{const previous=data.level;if(!setPurchasedSkillLevelV176(owner,skill.id,event.target.value)){event.target.value=previous;return}persistOwnerR5(owner,false);draw();replaceCombatTechniqueLibraryV176(owner);refreshPowerPathChoiceHostsV176(owner)};
+      const commitLevel=event=>{const previous=data.level;if(!setPurchasedSkillLevelV176(owner,skill.id,event.target.value)){event.target.value=previous;return}const runeVisibilityChanged=skill.id==='skill_magic_rune_enchanting'&&((+previous||0)>0)!==((+data.level||0)>0);persistOwnerR5(owner,runeVisibilityChanged);if(!runeVisibilityChanged)draw();replaceCombatTechniqueLibraryV176(owner);refreshPowerPathChoiceHostsV176(owner)};
       level.onchange=commitLevel;
       level.onblur=commitLevel;
       note.oninput=event=>{data.note=event.target.value;persistOwnerR5(owner,false)};
