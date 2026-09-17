@@ -1,8 +1,8 @@
 {
   "id": "./eberos-charakter-builder.html",
-  "name": "Eberos Charakter-Builder v1.7.17",
-  "short_name": "Eberos 1.7.17",
-  "description": "Eberos Charakter-Builder mit Runenmagie & Verzauberungen, 15 Runenzaubern und gebundenem Mana.",
+  "name": "Eberos Charakter-Builder v1.7.18",
+  "short_name": "Eberos 1.7.18",
+  "description": "Eberos Charakter-Builder mit verbindlicher linearer Rennformel Bewegung mal 2.",
   "lang": "de",
   "start_url": "./eberos-charakter-builder.html",
   "scope": "./",
