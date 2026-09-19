@@ -1,8 +1,8 @@
 'use strict';
 window.EBEROS_COMBAT_TECHNIQUE_DB_V178={
   "meta": {
-    "catalogVersion": "1.1",
-    "builderRevision": "1.7.8-r4",
+    "catalogVersion": "1.2",
+    "builderRevision": "1.7.21-r1",
     "schools": 7,
     "entries": 56
   },
@@ -218,17 +218,17 @@ window.EBEROS_COMBAT_TECHNIQUE_DB_V178={
       "name": "Tödliche Lücke",
       "tier": 1,
       "minLevel": 1,
-      "staminaCost": 4,
+      "staminaCost": 2,
       "activation": "Nach einem erfolgreichen Treffer.",
       "effect": "Zusätzlich zum normalen Waffenschaden wird einmal `W` als Zusatzschaden gewürfelt. Der Treffer ignoriert außerdem `B` Punkte Rüstung.",
       "scaling": "W ist der exakte Würfel der wirksamen Skillstufe. B ist der Bonus der wirksamen Skillstufe.",
       "check": "Die im Text genannte Angriffs-, Verteidigungs- oder Widerstandsprobe wird nach der allgemeinen Regel ausgeführt; es entsteht keine zusätzliche Probe, sofern die Wirkung keine ausdrücklich verlangt.",
-      "limits": "Einmal pro Kampf, nur ein Ziel und keine weitere offensive Kampftechnik.",
+      "limits": "einmal pro Runde, nur ein Ziel und keine weitere offensive Kampftechnik.",
       "sourceFields": {
-        "Kosten": "4 A",
+        "Kosten": "2 A",
         "Aktivierung": "Nach einem erfolgreichen Treffer.",
         "Wirkung": "Zusätzlich zum normalen Waffenschaden wird einmal `W` als Zusatzschaden gewürfelt. Der Treffer ignoriert außerdem `B` Punkte Rüstung.",
-        "Grenze": "Einmal pro Kampf, nur ein Ziel und keine weitere offensive Kampftechnik."
+        "Grenze": "einmal pro Runde, nur ein Ziel und keine weitere offensive Kampftechnik."
       }
     },
     {
@@ -398,17 +398,17 @@ window.EBEROS_COMBAT_TECHNIQUE_DB_V178={
       "name": "Titanenschlag",
       "tier": 1,
       "minLevel": 1,
-      "staminaCost": 4,
+      "staminaCost": 3,
       "activation": "Nach einem erfolgreichen schweren Nahkampftreffer.",
       "effect": "Zusätzlich zum normalen Waffenschaden wird einmal `W` als Zusatzschaden gewürfelt. Der Treffer ignoriert `2 × B` Rüstung und stößt das Ziel bis zu `B` Felder zurück.",
       "scaling": "W ist der exakte Würfel der wirksamen Skillstufe. B ist der Bonus der wirksamen Skillstufe.",
       "check": "Die im Text genannte Angriffs-, Verteidigungs- oder Widerstandsprobe wird nach der allgemeinen Regel ausgeführt; es entsteht keine zusätzliche Probe, sofern die Wirkung keine ausdrücklich verlangt.",
-      "limits": "Einmal pro Kampf; nach dem Angriff keine freiwillige Bewegung mehr; keine weitere offensive Kampftechnik.",
+      "limits": "einmal pro Runde; nach dem Angriff keine freiwillige Bewegung mehr; keine weitere offensive Kampftechnik.",
       "sourceFields": {
-        "Kosten": "4 A",
+        "Kosten": "3 A",
         "Aktivierung": "Nach einem erfolgreichen schweren Nahkampftreffer.",
         "Wirkung": "Zusätzlich zum normalen Waffenschaden wird einmal `W` als Zusatzschaden gewürfelt. Der Treffer ignoriert `2 × B` Rüstung und stößt das Ziel bis zu `B` Felder zurück.",
-        "Grenze": "Einmal pro Kampf; nach dem Angriff keine freiwillige Bewegung mehr; keine weitere offensive Kampftechnik."
+        "Grenze": "einmal pro Runde; nach dem Angriff keine freiwillige Bewegung mehr; keine weitere offensive Kampftechnik."
       }
     },
     {
@@ -555,14 +555,14 @@ window.EBEROS_COMBAT_TECHNIQUE_DB_V178={
       "name": "Kontergriff",
       "tier": 1,
       "minLevel": 1,
-      "staminaCost": 3,
+      "staminaCost": 2,
       "activation": "Reaktion nach einer erfolgreichen unbewaffneten Verteidigung gegen einen angrenzenden Gegner.",
       "effect": "Die Figur führt sofort eine normale Probe auf Raufen & Ringen mit `+B` aus. Bei Erfolg darf sie den Angreifer packen oder um bis zu `B` Felder versetzen.",
       "scaling": "B ist der Bonus der wirksamen Skillstufe.",
-      "check": "Keine zusätzliche Probe.",
+      "check": "Nach erfolgreicher unbewaffneter Verteidigung ist die in der Wirkung genannte Probe auf Raufen & Ringen erforderlich; keine weitere Zusatzprobe.",
       "limits": "Einmal pro Runde und nur gegen ein körperlich erreichbares Ziel.",
       "sourceFields": {
-        "Kosten": "3 A",
+        "Kosten": "2 A",
         "Aktivierung": "Reaktion nach einer erfolgreichen unbewaffneten Verteidigung gegen einen angrenzenden Gegner.",
         "Wirkung": "Die Figur führt sofort eine normale Probe auf Raufen & Ringen mit `+B` aus. Bei Erfolg darf sie den Angreifer packen oder um bis zu `B` Felder versetzen.",
         "Grenze": "Einmal pro Runde und nur gegen ein körperlich erreichbares Ziel."
@@ -577,18 +577,18 @@ window.EBEROS_COMBAT_TECHNIQUE_DB_V178={
       "name": "Meisterwurf",
       "tier": 1,
       "minLevel": 1,
-      "staminaCost": 4,
+      "staminaCost": 2,
       "activation": "Nach einer erfolgreichen Probe auf Raufen & Ringen.",
       "effect": "Zusätzlich zum normalen Schaden wird einmal `W` als stumpfer Zusatzschaden gewürfelt. Das Ziel wird bis zu `B` Felder versetzt und Liegend.",
       "scaling": "W ist der exakte Würfel der wirksamen Skillstufe. B ist der Bonus der wirksamen Skillstufe.",
       "check": "Eine passende Stärke- oder Geschickprobe gegen das Angriffsergebnis verhindert Versetzung und Niederwerfen, aber nicht den bereits verursachten Schaden.",
-      "limits": "Einmal pro Kampf.",
+      "limits": "einmal pro Runde.",
       "sourceFields": {
-        "Kosten": "4 A",
+        "Kosten": "2 A",
         "Aktivierung": "Nach einer erfolgreichen Probe auf Raufen & Ringen.",
         "Wirkung": "Zusätzlich zum normalen Schaden wird einmal `W` als stumpfer Zusatzschaden gewürfelt. Das Ziel wird bis zu `B` Felder versetzt und Liegend.",
         "Widerstand": "Eine passende Stärke- oder Geschickprobe gegen das Angriffsergebnis verhindert Versetzung und Niederwerfen, aber nicht den bereits verursachten Schaden.",
-        "Grenze": "Einmal pro Kampf."
+        "Grenze": "einmal pro Runde."
       }
     },
     {
@@ -755,17 +755,17 @@ window.EBEROS_COMBAT_TECHNIQUE_DB_V178={
       "name": "Nadelöhr",
       "tier": 1,
       "minLevel": 1,
-      "staminaCost": 4,
-      "activation": "Nach einem erfolgreichen leichten Fernkampftreffer.",
-      "effect": "Die zulässige Reichweite erhöht sich für diesen Angriff um `S` Felder. Zusätzlich wird einmal `W` als Zusatzschaden gewürfelt und der Treffer ignoriert `B` Rüstung.",
+      "staminaCost": 3,
+      "activation": "Vor der Angriffsprobe eines leichten Fernkampfangriffs; Kosten fallen auch bei einem Fehlschlag an.",
+      "effect": "Die erlaubte Reichweite dieses Angriffs steigt um `S` Felder. Bei einem Treffer verursacht er zusätzlich `W` Schaden und ignoriert bis zu `B` Punkte Rüstung.",
       "scaling": "W ist der exakte Würfel der wirksamen Skillstufe. B ist der Bonus der wirksamen Skillstufe. S ist die wirksame Skillstufe.",
       "check": "Die im Text genannte Angriffs-, Verteidigungs- oder Widerstandsprobe wird nach der allgemeinen Regel ausgeführt; es entsteht keine zusätzliche Probe, sofern die Wirkung keine ausdrücklich verlangt.",
-      "limits": "Einmal pro Kampf, nur ein Ziel und keine weitere offensive Kampftechnik.",
+      "limits": "einmal pro Runde, nur ein Ziel und keine weitere offensive Kampftechnik.",
       "sourceFields": {
-        "Kosten": "4 A",
-        "Aktivierung": "Nach einem erfolgreichen leichten Fernkampftreffer.",
-        "Wirkung": "Die zulässige Reichweite erhöht sich für diesen Angriff um `S` Felder. Zusätzlich wird einmal `W` als Zusatzschaden gewürfelt und der Treffer ignoriert `B` Rüstung.",
-        "Grenze": "Einmal pro Kampf, nur ein Ziel und keine weitere offensive Kampftechnik."
+        "Kosten": "3 A",
+        "Aktivierung": "Vor der Angriffsprobe eines leichten Fernkampfangriffs; Kosten fallen auch bei einem Fehlschlag an.",
+        "Wirkung": "Die erlaubte Reichweite dieses Angriffs steigt um `S` Felder. Bei einem Treffer verursacht er zusätzlich `W` Schaden und ignoriert bis zu `B` Punkte Rüstung.",
+        "Grenze": "einmal pro Runde, nur ein Ziel und keine weitere offensive Kampftechnik."
       }
     },
     {
@@ -888,16 +888,16 @@ window.EBEROS_COMBAT_TECHNIQUE_DB_V178={
       "name": "Linienbrecher",
       "tier": 1,
       "minLevel": 1,
-      "staminaCost": 3,
-      "activation": "Nach einem erfolgreichen Treffer.",
-      "effect": "Steht innerhalb von `B` Feldern hinter dem ersten Ziel ein zweites Ziel in derselben Schusslinie, darf gegen dieses eine weitere normale Angriffsprobe mit `+B` ausgeführt werden.",
+      "staminaCost": 2,
+      "activation": "Nach einem erfolgreichen Treffer gegen das erste Ziel.",
+      "effect": "Gegen ein zweites Ziel hinter dem ersten, in derselben Schusslinie und innerhalb von `B` Feldern, darf eine zusätzliche Angriffsprobe mit `+B` abgelegt werden.",
       "scaling": "B ist der Bonus der wirksamen Skillstufe.",
       "check": "Die im Text genannte Angriffs-, Verteidigungs- oder Widerstandsprobe wird nach der allgemeinen Regel ausgeführt; es entsteht keine zusätzliche Probe, sofern die Wirkung keine ausdrücklich verlangt.",
       "limits": "Geeignete durchdringende Waffe oder Munition; keine weitere offensive Kampftechnik.",
       "sourceFields": {
-        "Kosten": "3 A",
-        "Aktivierung": "Nach einem erfolgreichen Treffer.",
-        "Wirkung": "Steht innerhalb von `B` Feldern hinter dem ersten Ziel ein zweites Ziel in derselben Schusslinie, darf gegen dieses eine weitere normale Angriffsprobe mit `+B` ausgeführt werden.",
+        "Kosten": "2 A",
+        "Aktivierung": "Nach einem erfolgreichen Treffer gegen das erste Ziel.",
+        "Wirkung": "Gegen ein zweites Ziel hinter dem ersten, in derselben Schusslinie und innerhalb von `B` Feldern, darf eine zusätzliche Angriffsprobe mit `+B` abgelegt werden.",
         "Grenze": "Geeignete durchdringende Waffe oder Munition; keine weitere offensive Kampftechnik."
       }
     },
@@ -932,17 +932,17 @@ window.EBEROS_COMBAT_TECHNIQUE_DB_V178={
       "name": "Belagerungsschuss",
       "tier": 1,
       "minLevel": 1,
-      "staminaCost": 4,
+      "staminaCost": 3,
       "activation": "Nach einem erfolgreichen schweren Fernkampftreffer.",
       "effect": "Zusätzlich zum normalen Waffenschaden wird einmal `W` als Zusatzschaden gewürfelt. Der Treffer ignoriert `3 × B` Rüstung.",
       "scaling": "W ist der exakte Würfel der wirksamen Skillstufe. B ist der Bonus der wirksamen Skillstufe.",
       "check": "Die im Text genannte Angriffs-, Verteidigungs- oder Widerstandsprobe wird nach der allgemeinen Regel ausgeführt; es entsteht keine zusätzliche Probe, sofern die Wirkung keine ausdrücklich verlangt.",
-      "limits": "Einmal pro Kampf; in dieser Runde keine freiwillige Bewegung; keine weitere offensive Kampftechnik.",
+      "limits": "einmal pro Runde; in dieser Runde keine freiwillige Bewegung; keine weitere offensive Kampftechnik.",
       "sourceFields": {
-        "Kosten": "4 A",
+        "Kosten": "3 A",
         "Aktivierung": "Nach einem erfolgreichen schweren Fernkampftreffer.",
         "Wirkung": "Zusätzlich zum normalen Waffenschaden wird einmal `W` als Zusatzschaden gewürfelt. Der Treffer ignoriert `3 × B` Rüstung.",
-        "Grenze": "Einmal pro Kampf; in dieser Runde keine freiwillige Bewegung; keine weitere offensive Kampftechnik."
+        "Grenze": "einmal pro Runde; in dieser Runde keine freiwillige Bewegung; keine weitere offensive Kampftechnik."
       }
     },
     {
@@ -1111,17 +1111,17 @@ window.EBEROS_COMBAT_TECHNIQUE_DB_V178={
       "name": "Absolute Wacht",
       "tier": 1,
       "minLevel": 1,
-      "staminaCost": 4,
+      "staminaCost": 3,
       "activation": "Reaktion nach einer erfolgreichen Block- oder Paradeprobe gegen eine Schadensquelle.",
       "effect": "Einmal `W` würfeln und das Ergebnis vom noch verbleibenden Schaden abziehen. Betrifft dieselbe Schadensquelle mehrere unmittelbar angrenzende Verbündete, können bis zu `B` davon einbezogen werden; derselbe Wurf gilt für alle.",
       "scaling": "W ist der exakte Würfel der wirksamen Skillstufe. B ist der Bonus der wirksamen Skillstufe.",
       "check": "Die im Text genannte Angriffs-, Verteidigungs- oder Widerstandsprobe wird nach der allgemeinen Regel ausgeführt; es entsteht keine zusätzliche Probe, sofern die Wirkung keine ausdrücklich verlangt.",
-      "limits": "Schaden sinkt niemals unter 0; einmal pro Kampf.",
+      "limits": "Schaden sinkt niemals unter 0; einmal pro Runde.",
       "sourceFields": {
-        "Kosten": "4 A",
+        "Kosten": "3 A",
         "Aktivierung": "Reaktion nach einer erfolgreichen Block- oder Paradeprobe gegen eine Schadensquelle.",
         "Wirkung": "Einmal `W` würfeln und das Ergebnis vom noch verbleibenden Schaden abziehen. Betrifft dieselbe Schadensquelle mehrere unmittelbar angrenzende Verbündete, können bis zu `B` davon einbezogen werden; derselbe Wurf gilt für alle.",
-        "Grenze": "Schaden sinkt niemals unter 0; einmal pro Kampf."
+        "Grenze": "Schaden sinkt niemals unter 0; einmal pro Runde."
       }
     },
     {
@@ -1266,14 +1266,14 @@ window.EBEROS_COMBAT_TECHNIQUE_DB_V178={
       "name": "Unfassbar",
       "tier": 1,
       "minLevel": 1,
-      "staminaCost": 3,
+      "staminaCost": 2,
       "activation": "Vor einer Ausweichprobe gegen einen körperlichen Flächenangriff.",
       "effect": "Die Ausweichprobe erhält `+B`. Bei Erfolg entsteht kein Schaden; bei Misslingen wird der Schaden halbiert und aufgerundet.",
       "scaling": "B ist der Bonus der wirksamen Skillstufe.",
       "check": "Die im Text genannte Angriffs-, Verteidigungs- oder Widerstandsprobe wird nach der allgemeinen Regel ausgeführt; es entsteht keine zusätzliche Probe, sofern die Wirkung keine ausdrücklich verlangt.",
       "limits": "Einmal pro Runde und nur bei einem Flächeneffekt, dem körperlich ausgewichen werden kann.",
       "sourceFields": {
-        "Kosten": "3 A",
+        "Kosten": "2 A",
         "Aktivierung": "Vor einer Ausweichprobe gegen einen körperlichen Flächenangriff.",
         "Wirkung": "Die Ausweichprobe erhält `+B`. Bei Erfolg entsteht kein Schaden; bei Misslingen wird der Schaden halbiert und aufgerundet.",
         "Grenze": "Einmal pro Runde und nur bei einem Flächeneffekt, dem körperlich ausgewichen werden kann."
@@ -1288,17 +1288,17 @@ window.EBEROS_COMBAT_TECHNIQUE_DB_V178={
       "name": "Zwischen den Augenblicken",
       "tier": 1,
       "minLevel": 1,
-      "staminaCost": 4,
+      "staminaCost": 2,
       "activation": "Unmittelbar nach einer fehlgeschlagenen Ausweichprobe.",
       "effect": "Die Ausweichprobe darf vollständig wiederholt werden und erhält dabei `+B`. Bei Erfolg darf sich die Figur anschließend bis zu `B` Felder bewegen.",
       "scaling": "B ist der Bonus der wirksamen Skillstufe.",
       "check": "Die im Text genannte Angriffs-, Verteidigungs- oder Widerstandsprobe wird nach der allgemeinen Regel ausgeführt; es entsteht keine zusätzliche Probe, sofern die Wirkung keine ausdrücklich verlangt.",
-      "limits": "Das zweite Ergebnis ist verbindlich; einmal pro Kampf.",
+      "limits": "Das zweite Ergebnis ist verbindlich; einmal pro Runde.",
       "sourceFields": {
-        "Kosten": "4 A",
+        "Kosten": "2 A",
         "Aktivierung": "Unmittelbar nach einer fehlgeschlagenen Ausweichprobe.",
         "Wirkung": "Die Ausweichprobe darf vollständig wiederholt werden und erhält dabei `+B`. Bei Erfolg darf sich die Figur anschließend bis zu `B` Felder bewegen.",
-        "Grenze": "Das zweite Ergebnis ist verbindlich; einmal pro Kampf."
+        "Grenze": "Das zweite Ergebnis ist verbindlich; einmal pro Runde."
       }
     }
   ]

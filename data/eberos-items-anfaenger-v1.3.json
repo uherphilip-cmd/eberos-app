@@ -475,7 +475,7 @@
       },
       {
         "key": "staminaCost",
-        "label": "Ausdauerkosten",
+        "label": "Archivwert A (nicht fällig)",
         "type": "number",
         "visibleFor": [
           "weapon"

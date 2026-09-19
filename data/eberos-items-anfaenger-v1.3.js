@@ -475,7 +475,7 @@ window.EBEROS_ITEM_DB={
       },
       {
         "key": "staminaCost",
-        "label": "Ausdauerkosten",
+        "label": "Archivwert A (nicht fällig)",
         "type": "number",
         "visibleFor": [
           "weapon"
