@@ -2,9 +2,9 @@
 window.EBEROS_MSE_ITEM_DB_V15={
   "meta": {
     "id": "eberos-items-mse-v15",
-    "version": "15.3.0-value-model",
+    "version": "15.4.0-no-rarity-pricing",
     "sourceFile": "Items_Korrekturen_v15.mse-set",
-    "importedAt": "2026-09-26T18:19:09.991Z",
+    "importedAt": "2026-09-26T18:28:40.013Z",
     "itemCount": 496,
     "imagePolicy": "Die 496 Originalreferenzen bleiben erhalten; der Builder erzeugt daraus platzsparende JPEG-Kartengrafiken für die Offline-Anzeige.",
     "cardArtPath": "./data/mse-v15-art",
@@ -12,7 +12,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "copperPerSilver": 100,
       "silverPerGold": 100
     },
-    "editorialPolicy": "Alle regulär handelbaren Einträge werden mit einem einheitlichen Punktesystem aus Gegenstandsart, Schutz, Schaden, Verstärkungen, Grundwerten, Sonderwirkungen und Seltenheit bewertet. Echte Set-Abschlusskarten bleiben automatisch und preislos."
+    "editorialPolicy": "Alle regulär handelbaren Einträge werden mit einem einheitlichen Punktesystem aus Gegenstandsart, Schutz, Schaden, Verstärkungen, Grundwerten und Sonderwirkungen bewertet. Seltenheitsangaben sind reine Kartengestaltung und haben keinen Einfluss auf Wertpunkte oder Preis. Echte Set-Abschlusskarten bleiben automatisch und preislos."
   },
   "categories": [
     {
@@ -54,15 +54,15 @@ window.EBEROS_MSE_ITEM_DB_V15={
   "audit": {
     "modified2026": 330,
     "needsReview": 0,
-    "editorialCorrections": 490,
-    "correctionEntries": 494,
-    "priceCorrections": 462,
+    "editorialCorrections": 492,
+    "correctionEntries": 496,
+    "priceCorrections": 464,
     "scoredMarketItems": 468,
     "weightCorrections": 4,
     "notForSale": 10,
     "completionRewards": 18,
     "sixPieceBonusItems": 15,
-    "sourceAccepted": 6,
+    "sourceAccepted": 4,
     "issueCounts": {},
     "setCounts": {
       "1": 15,
@@ -185,7 +185,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5600,
           "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 14 Punkte (Rüstung; Verstärkungen 9.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 14 Punkte (Rüstung; Verstärkungen 9.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -193,12 +193,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 9.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 14,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 7000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben +3 Ausdauer",
@@ -223,11 +222,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "14 Wertpunkte: Rüstung 4.5 + Verstärkungen 9.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "14 Wertpunkte: Rüstung 4.5 + Verstärkungen 9.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -302,7 +301,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 1900,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -310,12 +309,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Wildniskunde & Wildnisleben Skill Proben +2 (Bonus)",
@@ -335,11 +333,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -416,7 +414,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 85,
           "value": 2000,
-          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -424,12 +422,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 4,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Wildniskunde & Wildnisleben +1 (Fähigkeit)",
@@ -444,11 +441,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -467,8 +464,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6500,
-      "valueText": "65 Silber",
+      "valueCopper": 6000,
+      "valueText": "60 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -522,8 +519,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 17500,
-          "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 13 Punkte (Rüstung; Verstärkungen 7.5; Seltenheit ×1,08)."
+          "value": 6000,
+          "reason": "Wertemodell mse-value-v1: 12 Punkte (Rüstung; Verstärkungen 7.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -531,12 +528,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 7.5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 13,
+        "totalPoints": 12,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6500,
+        "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Fokus +3 Mana (Counter)",
@@ -556,11 +552,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13 Wertpunkte: Rüstung 4.5 + Verstärkungen 7.5; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "12 Wertpunkte: Rüstung 4.5 + Verstärkungen 7.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -635,7 +631,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Rüstung; Verstärkungen 3.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Rüstung; Verstärkungen 3.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -643,12 +639,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Fokus (Counter)",
@@ -663,11 +658,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Rüstung 4.5 + Verstärkungen 3.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Rüstung 4.5 + Verstärkungen 3.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -740,7 +735,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5200,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -748,12 +743,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +2 (Fähigkeit)",
@@ -773,11 +767,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -852,7 +846,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4200,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 12 Punkte (Rüstung; Verstärkungen 7.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 12 Punkte (Rüstung; Verstärkungen 7.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -860,12 +854,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 7.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 12,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer / +2 Fokus",
@@ -885,11 +878,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12 Wertpunkte: Rüstung 4.5 + Verstärkungen 7.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "12 Wertpunkte: Rüstung 4.5 + Verstärkungen 7.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -964,7 +957,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 20000,
           "value": 10000,
-          "reason": "Wertemodell mse-value-v1: 20 Punkte (Reittier; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 20 Punkte (Reittier; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -972,12 +965,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 20,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 10000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -987,11 +979,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "20 Wertpunkte: Reittier 18 + Verstärkungen 2; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "20 Wertpunkte: Reittier 18 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -1064,7 +1056,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -1072,12 +1064,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +1 (Fähigkeit)",
@@ -1097,11 +1088,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -1174,7 +1165,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4500,
           "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Rüstung; Verstärkungen 6; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Rüstung; Verstärkungen 6). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -1182,12 +1173,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 6,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Heimlichkeit & Schleichen +2 (Fähigkeit)",
@@ -1207,11 +1197,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 6; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 6. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -1288,7 +1278,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3500,
           "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Waffe; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Waffe; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -1296,12 +1286,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W4",
@@ -1321,11 +1310,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10.5 Wertpunkte: Waffe 5 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Waffe 5 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -1398,7 +1387,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3500,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Rüstung; Verstärkungen 1; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Rüstung; Verstärkungen 1). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -1406,12 +1395,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 1,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Resistenz gegen Kälte +1 (Wetterprobe).",
@@ -1421,11 +1409,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 1; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 1. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -1500,7 +1488,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5600,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 4.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 4.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -1508,12 +1496,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 2.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 4.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Mana (Counter",
@@ -1528,11 +1515,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "4.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "4.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -1607,7 +1594,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7800,
           "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 8.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 8.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -1615,12 +1602,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 8.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Fokus / +1 Mana",
@@ -1650,11 +1636,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 8.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 8.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -1729,7 +1715,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 12 Punkte (Rüstung; Verstärkungen 7.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 12 Punkte (Rüstung; Verstärkungen 7.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -1737,12 +1723,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 7.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 12,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer +2 Mana (Counter)",
@@ -1762,11 +1747,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12 Wertpunkte: Rüstung 4.5 + Verstärkungen 7.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "12 Wertpunkte: Rüstung 4.5 + Verstärkungen 7.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -1841,7 +1826,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5200,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -1849,12 +1834,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Fokus + Mana (Counter)",
@@ -1869,11 +1853,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -1892,8 +1876,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6000,
-      "valueText": "60 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -1947,8 +1931,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 11300,
-          "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 8; Seltenheit ×1,16)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Ausrüstung & Verstärkung; Verstärkungen 8). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -1956,12 +1940,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 8,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 11.5,
+        "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6000,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben +3 Mana (Counter)",
@@ -1986,11 +1969,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 8; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 8. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -2065,7 +2048,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -2073,12 +2056,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben",
@@ -2093,11 +2075,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -2172,7 +2154,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3800,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Rüstung; Verstärkungen 3.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Rüstung; Verstärkungen 3.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -2180,12 +2162,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer (Counter)",
@@ -2200,11 +2181,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Rüstung 4.5 + Verstärkungen 3.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Rüstung 4.5 + Verstärkungen 3.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -2279,7 +2260,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2800,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -2287,12 +2268,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Leben",
@@ -2307,11 +2287,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -2386,7 +2366,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6900,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -2394,12 +2374,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben",
@@ -2414,11 +2393,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -2491,7 +2470,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 20000,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1,08)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -2499,12 +2478,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 9,
+        "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausweichen & Vermeiden +2 (Fähigkeit)",
@@ -2519,11 +2497,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -2600,7 +2578,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 12300,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1,08)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -2608,12 +2586,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 7,
+        "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Mana (Counter)",
@@ -2633,11 +2610,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -2656,8 +2633,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6500,
-      "valueText": "65 Silber",
+      "valueCopper": 6000,
+      "valueText": "60 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -2709,18 +2686,24 @@ window.EBEROS_MSE_ITEM_DB_V15={
       },
       "sourceHash": "099eaced9a804a35",
       "artFile": "0073.jpg",
-      "editorialCorrections": [],
+      "editorialCorrections": [
+        {
+          "field": "valueCopper",
+          "sourceValue": 6500,
+          "value": 6000,
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 9.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
+        }
+      ],
       "valuation": {
         "model": "mse-value-v1",
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 9.5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 12.5,
+        "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6500,
+        "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Mana (Counter)",
@@ -2740,11 +2723,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 9.5; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 9.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -2763,8 +2746,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6000,
-      "valueText": "60 Silber",
+      "valueCopper": 5500,
+      "valueText": "55 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -2816,8 +2799,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 4300,
-          "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 6; Seltenheit ×1,08)."
+          "value": 5500,
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Rüstung; Verstärkungen 6). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -2825,12 +2808,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 6,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 11.5,
+        "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6000,
+        "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer/Mana (Counter)",
@@ -2850,11 +2832,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 6; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 6. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -2873,8 +2855,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7000,
-      "valueText": "70 Silber",
+      "valueCopper": 6500,
+      "valueText": "65 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -2930,8 +2912,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 13.5 Punkte (Waffe; Verstärkungen 7.5; Seltenheit ×1,08)."
+          "value": 6500,
+          "reason": "Wertemodell mse-value-v1: 12.5 Punkte (Waffe; Verstärkungen 7.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -2939,12 +2921,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 7.5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 13.5,
+        "totalPoints": 12.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7000,
+        "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6 +1",
@@ -2964,11 +2945,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13.5 Wertpunkte: Waffe 5 + Verstärkungen 7.5; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "12.5 Wertpunkte: Waffe 5 + Verstärkungen 7.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -3041,7 +3022,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 14000,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 7; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -3049,12 +3030,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 7,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Initiative +3 Mana +1 Leben (Counter)",
@@ -3074,11 +3054,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7; Seltenheit ×1. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -3097,8 +3077,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5000,
-      "valueText": "50 Silber",
+      "valueCopper": 4500,
+      "valueText": "45 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -3152,8 +3132,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5; Seltenheit ×1,16)."
+          "value": 4500,
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -3161,12 +3141,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 10,
-        "tier": "solide",
+        "totalPoints": 8.5,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5000,
+        "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben/Ausdauer/Glaube (Counter)",
@@ -3181,11 +3160,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -3204,8 +3183,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 13500,
-      "valueText": "1 Gold 35 Silber",
+      "valueCopper": 11500,
+      "valueText": "1 Gold 15 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -3259,8 +3238,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 26600,
-          "value": 13500,
-          "reason": "Wertemodell mse-value-v1: 26.5 Punkte (Waffe; Verstärkungen 18; Seltenheit ×1,16)."
+          "value": 11500,
+          "reason": "Wertemodell mse-value-v1: 23 Punkte (Waffe; Verstärkungen 18). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -3268,12 +3247,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 18,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 26.5,
+        "totalPoints": 23,
         "tier": "wertvoll",
         "copperPerPoint": 500,
-        "valueCopper": 13500,
+        "valueCopper": 11500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W8 +1",
@@ -3303,11 +3281,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "26.5 Wertpunkte: Waffe 5 + Verstärkungen 18; Seltenheit ×1,16. Preisstufe: wertvoll."
+        "reason": "23 Wertpunkte: Waffe 5 + Verstärkungen 18. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -3326,8 +3304,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5500,
-      "valueText": "55 Silber",
+      "valueCopper": 4500,
+      "valueText": "45 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -3383,8 +3361,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 15600,
-          "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Rüstung; Verstärkungen 4.5; Seltenheit ×1,16)."
+          "value": 4500,
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -3392,12 +3370,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 10.5,
-        "tier": "solide",
+        "totalPoints": 9,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5500,
+        "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Mana",
@@ -3412,11 +3389,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -3435,8 +3412,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 12500,
-      "valueText": "1 Gold 25 Silber",
+      "valueCopper": 10500,
+      "valueText": "1 Gold 5 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -3490,8 +3467,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 30000,
-          "value": 12500,
-          "reason": "Wertemodell mse-value-v1: 24.5 Punkte (Rüstung; Verstärkungen 16.5; Seltenheit ×1,16)."
+          "value": 10500,
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Rüstung; Verstärkungen 16.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -3499,12 +3476,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 16.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 24.5,
+        "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
-        "valueCopper": 12500,
+        "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben/Ausdauer/Glaube (Counter)",
@@ -3529,11 +3505,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "24.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 16.5; Seltenheit ×1,16. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Rüstung 4.5 + Verstärkungen 16.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -3552,8 +3528,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7500,
-      "valueText": "75 Silber",
+      "valueCopper": 6500,
+      "valueText": "65 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -3607,8 +3583,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 12600,
-          "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 14.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 10.5; Seltenheit ×1,16)."
+          "value": 6500,
+          "reason": "Wertemodell mse-value-v1: 12.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 10.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -3616,12 +3592,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 10.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 14.5,
+        "totalPoints": 12.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7500,
+        "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben/Ausdauer/Glaube (Counter)",
@@ -3646,11 +3621,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "14.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 10.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "12.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 10.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -3669,8 +3644,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7000,
-      "valueText": "70 Silber",
+      "valueCopper": 6000,
+      "valueText": "60 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -3724,8 +3699,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 30000,
-          "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 13.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 9.5; Seltenheit ×1,16)."
+          "value": 6000,
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 9.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -3733,12 +3708,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 9.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 13.5,
+        "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7000,
+        "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+4 Mana",
@@ -3763,11 +3737,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 9.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 9.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -3786,8 +3760,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 11000,
-      "valueText": "1 Gold 10 Silber",
+      "valueCopper": 8500,
+      "valueText": "85 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -3843,8 +3817,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 60000,
-          "value": 11000,
-          "reason": "Wertemodell mse-value-v1: 21.5 Punkte (Waffe; Verstärkungen 12; Seltenheit ×1,25)."
+          "value": 8500,
+          "reason": "Wertemodell mse-value-v1: 17 Punkte (Waffe; Verstärkungen 12). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -3852,12 +3826,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 12,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 21.5,
-        "tier": "wertvoll",
+        "totalPoints": 17,
+        "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 11000,
+        "valueCopper": 8500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W8",
@@ -3882,11 +3855,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "21.5 Wertpunkte: Waffe 5 + Verstärkungen 12; Seltenheit ×1,25. Preisstufe: wertvoll."
+        "reason": "17 Wertpunkte: Waffe 5 + Verstärkungen 12. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -3961,7 +3934,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4600,
           "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 14 Punkte (Waffe; Verstärkungen 9; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 14 Punkte (Waffe; Verstärkungen 9). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -3969,12 +3942,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 9,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 14,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 7000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6 +1",
@@ -3999,11 +3971,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "14 Wertpunkte: Waffe 5 + Verstärkungen 9; Seltenheit ×1. Preisstufe: solide."
+        "reason": "14 Wertpunkte: Waffe 5 + Verstärkungen 9. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -4080,7 +4052,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6400,
           "value": 12500,
-          "reason": "Wertemodell mse-value-v1: 24.5 Punkte (Waffe; Verstärkungen 19.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 24.5 Punkte (Waffe; Verstärkungen 19.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -4088,12 +4060,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 19.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 24.5,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 12500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6 +1",
@@ -4128,11 +4099,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "24.5 Wertpunkte: Waffe 5 + Verstärkungen 19.5; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "24.5 Wertpunkte: Waffe 5 + Verstärkungen 19.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -4151,8 +4122,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6500,
-      "valueText": "65 Silber",
+      "valueCopper": 5500,
+      "valueText": "55 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -4206,8 +4177,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 13 Punkte (Ausrüstung & Verstärkung; Verstärkungen 8.5; Seltenheit ×1,25)."
+          "value": 5500,
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 8.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -4215,12 +4186,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 8.5,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 13,
+        "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6500,
+        "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben / Ausdauer / Mana",
@@ -4240,11 +4210,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 8.5; Seltenheit ×1,25. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 8.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -4263,8 +4233,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 2500,
-      "valueText": "25 Silber",
+      "valueCopper": 2000,
+      "valueText": "20 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -4316,8 +4286,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 17800,
-          "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2; Seltenheit ×1,25)."
+          "value": 2000,
+          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -4325,12 +4295,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 2,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 5,
+        "totalPoints": 4,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 2500,
+        "valueCopper": 2000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Dämonologie & Höllen-Beschwörungen +2 (Fähigkeit)",
@@ -4340,11 +4309,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2; Seltenheit ×1,25. Preisstufe: einfach."
+        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -4363,8 +4332,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -4416,8 +4385,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 30000,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1,25)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -4425,12 +4394,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 8,
+        "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Dämonologie & Höllen-Beschwörungen +2 (Fähigkeit)",
@@ -4445,11 +4413,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1,25. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -4468,8 +4436,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6000,
-      "valueText": "60 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -4523,8 +4491,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 60000,
-          "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 12 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7.5; Seltenheit ×1,25)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -4532,12 +4500,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 7.5,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 12,
-        "tier": "solide",
+        "totalPoints": 9.5,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 6000,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+5 Mana",
@@ -4557,11 +4524,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7.5; Seltenheit ×1,25. Preisstufe: solide."
+        "reason": "9.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -4580,8 +4547,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 2500,
-      "valueText": "25 Silber",
+      "valueCopper": 2000,
+      "valueText": "20 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -4635,8 +4602,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 60000,
-          "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2; Seltenheit ×1,25)."
+          "value": 2000,
+          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -4644,12 +4611,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 2,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 5,
+        "totalPoints": 4,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 2500,
+        "valueCopper": 2000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Feuermagie & Pyrokinetik +2 (Fähigkeit)",
@@ -4659,11 +4625,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2; Seltenheit ×1,25. Preisstufe: einfach."
+        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -4738,7 +4704,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": null,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Kleiner Begleiter; Verstärkungen 1; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Kleiner Begleiter; Verstärkungen 1). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -4746,12 +4712,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 1,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Dämonologie & Höllen-Beschwörungen +1 (Fähigkeit)",
@@ -4761,11 +4726,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 1; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 1. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -4840,7 +4805,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5600,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 12 Punkte (Rüstung; Verstärkungen 7.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 12 Punkte (Rüstung; Verstärkungen 7.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -4848,12 +4813,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 7.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 12,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer / Leben (Counter)",
@@ -4873,11 +4837,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12 Wertpunkte: Rüstung 4.5 + Verstärkungen 7.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "12 Wertpunkte: Rüstung 4.5 + Verstärkungen 7.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -4952,7 +4916,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4200,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Rüstung; Verstärkungen 5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Rüstung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -4960,12 +4924,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer (Counter)",
@@ -4985,11 +4948,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -5064,7 +5027,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3700,
           "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 12.5 Punkte (Rüstung; Verstärkungen 8; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 12.5 Punkte (Rüstung; Verstärkungen 8). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -5072,12 +5035,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 8,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 12.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Leben (Counter)",
@@ -5097,11 +5059,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 8; Seltenheit ×1. Preisstufe: solide."
+        "reason": "12.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 8. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -5178,7 +5140,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3400,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -5186,12 +5148,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer (Counter)",
@@ -5221,11 +5182,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -5244,8 +5205,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 8500,
-      "valueText": "85 Silber",
+      "valueCopper": 8000,
+      "valueText": "80 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -5299,8 +5260,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 12300,
-          "value": 8500,
-          "reason": "Wertemodell mse-value-v1: 16.5 Punkte (Rüstung; Verstärkungen 11; Seltenheit ×1,08)."
+          "value": 8000,
+          "reason": "Wertemodell mse-value-v1: 15.5 Punkte (Rüstung; Verstärkungen 11). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -5308,12 +5269,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 11,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 16.5,
+        "totalPoints": 15.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 8500,
+        "valueCopper": 8000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schutz vor Gedankenmagie: +4 (Bonus)",
@@ -5338,11 +5298,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "16.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 11; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "15.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 11. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -5361,8 +5321,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5500,
-      "valueText": "55 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -5416,8 +5376,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 25400,
-          "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Rüstung; Verstärkungen 5; Seltenheit ×1,08)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Rüstung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -5425,12 +5385,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 10.5,
-        "tier": "solide",
+        "totalPoints": 9.5,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5500,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Initiative +2 (Bonus)",
@@ -5450,11 +5409,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 5; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "9.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -5473,8 +5432,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6500,
-      "valueText": "65 Silber",
+      "valueCopper": 6000,
+      "valueText": "60 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -5528,8 +5487,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 12500,
-          "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 13 Punkte (Ausrüstung & Verstärkung; Verstärkungen 10; Seltenheit ×1,08)."
+          "value": 6000,
+          "reason": "Wertemodell mse-value-v1: 12 Punkte (Ausrüstung & Verstärkung; Verstärkungen 10). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -5537,12 +5496,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 10,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 13,
+        "totalPoints": 12,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6500,
+        "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Mana",
@@ -5572,11 +5530,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 10; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "12 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 10. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -5595,8 +5553,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -5650,8 +5608,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 3800,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 2.5; Seltenheit ×1,08)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Rüstung; Verstärkungen 2.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -5659,12 +5617,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2.5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 7.5,
+        "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Mana (Counter)",
@@ -5679,11 +5636,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2.5; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Rüstung 4.5 + Verstärkungen 2.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -5702,8 +5659,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 9500,
-      "valueText": "95 Silber",
+      "valueCopper": 8500,
+      "valueText": "85 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -5757,8 +5714,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 12300,
-          "value": 9500,
-          "reason": "Wertemodell mse-value-v1: 19 Punkte (Waffe; Verstärkungen 11.5; Seltenheit ×1,16)."
+          "value": 8500,
+          "reason": "Wertemodell mse-value-v1: 16.5 Punkte (Waffe; Verstärkungen 11.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -5766,12 +5723,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 11.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 19,
+        "totalPoints": 16.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 9500,
+        "valueCopper": 8500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W10 +1",
@@ -5801,11 +5757,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "19 Wertpunkte: Waffe 5 + Verstärkungen 11.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "16.5 Wertpunkte: Waffe 5 + Verstärkungen 11.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -5880,7 +5836,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6600,
           "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 11 Punkte (Rüstung; Verstärkungen 6.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 11 Punkte (Rüstung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -5888,12 +5844,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 6.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 11,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Leben / Mana (Counter)",
@@ -5908,11 +5863,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11 Wertpunkte: Rüstung 4.5 + Verstärkungen 6.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "11 Wertpunkte: Rüstung 4.5 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -5931,8 +5886,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6000,
-      "valueText": "60 Silber",
+      "valueCopper": 5500,
+      "valueText": "55 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -5988,8 +5943,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 15400,
-          "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 8.5; Seltenheit ×1,08)."
+          "value": 5500,
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 8.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -5997,12 +5952,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 8.5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 11.5,
+        "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6000,
+        "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Mana",
@@ -6022,11 +5976,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 8.5; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 8.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -6103,7 +6057,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 8700,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 12 Punkte (Waffe; Verstärkungen 7; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 12 Punkte (Waffe; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -6111,12 +6065,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 7,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 12,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6",
@@ -6141,11 +6094,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12 Wertpunkte: Waffe 5 + Verstärkungen 7; Seltenheit ×1. Preisstufe: solide."
+        "reason": "12 Wertpunkte: Waffe 5 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -6220,7 +6173,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 9600,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Rüstung; Verstärkungen 5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Rüstung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -6228,12 +6181,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Fokus/Mana",
@@ -6253,11 +6205,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -6276,8 +6228,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6500,
-      "valueText": "65 Silber",
+      "valueCopper": 6000,
+      "valueText": "60 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -6329,8 +6281,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 12.5 Punkte (Rüstung; Verstärkungen 7; Seltenheit ×1,08)."
+          "value": 6000,
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -6338,12 +6290,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 7,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 12.5,
+        "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6500,
+        "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+4 Mana (Counter)",
@@ -6363,11 +6314,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -6386,8 +6337,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -6437,18 +6388,24 @@ window.EBEROS_MSE_ITEM_DB_V15={
       },
       "sourceHash": "0cf0110a04fa9541",
       "artFile": "0018.jpg",
-      "editorialCorrections": [],
+      "editorialCorrections": [
+        {
+          "field": "valueCopper",
+          "sourceValue": 4000,
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Rüstung; Verstärkungen 2.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
+        }
+      ],
       "valuation": {
         "model": "mse-value-v1",
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2.5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 7.5,
+        "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Mana / +1 Fokus (Counter)",
@@ -6463,11 +6420,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2.5; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Rüstung 4.5 + Verstärkungen 2.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -6542,7 +6499,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4600,
           "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 13 Punkte (Waffe; Verstärkungen 8; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 13 Punkte (Waffe; Verstärkungen 8). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -6550,12 +6507,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 8,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 13,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6",
@@ -6580,11 +6536,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13 Wertpunkte: Waffe 5 + Verstärkungen 8; Seltenheit ×1. Preisstufe: solide."
+        "reason": "13 Wertpunkte: Waffe 5 + Verstärkungen 8. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -6659,7 +6615,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 12600,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Ausrüstung & Verstärkung; Verstärkungen 8; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Ausrüstung & Verstärkung; Verstärkungen 8). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -6667,12 +6623,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 8,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Mana +2 HS (Counter)",
@@ -6692,11 +6647,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 8; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 8. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -6771,7 +6726,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6700,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1,08)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -6779,12 +6734,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 7,
+        "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Mana (Counter)",
@@ -6804,11 +6758,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -6827,8 +6781,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6000,
-      "valueText": "60 Silber",
+      "valueCopper": 5500,
+      "valueText": "55 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -6876,25 +6830,17 @@ window.EBEROS_MSE_ITEM_DB_V15={
       },
       "sourceHash": "6e67adfff829a2f6",
       "artFile": "0078.jpg",
-      "editorialCorrections": [
-        {
-          "field": "valueCopper",
-          "sourceValue": 5500,
-          "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 6; Seltenheit ×1,08)."
-        }
-      ],
+      "editorialCorrections": [],
       "valuation": {
         "model": "mse-value-v1",
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 6,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 11.5,
+        "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6000,
+        "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +3 (Fähigkeit)",
@@ -6909,11 +6855,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 6; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 6. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -6932,8 +6878,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -6989,8 +6935,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 13400,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1,16)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -6998,12 +6944,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 7.5,
+        "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Magie Resistenz",
@@ -7023,11 +6968,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -7046,8 +6991,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -7101,8 +7046,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1,16)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -7110,12 +7055,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 7.5,
+        "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+5 Mana (Counter)",
@@ -7130,11 +7074,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -7207,7 +7151,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3400,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -7215,12 +7159,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +1 (Fähigkeit)",
@@ -7235,11 +7178,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -7314,7 +7257,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": null,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Kleiner Begleiter; Verstärkungen 1; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Kleiner Begleiter; Verstärkungen 1). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -7322,12 +7265,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 1,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Dämonologie & Höllen-Beschwörungen +1 (Fähigkeit)",
@@ -7337,11 +7279,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 1; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 1. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -7430,12 +7372,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 1,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
         "totalPoints": 3,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Führung & Befehlsgewalt +1 (Fähigkeit)",
@@ -7445,7 +7386,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "not-for-sale",
         "weightPolicy": "corrected",
@@ -7532,12 +7473,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 2,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 4.5,
+        "totalPoints": 4,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Heilrituale & Heilwunder +2 (Fähigkeit)",
@@ -7547,7 +7487,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "not-for-sale",
         "weightPolicy": "source-accepted",
@@ -7626,7 +7566,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4400,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -7634,12 +7574,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer (Counter)",
@@ -7659,11 +7598,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -7682,8 +7621,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6000,
-      "valueText": "60 Silber",
+      "valueCopper": 5500,
+      "valueText": "55 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -7735,8 +7674,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 30000,
-          "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 12 Punkte (Rüstung; Verstärkungen 6; Seltenheit ×1,16)."
+          "value": 5500,
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Rüstung; Verstärkungen 6). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -7744,12 +7683,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 6,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 12,
+        "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6000,
+        "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +2 (Fähigkeit)",
@@ -7769,11 +7707,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12 Wertpunkte: Rüstung 4.5 + Verstärkungen 6; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 6. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -7792,8 +7730,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5500,
-      "valueText": "55 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -7845,8 +7783,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 12200,
-          "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 11 Punkte (Rüstung; Verstärkungen 5; Seltenheit ×1,16)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Rüstung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -7854,12 +7792,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 11,
-        "tier": "solide",
+        "totalPoints": 9.5,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5500,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Trugbild-Magie & Illusionistik +2 (Fähigkeit)",
@@ -7879,11 +7816,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11 Wertpunkte: Rüstung 4.5 + Verstärkungen 5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "9.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -7902,8 +7839,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 11000,
-      "valueText": "1 Gold 10 Silber",
+      "valueCopper": 9500,
+      "valueText": "95 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -7959,8 +7896,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 14500,
-          "value": 11000,
-          "reason": "Wertemodell mse-value-v1: 21.5 Punkte (Waffe; Verstärkungen 13.5; Seltenheit ×1,16)."
+          "value": 9500,
+          "reason": "Wertemodell mse-value-v1: 18.5 Punkte (Waffe; Verstärkungen 13.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -7968,12 +7905,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 13.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 21.5,
-        "tier": "wertvoll",
+        "totalPoints": 18.5,
+        "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 11000,
+        "valueCopper": 9500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W10 +2",
@@ -8003,11 +7939,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "21.5 Wertpunkte: Waffe 5 + Verstärkungen 13.5; Seltenheit ×1,16. Preisstufe: wertvoll."
+        "reason": "18.5 Wertpunkte: Waffe 5 + Verstärkungen 13.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -8026,8 +7962,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -8081,8 +8017,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 8900,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5; Seltenheit ×1,16)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -8090,12 +8026,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 8,
+        "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Ausdauer",
@@ -8120,11 +8055,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -8143,8 +8078,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -8198,8 +8133,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 9800,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1,16)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -8207,12 +8142,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 7.5,
+        "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Mana",
@@ -8227,11 +8161,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -8250,8 +8184,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 8500,
-      "valueText": "85 Silber",
+      "valueCopper": 7000,
+      "valueText": "70 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -8303,8 +8237,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 40000,
-          "value": 8500,
-          "reason": "Wertemodell mse-value-v1: 17 Punkte (Ausrüstung & Verstärkung; Verstärkungen 11.5; Seltenheit ×1,25)."
+          "value": 7000,
+          "reason": "Wertemodell mse-value-v1: 13.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 11.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -8312,12 +8246,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 11.5,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 17,
+        "totalPoints": 13.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 8500,
+        "valueCopper": 7000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Seelische Schutzmagie & Thanaturgie +1 (Fähigkeit)",
@@ -8347,11 +8280,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "17 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 11.5; Seltenheit ×1,25. Preisstufe: solide."
+        "reason": "13.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 11.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -8426,7 +8359,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2300,
           "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 15 Punkte (Rüstung; Verstärkungen 10.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 15 Punkte (Rüstung; Verstärkungen 10.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -8434,12 +8367,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 10.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 15,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 7500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Leben / Ausdauer / Fokus (Counter)",
@@ -8474,11 +8406,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "15 Wertpunkte: Rüstung 4.5 + Verstärkungen 10.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "15 Wertpunkte: Rüstung 4.5 + Verstärkungen 10.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -8551,7 +8483,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3600,
           "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 14.5 Punkte (Rüstung; Verstärkungen 10.5; Seltenheit ×0,95)."
+          "reason": "Wertemodell mse-value-v1: 15 Punkte (Rüstung; Verstärkungen 10.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -8559,12 +8491,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 10.5,
-        "rarity": "common",
-        "rarityFactor": 0.95,
-        "totalPoints": 14.5,
+        "totalPoints": 15,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 7500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer/ Leben / Mana (Counter)",
@@ -8589,11 +8520,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "14.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 10.5; Seltenheit ×0,95. Preisstufe: solide."
+        "reason": "15 Wertpunkte: Rüstung 4.5 + Verstärkungen 10.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -8612,8 +8543,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 11000,
-      "valueText": "1 Gold 10 Silber",
+      "valueCopper": 9500,
+      "valueText": "95 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -8669,8 +8600,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 40000,
-          "value": 11000,
-          "reason": "Wertemodell mse-value-v1: 22 Punkte (Rüstung; Verstärkungen 14.5; Seltenheit ×1,16)."
+          "value": 9500,
+          "reason": "Wertemodell mse-value-v1: 19 Punkte (Rüstung; Verstärkungen 14.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -8678,12 +8609,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 14.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 22,
-        "tier": "wertvoll",
+        "totalPoints": 19,
+        "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 11000,
+        "valueCopper": 9500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Magie Resistenz",
@@ -8708,11 +8638,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "22 Wertpunkte: Rüstung 4.5 + Verstärkungen 14.5; Seltenheit ×1,16. Preisstufe: wertvoll."
+        "reason": "19 Wertpunkte: Rüstung 4.5 + Verstärkungen 14.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -8789,7 +8719,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2900,
           "value": 8000,
-          "reason": "Wertemodell mse-value-v1: 16 Punkte (Waffe; Verstärkungen 11; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 16 Punkte (Waffe; Verstärkungen 11). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -8797,12 +8727,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 11,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 16,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 8000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6 +2",
@@ -8832,11 +8761,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "16 Wertpunkte: Waffe 5 + Verstärkungen 11; Seltenheit ×1. Preisstufe: solide."
+        "reason": "16 Wertpunkte: Waffe 5 + Verstärkungen 11. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -8913,7 +8842,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 8200,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -8921,12 +8850,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 7.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Mana",
@@ -8951,11 +8879,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -9032,7 +8960,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -9040,12 +8968,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben",
@@ -9060,11 +8987,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -9141,7 +9068,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 10000,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7; Seltenheit ×0,95)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -9149,12 +9076,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 7,
-        "rarity": "common",
-        "rarityFactor": 0.95,
-        "totalPoints": 8.5,
+        "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Magie Resistenz",
@@ -9179,11 +9105,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7; Seltenheit ×0,95. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -9202,8 +9128,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5500,
-      "valueText": "55 Silber",
+      "valueCopper": 4500,
+      "valueText": "45 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -9257,8 +9183,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5; Seltenheit ×1,25)."
+          "value": 4500,
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -9266,12 +9192,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6.5,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 10.5,
-        "tier": "solide",
+        "totalPoints": 8.5,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5500,
+        "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben / Ausdauer / Mana",
@@ -9286,11 +9211,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5; Seltenheit ×1,25. Preisstufe: solide."
+        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -9309,8 +9234,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5000,
-      "valueText": "50 Silber",
+      "valueCopper": 4000,
+      "valueText": "40 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -9364,8 +9289,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 12500,
-          "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Rüstung; Verstärkungen 3.5; Seltenheit ×1,16)."
+          "value": 4000,
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Rüstung; Verstärkungen 3.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -9373,12 +9298,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 9.5,
+        "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5000,
+        "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+ 2 Mana (Counter)",
@@ -9393,11 +9317,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3.5; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Rüstung 4.5 + Verstärkungen 3.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -9416,8 +9340,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -9471,8 +9395,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 12700,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1,25)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -9480,12 +9404,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 8,
+        "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Mana",
@@ -9500,11 +9423,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1,25. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -9577,7 +9500,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3900,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -9585,12 +9508,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 7,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Kleine Tinktur herstellen: Alchemist & Apotheker-Probe +2x Pflanzen-Zutat +1x Monster-Zutat",
@@ -9610,11 +9532,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -9689,7 +9611,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3200,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -9697,12 +9619,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Wahrnehmung +1 (Grundwert)",
@@ -9717,11 +9638,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -9794,7 +9715,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2400,
           "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 13 Punkte (Rüstung; Verstärkungen 8.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 13 Punkte (Rüstung; Verstärkungen 8.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -9802,12 +9723,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 8.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 13,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausweichen & Vermeiden +1 (Fähigkeit)",
@@ -9832,11 +9752,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13 Wertpunkte: Rüstung 4.5 + Verstärkungen 8.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "13 Wertpunkte: Rüstung 4.5 + Verstärkungen 8.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -9913,7 +9833,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 9000,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -9921,12 +9841,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Monsterteil aus Monster-Loot.",
@@ -9946,11 +9865,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -9969,8 +9888,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -10022,8 +9941,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": null,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,25)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -10031,12 +9950,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 6.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Trugbild-Magie & Illusionistik +3 (Fähigkeit)",
@@ -10046,11 +9964,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,25. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -10123,7 +10041,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7900,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -10131,12 +10049,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Stärke +1 (Grundwert)",
@@ -10151,11 +10068,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -10230,7 +10147,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 8900,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -10238,12 +10155,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit)",
@@ -10258,11 +10174,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -10339,7 +10255,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 8900,
           "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 12.5 Punkte (Waffe; Verstärkungen 7.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 12.5 Punkte (Waffe; Verstärkungen 7.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -10347,12 +10263,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 7.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 12.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W7 +1",
@@ -10372,11 +10287,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12.5 Wertpunkte: Waffe 5 + Verstärkungen 7.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "12.5 Wertpunkte: Waffe 5 + Verstärkungen 7.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -10451,7 +10366,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 10200,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -10459,12 +10374,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Leben (Counter)",
@@ -10484,11 +10398,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -10507,8 +10421,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 10500,
-      "valueText": "1 Gold 5 Silber",
+      "valueCopper": 9000,
+      "valueText": "90 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -10560,8 +10474,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 30000,
-          "value": 10500,
-          "reason": "Wertemodell mse-value-v1: 21 Punkte (Rüstung; Verstärkungen 13.5; Seltenheit ×1,16)."
+          "value": 9000,
+          "reason": "Wertemodell mse-value-v1: 18 Punkte (Rüstung; Verstärkungen 13.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -10569,12 +10483,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 13.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 21,
-        "tier": "wertvoll",
+        "totalPoints": 18,
+        "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 10500,
+        "valueCopper": 9000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +3 (Fähigkeit)",
@@ -10599,11 +10512,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "21 Wertpunkte: Rüstung 4.5 + Verstärkungen 13.5; Seltenheit ×1,16. Preisstufe: wertvoll."
+        "reason": "18 Wertpunkte: Rüstung 4.5 + Verstärkungen 13.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -10622,8 +10535,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6500,
-      "valueText": "65 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -10677,8 +10590,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 12.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 8; Seltenheit ×1,25)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Ausrüstung & Verstärkung; Verstärkungen 8). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -10686,12 +10599,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 8,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 12.5,
+        "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6500,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Polymorph-Magie-Proben: +2 (Bonus)",
@@ -10716,11 +10628,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 8; Seltenheit ×1,25. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 8. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -10739,8 +10651,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -10796,8 +10708,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,16)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -10805,12 +10717,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 6,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Monsterkunde & Jägerwissen +1 (Fähigkeit)",
@@ -10825,11 +10736,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -10904,7 +10815,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2500,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -10912,12 +10823,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Initiative +2 Ausdauer",
@@ -10932,11 +10842,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -11013,7 +10923,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 10000,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5; Seltenheit ×1,08)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -11021,12 +10931,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5.5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 8,
+        "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Mana (Counter)",
@@ -11046,11 +10955,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -11125,7 +11034,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6600,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -11133,12 +11042,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben +1 HS (Counter)",
@@ -11158,11 +11066,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -11235,7 +11143,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7900,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 7; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -11243,12 +11151,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 7,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Athletik & Schwimmen +2 (Fähigkeit)",
@@ -11273,11 +11180,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7; Seltenheit ×1. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -11350,7 +11257,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4700,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -11358,12 +11265,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Okkultismus & Arkane Kunde +1 (Fähigkeit)",
@@ -11378,11 +11284,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -11465,12 +11371,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 1,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 3,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Schmerz & Qual – Flüche +1 (Fähigkeit)",
@@ -11480,7 +11385,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "not-for-sale",
         "weightPolicy": "source-accepted",
@@ -11567,12 +11472,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 1,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 3,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Wahnsinn & Delirium – Flüche +1 (Fähigkeit)",
@@ -11582,7 +11486,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "not-for-sale",
         "weightPolicy": "source-accepted",
@@ -11669,12 +11573,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 1,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 3,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Seelische Schutzmagie & Thanaturgie +1 (Fähigkeit)",
@@ -11684,7 +11587,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "not-for-sale",
         "weightPolicy": "source-accepted",
@@ -11761,7 +11664,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5200,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -11769,12 +11672,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben (Counter)",
@@ -11789,11 +11691,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -11868,7 +11770,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 30000,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -11876,12 +11778,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Wildniskunde & Wildnisleben +1 (Fähigkeit)",
@@ -11896,11 +11797,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -11977,7 +11878,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 50000,
           "value": 28000,
-          "reason": "Wertemodell mse-value-v1: 55.5 Punkte (Fahrzeug; Verstärkungen 10.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 55.5 Punkte (Fahrzeug; Verstärkungen 10.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -11985,12 +11886,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Fahrzeug",
         "categoryPoints": 45,
         "effectPoints": 10.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 55.5,
         "tier": "sehr wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 28000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "unbegrenzte Lagerkapazität",
@@ -12015,11 +11915,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "55.5 Wertpunkte: Fahrzeug 45 + Verstärkungen 10.5; Seltenheit ×1. Preisstufe: sehr wertvoll."
+        "reason": "55.5 Wertpunkte: Fahrzeug 45 + Verstärkungen 10.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: sehr wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -12092,7 +11992,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -12100,12 +12000,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Folklore & Gassenwissen / Heimlichkeit & Schleichen: +2 (Probenbonus)",
@@ -12120,11 +12019,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -12199,7 +12098,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4200,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Rüstung; Verstärkungen 5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Rüstung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -12207,12 +12106,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer (Counter)",
@@ -12232,11 +12130,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -12311,7 +12209,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5600,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 12 Punkte (Rüstung; Verstärkungen 7.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 12 Punkte (Rüstung; Verstärkungen 7.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -12319,12 +12217,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 7.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 12,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer / Leben (Counter)",
@@ -12344,11 +12241,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12 Wertpunkte: Rüstung 4.5 + Verstärkungen 7.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "12 Wertpunkte: Rüstung 4.5 + Verstärkungen 7.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -12423,7 +12320,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6600,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -12431,12 +12328,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben +1 HS (Counter)",
@@ -12456,11 +12352,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -12535,7 +12431,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3700,
           "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 12.5 Punkte (Rüstung; Verstärkungen 8; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 12.5 Punkte (Rüstung; Verstärkungen 8). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -12543,12 +12439,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 8,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 12.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Leben (Counter)",
@@ -12568,11 +12463,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 8; Seltenheit ×1. Preisstufe: solide."
+        "reason": "12.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 8. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -12649,7 +12544,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7200,
           "value": 8000,
-          "reason": "Wertemodell mse-value-v1: 16 Punkte (Waffe; Verstärkungen 11; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 16 Punkte (Waffe; Verstärkungen 11). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -12657,12 +12552,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 11,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 16,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 8000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W9 +1",
@@ -12692,11 +12586,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "16 Wertpunkte: Waffe 5 + Verstärkungen 11; Seltenheit ×1. Preisstufe: solide."
+        "reason": "16 Wertpunkte: Waffe 5 + Verstärkungen 11. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -12771,7 +12665,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2200,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -12779,12 +12673,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Ausdauer (Counter)",
@@ -12804,11 +12697,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -12883,7 +12776,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3700,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -12891,12 +12784,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Ausdauer (Counter)",
@@ -12916,11 +12808,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -12997,7 +12889,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 1500,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 9.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 9.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -13005,12 +12897,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 9.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Kontaktgift",
@@ -13030,11 +12921,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 9.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 9.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -13053,8 +12944,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7500,
-      "valueText": "75 Silber",
+      "valueCopper": 6500,
+      "valueText": "65 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -13106,8 +12997,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10900,
-          "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 14.5 Punkte (Rüstung; Verstärkungen 8; Seltenheit ×1,16)."
+          "value": 6500,
+          "reason": "Wertemodell mse-value-v1: 12.5 Punkte (Rüstung; Verstärkungen 8). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -13115,12 +13006,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 8,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 14.5,
+        "totalPoints": 12.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7500,
+        "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +3 (Fähigkeit)",
@@ -13135,11 +13025,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "14.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 8; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "12.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 8. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -13158,8 +13048,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7000,
-      "valueText": "70 Silber",
+      "valueCopper": 6500,
+      "valueText": "65 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -13211,18 +13101,24 @@ window.EBEROS_MSE_ITEM_DB_V15={
       },
       "sourceHash": "0a2cce1967be3d4c",
       "artFile": "0077.jpg",
-      "editorialCorrections": [],
+      "editorialCorrections": [
+        {
+          "field": "valueCopper",
+          "sourceValue": 7000,
+          "value": 6500,
+          "reason": "Wertemodell mse-value-v1: 12.5 Punkte (Waffe; Verstärkungen 7.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
+        }
+      ],
       "valuation": {
         "model": "mse-value-v1",
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 7.5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 13.5,
+        "totalPoints": 12.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7000,
+        "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6 +1",
@@ -13247,11 +13143,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13.5 Wertpunkte: Waffe 5 + Verstärkungen 7.5; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "12.5 Wertpunkte: Waffe 5 + Verstärkungen 7.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -13328,7 +13224,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6900,
           "value": 16000,
-          "reason": "Wertemodell mse-value-v1: 32 Punkte (Fahrzeug; Verstärkungen 7; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 32 Punkte (Fahrzeug; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -13336,12 +13232,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Fahrzeug",
         "categoryPoints": 25,
         "effectPoints": 7,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 32,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 16000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Wildniskunde & Wildnisleben +2 (Fähigkeit)",
@@ -13361,11 +13256,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "32 Wertpunkte: Fahrzeug 25 + Verstärkungen 7; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "32 Wertpunkte: Fahrzeug 25 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -13438,7 +13333,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2300,
           "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Rüstung; Verstärkungen 6; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Rüstung; Verstärkungen 6). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -13446,12 +13341,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 6,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer (Counter)",
@@ -13476,11 +13370,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 6; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 6. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -13570,12 +13464,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 24,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 29,
+        "totalPoints": 26,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Aufmerksamkeit & Wachsamkeit +3 (Fähigkeit)",
@@ -13610,7 +13503,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -13703,12 +13596,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 1,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 3,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "(Einmalige Form die anderen Aufgezaubert werden kann)",
@@ -13718,7 +13610,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "not-for-sale",
         "weightPolicy": "corrected",
@@ -13741,8 +13633,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 9000,
-      "valueText": "90 Silber",
+      "valueCopper": 8000,
+      "valueText": "80 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -13798,8 +13690,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 9000,
-          "reason": "Wertemodell mse-value-v1: 18 Punkte (Waffe; Verstärkungen 10.5; Seltenheit ×1,16)."
+          "value": 8000,
+          "reason": "Wertemodell mse-value-v1: 15.5 Punkte (Waffe; Verstärkungen 10.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -13807,12 +13699,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 10.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 18,
+        "totalPoints": 15.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 9000,
+        "valueCopper": 8000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W9 +2",
@@ -13837,11 +13728,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "18 Wertpunkte: Waffe 5 + Verstärkungen 10.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "15.5 Wertpunkte: Waffe 5 + Verstärkungen 10.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -13916,7 +13807,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 100,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Begleiter; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -13924,12 +13815,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Begleiter",
         "categoryPoints": 7,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)",
@@ -13944,11 +13834,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Begleiter 7 + Verstärkungen 3; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Begleiter 7 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -14025,7 +13915,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": null,
           "value": 8000,
-          "reason": "Wertemodell mse-value-v1: 15.5 Punkte (Waffe; Verstärkungen 10.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 15.5 Punkte (Waffe; Verstärkungen 10.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -14033,12 +13923,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 10.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 15.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 8000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6",
@@ -14073,11 +13962,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "15.5 Wertpunkte: Waffe 5 + Verstärkungen 10.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "15.5 Wertpunkte: Waffe 5 + Verstärkungen 10.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -14096,8 +13985,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -14149,8 +14038,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 4500,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1,08)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -14158,12 +14047,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 6.5,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer / Mana (Counter)",
@@ -14178,11 +14066,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -14259,7 +14147,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6800,
           "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 13 Punkte (Waffe; Verstärkungen 8; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 13 Punkte (Waffe; Verstärkungen 8). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -14267,12 +14155,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 8,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 13,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W8",
@@ -14292,11 +14179,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13 Wertpunkte: Waffe 5 + Verstärkungen 8; Seltenheit ×1. Preisstufe: solide."
+        "reason": "13 Wertpunkte: Waffe 5 + Verstärkungen 8. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -14373,7 +14260,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7200,
           "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 13.5 Punkte (Waffe; Verstärkungen 8.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 13.5 Punkte (Waffe; Verstärkungen 8.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -14381,12 +14268,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 8.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 13.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 7000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6 +1",
@@ -14411,11 +14297,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13.5 Wertpunkte: Waffe 5 + Verstärkungen 8.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "13.5 Wertpunkte: Waffe 5 + Verstärkungen 8.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -14434,8 +14320,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -14489,8 +14375,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 14600,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5; Seltenheit ×1,16)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -14498,12 +14384,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 6.5,
+        "totalPoints": 5.5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Glaube (Counter)",
@@ -14518,11 +14403,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -14541,8 +14426,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7000,
-      "valueText": "70 Silber",
+      "valueCopper": 6000,
+      "valueText": "60 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -14598,8 +14483,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 15600,
-          "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 14 Punkte (Waffe; Verstärkungen 7; Seltenheit ×1,16)."
+          "value": 6000,
+          "reason": "Wertemodell mse-value-v1: 12 Punkte (Waffe; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -14607,12 +14492,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 7,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 14,
+        "totalPoints": 12,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7000,
+        "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W9 +1",
@@ -14632,11 +14516,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "14 Wertpunkte: Waffe 5 + Verstärkungen 7; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "12 Wertpunkte: Waffe 5 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -14711,7 +14595,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3800,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -14719,12 +14603,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Ausdauer (Counter)",
@@ -14744,11 +14627,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -14767,8 +14650,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6000,
-      "valueText": "60 Silber",
+      "valueCopper": 5500,
+      "valueText": "55 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -14824,8 +14707,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 4800,
-          "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 8.5; Seltenheit ×1,08)."
+          "value": 5500,
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 8.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -14833,12 +14716,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 8.5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 11.5,
+        "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6000,
+        "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Gift Resistenz",
@@ -14868,11 +14750,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 8.5; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 8.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -14891,8 +14773,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 9000,
-      "valueText": "90 Silber",
+      "valueCopper": 6500,
+      "valueText": "65 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -14946,8 +14828,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 9000,
-          "reason": "Wertemodell mse-value-v1: 17.5 Punkte (Waffe; Verstärkungen 8; Seltenheit ×1,35)."
+          "value": 6500,
+          "reason": "Wertemodell mse-value-v1: 13 Punkte (Waffe; Verstärkungen 8). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -14955,12 +14837,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 8,
-        "rarity": "masterpiece",
-        "rarityFactor": 1.35,
-        "totalPoints": 17.5,
+        "totalPoints": 13,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 9000,
+        "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W8",
@@ -14985,11 +14866,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "17.5 Wertpunkte: Waffe 5 + Verstärkungen 8; Seltenheit ×1,35. Preisstufe: solide."
+        "reason": "13 Wertpunkte: Waffe 5 + Verstärkungen 8. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -15066,7 +14947,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4900,
           "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 13 Punkte (Waffe; Verstärkungen 8; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 13 Punkte (Waffe; Verstärkungen 8). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -15074,12 +14955,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 8,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 13,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6",
@@ -15104,11 +14984,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13 Wertpunkte: Waffe 5 + Verstärkungen 8; Seltenheit ×1. Preisstufe: solide."
+        "reason": "13 Wertpunkte: Waffe 5 + Verstärkungen 8. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -15183,7 +15063,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 40000,
           "value": 8000,
-          "reason": "Wertemodell mse-value-v1: 16 Punkte (Waffe; Verstärkungen 11; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 16 Punkte (Waffe; Verstärkungen 11). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -15191,12 +15071,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 11,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 16,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 8000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W10 +3 (magisch)",
@@ -15221,11 +15100,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "16 Wertpunkte: Waffe 5 + Verstärkungen 11; Seltenheit ×1. Preisstufe: solide."
+        "reason": "16 Wertpunkte: Waffe 5 + Verstärkungen 11. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -15244,8 +15123,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6500,
-      "valueText": "65 Silber",
+      "valueCopper": 5500,
+      "valueText": "55 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -15299,8 +15178,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 14600,
-          "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 13 Punkte (Rüstung; Verstärkungen 6.5; Seltenheit ×1,16)."
+          "value": 5500,
+          "reason": "Wertemodell mse-value-v1: 11 Punkte (Rüstung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -15308,12 +15187,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 6.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 13,
+        "totalPoints": 11,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6500,
+        "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Mana (Counter)",
@@ -15338,11 +15216,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13 Wertpunkte: Rüstung 4.5 + Verstärkungen 6.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "11 Wertpunkte: Rüstung 4.5 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -15361,8 +15239,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7000,
-      "valueText": "70 Silber",
+      "valueCopper": 6000,
+      "valueText": "60 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -15414,8 +15292,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 14500,
-          "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 13.5 Punkte (Rüstung; Verstärkungen 7; Seltenheit ×1,16)."
+          "value": 6000,
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -15423,12 +15301,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 7,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 13.5,
+        "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7000,
+        "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +2 (Fähigkeit)",
@@ -15453,11 +15330,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -15476,8 +15353,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 9000,
-      "valueText": "90 Silber",
+      "valueCopper": 7500,
+      "valueText": "75 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -15533,8 +15410,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 7700,
-          "value": 9000,
-          "reason": "Wertemodell mse-value-v1: 17.5 Punkte (Waffe; Verstärkungen 10; Seltenheit ×1,16)."
+          "value": 7500,
+          "reason": "Wertemodell mse-value-v1: 15 Punkte (Waffe; Verstärkungen 10). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -15542,12 +15419,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 10,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 17.5,
+        "totalPoints": 15,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 9000,
+        "valueCopper": 7500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W4 +1",
@@ -15582,11 +15458,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "17.5 Wertpunkte: Waffe 5 + Verstärkungen 10; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "15 Wertpunkte: Waffe 5 + Verstärkungen 10. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -15605,8 +15481,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -15658,8 +15534,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 17800,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,25)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -15667,12 +15543,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 6.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Windmagie & Aeromantie +3 (Fähigkeit)",
@@ -15682,11 +15557,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,25. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -15705,8 +15580,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 8000,
-      "valueText": "80 Silber",
+      "valueCopper": 7000,
+      "valueText": "70 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -15762,8 +15637,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 7900,
-          "value": 8000,
-          "reason": "Wertemodell mse-value-v1: 16 Punkte (Waffe; Verstärkungen 9; Seltenheit ×1,16)."
+          "value": 7000,
+          "reason": "Wertemodell mse-value-v1: 14 Punkte (Waffe; Verstärkungen 9). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -15771,12 +15646,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 9,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 16,
+        "totalPoints": 14,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 8000,
+        "valueCopper": 7000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W8",
@@ -15796,11 +15670,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "16 Wertpunkte: Waffe 5 + Verstärkungen 9; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "14 Wertpunkte: Waffe 5 + Verstärkungen 9. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -15819,8 +15693,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5500,
-      "valueText": "55 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -15876,8 +15750,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 5900,
-          "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Waffe; Verstärkungen 4.5; Seltenheit ×1,08)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Waffe; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -15885,12 +15759,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 4.5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 10.5,
-        "tier": "solide",
+        "totalPoints": 9.5,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5500,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W5",
@@ -15905,11 +15778,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10.5 Wertpunkte: Waffe 5 + Verstärkungen 4.5; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "9.5 Wertpunkte: Waffe 5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -15986,7 +15859,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 10000,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -15994,12 +15867,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Athletik & Schwimmen +2 (Fähigkeit)",
@@ -16014,11 +15886,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -16095,7 +15967,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 14500,
           "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 12.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 10.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 12.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 10.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -16103,12 +15975,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 10.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 12.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "❤+2 Leben (Counter)",
@@ -16138,11 +16009,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 10.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "12.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 10.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -16219,7 +16090,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7800,
           "value": 9500,
-          "reason": "Wertemodell mse-value-v1: 18.5 Punkte (Waffe; Verstärkungen 13.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 18.5 Punkte (Waffe; Verstärkungen 13.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -16227,12 +16098,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 13.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 18.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 9500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6 +2",
@@ -16262,11 +16132,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "18.5 Wertpunkte: Waffe 5 + Verstärkungen 13.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "18.5 Wertpunkte: Waffe 5 + Verstärkungen 13.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -16341,7 +16211,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6800,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -16349,12 +16219,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "🔮 +2 Mana (Counter)",
@@ -16374,11 +16243,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -16455,7 +16324,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5900,
           "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 14 Punkte (Waffe; Verstärkungen 9; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 14 Punkte (Waffe; Verstärkungen 9). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -16463,12 +16332,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 9,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 14,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 7000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W7",
@@ -16493,11 +16361,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "14 Wertpunkte: Waffe 5 + Verstärkungen 9; Seltenheit ×1. Preisstufe: solide."
+        "reason": "14 Wertpunkte: Waffe 5 + Verstärkungen 9. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -16572,7 +16440,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4900,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -16580,12 +16448,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "🔮+2 Mana (Counter)",
@@ -16605,11 +16472,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -16686,7 +16553,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5600,
           "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 15 Punkte (Waffe; Verstärkungen 10; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 15 Punkte (Waffe; Verstärkungen 10). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -16694,12 +16561,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 10,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 15,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 7500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W8",
@@ -16729,11 +16595,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "15 Wertpunkte: Waffe 5 + Verstärkungen 10; Seltenheit ×1. Preisstufe: solide."
+        "reason": "15 Wertpunkte: Waffe 5 + Verstärkungen 10. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -16806,7 +16672,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 8400,
           "value": 2000,
-          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -16814,12 +16680,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 4,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Windmagie & Aeromantie +2 (Fähigkeit)",
@@ -16829,11 +16694,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -16910,7 +16775,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3900,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -16918,12 +16783,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schadensvergeltung: 1x W4",
@@ -16938,11 +16802,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -17017,7 +16881,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -17025,12 +16889,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "🖐+2 Ausdauer (Counter)",
@@ -17050,11 +16913,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -17131,7 +16994,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 12200,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -17139,12 +17002,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "🔮+2 Mana (Counter)",
@@ -17169,11 +17031,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -17250,7 +17112,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3800,
           "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Waffe; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Waffe; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -17258,12 +17120,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6 +2",
@@ -17278,11 +17139,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10.5 Wertpunkte: Waffe 5 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Waffe 5 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -17301,8 +17162,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5500,
-      "valueText": "55 Silber",
+      "valueCopper": 4500,
+      "valueText": "45 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -17358,8 +17219,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 9900,
-          "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7; Seltenheit ×1,16)."
+          "value": 4500,
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -17367,12 +17228,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 7,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 10.5,
-        "tier": "solide",
+        "totalPoints": 9,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5500,
+        "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Magie Resistenz",
@@ -17397,11 +17257,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "9 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -17420,8 +17280,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5000,
-      "valueText": "50 Silber",
+      "valueCopper": 4500,
+      "valueText": "45 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -17475,8 +17335,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 14500,
-          "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5; Seltenheit ×1,16)."
+          "value": 4500,
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -17484,12 +17344,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 10,
-        "tier": "solide",
+        "totalPoints": 8.5,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5000,
+        "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Mana (Counter",
@@ -17514,11 +17373,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -17595,7 +17454,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7600,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 12 Punkte (Waffe; Verstärkungen 7; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 12 Punkte (Waffe; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -17603,12 +17462,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 7,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 12,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6",
@@ -17628,11 +17486,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12 Wertpunkte: Waffe 5 + Verstärkungen 7; Seltenheit ×1. Preisstufe: solide."
+        "reason": "12 Wertpunkte: Waffe 5 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -17709,7 +17567,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5200,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -17717,12 +17575,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Meta-Magie & Arkane Ordnung +1 (Fähigkeit)",
@@ -17737,11 +17594,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -17760,8 +17617,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7500,
-      "valueText": "75 Silber",
+      "valueCopper": 6500,
+      "valueText": "65 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -17817,8 +17674,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 5900,
-          "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 15 Punkte (Waffe; Verstärkungen 8; Seltenheit ×1,16)."
+          "value": 6500,
+          "reason": "Wertemodell mse-value-v1: 13 Punkte (Waffe; Verstärkungen 8). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -17826,12 +17683,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 8,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 15,
+        "totalPoints": 13,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7500,
+        "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W8 +1",
@@ -17851,11 +17707,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "15 Wertpunkte: Waffe 5 + Verstärkungen 8; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "13 Wertpunkte: Waffe 5 + Verstärkungen 8. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -17930,7 +17786,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5800,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -17938,12 +17794,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Fokus (Counter)",
@@ -17963,11 +17818,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -18044,7 +17899,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 1800,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -18052,12 +17907,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Feuertanz: Ablenken & Verwirren +2 (Fähigkeit)",
@@ -18082,11 +17936,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -18159,7 +18013,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 1600,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -18167,12 +18021,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Heimlichkeit & Schleichen +2 (Fähigkeit)",
@@ -18197,11 +18050,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -18276,7 +18129,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7800,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -18284,12 +18137,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 7,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Mana (Counter)",
@@ -18314,11 +18166,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -18391,7 +18243,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2700,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -18399,12 +18251,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Orientierung & Navigation +2 (Fähigkeit)",
@@ -18424,11 +18275,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -18503,7 +18354,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 20000,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -18511,12 +18362,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 7.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Mana +2 Leben +2 Ausdauer (Counter)",
@@ -18536,11 +18386,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -18559,8 +18409,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -18614,8 +18464,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 6600,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 2.5; Seltenheit ×1,08)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Rüstung; Verstärkungen 2.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -18623,12 +18473,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2.5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 7.5,
+        "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Mana (Counter)",
@@ -18643,11 +18492,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2.5; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Rüstung 4.5 + Verstärkungen 2.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -18720,7 +18569,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 68,
           "value": 1000,
-          "reason": "Wertemodell mse-value-v1: 2 Punkte (Ausrüstung & Verstärkung; Verstärkungen 0; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 2 Punkte (Ausrüstung & Verstärkung; Verstärkungen 0). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -18728,20 +18577,19 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 0,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 2,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 1000,
+        "rarityCosmeticOnly": true,
         "factors": []
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "2 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 0; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "2 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 0. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -18816,7 +18664,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 14500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -18824,12 +18672,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Mana (Counter)",
@@ -18849,11 +18696,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -18926,7 +18773,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7800,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -18934,12 +18781,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Folklore & Gassenwissen +2 (Fähigkeit)",
@@ -18959,11 +18805,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -19038,7 +18884,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4300,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Kleiner Begleiter; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Kleiner Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -19046,12 +18892,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Musizieren & Auftreten +2 (Fähigkeit)",
@@ -19061,11 +18906,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -19138,7 +18983,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 1300,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -19146,12 +18991,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Folklore & Gassenwissen +2 (Fähigkeit)",
@@ -19171,11 +19015,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -19250,7 +19094,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5600,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -19258,12 +19102,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "🔮+2 Mana (Counter)",
@@ -19293,11 +19136,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -19374,7 +19217,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 1900,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Rüstung; Verstärkungen 3.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Rüstung; Verstärkungen 3.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -19382,12 +19225,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "🖐+2 Ausdauer (Counter)",
@@ -19407,11 +19249,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Rüstung 4.5 + Verstärkungen 3.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Rüstung 4.5 + Verstärkungen 3.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -19486,7 +19328,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3800,
           "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 13.5 Punkte (Rüstung; Verstärkungen 9; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 13.5 Punkte (Rüstung; Verstärkungen 9). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -19494,12 +19336,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 9,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 13.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 7000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "🖐+3 Ausdauer (Counter)",
@@ -19524,11 +19365,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 9; Seltenheit ×1. Preisstufe: solide."
+        "reason": "13.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 9. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -19605,7 +19446,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3900,
           "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Waffe; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Waffe; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -19613,12 +19454,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6 +1",
@@ -19633,11 +19473,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10.5 Wertpunkte: Waffe 5 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Waffe 5 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -19656,8 +19496,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 12500,
-      "valueText": "1 Gold 25 Silber",
+      "valueCopper": 10500,
+      "valueText": "1 Gold 5 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -19711,8 +19551,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 25000,
-          "value": 12500,
-          "reason": "Wertemodell mse-value-v1: 24.5 Punkte (Reittier; Verstärkungen 3; Seltenheit ×1,16)."
+          "value": 10500,
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -19720,12 +19560,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 3,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 24.5,
+        "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
-        "valueCopper": 12500,
+        "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit)",
@@ -19740,11 +19579,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "24.5 Wertpunkte: Reittier 18 + Verstärkungen 3; Seltenheit ×1,16. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -19821,7 +19660,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4500,
           "value": 2000,
-          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -19829,12 +19668,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 4,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Wassermagie & Hydromantie +2 (Fähigkeit)",
@@ -19844,11 +19682,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -19923,7 +19761,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4700,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -19931,12 +19769,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "🔮+2 Mana (Counter)",
@@ -19956,11 +19793,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -20037,7 +19874,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4100,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Waffe; Verstärkungen 6.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Waffe; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -20045,12 +19882,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 6.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W7 +2",
@@ -20065,11 +19901,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Waffe 5 + Verstärkungen 6.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Waffe 5 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -20146,7 +19982,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 9800,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Waffe; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Waffe; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -20154,12 +19990,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6",
@@ -20174,11 +20009,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9.5 Wertpunkte: Waffe 5 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9.5 Wertpunkte: Waffe 5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -20255,7 +20090,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 10500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -20263,12 +20098,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "🖤+2 Leben",
@@ -20288,11 +20122,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -20367,7 +20201,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 40000,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Kleiner Begleiter; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Kleiner Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -20375,12 +20209,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -20390,11 +20223,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -20413,8 +20246,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 14000,
-      "valueText": "1 Gold 40 Silber",
+      "valueCopper": 11000,
+      "valueText": "1 Gold 10 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -20468,8 +20301,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 60000,
-          "value": 14000,
-          "reason": "Wertemodell mse-value-v1: 27.5 Punkte (Reittier; Verstärkungen 4; Seltenheit ×1,25)."
+          "value": 11000,
+          "reason": "Wertemodell mse-value-v1: 22 Punkte (Reittier; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -20477,12 +20310,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 4,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 27.5,
+        "totalPoints": 22,
         "tier": "wertvoll",
         "copperPerPoint": 500,
-        "valueCopper": 14000,
+        "valueCopper": 11000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +3 (Fähigkeit)",
@@ -20497,11 +20329,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "27.5 Wertpunkte: Reittier 18 + Verstärkungen 4; Seltenheit ×1,25. Preisstufe: wertvoll."
+        "reason": "22 Wertpunkte: Reittier 18 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -20576,7 +20408,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 40000,
           "value": 10500,
-          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -20584,12 +20416,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -20604,11 +20435,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -20683,7 +20514,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 1300,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -20691,12 +20522,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Leben +1 Ausdauer (Counter)",
@@ -20721,11 +20551,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -20800,7 +20630,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7600,
           "value": 11000,
-          "reason": "Wertemodell mse-value-v1: 22 Punkte (Reittier; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 22 Punkte (Reittier; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -20808,12 +20638,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 22,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 11000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Musizieren & Auftreten +2 (Fähigkeit)",
@@ -20833,11 +20662,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "22 Wertpunkte: Reittier 18 + Verstärkungen 4; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "22 Wertpunkte: Reittier 18 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -20910,7 +20739,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3400,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -20918,12 +20747,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Alchemist & Apotheker +1 (Fähigkeit)",
@@ -20943,11 +20771,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -21022,7 +20850,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 20000,
           "value": 10000,
-          "reason": "Wertemodell mse-value-v1: 20 Punkte (Reittier; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 20 Punkte (Reittier; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -21030,12 +20858,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 20,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 10000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -21045,11 +20872,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "20 Wertpunkte: Reittier 18 + Verstärkungen 2; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "20 Wertpunkte: Reittier 18 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -21124,7 +20951,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 30000,
           "value": 11000,
-          "reason": "Wertemodell mse-value-v1: 22 Punkte (Reittier; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 22 Punkte (Reittier; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -21132,12 +20959,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 22,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 11000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -21152,11 +20978,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "22 Wertpunkte: Reittier 18 + Verstärkungen 4; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "22 Wertpunkte: Reittier 18 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -21231,7 +21057,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2400,
           "value": 8000,
-          "reason": "Wertemodell mse-value-v1: 16 Punkte (Großer Begleiter; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 16 Punkte (Großer Begleiter; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -21239,12 +21065,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Großer Begleiter",
         "categoryPoints": 12,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 16,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 8000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)",
@@ -21264,11 +21089,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "16 Wertpunkte: Großer Begleiter 12 + Verstärkungen 4; Seltenheit ×1. Preisstufe: solide."
+        "reason": "16 Wertpunkte: Großer Begleiter 12 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -21343,7 +21168,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2200,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Begleiter; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -21351,12 +21176,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Begleiter",
         "categoryPoints": 7,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)",
@@ -21371,11 +21195,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Begleiter 7 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Begleiter 7 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -21394,8 +21218,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 12500,
-      "valueText": "1 Gold 25 Silber",
+      "valueCopper": 10500,
+      "valueText": "1 Gold 5 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -21449,8 +21273,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 12500,
-          "reason": "Wertemodell mse-value-v1: 24.5 Punkte (Reittier; Verstärkungen 3; Seltenheit ×1,16)."
+          "value": 10500,
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -21458,12 +21282,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 3,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 24.5,
+        "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
-        "valueCopper": 12500,
+        "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -21478,11 +21301,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "24.5 Wertpunkte: Reittier 18 + Verstärkungen 3; Seltenheit ×1,16. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -21501,8 +21324,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -21556,8 +21379,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 5300,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 2; Seltenheit ×1,16)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Kleiner Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -21565,12 +21388,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 2,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 7,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Heraldik & Geschichte +1 (Fähigkeit)",
@@ -21585,11 +21407,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 2; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -21664,7 +21486,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 30000,
           "value": 11000,
-          "reason": "Wertemodell mse-value-v1: 22 Punkte (Reittier; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 22 Punkte (Reittier; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -21672,12 +21494,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 22,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 11000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -21692,11 +21513,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "22 Wertpunkte: Reittier 18 + Verstärkungen 4; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "22 Wertpunkte: Reittier 18 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -21779,12 +21600,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 1,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 3,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)",
@@ -21794,7 +21614,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "not-for-sale",
         "weightPolicy": "source-accepted",
@@ -21881,12 +21701,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 4,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Flüche & Blut-Hexerei +2 (Fähigkeit)",
@@ -21896,7 +21715,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "not-for-sale",
         "weightPolicy": "source-accepted",
@@ -21975,7 +21794,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 1600,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Begleiter; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -21983,12 +21802,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Begleiter",
         "categoryPoints": 7,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)",
@@ -22003,11 +21821,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Begleiter 7 + Verstärkungen 3; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Begleiter 7 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -22082,7 +21900,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 1600,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Begleiter; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -22090,12 +21908,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Begleiter",
         "categoryPoints": 7,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)",
@@ -22110,11 +21927,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Begleiter 7 + Verstärkungen 3; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Begleiter 7 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -22189,7 +22006,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 20000,
           "value": 10500,
-          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -22197,12 +22014,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -22217,11 +22033,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -22296,7 +22112,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 21000,
           "value": 10000,
-          "reason": "Wertemodell mse-value-v1: 20 Punkte (Reittier; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 20 Punkte (Reittier; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -22304,12 +22120,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 20,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 10000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit)",
@@ -22319,11 +22134,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "20 Wertpunkte: Reittier 18 + Verstärkungen 2; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "20 Wertpunkte: Reittier 18 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -22398,7 +22213,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3600,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Kleiner Begleiter; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Kleiner Begleiter; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -22406,12 +22221,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)",
@@ -22426,11 +22240,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -22505,7 +22319,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 8900,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -22513,12 +22327,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit)",
@@ -22533,11 +22346,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -22556,8 +22369,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -22611,8 +22424,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 8700,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Kleiner Begleiter; Verstärkungen 3; Seltenheit ×1,16)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -22620,12 +22433,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 3,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 8,
+        "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Monsterkunde & Jägerwissen +2 (Fähigkeit)",
@@ -22640,11 +22452,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -22663,8 +22475,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -22718,8 +22530,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Kleiner Begleiter; Verstärkungen 2; Seltenheit ×1,25)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Kleiner Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -22727,12 +22539,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 2,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 7.5,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Psychische Magie & Telepathie +2 (Fähigkeit)",
@@ -22742,11 +22553,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 2; Seltenheit ×1,25. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -22765,8 +22576,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -22820,8 +22631,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Kleiner Begleiter; Verstärkungen 3; Seltenheit ×1,16)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -22829,12 +22640,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 3,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 8,
+        "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Musizieren & Auftreten +2 (Fähigkeit)",
@@ -22849,11 +22659,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -22928,7 +22738,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 20000,
           "value": 10500,
-          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -22936,12 +22746,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -22956,11 +22765,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -23043,12 +22852,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Heilrituale & Heilwunder +2 (Fähigkeit)",
@@ -23063,7 +22871,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "not-for-sale",
         "weightPolicy": "source-accepted",
@@ -23150,12 +22958,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit)",
@@ -23170,7 +22977,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "not-for-sale",
         "weightPolicy": "source-accepted",
@@ -23249,7 +23056,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 1300,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Begleiter; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -23257,12 +23064,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Begleiter",
         "categoryPoints": 7,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit)",
@@ -23277,11 +23083,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Begleiter 7 + Verstärkungen 3; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Begleiter 7 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -23300,8 +23106,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 13500,
-      "valueText": "1 Gold 35 Silber",
+      "valueCopper": 10500,
+      "valueText": "1 Gold 5 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -23355,8 +23161,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 60000,
-          "value": 13500,
-          "reason": "Wertemodell mse-value-v1: 26.5 Punkte (Reittier; Verstärkungen 3; Seltenheit ×1,25)."
+          "value": 10500,
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -23364,12 +23170,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 3,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 26.5,
+        "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
-        "valueCopper": 13500,
+        "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -23384,11 +23189,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "26.5 Wertpunkte: Reittier 18 + Verstärkungen 3; Seltenheit ×1,25. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -23463,7 +23268,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4200,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Waffe; Verstärkungen 6.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Waffe; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -23471,12 +23276,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 6.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W4",
@@ -23501,11 +23305,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Waffe 5 + Verstärkungen 6.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Waffe 5 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -23582,7 +23386,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 1200,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Waffe; Verstärkungen 5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Waffe; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -23590,12 +23394,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W4 +1",
@@ -23610,11 +23413,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Waffe 5 + Verstärkungen 5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Waffe 5 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -23689,7 +23492,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -23697,12 +23500,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer (Counter)",
@@ -23722,11 +23524,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -23745,8 +23547,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 9000,
-      "valueText": "90 Silber",
+      "valueCopper": 7500,
+      "valueText": "75 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -23800,8 +23602,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 5600,
-          "value": 9000,
-          "reason": "Wertemodell mse-value-v1: 17.5 Punkte (Großer Begleiter; Verstärkungen 3; Seltenheit ×1,16)."
+          "value": 7500,
+          "reason": "Wertemodell mse-value-v1: 15 Punkte (Großer Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -23809,12 +23611,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Großer Begleiter",
         "categoryPoints": 12,
         "effectPoints": 3,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 17.5,
+        "totalPoints": 15,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 9000,
+        "valueCopper": 7500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit)",
@@ -23829,11 +23630,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "17.5 Wertpunkte: Großer Begleiter 12 + Verstärkungen 3; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "15 Wertpunkte: Großer Begleiter 12 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -23852,8 +23653,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 10000,
-      "valueText": "1 Gold",
+      "valueCopper": 8000,
+      "valueText": "80 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -23907,8 +23708,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 10000,
-          "reason": "Wertemodell mse-value-v1: 20 Punkte (Großer Begleiter; Verstärkungen 4; Seltenheit ×1,25)."
+          "value": 8000,
+          "reason": "Wertemodell mse-value-v1: 16 Punkte (Großer Begleiter; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -23916,12 +23717,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Großer Begleiter",
         "categoryPoints": 12,
         "effectPoints": 4,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 20,
-        "tier": "wertvoll",
+        "totalPoints": 16,
+        "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 10000,
+        "valueCopper": 8000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +3 (Fähigkeit)",
@@ -23936,11 +23736,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "20 Wertpunkte: Großer Begleiter 12 + Verstärkungen 4; Seltenheit ×1,25. Preisstufe: wertvoll."
+        "reason": "16 Wertpunkte: Großer Begleiter 12 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -24015,7 +23815,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 23000,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Kleiner Begleiter; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Kleiner Begleiter; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -24023,12 +23823,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Heraldik & Geschichte +2 (Fähigkeit)",
@@ -24043,11 +23842,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -24124,7 +23923,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2200,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Waffe; Verstärkungen 6.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Waffe; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -24132,12 +23931,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 6.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6",
@@ -24157,11 +23955,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Waffe 5 + Verstärkungen 6.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Waffe 5 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -24236,7 +24034,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 20000,
           "value": 10500,
-          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -24244,12 +24042,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -24264,11 +24061,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -24343,7 +24140,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 10200,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -24351,12 +24148,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Fokus",
@@ -24376,11 +24172,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -24457,7 +24253,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 1700,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Waffe; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Waffe; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -24465,12 +24261,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W4",
@@ -24490,11 +24285,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Waffe 5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Waffe 5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -24571,7 +24366,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4500,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -24579,12 +24374,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Ausdauer (Counter)",
@@ -24604,11 +24398,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -24683,7 +24477,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 40000,
           "value": 10500,
-          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -24691,12 +24485,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -24711,11 +24504,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -24790,7 +24583,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6000,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -24798,12 +24591,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Psychische Magie & Telepathie +1 (Fähigkeit)",
@@ -24818,11 +24610,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -24841,8 +24633,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 9500,
-      "valueText": "95 Silber",
+      "valueCopper": 8000,
+      "valueText": "80 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -24898,8 +24690,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 7500,
-          "value": 9500,
-          "reason": "Wertemodell mse-value-v1: 18.5 Punkte (Waffe; Verstärkungen 11; Seltenheit ×1,16)."
+          "value": 8000,
+          "reason": "Wertemodell mse-value-v1: 16 Punkte (Waffe; Verstärkungen 11). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -24907,12 +24699,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 11,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 18.5,
+        "totalPoints": 16,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 9500,
+        "valueCopper": 8000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W8 +1",
@@ -24942,11 +24733,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "18.5 Wertpunkte: Waffe 5 + Verstärkungen 11; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "16 Wertpunkte: Waffe 5 + Verstärkungen 11. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -25023,7 +24814,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4600,
           "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 13 Punkte (Waffe; Verstärkungen 8; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 13 Punkte (Waffe; Verstärkungen 8). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -25031,12 +24822,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 8,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 13,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6 +2",
@@ -25056,11 +24846,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13 Wertpunkte: Waffe 5 + Verstärkungen 8; Seltenheit ×1. Preisstufe: solide."
+        "reason": "13 Wertpunkte: Waffe 5 + Verstärkungen 8. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -25133,7 +24923,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3300,
           "value": 8000,
-          "reason": "Wertemodell mse-value-v1: 16 Punkte (Rüstung; Verstärkungen 11.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 16 Punkte (Rüstung; Verstärkungen 11.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -25141,12 +24931,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 11.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 16,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 8000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "🛡️Verteidigung & Blocken: +2 (Bonus) 🎲 🔪Schadensvergeltung: 1x W4 Frostschaden❄ ️ (kumulativ) (Frost ❄ Am Beginn jeder Runde Kon-Probe. +❄ als Erschwernis. Sonst “stun” 🚫)",
@@ -25176,11 +24965,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "16 Wertpunkte: Rüstung 4.5 + Verstärkungen 11.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "16 Wertpunkte: Rüstung 4.5 + Verstärkungen 11.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -25255,7 +25044,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 8500,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -25263,12 +25052,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "🔮+2 Mana (Counter)",
@@ -25288,11 +25076,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -25367,7 +25155,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": null,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -25375,12 +25163,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Heilrituale & Heilwunder +2 (Fähigkeit)",
@@ -25395,11 +25182,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -25418,8 +25205,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5000,
-      "valueText": "50 Silber",
+      "valueCopper": 4500,
+      "valueText": "45 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -25471,8 +25258,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": null,
-          "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1,16)."
+          "value": 4500,
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -25480,12 +25267,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 10,
-        "tier": "solide",
+        "totalPoints": 8.5,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5000,
+        "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +2 (Fähigkeit)",
@@ -25500,11 +25286,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -25523,8 +25309,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7500,
-      "valueText": "75 Silber",
+      "valueCopper": 6500,
+      "valueText": "65 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -25578,8 +25364,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 13800,
-          "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 15 Punkte (Ausrüstung & Verstärkung; Verstärkungen 11; Seltenheit ×1,16)."
+          "value": 6500,
+          "reason": "Wertemodell mse-value-v1: 13 Punkte (Ausrüstung & Verstärkung; Verstärkungen 11). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -25587,12 +25373,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 11,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 15,
+        "totalPoints": 13,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7500,
+        "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+5 Leben (Counter)",
@@ -25612,11 +25397,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "15 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 11; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "13 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 11. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -25691,7 +25476,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 20000,
           "value": 10500,
-          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -25699,12 +25484,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -25719,11 +25503,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -25798,7 +25582,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4900,
           "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 11 Punkte (Begleiter; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 11 Punkte (Begleiter; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -25806,12 +25590,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Begleiter",
         "categoryPoints": 7,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 11,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)",
@@ -25826,11 +25609,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11 Wertpunkte: Begleiter 7 + Verstärkungen 4; Seltenheit ×1. Preisstufe: solide."
+        "reason": "11 Wertpunkte: Begleiter 7 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -25905,7 +25688,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6700,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -25913,12 +25696,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Mana (Counter)",
@@ -25938,11 +25720,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -26032,16 +25814,15 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Fahrzeug",
         "categoryPoints": 25,
         "effectPoints": 0,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 28,
+        "totalPoints": 25,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": []
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -26120,7 +25901,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 10000,
           "value": 10500,
-          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -26128,12 +25909,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -26148,11 +25928,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -26171,8 +25951,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -26226,8 +26006,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 4500,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Kleiner Begleiter; Verstärkungen 3; Seltenheit ×1,16)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -26235,12 +26015,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 3,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 8,
+        "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Spiritismus & Geisterkunde +2 (Fähigkeit)",
@@ -26255,11 +26034,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -26334,7 +26113,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3800,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Begleiter; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -26342,12 +26121,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Begleiter",
         "categoryPoints": 7,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)",
@@ -26362,11 +26140,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Begleiter 7 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Begleiter 7 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -26441,7 +26219,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": null,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Kleiner Begleiter; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Kleiner Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -26449,12 +26227,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Meta-Magie & Arkane Ordnung +2 (Fähigkeit)",
@@ -26464,11 +26241,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -26543,7 +26320,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": null,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Kleiner Begleiter; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Kleiner Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -26551,12 +26328,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Athletik & Schwimmen +2 (Fähigkeit)",
@@ -26566,11 +26342,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -26645,7 +26421,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 23000,
           "value": 10500,
-          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -26653,12 +26429,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -26673,11 +26448,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -26696,8 +26471,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 10500,
-      "valueText": "1 Gold 5 Silber",
+      "valueCopper": 8500,
+      "valueText": "85 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -26753,8 +26528,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 10500,
-          "reason": "Wertemodell mse-value-v1: 20.5 Punkte (Waffe; Verstärkungen 11.5; Seltenheit ×1,25)."
+          "value": 8500,
+          "reason": "Wertemodell mse-value-v1: 16.5 Punkte (Waffe; Verstärkungen 11.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -26762,12 +26537,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 11.5,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 20.5,
-        "tier": "wertvoll",
+        "totalPoints": 16.5,
+        "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 10500,
+        "valueCopper": 8500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W8 +3",
@@ -26787,11 +26561,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "20.5 Wertpunkte: Waffe 5 + Verstärkungen 11.5; Seltenheit ×1,25. Preisstufe: wertvoll."
+        "reason": "16.5 Wertpunkte: Waffe 5 + Verstärkungen 11.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -26810,8 +26584,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6500,
-      "valueText": "65 Silber",
+      "valueCopper": 5500,
+      "valueText": "55 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -26863,8 +26637,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 13 Punkte (Rüstung; Verstärkungen 6; Seltenheit ×1,25)."
+          "value": 5500,
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Rüstung; Verstärkungen 6). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -26872,12 +26646,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 6,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 13,
+        "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6500,
+        "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +4 (Fähigkeit)",
@@ -26892,11 +26665,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13 Wertpunkte: Rüstung 4.5 + Verstärkungen 6; Seltenheit ×1,25. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 6. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -26969,7 +26742,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 20500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -26977,12 +26750,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +2 (Fähigkeit)",
@@ -26997,11 +26769,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -27074,7 +26846,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": null,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -27082,12 +26854,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +1 (Fähigkeit)",
@@ -27107,11 +26878,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -27186,7 +26957,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Begleiter; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -27194,12 +26965,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Begleiter",
         "categoryPoints": 7,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit)",
@@ -27209,11 +26979,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Begleiter 7 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Begleiter 7 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -27288,7 +27058,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6900,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -27296,12 +27066,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Mana (Counter)",
@@ -27316,11 +27085,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -27395,7 +27164,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 8800,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -27403,12 +27172,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Licht- & Sonnenmagie +2 (Fähigkeit)",
@@ -27423,11 +27191,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -27502,7 +27270,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 13500,
           "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 14.5 Punkte (Waffe; Verstärkungen 9.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 14.5 Punkte (Waffe; Verstärkungen 9.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -27510,12 +27278,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 9.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 14.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 7500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6 +1",
@@ -27545,11 +27312,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "14.5 Wertpunkte: Waffe 5 + Verstärkungen 9.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "14.5 Wertpunkte: Waffe 5 + Verstärkungen 9.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -27624,7 +27391,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2100,
           "value": 9500,
-          "reason": "Wertemodell mse-value-v1: 19 Punkte (Waffe; Verstärkungen 14; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 19 Punkte (Waffe; Verstärkungen 14). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -27632,12 +27399,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 14,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 19,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 9500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W9",
@@ -27672,11 +27438,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "19 Wertpunkte: Waffe 5 + Verstärkungen 14; Seltenheit ×1. Preisstufe: solide."
+        "reason": "19 Wertpunkte: Waffe 5 + Verstärkungen 14. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -27695,8 +27461,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 8000,
-      "valueText": "80 Silber",
+      "valueCopper": 6500,
+      "valueText": "65 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -27750,8 +27516,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 30000,
-          "value": 8000,
-          "reason": "Wertemodell mse-value-v1: 15.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 10.5; Seltenheit ×1,25)."
+          "value": 6500,
+          "reason": "Wertemodell mse-value-v1: 12.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 10.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -27759,12 +27525,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 10.5,
-        "rarity": "mythic rare",
-        "rarityFactor": 1.25,
-        "totalPoints": 15.5,
+        "totalPoints": 12.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 8000,
+        "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Leben (Counter)",
@@ -27794,11 +27559,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "15.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 10.5; Seltenheit ×1,25. Preisstufe: solide."
+        "reason": "12.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 10.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -27871,7 +27636,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3400,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -27879,12 +27644,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +1 (Fähigkeit)",
@@ -27904,11 +27668,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -27981,7 +27745,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6000,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -27989,12 +27753,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Windmagie & Aeromantie +2 (Fähigkeit)",
@@ -28009,11 +27772,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -28088,7 +27851,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3200,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -28096,12 +27859,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit)",
@@ -28116,11 +27878,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -28195,7 +27957,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4300,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -28203,12 +27965,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Musizieren & Auftreten +2 (Fähigkeit)",
@@ -28223,11 +27984,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -28317,12 +28078,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 6.5,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 9.5,
+        "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "1 Punkt = 1x W6 Schaden / +1 Schutz / 100kg x 3 Felder bewegen",
@@ -28337,7 +28097,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -28431,12 +28191,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 8.5,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 12,
+        "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Berechtigt an den Höf der Fürsten und Fürstinnen zu sein und dort die eigene Kunst zu zeigen. Einnahmen: 1x W30 in Silber pro Auftritt.",
@@ -28446,7 +28205,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -28540,12 +28299,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Öffnet für wenige Minuten ein Portal zwischen der Wachwelt und der Traumwelt. Kosten: 10 Mana (Verbrauch)",
@@ -28555,7 +28313,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -28649,12 +28407,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Besitz & Ort",
         "categoryPoints": 100,
         "effectPoints": 1.5,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 113.5,
+        "totalPoints": 101.5,
         "tier": "außergewöhnlich",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ganze Gruppe: +2 Glück (Wert)",
@@ -28664,7 +28421,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -28758,12 +28515,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Besitz & Ort",
         "categoryPoints": 75,
         "effectPoints": 13.5,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 99,
+        "totalPoints": 88.5,
         "tier": "außergewöhnlich",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Kann pro Ort x1 W10 Tage Musizieren & Auftreten. Pro 10 Tage: 1x W50 Silber",
@@ -28773,7 +28529,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -28867,12 +28623,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 12,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 15.5,
+        "totalPoints": 14,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Avatar-Angriff gegen Finsternis: 1x W10 +3 Schaden",
@@ -28892,7 +28647,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -28986,16 +28741,15 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 0,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 2,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": []
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -29089,12 +28843,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 8.5,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 12,
+        "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Erwirtschaftet pro Monat: 1x W30 Silber",
@@ -29104,7 +28857,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -29198,12 +28951,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 7.5,
+        "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Lich Form B: Unsterblich. Seele geht nach dem Tod nicht ins Totenreich über, sondern verweilt.",
@@ -29218,7 +28970,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -29312,12 +29064,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 9,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 12.5,
+        "totalPoints": 11,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken: +2 (Bonus)",
@@ -29337,7 +29088,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -29431,12 +29182,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fliegende Held Set",
@@ -29446,7 +29196,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -29540,12 +29290,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Besitz & Ort",
         "categoryPoints": 75,
         "effectPoints": 18,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 104,
+        "totalPoints": 93,
         "tier": "außergewöhnlich",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Wirtschaft & Herberge: Einnahmen pro Monat = 1x W60 in Silber",
@@ -29565,7 +29314,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -29659,12 +29408,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Besitz & Ort",
         "categoryPoints": 75,
         "effectPoints": 7,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 92,
+        "totalPoints": 82,
         "tier": "außergewöhnlich",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Alchemist & Apotheker +2 (Fähigkeit)",
@@ -29679,7 +29427,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -29760,7 +29508,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2000,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -29768,12 +29516,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 7,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Mana (Counter)",
@@ -29793,11 +29540,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -29874,7 +29621,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2000,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -29882,12 +29629,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 7,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Ausdauer (Wert)",
@@ -29907,11 +29653,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -29988,7 +29734,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2000,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -29996,12 +29742,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 7.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Mana (Wert)",
@@ -30021,11 +29766,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -30102,7 +29847,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2000,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -30110,12 +29855,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Leben (Wert)",
@@ -30130,11 +29874,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -30211,7 +29955,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2000,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 7.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -30219,12 +29963,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 7.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Ausdauer (Counter)",
@@ -30244,11 +29987,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 7.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -30325,7 +30068,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 1500,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -30333,12 +30076,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Kontaktgift",
@@ -30353,11 +30095,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -30434,7 +30176,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 1500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -30442,12 +30184,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Atemgift",
@@ -30462,11 +30203,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -30543,7 +30284,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3500,
           "value": 9000,
-          "reason": "Wertemodell mse-value-v1: 17.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 15.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 17.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 15.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -30551,12 +30292,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 15.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 17.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 9000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Leben / Ausdauer (Counter) — +2 Mana (Counter)",
@@ -30586,11 +30326,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "17.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 15.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "17.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 15.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -30667,7 +30407,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2000,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -30675,12 +30415,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Leben (Counter)",
@@ -30695,11 +30434,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -30774,7 +30513,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -30782,12 +30521,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schützendes Licht gegen B: +5 (Probenbonus)",
@@ -30802,11 +30540,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -30884,12 +30622,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+3 Mana (Counter + Wert) (12 Stunden)",
@@ -30904,11 +30641,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -30985,7 +30722,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -30993,12 +30730,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Nahkampf – leichte Waffen +2 (Fähigkeit)",
@@ -31018,11 +30754,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -31100,12 +30836,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Wachstum: +1x W6 Leben (Counter) für 12 Stunden",
@@ -31120,11 +30855,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -31143,8 +30878,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7000,
-      "valueText": "70 Silber",
+      "valueCopper": 6000,
+      "valueText": "60 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -31196,8 +30931,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 12700,
-          "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 14 Punkte (Ausrüstung & Verstärkung; Verstärkungen 10; Seltenheit ×1,16)."
+          "value": 6000,
+          "reason": "Wertemodell mse-value-v1: 12 Punkte (Ausrüstung & Verstärkung; Verstärkungen 10). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -31205,12 +30940,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 10,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 14,
+        "totalPoints": 12,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7000,
+        "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Seelische Schutzmagie & Thanaturgie +3 (Fähigkeit)",
@@ -31230,11 +30964,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "14 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 10; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "12 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 10. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -31324,12 +31058,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Segen & Zustand",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 7.5,
+        "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Erhält zum Blutmond doppelten Monsterbonus.",
@@ -31349,7 +31082,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -31443,12 +31176,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Besitz & Ort",
         "categoryPoints": 75,
         "effectPoints": 3,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 87.5,
+        "totalPoints": 78,
         "tier": "außergewöhnlich",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Psychische Magie & Telepathie +3 (Fähigkeit)",
@@ -31458,7 +31190,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "source-accepted",
@@ -31481,8 +31213,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 12500,
-      "valueText": "1 Gold 25 Silber",
+      "valueCopper": 11000,
+      "valueText": "1 Gold 10 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -31536,8 +31268,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": null,
-          "value": 12500,
-          "reason": "Wertemodell mse-value-v1: 24.5 Punkte (Reittier; Verstärkungen 4; Seltenheit ×1,12)."
+          "value": 11000,
+          "reason": "Wertemodell mse-value-v1: 22 Punkte (Reittier; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -31545,12 +31277,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 4,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 24.5,
+        "totalPoints": 22,
         "tier": "wertvoll",
         "copperPerPoint": 500,
-        "valueCopper": 12500,
+        "valueCopper": 11000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Druiden – Flora-Pfad +2 (Fähigkeit)",
@@ -31570,11 +31301,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "24.5 Wertpunkte: Reittier 18 + Verstärkungen 4; Seltenheit ×1,12. Preisstufe: wertvoll."
+        "reason": "22 Wertpunkte: Reittier 18 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -31649,7 +31380,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": null,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Kleiner Begleiter; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Kleiner Begleiter; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -31657,12 +31388,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Betören & Verzaubern +2 (Fähigkeit)",
@@ -31682,11 +31412,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -31705,8 +31435,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 9000,
-      "valueText": "90 Silber",
+      "valueCopper": 7500,
+      "valueText": "75 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -31760,8 +31490,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 30000,
-          "value": 9000,
-          "reason": "Wertemodell mse-value-v1: 17.5 Punkte (Großer Begleiter; Verstärkungen 3; Seltenheit ×1,16)."
+          "value": 7500,
+          "reason": "Wertemodell mse-value-v1: 15 Punkte (Großer Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -31769,12 +31499,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Großer Begleiter",
         "categoryPoints": 12,
         "effectPoints": 3,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 17.5,
+        "totalPoints": 15,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 9000,
+        "valueCopper": 7500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Meditation & mentaler Selbstschutz +2 (Fähigkeit)",
@@ -31789,11 +31518,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "17.5 Wertpunkte: Großer Begleiter 12 + Verstärkungen 3; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "15 Wertpunkte: Großer Begleiter 12 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -31866,7 +31595,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -31874,12 +31603,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Heimlichkeit & Schleichen +2 (Fähigkeit)",
@@ -31894,11 +31622,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -31973,7 +31701,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5800,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -31981,12 +31709,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "🔮 +2 Mana (Counter)",
@@ -32001,11 +31728,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -32086,7 +31813,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 8900,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -32094,12 +31821,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit)",
@@ -32119,11 +31845,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "corrected",
-        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -32198,7 +31924,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": null,
           "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 14 Punkte (Großer Begleiter; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 14 Punkte (Großer Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -32206,12 +31932,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Großer Begleiter",
         "categoryPoints": 12,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 14,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 7000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit)",
@@ -32221,11 +31946,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "14 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2; Seltenheit ×1. Preisstufe: solide."
+        "reason": "14 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -32298,7 +32023,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4900,
           "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Rüstung; Verstärkungen 6; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Rüstung; Verstärkungen 6). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -32306,12 +32031,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 6,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +2 (Fähigkeit)",
@@ -32331,11 +32055,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 6; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 6. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -32408,7 +32132,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4100,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -32416,12 +32140,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schadensrückwurf: 1x W4 Dornengiftschaden bei Kontakt",
@@ -32431,11 +32154,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -32454,8 +32177,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -32509,8 +32232,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": null,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Kleiner Begleiter; Verstärkungen 3; Seltenheit ×1,12)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -32518,12 +32241,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 3,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 8,
+        "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Flüche & Blut-Hexerei +2 (Fähigkeit)",
@@ -32538,11 +32260,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -32638,12 +32360,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Fahrzeug",
         "categoryPoints": 70,
         "effectPoints": 4,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 83,
+        "totalPoints": 74,
         "tier": "außergewöhnlich",
         "copperPerPoint": 500,
         "valueCopper": 0,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Orientierung & Navigation +3 (Fähigkeit)",
@@ -32658,7 +32379,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "completion-reward",
         "weightPolicy": "corrected",
@@ -32737,7 +32458,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4200,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Rüstung; Verstärkungen 2.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Rüstung; Verstärkungen 2.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -32745,12 +32466,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben (Counter)",
@@ -32765,11 +32485,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Rüstung 4.5 + Verstärkungen 2.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Rüstung 4.5 + Verstärkungen 2.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -32844,7 +32564,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 4.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 4.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -32852,12 +32572,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 2.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 4.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer (Counter)",
@@ -32872,11 +32591,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "4.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "4.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -32951,7 +32670,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3800,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -32959,12 +32678,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Fokus (Counter)",
@@ -32979,11 +32697,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -33058,7 +32776,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -33066,12 +32784,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Glaube (Counter)",
@@ -33091,11 +32808,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -33170,7 +32887,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Waffe; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Waffe; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -33178,12 +32895,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6",
@@ -33208,11 +32924,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10.5 Wertpunkte: Waffe 5 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Waffe 5 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -33287,7 +33003,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 2800,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -33295,12 +33011,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Fokus (Counter)",
@@ -33320,11 +33035,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -33399,7 +33114,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4400,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 7; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -33407,12 +33122,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 7,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Ausdauer (Counter)",
@@ -33437,11 +33151,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7; Seltenheit ×1. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -33516,7 +33230,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5200,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Rüstung; Verstärkungen 3.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Rüstung; Verstärkungen 3.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -33524,12 +33238,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben (Counter)",
@@ -33549,11 +33262,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Rüstung 4.5 + Verstärkungen 3.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Rüstung 4.5 + Verstärkungen 3.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -33628,7 +33341,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7800,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -33636,12 +33349,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Glaube (Counter)",
@@ -33661,11 +33373,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -33738,7 +33450,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5600,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Rüstung; Verstärkungen 3.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Rüstung; Verstärkungen 3.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -33746,12 +33458,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Stärke +1 (Grundwert)",
@@ -33766,11 +33477,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Rüstung 4.5 + Verstärkungen 3.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Rüstung 4.5 + Verstärkungen 3.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -33845,7 +33556,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 12500,
           "value": 6500,
-          "reason": "Wertemodell mse-value-v1: 13 Punkte (Waffe; Verstärkungen 8; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 13 Punkte (Waffe; Verstärkungen 8). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -33853,12 +33564,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 8,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 13,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W10 +2",
@@ -33878,11 +33588,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13 Wertpunkte: Waffe 5 + Verstärkungen 8; Seltenheit ×1. Preisstufe: solide."
+        "reason": "13 Wertpunkte: Waffe 5 + Verstärkungen 8. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -33957,7 +33667,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 14500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Rüstung; Verstärkungen 2.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Rüstung; Verstärkungen 2.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -33965,12 +33675,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+2 Leben (Counter)",
@@ -33985,11 +33694,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Rüstung 4.5 + Verstärkungen 2.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Rüstung 4.5 + Verstärkungen 2.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -34064,7 +33773,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4300,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -34072,12 +33781,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Ausdauer (Counter)",
@@ -34092,11 +33800,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -34171,7 +33879,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6200,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Waffe; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Waffe; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -34179,12 +33887,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Leben (Counter)",
@@ -34199,11 +33906,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Waffe 5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Waffe 5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -34278,7 +33985,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5800,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -34286,12 +33993,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "+1 Fokus (Counter)",
@@ -34306,11 +34012,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -34385,7 +34091,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5200,
           "value": 2000,
-          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -34393,12 +34099,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 4,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Foltern & Verhören +2 (Fähigkeit)",
@@ -34408,11 +34113,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -34487,7 +34192,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 3100,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -34495,12 +34200,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Stärke +1 (Grundwert)",
@@ -34515,11 +34219,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -34594,7 +34298,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 8200,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -34602,12 +34306,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Foltern & Verhören +2 (Fähigkeit)",
@@ -34622,11 +34325,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -34701,7 +34404,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 30000,
           "value": 51000,
-          "reason": "Wertemodell mse-value-v1: 102 Punkte (Besitz & Ort; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 102 Punkte (Besitz & Ort; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -34709,12 +34412,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Besitz & Ort",
         "categoryPoints": 100,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 102,
         "tier": "außergewöhnlich",
         "copperPerPoint": 500,
         "valueCopper": 51000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Rechtskunde & Verwaltung +1 (Fähigkeit)",
@@ -34729,11 +34431,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "102 Wertpunkte: Besitz & Ort 100 + Verstärkungen 2; Seltenheit ×1. Preisstufe: außergewöhnlich."
+        "reason": "102 Wertpunkte: Besitz & Ort 100 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: außergewöhnlich."
       },
       "review": {
         "status": "balanced",
@@ -34808,7 +34510,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 20000,
           "value": 14000,
-          "reason": "Wertemodell mse-value-v1: 28 Punkte (Fahrzeug; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 28 Punkte (Fahrzeug; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -34816,12 +34518,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Fahrzeug",
         "categoryPoints": 25,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 28,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 14000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fesseln & Sichern +2 (Fähigkeit)",
@@ -34836,11 +34537,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "28 Wertpunkte: Fahrzeug 25 + Verstärkungen 3; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "28 Wertpunkte: Fahrzeug 25 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -34915,7 +34616,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 11500,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Begleiter; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -34923,12 +34624,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Begleiter",
         "categoryPoints": 7,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit)",
@@ -34943,11 +34643,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Begleiter 7 + Verstärkungen 3; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Begleiter 7 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -35023,12 +34723,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 20,
         "tier": "wertvoll",
         "copperPerPoint": 500,
         "valueCopper": 10000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit)",
@@ -35043,11 +34742,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "20 Wertpunkte: Reittier 18 + Verstärkungen 2; Seltenheit ×1. Preisstufe: wertvoll."
+        "reason": "20 Wertpunkte: Reittier 18 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -35122,7 +34821,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 20000,
           "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 15 Punkte (Großer Begleiter; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 15 Punkte (Großer Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -35130,12 +34829,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Großer Begleiter",
         "categoryPoints": 12,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 15,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 7500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Heilrituale & Heilwunder +2 (Fähigkeit)",
@@ -35150,11 +34848,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "15 Wertpunkte: Großer Begleiter 12 + Verstärkungen 3; Seltenheit ×1. Preisstufe: solide."
+        "reason": "15 Wertpunkte: Großer Begleiter 12 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -35229,7 +34927,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -35237,12 +34935,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Mana +1 (Counter)",
@@ -35267,11 +34964,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -35346,7 +35043,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -35354,12 +35051,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fokus +1 (Counter)",
@@ -35384,11 +35080,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -35463,7 +35159,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 16500,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 7; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -35471,12 +35167,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 7,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Intelligenz +1 (Grundwert)",
@@ -35506,11 +35201,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7; Seltenheit ×1. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -35585,7 +35280,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -35593,12 +35288,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Mana +1 (Counter)",
@@ -35623,11 +35317,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -35702,7 +35396,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -35710,12 +35404,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -35735,11 +35428,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -35814,7 +35507,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -35822,12 +35515,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -35847,11 +35539,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -35870,8 +35562,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 9500,
-      "valueText": "95 Silber",
+      "valueCopper": 8500,
+      "valueText": "85 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -35925,8 +35617,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 9500,
-          "reason": "Wertemodell mse-value-v1: 18.5 Punkte (Großer Begleiter; Verstärkungen 5; Seltenheit ×1,08)."
+          "value": 8500,
+          "reason": "Wertemodell mse-value-v1: 17 Punkte (Großer Begleiter; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -35934,12 +35626,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Großer Begleiter",
         "categoryPoints": 12,
         "effectPoints": 5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 18.5,
+        "totalPoints": 17,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 9500,
+        "valueCopper": 8500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Feuermagie & Pyrokinetik +2 (Fähigkeit)",
@@ -35959,11 +35650,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "18.5 Wertpunkte: Großer Begleiter 12 + Verstärkungen 5; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "17 Wertpunkte: Großer Begleiter 12 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -35982,8 +35673,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5000,
-      "valueText": "50 Silber",
+      "valueCopper": 4500,
+      "valueText": "45 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -36037,8 +35728,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5; Seltenheit ×1,16)."
+          "value": 4500,
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -36046,12 +35737,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 10,
-        "tier": "solide",
+        "totalPoints": 8.5,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5000,
+        "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Mana +2 (Counter)",
@@ -36076,11 +35766,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -36099,8 +35789,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 11500,
-      "valueText": "1 Gold 15 Silber",
+      "valueCopper": 10500,
+      "valueText": "1 Gold 5 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -36154,8 +35844,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 30000,
-          "value": 11500,
-          "reason": "Wertemodell mse-value-v1: 22.5 Punkte (Reittier; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 10500,
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -36163,12 +35853,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 22.5,
+        "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
-        "valueCopper": 11500,
+        "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -36183,11 +35872,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "22.5 Wertpunkte: Reittier 18 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -36206,8 +35895,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7000,
-      "valueText": "70 Silber",
+      "valueCopper": 6000,
+      "valueText": "60 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -36261,8 +35950,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 14 Punkte (Waffe; Verstärkungen 7; Seltenheit ×1,16)."
+          "value": 6000,
+          "reason": "Wertemodell mse-value-v1: 12 Punkte (Waffe; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -36270,12 +35959,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 7,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 14,
+        "totalPoints": 12,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7000,
+        "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W8 +1",
@@ -36295,11 +35983,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "14 Wertpunkte: Waffe 5 + Verstärkungen 7; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "12 Wertpunkte: Waffe 5 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -36318,8 +36006,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 2500,
-      "valueText": "25 Silber",
+      "valueCopper": 2000,
+      "valueText": "20 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -36373,8 +36061,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 4.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2; Seltenheit ×1,08)."
+          "value": 2000,
+          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -36382,12 +36070,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 2,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 4.5,
+        "totalPoints": 4,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 2500,
+        "valueCopper": 2000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +1 (Fähigkeit)",
@@ -36402,11 +36089,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "4.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -36425,8 +36112,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4500,
-      "valueText": "45 Silber",
+      "valueCopper": 4000,
+      "valueText": "40 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -36480,8 +36167,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5; Seltenheit ×1,12)."
+          "value": 4000,
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -36489,12 +36176,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5.5,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 8.5,
+        "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4500,
+        "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Mana +1 (Counter)",
@@ -36529,11 +36215,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -36608,7 +36294,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -36616,12 +36302,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Finsternis +1 (Counter)",
@@ -36641,11 +36326,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -36720,7 +36405,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -36728,12 +36413,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Leben +1 (Counter)",
@@ -36753,11 +36437,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -36832,7 +36516,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 16500,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 7; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -36840,12 +36524,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 7,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Konstitution +1 (Grundwert)",
@@ -36870,11 +36553,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7; Seltenheit ×1. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -36949,7 +36632,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -36957,12 +36640,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Finsternis +1 (Counter)",
@@ -36982,11 +36664,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -37061,7 +36743,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -37069,12 +36751,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -37094,11 +36775,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -37173,7 +36854,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -37181,12 +36862,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -37206,11 +36886,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -37229,8 +36909,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5500,
-      "valueText": "55 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -37284,8 +36964,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 11 Punkte (Begleiter; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -37293,12 +36973,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Begleiter",
         "categoryPoints": 7,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 11,
+        "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 5500,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)",
@@ -37313,11 +36992,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11 Wertpunkte: Begleiter 7 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Begleiter 7 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -37336,8 +37015,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -37391,8 +37070,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1,16)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -37400,12 +37079,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 7.5,
+        "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Finsternis +2 (Counter)",
@@ -37425,11 +37103,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -37448,8 +37126,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 11500,
-      "valueText": "1 Gold 15 Silber",
+      "valueCopper": 10500,
+      "valueText": "1 Gold 5 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -37503,8 +37181,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 30000,
-          "value": 11500,
-          "reason": "Wertemodell mse-value-v1: 22.5 Punkte (Reittier; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 10500,
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -37512,12 +37190,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 22.5,
+        "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
-        "valueCopper": 11500,
+        "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -37532,11 +37209,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "22.5 Wertpunkte: Reittier 18 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -37555,8 +37232,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7500,
-      "valueText": "75 Silber",
+      "valueCopper": 6500,
+      "valueText": "65 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -37610,8 +37287,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 15 Punkte (Waffe; Verstärkungen 8; Seltenheit ×1,16)."
+          "value": 6500,
+          "reason": "Wertemodell mse-value-v1: 13 Punkte (Waffe; Verstärkungen 8). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -37619,12 +37296,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 8,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 15,
+        "totalPoints": 13,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7500,
+        "valueCopper": 6500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W10 +1",
@@ -37649,11 +37325,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "15 Wertpunkte: Waffe 5 + Verstärkungen 8; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "13 Wertpunkte: Waffe 5 + Verstärkungen 8. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -37728,7 +37404,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 10000,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1,08)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -37736,12 +37412,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 8,
+        "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +2 (Fähigkeit)",
@@ -37756,11 +37431,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -37779,8 +37454,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -37834,8 +37509,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5; Seltenheit ×1,12)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -37843,12 +37518,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 8,
+        "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Finsternis +1 (Counter)",
@@ -37878,11 +37552,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -37957,7 +37631,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -37965,12 +37639,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Leben +1 (Counter)",
@@ -37995,11 +37668,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -38074,7 +37747,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -38082,12 +37755,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Leben +1 (Counter)",
@@ -38107,11 +37779,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -38186,7 +37858,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 16500,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 7; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Rüstung; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -38194,12 +37866,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 7,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Konstitution +1 (Grundwert)",
@@ -38224,11 +37895,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7; Seltenheit ×1. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -38303,7 +37974,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -38311,12 +37982,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Rüstungsschmied & Schildmacher +2 (Fähigkeit)",
@@ -38331,11 +38001,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -38410,7 +38080,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -38418,12 +38088,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -38443,11 +38112,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -38522,7 +38191,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -38530,12 +38199,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -38555,11 +38223,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -38578,8 +38246,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7500,
-      "valueText": "75 Silber",
+      "valueCopper": 7000,
+      "valueText": "70 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -38633,8 +38301,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 15 Punkte (Großer Begleiter; Verstärkungen 2; Seltenheit ×1,08)."
+          "value": 7000,
+          "reason": "Wertemodell mse-value-v1: 14 Punkte (Großer Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -38642,12 +38310,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Großer Begleiter",
         "categoryPoints": 12,
         "effectPoints": 2,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 15,
+        "totalPoints": 14,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7500,
+        "valueCopper": 7000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Erdmagie & Geomantie +1 (Fähigkeit)",
@@ -38662,11 +38329,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "15 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "14 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -38685,8 +38352,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -38740,8 +38407,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1,16)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -38749,12 +38416,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 7.5,
+        "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Mana +2 (Counter)",
@@ -38774,11 +38440,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -38797,8 +38463,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 11500,
-      "valueText": "1 Gold 15 Silber",
+      "valueCopper": 10500,
+      "valueText": "1 Gold 5 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -38852,8 +38518,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 30000,
-          "value": 11500,
-          "reason": "Wertemodell mse-value-v1: 22.5 Punkte (Reittier; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 10500,
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -38861,12 +38527,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 22.5,
+        "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
-        "valueCopper": 11500,
+        "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -38881,11 +38546,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "22.5 Wertpunkte: Reittier 18 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -38904,8 +38569,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7000,
-      "valueText": "70 Silber",
+      "valueCopper": 6000,
+      "valueText": "60 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -38959,8 +38624,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 13.5 Punkte (Waffe; Verstärkungen 6.5; Seltenheit ×1,16)."
+          "value": 6000,
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Waffe; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -38968,12 +38633,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 6.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 13.5,
+        "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7000,
+        "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W10",
@@ -38993,11 +38657,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13.5 Wertpunkte: Waffe 5 + Verstärkungen 6.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Waffe 5 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -39072,7 +38736,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 10000,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1,08)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -39080,12 +38744,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 8,
+        "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +2 (Fähigkeit)",
@@ -39100,11 +38763,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -39123,8 +38786,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -39178,8 +38841,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5; Seltenheit ×1,12)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -39187,12 +38850,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 8,
+        "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Leben +1 (Counter)",
@@ -39222,11 +38884,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -39301,7 +38963,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Rüstung; Verstärkungen 5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Rüstung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -39309,12 +38971,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Mana +1 (Counter)",
@@ -39344,11 +39005,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -39423,7 +39084,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Rüstung; Verstärkungen 6; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Rüstung; Verstärkungen 6). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -39431,12 +39092,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 6,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fokus +1 (Counter)",
@@ -39466,11 +39126,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 6; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 6. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -39545,7 +39205,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 16500,
           "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 12 Punkte (Rüstung; Verstärkungen 7.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 12 Punkte (Rüstung; Verstärkungen 7.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -39553,12 +39213,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 7.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 12,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Reflexe +1 (Grundwert)",
@@ -39593,11 +39252,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "12 Wertpunkte: Rüstung 4.5 + Verstärkungen 7.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "12 Wertpunkte: Rüstung 4.5 + Verstärkungen 7.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -39672,7 +39331,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -39680,12 +39339,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Mana +1 (Counter)",
@@ -39705,11 +39363,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -39784,7 +39442,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -39792,12 +39450,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -39817,11 +39474,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -39896,7 +39553,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -39904,12 +39561,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -39934,11 +39590,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -39957,8 +39613,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5000,
-      "valueText": "50 Silber",
+      "valueCopper": 4500,
+      "valueText": "45 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -40012,8 +39668,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Kleiner Begleiter; Verstärkungen 5; Seltenheit ×1,08)."
+          "value": 4500,
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Kleiner Begleiter; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -40021,12 +39677,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 9.5,
+        "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5000,
+        "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit)",
@@ -40046,11 +39701,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9.5 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 5; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -40069,8 +39724,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -40124,8 +39779,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1,16)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -40133,12 +39788,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 7.5,
+        "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Mana +2 (Counter)",
@@ -40163,11 +39817,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -40186,8 +39840,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 12500,
-      "valueText": "1 Gold 25 Silber",
+      "valueCopper": 11500,
+      "valueText": "1 Gold 15 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -40241,8 +39895,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 30000,
-          "value": 12500,
-          "reason": "Wertemodell mse-value-v1: 25 Punkte (Reittier; Verstärkungen 5; Seltenheit ×1,08)."
+          "value": 11500,
+          "reason": "Wertemodell mse-value-v1: 23 Punkte (Reittier; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -40250,12 +39904,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 25,
+        "totalPoints": 23,
         "tier": "wertvoll",
         "copperPerPoint": 500,
-        "valueCopper": 12500,
+        "valueCopper": 11500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -40280,11 +39933,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "25 Wertpunkte: Reittier 18 + Verstärkungen 5; Seltenheit ×1,08. Preisstufe: wertvoll."
+        "reason": "23 Wertpunkte: Reittier 18 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -40303,8 +39956,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7000,
-      "valueText": "70 Silber",
+      "valueCopper": 6000,
+      "valueText": "60 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -40358,8 +40011,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 14 Punkte (Waffe; Verstärkungen 7; Seltenheit ×1,16)."
+          "value": 6000,
+          "reason": "Wertemodell mse-value-v1: 12 Punkte (Waffe; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -40367,12 +40020,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 7,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 14,
+        "totalPoints": 12,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7000,
+        "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W8 +1",
@@ -40392,11 +40044,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "14 Wertpunkte: Waffe 5 + Verstärkungen 7; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "12 Wertpunkte: Waffe 5 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -40415,8 +40067,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 2500,
-      "valueText": "25 Silber",
+      "valueCopper": 2000,
+      "valueText": "20 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -40470,8 +40122,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 4.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2; Seltenheit ×1,08)."
+          "value": 2000,
+          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -40479,12 +40131,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 2,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 4.5,
+        "totalPoints": 4,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 2500,
+        "valueCopper": 2000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +1 (Fähigkeit)",
@@ -40499,11 +40150,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "4.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -40522,8 +40173,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4500,
-      "valueText": "45 Silber",
+      "valueCopper": 4000,
+      "valueText": "40 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -40577,8 +40228,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5; Seltenheit ×1,12)."
+          "value": 4000,
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -40586,12 +40237,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5.5,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 8.5,
+        "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4500,
+        "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Mana +1 (Counter)",
@@ -40626,11 +40276,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -40705,7 +40355,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -40713,12 +40363,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fährtenlesen & Spurensuche +2 (Fähigkeit)",
@@ -40733,11 +40382,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -40812,7 +40461,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Rüstung; Verstärkungen 5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Rüstung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -40820,12 +40469,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fokus +1 (Counter)",
@@ -40850,11 +40498,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -40929,7 +40577,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 16500,
           "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 11 Punkte (Rüstung; Verstärkungen 6.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 11 Punkte (Rüstung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -40937,12 +40585,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 6.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 11,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Wahrnehmung +1 (Grundwert)",
@@ -40972,11 +40619,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11 Wertpunkte: Rüstung 4.5 + Verstärkungen 6.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "11 Wertpunkte: Rüstung 4.5 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -41051,7 +40698,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -41059,12 +40706,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Tierkunde & Tierpflege +2 (Fähigkeit)",
@@ -41079,11 +40725,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -41158,7 +40804,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -41166,12 +40812,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -41191,11 +40836,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -41270,7 +40915,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -41278,12 +40923,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -41308,11 +40952,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -41331,8 +40975,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5500,
-      "valueText": "55 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -41386,8 +41030,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 11 Punkte (Begleiter; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -41395,12 +41039,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Begleiter",
         "categoryPoints": 7,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 11,
+        "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 5500,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Tierkunde & Tierpflege +2 (Fähigkeit)",
@@ -41415,11 +41058,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11 Wertpunkte: Begleiter 7 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Begleiter 7 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -41438,8 +41081,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -41493,8 +41136,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1,16)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -41502,12 +41145,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 7.5,
+        "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fokus +2 (Counter)",
@@ -41527,11 +41169,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -41550,8 +41192,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 12000,
-      "valueText": "1 Gold 20 Silber",
+      "valueCopper": 11000,
+      "valueText": "1 Gold 10 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -41605,8 +41247,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 30000,
-          "value": 12000,
-          "reason": "Wertemodell mse-value-v1: 24 Punkte (Reittier; Verstärkungen 4; Seltenheit ×1,08)."
+          "value": 11000,
+          "reason": "Wertemodell mse-value-v1: 22 Punkte (Reittier; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -41614,12 +41256,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 4,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 24,
+        "totalPoints": 22,
         "tier": "wertvoll",
         "copperPerPoint": 500,
-        "valueCopper": 12000,
+        "valueCopper": 11000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -41639,11 +41280,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "24 Wertpunkte: Reittier 18 + Verstärkungen 4; Seltenheit ×1,08. Preisstufe: wertvoll."
+        "reason": "22 Wertpunkte: Reittier 18 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -41662,8 +41303,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6000,
-      "valueText": "60 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -41717,8 +41358,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Waffe; Verstärkungen 5; Seltenheit ×1,16)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Waffe; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -41726,12 +41367,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 11.5,
+        "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6000,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W8",
@@ -41751,11 +41391,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Waffe 5 + Verstärkungen 5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Waffe 5 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -41774,8 +41414,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6000,
-      "valueText": "60 Silber",
+      "valueCopper": 5500,
+      "valueText": "55 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -41829,8 +41469,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Waffe; Verstärkungen 5.5; Seltenheit ×1,08)."
+          "value": 5500,
+          "reason": "Wertemodell mse-value-v1: 10.5 Punkte (Waffe; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -41838,12 +41478,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 5.5,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 11.5,
+        "totalPoints": 10.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6000,
+        "valueCopper": 5500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6",
@@ -41863,11 +41502,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Waffe 5 + Verstärkungen 5.5; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "10.5 Wertpunkte: Waffe 5 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -41886,8 +41525,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4500,
-      "valueText": "45 Silber",
+      "valueCopper": 4000,
+      "valueText": "40 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -41941,8 +41580,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5; Seltenheit ×1,12)."
+          "value": 4000,
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -41950,12 +41589,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5.5,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 8.5,
+        "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4500,
+        "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fokus +1 (Counter)",
@@ -41990,11 +41628,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -42069,7 +41707,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -42077,12 +41715,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fokus +1 (Counter)",
@@ -42107,11 +41744,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -42186,7 +41823,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -42194,12 +41831,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fokus +1 (Counter)",
@@ -42224,11 +41860,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -42303,7 +41939,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 16500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -42311,12 +41947,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Wille +1 (Grundwert)",
@@ -42346,11 +41981,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -42425,7 +42060,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -42433,12 +42068,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Mana +1 (Counter)",
@@ -42463,11 +42097,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -42542,7 +42176,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -42550,12 +42184,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fokus +1 (Counter)",
@@ -42575,11 +42208,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -42654,7 +42287,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -42662,12 +42295,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -42687,11 +42319,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -42710,8 +42342,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -42765,8 +42397,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Kleiner Begleiter; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Kleiner Begleiter; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -42774,12 +42406,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 7.5,
+        "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Magiewahrnehmung & Wahrnehmung für Übernatürliches +2 (Fähigkeit)",
@@ -42794,11 +42425,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -42817,8 +42448,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4500,
-      "valueText": "45 Silber",
+      "valueCopper": 4000,
+      "valueText": "40 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -42872,8 +42503,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5; Seltenheit ×1,16)."
+          "value": 4000,
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -42881,12 +42512,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 8.5,
+        "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4500,
+        "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Mana +2 (Counter)",
@@ -42911,11 +42541,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -42934,8 +42564,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 11500,
-      "valueText": "1 Gold 15 Silber",
+      "valueCopper": 10500,
+      "valueText": "1 Gold 5 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -42989,8 +42619,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 30000,
-          "value": 11500,
-          "reason": "Wertemodell mse-value-v1: 22.5 Punkte (Reittier; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 10500,
+          "reason": "Wertemodell mse-value-v1: 21 Punkte (Reittier; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -42998,12 +42628,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 22.5,
+        "totalPoints": 21,
         "tier": "wertvoll",
         "copperPerPoint": 500,
-        "valueCopper": 11500,
+        "valueCopper": 10500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
@@ -43018,11 +42647,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "22.5 Wertpunkte: Reittier 18 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: wertvoll."
+        "reason": "21 Wertpunkte: Reittier 18 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -43041,8 +42670,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7000,
-      "valueText": "70 Silber",
+      "valueCopper": 6000,
+      "valueText": "60 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -43096,8 +42725,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 13.5 Punkte (Waffe; Verstärkungen 6.5; Seltenheit ×1,16)."
+          "value": 6000,
+          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Waffe; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -43105,12 +42734,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 6.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 13.5,
+        "totalPoints": 11.5,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7000,
+        "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6 +1",
@@ -43130,11 +42758,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "13.5 Wertpunkte: Waffe 5 + Verstärkungen 6.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "11.5 Wertpunkte: Waffe 5 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -43209,7 +42837,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 10000,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1,08)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -43217,12 +42845,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 9,
+        "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verteidigung & Blocken +1 (Fähigkeit)",
@@ -43242,11 +42869,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -43265,8 +42892,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5000,
-      "valueText": "50 Silber",
+      "valueCopper": 4500,
+      "valueText": "45 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -43320,8 +42947,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5; Seltenheit ×1,12)."
+          "value": 4500,
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -43329,12 +42956,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6.5,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 9.5,
+        "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5000,
+        "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fokus +1 (Counter)",
@@ -43374,11 +43000,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -43453,7 +43079,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -43461,12 +43087,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Menschenkenntnis & Wesen erkennen +1 (Fähigkeit)",
@@ -43481,11 +43106,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -43560,7 +43185,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -43568,12 +43193,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Beruhigen & Trösten +1 (Fähigkeit)",
@@ -43588,11 +43212,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -43667,7 +43291,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 16500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -43675,12 +43299,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Intuition +1 (Grundwert)",
@@ -43700,11 +43323,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -43779,7 +43402,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -43787,12 +43410,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schreiber & Fälscher +1 (Fähigkeit)",
@@ -43807,11 +43429,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -43886,7 +43508,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -43894,12 +43516,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -43919,11 +43540,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -43998,7 +43619,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -44006,12 +43627,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Lügen erkennen & Motive verstehen +1 (Fähigkeit)",
@@ -44026,11 +43646,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -44049,8 +43669,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7500,
-      "valueText": "75 Silber",
+      "valueCopper": 7000,
+      "valueText": "70 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -44104,8 +43724,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 15 Punkte (Großer Begleiter; Verstärkungen 2; Seltenheit ×1,08)."
+          "value": 7000,
+          "reason": "Wertemodell mse-value-v1: 14 Punkte (Großer Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -44113,12 +43733,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Großer Begleiter",
         "categoryPoints": 12,
         "effectPoints": 2,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 15,
+        "totalPoints": 14,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7500,
+        "valueCopper": 7000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Rechtskunde & Verwaltung +1 (Fähigkeit)",
@@ -44133,11 +43752,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "15 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "14 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -44156,8 +43775,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -44211,8 +43830,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,16)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -44220,12 +43839,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 6,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Lügen erkennen & Motive verstehen +2 (Fähigkeit)",
@@ -44240,11 +43858,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -44263,8 +43881,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -44318,8 +43936,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1,08)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -44327,12 +43945,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 6.5,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Herrschaft +1 (Counter)",
@@ -44352,11 +43969,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -44375,8 +43992,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5500,
-      "valueText": "55 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -44430,8 +44047,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 11 Punkte (Waffe; Verstärkungen 4.5; Seltenheit ×1,16)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Waffe; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -44439,12 +44056,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 4.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 11,
-        "tier": "solide",
+        "totalPoints": 9.5,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5500,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6",
@@ -44464,11 +44080,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11 Wertpunkte: Waffe 5 + Verstärkungen 4.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "9.5 Wertpunkte: Waffe 5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -44487,8 +44103,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -44542,8 +44158,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -44551,12 +44167,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Herrschaft +1 (Counter)",
@@ -44576,11 +44191,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -44599,8 +44214,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -44654,8 +44269,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1,12)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -44663,12 +44278,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 6.5,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Beruhigen & Trösten +1 (Fähigkeit)",
@@ -44693,11 +44307,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -44772,7 +44386,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Waffe; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Waffe; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -44780,12 +44394,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Waffenschmied & Bogenbauer +1 (Fähigkeit)",
@@ -44805,11 +44418,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Waffe 5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Waffe 5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -44884,7 +44497,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -44892,12 +44505,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Rüstungsschmied & Schildmacher +1 (Fähigkeit)",
@@ -44917,11 +44529,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -44996,7 +44608,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 16500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 6.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -45004,12 +44616,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 6.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fingerfertigkeit +1 (Grundwert)",
@@ -45034,11 +44645,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 6.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -45113,7 +44724,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -45121,12 +44732,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Waffenschmied & Bogenbauer +2 (Fähigkeit)",
@@ -45141,11 +44751,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -45220,7 +44830,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -45228,12 +44838,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -45253,11 +44862,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -45332,7 +44941,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -45340,12 +44949,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Rüstungsschmied & Schildmacher +1 (Fähigkeit)",
@@ -45365,11 +44973,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -45388,8 +44996,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7500,
-      "valueText": "75 Silber",
+      "valueCopper": 7000,
+      "valueText": "70 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -45443,8 +45051,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 15 Punkte (Großer Begleiter; Verstärkungen 2; Seltenheit ×1,08)."
+          "value": 7000,
+          "reason": "Wertemodell mse-value-v1: 14 Punkte (Großer Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -45452,12 +45060,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Großer Begleiter",
         "categoryPoints": 12,
         "effectPoints": 2,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 15,
+        "totalPoints": 14,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7500,
+        "valueCopper": 7000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Waffenschmied & Bogenbauer +1 (Fähigkeit)",
@@ -45472,11 +45079,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "15 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "14 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -45495,8 +45102,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 31000,
-      "valueText": "3 Gold 10 Silber",
+      "valueCopper": 26500,
+      "valueText": "2 Gold 65 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -45550,8 +45157,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 31000,
-          "reason": "Wertemodell mse-value-v1: 61.5 Punkte (Besitz & Ort; Verstärkungen 3; Seltenheit ×1,16)."
+          "value": 26500,
+          "reason": "Wertemodell mse-value-v1: 53 Punkte (Besitz & Ort; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -45559,12 +45166,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Besitz & Ort",
         "categoryPoints": 50,
         "effectPoints": 3,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 61.5,
-        "tier": "außergewöhnlich",
+        "totalPoints": 53,
+        "tier": "sehr wertvoll",
         "copperPerPoint": 500,
-        "valueCopper": 31000,
+        "valueCopper": 26500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Waffenschmied & Bogenbauer +2 (Fähigkeit)",
@@ -45579,11 +45185,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "61.5 Wertpunkte: Besitz & Ort 50 + Verstärkungen 3; Seltenheit ×1,16. Preisstufe: außergewöhnlich."
+        "reason": "53 Wertpunkte: Besitz & Ort 50 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: sehr wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -45602,8 +45208,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -45657,8 +45263,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -45666,12 +45272,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Rüstungsschmied & Schildmacher +2 (Fähigkeit)",
@@ -45686,11 +45291,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -45709,8 +45314,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6000,
-      "valueText": "60 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -45764,8 +45369,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 4500,
-          "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Waffe; Verstärkungen 5; Seltenheit ×1,16)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Waffe; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -45773,12 +45378,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 11.5,
+        "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6000,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W8",
@@ -45798,11 +45402,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Waffe 5 + Verstärkungen 5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Waffe 5 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -45821,8 +45425,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4500,
-      "valueText": "45 Silber",
+      "valueCopper": 4000,
+      "valueText": "40 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -45876,8 +45480,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Waffe; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 4000,
+          "reason": "Wertemodell mse-value-v1: 8 Punkte (Waffe; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -45885,12 +45489,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 8.5,
+        "totalPoints": 8,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4500,
+        "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Waffenschmied & Bogenbauer +2 (Fähigkeit)",
@@ -45905,11 +45508,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Waffe 5 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "8 Wertpunkte: Waffe 5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -45928,8 +45531,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -45983,8 +45586,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1,12)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -45992,12 +45595,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 6.5,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Hermetische Magie & Telekinetik +1 (Fähigkeit)",
@@ -46022,11 +45624,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -46101,7 +45703,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -46109,12 +45711,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Sprachen & Schriftkunde +1 (Fähigkeit)",
@@ -46129,11 +45730,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -46208,7 +45809,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -46216,12 +45817,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schreiber & Fälscher +1 (Fähigkeit)",
@@ -46241,11 +45841,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -46320,7 +45920,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 16500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -46328,12 +45928,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Intelligenz +1 (Grundwert)",
@@ -46353,11 +45952,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -46432,7 +46031,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -46440,12 +46039,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schreiber & Fälscher +2 (Fähigkeit)",
@@ -46460,11 +46058,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -46539,7 +46137,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -46547,12 +46145,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fokus +1 (Counter)",
@@ -46572,11 +46169,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -46651,7 +46248,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -46659,12 +46256,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Sprachen & Schriftkunde +1 (Fähigkeit)",
@@ -46679,11 +46275,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -46702,8 +46298,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7500,
-      "valueText": "75 Silber",
+      "valueCopper": 7000,
+      "valueText": "70 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -46757,8 +46353,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 15 Punkte (Großer Begleiter; Verstärkungen 2; Seltenheit ×1,08)."
+          "value": 7000,
+          "reason": "Wertemodell mse-value-v1: 14 Punkte (Großer Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -46766,12 +46362,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Großer Begleiter",
         "categoryPoints": 12,
         "effectPoints": 2,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 15,
+        "totalPoints": 14,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7500,
+        "valueCopper": 7000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Schreiber & Fälscher +1 (Fähigkeit)",
@@ -46786,11 +46381,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "15 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "14 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -46809,8 +46404,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -46864,8 +46459,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1,16)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -46873,12 +46468,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 7,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Mana +1 (Counter)",
@@ -46898,11 +46492,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -46921,8 +46515,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -46976,8 +46570,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -46985,12 +46579,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Sprachen & Schriftkunde +2 (Fähigkeit)",
@@ -47005,11 +46598,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -47028,8 +46621,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5500,
-      "valueText": "55 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -47083,8 +46676,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 5600,
-          "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 11 Punkte (Waffe; Verstärkungen 4.5; Seltenheit ×1,16)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Waffe; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -47092,12 +46685,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 4.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 11,
-        "tier": "solide",
+        "totalPoints": 9.5,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5500,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6",
@@ -47117,11 +46709,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11 Wertpunkte: Waffe 5 + Verstärkungen 4.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "9.5 Wertpunkte: Waffe 5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -47140,8 +46732,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -47195,8 +46787,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -47204,12 +46796,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Meta-Magie & Arkane Ordnung +1 (Fähigkeit)",
@@ -47224,11 +46815,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -47247,8 +46838,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -47302,8 +46893,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1,12)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -47311,12 +46902,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 6.5,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schreiber & Fälscher +1 (Fähigkeit)",
@@ -47341,11 +46931,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -47420,7 +47010,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 2000,
-          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -47428,12 +47018,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 4,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Handwerk & Baukunst +1 (Fähigkeit)",
@@ -47448,11 +47037,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -47527,7 +47116,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -47535,12 +47124,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Handwerk & Baukunst +1 (Fähigkeit)",
@@ -47560,11 +47148,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -47639,7 +47227,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 16500,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -47647,12 +47235,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fingerfertigkeit +1 (Grundwert)",
@@ -47672,11 +47259,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -47751,7 +47338,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -47759,12 +47346,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fesseln & Sichern +1 (Fähigkeit)",
@@ -47779,11 +47365,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -47858,7 +47444,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -47866,12 +47452,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -47891,11 +47476,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -47970,7 +47555,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -47978,12 +47563,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Akrobatik & Klettern +1 (Fähigkeit)",
@@ -47998,11 +47582,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -48021,8 +47605,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 11000,
-      "valueText": "1 Gold 10 Silber",
+      "valueCopper": 10000,
+      "valueText": "1 Gold",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -48076,8 +47660,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 11000,
-          "reason": "Wertemodell mse-value-v1: 21.5 Punkte (Reittier; Verstärkungen 2; Seltenheit ×1,08)."
+          "value": 10000,
+          "reason": "Wertemodell mse-value-v1: 20 Punkte (Reittier; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -48085,12 +47669,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Reittier",
         "categoryPoints": 18,
         "effectPoints": 2,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 21.5,
+        "totalPoints": 20,
         "tier": "wertvoll",
         "copperPerPoint": 500,
-        "valueCopper": 11000,
+        "valueCopper": 10000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Handwerk & Baukunst +1 (Fähigkeit)",
@@ -48105,11 +47688,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "21.5 Wertpunkte: Reittier 18 + Verstärkungen 2; Seltenheit ×1,08. Preisstufe: wertvoll."
+        "reason": "20 Wertpunkte: Reittier 18 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: wertvoll."
       },
       "review": {
         "status": "balanced",
@@ -48128,8 +47711,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -48183,8 +47766,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,16)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -48192,12 +47775,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 6,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Handwerk & Baukunst +2 (Fähigkeit)",
@@ -48212,11 +47794,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -48235,8 +47817,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -48290,8 +47872,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -48299,12 +47881,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Handwerk & Baukunst +2 (Fähigkeit)",
@@ -48319,11 +47900,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -48342,8 +47923,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5500,
-      "valueText": "55 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -48397,8 +47978,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 2400,
-          "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 11 Punkte (Waffe; Verstärkungen 4.5; Seltenheit ×1,16)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Waffe; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -48406,12 +47987,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 4.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 11,
-        "tier": "solide",
+        "totalPoints": 9.5,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5500,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6",
@@ -48431,11 +48011,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11 Wertpunkte: Waffe 5 + Verstärkungen 4.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "9.5 Wertpunkte: Waffe 5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -48454,8 +48034,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -48509,8 +48089,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -48518,12 +48098,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Trapper & Fallensteller +2 (Fähigkeit)",
@@ -48538,11 +48117,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -48561,8 +48140,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -48616,8 +48195,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1,12)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -48625,12 +48204,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 6.5,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Handwerk & Baukunst +1 (Fähigkeit)",
@@ -48655,11 +48233,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -48734,7 +48312,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -48742,12 +48320,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Monsterkunde & Jägerwissen +1 (Fähigkeit)",
@@ -48762,11 +48339,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -48841,7 +48418,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -48849,12 +48426,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fährtenlesen & Spurensuche +1 (Fähigkeit)",
@@ -48874,11 +48450,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -48953,7 +48529,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 16500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -48961,12 +48537,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Intuition +1 (Grundwert)",
@@ -48986,11 +48561,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -49065,7 +48640,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -49073,12 +48648,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Trapper & Fallensteller +2 (Fähigkeit)",
@@ -49093,11 +48667,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -49172,7 +48746,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -49180,12 +48754,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -49205,11 +48778,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -49284,7 +48857,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -49292,12 +48865,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Trapper & Fallensteller +1 (Fähigkeit)",
@@ -49312,11 +48884,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -49335,8 +48907,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5000,
-      "valueText": "50 Silber",
+      "valueCopper": 4500,
+      "valueText": "45 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -49390,8 +48962,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 3600,
-          "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Begleiter; Verstärkungen 2; Seltenheit ×1,08)."
+          "value": 4500,
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -49399,12 +48971,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Begleiter",
         "categoryPoints": 7,
         "effectPoints": 2,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 9.5,
+        "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5000,
+        "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Fährtenlesen & Spurensuche +1 (Fähigkeit)",
@@ -49419,11 +48990,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9.5 Wertpunkte: Begleiter 7 + Verstärkungen 2; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Begleiter 7 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -49442,8 +49013,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -49497,8 +49068,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 7900,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,16)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -49506,12 +49077,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 6,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Monsterkunde & Jägerwissen +2 (Fähigkeit)",
@@ -49526,11 +49096,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -49549,8 +49119,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -49604,8 +49174,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -49613,12 +49183,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Heiler & Helfer +2 (Fähigkeit)",
@@ -49633,11 +49202,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -49656,8 +49225,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7000,
-      "valueText": "70 Silber",
+      "valueCopper": 6000,
+      "valueText": "60 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -49711,8 +49280,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 7000,
-          "reason": "Wertemodell mse-value-v1: 14 Punkte (Waffe; Verstärkungen 7; Seltenheit ×1,16)."
+          "value": 6000,
+          "reason": "Wertemodell mse-value-v1: 12 Punkte (Waffe; Verstärkungen 7). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -49720,12 +49289,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 7,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 14,
+        "totalPoints": 12,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7000,
+        "valueCopper": 6000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W8 +1",
@@ -49745,11 +49313,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "14 Wertpunkte: Waffe 5 + Verstärkungen 7; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "12 Wertpunkte: Waffe 5 + Verstärkungen 7. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -49768,8 +49336,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -49823,8 +49391,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -49832,12 +49400,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fesseln & Sichern +2 (Fähigkeit)",
@@ -49852,11 +49419,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -49875,8 +49442,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -49930,8 +49497,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1,12)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -49939,12 +49506,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 6.5,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Monsterkunde & Jägerwissen +1 (Fähigkeit)",
@@ -49969,11 +49535,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -50048,7 +49614,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -50056,12 +49622,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Aufmerksamkeit & Wachsamkeit +1 (Fähigkeit)",
@@ -50081,11 +49646,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -50160,7 +49725,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 8.5 Punkte (Rüstung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -50168,12 +49733,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 8.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Geographie & Kulturen +1 (Fähigkeit)",
@@ -50193,11 +49757,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "8.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -50272,7 +49836,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 16500,
           "value": 5000,
-          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Rüstung; Verstärkungen 5.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -50280,12 +49844,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 5.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
         "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Geschick +1 (Grundwert)",
@@ -50305,11 +49868,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5; Seltenheit ×1. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Rüstung 4.5 + Verstärkungen 5.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -50384,7 +49947,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -50392,12 +49955,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Trapper & Fallensteller +2 (Fähigkeit)",
@@ -50412,11 +49974,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -50491,7 +50053,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -50499,12 +50061,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -50524,11 +50085,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -50603,7 +50164,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -50611,12 +50172,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Akrobatik & Klettern +1 (Fähigkeit)",
@@ -50631,11 +50191,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -50654,8 +50214,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7500,
-      "valueText": "75 Silber",
+      "valueCopper": 7000,
+      "valueText": "70 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -50709,8 +50269,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 15 Punkte (Großer Begleiter; Verstärkungen 2; Seltenheit ×1,08)."
+          "value": 7000,
+          "reason": "Wertemodell mse-value-v1: 14 Punkte (Großer Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -50718,12 +50278,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Großer Begleiter",
         "categoryPoints": 12,
         "effectPoints": 2,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 15,
+        "totalPoints": 14,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7500,
+        "valueCopper": 7000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Akrobatik & Klettern +1 (Fähigkeit)",
@@ -50738,11 +50297,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "15 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "14 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -50761,8 +50320,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -50816,8 +50375,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1,16)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -50825,12 +50384,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 7,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Mana +1 (Counter)",
@@ -50850,11 +50408,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -50873,8 +50431,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -50928,8 +50486,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -50937,12 +50495,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Historie & Ruinenkunde +2 (Fähigkeit)",
@@ -50957,11 +50514,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -50980,8 +50537,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5500,
-      "valueText": "55 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -51035,8 +50592,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 2400,
-          "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 11 Punkte (Waffe; Verstärkungen 4.5; Seltenheit ×1,16)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Waffe; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -51044,12 +50601,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 4.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 11,
-        "tier": "solide",
+        "totalPoints": 9.5,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5500,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W5",
@@ -51069,11 +50625,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11 Wertpunkte: Waffe 5 + Verstärkungen 4.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "9.5 Wertpunkte: Waffe 5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -51092,8 +50648,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -51147,8 +50703,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -51156,12 +50712,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Trapper & Fallensteller +2 (Fähigkeit)",
@@ -51176,11 +50731,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -51199,8 +50754,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -51254,8 +50809,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1,12)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -51263,12 +50818,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 6.5,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Historie & Ruinenkunde +1 (Fähigkeit)",
@@ -51293,11 +50847,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -51372,7 +50926,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -51380,12 +50934,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Spiritismus & Seelenmagie +1 (Fähigkeit)",
@@ -51400,11 +50953,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -51479,7 +51032,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -51487,12 +51040,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Seelische Schutzmagie & Thanaturgie +1 (Fähigkeit)",
@@ -51512,11 +51064,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -51591,7 +51143,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 16500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -51599,12 +51151,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Intuition +1 (Grundwert)",
@@ -51624,11 +51175,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -51703,7 +51254,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -51711,12 +51262,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Heiler & Helfer +2 (Fähigkeit)",
@@ -51731,11 +51281,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -51810,7 +51360,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -51818,12 +51368,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Glaube +1 (Counter)",
@@ -51843,11 +51392,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -51922,7 +51471,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 2000,
-          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -51930,12 +51479,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 4,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Spiritismus & Seelenmagie +1 (Fähigkeit)",
@@ -51950,11 +51498,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -51973,8 +51521,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -52028,8 +51576,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 2500,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Kleiner Begleiter; Verstärkungen 2; Seltenheit ×1,08)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Kleiner Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -52037,12 +51585,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Kleiner Begleiter",
         "categoryPoints": 4,
         "effectPoints": 2,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 6.5,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Spiritismus & Seelenmagie +1 (Fähigkeit)",
@@ -52057,11 +51604,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 2; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Kleiner Begleiter 4 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -52080,8 +51627,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -52135,8 +51682,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1,16)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -52144,12 +51691,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 7,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Glaube +1 (Counter)",
@@ -52169,11 +51715,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -52192,8 +51738,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -52247,8 +51793,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -52256,12 +51802,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Spiritismus & Seelenmagie +2 (Fähigkeit)",
@@ -52276,11 +51821,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -52299,8 +51844,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5500,
-      "valueText": "55 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -52354,8 +51899,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 11 Punkte (Waffe; Verstärkungen 4.5; Seltenheit ×1,16)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Waffe; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -52363,12 +51908,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 4.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 11,
-        "tier": "solide",
+        "totalPoints": 9.5,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5500,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6",
@@ -52388,11 +51932,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11 Wertpunkte: Waffe 5 + Verstärkungen 4.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "9.5 Wertpunkte: Waffe 5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -52411,8 +51955,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 2500,
-      "valueText": "25 Silber",
+      "valueCopper": 2000,
+      "valueText": "20 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -52466,8 +52010,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 4.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2; Seltenheit ×1,08)."
+          "value": 2000,
+          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -52475,12 +52019,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 2,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 4.5,
+        "totalPoints": 4,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 2500,
+        "valueCopper": 2000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schutz- & Bewahrungswunder +1 (Fähigkeit)",
@@ -52495,11 +52038,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "4.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -52518,8 +52061,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -52573,8 +52116,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5; Seltenheit ×1,12)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -52582,12 +52125,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 8,
+        "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Glaube +1 (Counter)",
@@ -52617,11 +52159,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -52696,7 +52238,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 2000,
-          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -52704,12 +52246,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 4,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Wechselbalg & Formwandlerei +1 (Fähigkeit)",
@@ -52724,11 +52265,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -52803,7 +52344,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -52811,12 +52352,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Verbergen & Schmuggeln +1 (Fähigkeit)",
@@ -52836,11 +52376,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -52915,7 +52455,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 16500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -52923,12 +52463,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Geschick +1 (Grundwert)",
@@ -52948,11 +52487,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -53027,7 +52566,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 2000,
-          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 4 Punkte (Ausrüstung & Verstärkung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -53035,12 +52574,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 4,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schreiber & Fälscher +1 (Fähigkeit)",
@@ -53055,11 +52593,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "4 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -53134,7 +52672,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -53142,12 +52680,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Glück +1 (Counter)",
@@ -53167,11 +52704,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -53246,7 +52783,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -53254,12 +52791,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fährtenlesen & Spurensuche +1 (Fähigkeit)",
@@ -53274,11 +52810,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -53297,8 +52833,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7500,
-      "valueText": "75 Silber",
+      "valueCopper": 7000,
+      "valueText": "70 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -53352,8 +52888,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 15 Punkte (Großer Begleiter; Verstärkungen 2; Seltenheit ×1,08)."
+          "value": 7000,
+          "reason": "Wertemodell mse-value-v1: 14 Punkte (Großer Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -53361,12 +52897,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Großer Begleiter",
         "categoryPoints": 12,
         "effectPoints": 2,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 15,
+        "totalPoints": 14,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7500,
+        "valueCopper": 7000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Empathische Magie & Thymoturgie +1 (Fähigkeit)",
@@ -53381,11 +52916,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "15 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "14 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -53404,8 +52939,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -53459,8 +52994,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1,16)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -53468,12 +53003,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 7,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Finsternis +1 (Counter)",
@@ -53493,11 +53027,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -53516,8 +53050,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -53571,8 +53105,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -53580,12 +53114,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Wahnsinn & Delirium – Flüche +1 (Fähigkeit)",
@@ -53600,11 +53133,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -53623,8 +53156,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 6000,
-      "valueText": "60 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -53678,8 +53211,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 6000,
-          "reason": "Wertemodell mse-value-v1: 11.5 Punkte (Waffe; Verstärkungen 5; Seltenheit ×1,16)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 10 Punkte (Waffe; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -53687,12 +53220,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 11.5,
+        "totalPoints": 10,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 6000,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W4 +1",
@@ -53712,11 +53244,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11.5 Wertpunkte: Waffe 5 + Verstärkungen 5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "10 Wertpunkte: Waffe 5 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -53735,8 +53267,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -53790,8 +53322,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -53799,12 +53331,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schreiber & Fälscher +2 (Fähigkeit)",
@@ -53819,11 +53350,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -53842,8 +53373,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3500,
-      "valueText": "35 Silber",
+      "valueCopper": 3000,
+      "valueText": "30 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -53897,8 +53428,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4; Seltenheit ×1,12)."
+          "value": 3000,
+          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 4). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -53906,12 +53437,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 4,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 6.5,
+        "totalPoints": 6,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3500,
+        "valueCopper": 3000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Menschenkenntnis & Wesen erkennen +1 (Fähigkeit)",
@@ -53936,11 +53466,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 4. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -54015,7 +53545,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -54023,12 +53553,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Menschenkenntnis & Wesen erkennen +1 (Fähigkeit)",
@@ -54043,11 +53572,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -54122,7 +53651,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 6500,
           "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 7.5 Punkte (Rüstung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -54130,12 +53659,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 7.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Folklore & Gassenwissen +1 (Fähigkeit)",
@@ -54155,11 +53683,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "7.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -54234,7 +53762,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 16500,
           "value": 4500,
-          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 9 Punkte (Rüstung; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -54242,12 +53770,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 4.5,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 9,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 4500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Reflexe +1 (Grundwert)",
@@ -54267,11 +53794,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "9 Wertpunkte: Rüstung 4.5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -54346,7 +53873,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 4800,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -54354,12 +53881,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fesseln & Sichern +2 (Fähigkeit)",
@@ -54374,11 +53900,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -54453,7 +53979,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 7500,
           "value": 2500,
-          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -54461,12 +53987,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Ausdauer +1 (Counter)",
@@ -54486,11 +54011,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -54565,7 +54090,7 @@ window.EBEROS_MSE_ITEM_DB_V15={
           "field": "valueCopper",
           "sourceValue": 5500,
           "value": 3500,
-          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2; Seltenheit ×1)."
+          "reason": "Wertemodell mse-value-v1: 6.5 Punkte (Rüstung; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -54573,12 +54098,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Rüstung",
         "categoryPoints": 4.5,
         "effectPoints": 2,
-        "rarity": "unspecified",
-        "rarityFactor": 1,
         "totalPoints": 6.5,
         "tier": "einfach",
         "copperPerPoint": 500,
         "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Akrobatik & Klettern +1 (Fähigkeit)",
@@ -54593,11 +54117,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2; Seltenheit ×1. Preisstufe: einfach."
+        "reason": "6.5 Wertpunkte: Rüstung 4.5 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -54616,8 +54140,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 7500,
-      "valueText": "75 Silber",
+      "valueCopper": 7000,
+      "valueText": "70 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -54671,8 +54195,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 7500,
-          "reason": "Wertemodell mse-value-v1: 15 Punkte (Großer Begleiter; Verstärkungen 2; Seltenheit ×1,08)."
+          "value": 7000,
+          "reason": "Wertemodell mse-value-v1: 14 Punkte (Großer Begleiter; Verstärkungen 2). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -54680,12 +54204,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Großer Begleiter",
         "categoryPoints": 12,
         "effectPoints": 2,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 15,
+        "totalPoints": 14,
         "tier": "solide",
         "copperPerPoint": 500,
-        "valueCopper": 7500,
+        "valueCopper": 7000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Besitzer: Folklore & Gassenwissen +1 (Fähigkeit)",
@@ -54700,11 +54223,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "15 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2; Seltenheit ×1,08. Preisstufe: solide."
+        "reason": "14 Wertpunkte: Großer Begleiter 12 + Verstärkungen 2. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: solide."
       },
       "review": {
         "status": "balanced",
@@ -54723,8 +54246,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -54778,8 +54301,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 6 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,16)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -54787,12 +54310,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 6,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Menschenkenntnis & Wesen erkennen +2 (Fähigkeit)",
@@ -54807,11 +54329,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "6 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,16. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -54830,8 +54352,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -54885,8 +54407,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -54894,12 +54416,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Finsternis +1 (Counter)",
@@ -54919,11 +54440,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -54942,8 +54463,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 5500,
-      "valueText": "55 Silber",
+      "valueCopper": 5000,
+      "valueText": "50 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -54997,8 +54518,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 20000,
-          "value": 5500,
-          "reason": "Wertemodell mse-value-v1: 11 Punkte (Waffe; Verstärkungen 4.5; Seltenheit ×1,16)."
+          "value": 5000,
+          "reason": "Wertemodell mse-value-v1: 9.5 Punkte (Waffe; Verstärkungen 4.5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -55006,12 +54527,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Waffe",
         "categoryPoints": 5,
         "effectPoints": 4.5,
-        "rarity": "rare",
-        "rarityFactor": 1.16,
-        "totalPoints": 11,
-        "tier": "solide",
+        "totalPoints": 9.5,
+        "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 5500,
+        "valueCopper": 5000,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Schaden: 1x W6",
@@ -55031,11 +54551,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "11 Wertpunkte: Waffe 5 + Verstärkungen 4.5; Seltenheit ×1,16. Preisstufe: solide."
+        "reason": "9.5 Wertpunkte: Waffe 5 + Verstärkungen 4.5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -55054,8 +54574,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 3000,
-      "valueText": "30 Silber",
+      "valueCopper": 2500,
+      "valueText": "25 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -55109,8 +54629,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 10000,
-          "value": 3000,
-          "reason": "Wertemodell mse-value-v1: 5.5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3; Seltenheit ×1,08)."
+          "value": 2500,
+          "reason": "Wertemodell mse-value-v1: 5 Punkte (Ausrüstung & Verstärkung; Verstärkungen 3). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -55118,12 +54638,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 3,
-        "rarity": "uncommon",
-        "rarityFactor": 1.08,
-        "totalPoints": 5.5,
+        "totalPoints": 5,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 3000,
+        "valueCopper": 2500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Fesseln & Sichern +2 (Fähigkeit)",
@@ -55138,11 +54657,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "5.5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3; Seltenheit ×1,08. Preisstufe: einfach."
+        "reason": "5 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 3. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",
@@ -55161,8 +54680,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
       "quantity": 1,
       "cbpCost": 0,
       "cbpRelevant": false,
-      "valueCopper": 4000,
-      "valueText": "40 Silber",
+      "valueCopper": 3500,
+      "valueText": "35 Silber",
       "tradeStatus": "market",
       "isCompletionReward": false,
       "completionRequirement": null,
@@ -55216,8 +54735,8 @@ window.EBEROS_MSE_ITEM_DB_V15={
         {
           "field": "valueCopper",
           "sourceValue": 50000,
-          "value": 4000,
-          "reason": "Wertemodell mse-value-v1: 8 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5; Seltenheit ×1,12)."
+          "value": 3500,
+          "reason": "Wertemodell mse-value-v1: 7 Punkte (Ausrüstung & Verstärkung; Verstärkungen 5). Die Karten-Seltenheit ist rein optisch und hat keine Preiswirkung."
         }
       ],
       "valuation": {
@@ -55225,12 +54744,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         "category": "Ausrüstung & Verstärkung",
         "categoryPoints": 2,
         "effectPoints": 5,
-        "rarity": "special",
-        "rarityFactor": 1.12,
-        "totalPoints": 8,
+        "totalPoints": 7,
         "tier": "einfach",
         "copperPerPoint": 500,
-        "valueCopper": 4000,
+        "valueCopper": 3500,
+        "rarityCosmeticOnly": true,
         "factors": [
           {
             "label": "Herrschaft +1 (Counter)",
@@ -55260,11 +54778,11 @@ window.EBEROS_MSE_ITEM_DB_V15={
         ]
       },
       "balance": {
-        "revision": "mse-v15.3",
+        "revision": "mse-v15.4",
         "reviewed": true,
         "pricePolicy": "scored-value-model",
         "weightPolicy": "source-accepted",
-        "reason": "8 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5; Seltenheit ×1,12. Preisstufe: einfach."
+        "reason": "7 Wertpunkte: Ausrüstung & Verstärkung 2 + Verstärkungen 5. Karten-Seltenheit ist nur Gestaltung und zählt nicht zum Preis. Preisstufe: einfach."
       },
       "review": {
         "status": "balanced",

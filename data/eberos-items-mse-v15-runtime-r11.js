@@ -24,6 +24,7 @@ function validateMseCatalogV15(){
     if(!item.artFile)errors.push(`${item.id}: Kartengrafik fehlt`);
     if(!item.balance?.reviewed)errors.push(`${item.id}: Balanceprüfung fehlt`);
     if(item.tradeStatus==='market'&&item.valuation?.model!=='mse-value-v1')errors.push(`${item.id}: Wertpunkte fehlen`);
+    if(item.tradeStatus==='market'&&(item.valuation?.rarityCosmeticOnly!==true||Object.hasOwn(item.valuation,'rarityFactor')))errors.push(`${item.id}: Seltenheit darf den Preis nicht beeinflussen`);
     if(!Array.isArray(item.review?.issues))errors.push(`${item.id}: Prüfstatus fehlt`);
   }
   return{ok:errors.length===0,errors,ids:ids.size};
@@ -56,7 +57,7 @@ function mseCurrentIssuesV15(item){return item.review?.issues||[]}
 function mseArtUrlV15(item){return`${MSE_DB_V15.meta?.cardArtPath||'./data/mse-v15-art'}/${encodeURIComponent(item.artFile||`${item.sourceRecord?.cardNumber}.jpg`)}`}
 function mseSourceSectionV15(title,value,wide=false){return el('section',{class:'mse-source-section-v15'+(wide?' wide':'')},[el('h5',{text:title}),el('div',{text:String(value||'—')})])}
 function mseCorrectionTextV15(item){return(item.editorialCorrections||[]).map(entry=>`${entry.field}: ${entry.sourceValue??'—'} → ${entry.value}. ${entry.reason}`).join('\n')}
-function mseValuationTextV110(item){const value=item.valuation;if(!value||item.tradeStatus!=='market')return item.isCompletionReward?'Automatische Set-Vollendung':'Nicht regulär handelbar';return`${value.totalPoints} Wertpunkte · ${value.category}: ${value.categoryPoints} · Verstärkungen: ${value.effectPoints} · Seltenheit ×${String(value.rarityFactor).replace('.',',')} · ${value.tier}`}
+function mseValuationTextV110(item){const value=item.valuation;if(!value||item.tradeStatus!=='market')return item.isCompletionReward?'Automatische Set-Vollendung':'Nicht regulär handelbar';return`${value.totalPoints} Wertpunkte · ${value.category}: ${value.categoryPoints} · Verstärkungen: ${value.effectPoints} · Seltenheit: nur Kartenoptik · ${value.tier}`}
 function mseOwnedNormalIdsV15(owner,setNumber){return new Set((owner?.equipment||[]).filter(item=>item.sourceVersion==='mse-v15'&&item.sourceRecord?.setNumber===setNumber&&!item.isCompletionReward&&(+item.quantity||0)>0).map(item=>item.catalogId).filter(Boolean))}
 function mseCompletionProgressV15(owner,reward){const required=reward.completionRequirement?.requiredUniqueItems||0,owned=mseOwnedNormalIdsV15(owner,reward.completionRequirement?.setNumber).size,unlocked=(owner?.equipment||[]).some(item=>item.catalogId===reward.id&&(+item.quantity||0)>0);return{owned,required,complete:required>0&&owned>=required,unlocked}}
 function renderMseCompletionProgressV15(owner,reward){const progress=mseCompletionProgressV15(owner,reward),box=el('div',{class:'mse-completion-progress-v15'}),label=progress.unlocked?'Dauerhaft freigeschaltet':progress.complete?`Vollendet: ${progress.required}/${progress.required}`:`Set-Fortschritt: ${Math.min(progress.owned,progress.required)}/${progress.required}`;box.append(el('strong',{text:label}),el('progress',{max:progress.required,value:progress.unlocked?progress.required:Math.min(progress.owned,progress.required),'aria-label':`Set-Fortschritt ${progress.owned} von ${progress.required}`}));return box}
@@ -64,7 +65,7 @@ function renderMseCompletionProgressV15(owner,reward){const progress=mseCompleti
 function createMseCardV15(item){
   const source=item.sourceRecord||{},card=el('article',{class:'mse-card-v15'}),header=el('header',{class:'mse-card-header-v15'}),body=el('div',{class:'mse-card-body-v15'}),image=el('img',{class:'mse-card-art-v15',src:mseArtUrlV15(item),alt:`Illustration: ${item.name}`,loading:'eager',decoding:'async'});
   header.append(el('strong',{text:item.name}),el('span',{text:`${source.setNumber??'—'}·${source.cardNumber||'—'}`}));
-  body.append(el('div',{class:'mse-card-type-v15',text:`${MSE_ASSET_LABELS_V15[item.assetKind]||item.assetKind} · ${source.rarity||'ohne Seltenheit'}`}));
+  body.append(el('div',{class:'mse-card-type-v15',text:`${MSE_ASSET_LABELS_V15[item.assetKind]||item.assetKind} · Kartenoptik: ${source.rarity||'ohne Angabe'}`}));
   const stats=[...(source.primaryStats||[]),...(source.secondaryStats||[])].join(' · ');
   if(stats)body.append(el('div',{class:'mse-card-stats-v15',text:stats}));
   body.append(el('div',{class:'mse-card-rules-v15',text:source.effectText||'Kein zusätzlicher Regeltext.'}));
@@ -170,7 +171,7 @@ function removeMseCardUnlockV19(owner,catalogOrId,options={}){
 
 function renderMseCatalogItemV15(owner,item){
   const source=item.sourceRecord||{},article=el('article',{class:'mse-result-v15'+(item.isCompletionReward?' completion-locked':'')}),chips=el('div',{class:'mse-picker-meta-v15'}),details=el('details'),detailBody=el('div'),thumb=el('button',{type:'button',class:'mse-thumb-button-v15','aria-label':`Set-Gegenstandskarte ${item.name} anzeigen`,onclick:()=>showMseCardV15(item,owner)},[el('img',{src:mseArtUrlV15(item),alt:'',loading:'lazy',decoding:'async'})]),heading=el('div',{class:'mse-result-heading-v15'});
-  chips.append(el('span',{class:'mse-chip-v15',text:`Set ${source.setNumber??'—'} · Nr. ${source.cardNumber||'—'}`}),el('span',{class:'mse-chip-v15',text:MSE_ASSET_LABELS_V15[item.assetKind]||item.assetKind}),el('span',{class:'mse-chip-v15',text:source.rarity||'ohne Seltenheit'}));
+  chips.append(el('span',{class:'mse-chip-v15',text:`Set ${source.setNumber??'—'} · Nr. ${source.cardNumber||'—'}`}),el('span',{class:'mse-chip-v15',text:MSE_ASSET_LABELS_V15[item.assetKind]||item.assetKind}),el('span',{class:'mse-chip-v15',text:`Kartenoptik: ${source.rarity||'ohne Angabe'}`}));
   if(item.tradeStatus==='market'&&item.valuation)chips.append(el('span',{class:'mse-chip-v15 adjusted',text:`${item.valuation.totalPoints} Wertpunkte`}));
   if(item.editorialCorrections?.length)chips.append(el('span',{class:'mse-chip-v15 adjusted',text:'Neu bewertet'}));
   if(item.tradeStatus==='not-for-sale')chips.append(el('span',{class:'mse-chip-v15 not-sale',text:'Nicht käuflich'}));
@@ -245,6 +246,23 @@ function migrateSelectedMseItemsV153(data=state,writeLog=false){
   return changed;
 }
 
+function migrateSelectedMseItemsV154(data=state,writeLog=false){
+  if(data.mseItemValueV154Migrated)return false;
+  let changed=false;
+  for(const character of data.characters||[]){
+    for(const owner of[character,...(character.auxiliaryTabs||[])])for(const item of owner.equipment||[]){
+      if(item.sourceVersion!=='mse-v15')continue;
+      const catalog=MSE_BY_ID_V15.get(item.catalogId);
+      if(!catalog||item.sourceHash!==catalog.sourceHash)continue;
+      for(const key of['valueCopper','valueText','tradeStatus','isCompletionReward','completionRequirement','weightKg','weightUnknown','weightSource','assetKind','category','itemType','artFile','balance','editorialCorrections','valuation'])item[key]=structuredClone(catalog[key]);
+      changed=true;
+    }
+  }
+  data.mseItemValueV154Migrated=true;changed=true;
+  if(writeLog){data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];data.migrationLog.push({at:new Date().toISOString(),changes:['Preise aller Set-Gegenstandskarten ohne Seltenheitsfaktor neu berechnet; Seltenheit bleibt reine Kartenoptik']})}
+  return changed;
+}
+
 function migrateMseCardCodesV17(data=state,writeLog=false){
   let changed=false;
   for(const character of data?.characters||[])for(const owner of[character,...(character.auxiliaryTabs||[])]){
@@ -286,7 +304,7 @@ audit=function(){
 const runTestsBeforeMseV15=runTests;
 runTests=function(){
   const baseOk=runTestsBeforeMseV15(),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),owner=newCharacter(),sample=MSE_ITEMS_V15.find(item=>item.sourceRecord?.cardNumber==='0200'),scroll=MSE_ITEMS_V15.find(item=>item.sourceRecord?.cardNumber==='0103'),contractRoll=MSE_ITEMS_V15.find(item=>item.sourceRecord?.cardNumber==='0496'),fiole=MSE_ITEMS_V15.find(item=>item.sourceRecord?.cardNumber==='0224'),ship=MSE_ITEMS_V15.find(item=>item.sourceRecord?.cardNumber==='0311'),dream=MSE_ITEMS_V15.find(item=>item.sourceRecord?.cardNumber==='0029'),sixPiece=MSE_ITEMS_V15.find(item=>item.sourceRecord?.cardNumber==='0328');
-  eq('MSE-v15-Katalog vollständig',496,MSE_ITEMS_V15.length);eq('MSE-v15-IDs eindeutig',496,new Set(MSE_ITEMS_V15.map(item=>item.id)).size);eq('Alle 38 Sets vorhanden',38,new Set(MSE_ITEMS_V15.map(item=>item.sourceRecord?.setNumber)).size);eq('18 echte Abschlusskarten erkannt',18,MSE_COMPLETION_REWARDS_V15.length);eq('Alle Preise entschieden',0,MSE_ITEMS_V15.filter(item=>item.valueCopper===null).length);eq('468 Marktitems besitzen Wertpunkte',468,MSE_ITEMS_V15.filter(item=>item.tradeStatus==='market'&&item.valuation?.model==='mse-value-v1').length);eq('Keine offene Balanceprüfung',0,MSE_ITEMS_V15.filter(item=>item.review?.issues?.length).length);eq('Ravellas Fiole wiegt 0,7 kg',0.7,fiole?.weightKg);eq('30-Personen-Segler wiegt 80 t',80000,ship?.weightKg);eq('Segler ist automatische 12/12-Abschlusskarte',true,ship?.isCompletionReward&&ship?.completionRequirement?.requiredUniqueItems===12);eq('Nicht handelbarer Traum markiert','Nicht käuflich',dream?.valueText);eq('Sonnenstab nach Wertpunkten bepreist',13500,sample?.valueCopper);eq('Schriftrolle aller Formen kostet 65 Silber',6500,scroll?.valueCopper);eq('Kaufbare Vertragsrolle kostet 40 Silber',true,contractRoll?.tradeStatus==='market'&&contractRoll?.valueCopper===4000);eq('Wertpunkte werden angezeigt',true,mseValuationTextV110(scroll).includes('12.5 Wertpunkte'));eq('Sonnenstab-Gewicht bleibt 1,8 kg',1.8,sample?.weightKg);owner.mseUnlockedCardIdsV17=[sample.id,sixPiece.id];addMseItemV15(owner,sample);eq('MSE-Item als unabhängige Instanz ergänzt',true,owner.equipment[0]?.catalogId===sample.id&&owner.equipment[0]?.instanceId!==sample.id);eq('MSE-Quellrecord bleibt im Charakterbackup',sample.sourceHash,JSON.parse(JSON.stringify(owner)).equipment[0].sourceHash);eq('Kartenansicht enthält Illustration',true,!!createMseCardV15(sample).querySelector('img[src*="0200.jpg"]'));eq('MSE-Codefeld ist bedienbar',true,!!renderMseCatalogPickerV15(owner).querySelector('input[aria-label="Vierstelliger Kartencode"]'));eq('Sechs-Teile-Bonusitem bleibt normal kaufbar',true,!sixPiece?.isCompletionReward&&sixPiece?.tradeStatus==='market'&&addMseItemV15(owner,sixPiece));
+  eq('MSE-v15-Katalog vollständig',496,MSE_ITEMS_V15.length);eq('MSE-v15-IDs eindeutig',496,new Set(MSE_ITEMS_V15.map(item=>item.id)).size);eq('Alle 38 Sets vorhanden',38,new Set(MSE_ITEMS_V15.map(item=>item.sourceRecord?.setNumber)).size);eq('18 echte Abschlusskarten erkannt',18,MSE_COMPLETION_REWARDS_V15.length);eq('Alle Preise entschieden',0,MSE_ITEMS_V15.filter(item=>item.valueCopper===null).length);eq('468 Marktitems besitzen Wertpunkte',468,MSE_ITEMS_V15.filter(item=>item.tradeStatus==='market'&&item.valuation?.model==='mse-value-v1').length);eq('Seltenheit ist bei allen Marktitems nur Kartenoptik',true,MSE_ITEMS_V15.filter(item=>item.tradeStatus==='market').every(item=>item.valuation?.rarityCosmeticOnly===true&&!Object.hasOwn(item.valuation,'rarityFactor')));eq('Keine offene Balanceprüfung',0,MSE_ITEMS_V15.filter(item=>item.review?.issues?.length).length);eq('Ravellas Fiole wiegt 0,7 kg',0.7,fiole?.weightKg);eq('30-Personen-Segler wiegt 80 t',80000,ship?.weightKg);eq('Segler ist automatische 12/12-Abschlusskarte',true,ship?.isCompletionReward&&ship?.completionRequirement?.requiredUniqueItems===12);eq('Nicht handelbarer Traum markiert','Nicht käuflich',dream?.valueText);eq('Sonnenstab ohne Seltenheitsaufschlag bepreist',11500,sample?.valueCopper);eq('Schriftrolle aller Formen kostet 50 Silber',5000,scroll?.valueCopper);eq('Kaufbare Vertragsrolle kostet 35 Silber',true,contractRoll?.tradeStatus==='market'&&contractRoll?.valueCopper===3500);eq('Wertpunkte ohne Seltenheitsfaktor werden angezeigt',true,mseValuationTextV110(scroll).includes('10 Wertpunkte')&&mseValuationTextV110(scroll).includes('Seltenheit: nur Kartenoptik'));eq('Sonnenstab-Gewicht bleibt 1,8 kg',1.8,sample?.weightKg);owner.mseUnlockedCardIdsV17=[sample.id,sixPiece.id];addMseItemV15(owner,sample);eq('MSE-Item als unabhängige Instanz ergänzt',true,owner.equipment[0]?.catalogId===sample.id&&owner.equipment[0]?.instanceId!==sample.id);eq('MSE-Quellrecord bleibt im Charakterbackup',sample.sourceHash,JSON.parse(JSON.stringify(owner)).equipment[0].sourceHash);eq('Kartenansicht enthält Illustration',true,!!createMseCardV15(sample).querySelector('img[src*="0200.jpg"]'));eq('MSE-Codefeld ist bedienbar',true,!!renderMseCatalogPickerV15(owner).querySelector('input[aria-label="Vierstelliger Kartencode"]'));eq('Sechs-Teile-Bonusitem bleibt normal kaufbar',true,!sixPiece?.isCompletionReward&&sixPiece?.tradeStatus==='market'&&addMseItemV15(owner,sixPiece));
   const reward=MSE_ITEMS_V15.find(item=>item.sourceRecord?.cardNumber==='0303'),normal=MSE_ITEMS_V15.filter(item=>item.sourceRecord?.setNumber===7&&!item.isCompletionReward),completionOwner=newCharacter(),instance=item=>normalizeItemV174({...structuredClone(item),id:undefined,instanceId:uid(),catalogId:item.id,quantity:1,qty:1});completionOwner.equipment=normal.slice(0,8).map(instance);syncMseCompletionRewardsV15(completionOwner);eq('Unter Set-Schwelle keine Abschlusskarte',false,completionOwner.equipment.some(item=>item.catalogId===reward.id));completionOwner.equipment.push(instance(normal[0]));syncMseCompletionRewardsV15(completionOwner);eq('Duplikat zählt nicht zur Set-Schwelle',false,completionOwner.equipment.some(item=>item.catalogId===reward.id));completionOwner.equipment.push(instance(normal[8]));syncMseCompletionRewardsV15(completionOwner);eq('Set-Vollendung wird automatisch vergeben',true,completionOwner.equipment.some(item=>item.catalogId===reward.id&&item.autoGrantedMseCompletion));completionOwner.equipment=completionOwner.equipment.filter(item=>item.catalogId!==normal[8].id);syncMseCompletionRewardsV15(completionOwner);eq('Einmal gesammelte Vollendung bleibt dauerhaft',true,completionOwner.equipment.some(item=>item.catalogId===reward.id));
   const body=testResults.querySelector('tbody');for(const[name,expected,actual,ok]of tests)body?.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return baseOk&&tests.every(test=>test[3]);
 };
@@ -510,10 +528,12 @@ const migrateStateBeforeMseCardCodesV17=migrateState;
 migrateState=function(data){const migrated=migrateStateBeforeMseCardCodesV17(data);migrateMseCardCodesV17(migrated,false);return migrated};
 const migrateStateBeforeMseValueV153=migrateState;
 migrateState=function(data){const migrated=migrateStateBeforeMseValueV153(data);migrateSelectedMseItemsV153(migrated,false);return migrated};
+const migrateStateBeforeMseValueV154=migrateState;
+migrateState=function(data){const migrated=migrateStateBeforeMseValueV154(data);migrateSelectedMseItemsV154(migrated,false);return migrated};
 const runTestsBeforeMseCardCodesV17=runTests;
 runTests=function(){
   const baseOk=runTestsBeforeMseCardCodesV17(),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),lockedOwner=newCharacter(),sun=MSE_BY_CODE_V17.get('0200'),completion=MSE_COMPLETION_REWARDS_V15[0],sixPiece=MSE_BY_CODE_V17.get('0328');
-  eq('496 eindeutige vierstellige Kartencodes',496,new Set(MSE_ITEMS_V15.map(item=>item.sourceRecord?.cardNumber)).size);eq('Verborgene Karte kann nicht direkt hinzugefügt werden',false,addMseItemV15(lockedOwner,sun));
+  eq('496 eindeutige vierstellige Kartencodes',496,new Set(MSE_ITEMS_V15.map(item=>item.sourceRecord?.cardNumber)).size);eq('Seltenheit ist nur Kartenoptik',true,MSE_ITEMS_V15.filter(item=>item.tradeStatus==='market').every(item=>item.valuation?.rarityCosmeticOnly===true&&!Object.hasOwn(item.valuation,'rarityFactor')));eq('Sonnenstab ohne Seltenheitsaufschlag bepreist',11500,sun.valueCopper);eq('Verborgene Karte kann nicht direkt hinzugefügt werden',false,addMseItemV15(lockedOwner,sun));
   const lockedPicker=renderMseCatalogPickerV15(lockedOwner);eq('Ohne Code werden keine Karten angezeigt',0,lockedPicker.querySelectorAll('.mse-result-v15').length);eq('Ohne Code wird kein Kartenbild geladen',0,lockedPicker.querySelectorAll('.mse-thumb-button-v15 img').length);eq('Ungültiger Code bleibt verborgen','invalid',unlockMseCardV17(lockedOwner,'9999').reason);eq('Vollendungskarte nicht manuell freischaltbar','completion',unlockMseCardV17(lockedOwner,completion.sourceRecord.cardNumber).reason);
   const result=unlockMseCardV17(lockedOwner,'0200');eq('Gültiger Code schaltet Karte frei',true,result.ok&&mseCardIsUnlockedV17(lockedOwner,sun));eq('Freigeschaltete Karte landet im Inventar',1,lockedOwner.equipment.filter(item=>item.catalogId===sun.id).length);eq('Wiederholter Code erzeugt kein Duplikat','already',unlockMseCardV17(lockedOwner,'0200').reason);eq('Wiederholter Code lässt genau ein Exemplar bestehen',1,lockedOwner.equipment.filter(item=>item.catalogId===sun.id).length);
   const bonusOwner=newCharacter(),bonus=unlockMseCardV17(bonusOwner,sixPiece.sourceRecord.cardNumber);eq('Normale Sechs-Teile-Bonuskarte bleibt per Code freischaltbar',true,bonus.ok&&bonusOwner.equipment.some(item=>item.catalogId===sixPiece.id));
@@ -525,12 +545,14 @@ runTests=function(){
 
 migrateSelectedMseItemsV152();
 const valueMigrationChangedV153=migrateSelectedMseItemsV153(state,true);
+const valueMigrationChangedV154=migrateSelectedMseItemsV154(state,true);
 const cardCodeMigrationChangedV17=migrateMseCardCodesV17(state,true);
 const initialCompletionSyncV15=syncAllMseCompletionRewardsV15();
 if(!state.mseCompletionV152Migrated){state.mseCompletionV152Migrated=true;state.migrationLog=Array.isArray(state.migrationLog)?state.migrationLog:[];state.migrationLog.push({at:new Date().toISOString(),changes:['Echte Vollendungskarten der Set-Gegenstandskarten auf automatische Vergabe nach gedruckter Set-Schwelle umgestellt']});save()}else if(initialCompletionSyncV15.changed)save();
 if(cardCodeMigrationChangedV17)save();
 if(valueMigrationChangedV153)save();
-document.querySelector('.brand small').textContent='v1.7.21-r10';
+if(valueMigrationChangedV154)save();
+document.querySelector('.brand small').textContent='v1.7.21-r11';
 Object.assign(window.Eberos,{completionProgressV15:mseCompletionProgressV15,syncCompletionRewardsV15:syncMseCompletionRewardsV15,validateMseCatalogV15,unlockMseCardV17,removeCardUnlockV19:removeMseCardUnlockV19,cardIsUnlockedV17:mseCardIsUnlockedV17,valueTextV110:mseValuationTextV110,runTests:()=>runTests()});
 renderAll();
 }
