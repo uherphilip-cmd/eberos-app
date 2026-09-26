@@ -11,6 +11,7 @@
 - Lernen, Ruhen und Bindungen werden gespeichert, exportiert, importiert und in der Druckausgabe angezeigt.
 - Alle Synergiebeschreibungen sind als klare Spieleransicht gegliedert; interne Buchungsfelder, Redaktionsvergleiche und Katalogkennungen werden ausgeblendet.
 - Synergiebeschreibungen setzen S, B und W wie reguläre Zauber in die aktuellen Werte der niedrigeren wirksamen Elternstufe um; dies gilt auch für Hybridtechniken und deren Druckausgabe.
+- Luftfenster beschreibt Messort, Frage, Windzeichen, Dauer und Grenzen jetzt vollständig und spielbar.
 - Der vollständige Katalog steht auch offline und auf schmalen Bildschirmen zur Verfügung.
 - Vorhandene freie Mehrfachsynergien bleiben getrennt als eigene Synergien erhalten.
 - Schema 27 und Regelstand 13; Migration aus v1.7.21-r1 ohne automatische Lernwahl.
