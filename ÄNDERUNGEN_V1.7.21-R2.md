@@ -9,6 +9,7 @@
 - Synergiekosten einschließlich eigener LP werden vor dem Einsatz atomar gebucht; gebundene Ressourcen bleiben über Rasten reserviert und können gezielt gelöst werden.
 - Die Z11-Ausprägung „Fremdes Leben“ und ihre S4-Behandlung sind vollständig beschrieben und abrechenbar.
 - Lernen, Ruhen und Bindungen werden gespeichert, exportiert, importiert und in der Druckausgabe angezeigt.
+- Synergiebeschreibungen setzen S, B und W wie reguläre Zauber in die aktuellen Werte der niedrigeren wirksamen Elternstufe um; dies gilt auch für Hybridtechniken und deren Druckausgabe.
 - Der vollständige Katalog steht auch offline und auf schmalen Bildschirmen zur Verfügung.
 - Vorhandene freie Mehrfachsynergien bleiben getrennt als eigene Synergien erhalten.
 - Schema 27 und Regelstand 13; Migration aus v1.7.21-r1 ohne automatische Lernwahl.
