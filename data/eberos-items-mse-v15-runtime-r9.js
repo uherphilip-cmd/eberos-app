@@ -33,6 +33,7 @@ if(!MSE_VALIDATION_V15.ok)showError('Set-Gegenstandskarten-Katalog fehlerhaft: '
 document.head.append(el('style',{text:`
 .mse-picker-v15{margin:.75rem 0;border:2px solid var(--accent-2);border-radius:var(--radius);background:var(--panel-alt);overflow:hidden;overflow-anchor:none}.mse-picker-v15>summary{cursor:pointer;padding:.75rem;font-family:var(--font-section);font-weight:800}.mse-picker-body-v15{padding:.75rem;border-top:1px solid var(--border)}.mse-code-form-v17{display:grid;grid-template-columns:minmax(10rem,18rem) auto;gap:.5rem;align-items:end}.mse-code-field-v17{display:grid;gap:.25rem}.mse-code-field-v17 input{font:inherit;letter-spacing:.18em}.mse-code-status-v17{min-height:1.4em;margin:.5rem 0}.mse-picker-meta-v15{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;margin:.55rem 0}.mse-chip-v15{display:inline-flex;align-items:center;min-height:25px;padding:.12rem .46rem;border:1px solid var(--border);border-radius:999px;background:var(--panel-bg);font-size:.8rem}.mse-chip-v15.adjusted{border-color:var(--accent-2);color:var(--accent)}.mse-chip-v15.not-sale{border-color:var(--muted);color:var(--muted)}.mse-chip-v15.completion{border-color:#b58b22;color:#8b6512;background:#fff4c8}.mse-results-v15{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.65rem;max-height:38rem;overflow:auto;overflow-anchor:none;padding:.2rem}.mse-result-v15{display:grid;align-content:start;gap:.45rem;padding:.65rem;border:1px solid var(--border);border-radius:9px;background:var(--panel-bg);min-width:0;overflow-anchor:none}.mse-result-v15.completion-locked{border-color:#b58b22}.mse-result-v15 h4{margin:0}.mse-result-v15 p{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}.mse-result-v15 details>summary{cursor:pointer;color:var(--accent)}.mse-result-heading-v15{display:grid;grid-template-columns:74px minmax(0,1fr);gap:.65rem;align-items:start}.mse-thumb-button-v15{display:block;width:74px;aspect-ratio:5/7;padding:0;border:1px solid var(--border);border-radius:7px;overflow:hidden;background:#090b0c}.mse-thumb-button-v15 img{display:block;width:100%;height:100%;object-fit:contain}.mse-result-actions-v15{display:flex;gap:.4rem;align-items:center;justify-content:flex-end;flex-wrap:wrap;margin-top:auto}.mse-completion-progress-v15{display:grid;gap:.2rem;min-width:11rem}.mse-completion-progress-v15 progress{width:100%;accent-color:#b58b22}.equipment-entry{overflow-anchor:none}.equipment-entry.mse-completion-item-v15{border-color:#b58b22;box-shadow:inset 4px 0 #b58b22}.mse-selected-source-v15{margin:.65rem 0 0;border-top:1px solid var(--border)}.mse-selected-source-v15>summary{cursor:pointer;padding:.55rem 0;font-weight:800}.mse-source-grid-v15{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}.mse-source-section-v15{padding:.55rem;border:1px solid var(--border);border-radius:8px;background:var(--panel-bg);white-space:pre-wrap;overflow-wrap:anywhere}.mse-source-section-v15.wide{grid-column:1/-1}.mse-source-section-v15 h5{margin:0 0 .25rem}.mse-catalog-notice-v15{border-left:5px solid var(--accent-2)}
 .mse-card-dialog-v15{width:min(94vw,920px);max-height:94vh;padding:0;border:1px solid var(--border);border-radius:16px;background:var(--panel-bg);color:var(--text);overflow:auto}.mse-card-dialog-v15::backdrop{background:rgba(0,0,0,.76);backdrop-filter:blur(3px)}.mse-card-shell-v15{display:grid;grid-template-columns:minmax(280px,430px) minmax(230px,1fr);gap:1rem;padding:1rem}.mse-card-v15{align-self:start;aspect-ratio:5/7;display:grid;grid-template-rows:auto minmax(0,42%) 1fr auto;border:10px solid #2b2218;border-radius:20px;overflow:hidden;background:linear-gradient(145deg,#f2e4bd,#d4bd88);color:#21170e;box-shadow:0 18px 45px rgba(0,0,0,.45)}.mse-card-header-v15{display:flex;justify-content:space-between;gap:.5rem;align-items:center;padding:.55rem .7rem;background:rgba(255,255,255,.32);border-bottom:2px solid rgba(54,35,18,.4)}.mse-card-header-v15 strong{font-family:var(--font-section);font-size:clamp(1rem,3vw,1.25rem);line-height:1.05}.mse-card-art-v15{width:100%;height:100%;object-fit:contain;background:#080a0b}.mse-card-body-v15{display:grid;align-content:start;gap:.45rem;padding:.6rem .7rem;overflow:auto}.mse-card-type-v15{font-weight:800;border-bottom:1px solid rgba(54,35,18,.35);padding-bottom:.25rem}.mse-card-stats-v15{font-size:.83rem;font-weight:700}.mse-card-rules-v15{white-space:pre-wrap;font-size:.88rem;line-height:1.25}.mse-card-flavor-v15{font-style:italic;font-size:.8rem}.mse-card-footer-v15{display:flex;justify-content:space-between;gap:.5rem;padding:.35rem .7rem;background:rgba(255,255,255,.28);border-top:1px solid rgba(54,35,18,.35);font-size:.72rem;font-weight:700}.mse-card-side-v15{display:grid;align-content:start;gap:.65rem}.mse-card-side-v15 h3,.mse-card-side-v15 p{margin:0}.mse-card-side-v15 .mse-card-close-v15{justify-self:end}.mse-card-values-v15{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}.mse-card-actions-v15{display:flex;gap:.45rem;justify-content:flex-end;flex-wrap:wrap}
+.mse-remove-unlock-v19{border-color:var(--danger,#a33);color:var(--danger,#a33)}
 @media(max-width:850px){.mse-picker-filters-v15{grid-template-columns:1fr 1fr}.mse-source-grid-v15{grid-template-columns:1fr}.mse-source-section-v15.wide{grid-column:auto}.mse-card-shell-v15{grid-template-columns:1fr}.mse-card-v15{width:min(100%,430px);justify-self:center}.mse-card-side-v15{width:min(100%,430px);justify-self:center}.mse-card-side-v15 .mse-card-close-v15{position:absolute;top:.45rem;right:.45rem}}
 @media(max-width:520px){.mse-picker-filters-v15,.mse-code-form-v17{grid-template-columns:1fr}.mse-results-v15{grid-template-columns:1fr;max-height:32rem}.mse-result-actions-v15{align-items:stretch;flex-direction:column}.mse-result-actions-v15 button{width:100%}.mse-card-dialog-v15{width:100vw;max-width:none;max-height:100vh;border-radius:0}.mse-card-shell-v15{padding:.6rem}.mse-card-values-v15{grid-template-columns:1fr}}
 @media print{.mse-picker-v15,.mse-card-dialog-v15{display:none!important}.mse-selected-source-v15{border:0}.mse-selected-source-v15>summary{display:none}.mse-selected-source-v15:not([open])>*:not(summary){display:block!important}}
@@ -79,7 +80,7 @@ function showMseCardV15(item,owner=null){
   if(item.editorialCorrections?.length)side.append(mseSourceSectionV15('Original → neu',mseCorrectionTextV15(item),true));
   if(source.notes)side.append(mseSourceSectionV15('Redaktionsnotiz',source.notes,true));
   if(owner&&item.isCompletionReward)actions.append(renderMseCompletionProgressV15(owner,item),el('button',{type:'button',disabled:true,text:'Wird automatisch vergeben'}));
-  else if(owner)actions.append(el('button',{class:'primary',type:'button',text:'Zum Reiter hinzufügen',onclick:()=>{addMseItemV15(owner,item);MSE_CARD_DIALOG_V15.close()}}));
+  else if(owner)actions.append(el('button',{class:'primary',type:'button',text:'Zum Reiter hinzufügen',onclick:()=>{addMseItemV15(owner,item);MSE_CARD_DIALOG_V15.close()}}),el('button',{class:'danger mse-remove-unlock-v19',type:'button',text:'Set-Gegenstandskarte entfernen','aria-label':`Freischaltung von ${item.name} entfernen`,onclick:()=>{const result=removeMseCardUnlockV19(owner,item);if(result.ok)MSE_CARD_DIALOG_V15.close()}}));
   side.append(actions);
   MSE_CARD_DIALOG_V15.replaceChildren(el('div',{class:'mse-card-shell-v15'},[createMseCardV15(item),side]));
   MSE_CARD_DIALOG_V15.showModal();
@@ -137,6 +138,34 @@ function syncAllMseCompletionRewardsV15(data=state){
   return{changed,added,removed};
 }
 
+function mseRootCharacterForRemovalV19(owner,data=state){
+  for(const character of data?.characters||[])if(character===owner||character.id===owner?.id||(character.auxiliaryTabs||[]).some(entry=>entry===owner||entry.id===owner?.id))return character;
+  return Array.isArray(owner?.auxiliaryTabs)?owner:null;
+}
+
+function removeMseCardUnlockV19(owner,catalogOrId,options={}){
+  const catalog=typeof catalogOrId==='string'?MSE_BY_ID_V15.get(catalogOrId):catalogOrId;
+  if(!owner||!catalog||catalog.isCompletionReward)return{ok:false,reason:'not-removable',removedItems:0,removedTabs:0};
+  const unlocked=mseUnlockedCardIdsV17(owner);
+  if(!unlocked.includes(catalog.id))return{ok:false,reason:'not-unlocked',removedItems:0,removedTabs:0};
+  const character=mseRootCharacterForRemovalV19(owner),items=(owner.equipment||[]).filter(item=>item.catalogId===catalog.id),linkedTabs=(character?.auxiliaryTabs||[]).filter(entry=>entry.mseAutoCreated&&entry.sourceMseItemV16?.catalogId===catalog.id),removedItems=items.length;
+  if(options.confirm!==false){
+    const consequences=[`${removedItems||'Keine'} Inventarposition${removedItems===1?'':'en'}`];
+    if(linkedTabs.length)consequences.push(`${linkedTabs.length} automatisch angelegte${linkedTabs.length===1?'r':'e'} Begleiter-/Reittier-Reiter`);
+    if(!confirm(`Set-Gegenstandskarte „${catalog.name}“ wirklich vollständig entfernen?\n\n${consequences.join(' und ')} werden entfernt. Die Karte wird wieder verborgen und kann nur mit ihrem Code erneut freigeschaltet werden.`))return{ok:false,reason:'cancelled',removedItems:0,removedTabs:0};
+  }
+  owner.equipment=(owner.equipment||[]).filter(item=>item.catalogId!==catalog.id);
+  owner.mseUnlockedCardIdsV17=unlocked.filter(id=>id!==catalog.id);
+  let removedTabs=0,removedActiveTab=false;
+  if(character){
+    const stillOwned=[character,...(character.auxiliaryTabs||[])].some(entry=>(entry.equipment||[]).some(item=>item.catalogId===catalog.id&&(+item.quantity||0)>0));
+    if(!stillOwned&&linkedTabs.length){const ids=new Set(linkedTabs.map(entry=>entry.id));removedTabs=ids.size;removedActiveTab=ids.has(activeAuxId);character.auxiliaryTabs=(character.auxiliaryTabs||[]).filter(entry=>!ids.has(entry.id))}
+  }
+  const ui=msePickerStateV15(owner);ui.open=true;ui.message='Die Set-Gegenstandskarte wurde vollständig entfernt und ist wieder verborgen.';
+  if(options.persist!==false){if(removedActiveTab)activeAuxId=character?.auxiliaryTabs?.[0]?.id||null;saveOwnerV173(owner,false);renderAll()}
+  return{ok:true,reason:'removed',item:catalog,removedItems,removedTabs};
+}
+
 function renderMseCatalogItemV15(owner,item){
   const source=item.sourceRecord||{},article=el('article',{class:'mse-result-v15'+(item.isCompletionReward?' completion-locked':'')}),chips=el('div',{class:'mse-picker-meta-v15'}),details=el('details'),detailBody=el('div'),thumb=el('button',{type:'button',class:'mse-thumb-button-v15','aria-label':`Set-Gegenstandskarte ${item.name} anzeigen`,onclick:()=>showMseCardV15(item,owner)},[el('img',{src:mseArtUrlV15(item),alt:'',loading:'lazy',decoding:'async'})]),heading=el('div',{class:'mse-result-heading-v15'});
   chips.append(el('span',{class:'mse-chip-v15',text:`Set ${source.setNumber??'—'} · Nr. ${source.cardNumber||'—'}`}),el('span',{class:'mse-chip-v15',text:MSE_ASSET_LABELS_V15[item.assetKind]||item.assetKind}),el('span',{class:'mse-chip-v15',text:source.rarity||'ohne Seltenheit'}));
@@ -150,7 +179,7 @@ function renderMseCatalogItemV15(owner,item){
   details.append(detailBody);
   const actions=el('div',{class:'mse-result-actions-v15'},[el('button',{type:'button',text:'Set-Gegenstandskarte anzeigen',onclick:()=>showMseCardV15(item,owner)})]);
   if(item.isCompletionReward)actions.append(renderMseCompletionProgressV15(owner,item),el('button',{type:'button',disabled:true,text:'Automatische Vergabe'}));
-  else actions.append(el('button',{class:'primary',type:'button',text:'Weiteres Exemplar hinzufügen',onclick:()=>addMseItemV15(owner,item)}));
+  else actions.append(el('button',{class:'primary',type:'button',text:'Weiteres Exemplar hinzufügen',onclick:()=>addMseItemV15(owner,item)}),el('button',{class:'danger mse-remove-unlock-v19',type:'button',text:'Set-Gegenstandskarte entfernen','aria-label':`Freischaltung von ${item.name} entfernen`,onclick:()=>removeMseCardUnlockV19(owner,item)}));
   article.append(heading,details,actions);
   return article;
 }
@@ -467,6 +496,8 @@ runTests=function(){
   const result=unlockMseCardV17(lockedOwner,'0200');eq('Gültiger Code schaltet Karte frei',true,result.ok&&mseCardIsUnlockedV17(lockedOwner,sun));eq('Freigeschaltete Karte landet im Inventar',1,lockedOwner.equipment.filter(item=>item.catalogId===sun.id).length);eq('Wiederholter Code erzeugt kein Duplikat','already',unlockMseCardV17(lockedOwner,'0200').reason);eq('Wiederholter Code lässt genau ein Exemplar bestehen',1,lockedOwner.equipment.filter(item=>item.catalogId===sun.id).length);
   const bonusOwner=newCharacter(),bonus=unlockMseCardV17(bonusOwner,sixPiece.sourceRecord.cardNumber);eq('Normale Sechs-Teile-Bonuskarte bleibt per Code freischaltbar',true,bonus.ok&&bonusOwner.equipment.some(item=>item.catalogId===sixPiece.id));
   const backup=JSON.parse(JSON.stringify({characters:[lockedOwner],migrationLog:[]}));migrateMseCardCodesV17(backup,false);eq('Backup und Import erhalten Freischaltungen',sun.id,backup.characters[0].mseUnlockedCardIdsV17[0]);
+  const removableOwner=newCharacter(),removable=unlockMseCardV17(removableOwner,'0200'),removed=removeMseCardUnlockV19(removableOwner,sun,{confirm:false,persist:false});eq('Freischaltung lässt sich vollständig entfernen',true,removable.ok&&removed.ok&&!mseCardIsUnlockedV17(removableOwner,sun)&&!removableOwner.equipment.some(item=>item.catalogId===sun.id));eq('Entfernte Karte ist wieder vollständig verborgen',0,renderMseCatalogPickerV15(removableOwner).querySelectorAll('.mse-result-v15').length);eq('Entfernte Karte kann mit Code erneut freigeschaltet werden',true,unlockMseCardV17(removableOwner,'0200').ok);
+  const removableHorseOwner=newCharacter();unlockMseCardV17(removableHorseOwner,'0278');const removedHorse=removeMseCardUnlockV19(removableHorseOwner,'mse_item_0278',{confirm:false,persist:false});eq('Entfernen einer Begleiterkarte löscht den automatisch angelegten Reiter',true,removedHorse.ok&&removedHorse.removedTabs===1&&!removableHorseOwner.auxiliaryTabs.some(tab=>tab.sourceMseItemV16?.catalogId==='mse_item_0278'));
   const body=testResults.querySelector('tbody');for(const[name,expected,actual,ok]of tests)body?.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return baseOk&&tests.every(test=>test[3]);
 };
 
@@ -475,7 +506,7 @@ const cardCodeMigrationChangedV17=migrateMseCardCodesV17(state,true);
 const initialCompletionSyncV15=syncAllMseCompletionRewardsV15();
 if(!state.mseCompletionV152Migrated){state.mseCompletionV152Migrated=true;state.migrationLog=Array.isArray(state.migrationLog)?state.migrationLog:[];state.migrationLog.push({at:new Date().toISOString(),changes:['Echte Vollendungskarten der Set-Gegenstandskarten auf automatische Vergabe nach gedruckter Set-Schwelle umgestellt']});save()}else if(initialCompletionSyncV15.changed)save();
 if(cardCodeMigrationChangedV17)save();
-document.querySelector('.brand small').textContent='v1.7.21-r8';
-Object.assign(window.Eberos,{completionProgressV15:mseCompletionProgressV15,syncCompletionRewardsV15:syncMseCompletionRewardsV15,validateMseCatalogV15,unlockMseCardV17,cardIsUnlockedV17:mseCardIsUnlockedV17,runTests:()=>runTests()});
+document.querySelector('.brand small').textContent='v1.7.21-r9';
+Object.assign(window.Eberos,{completionProgressV15:mseCompletionProgressV15,syncCompletionRewardsV15:syncMseCompletionRewardsV15,validateMseCatalogV15,unlockMseCardV17,removeCardUnlockV19:removeMseCardUnlockV19,cardIsUnlockedV17:mseCardIsUnlockedV17,runTests:()=>runTests()});
 renderAll();
 }

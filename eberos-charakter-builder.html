@@ -87,7 +87,7 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 @media(max-width:700px){.print-options-grid,.print-checks,.print-tab-list{grid-template-columns:1fr}}
 @media print{@page{size:A4 portrait;margin:9mm}body.print-document-ready{background:#fff!important}body.print-document-ready>:not(#printDocument){display:none!important}body.print-document-ready #printDocument{display:block!important}.print-document{display:block!important}.print-document[data-orientation="landscape"]{font-size:8pt}.print-document[data-orientation="landscape"] .print-card-grid{gap:3mm}.print-footer{display:block;position:fixed;bottom:-5mm;left:0;right:0;text-align:center;font-size:7pt;color:#666}.print-footer .page-number::after{content:counter(page)}.print-document-header,.print-owner-header{break-after:avoid}.print-document[data-colors="color"] .print-card .card-head{background:var(--header-bg)!important;color:var(--header-text)!important}.print-document[data-colors="color"] .print-card th,.print-document[data-colors="color"] .print-skills-table th{background:var(--panel-alt)!important}.print-document[data-format="compact"] .print-owner-section+.print-owner-section{break-before:auto}}
 </style>
-<link rel="stylesheet" href="./assets/fonts/fonts.css?v=1.7.21-r8.1">
+<link rel="stylesheet" href="./assets/fonts/fonts.css?v=1.7.21-r9.1">
 </head>
 <body><div class="app" id="app">
 <div id="updateBanner" class="update-banner hidden no-print" role="status"><strong>Eine neue Version ist verfügbar.</strong><button id="applyUpdateBtn">Jetzt aktualisieren</button></div>
@@ -104,8 +104,8 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 <dialog id="auxDialog"><div class="dialog-head"><h2>Neuen Reiter anlegen</h2><button data-close>✕</button></div><label>Art<select id="auxType"><option value="npc">NPC</option><option value="familiar">Vertrauter</option><option value="possession">Besitz</option></select></label><label>Name<input id="auxName" placeholder="Name des Reiters"></label><button id="createAuxTab" class="primary">Reiter anlegen</button></dialog>
 <dialog id="adventureCbpDialog"><div class="dialog-head"><h2>Abenteuer-CBP gutschreiben</h2><button data-close>✕</button></div><p class="notice">Die Gutschrift erhöht dauerhaft das verfügbare Gesamtbudget und bleibt mit Datum und Anlass nachvollziehbar.</p><div class="settings-grid"><label>Erhaltene CBP<input id="adventureCbpAmount" type="number" min="1" max="999" value="1"></label><label>Anlass<input id="adventureCbpLabel" placeholder="z. B. Die Nebelburg"></label></div><button id="grantAdventureCbp" class="primary">CBP gutschreiben</button><h3>Bisherige Gutschriften</h3><div id="adventureCbpList"></div></dialog>
 <button id="testsBtn" type="button" hidden aria-hidden="true" tabindex="-1"></button>
-<script src="./data/eberos-items-anfaenger-v1.3.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-magie-wunder-flueche-v1.3.js?v=1.7.21-r8.1"></script>
+<script src="./data/eberos-items-anfaenger-v1.3.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-magie-wunder-flueche-v1.3.js?v=1.7.21-r9.1"></script>
 <script>
 'use strict';
 /* 1. Konstanten und Seed-Daten */
@@ -2146,28 +2146,28 @@ installBtn.addEventListener('click',async()=>{if(installPrompt){installPrompt.pr
 window.addEventListener('appinstalled',()=>installBtn.classList.add('hidden'));
 if('serviceWorker' in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',async()=>{try{const registration=await navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'});let refreshing=false;const showUpdate=worker=>{if(!worker)return;updateBanner.classList.remove('hidden');applyUpdateBtn.onclick=()=>{applyUpdateBtn.disabled=true;applyUpdateBtn.textContent='Aktualisierung läuft…';worker.postMessage({type:'SKIP_WAITING'})}};if(registration.waiting)showUpdate(registration.waiting);registration.addEventListener('updatefound',()=>{const worker=registration.installing;worker?.addEventListener('statechange',()=>{if(worker.state==='installed'&&navigator.serviceWorker.controller)showUpdate(worker)})});navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload()});await registration.update()}catch(e){showError('Offline-Modus konnte nicht aktiviert werden: '+e.message)}});
 </script>
-<script src="./data/eberos-v1.7.6.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-kampftechniken-v1.0.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-effekte-v1.7.7.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.7.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-kampftechniken-v1.1.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.8.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.8-r4.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.9.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.10.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.11.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.12.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.13.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.14.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.15.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.16.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.17.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.18.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.19.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.20.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.21.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-synergien-v1.7.21-r2.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-v1.7.21-r2.5.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-items-mse-v15.js?v=1.7.21-r8.1"></script>
-<script src="./data/eberos-items-mse-v15-runtime-r8.js?v=1.7.21-r8.1"></script>
+<script src="./data/eberos-v1.7.6.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-kampftechniken-v1.0.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-effekte-v1.7.7.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.7.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-kampftechniken-v1.1.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.8.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.8-r4.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.9.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.10.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.11.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.12.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.13.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.14.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.15.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.16.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.17.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.18.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.19.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.20.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.21.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-synergien-v1.7.21-r2.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-v1.7.21-r2.5.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-items-mse-v15.js?v=1.7.21-r9.1"></script>
+<script src="./data/eberos-items-mse-v15-runtime-r9.js?v=1.7.21-r9.1"></script>
 </body></html>
