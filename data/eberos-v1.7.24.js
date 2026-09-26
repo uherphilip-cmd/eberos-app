@@ -53,10 +53,31 @@ const skillLoreStyleV1724=el('style',{text:`
 .skills-v1724{border-collapse:separate;border-spacing:0}.skills-v1724 thead th{z-index:2;white-space:nowrap}.skills-v1724 tbody tr{transition:background-color .15s ease}.skills-v1724 tbody tr:hover{background:color-mix(in srgb,var(--accent) 8%,transparent)}
 .skills-v1724:not(.skill-manual-v1724) th:nth-child(2),.skills-v1724:not(.skill-manual-v1724) td:nth-child(2){display:none}.skills-v1724.skills-grouped-v1724 tr.skill-category-start-v1724 td{border-top:3px solid color-mix(in srgb,var(--accent) 60%,var(--border))}.skills-v1724 tr.skill-learned-v1724 .skill-name-r13>strong{color:var(--accent)}
 .skill-lore-badge-v1724{display:inline-flex;align-items:center;margin-top:.3rem;padding:.12rem .38rem;border:1px solid color-mix(in srgb,var(--accent-2) 70%,var(--border));border-radius:999px;background:color-mix(in srgb,var(--accent-2) 13%,var(--panel-alt));font-size:.7rem;font-weight:700;letter-spacing:.03em;color:var(--text)}
-.rule-info-r5{width:min(760px,calc(100vw - 24px));max-height:min(82vh,820px);overflow:auto;overscroll-behavior:contain}.skill-lore-v1724{margin-top:.8rem;padding-top:.65rem;border-top:2px solid color-mix(in srgb,var(--accent-2) 65%,var(--border))}.skill-lore-v1724>h4{margin:.1rem 0 .25rem}.skill-lore-meta-v1724{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap;margin:.2rem 0 .45rem}.skill-lore-meta-v1724 progress{width:min(16rem,100%);height:.8rem;accent-color:var(--accent)}.skill-lore-section-v1724{margin:.5rem 0;border:1px solid var(--border);border-radius:8px;background:var(--panel-bg)}.skill-lore-section-v1724>summary{cursor:pointer;padding:.5rem .65rem;font-weight:700;color:var(--accent)}.skill-lore-body-v1724{padding:.05rem .7rem .7rem}.skill-lore-body-v1724 h5{margin:.85rem 0 .2rem;font-size:1rem}.skill-lore-body-v1724 h6{margin:.7rem 0 .15rem;font-size:.92rem}.skill-lore-body-v1724 p{margin:.25rem 0 .55rem;line-height:1.5}.skill-lore-list-v1724{padding-left:1.1rem;position:relative}.skill-lore-list-v1724::before{content:'•';position:absolute;left:.15rem;color:var(--accent)}.skill-lore-table-wrap-v1724{overflow:auto;margin:.55rem 0}.skill-lore-table-v1724{font-size:.86rem;min-width:34rem}.skill-lore-table-v1724 th,.skill-lore-table-v1724 td{position:static;padding:.4rem;border:1px solid var(--border)}.skill-lore-next-v1724{font-size:.82rem;color:var(--muted)}
+.rule-info-r5{width:min(760px,calc(100vw - 24px));max-height:min(82vh,820px);overflow:auto;overscroll-behavior:contain;pointer-events:auto}.skill-lore-v1724{margin-top:.8rem;padding-top:.65rem;border-top:2px solid color-mix(in srgb,var(--accent-2) 65%,var(--border))}.skill-lore-v1724>h4{margin:.1rem 0 .25rem}.skill-lore-meta-v1724{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap;margin:.2rem 0 .45rem}.skill-lore-meta-v1724 progress{width:min(16rem,100%);height:.8rem;accent-color:var(--accent)}.skill-lore-section-v1724{margin:.5rem 0;border:1px solid var(--border);border-radius:8px;background:var(--panel-bg)}.skill-lore-section-v1724>summary{cursor:pointer;padding:.5rem .65rem;font-weight:700;color:var(--accent)}.skill-lore-body-v1724{padding:.05rem .7rem .7rem}.skill-lore-body-v1724 h5{margin:.85rem 0 .2rem;font-size:1rem}.skill-lore-body-v1724 h6{margin:.7rem 0 .15rem;font-size:.92rem}.skill-lore-body-v1724 p{margin:.25rem 0 .55rem;line-height:1.5}.skill-lore-list-v1724{padding-left:1.1rem;position:relative}.skill-lore-list-v1724::before{content:'•';position:absolute;left:.15rem;color:var(--accent)}.skill-lore-table-wrap-v1724{overflow:auto;margin:.55rem 0}.skill-lore-table-v1724{font-size:.86rem;min-width:34rem}.skill-lore-table-v1724 th,.skill-lore-table-v1724 td{position:static;padding:.4rem;border:1px solid var(--border)}.skill-lore-next-v1724{font-size:.82rem;color:var(--muted)}
 @media(max-width:720px){.rule-info-r5{max-height:84vh}.skills-v1724 th:nth-child(4),.skills-v1724 td:nth-child(4){display:none}.skill-lore-section-v1724>summary{padding:.55rem}.skill-lore-body-v1724{padding:.05rem .55rem .6rem}}
 @media print{.skill-lore-badge-v1724{display:none}.skills-v1724 th:nth-child(2),.skills-v1724 td:nth-child(2){display:none!important}}
 `});document.head.append(skillLoreStyleV1724);
+
+const hideRuleInfoBeforeV1724=hideRuleInfoR5;
+let infoHideDelayV1724=0;
+function cancelRuleInfoHideV1724(){clearTimeout(infoHideDelayV1724);infoHideDelayV1724=0}
+function hideRuleInfoNowV1724(){cancelRuleInfoHideV1724();hideRuleInfoBeforeV1724()}
+hideRuleInfoR5=function(){
+  clearTimeout(infoDelayR5);infoDelayR5=0;
+  cancelRuleInfoHideV1724();
+  const currentBox=document.getElementById('ruleInfoR5');
+  if(!currentBox||currentBox.hidden){infoAnchorR5=null;return}
+  infoHideDelayV1724=setTimeout(()=>{
+    const box=document.getElementById('ruleInfoR5');
+    if(infoAnchorR5?.matches?.(':hover')||box?.matches?.(':hover'))return;
+    hideRuleInfoBeforeV1724();
+  },350);
+};
+const interactiveRuleInfoV1724=rulePopoverR5();
+interactiveRuleInfoV1724.addEventListener('mouseenter',cancelRuleInfoHideV1724);
+interactiveRuleInfoV1724.addEventListener('mouseleave',()=>hideRuleInfoR5());
+document.addEventListener('keydown',event=>{if(event.key==='Escape')hideRuleInfoNowV1724()},true);
+document.addEventListener('pointerdown',event=>{if(!event.target.closest?.('#ruleInfoR5')&&!infoAnchorR5?.contains?.(event.target))hideRuleInfoNowV1724()},true);
 
 function ownerByIdV1724(id){
   if(!id)return ch();
@@ -99,7 +120,7 @@ function skillLoreContentV1724(skill,owner=infoOwnerV1724()){
 const skillInfoContentBeforeV1724=skillInfoContentR5;
 skillInfoContentR5=function(skill){const content=skillInfoContentBeforeV1724(skill),lore=skillLoreContentV1724(skill);if(lore)content.append(lore);return content};
 const showRuleInfoBeforeV1724=showRuleInfoR5;
-showRuleInfoR5=function(anchor,title,build){infoAnchorR5=anchor;return showRuleInfoBeforeV1724(anchor,title,build)};
+showRuleInfoR5=function(anchor,title,build){cancelRuleInfoHideV1724();infoAnchorR5=anchor;return showRuleInfoBeforeV1724(anchor,title,build)};
 
 function decorateSkillBoxV1724(box,owner){
   const table=box.querySelector('.skills-r5'),body=table?.tBodies?.[0],sort=box.querySelector('[aria-label="Fähigkeiten sortieren"]');if(!table||!body)return box;
@@ -142,5 +163,5 @@ runTests=function(){
 };
 
 document.querySelector('.brand small').textContent='v1.7.24';
-Object.assign(window.Eberos,{version:'1.7.24',revision:'r1',schemaVersion:SCHEMA_VERSION,rulesVersion:RULES_VERSION,skillLoreVersion:'1.7.24',skillLore:()=>SKILL_LORE_V1724,skillLoreContent:skillLoreContentV1724,orderSkills:orderedSkillsForViewR11,runTests:()=>runTests()});
+Object.assign(window.Eberos,{version:'1.7.24',revision:'r2',schemaVersion:SCHEMA_VERSION,rulesVersion:RULES_VERSION,skillLoreVersion:'1.7.24',skillLore:()=>SKILL_LORE_V1724,skillLoreContent:skillLoreContentV1724,orderSkills:orderedSkillsForViewR11,runTests:()=>runTests()});
 renderAll();save();

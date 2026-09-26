@@ -12,6 +12,7 @@
 
 - Sechs Fähigkeiten besitzen geprüfte Lore: Okkultismus & Arkane Kunde, Geographie & Kulturen, Historie & Ruinenkunde, Heraldik & Geschichte, Religion & Theologie sowie Monsterkunde & Jägerwissen.
 - Die Lore erscheint im vorhandenen Schwebe- und Klick-Infofenster.
+- Die Maus kann vom Fähigkeitseintrag in die Infobox wechseln; die Box bleibt zum Scrollen und Aufklappen geöffnet.
 - Zusammenhängende Textabschnitte werden kumulativ nach der gekauften Fähigkeitsstufe freigeschaltet.
 - Jede Stufe von 1 bis 10 ergänzt neuen Loretext; Stufe 10 zeigt den vollständigen inhaltlichen Loretext.
 - Lorefähigkeiten sind in der Liste sichtbar markiert.
