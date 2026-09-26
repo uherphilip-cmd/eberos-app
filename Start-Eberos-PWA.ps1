@@ -51,5 +51,5 @@ if (-not $ready) {
 }
 
 Start-Process $url
-Write-Host 'Eberos v1.7.21 wurde im Browser geöffnet.' -ForegroundColor Green
+Write-Host 'Eberos v1.7.24 wurde im Browser geöffnet.' -ForegroundColor Green
 Write-Host 'Dort im Browsermenü "App installieren" auswählen.'

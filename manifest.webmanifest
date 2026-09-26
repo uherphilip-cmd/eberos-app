@@ -1,8 +1,8 @@
 {
   "id": "./eberos-charakter-builder.html",
-  "name": "Eberos Charakter-Builder v1.7.21-r11",
-  "short_name": "Eberos 1.7.21-r11",
-  "description": "Eberos Charakter-Builder mit wirkungsbasierten Preisen; Seltenheitsangaben sind reine Kartenoptik.",
+  "name": "Eberos Charakter-Builder v1.7.24",
+  "short_name": "Eberos 1.7.24",
+  "description": "Eberos Charakter-Builder mit Fähigkeiten nach Art, erweiterten Sortierarten und stufenweise freigeschalteter kanonischer Lore.",
   "lang": "de",
   "start_url": "./eberos-charakter-builder.html",
   "scope": "./",
