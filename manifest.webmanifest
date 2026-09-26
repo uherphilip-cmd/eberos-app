@@ -1,8 +1,8 @@
 {
   "id": "./eberos-charakter-builder.html",
-  "name": "Eberos Charakter-Builder v1.7.21",
-  "short_name": "Eberos 1.7.21",
-  "description": "Eberos Charakter-Builder mit 1-A-Kampfrunden und neu balancierten Kampftechniken.",
+  "name": "Eberos Charakter-Builder v1.7.21-r2",
+  "short_name": "Eberos 1.7.21-r2",
+  "description": "Eberos Charakter-Builder mit vollständigem freigegebenem Synergiekatalog, Schulpool und Hybridtechniken.",
   "lang": "de",
   "start_url": "./eberos-charakter-builder.html",
   "scope": "./",

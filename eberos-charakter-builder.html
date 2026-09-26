@@ -87,7 +87,7 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 @media(max-width:700px){.print-options-grid,.print-checks,.print-tab-list{grid-template-columns:1fr}}
 @media print{@page{size:A4 portrait;margin:9mm}body.print-document-ready{background:#fff!important}body.print-document-ready>:not(#printDocument){display:none!important}body.print-document-ready #printDocument{display:block!important}.print-document{display:block!important}.print-document[data-orientation="landscape"]{font-size:8pt}.print-document[data-orientation="landscape"] .print-card-grid{gap:3mm}.print-footer{display:block;position:fixed;bottom:-5mm;left:0;right:0;text-align:center;font-size:7pt;color:#666}.print-footer .page-number::after{content:counter(page)}.print-document-header,.print-owner-header{break-after:avoid}.print-document[data-colors="color"] .print-card .card-head{background:var(--header-bg)!important;color:var(--header-text)!important}.print-document[data-colors="color"] .print-card th,.print-document[data-colors="color"] .print-skills-table th{background:var(--panel-alt)!important}.print-document[data-format="compact"] .print-owner-section+.print-owner-section{break-before:auto}}
 </style>
-<link rel="stylesheet" href="./assets/fonts/fonts.css?v=1.7.21-r1">
+<link rel="stylesheet" href="./assets/fonts/fonts.css?v=1.7.21-r2">
 </head>
 <body><div class="app" id="app">
 <div id="updateBanner" class="update-banner hidden no-print" role="status"><strong>Eine neue Version ist verfügbar.</strong><button id="applyUpdateBtn">Jetzt aktualisieren</button></div>
@@ -104,12 +104,12 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 <dialog id="auxDialog"><div class="dialog-head"><h2>Neuen Reiter anlegen</h2><button data-close>✕</button></div><label>Art<select id="auxType"><option value="npc">NPC</option><option value="familiar">Vertrauter</option><option value="possession">Besitz</option></select></label><label>Name<input id="auxName" placeholder="Name des Reiters"></label><button id="createAuxTab" class="primary">Reiter anlegen</button></dialog>
 <dialog id="adventureCbpDialog"><div class="dialog-head"><h2>Abenteuer-CBP gutschreiben</h2><button data-close>✕</button></div><p class="notice">Die Gutschrift erhöht dauerhaft das verfügbare Gesamtbudget und bleibt mit Datum und Anlass nachvollziehbar.</p><div class="settings-grid"><label>Erhaltene CBP<input id="adventureCbpAmount" type="number" min="1" max="999" value="1"></label><label>Anlass<input id="adventureCbpLabel" placeholder="z. B. Die Nebelburg"></label></div><button id="grantAdventureCbp" class="primary">CBP gutschreiben</button><h3>Bisherige Gutschriften</h3><div id="adventureCbpList"></div></dialog>
 <button id="testsBtn" type="button" hidden aria-hidden="true" tabindex="-1"></button>
-<script src="./data/eberos-items-anfaenger-v1.3.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-magie-wunder-flueche-v1.3.js?v=1.7.21-r1"></script>
+<script src="./data/eberos-items-anfaenger-v1.3.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-magie-wunder-flueche-v1.3.js?v=1.7.21-r2"></script>
 <script>
 'use strict';
 /* 1. Konstanten und Seed-Daten */
-const APP_VERSION='1.7.21',SCHEMA_VERSION=26,RULES_VERSION=12,STORE='eberos.builder.v1';
+const APP_VERSION='1.7.21',SCHEMA_VERSION=27,RULES_VERSION=13,STORE='eberos.builder.v1';
 try{const rawV1717=localStorage.getItem(STORE);if(rawV1717){const parsedV1717=JSON.parse(rawV1717);if(!parsedV1717?.v1717RuneMagicMigrationDone)localStorage.setItem(STORE+'.backup.pre-v1717.'+Date.now(),rawV1717)}}catch{}
 try{const rawV1716=localStorage.getItem(STORE);if(rawV1716){const parsedV1716=JSON.parse(rawV1716);if(!parsedV1716?.v1716MagicSchoolsMigrationDone)localStorage.setItem(STORE+'.backup.pre-v1716.'+Date.now(),rawV1716)}}catch{}
 try{const rawV1715=localStorage.getItem(STORE);if(rawV1715){const parsedV1715=JSON.parse(rawV1715);if(!parsedV1715?.v1715AttributeBalanceMigrationDone)localStorage.setItem(STORE+'.backup.pre-v1715.'+Date.now(),rawV1715)}}catch{}
@@ -265,7 +265,7 @@ function skillCost(level){return bandCost(0,Math.max(0,Math.min(25,+level||0)),H
 function skillNextLevelCost(level){const next=Math.max(1,Math.min(25,(+level||0)+1));return HANDBOOK_SKILL_BANDS.find(x=>next>=x[0]&&next<=x[1])?.[2]||0}
 function validRuleShapeV1718(value){return value&&typeof value==='object'&&!Array.isArray(value)&&Array.isArray(value.attributeBands)&&Array.isArray(value.counterBands)&&JSON.stringify(value.skillBands)===JSON.stringify(HANDBOOK_SKILL_BANDS)}
 function validStoredRules(value){return validRuleShapeV1718(value)&&+value.rulesVersion===RULES_VERSION&&+value.derivedValues?.runningMultiplier===OFFICIAL_RUNNING_MULTIPLIER&&JSON.stringify(value.combat)===JSON.stringify(DEFAULT_RULES.combat)}
-function migrateRulesV1718(value){if(!validRuleShapeV1718(value))return null;const from=+value.rulesVersion;if(![10,11,RULES_VERSION].includes(from))return null;if(from!==10&&+value.derivedValues?.runningMultiplier!==OFFICIAL_RUNNING_MULTIPLIER)return null;if(from===RULES_VERSION&&JSON.stringify(value.combat)!==JSON.stringify(DEFAULT_RULES.combat))return null;const migrated=structuredClone(value);migrated.rulesVersion=RULES_VERSION;migrated.skillBands=structuredClone(HANDBOOK_SKILL_BANDS);migrated.derivedValues={...(migrated.derivedValues&&typeof migrated.derivedValues==='object'&&!Array.isArray(migrated.derivedValues)?migrated.derivedValues:{}),runningMultiplier:OFFICIAL_RUNNING_MULTIPLIER};migrated.combat=structuredClone(DEFAULT_RULES.combat);return migrated}
+function migrateRulesV1718(value){if(!validRuleShapeV1718(value))return null;const from=+value.rulesVersion;if(![10,11,12,RULES_VERSION].includes(from))return null;if(from!==10&&+value.derivedValues?.runningMultiplier!==OFFICIAL_RUNNING_MULTIPLIER)return null;if(from===RULES_VERSION&&JSON.stringify(value.combat)!==JSON.stringify(DEFAULT_RULES.combat))return null;const migrated=structuredClone(value);migrated.rulesVersion=RULES_VERSION;migrated.skillBands=structuredClone(HANDBOOK_SKILL_BANDS);migrated.derivedValues={...(migrated.derivedValues&&typeof migrated.derivedValues==='object'&&!Array.isArray(migrated.derivedValues)?migrated.derivedValues:{}),runningMultiplier:OFFICIAL_RUNNING_MULTIPLIER};migrated.combat=structuredClone(DEFAULT_RULES.combat);return migrated}
 /* 3. State-Verwaltung */
 const uid=()=>crypto.randomUUID?crypto.randomUUID():'id_'+Date.now()+'_'+Math.random().toString(36).slice(2);
 function cardObject(type,order=0,width=12){return{id:uid(),type,title:CARD_TYPES[type]||type,order,width,printWidth:12,print:true,collapsed:false,breakBefore:false,breakAfter:false,description:'',data:{}}}
@@ -2146,24 +2146,26 @@ installBtn.addEventListener('click',async()=>{if(installPrompt){installPrompt.pr
 window.addEventListener('appinstalled',()=>installBtn.classList.add('hidden'));
 if('serviceWorker' in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',async()=>{try{const registration=await navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'});let refreshing=false;const showUpdate=worker=>{if(!worker)return;updateBanner.classList.remove('hidden');applyUpdateBtn.onclick=()=>{applyUpdateBtn.disabled=true;applyUpdateBtn.textContent='Aktualisierung läuft…';worker.postMessage({type:'SKIP_WAITING'})}};if(registration.waiting)showUpdate(registration.waiting);registration.addEventListener('updatefound',()=>{const worker=registration.installing;worker?.addEventListener('statechange',()=>{if(worker.state==='installed'&&navigator.serviceWorker.controller)showUpdate(worker)})});navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload()});await registration.update()}catch(e){showError('Offline-Modus konnte nicht aktiviert werden: '+e.message)}});
 </script>
-<script src="./data/eberos-v1.7.6.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-kampftechniken-v1.0.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-effekte-v1.7.7.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.7.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-kampftechniken-v1.1.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.8.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.8-r4.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.9.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.10.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.11.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.12.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.13.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.14.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.15.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.16.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.17.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.18.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.19.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.20.js?v=1.7.21-r1"></script>
-<script src="./data/eberos-v1.7.21.js?v=1.7.21-r1"></script>
+<script src="./data/eberos-v1.7.6.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-kampftechniken-v1.0.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-effekte-v1.7.7.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.7.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-kampftechniken-v1.1.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.8.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.8-r4.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.9.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.10.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.11.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.12.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.13.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.14.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.15.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.16.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.17.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.18.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.19.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.20.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.21.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-synergien-v1.7.21-r2.js?v=1.7.21-r2"></script>
+<script src="./data/eberos-v1.7.21-r2.js?v=1.7.21-r2"></script>
 </body></html>
