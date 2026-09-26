@@ -1,8 +1,8 @@
 {
   "id": "./eberos-charakter-builder.html",
-  "name": "Eberos Charakter-Builder v1.7.21-r7",
-  "short_name": "Eberos 1.7.21-r7",
-  "description": "Eberos Charakter-Builder mit codegeschützten Itemkarten, automatischen Vollendungskarten und stabiler Inventarbedienung.",
+  "name": "Eberos Charakter-Builder v1.7.21-r8",
+  "short_name": "Eberos 1.7.21-r8",
+  "description": "Eberos Charakter-Builder mit codegeschützten Set-Gegenstandskarten, automatischen Vollendungskarten und stabiler Inventarbedienung.",
   "lang": "de",
   "start_url": "./eberos-charakter-builder.html",
   "scope": "./",
