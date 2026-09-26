@@ -6,6 +6,8 @@
 
 **Katalog:** `SYNERGIEN_RELEASEKATALOG_V1.0.json`, Version 1.0.0
 
+**Veröffentlichungsstand:** veröffentlicht und öffentlich geprüft
+
 ## Ergebnis
 
 Die vollständige Synergieintegration für Update 1.7.21 ist technisch und inhaltlich freigabefähig.
@@ -58,4 +60,8 @@ Die geprüfte Schwellenverteilung lautet: 91 × 5/5, 55 × 10/10, 49 × 15/15, 5
 
 Der Releasekatalog 1.0.0 hat keine offenen redaktionellen Prüfpunkte. Die 14 Revisionen und die acht Runen-Hybride wurden gemäß der Freigaberichtlinie angenommen. Für vorbereitete Runenbindungen wird die sichtbare manuelle Voraussetzung verwendet.
 
-Die lokale Freigabefassung erfüllt damit die vorgesehenen Inhalts-, Builder-, Migrations-, Mobil-, Offline- und Regressionstests.
+Die veröffentlichte Freigabefassung erfüllt damit die vorgesehenen Inhalts-, Builder-, Migrations-, Mobil-, Offline- und Regressionstests.
+
+## Öffentliche Prüfung
+
+Die öffentliche URL zeigt `1.7.21-r2` und den Umfang **132 Pfade · 263 Schulkräfte · 82 Hybridtechniken**. Der Releasekatalog liefert 345 freigegebene Inhalte. Die r2-Laufzeitdatei und der Service Worker mit dem Cache `eberos-pwa-v1.7.21-r2` sind öffentlich erreichbar; der Offline-Cache führt Katalog und r2-Laufzeit auf.

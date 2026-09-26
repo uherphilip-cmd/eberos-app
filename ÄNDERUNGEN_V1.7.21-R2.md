@@ -13,4 +13,4 @@
 - Vorhandene freie Mehrfachsynergien bleiben getrennt als eigene Synergien erhalten.
 - Schema 27 und Regelstand 13; Migration aus v1.7.21-r1 ohne automatische Lernwahl.
 
-**Status:** lokale Releasefassung, noch nicht veröffentlicht.
+**Status:** veröffentlicht und öffentlich geprüft.

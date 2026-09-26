@@ -2,7 +2,7 @@
 
 **Stand:** 26.09.2026
 
-**Status:** Freigabefassung vollständig und geprüft
+**Status:** veröffentlicht und öffentlich geprüft
 
 ## Umfang
 
@@ -50,4 +50,4 @@ Die Z11-Ausprägung „Fremdes Leben“ enthält die vollständige Finstermal-Re
 - keine Laufzeit- oder Konsolenfehler
 - r1-Regression mit 25 statischen, 26 Browser- und 375 integrierten Prüfungen bestanden
 
-Es bestehen keine offenen technischen oder redaktionellen Freigabehindernisse für Update 1.7.21-r2.
+Es bestehen keine offenen technischen, redaktionellen oder Veröffentlichungsaufgaben für Update 1.7.21-r2. Die öffentliche Fassung ist unter `https://uherphilip-cmd.github.io/eberos-app/eberos-charakter-builder.html?v=1.7.21-r2` erreichbar.
