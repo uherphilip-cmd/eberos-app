@@ -6,6 +6,7 @@ const MSE_DB_V15=window.EBEROS_MSE_ITEM_DB_V15||{meta:{},categories:[],items:[],
 const MSE_ITEMS_V15=Array.isArray(MSE_DB_V15.items)?MSE_DB_V15.items:[];
 const MSE_CATEGORIES_V15=Array.isArray(MSE_DB_V15.categories)?MSE_DB_V15.categories:[];
 const MSE_BY_ID_V15=new Map(MSE_ITEMS_V15.map(item=>[item.id,item]));
+const MSE_BY_CODE_V17=new Map(MSE_ITEMS_V15.map(item=>[item.sourceRecord?.cardNumber,item]));
 const MSE_CATEGORY_LABELS_V15=Object.fromEntries(MSE_CATEGORIES_V15.map(category=>[category.id,category.label]));
 const MSE_PICKER_STATE_V15=window.__EBEROS_MSE_PICKER_STATE_V15||(window.__EBEROS_MSE_PICKER_STATE_V15={});
 const MSE_ASSET_LABELS_V15={weapon:'Waffe',armor:'Rüstung & Kleidung',gear:'Artefakt & Ausrüstung',companion:'Begleiter & Kreatur',vehicle:'Fahrzeug & Transport',property:'Ort & großer Besitz',boon:'Segen, Titel & Zustand'};
@@ -14,6 +15,7 @@ const MSE_COMPLETION_REWARDS_V15=MSE_ITEMS_V15.filter(item=>item.isCompletionRew
 function validateMseCatalogV15(){
   const errors=[],ids=new Set();
   if(MSE_ITEMS_V15.length!==496)errors.push(`496 Einträge erwartet, ${MSE_ITEMS_V15.length} gefunden`);
+  if(MSE_BY_CODE_V17.size!==MSE_ITEMS_V15.length)errors.push('Kartencodes sind nicht vollständig oder nicht eindeutig');
   if(MSE_COMPLETION_REWARDS_V15.length!==18)errors.push(`18 Abschlusskarten erwartet, ${MSE_COMPLETION_REWARDS_V15.length} gefunden`);
   for(const item of MSE_ITEMS_V15){
     if(!item?.id||ids.has(item.id))errors.push(`Doppelte oder leere ID: ${item?.id||'—'}`);
@@ -29,15 +31,22 @@ const MSE_VALIDATION_V15=validateMseCatalogV15();
 if(!MSE_VALIDATION_V15.ok)showError('MSE-Itemkatalog fehlerhaft: '+MSE_VALIDATION_V15.errors.slice(0,8).join(' · '));
 
 document.head.append(el('style',{text:`
-.mse-picker-v15{margin:.75rem 0;border:2px solid var(--accent-2);border-radius:var(--radius);background:var(--panel-alt);overflow:hidden}.mse-picker-v15>summary{cursor:pointer;padding:.75rem;font-family:var(--font-section);font-weight:800}.mse-picker-body-v15{padding:.75rem;border-top:1px solid var(--border)}.mse-picker-filters-v15{display:grid;grid-template-columns:minmax(12rem,2fr) repeat(3,minmax(9rem,1fr));gap:.5rem}.mse-picker-meta-v15{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;margin:.55rem 0}.mse-chip-v15{display:inline-flex;align-items:center;min-height:25px;padding:.12rem .46rem;border:1px solid var(--border);border-radius:999px;background:var(--panel-bg);font-size:.8rem}.mse-chip-v15.adjusted{border-color:var(--accent-2);color:var(--accent)}.mse-chip-v15.not-sale{border-color:var(--muted);color:var(--muted)}.mse-chip-v15.completion{border-color:#b58b22;color:#8b6512;background:#fff4c8}.mse-results-v15{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.65rem;max-height:38rem;overflow:auto;padding:.2rem}.mse-result-v15{display:grid;align-content:start;gap:.45rem;padding:.65rem;border:1px solid var(--border);border-radius:9px;background:var(--panel-bg);min-width:0}.mse-result-v15.completion-locked{border-color:#b58b22}.mse-result-v15 h4{margin:0}.mse-result-v15 p{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}.mse-result-v15 details>summary{cursor:pointer;color:var(--accent)}.mse-result-heading-v15{display:grid;grid-template-columns:74px minmax(0,1fr);gap:.65rem;align-items:start}.mse-thumb-button-v15{display:block;width:74px;aspect-ratio:5/7;padding:0;border:1px solid var(--border);border-radius:7px;overflow:hidden;background:#090b0c}.mse-thumb-button-v15 img{display:block;width:100%;height:100%;object-fit:contain}.mse-result-actions-v15{display:flex;gap:.4rem;align-items:center;justify-content:flex-end;flex-wrap:wrap;margin-top:auto}.mse-completion-progress-v15{display:grid;gap:.2rem;min-width:11rem}.mse-completion-progress-v15 progress{width:100%;accent-color:#b58b22}.equipment-entry.mse-completion-item-v15{border-color:#b58b22;box-shadow:inset 4px 0 #b58b22}.mse-selected-source-v15{margin:.65rem 0 0;border-top:1px solid var(--border)}.mse-selected-source-v15>summary{cursor:pointer;padding:.55rem 0;font-weight:800}.mse-source-grid-v15{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}.mse-source-section-v15{padding:.55rem;border:1px solid var(--border);border-radius:8px;background:var(--panel-bg);white-space:pre-wrap;overflow-wrap:anywhere}.mse-source-section-v15.wide{grid-column:1/-1}.mse-source-section-v15 h5{margin:0 0 .25rem}.mse-catalog-notice-v15{border-left:5px solid var(--accent-2)}
+.mse-picker-v15{margin:.75rem 0;border:2px solid var(--accent-2);border-radius:var(--radius);background:var(--panel-alt);overflow:hidden;overflow-anchor:none}.mse-picker-v15>summary{cursor:pointer;padding:.75rem;font-family:var(--font-section);font-weight:800}.mse-picker-body-v15{padding:.75rem;border-top:1px solid var(--border)}.mse-code-form-v17{display:grid;grid-template-columns:minmax(10rem,18rem) auto;gap:.5rem;align-items:end}.mse-code-field-v17{display:grid;gap:.25rem}.mse-code-field-v17 input{font:inherit;letter-spacing:.18em}.mse-code-status-v17{min-height:1.4em;margin:.5rem 0}.mse-picker-meta-v15{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;margin:.55rem 0}.mse-chip-v15{display:inline-flex;align-items:center;min-height:25px;padding:.12rem .46rem;border:1px solid var(--border);border-radius:999px;background:var(--panel-bg);font-size:.8rem}.mse-chip-v15.adjusted{border-color:var(--accent-2);color:var(--accent)}.mse-chip-v15.not-sale{border-color:var(--muted);color:var(--muted)}.mse-chip-v15.completion{border-color:#b58b22;color:#8b6512;background:#fff4c8}.mse-results-v15{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.65rem;max-height:38rem;overflow:auto;overflow-anchor:none;padding:.2rem}.mse-result-v15{display:grid;align-content:start;gap:.45rem;padding:.65rem;border:1px solid var(--border);border-radius:9px;background:var(--panel-bg);min-width:0;overflow-anchor:none}.mse-result-v15.completion-locked{border-color:#b58b22}.mse-result-v15 h4{margin:0}.mse-result-v15 p{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}.mse-result-v15 details>summary{cursor:pointer;color:var(--accent)}.mse-result-heading-v15{display:grid;grid-template-columns:74px minmax(0,1fr);gap:.65rem;align-items:start}.mse-thumb-button-v15{display:block;width:74px;aspect-ratio:5/7;padding:0;border:1px solid var(--border);border-radius:7px;overflow:hidden;background:#090b0c}.mse-thumb-button-v15 img{display:block;width:100%;height:100%;object-fit:contain}.mse-result-actions-v15{display:flex;gap:.4rem;align-items:center;justify-content:flex-end;flex-wrap:wrap;margin-top:auto}.mse-completion-progress-v15{display:grid;gap:.2rem;min-width:11rem}.mse-completion-progress-v15 progress{width:100%;accent-color:#b58b22}.equipment-entry{overflow-anchor:none}.equipment-entry.mse-completion-item-v15{border-color:#b58b22;box-shadow:inset 4px 0 #b58b22}.mse-selected-source-v15{margin:.65rem 0 0;border-top:1px solid var(--border)}.mse-selected-source-v15>summary{cursor:pointer;padding:.55rem 0;font-weight:800}.mse-source-grid-v15{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}.mse-source-section-v15{padding:.55rem;border:1px solid var(--border);border-radius:8px;background:var(--panel-bg);white-space:pre-wrap;overflow-wrap:anywhere}.mse-source-section-v15.wide{grid-column:1/-1}.mse-source-section-v15 h5{margin:0 0 .25rem}.mse-catalog-notice-v15{border-left:5px solid var(--accent-2)}
 .mse-card-dialog-v15{width:min(94vw,920px);max-height:94vh;padding:0;border:1px solid var(--border);border-radius:16px;background:var(--panel-bg);color:var(--text);overflow:auto}.mse-card-dialog-v15::backdrop{background:rgba(0,0,0,.76);backdrop-filter:blur(3px)}.mse-card-shell-v15{display:grid;grid-template-columns:minmax(280px,430px) minmax(230px,1fr);gap:1rem;padding:1rem}.mse-card-v15{align-self:start;aspect-ratio:5/7;display:grid;grid-template-rows:auto minmax(0,42%) 1fr auto;border:10px solid #2b2218;border-radius:20px;overflow:hidden;background:linear-gradient(145deg,#f2e4bd,#d4bd88);color:#21170e;box-shadow:0 18px 45px rgba(0,0,0,.45)}.mse-card-header-v15{display:flex;justify-content:space-between;gap:.5rem;align-items:center;padding:.55rem .7rem;background:rgba(255,255,255,.32);border-bottom:2px solid rgba(54,35,18,.4)}.mse-card-header-v15 strong{font-family:var(--font-section);font-size:clamp(1rem,3vw,1.25rem);line-height:1.05}.mse-card-art-v15{width:100%;height:100%;object-fit:contain;background:#080a0b}.mse-card-body-v15{display:grid;align-content:start;gap:.45rem;padding:.6rem .7rem;overflow:auto}.mse-card-type-v15{font-weight:800;border-bottom:1px solid rgba(54,35,18,.35);padding-bottom:.25rem}.mse-card-stats-v15{font-size:.83rem;font-weight:700}.mse-card-rules-v15{white-space:pre-wrap;font-size:.88rem;line-height:1.25}.mse-card-flavor-v15{font-style:italic;font-size:.8rem}.mse-card-footer-v15{display:flex;justify-content:space-between;gap:.5rem;padding:.35rem .7rem;background:rgba(255,255,255,.28);border-top:1px solid rgba(54,35,18,.35);font-size:.72rem;font-weight:700}.mse-card-side-v15{display:grid;align-content:start;gap:.65rem}.mse-card-side-v15 h3,.mse-card-side-v15 p{margin:0}.mse-card-side-v15 .mse-card-close-v15{justify-self:end}.mse-card-values-v15{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}.mse-card-actions-v15{display:flex;gap:.45rem;justify-content:flex-end;flex-wrap:wrap}
 @media(max-width:850px){.mse-picker-filters-v15{grid-template-columns:1fr 1fr}.mse-source-grid-v15{grid-template-columns:1fr}.mse-source-section-v15.wide{grid-column:auto}.mse-card-shell-v15{grid-template-columns:1fr}.mse-card-v15{width:min(100%,430px);justify-self:center}.mse-card-side-v15{width:min(100%,430px);justify-self:center}.mse-card-side-v15 .mse-card-close-v15{position:absolute;top:.45rem;right:.45rem}}
-@media(max-width:520px){.mse-picker-filters-v15{grid-template-columns:1fr}.mse-results-v15{grid-template-columns:1fr;max-height:32rem}.mse-result-actions-v15{align-items:stretch;flex-direction:column}.mse-result-actions-v15 button{width:100%}.mse-card-dialog-v15{width:100vw;max-width:none;max-height:100vh;border-radius:0}.mse-card-shell-v15{padding:.6rem}.mse-card-values-v15{grid-template-columns:1fr}}
+@media(max-width:520px){.mse-picker-filters-v15,.mse-code-form-v17{grid-template-columns:1fr}.mse-results-v15{grid-template-columns:1fr;max-height:32rem}.mse-result-actions-v15{align-items:stretch;flex-direction:column}.mse-result-actions-v15 button{width:100%}.mse-card-dialog-v15{width:100vw;max-width:none;max-height:100vh;border-radius:0}.mse-card-shell-v15{padding:.6rem}.mse-card-values-v15{grid-template-columns:1fr}}
 @media print{.mse-picker-v15,.mse-card-dialog-v15{display:none!important}.mse-selected-source-v15{border:0}.mse-selected-source-v15>summary{display:none}.mse-selected-source-v15:not([open])>*:not(summary){display:block!important}}
 `}));
 
 function mseSearchTextV15(item){const source=item.sourceRecord||{};return normalizeNameV174([item.name,source.sourceName,item.description,item.notes,source.primaryStats?.join(' '),source.secondaryStats?.join(' '),source.effectText,source.cardNumber,source.rarity,MSE_ASSET_LABELS_V15[item.assetKind],item.valueText,item.balance?.reason].filter(Boolean).join(' '))}
-function msePickerStateV15(owner){const key=owner?.id||'unknown';return MSE_PICKER_STATE_V15[key]||(MSE_PICKER_STATE_V15[key]={open:false,query:'',set:'',category:'',review:'',limit:60})}
+function msePickerStateV15(owner){const key=owner?.id||'unknown';return MSE_PICKER_STATE_V15[key]||(MSE_PICKER_STATE_V15[key]={open:true,message:''})}
+function mseNormalizeCardCodeV17(value){return String(value??'').trim().replace(/^MSE[\s-]*/i,'').replace(/[\s-]+/g,'')}
+function mseUnlockedCardIdsV17(owner){
+  const existing=Array.isArray(owner?.mseUnlockedCardIdsV17)?owner.mseUnlockedCardIdsV17:[],owned=(owner?.equipment||[]).filter(item=>item.sourceVersion==='mse-v15'&&!item.isCompletionReward).map(item=>item.catalogId),ids=[...new Set([...existing,...owned].filter(id=>{const item=MSE_BY_ID_V15.get(id);return item&&!item.isCompletionReward}))];
+  if(owner)owner.mseUnlockedCardIdsV17=ids;return ids;
+}
+function mseCardIsUnlockedV17(owner,item){return!!item&&!item.isCompletionReward&&mseUnlockedCardIdsV17(owner).includes(item.id)}
+function mseCardCanBeShownV17(owner,item){const owners=owner?[owner,...(owner.auxiliaryTabs||[])]:[];return owners.some(entry=>mseCardIsUnlockedV17(entry,item))||!!(item?.isCompletionReward&&owners.some(entry=>(entry.equipment||[]).some(row=>row.catalogId===item.id&&(+row.quantity||0)>0)))}
 function msePriceLabelV15(item){return item.valueText||item.sourceRecord?.canonicalPrice||item.sourceRecord?.priceText||'Preis offen'}
 function mseWeightValueV15(value){if(!Number.isFinite(+value))return'Gewicht offen';const kg=+value;return kg>=1000?`${String(+(kg/1000).toFixed(3)).replace('.',',')} t`:`${String(+kg.toFixed(3)).replace('.',',')} kg`}
 function mseWeightLabelV15(item){const correction=item.editorialCorrections?.find(entry=>entry.field==='weightKg'),current=mseWeightValueV15(item.weightKg);return correction?`${current} (Quelle ${item.sourceRecord?.canonicalWeight||item.sourceRecord?.weightText||'—'}, korrigiert)`:current}
@@ -63,6 +72,7 @@ function createMseCardV15(item){
 
 let MSE_CARD_DIALOG_V15=null;
 function showMseCardV15(item,owner=null){
+  if(!mseCardCanBeShownV17(owner,item))return false;
   if(!MSE_CARD_DIALOG_V15){MSE_CARD_DIALOG_V15=el('dialog',{class:'mse-card-dialog-v15'});document.body.append(MSE_CARD_DIALOG_V15);MSE_CARD_DIALOG_V15.addEventListener('click',event=>{if(event.target===MSE_CARD_DIALOG_V15)MSE_CARD_DIALOG_V15.close()})}
   const source=item.sourceRecord||{},side=el('aside',{class:'mse-card-side-v15'}),actions=el('div',{class:'mse-card-actions-v15'}),close=el('button',{type:'button',class:'mse-card-close-v15',text:'Schließen',onclick:()=>MSE_CARD_DIALOG_V15.close()});
   side.append(close,el('h3',{text:'Kartendetails'}),el('p',{class:'muted',text:`MSE-Set ${source.setNumber??'—'} · Nr. ${source.cardNumber||'—'} · Stand ${source.modifiedAt?.slice(0,10)||'—'}`}),el('div',{class:'mse-card-values-v15'},[mseSourceSectionV15('Preis',msePriceLabelV15(item)),mseSourceSectionV15('Gewicht',mseWeightLabelV15(item))]),mseSourceSectionV15('Balanceentscheidung',item.balance?.reason||'Quellwert bestätigt.',true));
@@ -73,13 +83,29 @@ function showMseCardV15(item,owner=null){
   side.append(actions);
   MSE_CARD_DIALOG_V15.replaceChildren(el('div',{class:'mse-card-shell-v15'},[createMseCardV15(item),side]));
   MSE_CARD_DIALOG_V15.showModal();
+  return true;
 }
 
 function addMseItemV15(owner,catalog){
-  if(catalog.isCompletionReward)return false;
+  if(catalog.isCompletionReward||!mseCardIsUnlockedV17(owner,catalog))return false;
   const physical=['weapon','armor','gear'].includes(catalog.assetKind),instance=normalizeItemV174({...structuredClone(catalog),id:undefined,instanceId:uid(),catalogId:catalog.id,quantity:1,qty:1,loadState:physical?'carried':'stored',equippedQuantity:0,active:true,storageLocation:physical?'':MSE_ASSET_LABELS_V15[catalog.assetKind]||''});
   owner.equipment=Array.isArray(owner.equipment)?owner.equipment:[];
   owner.equipment.push(instance);saveOwnerV173(owner,true);return true;
+}
+
+function unlockMseCardV17(owner,rawCode){
+  const code=mseNormalizeCardCodeV17(rawCode);
+  if(!/^\d{4}$/.test(code))return{ok:false,reason:'invalid',message:'Der Kartencode muss genau vier Ziffern enthalten.'};
+  const catalog=MSE_BY_CODE_V17.get(code);
+  if(!catalog)return{ok:false,reason:'invalid',message:'Kartencode ungültig. Es wurden keine Kartendaten angezeigt.'};
+  if(catalog.isCompletionReward)return{ok:false,reason:'completion',message:'Vollendungskarten werden ausschließlich automatisch vergeben, sobald das zugehörige Set vollständig gesammelt wurde.'};
+  const unlocked=mseUnlockedCardIdsV17(owner);
+  if(unlocked.includes(catalog.id))return{ok:false,reason:'already',item:catalog,message:`${catalog.name} ist bereits freigeschaltet.`};
+  owner.mseUnlockedCardIdsV17=[...unlocked,catalog.id];
+  const ui=msePickerStateV15(owner);ui.open=true;ui.message=`${catalog.name} wurde freigeschaltet und dem Inventar hinzugefügt.`;
+  const added=addMseItemV15(owner,catalog);
+  if(!added)saveOwnerV173(owner,true);
+  return{ok:true,reason:'unlocked',item:catalog,added,message:ui.message};
 }
 
 function mseCompletionInstanceV15(reward){
@@ -124,26 +150,20 @@ function renderMseCatalogItemV15(owner,item){
   details.append(detailBody);
   const actions=el('div',{class:'mse-result-actions-v15'},[el('button',{type:'button',text:'Karte anzeigen',onclick:()=>showMseCardV15(item,owner)})]);
   if(item.isCompletionReward)actions.append(renderMseCompletionProgressV15(owner,item),el('button',{type:'button',disabled:true,text:'Automatische Vergabe'}));
-  else actions.append(el('button',{class:'primary',type:'button',text:'Zum Reiter hinzufügen',onclick:()=>addMseItemV15(owner,item)}));
+  else actions.append(el('button',{class:'primary',type:'button',text:'Weiteres Exemplar hinzufügen',onclick:()=>addMseItemV15(owner,item)}));
   article.append(heading,details,actions);
   return article;
 }
 
 function renderMseCatalogPickerV15(owner){
-  const ui=msePickerStateV15(owner),details=el('details',{class:'mse-picker-v15',open:ui.open}),summary=el('summary',{text:`MSE-Items v15 · balanciert (${MSE_ITEMS_V15.length})`}),body=el('div',{class:'mse-picker-body-v15'}),filters=el('div',{class:'mse-picker-filters-v15'}),search=el('input',{type:'search',placeholder:'Name, Wirkung oder Kartennummer …',value:ui.query,'aria-label':'MSE-Items durchsuchen'}),setSelect=el('select',{'aria-label':'MSE-Set filtern'}),category=el('select',{'aria-label':'MSE-Itemart filtern'}),review=el('select',{'aria-label':'MSE-Balancestand filtern'}),meta=el('div',{class:'mse-picker-meta-v15'}),results=el('div',{class:'mse-results-v15'}),more=el('button',{type:'button',text:'Weitere Ergebnisse anzeigen'});
-  setSelect.append(el('option',{value:'',text:'Alle 38 Sets'}));for(const number of[...new Set(MSE_ITEMS_V15.map(item=>item.sourceRecord?.setNumber).filter(Boolean))].sort((a,b)=>a-b))setSelect.append(el('option',{value:String(number),text:`Set ${number}`}));setSelect.value=ui.set;
-  category.append(el('option',{value:'',text:'Alle Arten'}));for(const definition of MSE_CATEGORIES_V15)category.append(el('option',{value:definition.id,text:definition.label.replace('MSE-Set · ','')}));category.value=ui.category;
-  [['','Alle Balancestände'],['source','Quellwerte bestätigt'],['adjusted','Neu bewertet'],['not-for-sale','Nicht käuflich'],['completion','Automatische Abschlusskarten']].forEach(([value,text])=>review.append(el('option',{value,text})));review.value=ui.review;
-  const update=()=>{
-    ui.query=search.value;ui.set=setSelect.value;ui.category=category.value;ui.review=review.value;
-    const query=normalizeNameV174(ui.query),balanceMatch=item=>!ui.review||(ui.review==='source'&&!item.editorialCorrections?.length)||(ui.review==='adjusted'&&!!item.editorialCorrections?.length)||(ui.review==='not-for-sale'&&item.tradeStatus==='not-for-sale')||(ui.review==='completion'&&item.isCompletionReward),matches=MSE_ITEMS_V15.filter(item=>(!query||mseSearchTextV15(item).includes(query))&&(!ui.set||String(item.sourceRecord?.setNumber)===ui.set)&&(!ui.category||item.category===ui.category)&&balanceMatch(item));
-    results.replaceChildren(...matches.slice(0,ui.limit).map(item=>renderMseCatalogItemV15(owner,item)));
-    if(!matches.length)results.append(el('p',{class:'muted',text:'Keine passenden MSE-Items.'}));
-    meta.replaceChildren(el('span',{class:'mse-chip-v15',text:`${matches.length} von ${MSE_ITEMS_V15.length} Einträgen`}),el('span',{class:'mse-chip-v15 completion',text:`${MSE_COMPLETION_REWARDS_V15.length} automatische Abschlusskarten`}),el('span',{class:'mse-chip-v15',text:'0 offene Preis-/Gewichtsfragen'}));
-    more.hidden=matches.length<=ui.limit;more.textContent=`Weitere Ergebnisse anzeigen (${Math.min(60,matches.length-ui.limit)})`;
-  };
-  details.ontoggle=()=>{ui.open=details.open};search.oninput=()=>{ui.limit=60;update()};setSelect.onchange=category.onchange=review.onchange=()=>{ui.limit=60;update()};more.onclick=()=>{ui.limit+=60;update()};
-  filters.append(search,setSelect,category,review);body.append(el('p',{class:'notice mse-catalog-notice-v15',text:'Echte Abschlusskarten werden bei ihrer gedruckten Set-Schwelle automatisch vergeben. Unterschiedliche normale Karten zählen; Duplikate nicht. Kaufbare Sechs-Teile-Bonusitems bleiben normale Katalogeinträge.'}),filters,meta,results,more);details.append(summary,body);update();return details;
+  const ui=msePickerStateV15(owner),details=el('details',{class:'mse-picker-v15',open:ui.open}),summary=el('summary',{text:'Karte per Code freischalten'}),body=el('div',{class:'mse-picker-body-v15'}),form=el('form',{class:'mse-code-form-v17'}),field=el('label',{class:'mse-code-field-v17'}),input=el('input',{type:'text',inputmode:'numeric',autocomplete:'off',maxlength:4,pattern:'[0-9]{4}',placeholder:'0000','aria-label':'Vierstelliger Kartencode'}),submit=el('button',{class:'primary',type:'submit',text:'Karte freischalten'}),status=el('p',{class:'mse-code-status-v17 muted','aria-live':'polite',text:ui.message||''}),meta=el('div',{class:'mse-picker-meta-v15'}),results=el('div',{class:'mse-results-v15'}),unlocked=mseUnlockedCardIdsV17(owner).map(id=>MSE_BY_ID_V15.get(id)).filter(Boolean);
+  field.append(el('span',{text:'Vierstelliger Kartencode'}),input);form.append(field,submit);
+  form.onsubmit=event=>{event.preventDefault();const result=unlockMseCardV17(owner,input.value);ui.message=result.message;status.textContent=result.message;if(!result.ok&&result.reason!=='already'){input.select();input.focus({preventScroll:true})}};
+  input.oninput=()=>{input.value=input.value.replace(/\D/g,'').slice(0,4);status.textContent=''};
+  details.ontoggle=()=>{ui.open=details.open};
+  meta.append(el('span',{class:'mse-chip-v15',text:`${unlocked.length} Karte${unlocked.length===1?'':'n'} freigeschaltet`}),el('span',{class:'mse-chip-v15 completion',text:'Vollendungskarten: automatische Vergabe'}));
+  if(unlocked.length)results.append(...unlocked.map(item=>renderMseCatalogItemV15(owner,item)));else results.append(el('p',{class:'muted',text:'Noch keine Karten freigeschaltet. Verborgene Karten werden weder aufgelistet noch durchsucht oder als Bild geladen.'}));
+  body.append(el('p',{class:'notice mse-catalog-notice-v15',text:'Nur Karten mit gültigem Code werden sichtbar und sofort dem aktuellen Inventar hinzugefügt. Vollendungskarten bleiben verborgen und werden ausschließlich bei einem vollständig gesammelten Set automatisch vergeben.'}),form,status,meta,results);details.append(summary,body);return details;
 }
 
 function renderMseSelectedSourceV15(owner,item){
@@ -174,6 +194,16 @@ function migrateSelectedMseItemsV152(){
   state.migrationLog=Array.isArray(state.migrationLog)?state.migrationLog:[];
   state.migrationLog.push({at:new Date().toISOString(),changes:['MSE-Items v15 auf Balance v15.2 und automatische Abschlusskarten aktualisiert']});
   save();return changed;
+}
+
+function migrateMseCardCodesV17(data=state,writeLog=false){
+  let changed=false;
+  for(const character of data?.characters||[])for(const owner of[character,...(character.auxiliaryTabs||[])]){
+    const previous=Array.isArray(owner.mseUnlockedCardIdsV17)?owner.mseUnlockedCardIdsV17:[],next=mseUnlockedCardIdsV17(owner);
+    if(JSON.stringify(previous)!==JSON.stringify(next)){owner.mseUnlockedCardIdsV17=next;changed=true}
+  }
+  if(!data.mseCardCodesV17Migrated){data.mseCardCodesV17Migrated=true;changed=true;if(writeLog){data.migrationLog=Array.isArray(data.migrationLog)?data.migrationLog:[];data.migrationLog.push({at:new Date().toISOString(),changes:['MSE-Kartenkatalog auf Freischaltung ausschließlich per vierstelligem Kartencode umgestellt','Bereits vorhandene normale MSE-Inventarkarten als freigeschaltet übernommen']})}}
+  return changed;
 }
 
 const saveOwnerBeforeMseCompletionV15=saveOwnerV173;
@@ -207,7 +237,7 @@ audit=function(){
 const runTestsBeforeMseV15=runTests;
 runTests=function(){
   const baseOk=runTestsBeforeMseV15(),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),owner=newCharacter(),sample=MSE_ITEMS_V15.find(item=>item.sourceRecord?.cardNumber==='0200'),fiole=MSE_ITEMS_V15.find(item=>item.sourceRecord?.cardNumber==='0224'),ship=MSE_ITEMS_V15.find(item=>item.sourceRecord?.cardNumber==='0311'),dream=MSE_ITEMS_V15.find(item=>item.sourceRecord?.cardNumber==='0029'),sixPiece=MSE_ITEMS_V15.find(item=>item.sourceRecord?.cardNumber==='0328');
-  eq('MSE-v15-Katalog vollständig',496,MSE_ITEMS_V15.length);eq('MSE-v15-IDs eindeutig',496,new Set(MSE_ITEMS_V15.map(item=>item.id)).size);eq('Alle 38 Sets vorhanden',38,new Set(MSE_ITEMS_V15.map(item=>item.sourceRecord?.setNumber)).size);eq('18 echte Abschlusskarten erkannt',18,MSE_COMPLETION_REWARDS_V15.length);eq('Alle Preise entschieden',0,MSE_ITEMS_V15.filter(item=>item.valueCopper===null).length);eq('Keine offene Balanceprüfung',0,MSE_ITEMS_V15.filter(item=>item.review?.issues?.length).length);eq('Ravellas Fiole wiegt 0,7 kg',0.7,fiole?.weightKg);eq('30-Personen-Segler wiegt 80 t',80000,ship?.weightKg);eq('Segler ist automatische 12/12-Abschlusskarte',true,ship?.isCompletionReward&&ship?.completionRequirement?.requiredUniqueItems===12);eq('Nicht handelbarer Traum markiert','Nicht käuflich',dream?.valueText);eq('Sonnenstab-Preis bleibt 266 Silber',26600,sample?.valueCopper);eq('Sonnenstab-Gewicht bleibt 1,8 kg',1.8,sample?.weightKg);addMseItemV15(owner,sample);eq('MSE-Item als unabhängige Instanz ergänzt',true,owner.equipment[0]?.catalogId===sample.id&&owner.equipment[0]?.instanceId!==sample.id);eq('MSE-Quellrecord bleibt im Charakterbackup',sample.sourceHash,JSON.parse(JSON.stringify(owner)).equipment[0].sourceHash);eq('Kartenansicht enthält Illustration',true,!!createMseCardV15(sample).querySelector('img[src*="0200.jpg"]'));eq('MSE-Picker ist bedienbar',true,!!renderMseCatalogPickerV15(owner).querySelector('input[type="search"]'));eq('Sechs-Teile-Bonusitem bleibt normal kaufbar',true,!sixPiece?.isCompletionReward&&sixPiece?.tradeStatus==='market'&&addMseItemV15(owner,sixPiece));
+  eq('MSE-v15-Katalog vollständig',496,MSE_ITEMS_V15.length);eq('MSE-v15-IDs eindeutig',496,new Set(MSE_ITEMS_V15.map(item=>item.id)).size);eq('Alle 38 Sets vorhanden',38,new Set(MSE_ITEMS_V15.map(item=>item.sourceRecord?.setNumber)).size);eq('18 echte Abschlusskarten erkannt',18,MSE_COMPLETION_REWARDS_V15.length);eq('Alle Preise entschieden',0,MSE_ITEMS_V15.filter(item=>item.valueCopper===null).length);eq('Keine offene Balanceprüfung',0,MSE_ITEMS_V15.filter(item=>item.review?.issues?.length).length);eq('Ravellas Fiole wiegt 0,7 kg',0.7,fiole?.weightKg);eq('30-Personen-Segler wiegt 80 t',80000,ship?.weightKg);eq('Segler ist automatische 12/12-Abschlusskarte',true,ship?.isCompletionReward&&ship?.completionRequirement?.requiredUniqueItems===12);eq('Nicht handelbarer Traum markiert','Nicht käuflich',dream?.valueText);eq('Sonnenstab-Preis bleibt 266 Silber',26600,sample?.valueCopper);eq('Sonnenstab-Gewicht bleibt 1,8 kg',1.8,sample?.weightKg);owner.mseUnlockedCardIdsV17=[sample.id,sixPiece.id];addMseItemV15(owner,sample);eq('MSE-Item als unabhängige Instanz ergänzt',true,owner.equipment[0]?.catalogId===sample.id&&owner.equipment[0]?.instanceId!==sample.id);eq('MSE-Quellrecord bleibt im Charakterbackup',sample.sourceHash,JSON.parse(JSON.stringify(owner)).equipment[0].sourceHash);eq('Kartenansicht enthält Illustration',true,!!createMseCardV15(sample).querySelector('img[src*="0200.jpg"]'));eq('MSE-Codefeld ist bedienbar',true,!!renderMseCatalogPickerV15(owner).querySelector('input[aria-label="Vierstelliger Kartencode"]'));eq('Sechs-Teile-Bonusitem bleibt normal kaufbar',true,!sixPiece?.isCompletionReward&&sixPiece?.tradeStatus==='market'&&addMseItemV15(owner,sixPiece));
   const reward=MSE_ITEMS_V15.find(item=>item.sourceRecord?.cardNumber==='0303'),normal=MSE_ITEMS_V15.filter(item=>item.sourceRecord?.setNumber===7&&!item.isCompletionReward),completionOwner=newCharacter(),instance=item=>normalizeItemV174({...structuredClone(item),id:undefined,instanceId:uid(),catalogId:item.id,quantity:1,qty:1});completionOwner.equipment=normal.slice(0,8).map(instance);syncMseCompletionRewardsV15(completionOwner);eq('Unter Set-Schwelle keine Abschlusskarte',false,completionOwner.equipment.some(item=>item.catalogId===reward.id));completionOwner.equipment.push(instance(normal[0]));syncMseCompletionRewardsV15(completionOwner);eq('Duplikat zählt nicht zur Set-Schwelle',false,completionOwner.equipment.some(item=>item.catalogId===reward.id));completionOwner.equipment.push(instance(normal[8]));syncMseCompletionRewardsV15(completionOwner);eq('Set-Vollendung wird automatisch vergeben',true,completionOwner.equipment.some(item=>item.catalogId===reward.id&&item.autoGrantedMseCompletion));completionOwner.equipment=completionOwner.equipment.filter(item=>item.catalogId!==normal[8].id);syncMseCompletionRewardsV15(completionOwner);eq('Einmal gesammelte Vollendung bleibt dauerhaft',true,completionOwner.equipment.some(item=>item.catalogId===reward.id));
   const body=testResults.querySelector('tbody');for(const[name,expected,actual,ok]of tests)body?.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return baseOk&&tests.every(test=>test[3]);
 };
@@ -427,11 +457,25 @@ if(!state.mseCompanionTabsV16Migrated){state.mseCompanionTabsV16Migrated=true;st
 queueMicrotask(()=>Object.assign(window.Eberos,{mseCompanionKindV16,syncCompanionLinksV16:syncMseCompanionLinksForCharacterV16,syncAllCompanionLinksV16:syncAllMseCompanionLinksV16,linkedCompanionAuxV16:mseLinkedAuxV16}));
 }
 
+const migrateStateBeforeMseCardCodesV17=migrateState;
+migrateState=function(data){const migrated=migrateStateBeforeMseCardCodesV17(data);migrateMseCardCodesV17(migrated,false);return migrated};
+const runTestsBeforeMseCardCodesV17=runTests;
+runTests=function(){
+  const baseOk=runTestsBeforeMseCardCodesV17(),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),lockedOwner=newCharacter(),sun=MSE_BY_CODE_V17.get('0200'),completion=MSE_COMPLETION_REWARDS_V15[0],sixPiece=MSE_BY_CODE_V17.get('0328');
+  eq('496 eindeutige vierstellige Kartencodes',496,new Set(MSE_ITEMS_V15.map(item=>item.sourceRecord?.cardNumber)).size);eq('Verborgene Karte kann nicht direkt hinzugefügt werden',false,addMseItemV15(lockedOwner,sun));
+  const lockedPicker=renderMseCatalogPickerV15(lockedOwner);eq('Ohne Code werden keine Karten angezeigt',0,lockedPicker.querySelectorAll('.mse-result-v15').length);eq('Ohne Code wird kein Kartenbild geladen',0,lockedPicker.querySelectorAll('.mse-thumb-button-v15 img').length);eq('Ungültiger Code bleibt verborgen','invalid',unlockMseCardV17(lockedOwner,'9999').reason);eq('Vollendungskarte nicht manuell freischaltbar','completion',unlockMseCardV17(lockedOwner,completion.sourceRecord.cardNumber).reason);
+  const result=unlockMseCardV17(lockedOwner,'0200');eq('Gültiger Code schaltet Karte frei',true,result.ok&&mseCardIsUnlockedV17(lockedOwner,sun));eq('Freigeschaltete Karte landet im Inventar',1,lockedOwner.equipment.filter(item=>item.catalogId===sun.id).length);eq('Wiederholter Code erzeugt kein Duplikat','already',unlockMseCardV17(lockedOwner,'0200').reason);eq('Wiederholter Code lässt genau ein Exemplar bestehen',1,lockedOwner.equipment.filter(item=>item.catalogId===sun.id).length);
+  const bonusOwner=newCharacter(),bonus=unlockMseCardV17(bonusOwner,sixPiece.sourceRecord.cardNumber);eq('Normale Sechs-Teile-Bonuskarte bleibt per Code freischaltbar',true,bonus.ok&&bonusOwner.equipment.some(item=>item.catalogId===sixPiece.id));
+  const backup=JSON.parse(JSON.stringify({characters:[lockedOwner],migrationLog:[]}));migrateMseCardCodesV17(backup,false);eq('Backup und Import erhalten Freischaltungen',sun.id,backup.characters[0].mseUnlockedCardIdsV17[0]);
+  const body=testResults.querySelector('tbody');for(const[name,expected,actual,ok]of tests)body?.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return baseOk&&tests.every(test=>test[3]);
+};
 
 migrateSelectedMseItemsV152();
+const cardCodeMigrationChangedV17=migrateMseCardCodesV17(state,true);
 const initialCompletionSyncV15=syncAllMseCompletionRewardsV15();
 if(!state.mseCompletionV152Migrated){state.mseCompletionV152Migrated=true;state.migrationLog=Array.isArray(state.migrationLog)?state.migrationLog:[];state.migrationLog.push({at:new Date().toISOString(),changes:['Echte MSE-Setabschlusskarten auf automatische Vergabe nach gedruckter Set-Schwelle umgestellt']});save()}else if(initialCompletionSyncV15.changed)save();
-document.querySelector('.brand small').textContent='v1.7.21-r6';
-Object.assign(window.Eberos,{mseItemsV15:()=>MSE_ITEMS_V15,mseItemByIdV15:id=>MSE_BY_ID_V15.get(id)||null,mseCompletionRewardsV15:()=>MSE_COMPLETION_REWARDS_V15,completionProgressV15:mseCompletionProgressV15,syncCompletionRewardsV15:syncMseCompletionRewardsV15,validateMseCatalogV15,renderMseCatalogPickerV15,createMseCardV15,showMseCardV15,runTests:()=>runTests()});
+if(cardCodeMigrationChangedV17)save();
+document.querySelector('.brand small').textContent='v1.7.21-r7';
+Object.assign(window.Eberos,{completionProgressV15:mseCompletionProgressV15,syncCompletionRewardsV15:syncMseCompletionRewardsV15,validateMseCatalogV15,unlockMseCardV17,cardIsUnlockedV17:mseCardIsUnlockedV17,runTests:()=>runTests()});
 renderAll();
 }
