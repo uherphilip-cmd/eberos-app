@@ -13,9 +13,13 @@
     if(!config?.enabled)return false;
     try{const url=new URL(config.url);return url.protocol==='https:'&&/\.supabase\.(?:co|net)$/.test(url.hostname)&&typeof config.publishableKey==='string'&&config.publishableKey.startsWith('sb_publishable_')}catch{return false}
   }
-  function createSessionStorageAdapter(storage){
-    if(!storage||typeof storage.getItem!=='function')throw new TypeError('Für Kampagnensitzungen wird sessionStorage benötigt.');
+  function createAuthStorageAdapter(storage){
+    if(!storage||typeof storage.getItem!=='function')throw new TypeError('Für Kampagnensitzungen wird ein sicherer Browserspeicher benötigt.');
     return Object.freeze({getItem:key=>storage.getItem(key),setItem:(key,value)=>storage.setItem(key,String(value)),removeItem:key=>storage.removeItem(key)});
+  }
+  const createSessionStorageAdapter=createAuthStorageAdapter;
+  function migrateLegacySession({persistentStorage=global.localStorage,temporaryStorage=global.sessionStorage}={}){
+    try{if(!persistentStorage?.getItem(AUTH_STORAGE_KEY)){const session=temporaryStorage?.getItem(AUTH_STORAGE_KEY);if(session){persistentStorage?.setItem(AUTH_STORAGE_KEY,session);temporaryStorage?.removeItem(AUTH_STORAGE_KEY)}}}catch{}
   }
   function defaultScriptLoader(document,source){
     return new Promise((resolve,reject)=>{
@@ -26,18 +30,19 @@
       script.addEventListener('error',()=>reject(new Error('Die sichere Kampagnenverbindung konnte nicht geladen werden.')),{once:true});document.head.append(script);
     });
   }
-  async function clearPrivateCaches({storage=global.sessionStorage,cacheStorage=global.caches}={}){
+  async function clearPrivateCaches({storage=global.localStorage,legacyStorage=global.sessionStorage,cacheStorage=global.caches}={}){
     try{storage?.removeItem(AUTH_STORAGE_KEY);storage?.removeItem('eberos.campaign.private-cache.v1')}catch{}
+    try{if(legacyStorage!==storage){legacyStorage?.removeItem(AUTH_STORAGE_KEY);legacyStorage?.removeItem('eberos.campaign.private-cache.v1')}}catch{}
     if(!cacheStorage?.keys)return;
     try{const keys=await cacheStorage.keys();await Promise.all(keys.filter(key=>key.startsWith(PRIVATE_CACHE_PREFIX)).map(key=>cacheStorage.delete(key)))}catch{}
   }
 
   class SupabaseClientProvider{
-    constructor({config=global.EberosSupabaseConfig,document=global.document,storage=global.sessionStorage,scriptLoader=defaultScriptLoader,createClientFactory}={}){this.config=config;this.document=document;this.storage=storage;this.scriptLoader=scriptLoader;this.createClientFactory=createClientFactory;this.promise=null}
+    constructor({config=global.EberosSupabaseConfig,document=global.document,storage=global.localStorage,scriptLoader=defaultScriptLoader,createClientFactory}={}){this.config=config;this.document=document;this.storage=storage;this.scriptLoader=scriptLoader;this.createClientFactory=createClientFactory;this.promise=null;if(storage===global.localStorage)migrateLegacySession({persistentStorage:storage,temporaryStorage:global.sessionStorage})}
     configured(){return isConfigured(this.config)}
     async getClient(){
       if(!this.configured())throw new CampaignBackendNotConfiguredError();if(this.promise)return this.promise;
-      this.promise=(async()=>{const sdk=this.createClientFactory?null:await this.scriptLoader(this.document,this.config.sdkPath),createClient=this.createClientFactory||sdk?.createClient;if(typeof createClient!=='function')throw new Error('Supabase konnte nicht initialisiert werden.');return createClient(this.config.url,this.config.publishableKey,{auth:{storage:createSessionStorageAdapter(this.storage),storageKey:AUTH_STORAGE_KEY,persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,flowType:'implicit'},global:{headers:{'X-Client-Info':'eberos-character-builder/1.8.1'}}})})().catch(error=>{this.promise=null;throw error});
+      this.promise=(async()=>{const sdk=this.createClientFactory?null:await this.scriptLoader(this.document,this.config.sdkPath),createClient=this.createClientFactory||sdk?.createClient;if(typeof createClient!=='function')throw new Error('Supabase konnte nicht initialisiert werden.');return createClient(this.config.url,this.config.publishableKey,{auth:{storage:createAuthStorageAdapter(this.storage),storageKey:AUTH_STORAGE_KEY,persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,flowType:'implicit'},global:{headers:{'X-Client-Info':'eberos-character-builder/1.8.1'}}})})().catch(error=>{this.promise=null;throw error});
       return this.promise;
     }
   }
@@ -92,5 +97,5 @@
     async createThread(campaignId,{title,details='',playerVisible=true}={}){const client=await this.provider.getClient(),user=await this.currentUser(),{data,error}=await client.from('campaign_threads').insert({campaign_id:campaignId,title,details,player_visible:playerVisible,created_by:user.id}).select('id,campaign_id,title,details,status,player_visible').single();if(error)throw error;return data}
   }
 
-  global.EberosSupabaseClient=Object.freeze({AUTH_STORAGE_KEY,PRIVATE_CACHE_PREFIX,CampaignBackendNotConfiguredError,isConfigured,createSessionStorageAdapter,clearPrivateCaches,SupabaseClientProvider,CampaignAuthGateway,SupabaseCampaignRepository});
+  global.EberosSupabaseClient=Object.freeze({AUTH_STORAGE_KEY,PRIVATE_CACHE_PREFIX,CampaignBackendNotConfiguredError,isConfigured,createAuthStorageAdapter,createSessionStorageAdapter,migrateLegacySession,clearPrivateCaches,SupabaseClientProvider,CampaignAuthGateway,SupabaseCampaignRepository});
 })(globalThis);
