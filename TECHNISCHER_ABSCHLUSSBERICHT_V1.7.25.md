@@ -2,28 +2,28 @@
 
 ## Release-Metadaten
 
-- App-Version: 1.7.25-r5
+- App-Version: 1.7.25-r6
 - Schema: 29
 - Regelstand: 15
 - Fähigkeiten: 88
-- Lorekatalog: 1.7.25 mit 7 Quellen
+- Lorekatalog: 1.7.25-r6 mit 10 Quellen
 - Effektkatalog: 2.0.0 mit 25 Kernzuständen
 - Kraftkatalog: 1.4.0 mit 31 Schulen und 465 Einträgen
-- Pfadverteilung: M 255, GB 90, FS 120
-- Verstärkung: 352 verstärkbar, 113 nicht verstärkbar
 
 ## Umsetzung
 
-- Die kanonische Spiritismus-Spielerfassung wurde strukturell ausgelesen, geprüft und der Wissensfähigkeit **Spiritismus & Geisterkunde** zugeordnet.
-- Vierzehn inhaltliche Hauptkapitel mit 414 Textblöcken und 13.520 Wörtern werden über Lorestufe 1 bis 10 kumulativ freigeschaltet.
-- Der redaktionelle Quellenanhang, Deckblatt und Inhaltsverzeichnis bleiben außerhalb des In-App-Loretexts; die Quelldatei wurde nicht verändert.
-- Der neue Lorekatalog ersetzt die historische Sechs-Quellen-Datei im v1.7.25-Build und ist im Service Worker offline verfügbar.
-- Der Effektkatalog, der Gegenstandsbonus-Dialog, der direkte Counterverbrauch sowie Exorzismus & Austreibung und Wirtschaft & Handel bleiben unverändert funktionsfähig.
-- Revision r5 erneuert sämtliche Assetabfragen und den Service-Worker-Cache.
+- **Dämonologie von Pegra** wurde **Exorzismus & Austreibung** zugeordnet.
+- **Grimorium Abyssi** wurde **Dämonologie & Höllen-Beschwörungen** zugeordnet.
+- **Grimoire der Seelenherrschaft** wurde **Nekromantie & Totenmagie** zugeordnet.
+- Die drei neuen Quellen umfassen 49 Hauptkapitel, 856 Textblöcke und 31.072 Wörter.
+- Jede Quelle wird in ihrer inhaltlichen Reihenfolge kumulativ über Lorestufe 1 bis 10 freigeschaltet.
+- Deckblätter, Inhaltsverzeichnisse und redaktionelle Quellenanhänge sind nicht Teil der sichtbaren Lore.
+- Der bestehende Funktionsstand von Exorzismus, Wirtschaft & Handel, Effekten und direktem Counterverbrauch bleibt unverändert.
+- Revision r6 erneuert sämtliche Assetabfragen und den Service-Worker-Cache.
 
 ## Verifikation
 
-- 65/65 statische Prüfungen bestanden.
-- 30/30 Browser- und Offlineprüfungen bestanden.
+- 69/69 statische Prüfungen bestanden.
+- 33/33 Browser- und Offlineprüfungen bestanden.
 - 494/494 integrierte Tests bestanden.
 - 0 JavaScript-Laufzeitfehler.

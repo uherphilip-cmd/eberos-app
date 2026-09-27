@@ -112,7 +112,7 @@ function skillLoreContentV1724(skill,owner=infoOwnerV1724()){
   if(!unlockedBlocks.length)box.append(el('p',{class:'notice',text:'Kanonisches Wissen wird ab Fähigkeitsstufe 1 freigeschaltet.'}));
   else for(const section of unlockedSections)box.append(loreSectionV1724(section,knowledgeLevel));
   if(knowledgeLevel<10)box.append(el('p',{class:'skill-lore-next-v1724',text:`Weiteres Wissen wird auf Stufe ${nextLevel} freigeschaltet.` }));
-  else box.append(el('p',{class:'skill-lore-next-v1724',text:'Der vollständige kanonische Loretext ist freigeschaltet.'}));
+  else box.append(el('p',{class:'skill-lore-next-v1724',text:'Der vollständige Loretext ist freigeschaltet.'}));
   box.append(el('p',{class:'rule-source-r5',text:`Lorequelle: ${document.title} · ${document.sourceLabel}`}));
   return box;
 }
@@ -145,7 +145,7 @@ runTests=function(){
   runTestsBeforeV1724();const body=testResults.querySelector('tbody');
   for(const row of[...body.querySelectorAll('tr')])if(row.cells[0]?.textContent==='Version 1.7.21')row.remove();
   const baseOk=![...body.querySelectorAll('tr')].some(row=>row.cells[row.cells.length-1]?.textContent==='Fehler'),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),owner=newCharacter();
-  eq('Sieben kanonische Lorequellen',7,SKILL_LORE_BY_NAME_V1724.size);
+  eq('Zehn Lorequellen',10,SKILL_LORE_BY_NAME_V1724.size);
   eq('Jede Lore wächst auf allen Stufen 1 bis 10',true,[...SKILL_LORE_BY_NAME_V1724.values()].every(document=>{const levels=document.sections.flatMap(section=>section.blocks.map(block=>block.unlockLevel??section.unlockLevel));return[1,2,3,4,5,6,7,8,9,10].every(level=>levels.includes(level))}));
   eq('Jede Lore ist auf Stufe 10 vollständig',true,[...SKILL_LORE_BY_NAME_V1724.values()].every(document=>document.sections.every(section=>section.blocks.every(block=>(block.unlockLevel??section.unlockLevel)<=10))));
   eq('Lore ohne Platzhalter oder Ersatzzeichen',true,[...SKILL_LORE_BY_NAME_V1724.values()].every(document=>document.audit?.placeholderCount===0&&document.audit?.replacementCharacters===0));

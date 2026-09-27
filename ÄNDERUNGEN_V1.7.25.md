@@ -1,5 +1,14 @@
 # Änderungen v1.7.25
 
+## Revision r6
+
+- **Dämonologie von Pegra** ist als Loregrundlage bei **Exorzismus & Austreibung** eingebunden.
+- **Grimorium Abyssi** ist als verbotene Loregrundlage bei **Dämonologie & Höllen-Beschwörungen** eingebunden.
+- **Grimoire der Seelenherrschaft** von Mortuus Fama ist bei **Nekromantie & Totenmagie** eingebunden.
+- Alle drei Quellen werden im bestehenden Fähigkeits-Infofenster kumulativ über Lorestufe 1 bis 10 freigeschaltet.
+- Deckblätter, Inhaltsverzeichnisse und redaktionelle Quellenanhänge bleiben außerhalb des Infofensters; im sichtbaren neuen Loretext erscheint kein Meta-Begriff „Spielerfassung“.
+- Der Lorekatalog umfasst nun zehn eindeutige Quellen; Assetabfragen und Offline-Cache verwenden Revision r6.
+
 ## Revision r5
 
 - Die kanonische Spielerfassung **Spiritismus von Eberos** ist als siebte Lorequelle eingebunden.
