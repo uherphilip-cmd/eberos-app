@@ -127,7 +127,7 @@ Wind verlagert Leiter und Front, Blitz lädt sie; anders als Blitz-Z9 wählt man
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit GS + RF und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** ein vorhandener Windkorridor verbindet bis B leitende Felder für B Runden; alle Berührenden, auch Verbündete, können dem ersten Strom widerstehen
+**Wirkung:** ein vorhandener Windkorridor verbindet bis B leitende Felder für S Runden; alle Berührenden, auch Verbündete, können dem ersten Strom widerstehen
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -147,7 +147,7 @@ Wind verlagert Leiter und Front, Blitz lädt sie; anders als Blitz-Z9 wählt man
 
 **Wirkung:** verschiebt eine eigene geladene Front um bis B Felder; trockene Unterbrechungen lösen sie auf
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -189,7 +189,7 @@ Wasser stellt Feuchte und Tropfengröße, Wind führt die Dichte gegen die natü
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit IN + GS und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** öffnet für B Runden einen schmalen Korridor im eigenen Nebel, während seitliche Blicklinien verdeckt bleiben; starke Fremdwinde schließen ihn
+**Wirkung:** öffnet für S Runden einen schmalen Korridor im eigenen Nebel, während seitliche Blicklinien verdeckt bleiben; starke Fremdwinde schließen ihn
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -209,7 +209,7 @@ Wasser stellt Feuchte und Tropfengröße, Wind führt die Dichte gegen die natü
 
 **Wirkung:** führt Nebel an einem gewählten kalten Träger zusammen und macht dort Bewegung/Spuren sichtbar; Widerstand bei getragenem Träger, kein Schaden und keine Unsichtbarkeit
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -235,7 +235,7 @@ Erde löst endliches Lockermaterial, Wind trägt es; anders als Erde-Z13 ist die
 
 **Wirkung:** verschiebt bis B vorhandene lose Sandfelder, lässt am Ursprungsort freie Fläche zurück
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -253,7 +253,7 @@ Erde löst endliches Lockermaterial, Wind trägt es; anders als Erde-Z13 ist die
 
 **Wirkung:** trägt an einer offenliegenden Oberfläche langsam eine dünne Schicht ab und deponiert sie in Sichtweite; tragende Bauten brauchen Zeit und Widerstand der Besitzer
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -271,7 +271,7 @@ Erde löst endliches Lockermaterial, Wind trägt es; anders als Erde-Z13 ist die
 
 **Wirkung:** baut mit derselben Masse einen Deckungsweg und öffnet zugleich einen bisherigen Sandriegel; keine neue Masse
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -339,7 +339,7 @@ Feuer liefert Brennstoff/Hitze, Wind bestimmt Sauerstoff und Richtung; Feuer-Z12
 
 **Wirkung:** leitet Funken nur entlang eines offenen Luftwegs zu vorhandenem Brennstoff, Gegenwehr beim belegten Ziel
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -355,7 +355,7 @@ Feuer liefert Brennstoff/Hitze, Wind bestimmt Sauerstoff und Richtung; Feuer-Z12
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit WL + GS und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** lenkt Rauch von einem eigenen Brandfeld auf ein anderes, sodass das erste sichtbar wird; B Runden, Windstörung
+**Wirkung:** lenkt Rauch von einem eigenen Brandfeld auf ein anderes, sodass das erste sichtbar wird; S Runden, Windstörung
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -375,7 +375,7 @@ Feuer liefert Brennstoff/Hitze, Wind bestimmt Sauerstoff und Richtung; Feuer-Z12
 
 **Wirkung:** verschiebt eine bestehende Feuerkante um höchstens B Felder und löscht die aufgegebene Kante; keine zusätzlichen freien Feuerfelder
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -399,7 +399,7 @@ Erde identifiziert und verankert Erz, Blitz legt eine endliche Polarität an; Bl
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit WL + RF und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** markiert zwei vorhandene erz-/metallhaltige Anker für B Runden; unbefestigtes Metall wird zwischen ihnen gezogen, gehaltene Gegenstände widerstehen
+**Wirkung:** markiert zwei vorhandene erz-/metallhaltige Anker für S Runden; unbefestigtes Metall wird zwischen ihnen gezogen, gehaltene Gegenstände widerstehen
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -419,7 +419,7 @@ Erde identifiziert und verankert Erz, Blitz legt eine endliche Polarität an; Bl
 
 **Wirkung:** kehrt einen eigenen Pol um und verlagert dadurch den sicheren Weg, ohne Reichweite zu vergrößern
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -461,7 +461,7 @@ Wasser formt einen überprüfbaren zusammenhängenden Leitweg, Blitz speist ihn 
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit IN + RF und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** bindet einen begrenzten nassen Streifen für B Runden; Betretende einschließlich Verbündeter können gegen den beim Aufbau gewählten Strom widerstehen
+**Wirkung:** bindet einen begrenzten nassen Streifen für S Runden; Betretende einschließlich Verbündeter können gegen den beim Aufbau gewählten Strom widerstehen
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -481,7 +481,7 @@ Wasser formt einen überprüfbaren zusammenhängenden Leitweg, Blitz speist ihn 
 
 **Wirkung:** verlegt den Ausgang des eigenen Kanals durch real verschobenes Wasser; trockene Lücken brechen ihn
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -499,7 +499,7 @@ Wasser formt einen überprüfbaren zusammenhängenden Leitweg, Blitz speist ihn 
 
 **Wirkung:** entlädt einmal am Ende des Kanals und trocknet/zerstreut dessen Leitwasser; kein zusätzlicher Kettenblitz
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -543,7 +543,7 @@ Erde stellt einen realen, zerbrechlichen Kristall, Licht lädt/brechnet ihn; Lic
 
 **Wirkung:** verbraucht dessen Ladung für eine gerichtete Aufhellung oder Blendung über Sichtlinie; Augen-Gegenwehr, Kristall bleibt zerbrechlich
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -561,7 +561,7 @@ Erde stellt einen realen, zerbrechlichen Kristall, Licht lädt/brechnet ihn; Lic
 
 **Wirkung:** setzt mehrere vorbereitete Splitter zu einer sichtbaren Umleitung, die beim Bruch eines Splitters endet; kein freies Licht ohne Quelle
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -587,7 +587,7 @@ Wasser stellt ebene bewegliche Oberfläche, Licht reale Reflexion; Spiegelorakel
 
 **Wirkung:** richtet Licht über eine offene Wasserfläche um eine Ecke, solange Oberfläche/Quelle bestehen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -605,7 +605,7 @@ Wasser stellt ebene bewegliche Oberfläche, Licht reale Reflexion; Spiegelorakel
 
 **Wirkung:** kippt die eigene Wasserfläche gegen einen sichtbaren Lichtangriff; Gegenwehr des Angriffs bleibt, keine automatische Abwehr
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -621,7 +621,7 @@ Wasser stellt ebene bewegliche Oberfläche, Licht reale Reflexion; Spiegelorakel
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit IN + CR und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** koppelt zwei gleichzeitig sichtbare Wasserflächen für B Runden als begrenzte Lichtleitung; keine Fernsicht und kein Portal
+**Wirkung:** koppelt zwei gleichzeitig sichtbare Wasserflächen für S Runden als begrenzte Lichtleitung; keine Fernsicht und kein Portal
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -667,7 +667,7 @@ Feuer verzehrt Materie, Licht zeigt *welche* Verderbnis freigelegt wird; gegen n
 
 **Wirkung:** wählt vor dem Wurf zwischen begrenzter Läuterung eines benannten Makels oder gewöhnlichem Brand am selben Träger; widerstehendes Ziel wehrt ab
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -683,7 +683,7 @@ Feuer verzehrt Materie, Licht zeigt *welche* Verderbnis freigelegt wird; gegen n
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit WL + CR und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** hält an einem bestehenden Feuer für B Runden eine schmale sichere Lichtseite offen, nicht allgemeine Immunität
+**Wirkung:** hält an einem bestehenden Feuer für S Runden eine schmale sichere Lichtseite offen, nicht allgemeine Immunität
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -709,7 +709,7 @@ Flora lässt echte Wurzeln wachsen, Erde öffnet/verdichtet deren Bodenlager; Fl
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit WN + WL und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** verwurzelt eine lebende Pflanze in geeignetem Erdreich und hält einen kleinen Bodenabschnitt B Runden stabil
+**Wirkung:** verwurzelt eine lebende Pflanze in geeignetem Erdreich und hält einen kleinen Bodenabschnitt S Runden stabil
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -729,7 +729,7 @@ Flora lässt echte Wurzeln wachsen, Erde öffnet/verdichtet deren Bodenlager; Fl
 
 **Wirkung:** opfert diesen Anker für langsamen Druck auf eine benannte Fuge; Bauwerk/Gegner kann entlasten
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -831,7 +831,7 @@ Flora hält einen real gepflegten Heilort lebendig, Heilwunder versorgt einzelne
 
 **Wirkung:** verbraucht die Bindung, um entweder Wundheilung oder Pflanzenrettung zu unterstützen; gleiche Gabe nicht beides
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -847,7 +847,7 @@ Flora hält einen real gepflegten Heilort lebendig, Heilwunder versorgt einzelne
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit IN + WL und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** hält B Stunden einen behandelbaren Ruheort, der bei zerstörter Pflanze endet und keine mehrfachen Behandlungen schenkt
+**Wirkung:** hält S Stunden einen behandelbaren Ruheort, der bei zerstörter Pflanze endet und keine mehrfachen Behandlungen schenkt
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -875,7 +875,7 @@ Flora steuert Gewebe/Wurzeln, Licht lenkt Energiezufuhr und Wuchsrichtung; Flora
 
 **Wirkung:** lenkt einen jungen Trieb zum Licht oder zur Deckung; Nährstoff/Wasser bleiben nötig
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -893,7 +893,7 @@ Flora steuert Gewebe/Wurzeln, Licht lenkt Energiezufuhr und Wuchsrichtung; Flora
 
 **Wirkung:** beschleunigt einen Ast auf Kosten eines anderen derselben Pflanze; kein Netto-Baumvolumen aus Licht allein
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -911,7 +911,7 @@ Flora steuert Gewebe/Wurzeln, Licht lenkt Energiezufuhr und Wuchsrichtung; Flora
 
 **Wirkung:** verteilt vorhandene Licht- und Nährstoffversorgung zwischen mehreren Pflanzen; Monumentalwuchs verlangt weitere Wochen/Pflege
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -937,7 +937,7 @@ Fauna kennt konkrete Tiere und ihre Warnsignale, Empathie liest/teilt deren Gef�
 
 **Wirkung:** lässt ein einwilligendes Tier einen gewählten Gefühlston als Alarm an eine benannte Person senden; fremde Angst kann falsch auslösen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -955,7 +955,7 @@ Fauna kennt konkrete Tiere und ihre Warnsignale, Empathie liest/teilt deren Gef�
 
 **Wirkung:** beantwortet genau diesen Alarm mit beruhigendem Gefühl, wodurch das Tier seine nächste Warnung möglicherweise später meldet; keine Tierkontrolle
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -979,7 +979,7 @@ Fauna liefert beobachteten Instinkt einer *bestimmten* Tierart, Polymorphie setz
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit WN + KS und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** übernimmt für B Runden einen konkreten Wahrnehmungsinstinkt, verliert zugleich einen menschlichen Sinnfokus; echte Tierbegegnung nötig
+**Wirkung:** übernimmt für S Runden einen konkreten Wahrnehmungsinstinkt, verliert zugleich einen menschlichen Sinnfokus; echte Tierbegegnung nötig
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -997,7 +997,7 @@ Fauna liefert beobachteten Instinkt einer *bestimmten* Tierart, Polymorphie setz
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit WN + KS und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** wandelt genau ein zu diesem Instinkt passendes Merkmal für B Runden, während eine andere körperliche Option gesperrt bleibt; keine komplette Tiergestalt
+**Wirkung:** wandelt genau ein zu diesem Instinkt passendes Merkmal für S Runden, während eine andere körperliche Option gesperrt bleibt; keine komplette Tiergestalt
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -1059,7 +1059,7 @@ Flora liefert einen gepflegten lebenden Ort, Spiritismus verhandelt mit dessen e
 
 **Wirkung:** bittet den Geist um eine beobachtete Ortsveränderung, keine Weltkenntnis
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1175,7 +1175,7 @@ Polymorphie bestimmt Körpergrenzen, Erde führt endliche eigene Masse in minera
 
 **Wirkung:** legt eine angreifbare Steinschicht um einen Körperteil, die einen Treffer abfängt, danach abplatzt und die nächste Feinmotorik einschränkt; keine permanente Rüstung
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1201,7 +1201,7 @@ Polymorphie hält Anatomie zusammen, Wasser verschiebt reales Körperwasser; Was
 
 **Wirkung:** verformt ein Glied durch eine enge, offene Lücke, lässt gehaltene Ausrüstung zurück; keine feste Wandpassage
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1219,7 +1219,7 @@ Polymorphie hält Anatomie zusammen, Wasser verschiebt reales Körperwasser; Was
 
 **Wirkung:** zieht ein verformtes Glied zum übrigen Körper zurück und löst dabei eine selbst gewählte Fesselung, opfert aber dessen nächste Handaktion; Gegenwehr der haltenden Person
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1245,7 +1245,7 @@ Empathie liefert fühlbare Intensität, Telepathie adressiert Gedanken; statt de
 
 **Wirkung:** einwilligende Gesprächspartner wählen einen Gefühlston, der eine kurze gedankliche Nachricht markiert; falscher Ton kann missdeutet werden
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1263,7 +1263,7 @@ Empathie liefert fühlbare Intensität, Telepathie adressiert Gedanken; statt de
 
 **Wirkung:** macht die Quelle einer plötzlichen Stimmungsänderung im bestehenden Link erkennbar, bricht aber die Nachricht ab
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1281,7 +1281,7 @@ Empathie liefert fühlbare Intensität, Telepathie adressiert Gedanken; statt de
 
 **Wirkung:** kappt einen eigenen Link bei mentalem Angriff und verliert alle darin gehaltenen Nachrichten; kein kostenloser Schutz für Fremdnetze
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1307,7 +1307,7 @@ Traum liefert gemeinsamen Schlafraum, Telepathie hält eine *gezielte* Nachricht
 
 **Wirkung:** verankert vor dem Schlafen einen Satz für genau einen bekannten Träumer; Empfänger darf ablehnen, Inhalt bleibt nach Erwachen überprüfbar
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1349,7 +1349,7 @@ Traum erzeugt eine veränderliche Traumregel, Illusion macht deren Sinneszeichen
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit IN + CR und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** legt für B Runden ein sichtbares Zeichen fest, das eine falsche, harmlose Erwartung auslöst; geistige Gegenwehr beim ersten Betreten
+**Wirkung:** legt für S Runden ein sichtbares Zeichen fest, das eine falsche, harmlose Erwartung auslöst; geistige Gegenwehr beim ersten Betreten
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -1387,7 +1387,7 @@ Traum erzeugt eine veränderliche Traumregel, Illusion macht deren Sinneszeichen
 
 **Wirkung:** tauscht nach vorheriger Ankündigung ein einziges Sinneszeichen; keine reale Materie und keine neue Gegenprobe für dieselben Betroffenen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1413,7 +1413,7 @@ Hellsicht wählt eine prüfbare nahe Frage, Traum ordnet mehrere Symbole nach de
 
 **Wirkung:** setzt vor dem Schlaf zwei mögliche Deutungen eines realen Problems; Erwachen liefert ein Symbol, keine sichere Entscheidung
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1431,7 +1431,7 @@ Hellsicht wählt eine prüfbare nahe Frage, Traum ordnet mehrere Symbole nach de
 
 **Wirkung:** nach neuer Information fragt ein weiterer Schlaf nach dem stärksten Gegenbeleg und verwirft dafür den ersten Anker; kein Rückwirkungswissen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1455,7 +1455,7 @@ Illusion legt einen falschen optischen Bezugspunkt, Licht führt echte Strahlen 
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit CR + WL und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** verschiebt den sichtbaren Ursprung eines vorhandenen Strahls für B Runden, nicht dessen Energie; Berührung/andere Sinne entlarven
+**Wirkung:** verschiebt den sichtbaren Ursprung eines vorhandenen Strahls für S Runden, nicht dessen Energie; Berührung/andere Sinne entlarven
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -1475,7 +1475,7 @@ Illusion legt einen falschen optischen Bezugspunkt, Licht führt echte Strahlen 
 
 **Wirkung:** opfert die Täuschung, sodass echte Strahlen einen vorher benannten Gegenstand beleuchten; nur dann wird dessen wirklicher Schatten sichtbar, keine absolute Entlarvung
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1519,7 +1519,7 @@ Illusion zeichnet Schemen, Umbramantie verankert sie an vorhandenen Schatten; an
 
 **Wirkung:** verschiebt das Bild entlang zusammenhängender Dunkelgrenzen; körperliche Suchende können die fehlende Masse ertasten
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1537,7 +1537,7 @@ Illusion zeichnet Schemen, Umbramantie verankert sie an vorhandenen Schatten; an
 
 **Wirkung:** mehrere vorbereitete Schemen tauschen einmal ihre Bewegungsrichtung, danach zerfallen sie; keine echte zusätzliche Figur
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1563,7 +1563,7 @@ Illusion bietet Erscheinung, Empathie misst/ändert deren Gefühlsfärbung; Illu
 
 **Wirkung:** ein sichtbarer Schein trägt einen gewählten Gefühlston, geistige Gegenwehr beim ersten Blick
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1581,7 +1581,7 @@ Illusion bietet Erscheinung, Empathie misst/ändert deren Gefühlsfärbung; Illu
 
 **Wirkung:** lässt die eigene Illusion bewusst in einem Detail widersprüchlich werden, um die emotionale Reaktion einer Person zu lesen; Ziel kann ausweichen/täuschen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1605,7 +1605,7 @@ Telepathie adressiert genau einen Geist, Illusion liefert ein individuelles Sinn
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit IN + CR und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** ein Ziel sieht für B Runden einen harmlosen falschen Reiz, geistige Gegenwehr; andere sehen nichts
+**Wirkung:** ein Ziel sieht für S Runden einen harmlosen falschen Reiz, geistige Gegenwehr; andere sehen nichts
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -1625,7 +1625,7 @@ Telepathie adressiert genau einen Geist, Illusion liefert ein individuelles Sinn
 
 **Wirkung:** ändert nach offen wahrgenommener Reaktion nur ein Detail des bestehenden Innenbilds; Ziel kann erneut selbstständig prüfen, keine zweite Pflichtprobe
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1643,7 +1643,7 @@ Telepathie adressiert genau einen Geist, Illusion liefert ein individuelles Sinn
 
 **Wirkung:** sendet dasselbe beschriebene Innenbild an höchstens B einzeln widerstehende Ziele, deren Wahrnehmungen auseinanderlaufen können; keine gemeinsame Außenweltillusion
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1687,7 +1687,7 @@ Hellsicht verfolgt einen gegenwärtigen Anker, Telepathie erkennt die *Richtung*
 
 **Wirkung:** lokalisiert innerhalb S Feldern den zugänglichen Rand eines solchen Links; Abschirmung/Quellwirkwert kann widerstehen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1703,7 +1703,7 @@ Hellsicht verfolgt einen gegenwärtigen Anker, Telepathie erkennt die *Richtung*
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit WN + IN und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** stellt für B Runden die Verbindungen von höchstens B bekannten Teilnehmern dar, ohne unbekannte Geister automatisch zu identifizieren
+**Wirkung:** stellt für S Runden die Verbindungen von höchstens B bekannten Teilnehmern dar, ohne unbekannte Geister automatisch zu identifizieren
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -1749,7 +1749,7 @@ Telepathie adressiert eine konkrete wiederkehrende Gedankenfolge, Wahnfluch fixi
 
 **Wirkung:** wenn ein echter Gegenbeweis erscheint, wird die Schleife kurz lauter und dann schwächer; kein freies Umerziehen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1775,7 +1775,7 @@ Traum liefert Schlafphase/Bild, Wahnfluch trägt eine begrenzte Nachwirkung ins 
 
 **Wirkung:** setzt ein befürchtetes Symbol für die nächste Schlafphase; geistige Gegenwehr beim Beginn
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1837,7 +1837,7 @@ Empathie liest die Qualität fremden Schmerzes, Schmerzfluch setzt eine begrenzt
 
 **Wirkung:** verteilt einen *neu entstehenden* Zustandsmalus auf zwei zustimmende Personen, die Summe bleibt mindestens gleich; keiner gewinnt LP, Abbruch bei getrenntem Kontakt
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1861,7 +1861,7 @@ Wechselbalg gibt echte Körpervorlage, Telepathie leiht nur **ein bewusst freige
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit IN + WL und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** Vorlage teilt freiwillig eine konkrete Gewohnheit und deren Kontext für B Stunden; fremde Geheimnisse bleiben unzugänglich
+**Wirkung:** Vorlage teilt freiwillig eine konkrete Gewohnheit und deren Kontext für S Stunden; fremde Geheimnisse bleiben unzugänglich
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -1881,7 +1881,7 @@ Wechselbalg gibt echte Körpervorlage, Telepathie leiht nur **ein bewusst freige
 
 **Wirkung:** legt ein verifiziertes Fragment als Erkennungssignal in die Form; Betrachter können es mit Gegenfragen widerlegen, der Wechselbalg verliert den Zugang nach dem ersten Gebrauch
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1905,7 +1905,7 @@ Wechselbalg ändert reale Körpermerkmale, Illusion deckt deren nicht gewandelte
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit IN + CR und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** verbirgt eine benannte ungewandelte Körpernaht für B Runden, Berührung entlarvt
+**Wirkung:** verbirgt eine benannte ungewandelte Körpernaht für S Runden, Berührung entlarvt
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -1925,7 +1925,7 @@ Wechselbalg ändert reale Körpermerkmale, Illusion deckt deren nicht gewandelte
 
 **Wirkung:** verlegt den optischen Akzent der Verkleidung, während eine echte Körpergrenze sichtbar wird; Beobachter widerstehen geistig
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -1969,7 +1969,7 @@ Feuer verändert ein benanntes Brennmaterial, Hellsicht liest *nahe Folgen genau
 
 **Wirkung:** untersucht die verbleibende Asche auf einen Gegenbeleg zum ersten Omen, verbraucht sie dabei; keine allgemeine Zukunftsantwort
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2013,7 +2013,7 @@ Erde fixiert eine unverrückte Schicht, Hellsicht liest eine **örtliche zeitlic
 
 **Wirkung:** vergleicht zwei mögliche Ursachen einer sichtbaren Fuge und nennt den stärkeren Hinweis, nicht den Täter
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2031,7 +2031,7 @@ Erde fixiert eine unverrückte Schicht, Hellsicht liest eine **örtliche zeitlic
 
 **Wirkung:** verbindet zwei Proben desselben Gesteins zu einer begrenzten Herkunftshypothese; Proben werden beschädigt
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2049,21 +2049,21 @@ Wind trägt kurzlebige Luftspur, Hellsicht prognostiziert eine *konkrete ankomme
 
 ### 1. Luftfenster · `synergy_school_040_p01` · Schwelle 5/5
 
-**Typ/Kosten/Einsatz:** Schulsynergiekraft; 2 M. Einsatzfenster: eine Aktion. Die Zahlung erfolgt vollständig vor dem einen Synergiewurf. Eine ausdrücklich spätere Folgezahlung wird erst beim genannten Folgeereignis fällig.
+**Typ/Kosten/Einsatz:** Zauber; 2 M; eine Aktion.
 
-**Ziel/Reichweite:** Das im Wirkungstext bezeichnete Wesen, Objekt, Material, Feld, Gebiet oder der dort benannte Anker innerhalb S Feldern. Berührung, Sicht, Ritualort oder eine engere Entfernung im Wirkungstext gehen vor. Ein ungeeignetes, nicht erreichbares oder nicht vorhandenes Ziel verhindert den Beginn vor der Zahlung.
+**Ziel/Reichweite:** Wähle eine mit der Außenluft verbundene offene Stelle innerhalb S Feldern, zum Beispiel ein Tor, eine Tür, ein Fenster, eine Gasse oder einen Pass. Benenne genau eine erwartete Ankunft: eine Person, Gruppe, Kreatur oder ein bewegliches Objekt. Wähle eine Frage: „Wird das benannte Ziel während der Wirkungsdauer hier ankommen?“ oder „Aus welcher Richtung wird es sich diesem Ort nähern?“
 
-**Probe/Gegenwehr:** Ein Synergiewurf mit GS + WN und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
+**Probe/Gegenwehr:** Lege eine Synergieprobe mit GS + WN und W ab. Natürliche Luft leistet keine Gegenwehr. Magische Verschleierung oder fremde Wetterkontrolle muss mit demselben Wurf gegen ihren Wirkwert überwunden werden.
 
-**Wirkung:** bindet eine offene Stelle für B Runden an eine vorher benannte Frage nach Ankunft/Richtung; geschlossene Räume oder Wetterwechsel vereiteln
+**Wirkung:** Bei Erfolg gibt der Wind sofort ein einfaches Zeichen. Die Ankunftsfrage wird mit Ja oder Nein beantwortet; die Richtungsfrage zeigt die wahrscheinliche Himmels- oder Ankunftsrichtung. Das Zeichen beschreibt die wahrscheinlichste Bewegung im Moment des Wirkens und ist keine unabänderliche Zukunft. Die gewählte Stelle bleibt als Luftfenster bestehen und kann von Gegenströmung verwendet werden.
 
-**Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
+**Dauer/Ende:** Das Luftfenster bleibt S Minuten bestehen. Es endet sofort, wenn die Öffnung geschlossen wird, die Verbindung zur Außenluft verloren geht oder sich das Wetter deutlich ändert.
 
-**Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
+**Fehlschlag/Unterbrechung:** Bei einem Fehlschlag erhältst du kein verlässliches Zeichen; die 2 M bleiben verbraucht.
 
-**Buchung:** Einmalig festhalten: Inhalts-ID synergy_school_040_p01, Ziel oder Anker, gewählte Variante, S, B und W, bezahlte und gebundene Ressourcen, Ergebnis und Gegenwehr sowie Beginn und Ende einer fortdauernden Wirkung. Begrenzte Vorräte und bereits ausgelöste Folgen werden am selben Eintrag fortgeschrieben.
+**Buchung:** Notiere Messort, benanntes Ziel, gewählte Frage, Antwort und Endzeitpunkt.
 
-**Grenzen:** Der konkrete Wirkungstext geht den gemeinsamen Standardwerten vor. Gleiche eigene Wirkungen stapeln nicht; eine neue Anwendung ersetzt die ältere nur nach bewusster Lösung ihrer Bindung. Der Effekt erzeugt keine zusätzliche Aktion, keinen zweiten Synergiewurf und keine weiteren Ziele, Schäden, Heilungen oder Ressourcen über den Wortlaut hinaus. Pfadabgrenzung: Wind trägt kurzlebige Luftspur, Hellsicht prognostiziert eine *konkrete ankommende Bewegung*; statt Hellsicht-Z3/Vorwarnung muss man **jetzt einen Messort wählen**
+**Grenzen:** Das Luftfenster verrät weder die genaue Ankunftszeit noch Identität, Route, Absicht oder einen bevorstehenden Angriff. Es beantwortet nur die gewählte Frage zur benannten Bewegung am gewählten Messort.
 
 ### 2. Gegenströmung · `synergy_school_040_p02` · Schwelle 15/15
 
@@ -2075,7 +2075,7 @@ Wind trägt kurzlebige Luftspur, Hellsicht prognostiziert eine *konkrete ankomme
 
 **Wirkung:** opfert das Fenster, um zu erkennen, ob eine neue Bewegung dem ursprünglichen Zeichen widerspricht; keine sichere Identität und keine Angriffsabwehr
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2145,7 +2145,7 @@ Umbramantie identifiziert reale Hell-Dunkel-Kante, Hellsicht liest eine **dort h
 
 **Wirkung:** beantwortet eine Ortsfrage zu einer jüngsten Bewegung entlang der Kante, aber keine Motive
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2181,7 +2181,7 @@ Umbramantie identifiziert reale Hell-Dunkel-Kante, Hellsicht liest eine **dort h
 
 **Wirkung:** beleuchtet absichtlich einen Teil und verliert dort die Spur, gewinnt aber einen überprüfbaren Hinweis auf Manipulation des Schattenankers
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2223,7 +2223,7 @@ Licht legt reale Details frei, Hellsicht vergleicht sie mit einer *vorher formul
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit CR + WN und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** hält eine solche Stelle B Runden für Zeugen sichtbar, ohne Gedanken oder Schuld zu lesen
+**Wirkung:** hält eine solche Stelle S Runden für Zeugen sichtbar, ohne Gedanken oder Schuld zu lesen
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -2243,7 +2243,7 @@ Licht legt reale Details frei, Hellsicht vergleicht sie mit einer *vorher formul
 
 **Wirkung:** verwirft das alte Zeichen und testet eine alternative Erklärung am selben Ort; Täuschungs- und Magieabwehr bleiben
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2305,7 +2305,7 @@ Metamagie formuliert eine *prüfbare Bedingung*, Rune trägt sie materiell; Meta
 
 **Wirkung:** testet vor Auslösung einen tatsächlichen Randfall; verbraucht dabei die Sigille, keine Rückerstattung gebundenen Manas vor Auflösung
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2329,7 +2329,7 @@ Telekinese setzt gerichtete Kraft, Metamagie gleicht sie zu einem lokalen **einh
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit IT + WL und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** verändert in einem kleinen offenen Bereich für B Runden die Fallrichtung gleichermaßen für alle losen Dinge; befestigte/lebende Ziele widerstehen
+**Wirkung:** verändert in einem kleinen offenen Bereich für S Runden die Fallrichtung gleichermaßen für alle losen Dinge; befestigte/lebende Ziele widerstehen
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -2373,7 +2373,7 @@ Telekinese bewegt eine vorhandene materielle Tür/Klappe, Umbramantie verankert 
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit IT + GS und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** hält eine angelehnte Tür B Runden an einem tatsächlichen Schattenrand, Gegner können drücken
+**Wirkung:** hält eine angelehnte Tür S Runden an einem tatsächlichen Schattenrand, Gegner können drücken
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -2393,7 +2393,7 @@ Telekinese bewegt eine vorhandene materielle Tür/Klappe, Umbramantie verankert 
 
 **Wirkung:** verschiebt eine vorhandene Öffnung um eine handbreite Strecke, ohne Schloss/Mauer zu durchdringen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2411,7 +2411,7 @@ Telekinese bewegt eine vorhandene materielle Tür/Klappe, Umbramantie verankert 
 
 **Wirkung:** löst den Halt und lenkt die Tür in die vorher benannte Richtung; Einklemmung braucht körperliche Gegenwehr
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2455,7 +2455,7 @@ Metamagie liest die Struktur einer *bestehenden* Wirkung, Hellsicht deren nahe w
 
 **Wirkung:** vergleicht zwei offen genannte Eingriffe und nennt, welcher den Zauber eher stört, ohne ihn zu verändern
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2473,7 +2473,7 @@ Metamagie liest die Struktur einer *bestehenden* Wirkung, Hellsicht deren nahe w
 
 **Wirkung:** zeichnet bis B nächste Wirkstationen eines verankerten Effekts auf, sobald eine Station anders eintritt, endet die Prognose
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2497,7 +2497,7 @@ Metamagie identifiziert eine Klasse fremder Kraft, Schutzwunder zieht *nur dageg
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit IT + KS und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** markiert eine erkannte Quellsignatur für B Runden; falsche Diagnose schützt nicht
+**Wirkung:** markiert eine erkannte Quellsignatur für S Runden; falsche Diagnose schützt nicht
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -2517,7 +2517,7 @@ Metamagie identifiziert eine Klasse fremder Kraft, Schutzwunder zieht *nur dageg
 
 **Wirkung:** schützt ein Ziel gegen den nächsten Treffer genau dieser Signatur, mit Wirkwertvergleich und Quellstufe
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2535,7 +2535,7 @@ Metamagie identifiziert eine Klasse fremder Kraft, Schutzwunder zieht *nur dageg
 
 **Wirkung:** versetzt den Mantel vor Auslösung auf einen benannten Nachbarn und lässt den ersten ungeschützt; keine flächige Immunität
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2559,7 +2559,7 @@ Metamagie erkennt eine benannte Verbindung, Umbramantie macht ihre Schattenzone 
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit IT + GS und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** dämpft B Runden eine gewählte magische Leitung an einer realen Schattenkante, Wirkwert/Quellstufe zählen
+**Wirkung:** dämpft S Runden eine gewählte magische Leitung an einer realen Schattenkante, Wirkwert/Quellstufe zählen
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -2579,7 +2579,7 @@ Metamagie erkennt eine benannte Verbindung, Umbramantie macht ihre Schattenzone 
 
 **Wirkung:** öffnet in der eigenen Zone einen kurzen Durchlass und lässt dafür an anderer Stelle eine Lücke im Schutz
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2667,7 +2667,7 @@ Rune trägt die Klausel, Bluthexerei benennt **wer welchen realen Preis vor Frei
 
 **Wirkung:** vor Auslösung darf ein einwilligender Mitträger den bereits festgelegten LP-Preis übernehmen; tatsächlich verlorene LP verbuchen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2729,21 +2729,21 @@ Rune ist vorbereitet und M-gebunden, Erde gestaltet einen **tragenden, zerstörb
 
 ### 1. Fugenanker · `synergy_school_053_p01` · Schwelle 5/5
 
-**Typ/Kosten/Einsatz:** Schulsynergiekraft; 2 M, Ritual, gebunden. Einsatzfenster: Ritual bzw. die im Preistext genannte Vorbereitungszeit. Die Zahlung erfolgt vollständig vor dem einen Synergiewurf. Eine ausdrücklich spätere Folgezahlung wird erst beim genannten Folgeereignis fällig.
+**Typ/Kosten/Einsatz:** Runenritual; mindestens zehn Minuten; 2 M werden gebunden. Die gewählte Rune muss dir gehören und bereits aktiv sein oder im selben Ritual vollendet werden. Ihre eigene Manabindung gilt zusätzlich.
 
-**Ziel/Reichweite:** Das im Wirkungstext bezeichnete Wesen, Objekt, Material, Feld, Gebiet oder der dort benannte Anker innerhalb S Feldern. Berührung, Sicht, Ritualort oder eine engere Entfernung im Wirkungstext gehen vor. Ein ungeeignetes, nicht erreichbares oder nicht vorhandenes Ziel verhindert den Beginn vor der Zahlung.
+**Ziel/Reichweite:** Berühre während des Rituals die Fuge zwischen genau zwei unmittelbar verbundenen, festen Steinsegmenten. Wähle eine eigene Rune, deren Wirkung auf einem unbeweglichen Steinträger sinnvoll anwendbar ist.
 
-**Probe/Gegenwehr:** Ein Synergiewurf mit ST + KS und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
+**Probe/Gegenwehr:** Lege eine Synergieprobe mit ST + KS und W ab. Eigene gewöhnliche Steinsegmente leisten keine Gegenwehr. Ist eines der Segmente magisch geschützt oder verzaubert, muss der Wurf auch dessen Wirkwert erreichen.
 
-**Wirkung:** setzt eine Rune über genau zwei verbundene Steinsegmente; Trennung eines Segments stoppt sie
+**Wirkung:** Bei Erfolg zählen die beiden Steinsegmente für die gewählte Rune als ein gemeinsamer Runenträger. Die Rune kann nach ihren normalen Regeln an beiden Segmenten wirken oder ausgelöst werden. Vorrat, Auslösungen und Wirkung der Rune bleiben einmalig und werden nicht verdoppelt.
 
-**Dauer/Ende:** Die Bindung bleibt bis zur im Wirkungstext vorgesehenen Auslösung, bewussten Lösung oder Zerstörung ihres Trägers bzw. Ankers bestehen. Gebundene Ressourcen bleiben bis dahin reserviert.
+**Dauer/Ende:** Der Fugenanker besteht, solange die verbundene Rune, die Fuge und beide Steinsegmente unbeschädigt bleiben. Wird die Fuge geöffnet, eines der Segmente getrennt oder zerstört oder die Runenlinie beschädigt, enden Fugenanker und verbundene Rune sofort. Das an beide Wirkungen gebundene Mana wird wieder verfügbar.
 
-**Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
+**Fehlschlag/Unterbrechung:** Bei einem Fehlschlag entsteht kein Fugenanker; die bereits bestehende Rune bleibt unverändert.
 
-**Buchung:** Einmalig festhalten: Inhalts-ID synergy_school_053_p01, Ziel oder Anker, gewählte Variante, S, B und W, bezahlte und gebundene Ressourcen, Ergebnis und Gegenwehr sowie Beginn und Ende einer fortdauernden Wirkung. Begrenzte Vorräte und bereits ausgelöste Folgen werden am selben Eintrag fortgeschrieben.
+**Buchung:** Notiere die verbundene Rune und die beiden Steinsegmente.
 
-**Grenzen:** Der konkrete Wirkungstext geht den gemeinsamen Standardwerten vor. Gleiche eigene Wirkungen stapeln nicht; eine neue Anwendung ersetzt die ältere nur nach bewusster Lösung ihrer Bindung. Der Effekt erzeugt keine zusätzliche Aktion, keinen zweiten Synergiewurf und keine weiteren Ziele, Schäden, Heilungen oder Ressourcen über den Wortlaut hinaus. Pfadabgrenzung: Rune ist vorbereitet und M-gebunden, Erde gestaltet einen **tragenden, zerstörbaren Steinverbund**; ein Stein als bloßer Untergrund wäre keine Synergie
+**Grenzen:** Der Fugenanker klebt oder verstärkt die Steine nicht und verhindert ihre Trennung nicht. Er vergrößert weder Reichweite noch Fläche der gewählten Rune über die beiden Segmente hinaus und erzeugt keinen zweiten Effekt.
 
 ### 2. Lastbruch · `synergy_school_053_p02` · Schwelle 15/15
 
@@ -2799,7 +2799,7 @@ Rune legt vorbereitete Knoten, Blitz speist eine finite Ladung; Blitz-Z1/Z7 leit
 
 **Wirkung:** stellt an einer eigenen Leitung vor Entladung den Ausgang um, wenn ein zweiter vorbereiteter Knoten existiert
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2817,7 +2817,7 @@ Rune legt vorbereitete Knoten, Blitz speist eine finite Ladung; Blitz-Z1/Z7 leit
 
 **Wirkung:** entlädt einmal über den gewählten Weg und löst alle beteiligten Bindungen; Betroffene widerstehen wie bei Strom, keine selbstladende Schleife
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2861,7 +2861,7 @@ Rune trägt einen Vertrag, Spiritismus gewinnt Einwilligung/Auftrag eines bestim
 
 **Wirkung:** schreibt eine endliche Aufgabe und Ausstiegsklausel, aktive Geistaktion kostet zusätzliche GB
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2905,7 +2905,7 @@ Rune bindet eine Grenze an Leichnam/Krypta, Nekromantie erkennt die **konkrete T
 
 **Wirkung:** hemmt einen benannten Wiederkehrweg einmal, Quellstufe/Wirkwert entscheiden
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2923,7 +2923,7 @@ Rune bindet eine Grenze an Leichnam/Krypta, Nekromantie erkennt die **konkrete T
 
 **Wirkung:** öffnet die eigene Grabgrenze kontrolliert für Untersuchung, wodurch ihr Schutz endet; kein Universalbann
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -2947,7 +2947,7 @@ Rune zeichnet einen begrenzten Körper-Seele-Anker, Thanaturgie schützt die **b
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit GS + WL und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** einwilligende Person erhält ein sichtbares Schutzzeichen für B Stunden; Entfernung löst
+**Wirkung:** einwilligende Person erhält ein sichtbares Schutzzeichen für S Stunden; Entfernung löst
 
 **Dauer/Ende:** Die Bindung bleibt bis zur im Wirkungstext vorgesehenen Auslösung, bewussten Lösung oder Zerstörung ihres Trägers bzw. Ankers bestehen. Gebundene Ressourcen bleiben bis dahin reserviert.
 
@@ -2985,7 +2985,7 @@ Rune zeichnet einen begrenzten Körper-Seele-Anker, Thanaturgie schützt die **b
 
 **Wirkung:** opfert den Eigenanker gegen einen einzelnen Seelenzugriff, vergleichende seelische Gegenwehr; keine Wiederbelebung
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3009,7 +3009,7 @@ Angriffswunder benennt eine konkrete beobachtbare Tat/Spur, Licht hält **Zeugen
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit WL + CR und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** beleuchtet ein materielles Indiz für B Runden und markiert nur den dadurch überprüfbaren Widerspruch, keine Schuldgewissheit
+**Wirkung:** beleuchtet ein materielles Indiz für S Runden und markiert nur den dadurch überprüfbaren Widerspruch, keine Schuldgewissheit
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -3029,7 +3029,7 @@ Angriffswunder benennt eine konkrete beobachtbare Tat/Spur, Licht hält **Zeugen
 
 **Wirkung:** verbraucht diese Linie für einen einzelnen gerichteten Lichtangriff gegen den sichtbaren Träger des Indizes; normale Gegenwehr/Schaden, ohne Indiz keine Technik
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3127,7 +3127,7 @@ Angriffswunder legt fremden Einfluss offen, Spiritismus verhandelt mit dessen *i
 
 **Wirkung:** trennt Symptome von Wirtswillen und nennt einen prüfbaren Geistanker
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3145,7 +3145,7 @@ Angriffswunder legt fremden Einfluss offen, Spiritismus verhandelt mit dessen *i
 
 **Wirkung:** bietet dem Geist einen offenen Weg aus einem zustimmenden Wirt; der Geist kann widerstehen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3161,7 +3161,7 @@ Angriffswunder legt fremden Einfluss offen, Spiritismus verhandelt mit dessen *i
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit WL + IN und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** wenn Verhandlung scheitert, errichtet B Runden eine erkennbare Grenze, die Geist und Wirt getrennt hält; Quellstufe/Wirkwert, kein sofortiger Vernichtungswurf
+**Wirkung:** wenn Verhandlung scheitert, errichtet S Runden eine erkennbare Grenze, die Geist und Wirt getrennt hält; Quellstufe/Wirkwert, kein sofortiger Vernichtungswurf
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -3189,7 +3189,7 @@ Licht hält einen sichtbaren Weg, Thanaturgie schützt die letzte Körper-Seele-
 
 **Wirkung:** markiert einen kurzen sicheren Abschnitt für einen benannten verstorbenen Geist, Zustimmung/Abschied nötig
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3207,7 +3207,7 @@ Licht hält einen sichtbaren Weg, Thanaturgie schützt die letzte Körper-Seele-
 
 **Wirkung:** schützt die Linie einmal gegen einen identifizierten Zugriff, ohne den Geist zu steuern
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3225,7 +3225,7 @@ Licht hält einen sichtbaren Weg, Thanaturgie schützt die letzte Körper-Seele-
 
 **Wirkung:** schließt die eigene Linie nach Durchgang und dokumentiert, ob der Geist sie verließ; keine sichere Aussage über Jenseitsziel
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3269,7 +3269,7 @@ Licht macht eine **behandelbare** Verunreinigung sichtbar, Heilwunder wählt Rei
 
 **Wirkung:** entscheidet vor dem Wurf zwischen Entfernung genau dieser Belastung oder normaler begrenzter Wundheilung, nicht beidem; Dunkelheit/Abschirmung verhindert
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3293,7 +3293,7 @@ Licht macht eine Schutzkante für alle sichtbar, Schutzwunder hält sie; Schutz-
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit CR + KS und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** bildet B Runden eine kurze sichtbare Barriere, die ebenso Verbündete blendet
+**Wirkung:** bildet S Runden eine kurze sichtbare Barriere, die ebenso Verbündete blendet
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -3331,7 +3331,7 @@ Licht macht eine Schutzkante für alle sichtbar, Schutzwunder hält sie; Schutz-
 
 **Wirkung:** opfert die Barriere, um einen einzigen durch sie gehenden blockierbaren Angriff abzufangen; regulärer Abwehrvergleich
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3357,7 +3357,7 @@ Spiritismus ruft einen *bekannten, zustimmenden Zeugen*, Hellsicht fragt nach de
 
 **Wirkung:** eine konkrete Vergangenheitsfrage, der Ahne kann irren/verweigern
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3393,7 +3393,7 @@ Spiritismus ruft einen *bekannten, zustimmenden Zeugen*, Hellsicht fragt nach de
 
 **Wirkung:** fragt nach einer wahrscheinlichen Gefahr für einen dem Ahnen bekannten Nachfahren, setzt dessen alte Sicht voraus und endet bei veränderten Umständen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3419,7 +3419,7 @@ Traum schafft einen Ort für Schlafende, Spiritismus lädt einen zustimmenden Ah
 
 **Wirkung:** lädt einen bekannten Ahnen in einen geteilten Traum, beide Lebenden müssen schlafen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3437,7 +3437,7 @@ Traum schafft einen Ort für Schlafende, Spiritismus lädt einen zustimmenden Ah
 
 **Wirkung:** hält eine freiwillig gesagte Aussage nach dem Erwachen fest, andere Traumbilder verblassen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3461,7 +3461,7 @@ Umbramantie-Z7 heißt bereits Schattenhort; der Paarpfad erhält vorläufig den 
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit GS + KS und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** benennt in einem vorhandenen Schatten einen Schutzempfänger für B Runden, lichtlose Freifläche reicht nicht
+**Wirkung:** benennt in einem vorhandenen Schatten einen Schutzempfänger für S Runden, lichtlose Freifläche reicht nicht
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -3537,7 +3537,7 @@ Wechselbalg liefert eine instabile fremde Vorlage, Polymorphie korrigiert *einen
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit KS + IN und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** hält B Runden zwei echte Körpermerkmale zusammen, ein nicht gewähltes Merkmal wird unbrauchbar
+**Wirkung:** hält S Runden zwei echte Körpermerkmale zusammen, ein nicht gewähltes Merkmal wird unbrauchbar
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -3557,7 +3557,7 @@ Wechselbalg liefert eine instabile fremde Vorlage, Polymorphie korrigiert *einen
 
 **Wirkung:** tauscht den aktiven Vorteil gegen eine andere Funktion und übernimmt deren vorher benannte Belastung
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3575,7 +3575,7 @@ Wechselbalg liefert eine instabile fremde Vorlage, Polymorphie korrigiert *einen
 
 **Wirkung:** löst die eigene Mischform unter Widerstand der fremden Vorlage, statt sie dauerhaft einzuschreiben
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3629,7 +3629,7 @@ Polymorphie schafft eine temporäre Körpervorlage, Heilwunder versorgt deren **
 
 **Wirkung:** legt für eine echte Wunde die angestrebte Struktur fest; keine sofortigen LP
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3647,7 +3647,7 @@ Polymorphie schafft eine temporäre Körpervorlage, Heilwunder versorgt deren **
 
 **Wirkung:** beschleunigt genau einen regulären Heilabschnitt, erhöht aber das Risiko einer fehlangepassten Form bei Unterbrechung
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3665,7 +3665,7 @@ Polymorphie schafft eine temporäre Körpervorlage, Heilwunder versorgt deren **
 
 **Wirkung:** korrigiert den eigenen begonnenen Heilplan statt erneut LP zu vergeben; Patient/Gegenheilung kann ablehnen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3689,7 +3689,7 @@ Umbramantie-Z11/Schattenleib und Polymorphie-Z6/Ätherische Form besetzen die re
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit KS + GS und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** verlegt für B Runden nur eine Körperkontur in einen vorhandenen Schatten, der materielle Anker bleibt angreifbar
+**Wirkung:** verlegt für S Runden nur eine Körperkontur in einen vorhandenen Schatten, der materielle Anker bleibt angreifbar
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -3709,7 +3709,7 @@ Umbramantie-Z11/Schattenleib und Polymorphie-Z6/Ätherische Form besetzen die re
 
 **Wirkung:** zieht die Kontur zu diesem Anker zurück, opfert dabei die nächste eigene Ortsbewegung; kein Durchgang durch feste Mauern
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3735,7 +3735,7 @@ Nekromantie-Z1/Totenstimme und Spiritismus-Z1/Stimme der Ahnen sprechen bereits 
 
 **Wirkung:** stellt einem erreichbaren Geist und seinem vorhandenen Leichnam dieselbe konkrete Frage, Geist kann verweigern
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3753,7 +3753,7 @@ Nekromantie-Z1/Totenstimme und Spiritismus-Z1/Stimme der Ahnen sprechen bereits 
 
 **Wirkung:** markiert genau einen Widerspruch als untersuchbare Spur am Körper, vernichtet die nekromantische Lesbarkeit dieser Stelle; keine weitere kostenlose Befragung
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3805,7 +3805,7 @@ Nekromantie bindet Todesrest, Umbramantie stellt nur dessen **früheren Schatten
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit GS + KS und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** zeichnet B Runden an einer realen Todesstelle einen Umriss, der keine Angriffe führt
+**Wirkung:** zeichnet S Runden an einer realen Todesstelle einen Umriss, der keine Angriffe führt
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -3825,7 +3825,7 @@ Nekromantie bindet Todesrest, Umbramantie stellt nur dessen **früheren Schatten
 
 **Wirkung:** versetzt den Umriss entlang echter Schatten und verliert die ursprüngliche Ortsinformation
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3843,7 +3843,7 @@ Nekromantie bindet Todesrest, Umbramantie stellt nur dessen **früheren Schatten
 
 **Wirkung:** opfert das Nachbild, um einen gebundenen Todesanker einmal sichtbar zu machen; nicht automatisch bannen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3867,7 +3867,7 @@ Feuer braucht Brennstoff, Dämonologie verhandelt einen gefährlichen **Preis un
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit WL + CR und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** entzündet vorhandenen Brennstoff für B Runden unter offen genannter dämonischer Bedingung; ohne Bedingung kein Mehrwert
+**Wirkung:** entzündet vorhandenen Brennstoff für S Runden unter offen genannter dämonischer Bedingung; ohne Bedingung kein Mehrwert
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -3887,7 +3887,7 @@ Feuer braucht Brennstoff, Dämonologie verhandelt einen gefährlichen **Preis un
 
 **Wirkung:** bricht die eigene Flamme vorzeitig und verhindert deren Folgeschaden, bezahlt aber die zuvor vereinbarte Opfergabe
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3905,7 +3905,7 @@ Feuer braucht Brennstoff, Dämonologie verhandelt einen gefährlichen **Preis un
 
 **Wirkung:** erlaubt der gebundenen Entität eine begrenzte Richtungsentscheidung; deren Widerstand/Risiko bleibt sichtbar, kein Zusatzangriff
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3931,7 +3931,7 @@ Dämonologie kennt Pakte, Blutfluch macht eine **beidseitig prüfbare materielle
 
 **Wirkung:** bindet zwei ausdrücklich benannte Leistungen an eine überprüfbare Blutprobe, Zustimmung oder Gegenwehr
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3967,7 +3967,7 @@ Dämonologie kennt Pakte, Blutfluch macht eine **beidseitig prüfbare materielle
 
 **Wirkung:** bietet vor Vollstreckung eine vorher im Vertrag hinterlegte Ersatzleistung, bei Ablehnung bleibt der Pakt bestehen; keine kostenlose Lösung
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -3991,7 +3991,7 @@ Dämonologie-Z14/Gastleib des Paktes kennt Besitz, Wahnfluch verändert die **Se
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit WL + KS und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** markiert an einem einwilligenden oder widerstehenden Wirt eine erkennbare Eintrittsbedingung für B Runden; kein sofortiges Übernehmen
+**Wirkung:** markiert an einem einwilligenden oder widerstehenden Wirt eine erkennbare Eintrittsbedingung für S Runden; kein sofortiges Übernehmen
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -4011,7 +4011,7 @@ Dämonologie-Z14/Gastleib des Paktes kennt Besitz, Wahnfluch verändert die **Se
 
 **Wirkung:** lässt Wirt und Gast bei einer Handlung getrennte Absichten äußern, geistige/seelische Gegenwehr entscheidet, keine zweite Pflichtprobe
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -4053,7 +4053,7 @@ Dämonologie kennt den benannten jenseitigen Ursprung, Umbramantie liefert eine 
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit WL + GS und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** markiert B Runden eine reale Schwelle und zeigt eine gegenwärtige dämonische Durchwirkung, Quellabwehr
+**Wirkung:** markiert S Runden eine reale Schwelle und zeigt eine gegenwärtige dämonische Durchwirkung, Quellabwehr
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -4073,7 +4073,7 @@ Dämonologie kennt den benannten jenseitigen Ursprung, Umbramantie liefert eine 
 
 **Wirkung:** versiegelt genau diesen Saum gegen eine benannte Quelle, nicht alle Dämonen
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -4091,7 +4091,7 @@ Dämonologie kennt den benannten jenseitigen Ursprung, Umbramantie liefert eine 
 
 **Wirkung:** öffnet ihn kurz zur Untersuchung und verliert dadurch den Verschluss; keine Passage von Körpern
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -4155,7 +4155,7 @@ Vampirismus überträgt *tatsächlich geraubte* LP, Bluthexerei bestimmt einen F
 
 **Wirkung:** vermerkt für einen gelungenen späteren Entzug genau Quelle, Obergrenze und Empfänger; ohne realen Verlust kein Guthaben
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -4199,7 +4199,7 @@ Schmerzfluch erzeugt Qual, Bluthexerei haftet sie an eine reale frische Blutspur
 
 **Wirkung:** bindet eine bestehende blutende Wunde an einen begrenzten Qualzustand, Körper/Geist wehrt einmal
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -4243,7 +4243,7 @@ Umbramantie macht den **Entzugspfad entlang eines vorhandenen Schattens** zum Ri
 
 **Wirkung:** markiert einen zusammenhängenden Schatten zwischen Wirker und Ziel für einen einzigen Entzug; Ziel wehrt, Lichtbruch verhindert Gewinn
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -4287,7 +4287,7 @@ Nekromantie findet *mehrere tatsächliche Anker* eines Untoten, Thanaturgie schl
 
 **Wirkung:** nennt einen nachweisbaren Anker und eine mögliche Sicherung, nicht alle Geheimnisse
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -4305,7 +4305,7 @@ Nekromantie findet *mehrere tatsächliche Anker* eines Untoten, Thanaturgie schl
 
 **Wirkung:** schließt einen erreichten Anker, Quellwirkstufe/Wirkwert und Schutz entscheiden
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -4323,7 +4323,7 @@ Nekromantie findet *mehrere tatsächliche Anker* eines Untoten, Thanaturgie schl
 
 **Wirkung:** prüft nach unabhängiger Sicherung der anderen Anker, ob eine Rückkehrroute offen bleibt; allein kein Lich-Tod
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -4349,7 +4349,7 @@ Nekromantie-Z11 liest Toten-Erinnerung, Traum macht einen **subjektiven Rekonstr
 
 **Wirkung:** ein vorhandener Leichnam speist eine kurze Traumszene, Fragen folgen seiner letzten Wahrnehmung
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -4455,7 +4455,7 @@ Spiritismus identifiziert eine zugängliche Geistbindung, Vampirismus raubt eine
 
 **Wirkung:** markiert eine gegenwärtige seelische Verbindung, Ziel wehrt seelisch
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -4473,7 +4473,7 @@ Spiritismus identifiziert eine zugängliche Geistbindung, Vampirismus raubt eine
 
 **Wirkung:** schwächt vorübergehend genau eine benannte Verbindung statt beliebiger Erinnerungen; Hilfe/Anker kann sie erneuern
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -4541,7 +4541,7 @@ Nekromantie erhält einen bestimmten toten Körper, Heilwunder repariert dessen 
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit WL + IN und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** hält einen Leichnam B Tage untersuchbar, keine LP
+**Wirkung:** hält einen Leichnam S Tage untersuchbar, keine LP
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -4603,7 +4603,7 @@ Licht und Schatten liefern **gleichzeitig eine begrenzte Kontrastkante**, nicht 
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit CR + GS und dem Stufenwürfel W der niedrigeren wirksamen Elternstufe. Widerstrebende Körperziele wehren körperlich, Geist oder Seele mit der passenden geistigen bzw. seelischen Gegenwehr und fremde Magie mit ihrem aufgezeichneten Wirkwert. Eigene, freiwillige oder natürliche unbelebte Ziele würfeln nur dann Gegenwehr, wenn der Wirkungstext sie ausdrücklich verlangt.
 
-**Wirkung:** markiert B Runden eine echte Lichtgrenze, an der eine Seite gut sieht und die andere Deckung gewinnt; Lichtänderung verschiebt die Linie
+**Wirkung:** markiert S Runden eine echte Lichtgrenze, an der eine Seite gut sieht und die andere Deckung gewinnt; Lichtänderung verschiebt die Linie
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 
@@ -4623,7 +4623,7 @@ Licht und Schatten liefern **gleichzeitig eine begrenzte Kontrastkante**, nicht 
 
 **Wirkung:** tauscht die begünstigte Seite und verliert den bisherigen Schutz
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -4641,7 +4641,7 @@ Licht und Schatten liefern **gleichzeitig eine begrenzte Kontrastkante**, nicht 
 
 **Wirkung:** löst den Kontrast für einen kurzen gemeinsamen klaren Blick auf eine benannte Stelle; keine allgemeine Enthüllung
 
-**Dauer/Ende:** Die Wirkung hält höchstens B Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
+**Dauer/Ende:** Die Wirkung hält höchstens S Runden. Sie endet früher, sobald Ziel oder Anker die im Wirkungstext genannte Bedingung verliert, der Wirker sie beendet oder eine dort vorgesehene Lösung gelingt.
 
 **Fehlschlag/Unterbrechung:** Bei verlorener Gegenwehr, ungültigem Ziel oder Unterbrechung nach Beginn tritt die Wirkung nicht ein; ausgegebene Kosten werden nicht erstattet und eine neue Bindung entsteht nur bei erfolgreichem Abschluss. Bereits bestehende fremde Zustände werden durch den Fehlschlag nicht verändert.
 
@@ -4841,7 +4841,7 @@ Leichter Nahkampf setzt eine echte frische Wunde, Bluthexerei knüpft genau dara
 
 **Probe/Gegenwehr:** Ein Synergiewurf mit ST + FF; der Würfel folgt der wirksamen Kampfstufe. Derselbe Wurf entscheidet den körperlichen Vorgang und den Zusatz. Das Ziel verwendet die normale körperliche Abwehr; ein widerstrebender magischer Zusatz nutzt innerhalb dieses Vergleichs die passende geistige, seelische oder magische Gegenwehr. Gegen fremde Wirkungen gilt zusätzlich Quellwirkstufe ≤ S.
 
-**Wirkung:** Treffer markiert Ziel für B Runden mit einer vorher gewählten Blutspur, körperliche Abwehr entscheidet den Treffer und magische Gegenwehr denselben Synergiewurf
+**Wirkung:** Treffer markiert Ziel für S Runden mit einer vorher gewählten Blutspur, körperliche Abwehr entscheidet den Treffer und magische Gegenwehr denselben Synergiewurf
 
 **Dauer/Ende:** Die im Wirkungstext genannte Dauer und Endebedingung gilt. Ein verbrauchter Auslöser, zerstörter Anker oder ausdrücklich genanntes Ende beendet die Wirkung sofort.
 

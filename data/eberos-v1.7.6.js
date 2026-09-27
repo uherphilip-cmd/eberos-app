@@ -54,8 +54,8 @@ document.head.append(powerStyleV176);
 
 function validatePowerCatalogV176(){
   const errors=[],ids=new Set(),schoolCodes=new Map(),pathCounts={M:0,GB:0,FS:0},reinforcement={yes:0,no:0};
-  if(POWER_ENTRIES_V176.length!==450)errors.push(`450 Einträge erwartet, ${POWER_ENTRIES_V176.length} gefunden`);
-  if(POWER_SCHOOLS_V176.length!==30)errors.push(`30 Schulen erwartet, ${POWER_SCHOOLS_V176.length} gefunden`);
+  if(POWER_ENTRIES_V176.length!==465)errors.push(`465 Einträge erwartet, ${POWER_ENTRIES_V176.length} gefunden`);
+  if(POWER_SCHOOLS_V176.length!==31)errors.push(`31 Schulen erwartet, ${POWER_SCHOOLS_V176.length} gefunden`);
   for(const entry of POWER_ENTRIES_V176){
     if(!entry?.id||ids.has(entry.id))errors.push(`Doppelte oder leere Power-ID: ${entry?.id||'—'}`);
     ids.add(entry?.id);
@@ -76,8 +76,8 @@ function validatePowerCatalogV176(){
     const codes=entries.map(entry=>entry.code).sort((a,b)=>Number(a.slice(1))-Number(b.slice(1))).join(',');
     if(entries.length!==15||codes!=='Z1,Z2,Z3,Z4,Z5,Z6,Z7,Z8,Z9,Z10,Z11,Z12,Z13,Z14,Z15')errors.push(`${school.schoolLabel}: Z1 bis Z15 unvollständig`);
   }
-  if(`${pathCounts.M}|${pathCounts.GB}|${pathCounts.FS}`!=='255|75|120')errors.push(`Pfadverteilung ${pathCounts.M}/${pathCounts.GB}/${pathCounts.FS}`);
-  if(`${reinforcement.yes}|${reinforcement.no}`!=='338|112')errors.push(`Verstärkungsverteilung ${reinforcement.yes}/${reinforcement.no}`);
+  if(`${pathCounts.M}|${pathCounts.GB}|${pathCounts.FS}`!=='255|90|120')errors.push(`Pfadverteilung ${pathCounts.M}/${pathCounts.GB}/${pathCounts.FS}`);
+  if(`${reinforcement.yes}|${reinforcement.no}`!=='352|113')errors.push(`Verstärkungsverteilung ${reinforcement.yes}/${reinforcement.no}`);
   const renamed=POWER_ENTRIES_V176.find(entry=>entry.schoolLabel==='Schutz- & Bewahrungswunder'&&entry.code==='Z8');
   if(renamed?.displayName!=='Hand der Fürsprache'||renamed?.sourceName!=='Schützende Hand')errors.push('Namenskorrektur für Schutz- & Bewahrungswunder Z8 fehlt');
   return{ok:errors.length===0,errors,pathCounts,reinforcement,ids:ids.size};
@@ -678,8 +678,8 @@ runTests=function(){
   eq('450 Power-Einträge',450,POWER_ENTRIES_V176.length);
   eq('30 Power-Schulen',30,POWER_SCHOOLS_V176.length);
   eq('450 eindeutige Power-IDs',450,new Set(POWER_ENTRIES_V176.map(entry=>entry.id)).size);
-  eq('Pfadverteilung 255/75/120','255|75|120',`${POWER_VALIDATION_V176.pathCounts.M}|${POWER_VALIDATION_V176.pathCounts.GB}|${POWER_VALIDATION_V176.pathCounts.FS}`);
-  eq('Verstärkungen 338/112','338|112',`${POWER_VALIDATION_V176.reinforcement.yes}|${POWER_VALIDATION_V176.reinforcement.no}`);
+  eq('Pfadverteilung 255/75/120','255|90|120',`${POWER_VALIDATION_V176.pathCounts.M}|${POWER_VALIDATION_V176.pathCounts.GB}|${POWER_VALIDATION_V176.pathCounts.FS}`);
+  eq('Verstärkungen 338/112','352|113',`${POWER_VALIDATION_V176.reinforcement.yes}|${POWER_VALIDATION_V176.reinforcement.no}`);
   eq('Alle 15 Quellfelder erhalten',true,POWER_ENTRIES_V176.every(entry=>entry.sourceRecord.length===15));
   eq('Alle Verstärkungen klassifiziert',true,POWER_ENTRIES_V176.filter(entry=>entry.reinforceable).every(entry=>entry.reinforcement?.ruleType));
   eq('86 sichtbare Fähigkeiten',86,SKILLS.length);
