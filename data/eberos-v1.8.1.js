@@ -2,21 +2,36 @@
 
 /* Eberos v1.8.1 · kampagnenbezogene Spielleitung und Spielabend-CBP */
 (function installV181Foundation(){
-  const VERSION='1.8.1',REVISION='gm-player-view-release',SCHEMA=31,RULES=15,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
+  const VERSION='1.8.1',REVISION='campaign-login-load-hotfix',SCHEMA=31,RULES=15,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
   if(!core)throw new Error('Open-Play-Kern v1.8.0 fehlt.');
   if(typeof LOCAL_DRAFT_REPOSITORY==='undefined')throw new Error('LocalDraftRepository ist nicht mit dem Builder verbunden.');
   const commandService=new core.DraftCommandService({repository:LOCAL_DRAFT_REPOSITORY,appVersion:VERSION,schemaVersion:SCHEMA});state=commandService.save(state);
 
-  const badge=document.getElementById('openPlayBadge'),joinButton=document.getElementById('joinCampaignBtn'),campaignTab=document.getElementById('campaignWorkspaceTab'),campaignView=document.getElementById('campaignWorkspaceView'),gmTab=document.getElementById('gmWorkspaceTab'),gmView=document.getElementById('gmWorkspaceView');
-  if(!badge||!joinButton||!campaignTab||!campaignView||!gmTab||!gmView)throw new Error('Open-Play- oder Kampagnenoberfläche ist unvollständig.');
+  const badge=document.getElementById('openPlayBadge'),joinButton=document.getElementById('joinCampaignBtn'),campaignTab=document.getElementById('campaignWorkspaceTab'),campaignView=document.getElementById('campaignWorkspaceView'),campaignRetry=campaignView?.querySelector('[data-campaign-retry]'),gmTab=document.getElementById('gmWorkspaceTab'),gmView=document.getElementById('gmWorkspaceView');
+  if(!badge||!joinButton||!campaignTab||!campaignView||!campaignRetry||!gmTab||!gmView)throw new Error('Open-Play- oder Kampagnenoberfläche ist unvollständig.');
   badge.textContent='Open Play · lokal';badge.title='Dieser Entwurf bleibt auf diesem Gerät und benötigt kein Konto.';document.querySelector('.brand small').textContent='v'+VERSION;
   joinButton.hidden=true;gmTab.hidden=true;
 
-  const configSource='./data/eberos-supabase-config-v1.8.0.js?v=1.8.1-gm-player-view-release';
-  const clientSource='./data/eberos-supabase-client-v1.8.1.js?v=1.8.1-gm-player-view-release';
-  const campaignSource='./data/eberos-campaign-entry-v1.8.1.js?v=1.8.1-gm-player-view-release';
-  const gmSource='./data/eberos-gm-workspace-v1.8.1.js?v=1.8.1-gm-player-view-release';
-  const configLoader=new core.CampaignModuleLoader({document,source:configSource,globalName:'EberosSupabaseConfig'}),clientLoader=new core.CampaignModuleLoader({document,source:clientSource,globalName:'EberosSupabaseClient'}),campaignLoader=new core.CampaignModuleLoader({document,source:campaignSource,globalName:'EberosCampaignEntry'}),gmLoader=new core.CampaignModuleLoader({document,source:gmSource,globalName:'EberosGameMasterWorkspace'});
+  const assetRevision=`${VERSION}-${REVISION}`,configSource=`./data/eberos-supabase-config-v1.8.0.js?v=${assetRevision}`,clientSource=`./data/eberos-supabase-client-v1.8.1.js?v=${assetRevision}`,campaignSource=`./data/eberos-campaign-entry-v1.8.1.js?v=${assetRevision}`,gmSource=`./data/eberos-gm-workspace-v1.8.1.js?v=${assetRevision}`;
+  class ResilientModuleLoader{
+    constructor({document,source,globalName,timeoutMs=10000}){this.document=document;this.source=source;this.globalName=globalName;this.timeoutMs=timeoutMs;this.promise=null;this.attempt=0}
+    isLoaded(){return !!window[this.globalName]}
+    load({retry=false}={}){
+      if(window[this.globalName])return Promise.resolve(window[this.globalName]);if(retry)this.promise=null;if(this.promise)return this.promise;
+      this.promise=new Promise((resolve,reject)=>{
+        let script=[...this.document.scripts].find(node=>node.dataset.campaignModule===this.source),settled=false,timer;
+        const cleanup=()=>{clearTimeout(timer);script?.removeEventListener('load',loaded);script?.removeEventListener('error',failed)};
+        const finish=(error,module)=>{if(settled)return;settled=true;cleanup();if(error){if(!window[this.globalName])script?.remove();this.promise=null;reject(error)}else resolve(module)};
+        const loaded=()=>{script.dataset.moduleState='loaded';const module=window[this.globalName];finish(module?null:new Error('Das geladene Kampagnenmodul ist unvollständig.'),module)};
+        const failed=()=>{if(script)script.dataset.moduleState='error';finish(new Error('Der Kampagnenzugang konnte nicht geladen werden. Bitte prüfe die Verbindung und versuche es erneut.'))};
+        if(script&&(!script.src||script.dataset.moduleState==='error'||script.dataset.moduleState==='loaded')){script.remove();script=null}
+        if(!script){script=this.document.createElement('script');script.src=this.attempt?`${this.source}&retry=${Date.now()}`:this.source;this.attempt+=1;script.async=true;script.dataset.campaignModule=this.source;script.dataset.moduleState='loading';script.addEventListener('load',loaded,{once:true});script.addEventListener('error',failed,{once:true});this.document.head.append(script)}else{script.addEventListener('load',loaded,{once:true});script.addEventListener('error',failed,{once:true})}
+        timer=setTimeout(()=>finish(new Error('Das Laden des Kampagnenzugangs dauert zu lange. Bitte wähle „Erneut laden“.')),this.timeoutMs);
+      });
+      return this.promise;
+    }
+  }
+  const configLoader=new ResilientModuleLoader({document,source:configSource,globalName:'EberosSupabaseConfig'}),clientLoader=new ResilientModuleLoader({document,source:clientSource,globalName:'EberosSupabaseClient'}),campaignLoader=new ResilientModuleLoader({document,source:campaignSource,globalName:'EberosCampaignEntry'}),gmLoader=new ResilientModuleLoader({document,source:gmSource,globalName:'EberosGameMasterWorkspace'});
   async function loadBase(){await configLoader.load();await clientLoader.load()}
   async function loadCampaignEntry(){await loadBase();return campaignLoader.load()}
   async function loadGameMasterWorkspace(){await loadBase();return gmLoader.load()}
@@ -37,11 +52,12 @@
     const character=state.characters.find(item=>item.id===receipt?.character_id);if(!character)throw new Error('Die lokale Kampagnenfigur wurde nicht gefunden.');if(hasSessionCbp(receipt.ledger_id,character))return character;
     character.manualCbpAdjustments=Array.isArray(character.manualCbpAdjustments)?character.manualCbpAdjustments:[];character.manualCbpAdjustments.push({id:crypto.randomUUID?crypto.randomUUID():`cbp_${Date.now()}_${Math.random().toString(36).slice(2)}`,amount:+receipt.amount||0,label:`Spielabend: ${receipt.title||'Kampagnenabend'}`,date:receipt.session_date?new Intl.DateTimeFormat('de-DE').format(new Date(`${receipt.session_date}T12:00:00`)):new Date().toLocaleDateString('de-DE'),source:'Abenteuer',externalLedgerId:receipt.ledger_id,campaignId:receipt.campaign_id,linkedSessionId:receipt.session_id,locked:true});character.updatedAt=new Date().toISOString();state=commandService.save(state);renderAll();return character;
   }
-  async function openPlayerEntry(){const module=await loadCampaignEntry();if(!module?.open)throw new Error('Kampagnenbereich ist nicht verfügbar.');return module.open({root:campaignView,character:ch(),submissionFactory:()=>prepareCampaignSubmission(ch()),applyReceipt:(receipt,options)=>applyCampaignReceipt(receipt,options),applySessionCbp,hasSessionCbp:ledgerId=>hasSessionCbp(ledgerId,ch())})}
+  async function openPlayerEntry(){const message=campaignView.querySelector('[data-auth-message]');if(message)message.textContent='Der Kampagnenzugang wird geladen …';campaignRetry.hidden=true;try{const module=await loadCampaignEntry();if(!module?.open)throw new Error('Kampagnenbereich ist nicht verfügbar.');const result=await module.open({root:campaignView,character:ch(),submissionFactory:()=>prepareCampaignSubmission(ch()),applyReceipt:(receipt,options)=>applyCampaignReceipt(receipt,options),applySessionCbp,hasSessionCbp:ledgerId=>hasSessionCbp(ledgerId,ch())});campaignRetry.hidden=true;return result}catch(error){if(message)message.textContent=error?.message||'Der Kampagnenzugang konnte nicht geladen werden.';campaignRetry.hidden=false;throw error}}
   async function openGmWorkspace(){const message=gmView.querySelector('[data-gm-message]');if(message)message.textContent='Die Spielleitung wird geladen …';const module=await loadGameMasterWorkspace();if(!module?.open)throw new Error('Spielleitungsmodul ist nicht verfügbar.');return module.open({root:gmView})}
   async function guardedOpen(control,loadingLabel,operation){control.disabled=true;const previous=control.textContent;control.textContent=loadingLabel;try{return await operation()}catch(error){showError(error.message)}finally{control.disabled=false;control.textContent=previous}}
   joinButton.addEventListener('click',()=>guardedOpen(joinButton,'Kampagnenzugang wird vorbereitet…',openPlayerEntry));
   campaignTab.addEventListener('click',()=>guardedOpen(campaignTab,'Kampagne wird vorbereitet…',openPlayerEntry));
+  campaignRetry.addEventListener('click',()=>guardedOpen(campaignRetry,'Wird erneut geladen…',()=>{configLoader.promise=null;clientLoader.promise=null;campaignLoader.promise=null;return openPlayerEntry()}));
   gmTab.addEventListener('click',()=>guardedOpen(gmTab,'Spielleitung wird vorbereitet…',openGmWorkspace));
 
   let navigationServices=null,navigationUnsubscribe=null;
