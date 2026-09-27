@@ -29,10 +29,18 @@
   }
   function updateWorldChoice(state){const select=field(state.dialog,'[data-gm-world-select]'),wrap=field(state.dialog,'[data-gm-new-world]'),creating=select?.value==='__new__';show(wrap,creating);const input=field(state.dialog,'[data-gm-world-name]');if(input)input.required=creating}
   function renderCampaignTabs(state){
-    const tabs=field(state.dialog,'[data-gm-campaign-tabs]');clear(tabs);
-    if(!state.campaigns.length){tabs?.append(document.createTextNode('Noch keine Kampagne verwaltet.'));show(field(state.dialog,'[data-gm-workspace]'),false);return}
+    const tabs=field(state.dialog,'[data-gm-campaign-tabs]'),select=field(state.dialog,'[data-gm-campaign-select]');clear(tabs);clear(select);
+    if(!state.campaigns.length){
+      const option=document.createElement('option');option.value='';option.textContent='Keine Kampagne mit Spielleitungsrecht';select?.append(option);if(select)select.disabled=true;
+      tabs?.append(document.createTextNode('Für dieses Konto ist noch keine Kampagne als Spielleitung oder Co-Spielleitung freigegeben.'));show(field(state.dialog,'[data-gm-workspace]'),false);return
+    }
     if(!state.selectedCampaignId||!state.campaigns.some(entry=>entry.campaign_id===state.selectedCampaignId))state.selectedCampaignId=state.campaigns[0].campaign_id;
-    for(const campaign of state.campaigns){const control=button(campaign.name,()=>runBusy(state,()=>selectCampaign(state,campaign.campaign_id)),'gm-campaign-tab');control.classList.toggle('active',campaign.campaign_id===state.selectedCampaignId);control.setAttribute('aria-pressed',String(campaign.campaign_id===state.selectedCampaignId));tabs?.append(control)}
+    if(select)select.disabled=false;
+    for(const campaign of state.campaigns){
+      const option=document.createElement('option');option.value=campaign.campaign_id;option.textContent=campaign.name;select?.append(option);
+      const control=button(campaign.name,()=>runBusy(state,()=>selectCampaign(state,campaign.campaign_id)),'gm-campaign-tab');control.classList.toggle('active',campaign.campaign_id===state.selectedCampaignId);control.setAttribute('aria-pressed',String(campaign.campaign_id===state.selectedCampaignId));tabs?.append(control)
+    }
+    if(select)select.value=state.selectedCampaignId;
   }
   function fillCampaignForm(state,campaign){
     const form=field(state.dialog,'[data-gm-campaign-edit]');if(!form)return;
@@ -68,6 +76,7 @@
 
   function bindActions(state){
     for(const control of state.dialog.querySelectorAll('[data-gm-view]'))control.addEventListener('click',()=>activateView(state,control.dataset.gmView));
+    field(state.dialog,'[data-gm-campaign-select]')?.addEventListener('change',event=>{if(event.target.value)runBusy(state,()=>selectCampaign(state,event.target.value))});
     field(state.dialog,'[data-gm-world-select]')?.addEventListener('change',()=>updateWorldChoice(state));
     state.authForm?.addEventListener('submit',async event=>{event.preventDefault();try{await runBusy(state,async()=>{const result=await state.auth.requestMagicLink(field(state.authForm,'[data-gm-auth-email]').value);text(state.message,`Anmeldelink an ${result.email} gesendet.`)})}catch{}});
     field(state.dialog,'[data-gm-sign-out]')?.addEventListener('click',async()=>{try{await runBusy(state,async()=>{await state.auth.signOut();await renderSession(state,null);text(state.message,'Du bist abgemeldet. Private Spielleitungsdaten wurden entfernt.')})}catch{}});
@@ -78,7 +87,7 @@
     field(state.dialog,'[data-gm-thread-form]')?.addEventListener('submit',async event=>{event.preventDefault();if(!state.selectedCampaignId)return;const form=event.currentTarget;try{await runBusy(state,async()=>{await state.repository.createThread(state.selectedCampaignId,{title:field(form,'[data-gm-thread-title]').value,details:field(form,'[data-gm-thread-details]').value,playerVisible:field(form,'[data-gm-thread-visible]').checked});form.reset();await selectCampaign(state,state.selectedCampaignId);text(state.message,'Handlungsfaden gespeichert.')})}catch{}});
   }
   function createState(dialog,services={}){const Client=global.EberosSupabaseClient,provider=services.provider||new Client.SupabaseClientProvider(),state={dialog,provider,auth:services.auth||new Client.CampaignAuthGateway({provider}),repository:services.repository||new Client.SupabaseCampaignRepository({provider}),authForm:field(dialog,'[data-gm-auth-form]'),session:field(dialog,'[data-gm-session]'),message:field(dialog,'[data-gm-message]'),busy:false,unsubscribe:null,worlds:[],campaigns:[],selectedCampaignId:null,selectedCampaign:null,selectedData:null,activeView:'overview'};bindActions(state);states.set(dialog,state);return state}
-  async function renderSession(state,user){show(state.authForm,!user);show(state.session,!!user);text(field(state.dialog,'[data-gm-auth-user]'),user?.email||'Angemeldetes Konto');if(!user){clear(field(state.dialog,'[data-gm-campaign-tabs]'));show(field(state.dialog,'[data-gm-workspace]'),false);return}text(state.message,'Spielleitungsdaten werden geladen …');await refresh(state);text(state.message,state.campaigns.length?'Spielleitung ist bereit.':'Lege deine erste Kampagne an oder verwende eine bestehende Welt.')}
+  async function renderSession(state,user){show(state.authForm,!user);show(state.session,!!user);text(field(state.dialog,'[data-gm-auth-user]'),user?.email||'Angemeldetes Konto');if(!user){state.campaigns=[];renderCampaignTabs(state);return}text(state.message,'Spielleitungsdaten werden geladen …');await refresh(state);text(state.message,state.campaigns.length?'Spielleitung ist bereit.':`Mit ${user.email||'diesem Konto'} angemeldet, aber noch für keine Kampagne als Spielleitung freigegeben.`)}
   async function initialize(state){
     if(!state.auth.configured()){show(state.authForm,false);show(state.session,false);text(state.message,'Das Kampagnen-Backend ist noch nicht verbunden. Die lokale Charakterverwaltung bleibt verfügbar.');return{configured:false,user:null}}
     show(state.authForm,true);text(state.message,'Vorhandene Spielleitungssitzung wird geprüft …');

@@ -56,7 +56,19 @@
     async rpc(name,parameters){const client=await this.provider.getClient(),{data,error}=await client.rpc(name,parameters);if(error)throw error;return data}
     async rows(table,columns,configure){const client=await this.provider.getClient();let query=client.from(table).select(columns);if(configure)query=configure(query);const{data,error}=await query;if(error)throw error;return Array.isArray(data)?data:[]}
     listPlayerCampaigns(){return this.rows('campaign_player_view','campaign_id,world_id,name,summary,player_notes,current_day,role,archived_at',query=>query.order('name'))}
-    listManagedCampaigns(){return this.rows('campaign_management_view','campaign_id,world_id,name,summary,player_notes,current_day,gm_notes,role,archived_at',query=>query.order('name'))}
+    async listManagedCampaigns(){
+      const [viewRows,memberships]=await Promise.all([
+        this.rows('campaign_management_view','campaign_id,world_id,name,summary,player_notes,current_day,gm_notes,role,archived_at',query=>query.order('name')),
+        this.rows('campaign_memberships','campaign_id,role,status,archived_at',query=>query.in('role',['owner','game_master']).eq('status','active').is('archived_at',null))
+      ]);
+      const known=new Map(viewRows.map(row=>[row.campaign_id,row])),missing=memberships.filter(row=>!known.has(row.campaign_id));
+      if(!missing.length)return viewRows;
+      const ids=missing.map(row=>row.campaign_id),roles=new Map(missing.map(row=>[row.campaign_id,row.role])),campaigns=await this.rows('campaigns','id,world_id,name,summary,player_notes,current_day,archived_at',query=>query.in('id',ids).is('archived_at',null).order('name'));
+      let secrets=[];try{secrets=await this.rows('campaign_secrets','campaign_id,gm_notes',query=>query.in('campaign_id',ids))}catch{}
+      const notes=new Map(secrets.map(row=>[row.campaign_id,row.gm_notes||'']));
+      for(const campaign of campaigns)known.set(campaign.id,{campaign_id:campaign.id,world_id:campaign.world_id,name:campaign.name,summary:campaign.summary||'',player_notes:campaign.player_notes||'',current_day:campaign.current_day||1,gm_notes:notes.get(campaign.id)||'',role:roles.get(campaign.id)||'game_master',archived_at:campaign.archived_at||null});
+      return[...known.values()].sort((left,right)=>String(left.name||'').localeCompare(String(right.name||''),'de'))
+    }
     listManagedWorlds(){return this.rows('world_management_view','world_id,name,summary,owner_user_id,archived_at',query=>query.order('name'))}
     listPlayerCharacters(){return this.rows('campaign_character_player_view','character_id,campaign_id,status,revision,initial_revision_id,current_revision_id,rejection_reason,updated_at',query=>query.order('updated_at',{ascending:false}))}
     listCampaignCharacters(campaignId){return this.rows('campaign_characters','id,campaign_id,owner_user_id,status,public_data,revision,updated_at',query=>query.eq('campaign_id',campaignId).is('archived_at',null).order('updated_at',{ascending:false}))}
