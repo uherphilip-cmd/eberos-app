@@ -2,7 +2,7 @@
 
 /* Eberos v1.8.1 · kampagnenbezogene Spielleitung und Spielabend-CBP */
 (function installV181Foundation(){
-  const VERSION='1.8.1',REVISION='role-aware-campaign-tabs-release',SCHEMA=31,RULES=15,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
+  const VERSION='1.8.1',REVISION='gm-player-view-release',SCHEMA=31,RULES=15,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
   if(!core)throw new Error('Open-Play-Kern v1.8.0 fehlt.');
   if(typeof LOCAL_DRAFT_REPOSITORY==='undefined')throw new Error('LocalDraftRepository ist nicht mit dem Builder verbunden.');
   const commandService=new core.DraftCommandService({repository:LOCAL_DRAFT_REPOSITORY,appVersion:VERSION,schemaVersion:SCHEMA});state=commandService.save(state);
@@ -12,10 +12,10 @@
   badge.textContent='Open Play · lokal';badge.title='Dieser Entwurf bleibt auf diesem Gerät und benötigt kein Konto.';document.querySelector('.brand small').textContent='v'+VERSION;
   joinButton.hidden=true;gmTab.hidden=true;
 
-  const configSource='./data/eberos-supabase-config-v1.8.0.js?v=1.8.1-role-aware-campaign-tabs-release';
-  const clientSource='./data/eberos-supabase-client-v1.8.1.js?v=1.8.1-role-aware-campaign-tabs-release';
-  const campaignSource='./data/eberos-campaign-entry-v1.8.1.js?v=1.8.1-role-aware-campaign-tabs-release';
-  const gmSource='./data/eberos-gm-workspace-v1.8.1.js?v=1.8.1-role-aware-campaign-tabs-release';
+  const configSource='./data/eberos-supabase-config-v1.8.0.js?v=1.8.1-gm-player-view-release';
+  const clientSource='./data/eberos-supabase-client-v1.8.1.js?v=1.8.1-gm-player-view-release';
+  const campaignSource='./data/eberos-campaign-entry-v1.8.1.js?v=1.8.1-gm-player-view-release';
+  const gmSource='./data/eberos-gm-workspace-v1.8.1.js?v=1.8.1-gm-player-view-release';
   const configLoader=new core.CampaignModuleLoader({document,source:configSource,globalName:'EberosSupabaseConfig'}),clientLoader=new core.CampaignModuleLoader({document,source:clientSource,globalName:'EberosSupabaseClient'}),campaignLoader=new core.CampaignModuleLoader({document,source:campaignSource,globalName:'EberosCampaignEntry'}),gmLoader=new core.CampaignModuleLoader({document,source:gmSource,globalName:'EberosGameMasterWorkspace'});
   async function loadBase(){await configLoader.load();await clientLoader.load()}
   async function loadCampaignEntry(){await loadBase();return campaignLoader.load()}
