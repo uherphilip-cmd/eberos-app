@@ -1,8 +1,8 @@
 'use strict';
 
 /* v1.7.24: Fähigkeiten nach Art ordnen und kanonische Lore stufenweise anzeigen. */
-const SKILL_LORE_V1724=window.EBEROS_SKILL_LORE_V1724;
-if(!SKILL_LORE_V1724||SKILL_LORE_V1724.meta?.version!=='1.7.24'||!Array.isArray(SKILL_LORE_V1724.documents))throw new Error('Lore-Daten v1.7.24 fehlen oder sind ungültig.');
+const SKILL_LORE_V1724=window.EBEROS_SKILL_LORE_V1725;
+if(!SKILL_LORE_V1724||SKILL_LORE_V1724.meta?.version!=='1.7.25'||!Array.isArray(SKILL_LORE_V1724.documents))throw new Error('Lore-Daten v1.7.25 fehlen oder sind ungültig.');
 const SKILL_LORE_BY_NAME_V1724=new Map(SKILL_LORE_V1724.documents.map(document=>[document.skillName,document]));
 const SKILL_CATEGORY_RANK_V1724=new Map(SKILL_CATEGORY_ORDER.map((category,index)=>[category,index]));
 
@@ -145,7 +145,7 @@ runTests=function(){
   runTestsBeforeV1724();const body=testResults.querySelector('tbody');
   for(const row of[...body.querySelectorAll('tr')])if(row.cells[0]?.textContent==='Version 1.7.21')row.remove();
   const baseOk=![...body.querySelectorAll('tr')].some(row=>row.cells[row.cells.length-1]?.textContent==='Fehler'),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),owner=newCharacter();
-  eq('Sechs kanonische Lorequellen',6,SKILL_LORE_BY_NAME_V1724.size);
+  eq('Sieben kanonische Lorequellen',7,SKILL_LORE_BY_NAME_V1724.size);
   eq('Jede Lore wächst auf allen Stufen 1 bis 10',true,[...SKILL_LORE_BY_NAME_V1724.values()].every(document=>{const levels=document.sections.flatMap(section=>section.blocks.map(block=>block.unlockLevel??section.unlockLevel));return[1,2,3,4,5,6,7,8,9,10].every(level=>levels.includes(level))}));
   eq('Jede Lore ist auf Stufe 10 vollständig',true,[...SKILL_LORE_BY_NAME_V1724.values()].every(document=>document.sections.every(section=>section.blocks.every(block=>(block.unlockLevel??section.unlockLevel)<=10))));
   eq('Lore ohne Platzhalter oder Ersatzzeichen',true,[...SKILL_LORE_BY_NAME_V1724.values()].every(document=>document.audit?.placeholderCount===0&&document.audit?.replacementCharacters===0));
@@ -163,5 +163,5 @@ runTests=function(){
 };
 
 document.querySelector('.brand small').textContent='v1.7.24';
-Object.assign(window.Eberos,{version:'1.7.24',revision:'r2',schemaVersion:SCHEMA_VERSION,rulesVersion:RULES_VERSION,skillLoreVersion:'1.7.24',skillLore:()=>SKILL_LORE_V1724,skillLoreContent:skillLoreContentV1724,orderSkills:orderedSkillsForViewR11,runTests:()=>runTests()});
+Object.assign(window.Eberos,{version:'1.7.24',revision:'r2',schemaVersion:SCHEMA_VERSION,rulesVersion:RULES_VERSION,skillLoreVersion:'1.7.25',skillLore:()=>SKILL_LORE_V1724,skillLoreContent:skillLoreContentV1724,orderSkills:orderedSkillsForViewR11,runTests:()=>runTests()});
 renderAll();save();

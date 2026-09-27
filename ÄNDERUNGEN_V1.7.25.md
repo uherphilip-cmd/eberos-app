@@ -1,5 +1,13 @@
 # Änderungen v1.7.25
 
+## Revision r5
+
+- Die kanonische Spielerfassung **Spiritismus von Eberos** ist als siebte Lorequelle eingebunden.
+- Die Lore erscheint im bestehenden Infofenster von **Spiritismus & Geisterkunde** und wird kumulativ auf Fähigkeitsstufe 1 bis 10 freigeschaltet.
+- Alle 14 inhaltlichen Hauptkapitel mit 414 Textblöcken bleiben in kanonischer Reihenfolge erhalten; Deckblatt, Inhaltsverzeichnis und „Zur Textgrundlage“ werden nicht wiederholt.
+- **Spiritismus & Seelenmagie** bleibt dem anwendbaren Kraftkatalog vorbehalten und erhält keine irreführende Kopie desselben Loretexts.
+- Neue Loredateien, Laufzeit und Offline-Cache verwenden durchgehend die Assetrevision r5.
+
 ## Revision r4
 
 - Der allgemeine Effektkatalog wurde von 227 konzeptionellen Vorlagen auf 25 relevante, mechanisch definierte Kernzustände reduziert.

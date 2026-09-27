@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "1.7.24",
+    "version": "1.7.25",
     "schema": 1,
     "unlockLevels": [
       1,
@@ -14,8 +14,9 @@
       9,
       10
     ],
-    "documentCount": 6,
-    "policy": "Kumulative Freischaltung mit neuem Loretext auf jeder gekauften Fähigkeitsstufe von 1 bis 10; Stufe 10 zeigt den vollständigen inhaltlichen Text."
+    "documentCount": 7,
+    "policy": "Kumulative Freischaltung mit neuem Loretext auf jeder gekauften Fähigkeitsstufe von 1 bis 10; Stufe 10 zeigt den vollständigen inhaltlichen Text.",
+    "baseVersion": "1.7.24"
   },
   "documents": [
     {
@@ -8365,6 +8366,2275 @@
         "corrections": {
           "Wer Tiergeister → Wertiergeister": 2,
           "Tier Insekten Hybride → Tier-Insekten-Hybride": 1
+        }
+      }
+    },
+    {
+      "skillName": "Spiritismus & Geisterkunde",
+      "title": "Spiritismus von Eberos",
+      "sourceFile": "Spiritismus von Eberos - Kanonische Spielerfassung.odt",
+      "sourceLabel": "Kanonische Spielerfassung",
+      "sourceSha256": "e419330327c0595a69872d54ca28d7e25a5acfe9f54fd00f770d2520ca8a06f1",
+      "sections": [
+        {
+          "heading": "I Seele Tod und Übergang",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Der geordnete Tod",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Der gewöhnliche Tod beginnt mit dem Erlöschen der leiblichen Kraft und endet mit der Lösung jener Bindungen, die einen Menschen in der Welt tragen. Die Kirche spricht vom Heimweg der Inneren Flamme. Die Gelehrten von Mayden Salta beschreiben eine Folge abnehmender Resonanzen zwischen Leib, Erinnerung, Name und Aether. Familien erleben denselben Vorgang als Abschied: Atem wird flach, Blicke wenden sich an vertraute Orte, alte Geschichten gewinnen Gegenwart, und der Sterbende ordnet sein Leben ein letztes Mal.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein geordneter Übergang erhält Zeit, Zeugen und einen sicheren Ruheort. Angehörige nennen den Sterbenden beim Namen, erzählen wahre Erinnerungen und lösen offene Schwüre. Nach dem Tod waschen sie den Leib, entzünden ein Licht am Kopfende und halten Wache. Die Bestattung gibt dem Körper seinen Ort, während Grabzeichen und Lebensregister den Namen in der Gemeinschaft bewahren. Diese Handlungen besitzen zugleich seelische, rechtliche und praktische Bedeutung.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Reihenfolge trägt Gewicht. Ein Abschied vor Zeugen stärkt die Bereitschaft der Seele. Ein klar benannter Tod gibt den Hinterbliebenen eine gemeinsame Wirklichkeit. Ein gesicherter Leib schützt vor Grabschändung, Tieren und nekromantischem Zugriff. Ein verzeichneter Name erhält Erbe, Verwandtschaft und Erinnerung. Viele Riten, die wie fromme Sitte wirken, entstanden aus jahrhundertelanger Erfahrung mit ruhelosen Toten.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Die Glieder der Seele",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Kirchliche Lehrhäuser beschreiben die Seele als lebendige Einheit aus Lichtfunken, Name, Erinnerung und Bindung. Spiritisten ergänzen Wille, Gefühl und leibliche Resonanz. Beide Modelle sprechen über dieselbe Erfahrung aus verschiedenen Richtungen. Ein Mensch erkennt sich durch seinen Namen, trägt sein Leben als Erinnerung, richtet sich durch seinen Willen aus, lebt in Beziehungen und erfährt die Welt durch seinen Körper.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Lichtfunken bezeichnet Würde, Gewissen und Anteil an der Schöpfung. Der Name verbindet die Person mit Zeugen, Recht und Gemeinschaft. Erinnerung gibt dem gelebten Leben Gestalt. Bindungen führen zu Menschen, Orten, Aufgaben und Gegenständen. Wille setzt Richtung. Gefühl verleiht den Bindungen Gewicht. Der Leib bildet während des Lebens die gemeinsame Stätte dieser Kräfte und bewahrt nach dem Tod eine schwächer werdende Spur davon.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Geister entstehen häufig dort, wo eines dieser Glieder außergewöhnliche Stärke gewinnt. Ein Schwur kann den Willen festhalten. Trauer kann eine Beziehung verdichten. Ein gewaltsamer Tod kann den letzten Augenblick in einen Ort brennen. Ein verborgenes Grab kann Name, Leib und Erinnerung voneinander trennen. Nekromantie kann die leibliche Spur mit fremder Bewegungskraft füllen. Die Form des Spuks folgt daher dem Teil der Person, der den Übergang weiterträgt.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Die Todesstunde",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Todesstunde umfasst mehr als einen Augenblick. Spiritisten sprechen von einer Schwellenzeit, die bei tödlicher Verwundung, Erstickung, Fieber, Altersschwäche oder tiefer seelischer Erschöpfung beginnt. Während dieser Zeit lockern sich die Bindungen in unterschiedlicher Reihenfolge. Der Körper kann noch atmen, während der Geist bereits Stimmen am Rand der Wahrnehmung hört. Ein Heimrufer kann erscheinen, sobald diese Schwellenzeit eingesetzt hat.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Umstände des Sterbens prägen den späteren Zustand. Ein Mensch, der im eigenen Haus mit Abschied und Namenswache stirbt, hinterlässt gewöhnlich eine ruhige Spur. Ein Verschütteter bindet den letzten Atem an Brust und Leib. Ein Sterbender vor verschlossener Tür kann Ruf, Name und Schwelle ineinander verschlingen. Ein Fürst, der sein Grab als Fortsetzung seiner Herrschaft begreift, kann zum Hügelgänger werden. Das Ereignis formt ein Gesetz, das der Tote anschließend mit großer Treue erfüllt.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Magische Krankheit, Fluch und fremder Wille verändern diese Ordnung. Der Flüsternde Aussatz greift Name und Erinnerung an. Schwarze Malaria zieht die Seele in Bilder dunkler Feenhöfe. Das Böse Blut bindet Kriegsschuld an Leib und Feld. Tendrials Plagen verbinden Krankheit, Untod und verteilte Herrschaft. Darum begleiten Agripiten, Viristen und anerkannte Seelenkundige gefährdete Sterbende gemeinsam.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Seele Geist und Untoter",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Im alltäglichen Sprachgebrauch heißt jede Erscheinung eines Verstorbenen Geist. Die gelehrte Sprache unterscheidet genauer. Ein Geist besteht vorwiegend aus fortwirkender Seele, Erinnerung, Gefühl oder Bindung und zeigt sich körperlos oder in einer nur zeitweise verdichteten Gestalt. Ein körperlicher Untoter besitzt einen toten Leib, den Wille, Fluch, Hunger, fremde Macht oder nekromantische Bewegungskraft trägt.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Zwischen beiden Gruppen liegen Übergangsformen. Ein Schatten trägt einen abgelösten Teil seelischer Gegenwart. Ein Leibgeist verbindet eine eigenwillige Seele mit nekromantisch bewegten Körpern. Ein Lich verankert die eigene Seelenform absichtlich außerhalb seines wechselnden Leibes. Ein Grabwächter kann als Geist, erhaltener Körper oder wechselnde Verbindung aus beiden erscheinen. Die Einordnung dient der Wahl eines wirksamen Umgangs.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Spiritisten prüfen daher zuerst Träger und Bindung. Glockenklang, Licht, Salz, Eisen, geweihte Erde und wahre Namen wirken jeweils auf andere Teile einer Erscheinung. Eine Klinge trifft einen Leib. Eine Namensrolle stärkt eine bedrängte Seele. Die Rückgabe eines Ringes löst eine Gegenstandsbindung. Ein zweites Begräbnis ordnet einen versetzten Körper. Erkenntnis bildet im Spiritismus den ersten Schutz.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Der lange Schatten der Geschichte",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Pegras Totenglaube trägt die Spuren seiner Geschichte. Während der Langen Dunkelheit bewahrten frühe Sonnenhäuser heilige Feuer, nahmen Schutzsuchende auf und gaben jedem Toten einen Namen. Aus dieser Erfahrung stammen Gastrecht, Namenswache und die Pflicht zur Bestattung. In Glaensteinen, zwergischen Hallen und elfischen Liedern leben ältere Formen derselben Sorge weiter.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Magierkrieg von 2750 bis 2752 verwandelte Geisterkunde in Reichspolitik. Mortuus Fama erhob die Totenberge beider Seiten und füllte Schlachtfelder mit bewegten Leibern. Die Reichsbulle von 2752 ächtete Nekromantie, weihte Grüfte und gab Bannhöfen dauerhafte Aufgaben. Seit jener Zeit verbindet der Volksmund jede größere Ansammlung bewegter Leichen mit den zwei Jahren des Magierkriegs.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Fall Adaroschs seit 2850 brachte eine weitere Form des Schreckens. Tote erhoben sich durch dämonische und arkane Krankheit, während der Seuchenkönig Namen, Erinnerungen und Körper zugleich ergriff. Flüchtlinge trugen Berichte über sprechende Leichenfürsten, verseuchte Ahnen und Städte voller wandernder Toter nach Pegra. Die Immerwacht sammelt diese Zeugnisse bis heute.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Seelenfinsternis von 2999 erschütterte Magier, Geisterheiler, Schamanen und alte Bindungen. In Ulsden starben viele Glaen, in Vierbergen zerbrachen Runenlinien, und in Langenmooren blieben verwirrte Geister an Mooren und Ruinen hängen. Seit 3000 stehen spiritistische Praxis, Thanaturgie und Seelenschutz unter der gemeinsamen Aufmerksamkeit von Kirche und Tal’Rah. Diese Ordnung schuf Archive, Verfahren und Fachsprache; sie trägt zugleich die Erinnerung an Verfolgung und verlorene Traditionen.",
+              "unlockLevel": 1
+            }
+          ],
+          "unlockLevel": 1
+        },
+        {
+          "heading": "II Spiritismus und die Hermetik des Übergangs",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Die Wissenschaft der fortwirkenden Seele",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Spiritismus gehört zur Hermetik des Übergangs. Er untersucht Erscheinungen der Seele nach Tod, Trennung oder schwerer Störung. Seine Gegenstände sind Stimmen, Gestalten, Bindungen, Besessenheit, Todesorte, Grabresonanzen und die Verständigung mit Verstorbenen. Ein Spiritist sucht das Gesetz hinter einer Erscheinung und leitet daraus eine sichere Begegnung ab.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Hermetik versteht Magie als Verbindung von Wille, Struktur und Resonanz. Beim Spiritismus bildet der Geist den wirkenden Willen, ein Name oder Ritual die Struktur und ein Ort, Gegenstand oder Mensch die Resonanz. Ein gelungener Ruf erschafft daher selten etwas Neues. Er öffnet einen geordneten Zusammenhang zu einer bereits vorhandenen Bindung.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Thanaturgie richtet ihren Blick auf den Übergang selbst. Thanaturgen messen das Lösen leiblicher und seelischer Resonanzen, begleiten gefährdete Todesstunden und untersuchen die Grenze zwischen Sterben, Tod und fortwirkender Präsenz. Spiritisten sprechen mit Erscheinungen und lesen ihre Regeln. Thanaturgen beobachten Zustände und Übergänge. Beide Disziplinen teilen Methoden und Lehrhäuser.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Nekromantie wirkt auf den toten Leib und erfüllt ihn mit Bewegungskraft. Ihre Formeln setzen Befehle, Hunger oder künstliche Triebe an die Stelle lebendiger Leibordnung. Diese Kunst berührt denselben Gegenstandsbereich und folgt einem anderen Ziel. Seit 2752 gilt sie im Reich als schwere verbotene Kunst. Spiritisten erforschen ihre Spuren, um Erhebungen zu erkennen, Befehlsbindungen zu lösen und gefährdete Leiber zu sichern.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Mayden Salta",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Mayden Salta, die Gelehrten der Seele, bilden das bekannteste Zentrum für Thanaturgie, Todes- und Seelenkunde. Ihre Häuser liegen in Altburgen und stehen zugleich im Rat von Tal’Rah. Die Nähe zum Großen Tempel des Lichts, zu altvorderlichen Strukturen und zu den großen Grabanlagen des Südens gab ihrer Lehre eine besondere Verbindung aus Hermetik, Geschichte und religiöser Praxis.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Gelehrten führen Sterbeprotokolle, Karten von Spukorten, Sammlungen gebundener Gegenstände und Register eigenständiger Totengattungen. Ihre Prüfkammern besitzen Glocken, Spiegel, Salzrinnen, Eisenstäbe, Lichtschächte und Räume mit wechselnder Resonanz. Jede Untersuchung beginnt mit Namen, Herkunft, Todesart und Ort. Danach folgen Zeugenberichte, leibliche Zeichen, Traumspuren und die Geschichte möglicher Anker.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Mayden Salta lehrt die Regel der drei Zeugnisse. Eine Erscheinung erhält eine vorläufige Bestimmung, sobald drei voneinander verschiedene Spuren dasselbe Gesetz zeigen. Ein Atemtoter hinterlässt etwa kalte Druckstellen an Brust und Kehle, trägt fremde Stimmen und reagiert auf das Stirnzeichen. Diese Verbindung wiegt stärker als eine einzelne Sichtung.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Schule pflegt enge Beziehungen zu Viristen, Sophisten, dem Südlichen Konzil und den Archiven von Tal’Rah. Geistliche bringen Erfahrung mit Namen, Abschied und Exorzismus. Hermetiker liefern Resonanzmessung und Bannstruktur. Ortskundige bewahren Bräuche, deren praktische Wirkung häufig älter als jede Akademie ist. Die angesehensten Lehrenden von Mayden Salta hören diesen Stimmen mit gleicher Sorgfalt zu.",
+              "unlockLevel": 1
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Weitere Schulen und Archive",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Blaue Nexus im Blauen Wald Kanningens führt eine thanaturgische Tradition in unmittelbarer Nähe zu Feenorten, dem Friedhof der Altvorderen und zeitverzerrten Landschaften. Seine Forscher unterscheiden Totenresonanz von Feenprägung und altvorderlicher Restwirkung. Diese Arbeit besitzt große Bedeutung, da alle drei Formen Stimmen, Erinnerungsbilder und veränderte Wege hervorbringen können.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Khun Alir, die Hallen des Schlafs, untersucht Traum- und Seelenreisen. Spiritisten nutzen seine Lehre bei Heimrufern, Ahnenräten, Banshees und Seelenpaten. Zyn Edra erforscht Wille, Gefühl und Innere Flamme. Mater Memoriae besitzt gefährlich genaue Kenntnisse über Gedächtnis und geistige Kontrolle. Die Heremiten von Kanningen bewahren eine ältere Geistmagie, die mit Stille, Wald und Wahrnehmung arbeitet.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Tal’Rah sammelt die Berichte dieser Schulen in der Akademie der Arkanen Ordnung. Der Rat vergibt Siegel, prüft Lehrlinien und entsendet Gutachter zu Inquisitionstribunalen. Seit der Seelenfinsternis besitzt jede anerkannte Schule eine Pflicht zur Meldung neuer Formen von Besessenheit, großflächigem Spuk und nekromantischer Erhebung.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Kirchliche Archive ergänzen diese Sammlungen. Die Bücher des Lebens nennen Geburten, Namensgaben, Schwüre, Todesursachen und Begräbnisorte. Viristen führen Exorzistenakten. Der Orden der Sonne bewahrt Reliquienregister und alte Liturgien. Elipirer sammeln Totenlisten aus Kriegen und Katastrophen. Zusammen ergeben diese Quellen eine Karte der Toten, die zugleich seelisch, rechtlich und geschichtlich lesbar ist.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Die Arbeit am Ort",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Spiritist beginnt seine Arbeit mit der Umgebung. Türen, Fenster, Wege, Wasser, Herdstellen, Gräber und alte Grenzen zeigen mögliche Bindungen. Bewohner erzählen von Geräuschen, Träumen, Kälte, Gerüchen, versetzten Gegenständen und Veränderungen im Verhalten. Der Forscher zeichnet Zeitpunkt, Richtung und Wiederholung auf. Jede feste Regel führt näher an den Ursprung.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Danach folgt die Geschichte des Toten. Name, Familie, Beruf, Schwüre, Besitz, Feindschaften, Todesart und Bestattung geben Hinweise. Ein alter Fährmann und ein ertrunkener Räuber können am selben Fluss erscheinen und völlig verschiedenen Gesetzen folgen. Der erste kann eine Totenfähre werden, der zweite einen ruhelosen Geist hinterlassen. Ort allein bestimmt die Gattung erst im Zusammenspiel mit Leben und Sterben.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Kontakt erfolgt in abgestuften Formen. Ein Beobachtungsritus lädt eine Erscheinung zu Zeichen ein. Ein Namensruf richtet sich an eine bestimmte Person. Ein Erinnerungsruf bietet eine wahre Begebenheit als Brücke. Ein Schwellenkreis begrenzt den Ort der Begegnung. Ein Leibritus prüft die Verbindung zu sterblichen Resten. Jede Stufe verlangt Zeugen und einen vorbereiteten Abbruch.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Rückkehr der Lebenden bildet Teil jeder Reise. Teilnehmer nennen nach dem Ritual ihren Namen, essen Brot, berühren Erde oder fließendes Wasser und erzählen den anderen, was sie wahrnahmen. Diese Handlungen ordnen Körper, Zeit und Gemeinschaft. Besonders nach Traumreisen und Ahnenräten schützen sie vor dem Fortwirken fremder Erinnerungen.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Recht und Verantwortung",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Spiritistische Forschung berührt Begräbnisrecht, Erbe, Magierecht und Seelenschutz. Ein Grab gehört zugleich einer Familie, einer Gemeinde, der Kirche und dem Toten in verschiedener Weise. Ein gebundener Ring kann Beweisstück, Erbstück und Anker eines Geistes sein. Eine Beschwörung kann ein altes Verbrechen offenbaren und zugleich eine ruhende Bindung wecken.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Anerkannte Spiritisten führen ein Siegel Tal’Rahs oder arbeiten unter kirchlicher Aufsicht. Größere Öffnungen von Gräbern verlangen Zeugen aus Kirche, örtlichem Recht und Seelenkunde. Forschungen an Schlachtfeldern, Seuchenorten und altvorderlichen Anlagen ziehen häufig Selephiten, Agripiten oder Arkanarchäologen hinzu.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Die schwerste Verantwortung gilt der Einwilligung. Wohlwollende Tote besitzen Aufgaben und Grenzen. Ahnengeister antworten auf Einladung, Seelenpaten schützen geschenkte Lebenszeit, und Totenfähren führen nach freiwilliger Gabe. Spiritistische Kunst gewinnt Klarheit durch Respekt vor diesen Gesetzen. Zwang schafft häufig neue Bindungen und verwandelt Forschung in Herrschaft.",
+              "unlockLevel": 2
+            }
+          ],
+          "unlockLevel": 1
+        },
+        {
+          "heading": "III Name Erinnerung Leib und Bindung",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Der Name als gemeinsamer Ort",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Name verbindet Selbstbild und Fremderinnerung. Die Kirche spricht ihn bei Geburt, Ehe, Schwur, Sterben und Bestattung. Gerichte tragen ihn in Urkunden ein. Familien rufen ihn in Geschichten. Ein Geist hört im eigenen Namen die Welt der Beziehungen, aus der er stammt. Darum kann ein wahr gesprochener Name sammeln, stärken, rufen oder lösen.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Spiritisten unterscheiden Rufnamen, Hausnamen, Amtsnamen, Schwurnamen und geheime Namen. Ihre Wirkung entspringt der gelebten Bindung. Ein Rufname aus Kindertagen kann einen verwirrten Geist stärker erreichen als ein späterer Titel. Ein Hausname trägt Ahnen und Besitz. Ein Ordensname bindet an Gelübde. Die Wahl des Namens folgt daher dem Ziel eines Rituals.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Ausgelöschte Namen erzeugen besondere Gefahren. Sklaventote aus Heydekrug, Opfer verdeckter Gräber und Gefallene in fremder Erde verlieren leicht den öffentlichen Bezug zu ihrem Leben. Sammelnamen, Fundortnamen und Totenlisten schaffen eine neue Form der Zugehörigkeit. Der Chor der Namen zeigt die größte Kraft dieses Prinzips.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Erinnerung und Wahrheit",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Erinnerung trägt die Gestalt eines Toten weiter. Sie lebt im Geist selbst und zugleich in den Menschen, die von ihm erzählen. Beide Formen können sich voneinander entfernen. Ein Ahnengeist erinnert den gelebten Menschen, während eine Familie über Generationen ein Heldenbild formt. Jede Anrufung stärkt die gemeinsame Fläche und verändert bei großer Dauer sogar die Erscheinung.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Wahre Erinnerungen besitzen im Spiritismus besondere Kraft. Wahrheit bedeutet dabei gelebte Genauigkeit: eine Stimme, eine Tat, ein Geruch, ein gemeinsamer Weg. Eine kleine Erinnerung kann einen Geist klarer erreichen als ein prunkvoller Lobpreis. Viristen bitten Angehörige daher um konkrete Geschichten. Mayden Salta nennt solche Erzählungen Erinnerungsanker.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Falsche Erinnerung wirkt ebenfalls, trägt jedoch Verzerrung. Sie kann Ahnengeister in fremde Rollen drängen, einen Geisterfürsten aus vielen Legenden formen oder einen Namenklopfer mit geliehenen Beziehungen füttern. Archive, Grabzeichen und persönliche Gegenstände helfen, das Bild zu prüfen. Spiritistische Wahrheit entsteht aus Vergleich und Zeugenschaft.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Der Leib als erste Heimat",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Während des Lebens bildet der Leib die erste Heimat der Seele. Bewegung, Gewohnheit, Schmerz, Stimme und Sinneswahrnehmung schreiben sich in seine Resonanz. Nach dem Tod bleibt dieses Leibgedächtnis für eine Weile bestehen. Bestatter kennen entspannte Hände, alte Haltungen und die letzte Spannung eines gewaltsamen Todes. Spiritisten lesen diese Spuren mit großer Vorsicht.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Körperliche Untote nutzen das Leibgedächtnis auf verschiedene Weise. Ein Skelett wiederholt einfache Bewegungswege. Ein Zombie trägt schwere Gewohnheiten und den Befehl seines Erhebers. Ein Fext richtet den ganzen Leib auf einen letzten Willen aus. Ein Leibgeist sammelt bei jedem Körperwechsel Reflexe und Fertigkeiten seiner Hülle. Ein Vampir bewahrt seine eigene Gestalt durch Blut und Erinnerung.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Der erste Leib besitzt für eigenwillige Tote besonderes Gewicht. Selbst alte Leibgeister reagieren auf Knochen, Graberde oder persönliche Narben ihres Ursprungskörpers. Lichs bewahren häufig einen Teil des ersten Leibes im Seelengefäß. Draugen erleben den Leib gemeinsam mit Grab und Besitz. Darum gehört die Suche nach den sterblichen Resten zu vielen Bannungen.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Die sechs großen Bindungen",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Mayden Salta ordnet fortwirkende Tote nach sechs großen Bindungen: Person, Ort, Gegenstand, Leib, Schwur und Weg. Eine Erscheinung kann mehrere tragen, doch gewöhnlich führt eine davon ihr Gesetz. Diese Einteilung hilft bei der Wahl von Schutz und Erlösung.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Personenbindungen entstehen aus Liebe, Schuld, Opfer, Herrschaft oder Hass. Seelenpaten und manche ruhelosen Geister folgen ihnen. Ortsbindungen halten an Haus, Grab, Schlachtfeld, Quelle oder Todesstätte. Hausgeister, Poltergeister und Geisterfürsten zeigen diese Form. Gegenstandsbindungen ruhen auf Erbstücken, Waffen, Grabbeigaben, Namensrollen oder Seelengefäßen.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Leibbindungen tragen Fexte, Atemtote, Vampire und andere körperliche Untote. Schwurbindungen führen einen Toten entlang einer Aufgabe, eines Amtes oder eines gebrochenen Versprechens. Wegbindungen entstehen an Übergängen und wiederholten Routen. Totenfähren, Dullahan und manche Grablichter folgen ihnen. Ein sicherer Umgang richtet sich an die führende Bindung und achtet die übrigen.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Das Gesetz der Entsprechung",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Jede wirksame Handlung soll der Bindung entsprechen. Ein Ortsgeist verlangt Ordnung am Ort. Ein schwurgebundener Toter verlangt Erfüllung, Lösung oder ein gerechtes neues Ende. Ein gegenstandsgebundener Geist verlangt Rückgabe, Zerstörung oder rechtmäßige Übergabe. Ein leibgebundener Untoter verlangt Bannung des Körpers und Lösung seiner seelischen Spur.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Aus diesem Grund wirken allgemeine Schutzmittel in verschiedener Stärke. Salz zieht klare Grenzen. Eisen gibt Schwellen Gewicht und stört viele feenhafte oder geistige Übergänge. Glocken ordnen Zeit, Aufmerksamkeit und Gemeinschaft. Licht enthüllt Gestalt und stärkt die Innere Flamme. Geweihte Erde bietet einen anerkannten Ruheort. Namen richten die Handlung an eine bestimmte Seele.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein kundiger Spiritist sammelt daher zuerst die Regel und handelt danach. Gewalt kann einen Körper zerschlagen und zugleich eine Bindung an Ort oder Gegenstand fortbestehen lassen. Ein vollständiger Abschluss verbindet Schutz der Lebenden mit Ordnung für den Toten.",
+              "unlockLevel": 2
+            }
+          ],
+          "unlockLevel": 2
+        },
+        {
+          "heading": "IV Sterben Bestattung und Totenruhe",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Die geöffnete Kammer",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "In vielen Teilen Pegras öffnet die Familie beim Beginn der Todesstunde ein Fenster, einen Rauchzug oder eine Türspalte. Der Brauch gibt dem letzten Atem einen Weg und zeigt der Seele eine offene Schwelle. In kalten Ländern genügt ein schmaler Spalt. In Minen ersetzt ein offener Lampenschacht das Fenster. Auf Schiffen hebt die Wache eine Luke oder richtet eine Laterne zum Meer.",
+              "unlockLevel": 2
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein kleiner Spiegel vor Mund und Nase zeigt den Verlauf des Atems. Der letzte Hauch darf sich auf dem Glas sammeln und wird anschließend am offenen Fenster in Wind oder Morgenlicht gehalten. Bei Erstickungstoten erhält dieser Schritt besondere Sorgfalt. Ein zurückgehaltener Spiegel gilt als möglicher Anker für einen Atemtoten.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Während der Wache brennt am Kopfende eine Flamme. Angehörige nennen den Sterbenden beim Namen und erzählen wahre Begebenheiten. Offene Schwüre werden vorgelesen, Schulden verzeichnet und letzte Wünsche bezeugt. Ein Virist achtet bei schwerer Krankheit auf fremde Stimmen. Ein Agripit begleitet den Leib. Ein Thanaturg kann bei magischer Gefahr die Lösung der Resonanzen beobachten.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Waschen Wachen und Zählen",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Nach dem Tod wird der Leib gewaschen, gekleidet und in eine klare Lage gebracht. Hände und Mund erhalten besondere Aufmerksamkeit, da viele Volksbräuche dort Sitz von Handlung und Stimme sehen. Salz im Waschwasser bezeichnet Grenze und Reinigung. In Seewacht kommt Meerwasser hinzu, in Hohlstein Quellwasser, in Hollingen Wasser aus dem Gemeindebrunnen.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Totenwache dauert je nach Klima, Stand und Todesart eine Nacht bis mehrere Tage. Die Wächter wechseln in festem Rhythmus und nennen bei jeder Ablösung den Namen des Verstorbenen. Glocken, Gebete oder ein leises Klopfen markieren die Stunden. Diese Ordnung schützt vor Verwechslung, Diebstahl und frühem Zugriff fremder Mächte.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Bei Katastrophen und Schlachten zählt die Gemeinschaft Leiber, Namen und Fundstücke. Jede Zahl erhält Zeugen. Ein unbekannter Tote bekommt eine Bezeichnung aus Fundort, Kleidung oder Zeichen, etwa „die Frau vom Birkenrain“ oder „der Träger des roten Gurtes“. Diese Benennung schafft einen Platz in Register und Erinnerung, bis ein persönlicher Name gefunden wird.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Bestattungsformen",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Erdgräber prägen Felder, Städte und Dörfer vieler Fürstentümer. Felskammern und Bergnischen gehören zu Hohlstein und Vierbergen. Gruften tragen alte Adelshäuser in Peligrim, Altburgen und Hollingen. Seeurnen und leere Küstengräber bewahren die Toten Seewachts. Glaen nutzen Hügelgräber und Steinkreise. Elfische Stämme binden Erinnerung an Lieder, Bäume, Körperzeichen und ausgewählte Ruheplätze.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Kirche erkennt regionale Formen an, sobald Name, Abschied und gesicherter Ruheort sichtbar werden. Ein Grabzeichen kann Stein, Holztafel, Metallband, bemalte Schale oder lebender Baum sein. Entscheidend bleibt die fortdauernde Beziehung zwischen Leib, Name und Gemeinschaft.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Grabbeigaben erhalten klare Worte. Die Angehörigen erklären, wem ein Gegenstand gehört und welche Aufgabe er trägt. Ein Schwert kann Erinnerung statt Herrschaft bedeuten. Eine Münze kann Reisegabe statt Besitzanspruch sein. Diese Erklärung schützt vor draugischer Bindung und Streit unter den Erben.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Zweite Bestattung",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Eine zweite Bestattung ordnet Tote, deren erste Ruhe durch Krieg, Flut, Grabraub, Bauarbeiten oder magische Störung zerbrochen wurde. Die Gebeine werden gesammelt, gereinigt und unter erneutem Namensruf beigesetzt. Fundstücke und Graberde begleiten sie. Angehörige oder örtliche Zeugen erzählen den Weg von der ersten zur zweiten Ruhestätte.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Spiritisten nutzen die zweite Bestattung bei Rückenbälgen, ruhelosen Geistern, versetzten Draugen und Toten aus eingestürzten Anlagen. Die Handlung anerkennt das erlittene Geschehen und gibt dem Leib einen gültigen Ort. Ein Eintrag im Buch des Lebens verbindet beide Gräber und verhindert spätere Verwechslung.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "In Hohlstein heißen solche Züge Heimtragungen. In Langenmooren fahren flache Totenboote über den letzten Wasserweg. In Andtheim begleitet ein Reiter den Leib vom Fundort bis zum Friedhof. In Regentsberg tragen Grenzpriester Fundstücke und Namenlisten gemeinsam, da viele Leiber erst Jahre nach einem Feldzug entdeckt werden.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Massengräber und Schlachtfelder",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Massentod verdichtet Furcht, Schuld und offene Bindungen. Schlachtfelder tragen Blut, gebrochene Eide, verlorene Namen und verstreute Leiber. Seuchenorte fügen fremde Willensspuren und gefährliche Stoffe hinzu. Spiritisten betrachten solche Plätze als vielstimmige Landschaften, deren einzelne Erscheinungen sich gegenseitig stärken können.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Kirchliche Massensegnungen schaffen Ordnung durch Glocken, Listen, Lichter und gemeinsam gesprochenen Abschied. Elipirer benennen die Ereignisse, Esperiten halten Verantwortung fest, Agripiten sichern leibliche Gefahr, Viristen schützen Namen und Seelen, Selephiten bewachen den Ort. Tal’Rah ergänzt Bannlinien und Resonanzkarten.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Chor der Namen kann aus sorgfältig bewahrten Totenlisten entstehen. Ein Geisterfürst kann aus einer übermächtigen gemeinsamen Erinnerung wachsen. Leibgeister suchen auf unbewachten Feldern frische Hüllen. Ghule und Nachzehrer folgen Hunger und Grabbindung. Darum bewahren viele Heere eigene Totenschreiber und versiegelte Leichenwagen.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Grabpflege als Schutz",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Grabpflege hält Wege, Namen und Grenzen klar. Ein lesbares Zeichen stärkt die persönliche Erinnerung. Gepflegte Erde zeigt anerkannten Besitz des Toten. Wiederkehrende Lichter und Gebete geben Zeitmaß. Auf großen Friedhöfen führen Wächter Listen über geöffnete Gräber, neue Bestattungen und auffällige Zeichen.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Pflege stärkt zugleich wohlwollende Tote. Grabwächter gewinnen Kraft aus geordneten Ruhestätten. Ahnengeister erhalten eine klare Einladung. Chöre der Namen bewahren jede Stimme. Grablichter finden leichter zu Menschen, die nach einem Vermissten suchen. Friedhöfe bilden dadurch Orte lebendiger Beziehung zwischen Generationen.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Grabschändung verletzt mehr als Eigentum. Sie zerreißt Zuordnung, weckt alte Ansprüche und öffnet Leiber für Hunger oder Nekromantie. Kirchenrecht, fürstliches Recht und örtlicher Brauch bestrafen sie daher mit großer Härte. Ein kundiger Grabräuber fürchtet neben Wache und Gericht auch jene Ordnung, die unter dem Stein weiterbesteht.",
+              "unlockLevel": 3
+            }
+          ],
+          "unlockLevel": 2
+        },
+        {
+          "heading": "V Geister und Spukgestalten",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Gewöhnliche Geister",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein gewöhnlicher Geist entsteht, wenn ein Teil der persönlichen Seele für begrenzte Zeit in vertrauter Nähe fortwirkt. Trauer, Liebe, Pflicht, plötzlicher Tod oder ein wichtiger Gegenstand können diese Nähe tragen. Die Erscheinung bewahrt Stimme, Haltung und einzelne Erinnerungen. Ihre Klarheit schwankt mit Ort, Tageszeit und Anwesenheit vertrauter Menschen.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Viele gewöhnliche Geister suchen Abschluss. Sie zeigen ein verborgenes Testament, wiederholen einen letzten Weg oder warten auf eine Person. Andere bleiben aus freier Zuneigung und erscheinen zu Jahrestagen, Namensgaben oder in Träumen. Ihr Verhalten folgt der Persönlichkeit stärker als einer eigenen Totengattung.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Zeichen sind vertraute Gerüche, Schritte, ein Abdruck im Sitzkissen, ein bekanntes Lied oder ein Traum mit ungewöhnlich klarer Erinnerung. Der Umgang beginnt mit Name, Lebensgeschichte und Todesumständen. Eine ausgesprochene Botschaft, die Ordnung des Erbes oder ein zweites Begräbnis genügt häufig für den Abschied.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Kirche und Spiritisten achten dabei auf die Dauer. Eine kurze, verständliche Erscheinung gehört vielerorts zum Trauerweg. Zunehmende Kälte, Gedächtnislücken bei Lebenden und wachsende Forderungen zeigen eine verdichtete Bindung. Dann erhält die Begegnung eine förmliche Begleitung.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Ruhelose Geister",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Ruhelose Geister tragen einen offenen Zusammenhang durch den Tod. Mord, Verrat, gebrochener Schwur, verweigerte Bestattung, verlorener Name oder starke Schuld können ihn bilden. Der Geist kehrt an dieselben Orte und Handlungen zurück, weil seine Erinnerung dort wie in einer Rinne läuft.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein ruheloser Geist zeigt häufig eine Szene in Bruchstücken. Türen schlagen zur Todesstunde, Wasser läuft aus trockenen Wänden, Schritte enden an einer zugemauerten Stelle, oder eine Stimme spricht stets denselben halben Satz. Die Wiederholung gibt Hinweise auf die Bindung und zugleich auf die Grenzen der Erscheinung.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Mit der Zeit kann der Geist Teile seines Lebens verlieren. Die offene Handlung bleibt und wird zum ganzen Wesen. Aus einem ermordeten Wächter wird dann die Wacht selbst, aus einer betrogenen Braut das Warten, aus einem verschwiegenen Kind das Gewicht auf einem Rücken. An diesem Punkt kann aus allgemeinem Spuk eine eigenständige Totengattung hervorgehen.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Erlösung verlangt Anerkennung und eine Handlung, die dem Ursprung entspricht. Ein Verbrechen erhält Zeugen, ein Leib erhält sein Grab, ein Schwur erhält Erfüllung oder förmliche Lösung. Bannung schützt die Lebenden und schafft Zeit; sie ersetzt den Abschluss erst bei völliger Zerstörung der tragenden Bindung.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Poltergeister",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Poltergeist ist eine Ausdrucksform ruheloser Seelen. Seine Kraft richtet sich auf Bewegung, Schlag und Störung. Unterdrückter Zorn, ein gewaltsam verteidigtes Haus oder jahrelang verschwiegene Schuld verdichten die Erscheinung. Häufig bindet sie sich an eine lebende Person, deren Gefühle mit dem Toten in Resonanz geraten.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Zu Beginn verrücken kleine Dinge. Später öffnen sich Schränke, Geschirr fliegt, Betten wandern und Wände antworten mit Schlägen. Das Muster zeigt Ziel und Stimmung. Gegenstände aus dem Leben des Toten bewegen sich zuerst, Werkzeuge eines Verbrechens mit besonderer Heftigkeit. Ein Poltergeist spricht durch Rhythmus, Richtung und Auswahl.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Die örtliche Folklore rät zum Zählen der Schläge. Gerade Zahlen gelten in Hollingen als Antwort, ungerade als Forderung. In Andtheim legt man einen leeren Becher auf die Schwelle und wartet, in welche Richtung er fällt. Spiritisten bevorzugen eine geordnete Befragung mit klaren Zeichen und genügend Abstand zu schweren Gegenständen.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Ruhe entsteht durch Benennung des Zorns und Ordnung des auslösenden Zusammenhangs. Eine Familie kann ein verschwiegenes Ereignis öffentlich machen. Ein gestohlener Gegenstand kann zurückkehren. Eine bedrängte lebende Person kann den Ort verlassen und seelische Begleitung erhalten. Der Geist verliert seine gewaltsame Sprache, sobald eine andere Sprache trägt.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Schatten",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Schatten entstehen, wenn Furcht, Scham oder fremder geistiger Druck einen Teil der seelischen Gestalt vom übrigen Menschen abreißt. Manche lösen sich im Tod, andere bereits während schwerer Besessenheit. Sie tragen Erinnerung als Umriss und Gefühl als Hunger. Ihre Nähe dämpft Farben, Wärme und Entschlusskraft.",
+              "unlockLevel": 3
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Schatten folgt häufig einem Menschen, einer Mauerlinie oder dem Weg zwischen Todesort und Grab. Er greift durch Nachahmung an. Bewegungen werden schwer, Gedanken kreisen, und die eigene Stimme klingt fremd. Im Licht erscheint sein Rand zeitversetzt oder in eine abweichende Richtung gestreckt.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Viristen stärken die betroffene Person durch Namen, gemeinsames Erzählen und rhythmischen Glockenklang. Helles, gleichmäßiges Licht macht den Schatten lesbar. Ein plötzliches Flammenmeer kann ihn zerstreuen und zugleich an viele dunkle Winkel verteilen. Ruhige Enthüllung und die Rückbindung des abgerissenen Gefühls gelten als sicherer Weg.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Schatten aus Tendrial tragen häufig fremde Kronenformen, zusätzliche Glieder oder mehrere Stimmen. Die Immerwacht behandelt solche Erscheinungen als mögliche Träger des Seuchenkönigs. Ihre Bannung erfolgt unter Quarantäne und mit vollständiger Traumwache.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Hausgeister",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Hausgeister entstehen aus langer gemeinsamer Gewohnheit. Manche gehen auf Verstorbene zurück, andere auf die Seele eines bewohnten Ortes oder auf ein altes Naturwesen. Ein Totenhausgeist trägt persönliche Erinnerungen an Herd, Werkstatt, Kinderzimmer und Schwelle. Er schützt die Ordnung, die sein Leben geprägt hat.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Seine Zeichen wirken klein: Glut hält länger, verlorene Schlüssel liegen am Morgen sichtbar, eine Diele knarrt vor einem Eindringling, oder Milch kippt bei einem falschen Schwur. Familien danken mit Brotkrume, erster Suppe, sauberem Herdstein oder dem gesprochenen Hausnamen.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Hausgeist liebt Beständigkeit und kann Wandel erschweren. Ein Umbau, eine neue Ehe, fremde Diener oder der Verkauf eines Erbstücks können Zorn wecken. Der sichere Brauch stellt neue Bewohner förmlich vor, erzählt die Geschichte des Hauses und übergibt Schlüssel vor Zeugen. So erhält der Geist einen Platz in der veränderten Ordnung.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Spiritisten unterscheiden Hausgeist und gefangenen ruhelosen Toten durch Reichweite und Erinnerung. Der Hausgeist wirkt als Teil vieler Generationen und kennt das Gebäude als Ganzes. Ein gefangener Geist bleibt enger an eigener Biographie und Todesort. Beide verdienen passende Formen des Abschieds oder Zusammenlebens.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Geisterfürsten",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Geisterfürst entsteht, wenn eine einzelne mächtige Seele oder viele verwandte Tote die geistige Ordnung eines Ortes beherrschen. Alte Burgen, versunkene Stadtviertel, große Schlachtfelder und Tempelruinen können solche Herrschaften tragen. Titel, Tribut, Grenzen und Gefolge setzen sich im Tod fort.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein persönlicher Geisterfürst war häufig Herrscher, Priester, Heerführer oder Kultmeister. Ein gemeinschaftlicher Geisterfürst wächst aus einer über Generationen erzählten Gestalt. Beide sprechen durch untergeordnete Geister, Träume, Wetter und wiederkehrende Zeremonien. Ihr Gebiet besitzt eigene Zeiten und Wege.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Verhandlungen folgen höfischer Ordnung. Namen, Rang, Gastgabe und Grund des Betretens werden klar genannt. Eine achtlose Anrede kann als Unterwerfung oder Herausforderung gelten. Spiritisten studieren frühere Titel und Verträge, bevor sie das Gebiet betreten.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Erlösung besitzt bei Geisterfürsten selten die Form eines einzelnen Rituals. Ihr Reich verlangt Neuordnung: Gräber, Grenzen, Archive, Schwüre und lebende Gemeinschaften gehören dazu. Manchmal führt ein Vertrag zu friedlichem Nebeneinander. Manchmal endet die Herrschaft durch Auflösung des Titels und gemeinsame Bestattung des Gefolges.",
+              "unlockLevel": 4
+            }
+          ],
+          "unlockLevel": 3
+        },
+        {
+          "heading": "VI Körperliche Untote",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Der tote Leib in Bewegung",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Körperliche Untote tragen einen verstorbenen Leib weiter. Bewegung kann aus Nekromantie, Fluch, eigenem Willen, Hunger, Krankheit oder gebundener Seele stammen. Die Quelle entscheidet über Verhalten und Schwäche. Eine bewegte Hand im Leichenhaus kann letzter Muskelrest, nekromantischer Befehl oder erstes Zeichen eines Leibgeistes sein.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Leib verliert seine lebendige Ordnung und gewinnt eine andere. Gelenke folgen Befehl oder Trieb, Wunden verändern die Bewegung, und Schmerz verliert seine warnende Rolle. Manche Körper trocknen ein, andere faulen, wieder andere bewahren sich durch Blut, Graberde oder Magie. Die äußere Gestalt verrät daher nur einen Teil der Ursache.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Kirchliche und spiritistische Prüfung richtet sich auf Atem, Wärme, Blick, Schatten, Reaktion auf Namen und Verhalten im Lampenlicht. Ein Bannzeichen auf der Stirn unterbricht viele fremde Bewegungskräfte. Danach beginnt die Suche nach Befehl, Hunger, Schwur oder Seele.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Tierische Untote",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Tiere können durch Nekromantie, Seuche, Fluch oder die Bindung an einen untoten Herrn fortbewegt werden. Ihre Leiber bewahren starke Bewegungsmuster. Ein erhobenes Pferd findet Wege, ein Hund folgt Geruchsspuren, ein Rabe kehrt zu erhöhten Beobachtungspunkten zurück. Diese Fähigkeiten machen tierische Untote zu Kundschaftern, Trägern und Jagdwesen.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Nekromantisch erhobene Tiere folgen einfachen Befehlen und der Reichweite ihres Ankers. Seuchenuntote aus Tendrial tragen aggressiven Hunger und können andere Tiere in Panik versetzen. Grabgebundene Tiere erscheinen bei alten Herrengräbern als Teil des Besitzanspruchs eines Draugs.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Jäger achten auf lautlose Fährten, fehlende Atemwolken und gleichförmige Schritte. Glocken an Stalltoren und helle Lampen in Tierhäusern dienen als frühe Warnung. Nach einer Begegnung werden Zaumzeug, Halsbänder und Geschirr geprüft, da Befehlszeichen häufig dort sitzen.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Skelette",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Skelette bilden die dauerhafteste einfache Form nekromantischer Erhebung. Bewegungskraft bindet sich an Knochen, Gelenke und eingeritzte Befehlszeichen. Fleisch und Organe spielen eine geringe Rolle. Dadurch überstehen Skelette lange Lagerung und eignen sich für Wache, Marsch und wiederholte Arbeit.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Ihre Bewegungen folgen Leibgedächtnis und Befehl. Ein früherer Bogenschütze kann die Haltung eines Schusses bewahren, ein Bergmann den Rhythmus der Hacke. Feinere Entscheidung verlangt zusätzliche Formeln oder die Führung eines stärkeren Untoten. Zerschlagene Knochen begrenzen die Bewegung, während der bindende Kern weiterwirken kann.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Nekromanten setzen häufig ein Führungszeichen in Schädel, Brustbein oder Becken. Bannkundige suchen dieses Zeichen und den Gegenstand, der Befehle überträgt. Geweihte Bestattung ordnet die Gebeine nach der Lösung. Vermischte Knochen erhalten gemeinsame Namens- und Grabriten.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Zombies",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Zombies tragen einen ganzen oder weitgehend erhaltenen Leichnam. Nekromantische Kraft nutzt Muskeln, Sehnen und leibliche Gewohnheiten. Die Bewegung wirkt schwer, gewinnt jedoch durch frische Leiber große Kraft. Ein Zombie kann Türen brechen, Lasten tragen und Werkzeuge mit grober Genauigkeit führen.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Befehl sitzt häufig in Mund, Herzraum oder Nacken. Manche Erheber geben einen einfachen Hungertrieb, der selbst nach dem Verlust der Befehlsverbindung fortbesteht. Andere binden den Zombie an Stimme, Glocke, Fahne oder Geruch. Die Beobachtung seiner Wendepunkte führt häufig zum kontrollierenden Anker.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Verwesung verändert Reichweite und Gefahr. Frische Zombies können beinahe lebendig erscheinen. Ältere Körper verbreiten Krankheit und locken Tiere an. Feuer zerstört den Leib gründlich, während kontrollierte Bannung Beweise und Identität erhält. Inquisitoren bevorzugen bei möglichen Mordopfern die zweite Form.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Ghule",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Ghule entstehen aus einem Hunger, der Tod und Grabordnung überdauert. Manche waren Lebende, die über lange Zeit Menschenfleisch aßen und ihren Leib durch verbotene Riten wandelten. Andere erwachen in Hungergräbern, Belagerungsstädten oder Kultstätten. Ihre Seele zieht sich auf Geruch, Fleisch und Jagd zusammen.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Ghul besitzt List, Rudelverhalten und Erinnerung an Zugänge. Er öffnet Gräber, verfolgt Verwundete und imitiert gelegentlich menschliche Laute. Alte Ghule legen Vorräte an und führen jüngere Tiere. Ihre Krallen und Bisse tragen Grabfäule und seelische Gier.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Zeichen sind von unten geöffnete Särge, saubere Fraßspuren an weichen Gelenken, süßlicher Geruch und Tunnel zwischen Gräbern. Grabwächter reagieren mit besonderer Härte auf Ghule. Viristen stärken Überlebende gegen den Hungertraum, der nach einem Biss folgen kann.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Erlösung bleibt bei jungen Formen möglich, solange persönliche Erinnerung antwortet. Name, vertraute Speise, Familie und ein gesicherter Leib können den Hunger für kurze Zeit zurückdrängen. Alte Ghule tragen den Hunger als ganzes Gesetz und verlangen Bannung, Gefangenschaft oder zweiten Tod.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Nachzehrer",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Nachzehrer liegt im Grab und verzehrt von dort die Kraft seiner Gemeinschaft. Seine Bewegung bleibt klein: Kiefer mahlen, Finger greifen nach Tuch, Lippen färben sich dunkel. Gleichzeitig erkranken Angehörige, verlieren Gewicht und träumen vom selben Grab. Jede Nacht zieht der Tote einen weiteren Anteil an Atem und Nahrung zu sich.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Erscheinung entsteht häufig aus Tod während Hunger, aus verkehrter Grabbeigabe oder aus einem Fluch auf Familie und Mahlgemeinschaft. Ein Leichentuch im Mund, ein Knoten am Kinn oder Speisereste im Sarg können den Kreislauf tragen. Der Nachzehrer frisst symbolisch jene Bindung, die zu Lebzeiten Nahrung und Fürsorge bedeutete.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Volksbrauch legt einen Stein unter das Kinn, löst alle Tuchknoten und stellt Brot außerhalb des Grabes für die Lebenden bereit. Spiritisten öffnen das Grab unter Glockenklang, binden den Kiefer und benennen jede betroffene Person. Danach folgen zweite Bestattung und gemeinsames Mahl.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz lautet: Was im Grab gebunden isst, entzieht dem Haus den Tisch. Darum achten Bestatter in Seuchenzeiten besonders auf Mund, Tuch und Beigaben. Hollinger Totengilden führen darüber eigene Lehrrollen.",
+              "unlockLevel": 4
+            }
+          ],
+          "unlockLevel": 4
+        },
+        {
+          "heading": "VII Eigenständige Totengattungen",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Rückenbalg",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Rückenbalg entsteht aus einem heimlich getöteten oder verborgenen Kind, dessen Tod aus der gemeinsamen Erinnerung gedrängt wurde. Der Leib liegt in einer Mauer, unter Dielen, in einem Brunnen, am Feldrain, in einer Waldgrube, unter Stallmist oder in einem abgelegenen Keller. Name, Körper und Zeugenschaft bleiben voneinander getrennt. Aus dieser Trennung wächst ein Geist mit Gewicht.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Rückenbalg erscheint zuerst als leises Weinen, kleine Handspur oder Kinderstimme hinter dem Reisenden. Dann springt er auf den Rücken und verlangt, getragen zu werden. Jeder Schritt macht ihn schwerer. Das Gewicht entspricht der Last des verschwiegenen Todes und führt den Träger gewöhnlich zum verborgenen Leib oder zu geweihter Erde.",
+              "unlockLevel": 4
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz lautet: Getragen wird, wessen Tod verborgen blieb. Ein Träger darf den Weg mit Fragen begleiten und muss jede Antwort laut wiederholen. Gewalt gegen die Erscheinung vermehrt das Gewicht. Eine Rast gelingt an einer Wegkreuzung, einem Brunnenrand oder vor einem geweihten Tor, denn solche Orte geben dem Toten eine vorläufige Schwelle.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Kinderreime warnen vor Stimmen aus Mauern. In Hollingen heißt es: „Klopft es tief und weint es klein, trag den Namen heim ins Licht hinein.“ In Kanningen legen Waldhöfe ein Stück Kreide an die Kellertür. In Heydekrug tragen Viristen Listen verschwundener Kinder in die Sklavenviertel und vergleichen sie mit Spukorten.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Erlösung verlangt Auffindung des Leibes, öffentliche Anerkennung, einen Namen und Bestattung. Ein persönlicher Name besitzt große Kraft. Bei unbekannter Herkunft gibt die Gemeinde einen Fundortnamen. Danach trägt dieselbe Person den kleinen Leib vom Versteck zum Grab. Das Gewicht wird mit jedem gesprochenen Zeugen leichter.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Atemtote",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Atemtoter entsteht, wenn der letzte Atem im sterbenden Leib gebunden bleibt. Verschüttung, Erdrosselung, Ertrinken in engem Raum, Rauch, lebendige Bestattung und magisch versiegelte Kammern begünstigen diese Form. Der Körper trägt den Übergang als unvollendete Ausatmung.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Atemtote jagt den Atem der Lebenden. Er legt Mund oder kalte Hand an Gesicht und Kehle und zieht einen Hauch in sich. Mit jedem geraubten Atem wird sein Leib beweglicher, wärmer und menschlicher. Sehr alte Atemtote sprechen mit mehreren Stimmen, da jeder geraubte Hauch einen Rest von Klang und Erinnerung trägt.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz lautet: Gebundener Atem sucht offenen Atem. Geschlossene Räume stärken ihn, offene Fenster und freie Luft schwächen seine Jagd. Ein Spiegel vor seinem Mund zeigt viele kleine Nebelflecken. Jeder Fleck kann die Stimme eines Opfers tragen.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Bannzeichen auf der Stirn stellt den Leib still. Hohlsteiner Feuerweise verwenden einen Kreis mit offenem oberen Bogen. Viristen sprechen den Namen des Toten, während Helfer Türen, Schächte und Fenster öffnen. Danach wird der letzte Atem durch ein Rohr, einen Schilfhalm oder eine hohle Knochenflöte aus dem Mund geführt und dem Wind übergeben.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "In Bergwerken hält man nach einem Einsturz eine Lampe an jeden geborgenen Mund. In Seewacht bringt man Ertrunkene an offenen Kai. In Langenmooren werden Spiegel nach dem Ritual im fließenden Wasser gereinigt. Der Volksmund sagt: „Gib dem letzten Hauch den Himmel, dann behält das Grab den Leib.“",
+              "unlockLevel": 5
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Namenklopfer",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Namenklopfer entsteht aus einem Menschen, der an einer verschlossenen Schwelle starb, während Bewohner seinen Ruf hörten und den Zugang versagten. Frost, Feuer, Verfolgung, Seuche und Fehde bilden häufig den Hintergrund. Wird der Name später verschwiegen oder aus einem Register entfernt, gewinnt die Erscheinung besondere Stärke.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Namenklopfer sucht Name, Einladung und Zugehörigkeit. Er klopft an Tür, Fenster, Tor, Zeltstange oder Schiffsluke und ruft einen Bewohner beim Namen. Die Stimme kann vertraut klingen, denn jeder Antwortende gibt dem Geist einen Teil seiner Beziehungen.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz besitzt drei Antworten. Die erste gibt ihm Stimme. Die zweite gibt ihm Erinnerung und vertraute Anrede. Die dritte gibt ihm Zugehörigkeit zur Schwelle und damit Zugang. Danach kann er im Haus erscheinen, Namen vertauschen und Bewohner aus ihrer eigenen Familienerinnerung drängen.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Pegranische Türen tragen deshalb Familiennamen, Sonnenzeichen oder eine Reihe kleiner Eisennägel. Bei nächtlichem Klopfen antwortet der Hausherr mit einer Frage nach Herkunft und Zeugen, während jeder Bewohner schweigt. Ein Gast wird am Abend förmlich vorgestellt, damit sein Name zur geordneten Hausgemeinschaft gehört.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Erlösung verlangt den Namen des Verstorbenen, die Geschichte der verweigerten Schwelle und eine späte Aufnahme. Die Tür wird bei Tageslicht geöffnet, Brot und Licht stehen bereit, und ein Zeuge spricht: „Dein Ruf erhält Gehör. Dein Name erhält einen Platz.“ Danach führt eine Prozession den Geist oder seine Gebeine zum Grab.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Andtheimer Herbergen kennen Namenklopfer besonders gut. Dort hängt an vielen Türen ein Brett für die Namen der aufgenommenen Reisenden. In Ulsden ritzen Glaen den Hausnamen in den oberen Balken. Auf Schiffen antwortet die Nachtwache mit dem Namen des Hafens statt mit dem eigenen Namen.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Dullahan",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Dullahan ist ein kopfloser Totenreiter, dessen Weg, Haupt und Todesansage miteinander verbunden sind. Er entsteht aus einem Menschen, der als Bote, Richter, Henker oder Bannerreiter eine Todesbotschaft trug und durch Enthauptung starb, bevor Amt und Weg endeten. Sein abgetrenntes Haupt bewahrt Stimme und Blick, der Leib bewahrt den Ritt.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Er erscheint auf Straßen, an Stadttoren und vor Häusern, deren Bewohner eine alte Todesschuld tragen. Das Haupt nennt einen Namen, während die Hufe einen festen Rhythmus schlagen. Wer den gerufenen Namen bestätigt, bindet die Botschaft an die bezeichnete Person. Darum schweigen Dörfer beim nächtlichen Hufschlag und läuten eine einzelne Glocke.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz lautet: Der Weg trägt die Botschaft bis zu einem anerkannten Ende. Mauern halten ihn kurz auf, Wege führen ihn weiter. Eine Brücke, ein Stadttor oder ein Richtplatz kann als Amtsgrenze dienen. Gold blendet den Blick seines Hauptes, da Münze und Recht in alten Überlieferungen denselben Anspruch tragen.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Spiritisten suchen das ursprüngliche Urteil, den wahren Empfänger und die Stelle der Enthauptung. Eine falsche Todesbotschaft wird öffentlich widerrufen. Eine erfüllte Botschaft erhält förmlichen Abschluss. Kopf und Leib werden gemeinsam bestattet, während der letzte Weg in umgekehrter Richtung begangen wird.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "In Andtheim reitet der Dullahan über offene Heerstraßen. In Altburgen erscheint er mit marmornem Gesicht. In Ulsden trägt er einen Reif aus gefrorenem Gras. Alle Formen teilen das getrennte Amt: Das Haupt spricht, der Leib vollendet den Weg.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Banshees",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Eine Banshee entsteht aus einer Toten, deren Stimme über Generationen an eine Familie, Sippe oder Herrschaft gebunden blieb. Häufig war sie Klagefrau, Sängerin, Seherin oder letzte Zeugin eines ausgelöschten Hauses. Ihr Ruf kündigt einen Tod innerhalb dieser Bindung an und sammelt die Angehörigen zur Erinnerung.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Banshee verursacht den angekündigten Tod selten. Sie hört die sich lösende Lebensbindung und gibt ihr Stimme. Ihr Klagen kann dennoch Glas brechen, Tiere in Flucht treiben und Schlafende in Todesbilder ziehen. Eine Familie, die den Ruf als Angriff behandelt, steigert die Wucht der Erscheinung.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Ihr Gesetz lautet: Jede bewahrte Linie besitzt eine Stimme für ihren Verlust. Die Banshee ruft dreimal: zuerst am Rand des Landes, dann an der Schwelle des Hauses, zuletzt nahe beim Sterbenden. Wird der Name des Sterbenden zwischen den Rufen ausgesprochen und die Familie versammelt, wandelt sich das Schreien häufig in leisen Gesang.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Glaen begegnen ihr an Hügelgräbern und Nebelrändern. Alte Adelshäuser Peligrims kennen sie in Ahnengruften. Elfische Stämme hören verwandte Klagen in bestimmten Vögeln und Baumkronen. Spiritisten behandeln die Banshee als Todeszeugin und prüfen zugleich Fluch, Familiengewalt und erzwungene Bindung.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Ruhe entsteht, wenn die Familie ihre Toten ehrlich erinnert und der Stimme einen anerkannten Platz gibt. Ein eigenes Klagebuch, ein jährliches Lied oder die Bestattung der ursprünglichen Sängerin kann genügen. Die Banshee verliert ihre Aufgabe, sobald die Linie endet oder ihre Erinnerung bewusst in eine neue Gemeinschaft übergeht.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Fexte",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Fext ist ein körperlicher Toter, dessen eigener Wille den Leib trägt. Er entsteht aus einem Menschen, der im Tod eine einzige Aufgabe, Pflicht oder Entscheidung mit außerordentlicher Kraft festhält. Der Leib kann verwundet, vertrocknet oder teilweise zerstört sein; der Wille ordnet jeden verbliebenen Teil auf sein Ziel.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz lautet: Ein Wille trägt einen Leib bis zur Erfüllung. Der Fext bewacht eine Person, hält ein Tor, sucht einen Täter, verteidigt eine Gemeinde oder vollendet ein Werk. Wohlwollende Fexte erscheinen als alte Wächter und werden in manchen Klöstern verehrt. Rachsüchtige Fexte verfolgen ihren Satz mit derselben Treue.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Gewöhnliche Waffen bremsen ihn durch Zerstörung des Körpers. Die entscheidende Schwäche liegt im Ursprung des Willens. Ein erfüllter Auftrag bringt Ruhe. Ein gerechter Nachfolger kann die Pflicht übernehmen. Ein gebrochener Irrtum verlangt Wahrheit und Zeugen. Ein persönliches Zeichen aus dem Leben des Toten öffnet häufig einen Augenblick der Erinnerung.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Spiritisten fragen einen Fext nach seinem Satz. Manche sprechen ihn klar, andere zeigen ihn durch Handlung. Jede zusätzliche Forderung stammt meist aus späterer Verwirrung oder fremdem Einfluss. Die Trennung dieses Kerns von angesammeltem Zorn bildet den Weg zur Lösung.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Die früher erzählten Friedensleiber gelten in gelehrten Registern als Fexte mit gemeinschaftlichem Schutzauftrag. Ihre Kraft wächst durch Gebete und freiwillige Unterstützung, während ihr ursprünglicher Wille die Form bestimmt. Eine eigene Totengattung entsteht daraus in der Forschung von Mayden Salta selten.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Draug und Hügelgänger",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Draug oder Hügelgänger ist ein körperlicher Toter, dessen Leib, Grab, Besitz und Anspruch zu einer einzigen Herrschaft verschmolzen sind. Er entsteht durch starke Grabriten, Besitzwillen, Erbstreit oder die Vorstellung, dass Land und Beigaben den Rang des Toten fortsetzen. Der Grabhügel wirkt als zweiter Leib.",
+              "unlockLevel": 5
+            },
+            {
+              "type": "paragraph",
+              "text": "Erde aus dem Grab stärkt den Draug. Gestohlene Beigaben tragen seine Bindung mit sich und öffnen ihm Wege bis zum Dieb. Innerhalb seines Bereichs kann er wachsen, sein Gewicht verändern, Tiere bedrängen und Träume mit Besitzansprüchen füllen. Graberde trägt seine Kraft auf fremdem Boden weiter.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz lautet: Was im Grab als Besitz erklärt wurde, bleibt Teil des Toten. Darum sprechen kluge Bestatter Beigaben als Erinnerung, Gabe oder Erbe aus. Unklare Worte nähren den Anspruch. Ein rechtmäßiger Erbe kann mit Urkunde, Zeugen und Gegengabe verhandeln.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Glaen kennen Hügelkönige unter Steinen. Nordvölker erzählen von Draugen, die in gefrorener Erde wachsen. Zwerge berichten von Hallenhütern, deren Grabkammer zugleich Werkstatt und Familienarchiv ist. Alte Adelshäuser bewahren Gruftverträge, die Zugang und Entnahme genau regeln.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Erlösung verlangt Ordnung von Besitz und Grab. Gestohlene Dinge kehren zurück oder erhalten eine förmliche Übergabe. Graberde wird gesammelt. Der Tote hört die Grenzen seines Anspruchs vor Zeugen. Bei gewaltsamem Widerstand trennt man Leib, Beigaben und Erde in mehreren geweihten Ruhestätten.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Wights und Leichenfürsten",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Wight entsteht aus Herrschaft, die den Tod überdauert und andere Tote in ihren Rang zwingt. Häufig war der Verstorbene Fürst, Heerführer, Priester oder Aufseher eines großen Grabbezirks. Schwüre, Abhängigkeit und Furcht seiner Gefolgschaft bilden ein Netz, in dem sein Wille weiterregiert.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Wight trägt Erinnerung, Sprache und strategische Vernunft. Er erhebt Gefallene, ruft gebundene Geister und verleiht einfachen Untoten einen Teil seines Befehls. Mit wachsendem Gefolge wird er zum Leichenfürsten. Seine Macht ruht weniger im einzelnen Leib als in Titeln, Bannern, Siegeln und unterworfenen Namen.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz lautet: Anerkannte Herrschaft gibt dem Toten Reichweite. Jeder Kniefall, jeder gesprochene Titel und jeder angenommene Befehl stärkt das Netz. Reisende vermeiden daher höfische Formen, bis die rechtmäßige Stellung geklärt ist. Esperiten und Historiker prüfen alte Ansprüche gemeinsam.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Leichenfürst fällt, sobald Leib, Herrschaftszeichen und Gefolgsbindung getrennt werden. Untergebene Tote erhalten eigene Namen und Gräber. Banner werden gebrochen oder einem lebenden rechtmäßigen Träger übergeben. Der Titel wird vor Zeugen beendet. Diese Arbeit kann eine ganze Landschaft umfassen.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Tendrials Seuchenfürsten ähneln Wights, tragen jedoch zusätzlich Krankheit und den fernen Anspruch des Seuchenkönigs. Die Immerwacht führt sie als verwandte Form mit eigener verseuchter Herrschaftsbindung.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Vampire",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Vampir bindet Seele und Leib an Blut. Blut trägt für ihn Wärme, Erinnerung, Verwandtschaft und Lebenskraft. Die Entstehung kann aus Fluch, eigenem Ritual, Ansteckung durch einen älteren Vampir oder einer blutgebundenen Todesart hervorgehen. Jede Linie besitzt eigene Gaben und Tabus.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Vampir trinkt mehr als leibliche Kraft. Er nimmt Bilder, Vorlieben und Beziehungsreste auf. Häufige Nahrung aus derselben Familie schafft eine mächtige Bindung. Alte Vampire führen daher Häuser, Herden oder geheime Höfe und kennen ihre Opfer mit erschreckender Genauigkeit.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz lautet: Genommenes Blut verlangt Zugang. Einladung, geöffnete Schwelle, freiwillige Gabe oder erzwungene Unterwerfung bestimmen die Art der Bindung. Eine freie Einladung stärkt den Vampir im Haus. Ein geraubter Eintritt macht ihn anfälliger für Hauszeichen und den Widerstand der Bewohner.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Sonnenlicht enthüllt die fremd erhaltene Leibordnung und schwächt viele Linien. Fließendes Wasser löst manche Blutbindungen. Pfähle, Feuer und Enthauptung zerstören den Leib, während ein Ahnengefäß oder Ursprungsvampir die Linie weitertragen kann. Spiritisten suchen deshalb Herkunft, erste Gabe und Familiennetz.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Kirche und Tal’Rah behandeln Vampire als eigenwillige körperliche Untote. Einzelne Geschichten erzählen von Linien mit strengen Verträgen und tierischem Blut. Solche Ordnungen verlangen ständige Prüfung, da Hunger und gesammelte Erinnerungen den Willen über Jahrhunderte verändern.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Lichs",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Lich entsteht durch bewusste Trennung der eigenen Seelenform vom sterblichen Leib. Der Magier schreibt Name, Erinnerung und Willen in ein Gefäß, eine Reihe von Gefäßen oder eine altvorderliche Struktur. Der Körper wird zur wechselbaren Hülle. Diese Handlung verlangt höchste Kenntnisse der Nekromantie, Thanaturgie und Hermetik.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Das Seelengefäß trägt den Satz, der den Lich zusammenhält. Manche wählen ein Herz aus Metall, andere ein Buch, eine Krone, eine Kammer oder verteilte Zeichen. Je größer die Verteilung, desto stärker zerfällt die Einheit der Person in Rollen und Teilwillen.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz lautet: Die geschriebene Seele kehrt zu ihrer Form zurück. Zerstörte Körper können ersetzt oder neu aufgebaut werden, solange Gefäß und Resonanzweg bestehen. Erinnerungen außerhalb des Gefäßes verblassen mit jedem Wechsel. Darum sammeln Lichs Archive, Abbilder und lebende Zeugen ihrer eigenen Geschichte.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Lich wird durch Auffinden, Lesen und Auflösen seines Seelensatzes besiegt. Reine Zerstörung eines Gefäßes kann die gebundene Seele in Ort oder Finder treiben. Mayden Salta arbeitet bei solchen Fällen mit Meta-Magiern und Viristen. Jeder Teil erhält eine kontrollierte Lösung und einen benannten Abschluss.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Die berühmtesten Lichgerüchte führen zu Mortuus Fama, zu verborgenen Linien Aurelians und zu Tendrial. Verlässliche Zeugnisse bleiben selten, da ein erfolgreicher Lich seine eigene Geschichte ordnet.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Leibgeister",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Leibgeister entstehen als seltene Folge nekromantischer Erhebung. Ein Nekromant erfüllt einen Leichnam mit Bewegungskraft. Zugleich besitzt die verstorbene Seele eine außergewöhnlich starke Bindung an Leben und eigenen Körper. Sie kehrt aus eigenem Willen in den erhobenen Leib zurück und übernimmt die fremde Kraft.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Der junge Leibgeist trägt Persönlichkeit, Erinnerung und den Schmerz der Erhebung. Sein erster Leib bleibt Heimat. Er sucht vertraute Orte, versucht Schäden zu verbergen und ringt mit Befehlsresten des Nekromanten. Fällt dieser Leib endgültig, trägt die Seele die nekromantische Resonanz bereits in sich und kann in einen anderen Leichnam fahren.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Jeder Wechsel wird leichter. Der alte Leibgeist betrachtet Körper als Hüllen und wählt nach Kraft, Stand, Geschlecht, Zugang oder Fertigkeit. Uralte Leibgeister bereiten Ersatzleiber vor und lagern sie an sicheren Orten. Dabei sammeln sie Leibgedächtnis: Haltung, Reflexe, Handschrift, eingeübte Handgriffe und körperliche Fertigkeiten.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz lautet: Der erste Leib gibt Identität, jeder weitere Leib gibt Möglichkeit. Reste des Ursprungskörpers ziehen den Geist an und können ihn binden. Lampenträgerlicht zeigt beim Leibgeist einen doppelten Schatten: die gegenwärtige Hülle und die Haltung des ersten Leibes. Namenrufe erzeugen häufig Antworten aus beiden Schichten.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Schlachtfelder und Leichenhäuser schützen ihre Toten durch Stirnzeichen, Namenszettel, getrennte Lagerung und regelmäßigen Glockenklang. Ein plötzlich veränderter Gang, fremde Fertigkeit oder Erinnerung an unbekannte Orte gilt als Warnung. Viristen prüfen Seele und Zustimmung des Leibes, während Spiritisten die Linie der Wechsel verfolgen.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Bannung fixiert den Geist in einer Hülle und trennt die nekromantische Resonanz. Erlösung verlangt meist den ersten Leib, den eigenen Namen und eine freiwillige Aufgabe der späteren Körper. Junge Leibgeister können diesen Weg wählen. Alte Formen erleben jede Hülle als Besitz und wehren sich mit großer List.",
+              "unlockLevel": 6
+            }
+          ],
+          "unlockLevel": 4
+        },
+        {
+          "heading": "VIII Wohlwollende Tote und Führergeister",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Die Ordnung hilfreicher Geister",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Wohlwollende Tote folgen ihrer Aufgabe mit derselben Strenge wie hungrige oder rachsüchtige Wesen. Ihre Gabe besitzt eine Grenze, und diese Grenze schützt die Bedeutung ihres Dienstes. Ein Heimrufer begleitet ein begonnenes Sterben. Ein Grabwächter schützt die Ruhe der Bestatteten. Eine Totenfähre führt über ihren Übergang. Wer Aufgabe und Tabu versteht, empfängt Hilfe in geordneter Form.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Spiritisten beschreiben hilfreiche Geister durch Entstehung, Aufgabe, Gabe und Tabu. Hinzu kommen Zeichen, regionale Gestalt und Umgang. Diese Ordnung verhindert eine sorglose Anrufung. Güte bedeutet bei Toten Treue zu einem hilfreichen Gesetz, während menschliche Wünsche oft weiter reichen.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Kirche begegnet diesen Wesen mit Achtung und Prüfung. Viristen sehen in vielen von ihnen eine Form geordneter Bindung. Sophisten diskutieren über die Grenze zwischen fortwirkender Seele, Heiligerinnerung und geistiger Resonanz. Volksglaube behandelt sie als Nachbarn an den Schwellen des Lebens.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Heimrufer",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Heimrufer erscheinen Menschen, deren Tod bereits begonnen hat. Ihre Gestalt besitzt eine schwer fassbare Form. Das Gesicht bleibt jenseits persönlicher Identität und wirkt dem Sterbenden zugleich vollkommen vertraut. Stimme, Haltung und Nähe tragen das Gefühl eines sicheren Ortes, einer alten Beziehung und einer lange erwarteten Heimkehr.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Heimrufer setzt sich an ein Bett, geht neben einem Verwundeten oder wartet am Rand eines Weges. Seine Gegenwart beruhigt den Atem, ordnet Erinnerungen und sammelt die Seele. Umstehende sehen häufig einen zweiten Schatten, eine leichte Vertiefung auf einer Decke oder den Blick des Sterbenden auf eine leere Stelle.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Seine Entstehung bleibt ein Mysterium. Kirchliche Lehre deutet Heimrufer als Diener des Lichts oder als Gestalt, welche die Seele aus ihrer eigenen Hoffnung empfängt. Mayden Salta vermutet eine gemeinsame Form vieler geglückter Abschiede. Volksglaube spricht von den ersten Toten, die den Weg lernten und seitdem an jeder Todesstunde warten.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz lautet: Vertrautheit öffnet den Weg erst nach Beginn des Todes. Die Berührung eines Heimrufers zeigt eine nahe Todesstunde. Bei Lebenden mit heilbarer Krankheit bleibt er am Rand und wartet. Spiritisten behandeln seine Erscheinung daher als Hinweis für Abschied, letzte Worte und sorgsame Prüfung des Leibes.",
+              "unlockLevel": 6
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Gabe ist Ruhe. Das Tabu ist Festhalten aus Furcht oder Neugier. Eine gewaltsame Beschwörung kann einen Sterbenden vorzeitig aus seinen Beziehungen lösen oder eine fremde Erscheinung in die erwartete Form kleiden. Erfahrene Viristen schaffen Raum, Licht und vertraute Stimmen und überlassen die Annäherung dem Heimrufer selbst.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Volksmund sagt: „Wenn der Fremde dir vorkommt wie Heimkehr, geh mit ihm.“ In Hollingen brennt für den Heimrufer eine zweite kleine Kerze. In Seewacht öffnet man den Blick zum Wasser. In Vierbergen setzt man einen freien Schemel nahe die Tür.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Seelenpaten",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Seelenpate entsteht durch eine bewusst übernommene Todesstunde. Ein Mensch erkennt die tödliche Gefahr eines anderen und nimmt sie aus freiem Entschluss auf sich. Der Retter stirbt, der Gerettete lebt weiter, und beide begreifen im entscheidenden Augenblick den Tausch. Diese gegenseitige Erkenntnis kreuzt ihre Lebenswege.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Verstorbene bleibt an jene Lebenszeit gebunden, die sein Opfer möglich machte. Er bewacht das Geschenk. Seine Erscheinung kommt an neuen Schwellen: vor einem Unfall, im Traum vor einer falschen Reise, beim Griff nach einer Waffe oder in einer Stunde tiefer Verzweiflung. Ein kurzer Zug am Ärmel, eine vertraute Wärme oder eine geliehene Handbewegung kann genügen.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz lautet: Geschenkte Lebenszeit trägt die Wacht des Gebers. Jeder starke Eingriff verbraucht einen Teil der Bindung. Viele Erzählungen kennen drei große Zeichen: Warnung, Rettung und Abschied. Danach wird der Pate still und die Lebenszeit gehört ganz dem Geretteten.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Gabe ist Schutz. Das Tabu ist die Forderung nach dauernder Führung. Wer jede Entscheidung dem Seelenpaten überlässt, schwächt das eigene Leben und bindet den Toten stärker. Ein Pate kann zudem drängend werden, wenn der Gerettete das Opfer als Besitz oder Freibrief behandelt. Aus Schutz wächst dann eine strenge Mahnung, in seltenen Fällen ein fextartiger Wächter.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Kirchliche Häuser führen solche Verbindungen in Gedenkbüchern. Am Jahrestag teilt der Gerettete Brot mit der Familie des Retters und erzählt, wie das Geschenk weiterwirkte. Mayden Salta prüft Seelenpaten durch die Erinnerung beider Beteiligten und durch die klare Todesursache.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Volksmund sagt: „Ein Mensch schenkt dir sein Leben. Seine Wacht dauert so lange wie das Geschenk.“ In Andtheim trägt man den Namen des Paten am Sattel. In Seewacht wird eine zweite Münze in die Reisekasse gelegt. In Heydekrug bewahren Viristen solche Geschichten als Zeugnis persönlicher Würde.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Totenfähren",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Totenfähren entstehen an alten Übergängen: Flüssen, Furten, Pässen, Brücken, Küsten, Höhlenwegen, Eiswegen und Gebirgstoren. Ein Mensch führt dort zu Lebzeiten viele Reisende. Während seines eigenen Todes begegnet er einer verlorenen Seele und bringt sie ein letztes Mal über den vertrauten Weg. Dieser letzte Dienst wird zu seinem Amt.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Totenfähre spürt verlorene Seelen und Menschen zwischen Leben und Tod. Ihre Aufgabe lautet hinüberführen. Sie besitzt eine feste Route und erscheint in einer Form, die Ort und Kultur verstehen. Ein malvitischer Fährmann führt ein schmales Boot. Ein Glaenreiter geht durch Nebel. Ein nordischer Totenführer erscheint als Wolf. Ein Bergmann aus Vierbergen trägt eine Laterne durch Schnee.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Ihr Gesetz lautet: Jeder Übergang verlangt freiwillige Passage und passende Gabe. Münze, Brot, Salz, Lied, Name, Erinnerung oder Stein vom Ausgangsort können genügen. Die Gabe bezeichnet den Reisenden und sein Ziel. Sie wirkt wie eine kleine Urkunde zwischen Weg und Seele.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Gabe ist sichere Führung. Das Tabu ist eine fremde oder geraubte Gabe. Eine Münze aus einer anderen Stadt kann zu deren Toten führen. Ein fremder Name ruft die zugehörige Seele. Ein gestohlener Ring öffnet den Weg zu seinem Besitzer. So kann eine hilfreiche Fähre einen Reisenden treu an ein unerwartetes Ziel bringen.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Spiritisten prüfen Route, Gabe und Zeichen der Ankunft. Jede Reise erhält einen Begleiter, der am Ausgang wartet und den Namen des Reisenden hält. Nach der Rückkehr werden Füße oder Hände in fließendem Wasser gewaschen. Ein Wegstein markiert den Abschluss.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "In Langenmooren stehen Gabenschalen an alten Furten. In Seewacht hängen kleine Holzboote in Hafenkapellen. Hohlstein kennt Passführer mit glimmender Grubenlampe. Terakos ehrt weiße oder graue Wölfe, die einem Sterbenden vorauslaufen.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Ahnengeister",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Ahnengeister entstehen aus Verstorbenen, deren Name, Erinnerung und Bindung in Familie, Sippe oder Gemeinschaft stark bewahrt werden. Sie haben ihren Tod angenommen und kehren auf Einladung zurück. Ihre Nähe ruht auf einem vollzogenen Übergang und einer freiwilligen Verbindung zu den Lebenden.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Das Gesetz der Einladung verbindet Name, Bindung und wahre Erinnerung. Ein Nachkomme oder anerkanntes Mitglied spricht den Namen. Ein persönlicher Gegenstand, Grabstein, Knochenstück oder Familienzeichen dient als Anker. Danach erzählt der Rufende eine konkrete wahre Begebenheit. Erst diese Verbindung gibt dem Ahnen eine klare Gestalt.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Ahnengeister schenken Erfahrung. Ein Jäger leiht für einen Augenblick seine sichere Hand, eine Hebamme ihre Ruhe, ein Schmied den Rhythmus eines alten Handgriffs. Mehrere Ahnen können als Rat erscheinen, besonders bei Namensgaben, Hochzeiten, Erbschaften, großen Reisen, Kriegen und Entscheidungen über die Zukunft einer Sippe.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Ihre Gabe ist Erinnerung. Ihr Tabu ist die absichtliche Verfälschung der Familiengeschichte. Über Generationen kann ein Heldenbild die Erscheinung formen und den Menschen dahinter bedrängen. Der Ahne beginnt dann zwischen eigener Erinnerung und öffentlicher Rolle zu schwanken. Spiritisten sichern alte Briefe, Werkzeuge und Gegenstimmen, um beide Bilder zu ordnen.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Zwerge binden Ahnen an Steinbücher, Werkstätten und Hallen. Glaen rufen sie an Feuern und Steinkreisen. Wolfsreiter tragen Namen in Masken, Stoßzähnen und Liedern. Elfische Stämme bewahren sie in Körperzeichen, Bäumen und Gesängen. Alte Adelshäuser nutzen Gruften, Wappen und Hausbücher.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Kirche erkennt Ahnenverehrung als Form von Erinnerung und Gemeinschaft an, sobald Freiheit und persönliche Würde gewahrt bleiben. Viristen achten besonders auf Ahnen, die Lebende beherrschen oder eine erfundene Tradition erzwingen. Ein gesunder Ahnenrat berät und überlässt die Entscheidung den Lebenden.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Lampenträger",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Lampenträger entstehen aus Menschen, die zu Lebzeiten häufig Sterbende, Tote oder Verlorene begleiteten. Totengräber, Hebammen, Priester, Feldscherer, Hospizleute, Nachtwächter und Führer an gefährlichen Orten kennen die Schwelle durch wiederholten Dienst. Nach ihrem eigenen Tod begegnen einige einer verirrten Seele und führen sie mit dem letzten Licht ihrer Wache hinaus.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Die geführte Seele entzündet die geistige Flamme. Von da an sucht der Lampenträger Spukorte, Schlachtfelder, Ruinen und verwirrte Übergänge. Seine kleine Flamme zeigt einen Weg zwischen Zuständen des Todes. Tote sehen sie als Ausgang, Lebende als sichere Richtung, fremde Mächte als klar gesetzte Grenze.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz lautet: Die Flamme führt, wohin ihr Träger selbst einen Weg kennt. Ein Lampenträger kann einen Geist aus einer Ruine bringen, deren Ausgang er versteht. In einer altvorderlichen Struktur mit veränderter Zeit benötigt er Ortswissen oder die Hilfe eines lebenden Führers. Seine Güte ersetzt Ortskenntnis durch Zusammenarbeit.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Gabe ist Orientierung. Das Tabu ist der Griff nach der Flamme. Wer sie an sich reißen will, trägt für eine Zeit die Wahrnehmung aller nahen Toten und verliert den eigenen Weg. Reisende folgen in angemessenem Abstand und nennen an jeder Schwelle ihren Namen.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Lampenträgerlicht enthüllt Zustände. Gewöhnliche Geister werfen einen weichen Schatten, besessene Lebende einen unterbrochenen, Leibgeister einen doppelten. Illusionen zeigen häufig überhaupt einen fremden Ursprungsschatten. Mayden Salta verwendet Darstellungen dieser Beobachtung in der Ausbildung.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "„Wo die letzte Lampe geht, findet jeder seinen Weg“, heißt es in Hospizen. Hollingen kennt Lampenzüge nach Seuchen. Vierbergen erzählt von alten Bergführern. Regentsberg stellt kleine Lichter an Grenzgräber, damit gefundene Tote ihren Namen erreichen.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Grabwächter",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Grabwächter binden sich freiwillig an Friedhöfe, Katakomben, Klostergrüfte oder heilige Totenstätten. Ein Mensch erklärt vor seinem Tod Aufgabe, Bereich und Dauer. Ein Ritus verbindet Willen, Name und Ruheort. Die spätere Gestalt kann als Geist, erhaltener Leib, Statue oder wechselnder Schatten erscheinen.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Wächter ruht, solange die Gräber geordnet bleiben. Grabschändung, Nekromantie, Ghule, Leibgeister und gewaltsame Störung wecken ihn. Innerhalb seines Bereichs besitzt er große Kraft. Gepflegte Namen, Totenriten und Erinnerung nähren diese Kraft. Nach erfüllter Abwehr kehrt er an seinen Platz zurück.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz lautet: Anerkannte Ruhe steht unter seiner Wacht. Gewöhnliche Besucher, Trauernde und Totendiener erleben ihn als stille Sicherheit. Ein Forscher mit guten Absichten kann durch eine ungültige Graböffnung dennoch als Schänder erscheinen. Darum tragen spiritistische Gruppen schriftliche Erlaubnis und stellen sich dem Wächter am Tor vor.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Gabe ist Schutz. Das Tabu ist die Ausweitung seines Amtes. Ein Grabwächter, dessen Grenze vergessen wurde, kann neue Häuser oder Straßen als Teil des Friedhofs beanspruchen. Esperiten und Viristen erneuern deshalb Grenzsteine, Register und jährliche Amtsworte.",
+              "unlockLevel": 7
+            },
+            {
+              "type": "paragraph",
+              "text": "Alte Klöster erzählen vom ersten Abt, der unter dem Altar mit seinem Schwert schläft. Zwerge kennen Hallenwächter, die zugleich Familienarchive schützen. In Heydekrug entstehen heimliche Grabwächter an verschleierten Massengräbern. Ihre Anerkennung kann einen politischen Konflikt um die Namen der Toten auslösen.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Der Chor der Namen",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Chor der Namen entsteht aus vielen gemeinsam Verstorbenen, deren Namen vollständig gesammelt, öffentlich erinnert und über Generationen bewahrt werden. Katastrophe, Belagerung, Seuche, Grubenunglück oder Schlacht geben den gemeinsamen Ursprung. Die sorgfältige Totenliste gibt den Seelen eine gemeinsame Stimme.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Chor besitzt verschiedene Erinnerungen und eine gemeinsame Aufgabe. Er klingt in Glocken, Wind, Gebet oder dem Murmeln einer Menschenmenge. In Gefahr kann er ganze Straßen, Mauern oder Hallen erfüllen. Seine Gegenwart stärkt Menschen gegen Furcht, Besessenheit, Seelenraub und fremden geistigen Einfluss.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Sein Gesetz lautet: Jeder bewahrte Name gibt eine Stimme, jede gemeinsam gesprochene Erinnerung gibt Einklang. Archive und Denkmäler bilden daher wirkende Schutzanlagen. Ein wiedergefundener Name kann nach Jahrhunderten hörbar in den Chor treten.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Gabe ist gemeinschaftliche Standfestigkeit. Das Tabu ist politische Auswahl. Wird ein Teil der Toten absichtlich aus der Liste gestrichen, entstehen Brüche, Echo und Zorn. Ein Chor kann dann mehrere gegeneinander singende Stimmen entwickeln. Sophisten und Elipirer prüfen seine Register mit besonderer Sorgfalt.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Hollingen läutet Totenlisten an großen Glocken aus. Hohlstein meißelt Namen verunglückter Bergleute in gemeinsame Steinwände. Seewacht hängt Tafeln der Ertrunkenen in Hafentempeln. Regentsberg führt lange Grenzrollen. Die Immerwacht besitzt mehrere Chöre aus Gefallenen, Pflegenden und Flüchtlingen.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Grablichter",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Grablichter sind kleine geistige Erscheinungen Verstorbener, die Lebende zu etwas führen. Sie erscheinen als Flamme, schwebender Funke, blasses Auge im Nebel oder Licht auf Wasser. Ihr Ziel kann ein Leichnam, Vermisster, Grab, verlorener Gegenstand oder sicherer Weg sein.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Das Licht spricht durch Bewegung, Helligkeit, Flackern und Stillstand. Helles Glimmen bedeutet Zustimmung. Rasches Flackern zeigt Gefahr. Ruhiges Erlöschen bedeutet Halt. Kreisen fordert Aufmerksamkeit für den Boden oder die Umgebung. Mehrere Lichter bilden eine Folge von Zeichen.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Ihr Gesetz lautet: Ein Licht wartet, zwei Lichter führen, drei Lichter mahnen zur Eile. Vier oder mehr Lichter zeigen häufig viele Tote oder einen gefährlichen Übergang. Diese Volksregel besitzt breite Verbreitung und wird in Langenmooren, Seewacht und auf Schlachtfeldern besonders ernst genommen.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Gabe ist Auffindung. Das Tabu ist blinde Gefolgschaft. Feenlichter, Irrfeuer und alchemische Gase können ähnliche Formen tragen. Ein echtes Grablicht reagiert auf den Namen eines Vermissten und hält an geweihten Schwellen kurz inne. Spiritisten prüfen Wind, Schatten und Wiederholung.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "In Seewacht laufen Grablichter über Wellen zu Wracks. In Langenmooren stehen sie über Moorleichen und sicheren Bülten. In Andtheim folgen sie alten Reiterwegen. In Altburgen erscheinen sie in Ruinen, wo ein verschütteter Grabgang unter Marmor liegt.",
+              "unlockLevel": 8
+            }
+          ],
+          "unlockLevel": 6
+        },
+        {
+          "heading": "IX Nekromantie und der erhobene Leib",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Die Kunst der fremden Bewegung",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Nekromantie setzt Bewegung in einen toten Leib und bindet sie an Formel, Zeichen, Gegenstand oder Willen. Der Nekromant nutzt die verbliebene leibliche Resonanz als Gerüst. Knochen geben Struktur, Sehnen geben Reichweite, Sinnesorgane geben grobe Wahrnehmung, und Leibgedächtnis gibt eingeübte Bewegung.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Der einfachste Befehl besteht aus Ziel, Richtung und Ende. Komplexe Erhebungen fügen Erkennung, Wachrhythmus, Werkzeuggebrauch und Rückkehr hinzu. Jede zusätzliche Regel vergrößert die Gefahr von Fehlverhalten. Ein Befehl wie „Bewache dieses Tor“ kann Jahrhunderte später jeden Reisenden als Eindringling behandeln.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Bewegungskraft trägt eine Signatur. Sie zeigt sich als Kälte, Verfärbung, unnatürlicher Gelenkwinkel, wiederkehrendes Flüstern oder Zeichen an Stirn, Brust und Nacken. Spiritisten lesen die Bindung, Meta-Magier die Struktur, Viristen mögliche Seelenreste. Gemeinsam trennen sie Körper, Befehl und Person.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Mortuus Fama und der Bann von 2752",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Während des Magierkriegs erhob Mortuus Fama die Totenberge beider Seiten. Gefallene Soldaten kehrten unter fremden Bannern zurück, Gräber wurden zu Vorratskammern, und Familien erkannten vertraute Körper in feindlichen Reihen. Diese Erfahrung prägte das Reich tiefer als viele einzelne Zauberwaffen.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Reichsbulle von 2752 ächtete Nekromantie. Kirche, Krone und Tal’Rah schufen Bannhöfe, weihten Grüfte und verbrannten Lehrbücher. Inquisitionsgerichte erhielten Zuständigkeit für Erhebung, Besitz nekromantischer Befehlszeichen, Handel mit Leibern und Forschung an gebundener Bewegungskraft.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Bann ordnete zugleich erlaubte Seelenkunde. Thanaturgie, Spiritismus, Bestattungsmagie und Exorzismus erhielten anerkannte Lehrwege. Ihre Vertreter müssen Ziel, Methode und Schutz offenlegen. Diese Grenze bildet einen Kern der gegenwärtigen Magieordnung.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Befehl und Gegenbefehl",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Jede Erhebung besitzt einen Führungsweg. Stimme, Schrift, Glocke, Fahne, Duft, Blut, Berührung oder ein fernes Gefäß können ihn tragen. Ein Gegenbefehl gewinnt Kraft durch Kenntnis der ursprünglichen Struktur. Darum sichern Inquisitoren Zeichen und beobachten Bewegungsfolgen vor der endgültigen Zerstörung.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Stirnbann unterbricht häufig die Verbindung zwischen Wahrnehmung und Bewegung. Ein Salzring begrenzt den Leib. Glocken stören gleichförmige Befehlsrhythmen. Feuer löst das leibliche Gerüst. Namensriten schützen vorhandene Seelenreste und helfen bei Leibgeistern.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Große Erhebungen besitzen Hierarchien. Ein Leichenfürst führt Wights, diese führen Zombies und Skelette. Banner, Trommeln oder Türme übertragen Befehle. Der Zusammenbruch eines Knotens kann untergeordnete Tote freisetzen, verwirren oder stilllegen. Feldkundige planen deshalb die Reihenfolge ihrer Eingriffe.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Leichenhäuser und Schlachtfelder",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Leichenhäuser führen Namen, Todesart, Fundort und Zustand jedes Körpers. Stirnzeichen zeigen Prüfung und Zugehörigkeit. Frische Leiber liegen getrennt von magisch belasteten. Glocken markieren Wachen. Türen tragen Eisen und Lichtzeichen. Jeder Transport besitzt zwei Zeugen.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Auf Schlachtfeldern sammeln Totenschreiber Erkennungszeichen, führen Reihen und markieren Fundorte. Priester sprechen Massensegnungen, während Spiritisten nach starken Bindungen suchen. Feuerstellen, Kalkgruben und versiegelte Wagen stehen für Seuchengefahr bereit. Diese Ordnung schützt zugleich vor Leibgeistern, Ghulen und heimlichen Nekromanten.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Schlachtfeld bleibt über Generationen empfindlich. Pflug, Straßenbau oder Schatzsuche können alte Befehle wecken. Vor größeren Arbeiten werden Karten, Chroniken und Totenlisten verglichen. Andtheim, Regentsberg und Ulsden besitzen eigene Ämter für solche Prüfungen.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Tendrial",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Tendrial verbindet Nekromantie mit Krankheit, Kult und Landschaft. Der Seuchenkönig wirkt durch verteilte Stimmen und untote Befehlshaber. Seuchenfürsten tragen Herrschaft und Ansteckung. Bewegte Leiber können zugleich Opfer, Soldaten und Träger einer Plage sein.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Immerwacht trennt daher Bannung und Heilung nur in geordneter Zusammenarbeit. Agripiten prüfen den Körper, Viristen die Seele, Spiritisten die Bindung, Tal’Rah die arkane Struktur, Selephiten den Schutz des Ortes. Jeder geborgene Leib bleibt unter Quarantäne, bis Namen, Krankheit und Bewegungskraft bestimmt sind.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Berichte aus freien Gemeinden Tendrials zeigen auch bewahrte Totenkultur. Verborgene Dörfer führen kleine Namensregister, verbrennen besondere Kräuter und bauen Gräber in fließenden Wind. Ihre Erfahrung besitzt hohen Wert für die Forschung, sobald ein sicherer Austausch gelingt.",
+              "unlockLevel": 8
+            }
+          ],
+          "unlockLevel": 8
+        },
+        {
+          "heading": "X Kirche Viristen und Schutz der Seele",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Die Lehre vom Übergang",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Kirche des Lichts versteht den Tod als natürlichen Übergang. Begräbnis, Name, Abschied und Erinnerung helfen der Seele. Untod gilt als Verletzung, Verwirrung oder gewaltsame Bindung dieses Weges. Das Ziel kirchlicher Handlung lautet Lösung, Schutz und geordnete Ruhe.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Innere Flamme gibt jedem Menschen Würde und Willen. Aus dieser Lehre folgt die Bedeutung von Zeugen. Eine Seele steht in Beziehung zur Schöpfung, und Gemeinschaft kann sie gegen fremden Einfluss stärken. Exorzismen, Totenwachen und Namensriten versammeln daher mehrere Menschen.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Hilfreiche Geister erhalten eine vorsichtige Anerkennung. Heimrufer, Seelenpaten und Chöre der Namen passen in eine Lehre, nach der Liebe, Opfer und Erinnerung über den Tod hinaus Wirkung tragen. Die Kirche überlässt ihre genaue metaphysische Einordnung dem Streit zwischen Theologen, Viristen und Tal’Rah.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Viristen",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Viristen stehen für Glauben, Seelenschutz und den Kampf gegen Besessenheit. Glocke, Ring und geschriebener Name bilden ihr Zeichen. Ihre Ausrüstung umfasst Öl, Salz, Eisen, Namensrollen, Lichter und persönliche Gegenstände der Menschen, die sie begleiten.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Sie prüfen Spuk, fremde Stimmen, Schattenveränderungen, Flüche und Bindungen. Bei Toten suchen sie zuerst Person und Gesetz. Bei Lebenden stärken sie Name, Erinnerung und Gemeinschaft. Ein Virist arbeitet gewöhnlich mit Angehörigen, Zeugen und einem zweiten Fachkundigen.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Viras berühmte Lehre erzählt von einem Exorzismus, bei dem Freunde die Lebensgeschichte eines Besessenen durch die Nacht trugen. Bei Sonnenaufgang antwortete der Mensch mit eigener Stimme. Dieser Kern prägt auch den Umgang mit Untoten: Die eigene Stimme soll wieder hörbar werden.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Exorzismus und Bannung",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Exorzismus trennt fremden Willen von einer lebenden oder fortwirkenden Seele. Er beginnt mit Sicherung des Ortes, körperlicher Pflege und Klärung des Namens. Danach folgen Zeugnisse, Glockenrhythmus, Licht, Gebet und eine klare Ansprache der fremden Macht.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Eine Bannung begrenzt eine Erscheinung in Ort, Gegenstand oder Zeichen. Sie schafft Schutz und Zeit für weitere Untersuchung. Langfristige Ruhe verlangt häufig eine zweite Handlung: Bestattung, Erfüllung, Rückgabe, Urteil oder Auflösung eines Schwurs. Kirchliche Verfahren verbinden beides.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "paragraph",
+              "text": "Große Fälle bringen Orden zusammen. Selephiten sichern, Agripiten pflegen, Sophisten lesen, Esperiten prüfen Recht, Elipirer begleiten Buße, Sophrosiner führen lange Läuterung, Viristen halten die seelische Mitte. Tal’Rah entsendet bei arkaner Gefahr einen Gutachter.",
+              "unlockLevel": 8
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Bücher des Lebens",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Bücher des Lebens verzeichnen Namensgaben, Ehen, Adoptionen, Schwüre, Todesfälle und Begräbnisse. Für Spiritisten bilden sie eine der wertvollsten Quellen. Ein Eintrag verbindet Person, Zeugen, Ort und Zeit. Alte Bände können den Namen eines Geistes, die Lage einer Gruft oder den Wortlaut eines bindenden Eides bewahren.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Viristen schützen gefährdete Namen vor Verfälschung. Sophisten führen Abschriften. Esperiten klären Erbe und Grabrecht. Bei Massentod entstehen besondere Totenrollen. Ihre öffentliche Lesung kann einen Chor der Namen hervorbringen und ganze Gemeinden gegen seelischen Einfluss stärken.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein gelöschter Eintrag trägt große Schwere. In Heydekrug, nach Kriegen und bei verdeckten Bestattungen suchen Geistliche nach Spuren ausgelöschter Menschen. Die Wiederaufnahme in ein Register gilt als rechtliche und spirituelle Heimkehr.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Licht Glocke Salz und Erde",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Licht enthüllt und sammelt. Eine stetige Flamme stärkt Aufmerksamkeit und Innere Flamme. Glocken ordnen Zeit, rufen Gemeinschaft und unterbrechen fremde Rhythmen. Salz zieht eine klare Grenze und bewahrt Stoffe. Geweihte Erde bietet einen anerkannten Ort für Leib und Grabbindung.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Ihre Wirkung wächst durch passenden Gebrauch. Ein Licht am Sterbebett führt anders als eine Suchlaterne im Spukhaus. Eine Totenglocke spricht anders als ein Alarm. Salz am Fenster schützt eine Schwelle, Salz im Waschwasser begleitet den Leib. Geweihte Erde kann Ruhe geben oder einen Draug herausfordern, dessen Grabanspruch ungeklärt blieb.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Kirchliche Rituale verbinden Zeichen mit Namen und Zeugen. Dadurch erhält die Handlung Ziel und Maß. Der Glaube gibt ihr Sinn, die gelebte Ordnung gibt ihr Dauer.",
+              "unlockLevel": 9
+            }
+          ],
+          "unlockLevel": 8
+        },
+        {
+          "heading": "XI Regionale Totenkulte und Volksglauben",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Peligrim",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Peligrim verbindet dichte Besiedlung, Hof, Universität, Tal’Rah und große Archive. Spiritisten arbeiten in Nekropolen, Familiengrüften und alten Stadtvierteln. Sophisten führen gelehrte Debatten über Seele, Wunder und Hermetik. Bücher des Lebens reichen in Reladon über viele Generationen.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Volksglaube achtet auf Namenklopfer an Stadttoren, Hausgeister in alten Gildenhallen und Banshees großer Häuser. Wohlhabende Familien stiften Lampen und Grabwachen. Streit entsteht, sobald Forschung, Erbe und höfische Geheimnisse denselben Geist beanspruchen.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Ulsden",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Ulsden trägt Nebel, Hügelgräber, Nadelwald, Küste und die Wacht gegen Tendrial. Glaen verehren Ahnen an Steinkreisen und kennen Hügelgänger, Klagegeister und Totenreiter. Alte Gottheiten leben vielfach als Heilige, Ahnen oder Schutzgestalten weiter.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Immerwacht prägt moderne Totenkultur. Grenzfamilien führen genaue Namenslisten und bewahren Lichter für Vermisste. Flüchtlinge, Seuchenopfer und Soldaten erhalten besondere Wachen. Grablichter im Schnee gelten als Ruf zur Bergung.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Seewacht",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Seewacht richtet den Blick auf Heimkehr. Hafentempel tragen Tafeln Ertrunkener, und ein leerer Platz am Meer kann als Grab gelten. Malvitische Totenfähren erscheinen in kleinen Booten zwischen bekannten Leuchtfeuern. Grablichter laufen über Wasser zu Wracks und verlorenen Netzen.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Schiffsleute geben Salz, Münzen und ein Lied an alte Übergänge. Stimmen im Nebel verlangen Prüfung, da Nixen, Geister und Namenklopfer ähnliche Rufe nutzen. Eine geschützte Laterne begleitet jede lange Reise und kehrt nach glücklicher Heimfahrt an den Tempel zurück.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Andtheim",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Andtheim kennt Reitergräber, Heerstraßen, Herbergen und wandernde Tote. Namenklopfer suchen nachts Schutz an Türen, die ihnen einst verschlossen blieben. Dullahan folgen alten Botenwegen. Grablichter ziehen über Ebenen zu gefallenen Reisenden.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Elipirer begleiten Schlachtfelder und Fehden mit Prozessionen, Totenlisten und öffentlicher Buße. Reiter führen einen gefundenen Leib bis zum nächsten Friedhof. Ein Pferd erhält beim Totenritt eine leere Seite am Sattel, damit der Geist seinen Platz kennt.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Kanningen",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Kanningen verbindet Waldgeister, Feen, alte Friedhöfe und zeitverzerrte Strukturen. Der Blaue Wald trägt den Friedhof der Altvorderen, Turris Nebula verändert Zeit und Lebensalter. Spiritisten prüfen daher jede Erscheinung auf Totenbindung, Feenprägung und strukturelle Resonanz.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Hausgeister, Schatten und Grablichter erscheinen an Waldhöfen. Lampenträger führen durch Nebel und verwirrte Wege. Der Blaue Nexus und örtliche Viristen bewahren Namenbänder, Eisenregeln und Riten für Menschen, die mit fremden Erinnerungen zurückkehren.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Hohlstein",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Hohlstein lebt mit Bergtod. Verschüttete, enge Schächte und lange Winter geben Atemtoten besondere Bedeutung. Offene Lampenschächte, Spiegel am Mund und Heimtragungen gehören zur Bergwerkssitte. Esperiten führen Unfalllisten und Entschädigungen für Hinterbliebene.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Alte Zwergenwege tragen Ahnen, Hallenwächter und Draugen. Bergleute klopfen an versiegelte Türen und warten auf den Antworttakt. Eine regelmäßige Folge zeigt Arbeit, eine abweichende Folge gilt als Warnung vor Toten oder Einsturz.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Langenmooren",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Langenmooren verändert Wege mit Wasser und Jahreszeit. Moorleichen, Grablichter und Totenfähren gehören zur alltäglichen Folklore. Kalvonische Jagas bewahren Ahnenwissen und kennen sichere Bülten, alte Furten und Stimmen im Schilf.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Flache Totenboote tragen zweite Bestattungen. Eine Gabe an der Furt besteht oft aus Brot, Schilfknoten oder einem Stein vom Ausgangsort. Schwarze Malaria und Grauatem verlangen eine klare Trennung zwischen Geist, Feenbild und Krankheit.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Vierbergen",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Vierbergen trägt tiefe Hallen, hohe Pässe und lange Wege zwischen Tal und Gipfel. Sophrosiner erzählen von Lampenträgern und Totenführern mit Berglicht. Verschollene Bergleute erscheinen als Grablichter oder Ahnenstimmen in Quellen.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Zwergische Steinbücher bewahren Familien und Handwerk. Grabwächter schützen alte Hallen. Geomanten und Zyn Edra untersuchen die Verbindung von Stein, Gefühl und Erinnerung. Ein Wanderer legt am Pass einen Stein ab und nennt den Ausgangsort, damit jede Totenfähre seinen Weg erkennt.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Hollingen",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Hollingen besitzt dichte Kirchenregister, Pilgerfriedhöfe und starke Totengilden. Glocken ordnen Sterben, Wache und Begräbnis. Nachzehrerbräuche achten auf Mund, Tuch und gemeinsames Mahl. Große Chöre der Namen schützen Städte und Klöster.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Lux Magnifica sammelt Rechtsfälle zu Grab, Erbe und Name. Ländliche Gemeinden pflegen Gräber eng mit dem Jahreslauf. Saat, Ernte und Totenfest verbinden Erde und Erinnerung. Ein ungepflegtes Grab gilt als Lücke in der Ordnung des Dorfes.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Heydekrug",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Heydekrug trägt Massengräber, Sklaventote, verschleierte Bestattungen und ausgelöschte Namen. Viristen suchen in Sklavenvierteln nach verschwundenen Menschen und geben Fundtoten einen Platz im Register. Heimliche Grabwächter schützen Orte, deren Anerkennung mächtige Häuser fürchten.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Vampire, Leibgeister und dunkle Kulte finden in Gewalt und Besitzdenken günstige Bindungen. Die Schwarze Krone und Handelshäuser schaffen politische Gefahr für jede Untersuchung. Der Name eines Toten kann hier Beweis, Schutz und Anklage zugleich sein.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Altburgen",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Altburgen verbindet Marmorgräber, warme Küsten, Ruinen der Altvorderen und große Heiligtümer. Mayden Salta erforscht Grabanlagen, Lichgerüchte und spiritistische Resonanz. Der Große Tempel des Lichts bringt Kirche und Tal’Rah in enge Zusammenarbeit.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Alte Familien pflegen Ahnenkulte und Gruftverträge. Draugen tragen Besitzansprüche durch Jahrhunderte. Sphingen, Chimären und fremde Strukturen können Gräber zusätzlich prägen. Jede Öffnung verlangt daher Historiker, Arkanarchäologen und Seelenkundige.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Regentsberg",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Regentsberg ist Grenzland mit Kriegsgräbern, verlorenen Siedlungen und elfischer Totenerinnerung. Viele Tote tragen Fundortnamen. Grenzpriester bewahren Gegenstände für Familien, die Jahre später nach Vermissten suchen. Grablichter zeigen verschüttete Wege und alte Gräber.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Elfen binden Erinnerung an Lied, Körperzeichen, Baum und Stamm. Pegranische Register binden sie an Name, Ort und Schrift. Spiritistische Verständigung verlangt Übersetzung zwischen beiden Formen. Banshees und Ahnenchöre können dabei als Stimmen der verlorenen Grenzgeschichte erscheinen.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Durion Nilias Terakos und Tendrial",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Durion besitzt eigene kirchliche und magische Schulen. Ceryndral verbindet Priester, Druiden und Kalenderbräuche. Maelgwyns Seher von Bryndrach kennen Nebelerscheinungen und Traumwege. Aerwyns Gezeitenrufer begleiten Totenfähren an Küsten und Inseln.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Nilias bewahrt elfische Totenerinnerung in Liedern, Körpern, Bäumen und Wegen. Ein Ahne kann als Vogelruf, Traumgestalt oder veränderte Kletterspur erscheinen. Der Verlust alter Schrift gab der mündlichen Zeugenschaft große Kraft. Menschliche Forscher brauchen die Führung eines Stammes.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Terakos trägt Wolfsreiter, Mammutherden, Elfenbeinmasken und Ahnenlieder. Schamanen hören Vorfahren im Stampfen der Mammuts und im Heulen der Wölfe. Draugen liegen in gefrorenen Hügeln. Totenführer erscheinen als Wölfe auf Eiswegen.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Tendrial zeigt die gebrochene Form fast jeder Totenordnung. Namen werden geraubt, Erinnerungen verteilt, Leiber durch Seuche bewegt und Herrschaft in untote Netze verwandelt. Zugleich bewahren freie Gemeinden kleine Lichter, Register und Windgräber. Ihre Riten zeigen, wie stark geordnete Erinnerung selbst unter der Macht des Seuchenkönigs wirkt.",
+              "unlockLevel": 9
+            }
+          ],
+          "unlockLevel": 9
+        },
+        {
+          "heading": "XII Zeichen Regeln und Rituale",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Die ersten Zeichen",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Kälte, fremde Gerüche, wiederkehrende Geräusche und veränderte Schatten bilden häufig den Anfang einer Erscheinung. Weitere Zeichen liegen in Tieren, Träumen, Uhren, Flammen und Wasser. Ein einzelnes Zeichen bleibt mehrdeutig. Wiederholung, Ort und Beziehung geben ihm Gewicht.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Spiritisten führen ein Zeichenbuch. Sie notieren Zeit, Wetter, Anwesende, Richtung und Wirkung. Bewohner ergänzen ältere Ereignisse. Drei verschiedene Spuren mit demselben Muster erlauben eine erste Bestimmung. Diese Sorgfalt schützt vor Feen, Krankheit, Betrug und natürlicher Gefahr.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Die Regel der Schwelle",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Schwellen ordnen Zugehörigkeit. Tür, Fenster, Tor, Brücke, Ufer, Pass und Grabkante trennen Bereiche. Viele Tote gewinnen Kraft durch Einladung oder Übertritt. Namenklopfer brauchen Antworten, Vampire Zugang, Totenfähren Gabe, Grabwächter einen klaren Amtsbereich.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "paragraph",
+              "text": "Schutzzeichen sitzen daher an Übergängen. Sonnenrad, Familienname, Eisenreihe, Salzspur und Glocke geben der Grenze Form. Eine wirksame Schwelle wird gepflegt und von den Bewohnern verstanden. Verblasste Zeichen und vergessene Hausnamen verlieren Kraft.",
+              "unlockLevel": 9
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Die Regel der drei Zeugen",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Drei Zeugen geben einer spiritistischen Handlung Halt: ein Mensch für die Person, einer für den Ort und einer für die Handlung. In kleinen Gemeinden können Gegenstand, Register oder Grabzeichen eine Zeugenrolle ergänzen. Der Grund liegt in der Verteilung von Erinnerung.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Bei einer zweiten Bestattung nennt ein Angehöriger den Toten, ein Ortskundiger den Fund und ein Priester oder Spiritist den neuen Ruheort. Bei einem Schwurritus spricht der Gebundene, der Empfänger und die Gemeinschaft. Diese Dreiteilung schafft Klarheit für Lebende und Tote.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Die Regel der passenden Gabe",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Eine Gabe trägt Herkunft, Absicht und Beziehung. Brot steht für Nahrung und Gastrecht, Salz für Grenze und Bewahrung, Münze für anerkannten Übergang, Lied für Erinnerung, Stein für Ausgangsort, Licht für Führung. Die passende Gabe richtet sich an das Gesetz des Wesens.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Fremde oder gestohlene Gaben tragen ihre eigene Bindung mit. Totenfähren folgen ihr, Ahnengeister erkennen sie, Hausgeister reagieren auf den Eigentumsbruch. Darum fragt ein Spiritist nach Herkunft und freiwilliger Übergabe.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Die Regel des vollen Namens",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein voller Name besteht aus jener Form, durch die eine Person sich selbst und ihrer Gemeinschaft zugeordnet fühlt. Titel, Haus, Herkunft und Rufname können dazugehören. Das Ritual wählt die Teile, die zur Bindung sprechen. Ein Kind hört einen anderen Namen als ein Fürst oder Ordensmann.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Name wird ruhig, deutlich und vor Zeugen gesprochen. Dreifache Wiederholung gehört zu Namensgabe, Sterbewache und Exorzismus. Jeder Ruf erhält eine Antwortzeit. Ungeduld erzeugt Überschneidung mit anderen Stimmen.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Kreis Glocke und Licht",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Kreis gibt Ort und Grenze. Kreide eignet sich für Beobachtung, Salz für klare Trennung, Eisen für starke Schwellen, Lampen für sanfte Führung. Der Kreis erhält eine Öffnung, deren Richtung bewusst gewählt wird. Eingang und Ausgang bleiben dadurch verständlich.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Glocken geben Rhythmus. Ein Schlag sammelt Aufmerksamkeit, drei Schläge markieren Ruf und Antwort, sieben Schläge stehen in der Kirche für vollständige Ordnung. Gleichmäßiger Klang hilft bei Schatten, Poltergeistern und nekromantischen Befehlen.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Licht zeigt Gestalt. Eine einzelne Flamme eignet sich für Namenarbeit, mehrere Lichter für große Orte. Bewegte Flammen lesen Luft und geistige Nähe zugleich. Lampenträgerlicht besitzt eigene Wirkung und bleibt in der Hand seines Trägers.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Abschluss und Rückkehr",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Jedes Ritual endet mit klaren Worten. Der Name des Toten, die vollzogene Handlung und der neue Zustand werden ausgesprochen. Türen und Kreise schließen in festgelegter Reihenfolge. Gegenstände kehren an ihren Ort oder erhalten eine neue Zuordnung.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Lebenden nennen danach ihre Namen, essen Brot, trinken Wasser und berühren Erde oder Holz. Jeder Teilnehmer erzählt eine wahrgenommene Einzelheit. Widersprüche werden verzeichnet. Schlaf folgt erst nach einer Zeit gemeinsamer Wachheit, besonders nach Traum- und Ahnenarbeit.",
+              "unlockLevel": 10
+            }
+          ],
+          "unlockLevel": 9
+        },
+        {
+          "heading": "XIII Der Tod im Alltag Pegras",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Familie und Haus",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Familien bewahren Namen, Bilder, Werkzeuge und Geschichten. Ein kleiner Hausaltar, eine Grabtafel oder ein jährliches Mahl hält Erinnerung in geordneter Form. Neue Kinder lernen die Namen der Toten gemeinsam mit den Namen lebender Verwandter. Dadurch entsteht eine Kette aus Zugehörigkeit und Verantwortung.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Beim Umzug stellt die Familie alte Hausgeister und Ahnen dem neuen Ort vor. Schlüssel, Herdglut oder eine Schale Erde begleiten den Übergang. Ein Erbstück erhält eine klare Übergabe. Diese Bräuche mindern Streit zwischen lebenden Erben und gebundenen Toten.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Reise und Herberge",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Reisende achten auf Schwellen, Furten und alte Wege. Sie nennen in gefährlichen Gegenden einem Gefährten ihren Namen, tragen Brot und Salz und fragen nach örtlichen Totenbräuchen. An einer Herberge lesen sie Namenbretter und stellen sich dem Haus vor.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Grablichter und Totenfähren können Hilfe bieten. Ein Dullahan, Namenklopfer oder Feenlicht kann ähnliche Zeichen tragen. Ortskundige, klare Gaben und eine benannte Rückkehr sichern die Begegnung. Sophrosinerhospize und kirchliche Pilgerhäuser bewahren viele regionale Regeln.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Meer Moor und Berg",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Seeleute behandeln ein leeres Küstengrab als wirklichen Ruheort. Sie tragen Namen Ertrunkener auf Tafeln und geben dem Meer ein Licht. Moorbewohner markieren sichere Bülten und überlassen Grablichtern genügend Abstand. Bergleute öffnen Schächte für den letzten Atem und führen Heimtragungen durch.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Diese Praktiken verbinden Landschaft und Tod. Wasser trägt, Erde hält, Wind löst Atem, Stein bewahrt Erinnerung. Spiritismus erscheint im Alltag als genaue Kenntnis des Ortes.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Krieg und Herrschaft",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Heere führen Totenschreiber, Feldpriester und Leichenwachen. Eine geordnete Bergung schützt Moral, Erbe und Seelenruhe. Gebrochene Eide, liegen gelassene Leiber und geraubte Grabzeichen können jahrzehntelange Folgen tragen.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Herrschaft reicht in Gräber, Titel und Archive. Alte Fürsten können als Draugen oder Wights Ansprüche erheben. Ein Chor der Namen kann eine Stadt schützen. Eine Banshee kann den Tod eines Hauses ankündigen. Politik und Geisterkunde berühren sich daher bei jeder Erbfolge.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Arbeit und Gilde",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Totengilden, Totengräber, Steinmetze, Schreiber, Glockengießer und Leichenwäscher tragen spezialisiertes Wissen. Bergwerke führen Unfalllisten, Häfen Ertrunkenenrollen, Hospitäler Sterbeprotokolle. Diese Berufe bilden die praktische Grundlage spiritistischer Forschung.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Gilden stiften Gräber und Lichter für ihre Mitglieder. Werkzeuge verstorbener Meister erhalten förmliche Übergaben. Ein Hammer, Webstuhl oder Schiff kann starken Erinnerungswert tragen und zum Anker eines Haus- oder Werkstattgeistes werden.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Verbrechen und Recht",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Verdeckter Tod erzeugt gefährliche Bindungen. Rückenbälge, Namenklopfer und ruhelose Geister führen häufig zu alten Verbrechen. Spiritistische Aussagen besitzen vor Gericht den Rang eines Hinweises und verlangen weitere Zeugen, Urkunden oder Funde.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Grabrecht schützt Körper, Namen und Beigaben. Erbrecht klärt Gegenstände und Titel. Kirchenrecht ordnet Bestattung und Schwur. Magierecht regelt Beschwörung und Bannung. Ein einzelner Geist kann alle vier Bereiche berühren und Fürst, Bischof, Gilde und Tal’Rah an einen Tisch zwingen.",
+              "unlockLevel": 10
+            }
+          ],
+          "unlockLevel": 10
+        },
+        {
+          "heading": "XIV Geisterkunde im Spiel",
+          "blocks": [
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Allgemeines Wissen",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Allgemeines Wissen umfasst Totenwache, offenen Atemweg, Grabpflege, Namen auf Gräbern, Vorsicht an nächtlichen Schwellen und die Bedeutung von Glocke, Licht und Salz. Menschen kennen die häufigsten Geschichten ihrer Region. Ein Hohlsteiner erkennt Zeichen eines Atemtoten, ein Seewachter weiß um Gaben an Totenfähren, ein Hollinger achtet auf Nachzehrerbräuche.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Die meisten Menschen unterscheiden Geist, bewegten Leib und Feenlicht durch einfache Regeln. Sie suchen Priester, Totendiener oder örtliche Kundige, sobald Zeichen wiederkehren. Ihre Kenntnisse stammen aus Familie, Arbeit und Landschaft.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Gelehrtes Wissen",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Gelehrtes Wissen umfasst die sechs Bindungen, die Regel der drei Zeugnisse, spiritistische Verfahren und die Geschichte von Mortuus Fama. Spiritisten erkennen Totengattungen an Gesetz und Ursprung. Viristen lesen seelische Gefahr. Thanaturgen begleiten Übergänge. Historiker finden Namen und Besitzverhältnisse.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Mayden Salta, der Blaue Nexus, kirchliche Archive und Tal’Rah bewahren spezialisierte Lehrwege. Ein kundiger Charakter weiß zudem, welche Institution für Ort und Erscheinung geeignet ist. Ein Draug verlangt andere Hilfe als ein Schatten oder Leibgeist.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Geheimes und gefährliches Wissen",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Geheimes Wissen umfasst Seelensätze von Lichs, Herrschaftsnetze der Leichenfürsten, verborgene Nekromantenlinien, alte Verträge mit Geisterfürsten und die tiefen Formen tendrialischer Seuchenbindung. Solche Kenntnisse liegen in versiegelten Archiven, persönlichen Lehrketten und gefährlichen Orten.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Auch hilfreiche Geister besitzen verborgene Seiten. Ein Chor kann politisch verstümmelt sein, ein Ahnenrat durch erfundene Geschichte geprägt, eine Totenfähre durch falsche Gaben auf fremde Routen gelenkt. Forschung gewinnt hier Gewicht durch Quellenvergleich und respektvolle Begegnung.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Anwendungen der Geisterkunde",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Eine Erscheinung nach Träger, Bindung und Gesetz einordnen.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Geist, körperlichen Untoten, Feenwirkung, Krankheit und altvorderliche Resonanz unterscheiden.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Name, Todesart, Grab und Gegenstandsanker aus Archiven ermitteln.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Eine sichere Totenwache, zweite Bestattung oder Schwellenhandlung vorbereiten.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Zeichen eines Rückenbalgs, Atemtoten, Namenklopfers oder Leibgeistes erkennen.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Die passende Gabe für Ahnengeist, Totenfähre oder Hausgeist bestimmen.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein Bannzeichen lesen und seinen Zweck erklären.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Die Gefahr einer Graböffnung, Beschwörung oder Reise durch einen Spukort einschätzen.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Kirche, Tal’Rah, örtliche Überlieferungshüter und Angehörige in eine gemeinsame Handlung führen.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "heading",
+              "level": 2,
+              "text": "Begegnungen mit Toten",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Eine starke Begegnung beginnt mit einem wahrnehmbaren Muster. Danach folgen Ursprung, Regel und Entscheidung. Die Figuren können forschen, verhandeln, schützen, bestatten, erfüllen oder bannen. Jede Lösung verändert Beziehungen unter Lebenden ebenso wie den Zustand des Toten.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Der Rückenbalg führt zu einem verborgenen Verbrechen. Der Draug führt zu Erbe und Land. Der Chor der Namen führt zu einem Archiv. Der Heimrufer führt zu Abschied. Die Geisterkunde verbindet damit persönliches Schicksal, Geschichte, Religion und Landschaft.",
+              "unlockLevel": 10
+            },
+            {
+              "type": "paragraph",
+              "text": "Die höchste Kunst liegt in einer passenden Antwort. Ein Schwert kann Zeit gewinnen. Ein Name kann eine Person sammeln. Eine Bestattung kann eine Generation ordnen. Eine Gabe kann einen Weg öffnen. Eberos behandelt seine Toten als wirkende Vergangenheit, deren Gesetze bis in die Gegenwart reichen.",
+              "unlockLevel": 10
+            }
+          ],
+          "unlockLevel": 10
+        }
+      ],
+      "audit": {
+        "title": "Spiritismus von Eberos",
+        "sectionCount": 14,
+        "blockCount": 414,
+        "wordCount": 13520,
+        "duplicateLongParagraphs": 0,
+        "placeholderCount": 0,
+        "replacementCharacters": 0,
+        "corrections": {
+          "Tal'Rah → Tal’Rah": 19
         }
       }
     }
