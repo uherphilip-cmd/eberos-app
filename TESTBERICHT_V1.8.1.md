@@ -5,8 +5,9 @@ Ergebnis: **bestanden**
 
 ## Lokale Prüfungen
 
-- 35 statische Release-Prüfungen bestanden.
-- 13 Browserprüfungen für den neuen Spielleitungszugang, Kampagnen-Reiter, Spielabende, verdeckte Folgen und CBP-Selbstabholung bestanden.
+- 36 statische Release-Prüfungen bestanden.
+- 13 Browserprüfungen für den echten Spielleitungs-Hauptreiter, Kampagnen-Reiter, Spielabende, verdeckte Folgen und CBP-Selbstabholung bestanden.
+- Geprüft wurde insbesondere, dass der Hauptreiter aktiv wird, seine Ansicht sichtbar ist und die Charakterarbeitsfläche dabei verschwindet.
 - 33 bestehende Browser-Regressionsprüfungen bestanden.
 - 500 integrierte Builder-Prüfungen bestanden.
 - JavaScript-Syntax, Lazy Loading, Offline-Cache und Trennung von Open Play und Kampagnenmodulen wurden bestätigt.

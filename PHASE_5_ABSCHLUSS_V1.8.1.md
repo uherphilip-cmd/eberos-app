@@ -5,7 +5,7 @@ Status: Backend migriert, gemeinsame Welt eingerichtet, Release geprüft
 
 ## Umgesetzt
 
-- Eigenständiger Haupteinstieg **Spielleitung** neben **Kampagne beitreten**.
+- Echter Hauptreiter **Spielleitung** neben **Charakterbau**, **NPC** und **Druckvorschau**; er ersetzt beim Öffnen die Charakterarbeitsfläche vollständig.
 - Eigene Kampagnen-Reiter mit Übersicht, Kampagne, Gruppe & Charaktere, Spielabende & CBP, Wesen, Orte, Ereignisse sowie Zeit & Wetter.
 - Bearbeitung von Kampagnenname, öffentlicher Beschreibung, Spielerhinweisen, geheimen Spielleitungsnotizen und Kampagnentag.
 - Neue Kampagnen können eine vorhandene Welt verwenden oder bewusst eine neue Welt anlegen.
@@ -25,8 +25,9 @@ Status: Backend migriert, gemeinsame Welt eingerichtet, Release geprüft
 
 ## Prüfstand
 
-- 35 statische v1.8.1-Prüfungen bestanden.
+- 36 statische v1.8.1-Prüfungen bestanden.
 - 13 neue Browserprüfungen bestanden.
+- Der Hauptreiterwechsel, die sichtbare Spielleitungsansicht und das Ausblenden der Charakterarbeitsfläche wurden ausdrücklich geprüft.
 - 33 bestehende Browser-Regressionsprüfungen bestanden.
 - 500 integrierte Builder-Prüfungen bestanden.
 - Keine Testbenutzer oder Testkampagnen verblieben im Live-Projekt.
