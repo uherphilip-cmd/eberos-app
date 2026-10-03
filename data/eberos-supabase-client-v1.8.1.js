@@ -4,6 +4,8 @@
 (function installSupabaseClient(global){
   const AUTH_STORAGE_KEY='eberos.campaign.auth.v1';
   const PRIVATE_CACHE_PREFIX='eberos-private-';
+  /* Alle Standardzugriffe im selben Fenster müssen denselben Auth-Client und Refresh-Token verwenden. */
+  let sharedDefaultClient=null;
 
   class CampaignBackendNotConfiguredError extends Error{
     constructor(){super('Das Supabase-Testprojekt ist noch nicht verbunden.');this.name='CampaignBackendNotConfiguredError';this.code='CAMPAIGN_BACKEND_NOT_CONFIGURED'}
@@ -23,11 +25,18 @@
   }
   function defaultScriptLoader(document,source){
     return new Promise((resolve,reject)=>{
-      const selector=`script[data-supabase-sdk="${source}"]`,existing=document.querySelector(selector);
-      if(existing){if(global.supabase?.createClient){resolve(global.supabase);return}existing.addEventListener('load',()=>resolve(global.supabase),{once:true});existing.addEventListener('error',()=>reject(new Error('Die sichere Kampagnenverbindung konnte nicht geladen werden.')),{once:true});return}
-      const script=document.createElement('script');script.src=source;script.async=true;script.dataset.supabaseSdk=source;
-      script.addEventListener('load',()=>global.supabase?.createClient?resolve(global.supabase):reject(new Error('Das Supabase-SDK ist unvollständig.')),{once:true});
-      script.addEventListener('error',()=>reject(new Error('Die sichere Kampagnenverbindung konnte nicht geladen werden.')),{once:true});document.head.append(script);
+      if(global.supabase?.createClient){resolve(global.supabase);return}
+      let script=[...document.querySelectorAll('script[data-supabase-sdk]')].find(node=>node.dataset.supabaseSdk===source),newScript=false;
+      if(script?.dataset.supabaseSdkState!=='loading'){script?.remove();script=null}
+      if(!script){script=document.createElement('script');script.src=source;script.async=true;script.dataset.supabaseSdk=source;script.dataset.supabaseSdkState='loading';newScript=true}
+      let settled=false,timer;
+      const cleanup=()=>{global.clearTimeout(timer);script.removeEventListener('load',loaded);script.removeEventListener('error',failed)};
+      const finish=(error)=>{if(settled)return;settled=true;cleanup();if(error){script.dataset.supabaseSdkState='error';script.remove();reject(error)}else{script.dataset.supabaseSdkState='loaded';resolve(global.supabase)}};
+      const loaded=()=>finish(global.supabase?.createClient?null:new Error('Das Supabase-SDK ist unvollständig.'));
+      const failed=()=>finish(new Error('Die sichere Kampagnenverbindung konnte nicht geladen werden.'));
+      script.addEventListener('load',loaded,{once:true});script.addEventListener('error',failed,{once:true});
+      timer=global.setTimeout(()=>finish(new Error('Das Laden der sicheren Kampagnenverbindung dauert zu lange. Bitte versuche es erneut.')),10000);
+      if(newScript)try{document.head.append(script)}catch(error){finish(error)}
     });
   }
   async function clearPrivateCaches({storage=global.localStorage,legacyStorage=global.sessionStorage,cacheStorage=global.caches}={}){
@@ -41,9 +50,15 @@
     constructor({config=global.EberosSupabaseConfig,document=global.document,storage=global.localStorage,scriptLoader=defaultScriptLoader,createClientFactory}={}){this.config=config;this.document=document;this.storage=storage;this.scriptLoader=scriptLoader;this.createClientFactory=createClientFactory;this.promise=null;if(storage===global.localStorage)migrateLegacySession({persistentStorage:storage,temporaryStorage:global.sessionStorage})}
     configured(){return isConfigured(this.config)}
     async getClient(){
-      if(!this.configured())throw new CampaignBackendNotConfiguredError();if(this.promise)return this.promise;
-      this.promise=(async()=>{const sdk=this.createClientFactory?null:await this.scriptLoader(this.document,this.config.sdkPath),createClient=this.createClientFactory||sdk?.createClient;if(typeof createClient!=='function')throw new Error('Supabase konnte nicht initialisiert werden.');return createClient(this.config.url,this.config.publishableKey,{auth:{storage:createAuthStorageAdapter(this.storage),storageKey:AUTH_STORAGE_KEY,persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,flowType:'implicit'},global:{headers:{'X-Client-Info':'eberos-character-builder/1.8.1'}}})})().catch(error=>{this.promise=null;throw error});
-      return this.promise;
+      if(!this.configured())throw new CampaignBackendNotConfiguredError();
+      const useSharedDefault=!this.createClientFactory&&this.config===global.EberosSupabaseConfig&&this.document===global.document&&this.storage===global.localStorage&&this.scriptLoader===defaultScriptLoader;
+      if(useSharedDefault&&sharedDefaultClient?.config===this.config&&sharedDefaultClient.document===this.document&&sharedDefaultClient.storage===this.storage&&sharedDefaultClient.scriptLoader===this.scriptLoader)return sharedDefaultClient.promise;
+      if(!useSharedDefault&&this.promise)return this.promise;
+      const record=useSharedDefault?{config:this.config,document:this.document,storage:this.storage,scriptLoader:this.scriptLoader,promise:null}:null;
+      const loading=(async()=>{const sdk=this.createClientFactory?null:await this.scriptLoader(this.document,this.config.sdkPath),createClient=this.createClientFactory||sdk?.createClient;if(typeof createClient!=='function')throw new Error('Supabase konnte nicht initialisiert werden.');return createClient(this.config.url,this.config.publishableKey,{auth:{storage:createAuthStorageAdapter(this.storage),storageKey:AUTH_STORAGE_KEY,persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,flowType:'implicit'},global:{headers:{'X-Client-Info':'eberos-character-builder/1.8.1'}}})})();
+      const promise=loading.catch(error=>{if(record){if(sharedDefaultClient===record)sharedDefaultClient=null}else this.promise=null;throw error});
+      if(record){record.promise=promise;sharedDefaultClient=record}else this.promise=promise;
+      return promise;
     }
   }
 
@@ -53,7 +68,8 @@
     async restoreSession(){const client=await this.provider.getClient(),{data,error}=await client.auth.getSession();if(error)throw error;return{session:data?.session||null,user:data?.session?.user||null}}
     async requestMagicLink(email,{redirectTo=global.location?.href?.split('#')[0]}={}){const normalized=String(email||'').trim().toLowerCase();if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalized))throw new Error('Bitte gib eine gültige E-Mail-Adresse ein.');const client=await this.provider.getClient(),{error}=await client.auth.signInWithOtp({email:normalized,options:{emailRedirectTo:redirectTo,shouldCreateUser:true}});if(error)throw error;return{email:normalized,sent:true}}
     async signOut(){let error=null;try{const client=await this.provider.getClient(),result=await client.auth.signOut({scope:'local'});error=result.error||null}catch(caught){error=caught}await clearPrivateCaches({storage:this.provider.storage});if(error)throw error;return{signedOut:true}}
-    async onAuthStateChange(listener){const client=await this.provider.getClient(),result=client.auth.onAuthStateChange((event,session)=>listener({event,session,user:session?.user||null}));this.subscription=result?.data?.subscription||null;return()=>{this.subscription?.unsubscribe?.();this.subscription=null}}
+    /* Supabase-Aufrufe aus dem Auth-Callback selbst können dessen interne Sperre blockieren. */
+    async onAuthStateChange(listener){const client=await this.provider.getClient();let active=true;const result=client.auth.onAuthStateChange((event,session)=>{global.setTimeout(()=>{if(active)listener({event,session,user:session?.user||null})},0)}),subscription=result?.data?.subscription||null;this.subscription=subscription;return()=>{active=false;subscription?.unsubscribe?.();if(this.subscription===subscription)this.subscription=null}}
   }
 
   class SupabaseCampaignRepository{

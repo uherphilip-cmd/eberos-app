@@ -90,7 +90,7 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 .gm-entry{background:#4d376f;color:#fff;border-color:#fff7;font-weight:bold}.gm-dialog{width:min(96vw,1500px);max-width:1500px;max-height:94vh}.gm-session-head{display:flex;justify-content:space-between;align-items:center;gap:1rem}.gm-create-box{margin:.75rem 0;padding:.75rem;border:1px solid var(--border);border-radius:8px}.gm-create-box form,.gm-panel form{display:grid;gap:.65rem;margin-top:.75rem}.gm-campaign-switcher{margin:.85rem 0;padding:.8rem;border:1px solid var(--border);border-radius:8px;background:var(--panel-alt)}.gm-campaign-switcher .field{margin:0}.gm-campaign-switcher select{font-weight:700}.gm-campaign-tabs,.gm-section-tabs{display:flex;gap:.45rem;overflow-x:auto;padding:.5rem 0}.gm-campaign-tabs button,.gm-section-tabs button{white-space:nowrap}.gm-campaign-tab.active,.gm-section-tabs button.active{background:var(--accent);color:#fff}.gm-panel{margin-top:.75rem;padding:1rem;border:1px solid var(--border);border-radius:8px;background:var(--panel-alt)}.gm-panel textarea{min-height:6rem}.gm-panel li{margin:.4rem 0}.gm-panel li button{margin-left:.4rem}.gm-stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:.6rem}.gm-stat-grid>div{padding:.7rem;border:1px solid var(--border);border-radius:8px;background:var(--panel)}.gm-stat-grid dt{font-weight:bold}.gm-stat-grid dd{margin:.3rem 0 0;font-size:1.2rem}.gm-player-preview,.campaign-player-preview{margin:.75rem 0;padding:1rem;border:2px solid var(--accent-2);border-radius:10px;background:var(--panel)}.gm-player-preview h4,.campaign-player-preview h3{margin:.1rem 0 .6rem;font-family:var(--font-section);font-size:1.35rem}.gm-player-preview dl,.campaign-player-preview dl{display:grid;grid-template-columns:auto 1fr;gap:.35rem .8rem}.gm-player-preview dt,.campaign-player-preview dt{font-weight:bold}.gm-player-preview dd,.campaign-player-preview dd{margin:0}.gm-player-preview [data-gm-player-notes],.campaign-player-notes{white-space:pre-wrap}[data-gm-invite-output]{display:block;margin:.6rem 0;font-weight:bold;overflow-wrap:anywhere}[data-character-sessions] li button{margin-left:.4rem}@media(max-width:700px){.gm-dialog{width:98vw}.gm-session-head{align-items:flex-start;flex-direction:column}}
 .gm-workspace-view,.campaign-workspace-view{display:none;padding:clamp(.75rem,2vw,1.5rem);min-height:calc(100vh - 110px)}.app.gm-workspace>.workspace,.app.gm-workspace>.screen-title,.app.campaign-workspace>.workspace,.app.campaign-workspace>.screen-title{display:none}.app.gm-workspace>.gm-workspace-view,.app.campaign-workspace>.campaign-workspace-view{display:block}.app.gm-workspace .topbar .stats,.app.gm-workspace .topbar .toolbar,.app.campaign-workspace .topbar .stats,.app.campaign-workspace .topbar .toolbar{display:none}.app.gm-workspace~#globalSearchV177,.app.campaign-workspace~#globalSearchV177{display:none!important}.campaign-workspace-view .campaign-hub{grid-template-columns:1fr}[data-campaign-retry],[data-gm-retry]{margin-top:.75rem}.gm-view-head,.campaign-view-head{display:flex;align-items:center;justify-content:space-between;gap:1rem}.gm-view-head h1,.campaign-view-head h1{margin:.2rem 0;font-family:var(--font-head);font-size:var(--heading-size)}@media print{.gm-workspace-view,.campaign-workspace-view{display:none!important}}
 </style>
-<link rel="stylesheet" href="./assets/fonts/fonts.css?v=1.8.1-gm-sessions-cbp-figures-loadfix">
+<link rel="stylesheet" href="./assets/fonts/fonts.css?v=1.8.1-gm-sessions-cbp-figures-authfix">
 </head>
 <body><div class="app" id="app">
 <div id="updateBanner" class="update-banner hidden no-print" role="status"><strong>Eine neue Version ist verfügbar.</strong><button id="applyUpdateBtn">Jetzt aktualisieren</button></div>
@@ -108,9 +108,9 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 <dialog id="adventureCbpDialog"><div class="dialog-head"><h2>Abenteuer-CBP gutschreiben</h2><button data-close>✕</button></div><p class="notice">Die Gutschrift erhöht dauerhaft das verfügbare Gesamtbudget und bleibt mit Datum und Anlass nachvollziehbar.</p><div class="settings-grid"><label>Erhaltene CBP<input id="adventureCbpAmount" type="number" min="1" max="999" value="1"></label><label>Anlass<input id="adventureCbpLabel" placeholder="z. B. Die Nebelburg"></label></div><button id="grantAdventureCbp" class="primary">CBP gutschreiben</button><h3>Bisherige Gutschriften</h3><div id="adventureCbpList"></div></dialog>
 
 <button id="testsBtn" type="button" hidden aria-hidden="true" tabindex="-1"></button>
-<script src="./data/eberos-items-anfaenger-v1.3.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-magie-wunder-flueche-v1.4.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-open-play-core-v1.8.0.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
+<script src="./data/eberos-items-anfaenger-v1.3.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-magie-wunder-flueche-v1.4.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-open-play-core-v1.8.0.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
 <script>
 'use strict';
 /* 1. Konstanten und Seed-Daten */
@@ -2156,33 +2156,33 @@ installBtn.addEventListener('click',async()=>{if(installPrompt){installPrompt.pr
 window.addEventListener('appinstalled',()=>installBtn.classList.add('hidden'));
 if('serviceWorker' in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',async()=>{try{const registration=await navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'});let refreshing=false;const showUpdate=worker=>{if(!worker)return;updateBanner.classList.remove('hidden');applyUpdateBtn.onclick=()=>{applyUpdateBtn.disabled=true;applyUpdateBtn.textContent='Aktualisierung läuft…';worker.postMessage({type:'SKIP_WAITING'})}};if(registration.waiting)showUpdate(registration.waiting);registration.addEventListener('updatefound',()=>{const worker=registration.installing;worker?.addEventListener('statechange',()=>{if(worker.state==='installed'&&navigator.serviceWorker.controller)showUpdate(worker)})});navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload()});await registration.update()}catch(e){showError('Offline-Modus konnte nicht aktiviert werden: '+e.message)}});
 </script>
-<script src="./data/eberos-v1.7.6.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-kampftechniken-v1.0.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-effekte-v1.7.7.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.7.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-kampftechniken-v1.1.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.8.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.8-r4.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.9.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.10.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.11.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.12.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.13.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.14.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.15.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.16.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.17.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.18.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.19.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.20.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.21.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-synergien-v1.7.21-r2.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.21-r2.5.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-items-mse-v15.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-items-mse-v15-runtime-r11.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-skill-lore-v1.7.25.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.24.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-effekte-v1.7.25.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.7.25.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
-<script src="./data/eberos-v1.8.1.js?v=1.8.1-gm-sessions-cbp-figures-loadfix"></script>
+<script src="./data/eberos-v1.7.6.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-kampftechniken-v1.0.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-effekte-v1.7.7.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.7.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-kampftechniken-v1.1.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.8.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.8-r4.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.9.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.10.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.11.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.12.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.13.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.14.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.15.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.16.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.17.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.18.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.19.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.20.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.21.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-synergien-v1.7.21-r2.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.21-r2.5.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-items-mse-v15.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-items-mse-v15-runtime-r11.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-skill-lore-v1.7.25.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.24.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-effekte-v1.7.25.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.7.25.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
+<script src="./data/eberos-v1.8.1.js?v=1.8.1-gm-sessions-cbp-figures-authfix"></script>
 </body></html>
