@@ -2,7 +2,7 @@
 
 /* Eberos v1.8.1 · kampagnenbezogene Spielleitung und Spielabend-CBP */
 (function installV181Foundation(){
-  const VERSION='1.8.1',REVISION='campaign-login-load-hotfix',SCHEMA=31,RULES=15,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
+  const VERSION='1.8.1',REVISION='campaign-return-hotfix',SCHEMA=31,RULES=15,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
   if(!core)throw new Error('Open-Play-Kern v1.8.0 fehlt.');
   if(typeof LOCAL_DRAFT_REPOSITORY==='undefined')throw new Error('LocalDraftRepository ist nicht mit dem Builder verbunden.');
   const commandService=new core.DraftCommandService({repository:LOCAL_DRAFT_REPOSITORY,appVersion:VERSION,schemaVersion:SCHEMA});state=commandService.save(state);
@@ -59,6 +59,14 @@
   campaignTab.addEventListener('click',()=>guardedOpen(campaignTab,'Kampagne wird vorbereitet…',openPlayerEntry));
   campaignRetry.addEventListener('click',()=>guardedOpen(campaignRetry,'Wird erneut geladen…',()=>{configLoader.promise=null;clientLoader.promise=null;campaignLoader.promise=null;return openPlayerEntry()}));
   gmTab.addEventListener('click',()=>guardedOpen(gmTab,'Spielleitung wird vorbereitet…',openGmWorkspace));
+  function resumePendingCampaignView(){
+    const message=campaignView.querySelector('[data-auth-message]');
+    if(app.classList.contains('campaign-workspace')&&message?.textContent.trim()==='Der Kampagnenzugang wird erst jetzt vorbereitet …')guardedOpen(campaignTab,'Kampagne wird vorbereitet…',openPlayerEntry);
+  }
+  window.addEventListener('pageshow',resumePendingCampaignView);
+  window.addEventListener('focus',resumePendingCampaignView);
+  window.addEventListener('hashchange',resumePendingCampaignView);
+  queueMicrotask(resumePendingCampaignView);
 
   let navigationServices=null,navigationUnsubscribe=null;
   function setGameMasterAccess(allowed){gmTab.hidden=!allowed;if(!allowed&&gmTab.classList.contains('active'))campaignTab.click()}
