@@ -2,7 +2,7 @@
 
 /* Eberos v1.8.1 · kampagnenbezogene Spielleitung und Spielabend-CBP */
 (function installV181Foundation(){
-  const VERSION='1.8.1',REVISION='gm-sessions-cbp-figures-coldloadfix',SCHEMA=31,RULES=15,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
+  const VERSION='1.8.1',REVISION='gm-sessions-cbp-figures-basefix',SCHEMA=31,RULES=15,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
   if(!core)throw new Error('Open-Play-Kern v1.8.0 fehlt.');
   if(typeof LOCAL_DRAFT_REPOSITORY==='undefined')throw new Error('LocalDraftRepository ist nicht mit dem Builder verbunden.');
   const commandService=new core.DraftCommandService({repository:LOCAL_DRAFT_REPOSITORY,appVersion:VERSION,schemaVersion:SCHEMA});state=commandService.save(state);
@@ -31,8 +31,8 @@
       return this.promise;
     }
   }
-  const configLoader=new ResilientModuleLoader({document,source:configSource,globalName:'EberosSupabaseConfig'}),clientLoader=new ResilientModuleLoader({document,source:clientSource,globalName:'EberosSupabaseClient'}),campaignLoader=new ResilientModuleLoader({document,source:campaignSource,globalName:'EberosCampaignEntry',timeoutMs:20000}),gmLoader=new ResilientModuleLoader({document,source:gmSource,globalName:'EberosGameMasterWorkspace',timeoutMs:20000});
-  async function loadBase(){await configLoader.load();await clientLoader.load()}
+  const configLoader=new ResilientModuleLoader({document,source:configSource,globalName:'EberosSupabaseConfig',timeoutMs:20000}),clientLoader=new ResilientModuleLoader({document,source:clientSource,globalName:'EberosSupabaseClient',timeoutMs:20000}),campaignLoader=new ResilientModuleLoader({document,source:campaignSource,globalName:'EberosCampaignEntry',timeoutMs:20000}),gmLoader=new ResilientModuleLoader({document,source:gmSource,globalName:'EberosGameMasterWorkspace',timeoutMs:20000});
+  async function loadBase(){await Promise.all([configLoader.load(),clientLoader.load()])}
   async function loadCampaignEntry(){await loadBase();return campaignLoader.load()}
   async function loadGameMasterWorkspace(){await loadBase();return gmLoader.load()}
 

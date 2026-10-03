@@ -35,7 +35,7 @@
       const loaded=()=>finish(global.supabase?.createClient?null:new Error('Das Supabase-SDK ist unvollständig.'));
       const failed=()=>finish(new Error('Die sichere Kampagnenverbindung konnte nicht geladen werden.'));
       script.addEventListener('load',loaded,{once:true});script.addEventListener('error',failed,{once:true});
-      timer=global.setTimeout(()=>finish(new Error('Das Laden der sicheren Kampagnenverbindung dauert zu lange. Bitte versuche es erneut.')),10000);
+      timer=global.setTimeout(()=>finish(new Error('Das Laden der sicheren Kampagnenverbindung dauert zu lange. Bitte versuche es erneut.')),20000);
       if(newScript)try{document.head.append(script)}catch(error){finish(error)}
     });
   }
