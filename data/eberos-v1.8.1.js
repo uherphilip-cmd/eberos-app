@@ -2,7 +2,7 @@
 
 /* Eberos v1.8.1 · kampagnenbezogene Spielleitung und Spielabend-CBP */
 (function installV181Foundation(){
-  const VERSION='1.8.1',REVISION='gm-sessions-cbp-figures-authfix',SCHEMA=31,RULES=15,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
+  const VERSION='1.8.1',REVISION='gm-sessions-cbp-figures-coldloadfix',SCHEMA=31,RULES=15,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
   if(!core)throw new Error('Open-Play-Kern v1.8.0 fehlt.');
   if(typeof LOCAL_DRAFT_REPOSITORY==='undefined')throw new Error('LocalDraftRepository ist nicht mit dem Builder verbunden.');
   const commandService=new core.DraftCommandService({repository:LOCAL_DRAFT_REPOSITORY,appVersion:VERSION,schemaVersion:SCHEMA});state=commandService.save(state);
@@ -26,12 +26,12 @@
         const failed=()=>{if(script)script.dataset.moduleState='error';finish(new Error('Der Kampagnenzugang konnte nicht geladen werden. Bitte prüfe die Verbindung und versuche es erneut.'))};
         if(script&&(!script.src||script.dataset.moduleState==='error'||script.dataset.moduleState==='loaded')){script.remove();script=null}
         if(!script){script=this.document.createElement('script');script.src=this.attempt?`${this.source}&retry=${Date.now()}`:this.source;this.attempt+=1;script.async=true;script.dataset.campaignModule=this.source;script.dataset.moduleState='loading';script.addEventListener('load',loaded,{once:true});script.addEventListener('error',failed,{once:true});this.document.head.append(script)}else{script.addEventListener('load',loaded,{once:true});script.addEventListener('error',failed,{once:true})}
-        timer=setTimeout(()=>finish(new Error('Das Laden des Kampagnenzugangs dauert zu lange. Bitte wähle „Erneut laden“.')),this.timeoutMs);
+        timer=setTimeout(()=>{const module=window[this.globalName];if(module){if(script)script.dataset.moduleState='loaded';finish(null,module)}else finish(new Error('Das Laden des Kampagnenzugangs dauert zu lange. Bitte wähle „Erneut laden“.'))},this.timeoutMs);
       });
       return this.promise;
     }
   }
-  const configLoader=new ResilientModuleLoader({document,source:configSource,globalName:'EberosSupabaseConfig'}),clientLoader=new ResilientModuleLoader({document,source:clientSource,globalName:'EberosSupabaseClient'}),campaignLoader=new ResilientModuleLoader({document,source:campaignSource,globalName:'EberosCampaignEntry'}),gmLoader=new ResilientModuleLoader({document,source:gmSource,globalName:'EberosGameMasterWorkspace'});
+  const configLoader=new ResilientModuleLoader({document,source:configSource,globalName:'EberosSupabaseConfig'}),clientLoader=new ResilientModuleLoader({document,source:clientSource,globalName:'EberosSupabaseClient'}),campaignLoader=new ResilientModuleLoader({document,source:campaignSource,globalName:'EberosCampaignEntry',timeoutMs:20000}),gmLoader=new ResilientModuleLoader({document,source:gmSource,globalName:'EberosGameMasterWorkspace',timeoutMs:20000});
   async function loadBase(){await configLoader.load();await clientLoader.load()}
   async function loadCampaignEntry(){await loadBase();return campaignLoader.load()}
   async function loadGameMasterWorkspace(){await loadBase();return gmLoader.load()}

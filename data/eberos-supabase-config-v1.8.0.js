@@ -11,7 +11,7 @@
     url:'https://qcpwzvlucqcirrozxywt.supabase.co',
     publishableKey:'sb_publishable_RchsOhgwJJMsGwdiuthR_g_vl4zmRit',
     sdkVersion:'2.117.2',
-    sdkPath:'./data/vendor/supabase-2.117.2.js?v=1.8.1-gm-sessions-cbp-figures-authfix'
+    sdkPath:'./data/vendor/supabase-2.117.2.js?v=1.8.1-gm-sessions-cbp-figures-coldloadfix'
   });
 })(globalThis);
 
