@@ -2,7 +2,7 @@
 
 /* Eberos v1.8.1 · kampagnenbezogene Spielleitung und Spielabend-CBP */
 (function installV181Foundation(){
-  const VERSION='1.8.1',REVISION='password-auth',SCHEMA=37,RULES=15,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
+  const VERSION='1.8.1',REVISION='npc-skill-order',SCHEMA=37,RULES=15,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
   if(!core)throw new Error('Open-Play-Kern v1.8.0 fehlt.');
   if(typeof LOCAL_DRAFT_REPOSITORY==='undefined')throw new Error('LocalDraftRepository ist nicht mit dem Builder verbunden.');
   const commandService=new core.DraftCommandService({repository:LOCAL_DRAFT_REPOSITORY,appVersion:VERSION,schemaVersion:SCHEMA});state=commandService.save(state);
@@ -89,11 +89,30 @@
   window.addEventListener('eberos:campaign-auth-change',event=>{if(!event.detail?.user){navigationEpoch++;setGameMasterAccess(false)}else refreshAccountNavigation()});
   try{if(localStorage.getItem('eberos.campaign.auth-present.v1')||new URLSearchParams(location.search).has('code')||/(?:access_token|refresh_token)=/.test(location.hash))refreshAccountNavigation()}catch{}
 
+  const npcSkillOrderStyleV181=el('style',{text:`
+.npc-skill-order-toolbar-v181{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap;margin:.5rem 0 .75rem}.npc-skill-order-toggle-v181[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 24%,transparent)}.npc-skill-order-help-v181{margin:0}
+@media(max-width:720px){.npc-skill-order-toolbar-v181{align-items:stretch}.npc-skill-order-toggle-v181{width:100%}}
+  `});document.head.append(npcSkillOrderStyleV181);
+  function decorateNpcSkillOrderingV181(box,owner,isAux){
+    if(!isAux||owner?.type!=='npc')return box;
+    const filters=box.querySelector('.skill-filters-r11,.filters'),sort=box.querySelector('[aria-label="Fähigkeiten sortieren"]');
+    if(!filters||!sort||box.querySelector('.npc-skill-order-toggle-v181'))return box;
+    const toggle=el('button',{type:'button',class:'npc-skill-order-toggle-v181'}),help=el('p',{class:'muted npc-skill-order-help-v181',text:'Mit ↑ und ↓ verschiebst du die Skills dieses NPCs. Die Reihenfolge wird nur für diesen NPC gespeichert.'}),toolbar=el('div',{class:'npc-skill-order-toolbar-v181'},[toggle,help]);
+    const sync=()=>{const active=sort.value==='manual';toggle.setAttribute('aria-pressed',String(active));toggle.textContent=active?'Anordnung aktiv':'Skills anordnen';help.hidden=!active};
+    toggle.onclick=()=>{if(sort.value!=='manual'){sort.value='manual';sort.dispatchEvent(new Event('change',{bubbles:true}))}sync()};
+    sort.addEventListener('change',sync);filters.after(toolbar);box.dataset.npcSkillOrdering='available';sync();return box;
+  }
+  const renderSkillsOwnerBeforeNpcOrderV181=renderSkillsOwnerR5;
+  renderSkillsOwnerR5=function(owner,isAux=false){return decorateNpcSkillOrderingV181(renderSkillsOwnerBeforeNpcOrderV181(owner,isAux),owner,isAux)};
+  renderSkills=function(){return renderSkillsOwnerR5(ch(),false)};
+  renderAuxSkillsV17=function(owner){return renderSkillsOwnerR5(owner,true)};
+
   const runTestsBeforeV181=window.Eberos.runTests;
   function runTestsV181(){
     try{runTestsBeforeV181()}catch(error){console.error('Integrierte Regeltests',error)}const body=testResults.querySelector('tbody');for(const row of [...body.querySelectorAll('tr')])if(/^(Version 1\.7\.25|Revision r6|Schema 29|Version 1\.8\.0|Revision Release|Schema 30)$/.test(row.cells[0]?.textContent||''))row.remove();
     const tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),validation=core.validateDraftState(state),prepared=core.migrateDraftState(state,{appVersion:VERSION,schemaVersion:SCHEMA,now:()=>state.migrationLog?.at(-1)?.at||'stabil'}),active=ch();
-    eq('Version 1.8.1',VERSION,window.Eberos.version);eq('Revision Browser-Anmeldung',REVISION,window.Eberos.revision);eq('Schema 37',SCHEMA,state.schemaVersion);eq('Regelstand 15',RULES,RULES_VERSION);eq('Kampagne ist Spieler-Hauptreiter','campaign-workspace',campaignTab.dataset.view);eq('Spielleitung ist geschützter Hauptreiter','gm-workspace',gmTab.dataset.view);eq('Open Play verwendet LocalDraftRepository','LocalDraftRepository',state.openPlay?.repository);eq('Lokaler Entwurf ist gültig',true,validation.ok);eq('Open-Play-Migration ist idempotent',JSON.stringify(state),JSON.stringify(prepared));eq('Kampagnenmodule starten verzögert',false,campaignLoader.isLoaded()||gmLoader.isLoaded());
+    eq('Version 1.8.1',VERSION,window.Eberos.version);eq('Revision NPC-Skill-Reihenfolge',REVISION,window.Eberos.revision);eq('Schema 37',SCHEMA,state.schemaVersion);eq('Regelstand 15',RULES,RULES_VERSION);eq('Kampagne ist Spieler-Hauptreiter','campaign-workspace',campaignTab.dataset.view);eq('Spielleitung ist geschützter Hauptreiter','gm-workspace',gmTab.dataset.view);eq('Open Play verwendet LocalDraftRepository','LocalDraftRepository',state.openPlay?.repository);eq('Lokaler Entwurf ist gültig',true,validation.ok);eq('Open-Play-Migration ist idempotent',JSON.stringify(state),JSON.stringify(prepared));eq('Kampagnenmodule starten verzögert',false,campaignLoader.isLoaded()||gmLoader.isLoaded());
+    const testNpc=newAuxEntry('npc','Reihenfolge-Test'),npcSkills=renderSkillsOwnerR5(testNpc,true),npcOrderToggle=npcSkills.querySelector('.npc-skill-order-toggle-v181'),npcSort=npcSkills.querySelector('[aria-label="Fähigkeiten sortieren"]');npcOrderToggle?.click();eq('NPC-Skills lassen sich sichtbar in die eigene Reihenfolge schalten',true,npcSkills.dataset.npcSkillOrdering==='available'&&npcSort?.value==='manual'&&testNpc.skillSortView?.sort==='manual'&&npcOrderToggle?.getAttribute('aria-pressed')==='true');
     for(const test of tests)body.append(el('tr',{},[test[0],test[1],test[2],test[3]?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return[...body.querySelectorAll('tr')].every(row=>row.cells[row.cells.length-1]?.textContent==='Bestanden');
   }
   runTests=runTestsV181;testsBtn.onclick=runTestsV181;
