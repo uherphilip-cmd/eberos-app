@@ -2,7 +2,7 @@
 
 /* Eberos v1.8.1 · kampagnenbezogene Spielleitung und Spielabend-CBP */
 (function installV181Foundation(){
-  const VERSION='1.8.1',REVISION='gm-sessions-cbp-figures-basefix',SCHEMA=31,RULES=15,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
+  const VERSION='1.8.1',REVISION='browser-auth-refresh',SCHEMA=37,RULES=15,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
   if(!core)throw new Error('Open-Play-Kern v1.8.0 fehlt.');
   if(typeof LOCAL_DRAFT_REPOSITORY==='undefined')throw new Error('LocalDraftRepository ist nicht mit dem Builder verbunden.');
   const commandService=new core.DraftCommandService({repository:LOCAL_DRAFT_REPOSITORY,appVersion:VERSION,schemaVersion:SCHEMA});state=commandService.save(state);
@@ -87,13 +87,13 @@
     }catch{if(epoch===navigationEpoch)setGameMasterAccess(false);return{authenticated:false,managedCampaigns:0}}
   }
   window.addEventListener('eberos:campaign-auth-change',event=>{if(!event.detail?.user){navigationEpoch++;setGameMasterAccess(false)}else refreshAccountNavigation()});
-  try{if(localStorage.getItem('eberos.campaign.auth.v1')||/(?:access_token|refresh_token)=/.test(location.hash))refreshAccountNavigation()}catch{}
+  try{if(localStorage.getItem('eberos.campaign.auth-present.v1')||new URLSearchParams(location.search).has('code')||/(?:access_token|refresh_token)=/.test(location.hash))refreshAccountNavigation()}catch{}
 
   const runTestsBeforeV181=window.Eberos.runTests;
   function runTestsV181(){
     try{runTestsBeforeV181()}catch(error){console.error('Integrierte Regeltests',error)}const body=testResults.querySelector('tbody');for(const row of [...body.querySelectorAll('tr')])if(/^(Version 1\.7\.25|Revision r6|Schema 29|Version 1\.8\.0|Revision Release|Schema 30)$/.test(row.cells[0]?.textContent||''))row.remove();
     const tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),validation=core.validateDraftState(state),prepared=core.migrateDraftState(state,{appVersion:VERSION,schemaVersion:SCHEMA,now:()=>state.migrationLog?.at(-1)?.at||'stabil'}),active=ch();
-    eq('Version 1.8.1',VERSION,window.Eberos.version);eq('Revision rollenbezogene Kampagnenreiter',REVISION,window.Eberos.revision);eq('Schema 31',SCHEMA,state.schemaVersion);eq('Regelstand 15',RULES,RULES_VERSION);eq('Kampagne ist Spieler-Hauptreiter','campaign-workspace',campaignTab.dataset.view);eq('Spielleitung ist geschützter Hauptreiter','gm-workspace',gmTab.dataset.view);eq('Open Play verwendet LocalDraftRepository','LocalDraftRepository',state.openPlay?.repository);eq('Lokaler Entwurf ist gültig',true,validation.ok);eq('Open-Play-Migration ist idempotent',JSON.stringify(state),JSON.stringify(prepared));eq('Kampagnenmodule starten verzögert',false,campaignLoader.isLoaded()||gmLoader.isLoaded());
+    eq('Version 1.8.1',VERSION,window.Eberos.version);eq('Revision Browser-Anmeldung',REVISION,window.Eberos.revision);eq('Schema 37',SCHEMA,state.schemaVersion);eq('Regelstand 15',RULES,RULES_VERSION);eq('Kampagne ist Spieler-Hauptreiter','campaign-workspace',campaignTab.dataset.view);eq('Spielleitung ist geschützter Hauptreiter','gm-workspace',gmTab.dataset.view);eq('Open Play verwendet LocalDraftRepository','LocalDraftRepository',state.openPlay?.repository);eq('Lokaler Entwurf ist gültig',true,validation.ok);eq('Open-Play-Migration ist idempotent',JSON.stringify(state),JSON.stringify(prepared));eq('Kampagnenmodule starten verzögert',false,campaignLoader.isLoaded()||gmLoader.isLoaded());
     for(const test of tests)body.append(el('tr',{},[test[0],test[1],test[2],test[3]?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return[...body.querySelectorAll('tr')].every(row=>row.cells[row.cells.length-1]?.textContent==='Bestanden');
   }
   runTests=runTestsV181;testsBtn.onclick=runTestsV181;

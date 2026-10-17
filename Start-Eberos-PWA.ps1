@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 $appDirectory = Split-Path -Parent $MyInvocation.MyCommand.Path
 $pidFile = Join-Path $appDirectory '.eberos-server.pid'
-$port = 8787
+$port = 4173
 $url = "http://localhost:$port/eberos-charakter-builder.html"
 
 if (Test-Path -LiteralPath $pidFile) {
@@ -13,21 +13,26 @@ if (Test-Path -LiteralPath $pidFile) {
     Remove-Item -LiteralPath $pidFile -Force -ErrorAction SilentlyContinue
 }
 
-$python = Get-Command py -ErrorAction SilentlyContinue
-$arguments = @('-m', 'http.server', "$port", '--bind', '127.0.0.1', '--directory', $appDirectory)
-if ($python) {
-    $arguments = @('-3') + $arguments
+$node = Get-Command node -ErrorAction SilentlyContinue
+if ($node) {
+    $server = Start-Process -FilePath $node.Source -ArgumentList @('eberos-local-server.cjs', "$port") -WorkingDirectory $appDirectory -WindowStyle Hidden -PassThru
 } else {
-    $python = Get-Command python -ErrorAction SilentlyContinue
-}
+    $python = Get-Command py -ErrorAction SilentlyContinue
+    $arguments = @('-m', 'http.server', "$port", '--bind', '127.0.0.1', '--directory', $appDirectory)
+    if ($python) {
+        $arguments = @('-3') + $arguments
+    } else {
+        $python = Get-Command python -ErrorAction SilentlyContinue
+    }
 
-if (-not $python) {
-    Write-Host 'Python wurde nicht gefunden.' -ForegroundColor Red
-    Write-Host 'Alternativ kann dieser Ordner auf einem HTTPS-Webserver veröffentlicht werden.'
-    exit 1
-}
+    if (-not $python) {
+        Write-Host 'Weder Node.js noch Python wurde gefunden.' -ForegroundColor Red
+        Write-Host 'Alternativ kann dieser Ordner auf einem HTTPS-Webserver veröffentlicht werden.'
+        exit 1
+    }
 
-$server = Start-Process -FilePath $python.Source -ArgumentList $arguments -WindowStyle Hidden -PassThru
+    $server = Start-Process -FilePath $python.Source -ArgumentList $arguments -WindowStyle Hidden -PassThru
+}
 Set-Content -LiteralPath $pidFile -Value $server.Id -Encoding ASCII
 
 $ready = $false
@@ -51,5 +56,5 @@ if (-not $ready) {
 }
 
 Start-Process $url
-Write-Host 'Eberos v1.8.0 wurde im Browser geöffnet.' -ForegroundColor Green
+Write-Host 'Eberos v1.8.1 wurde im Browser geöffnet.' -ForegroundColor Green
 Write-Host 'Dort im Browsermenü "App installieren" auswählen.'

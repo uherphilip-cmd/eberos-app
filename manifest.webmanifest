@@ -2,7 +2,7 @@
   "id": "./eberos-charakter-builder.html",
   "name": "Eberos Charakter-Builder v1.8.1",
   "short_name": "Eberos 1.8.1",
-  "description": "Eberos Charakter-Builder mit Open Play, kampagnenbezogener Spielleitung und Spielabend-CBP.",
+  "description": "Eberos Charakter-Builder mit Open Play, geschützter Gesamtverwaltung, reduziertem Live-Modus und nachvollziehbaren Gegenänderungen.",
   "lang": "de",
   "start_url": "./eberos-charakter-builder.html",
   "scope": "./",
