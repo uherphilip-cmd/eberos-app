@@ -11,7 +11,7 @@
     url:'https://qcpwzvlucqcirrozxywt.supabase.co',
     publishableKey:'sb_publishable_RchsOhgwJJMsGwdiuthR_g_vl4zmRit',
     sdkVersion:'2.117.2',
-    sdkPath:'./data/vendor/supabase-2.117.2.js?v=1.8.5-performance'
+    sdkPath:'./data/vendor/supabase-2.117.2.js?v=1.8.6-inline-media'
   });
 })(globalThis);
 
