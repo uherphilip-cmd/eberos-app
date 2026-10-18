@@ -8,13 +8,10 @@
   const clear=node=>node?.replaceChildren();
   const button=(label,action,className='')=>{const node=document.createElement('button');node.type='button';node.textContent=label;if(className)node.className=className;if(typeof action==='function')node.addEventListener('click',action);return node};
   const item=(label,...controls)=>{const node=document.createElement('li');node.append(document.createTextNode(label),...controls);return node};
-  const markMediaEntity=(node,kind,id)=>{if(node&&id){node.dataset.mediaEntityKind=kind;node.dataset.mediaEntityId=id}return node};
   const field=(root,selector)=>root.querySelector(selector);
   const heading=(level,label)=>{const node=document.createElement(level);node.textContent=label;return node};
   const note=(label,className='muted')=>{const node=document.createElement('p');node.className=className;node.textContent=label;return node};
   const submitButton=label=>{const node=button(label);node.type='submit';return node};
-  function campaignStartSummary(form,prefix){const year=field(form,`[data-${prefix}-year]`)?.value,season=field(form,`[data-${prefix}-season]`)?.value,day=field(form,`[data-${prefix}-day]`)?.value;return global.EberosCampaignStart?.summary(year,season,day)||''}
-  function updateCampaignStartPreview(form,prefix){text(field(form,`[data-${prefix}-preview]`),campaignStartSummary(form,prefix))}
   function friendlyError(error){const message=String(error?.message||'');if(error?.code==='CAMPAIGN_BACKEND_NOT_CONFIGURED')return'Das Supabase-Testprojekt ist noch nicht verbunden.';if(error?.status===429)return'Zu viele Versuche. Bitte warte kurz.';if(/invalid login credentials/i.test(message))return'E-Mail-Adresse oder Passwort ist falsch.';if(/email not confirmed/i.test(message))return'Bitte bestätige zuerst deine E-Mail-Adresse und melde dich danach mit deinem Passwort an.';if(/user already registered/i.test(message))return'Für diese E-Mail-Adresse besteht bereits ein Konto. Nutze „Passwort vergessen“, falls du noch kein Passwort hast.';if(/password should be at least/i.test(message))return'Das Passwort erfüllt die Mindestlänge noch nicht.';return message||'Die Spielleitungsaktion konnte nicht abgeschlossen werden.'}
   function statusLabel(value){return({planned:'Geplant',open:'CBP-Abholung offen',completed:'Abgeschlossen',closed:'Geschlossen',claimed:'Zugeordnet',submitted:'Eingereicht',approved_locked:'Bestätigt',change_pending:'Änderung wartet',rejected:'Abgelehnt',retired:'Im Ruhestand'})[value]||value||'Unbekannt'}
   function dateLabel(value){if(!value)return'ohne Datum';try{return new Intl.DateTimeFormat('de-DE').format(new Date(`${value}T12:00:00`))}catch{return value}}
@@ -126,7 +123,7 @@
   function renderCharacters(state,characters,pending){
     const list=field(state.dialog,'[data-gm-characters]');clear(list);if(!characters.length)list?.append(item('Noch keine Figur mit dieser Kampagne verbunden.'));
     if(!characters.some(character=>character.id===state.selectedCharacterId))state.selectedCharacterId=null;
-    for(const character of characters){const name=character.public_data?.name||character.id;list?.append(markMediaEntity(item(`${name} · ${statusLabel(character.status)} · Revision ${character.revision||0}`,button('Details',()=>{state.selectedCharacterId=character.id;renderCharacterDetail(state)})),'character',character.id))}
+    for(const character of characters){const name=character.public_data?.name||character.id;list?.append(item(`${name} · ${statusLabel(character.status)} · Revision ${character.revision||0}`,button('Details',()=>{state.selectedCharacterId=character.id;renderCharacterDetail(state)})))}
     const review=field(state.dialog,'[data-gm-pending]');clear(review);if(!pending.length)review?.append(item('Keine offene Figurenprüfung.'));
     for(const character of pending){
       const name=character.public_data?.name||character.character_id,needsDiff=character.status==='change_pending';
@@ -195,10 +192,10 @@
   function renderSessions(state,sessions){
     const list=field(state.dialog,'[data-gm-sessions]');clear(list);if(!sessions.length)list?.append(item('Noch kein Spielabend angelegt.'));
     if(!sessions.some(session=>session.session_id===state.selectedSessionId))state.selectedSessionId=null;
-    for(const session of sessions){const cbp=` · Standard ${session.default_cbp??0} CBP · ${session.claimed_count||0} abgeholt`;list?.append(markMediaEntity(item(`${session.title} · ${dateLabel(session.session_date)} · ${statusLabel(session.status)}${cbp}`,button('Bearbeiten & CBP',()=>{state.selectedSessionId=session.session_id;renderSessionEditor(state)})),'session',session.session_id))}
+    for(const session of sessions){const cbp=` · Standard ${session.default_cbp??0} CBP · ${session.claimed_count||0} abgeholt`;list?.append(item(`${session.title} · ${dateLabel(session.session_date)} · ${statusLabel(session.status)}${cbp}`,button('Bearbeiten & CBP',()=>{state.selectedSessionId=session.session_id;renderSessionEditor(state)})))}
     renderSessionEditor(state);
   }
-  function renderThreads(state,threads){const list=field(state.dialog,'[data-gm-threads]');clear(list);if(!threads.length)list?.append(item('Noch kein Handlungsfaden angelegt.'));for(const thread of threads)list?.append(markMediaEntity(item(`${thread.title} · ${statusLabel(thread.status)}${thread.player_visible?' · sichtbar':' · geheim'}`),'thread',thread.id))}
+  function renderThreads(state,threads){const list=field(state.dialog,'[data-gm-threads]');clear(list);if(!threads.length)list?.append(item('Noch kein Handlungsfaden angelegt.'));for(const thread of threads)list?.append(item(`${thread.title} · ${statusLabel(thread.status)}${thread.player_visible?' · sichtbar':' · geheim'}`))}
   function renderImpacts(state,impacts){const list=field(state.dialog,'[data-gm-impacts]');clear(list);if(!impacts.length)list?.append(item('Keine verdeckte Folge aus einer anderen Kampagne.'));for(const impact of impacts)list?.append(item(`${impact.impact_summary} · ${statusLabel(impact.status)}`))}
 
   const archetypeGroups=[
@@ -208,6 +205,20 @@
     ['arcane','Arkane & elementare Wesen'],['holy','Heilige & religiöse Wesen'],['dark','Finstere Wesen'],
     ['nature','Pflanzen- & Naturwesen'],['swarm','Schwärme & Kollektive'],['construct','Konstrukte'],
     ['aquatic','Wasserwesen'],['giant','Riesen & einzigartige Wesen'],['other','Andere']
+  ];
+  const preparedArchetypes=[
+    {key:'alltagsfigur',name:'Alltagsfigur',groupName:'humanoid',description:'Unbewaffnete Bewohner, Handwerker, Bedienstete oder Reisende ohne besondere Kampfausbildung.',canCarryItems:true,standardItems:[{id:'gear_backpack'},{id:'gear_torch',quantity:2}],attributes:{ST:4,KS:4,GS:4,RF:4,FF:5,WL:4,IT:5,IN:5,WN:4,CR:5},counters:{L:5,A:5,FO:4,M:2,GB:2,HS:2,FS:2,GL:2},skills:{'Aufmerksamkeit & Wachsamkeit':3,'Folklore & Gassenwissen':3}},
+    {key:'haendler-informant',name:'Händler & Informant',groupName:'society',description:'Gesprächsstarke Kontaktfigur für Handel, Gerüchte, Verhandlungen und soziale Szenen.',canCarryItems:true,standardItems:[{id:'gear_backpack'},{id:'gear_writing_set'}],attributes:{ST:3,KS:4,GS:5,RF:5,FF:6,WL:6,IT:7,IN:7,WN:6,CR:8},counters:{L:5,A:5,FO:7,M:2,GB:2,HS:6,FS:2,GL:3},skills:{'Wirtschaft & Handel':8,'Überreden & Belügen':7,'Menschenkenntnis & Wesen erkennen':6,'Folklore & Gassenwissen':5}},
+    {key:'stadtwache',name:'Stadtwache',groupName:'combat',description:'Solide bewaffnete Ordnungskraft für Tore, Patrouillen, Eskorte und gewöhnliche Gefechte.',canCarryItems:true,standardItems:[{id:'wpn_melee_spear',loadState:'equipped'},{id:'armor_gambeson',loadState:'equipped'},{id:'armor_shield_holzschild',loadState:'equipped'},{id:'gear_lantern'}],attributes:{ST:7,KS:7,GS:5,RF:6,FF:4,WL:6,IT:4,IN:5,WN:6,CR:5},counters:{L:8,A:8,FO:4,M:2,GB:2,HS:3,FS:2,GL:2},skills:{'Nahkampf – leichte Waffen':7,'Verteidigung & Blocken':7,'Aufmerksamkeit & Wachsamkeit':6,'Fesseln & Sichern':5}},
+    {key:'wegelagerer',name:'Räuber & Wegelagerer',groupName:'outlaw',description:'Beweglicher Gegner für Hinterhalte, Überfälle, Verfolgungen und zwielichtige Gruppen.',canCarryItems:true,standardItems:[{id:'wpn_ranged_shortbow',loadState:'equipped'},{id:'wpn_melee_dagger',loadState:'equipped'},{id:'armor_reinforced_leather',loadState:'equipped'},{id:'gear_rope_hemp_10m'}],attributes:{ST:6,KS:6,GS:7,RF:7,FF:6,WL:5,IT:4,IN:5,WN:7,CR:4},counters:{L:7,A:8,FO:5,M:2,GB:2,HS:2,FS:3,GL:2},skills:{'Fernkampf – leichte Waffen':7,'Nahkampf – leichte Waffen':6,'Vermeiden & Ausweichen':6,'Heimlichkeit & Schleichen':6}},
+    {key:'veteran-anfuehrer',name:'Veteran & Anführer',groupName:'combat',description:'Erfahrene Elite- oder Anführerfigur für anspruchsvolle Kämpfe und taktische Entscheidungen.',canCarryItems:true,standardItems:[{id:'wpn_melee_long_sword',loadState:'equipped'},{id:'armor_chain_shirt',loadState:'equipped'},{id:'armor_shield_round',loadState:'equipped'}],attributes:{ST:9,KS:9,GS:7,RF:8,FF:6,WL:9,IT:6,IN:7,WN:7,CR:8},counters:{L:11,A:11,FO:6,M:2,GB:2,HS:6,FS:2,GL:3},skills:{'Nahkampf – schwere Waffen':9,'Verteidigung & Blocken':9,'Athletik & Schwimmen':8,'Strategie & Taktik':8,'Führung & Befehlsgewalt':8}},
+    {key:'spuerwolf',name:'Spürhund & Wolf',groupName:'animal',description:'Schnelles Rudel- oder Begleittier mit starken Sinnen, Fährtenarbeit und Nahkampfbiss.',canCarryItems:false,standardItems:[],attributes:{ST:6,KS:6,GS:8,RF:9,FF:2,WL:5,IT:2,IN:7,WN:10,CR:3},counters:{L:7,A:9,FO:5,M:2,GB:2,HS:2,FS:2,GL:2},skills:{'Nahkampf – Raufen & Ringen':7,'Fährtenlesen & Spurensuche':8,'Aufmerksamkeit & Wachsamkeit':8,'Vermeiden & Ausweichen':6}},
+    {key:'grosse-raubbestie',name:'Große Raubbestie',groupName:'monster',description:'Kräftige Bestie für gefährliche Wildnisbegegnungen, Jagd und körperliche Bedrohung.',canCarryItems:false,standardItems:[],attributes:{ST:11,KS:10,GS:8,RF:8,FF:2,WL:7,IT:2,IN:7,WN:8,CR:4},counters:{L:13,A:11,FO:4,M:2,GB:2,HS:2,FS:2,GL:2},skills:{'Nahkampf – Raufen & Ringen':10,'Athletik & Schwimmen':9,'Aufmerksamkeit & Wachsamkeit':7,'Einschüchtern & Zermürben':8}},
+    {key:'feentrickster',name:'Feenbote & Trickster',groupName:'fae',description:'Wendige, schwer greifbare Feenfigur für Täuschung, Verhandlung und übernatürliche Szenen.',canCarryItems:true,standardItems:[],attributes:{ST:3,KS:5,GS:10,RF:10,FF:8,WL:8,IT:7,IN:9,WN:8,CR:10},counters:{L:6,A:8,FO:9,M:7,GB:2,HS:4,FS:2,GL:4},skills:{'Trugbild-Magie & Illusionistik':8,'Betören & Verzaubern':8,'Vermeiden & Ausweichen':8,'Heimlichkeit & Schleichen':7}},
+    {key:'gebundener-geist',name:'Gebundener Geist',groupName:'spirit',description:'Orts- oder erinnerungsgebundene Erscheinung mit starkem Willen und übernatürlicher Wahrnehmung.',canCarryItems:false,standardItems:[],attributes:{ST:3,KS:8,GS:6,RF:7,FF:2,WL:11,IT:7,IN:9,WN:10,CR:6},counters:{L:8,A:2,FO:10,M:6,GB:2,HS:2,FS:5,GL:2},skills:{'Spiritismus & Geisterkunde':9,'Spiritismus & Seelenmagie':9,'Magiewahrnehmung & Wahrnehmung für Übernatürliches':9,'Meditation & mentaler Selbstschutz':8}},
+    {key:'untoter-waechter',name:'Untoter Wächter',groupName:'undead',description:'Zäher, furchtloser Grab- oder Ruinenwächter mit wenig Beweglichkeit und hoher Widerstandskraft.',canCarryItems:true,standardItems:[{id:'wpn_melee_kriegsspeer',loadState:'equipped'},{id:'armor_shield_holzschild',loadState:'equipped'}],attributes:{ST:9,KS:11,GS:4,RF:4,FF:3,WL:9,IT:3,IN:4,WN:6,CR:2},counters:{L:12,A:2,FO:3,M:2,GB:2,HS:2,FS:7,GL:2},skills:{'Nahkampf – schwere Waffen':8,'Verteidigung & Blocken':8,'Aufmerksamkeit & Wachsamkeit':5,'Nekromantie & Totenmagie':4}},
+    {key:'kultwirker',name:'Kultwirker',groupName:'dark',description:'Finstere Ritualfigur für Flüche, verbotene Nachforschungen und verdeckte Gegenspieler.',canCarryItems:true,standardItems:[{id:'wpn_melee_dagger',loadState:'equipped'},{id:'gear_lantern'},{id:'gear_writing_set'}],attributes:{ST:4,KS:6,GS:5,RF:6,FF:7,WL:10,IT:8,IN:7,WN:6,CR:7},counters:{L:7,A:6,FO:8,M:2,GB:2,HS:4,FS:10,GL:2},skills:{'Flüche & Blut-Hexerei':9,'Okkultismus & Arkane Kunde':8,'Heimlichkeit & Schleichen':6,'Überreden & Belügen':6}},
+    {key:'konstruktwaechter',name:'Konstruktwächter',groupName:'construct',description:'Massiver künstlicher Wächter für Werkstätten, Ruinen, Tore und magisch gesicherte Orte.',canCarryItems:false,standardItems:[],attributes:{ST:12,KS:13,GS:4,RF:5,FF:3,WL:8,IT:3,IN:3,WN:7,CR:2},counters:{L:14,A:2,FO:4,M:6,GB:2,HS:2,FS:2,GL:2},skills:{'Verteidigung & Blocken':9,'Nahkampf – Raufen & Ringen':9,'Aufmerksamkeit & Wachsamkeit':7,'Handwerk & Baukunst':4}}
   ];
   const creatureId=row=>row?.creature_id||row?.id||null;
   const archetypeId=row=>row?.archetype_id||row?.id||null;
@@ -220,13 +231,139 @@
   const creatureMoney=[['copper','Kupfer'],['silver','Silber'],['gold','Gold']];
   const creatureInventory=[['equipment','Ausrüstung'],['weapons','Waffen'],['armor','Rüstung'],['items','Weitere Gegenstände'],['rations','Rationen']];
   const plainObject=value=>!!value&&typeof value==='object'&&!Array.isArray(value);
-  const creatureStats=row=>plainObject(row?.stats)?row.stats:{};
+  const creatureStats=row=>plainObject(row?.npc_data)?row.npc_data:plainObject(row?.stats)?row.stats:{};
+  const NPC_SHEET_VERSION=1;
+  const npcEditorContexts=new WeakMap();
+  let activeNpcEditorContext=null,npcEditorBridgeInstalled=false;
+  const CREATURE_BUILDER_PRESENTATION_KEY='builderPresentationV1812';
+  const CREATURE_BUILDER_PRESENTATION_VERSION=1;
+  const CREATURE_BUILDER_FALLBACK_LAYOUT=[
+    ['auxProfile','NPC-Profil',12],['portrait','Porträt',6],['attributes','Grundwerte',6],['counters','Counter',6],
+    ['fatePath','Schicksalspfade & Synergien',12],['derived','Abgeleitete Werte',12],['skills','Fähigkeiten',12],
+    ['equipment','Ausrüstung',12],['armorSummary','Kampfwerte & Rüstung',12],['encumbrance','Gewicht & Tragekapazität',6],
+    ['rations','Rationen',6],['notes','Notizen',6],['effects','Aktive Effekte',12]
+  ];
+  function safeCreatureBuilderCard(card,index){
+    if(!plainObject(card)||typeof card.type!=='string'||!card.type.trim())return null;
+    if(typeof CARD_TYPES!=='undefined'&&plainObject(CARD_TYPES)&&!Object.prototype.hasOwnProperty.call(CARD_TYPES,card.type))return null;
+    const width=Math.max(1,Math.min(12,Number.isFinite(Number(card.width))?Math.round(Number(card.width)):12));
+    const printWidth=Math.max(1,Math.min(12,Number.isFinite(Number(card.printWidth))?Math.round(Number(card.printWidth)):12));
+    return{id:String(card.id||`creature-card-${index}-${card.type}`).slice(0,160),type:card.type.slice(0,80),title:String(card.title||card.type).slice(0,160),order:Number.isFinite(Number(card.order))?Number(card.order):index,width,printWidth,print:card.print!==false,collapsed:card.collapsed===true,breakBefore:card.breakBefore===true,breakAfter:card.breakAfter===true,description:String(card.description||'').slice(0,4000),data:plainObject(card.data)?structuredClone(card.data):{}};
+  }
+  function fallbackCreatureBuilderLayout(){return CREATURE_BUILDER_FALLBACK_LAYOUT.map(([type,title,width],index)=>safeCreatureBuilderCard({type,title,width,printWidth:12,order:index},index))}
+  function defaultCreatureBuilderLayout(){
+    if(typeof newAuxEntry==='function')try{return(newAuxEntry('npc','Wesen').layout||[]).map(safeCreatureBuilderCard).filter(Boolean)}catch{}
+    return fallbackCreatureBuilderLayout();
+  }
+  function creatureBuilderLayout(value,fallback=null){
+    const rows=(Array.isArray(value)?value:[]).slice(0,64).map(safeCreatureBuilderCard).filter(Boolean);
+    return rows.length?rows:(Array.isArray(fallback)&&fallback.length?fallback.map(safeCreatureBuilderCard).filter(Boolean):defaultCreatureBuilderLayout());
+  }
+  function creatureBuilderPresentation(stats){
+    const raw=plainObject(stats?.[CREATURE_BUILDER_PRESENTATION_KEY])?stats[CREATURE_BUILDER_PRESENTATION_KEY]:{};
+    return{...structuredClone(raw),version:CREATURE_BUILDER_PRESENTATION_VERSION,mode:raw.mode==='builder'?'builder':'form',layout:creatureBuilderLayout(raw.layout),profile:plainObject(raw.profile)?structuredClone(raw.profile):{}};
+  }
+  function creatureBuilderPresentationFromSnapshot(snapshot){
+    const profile={portrait:String(snapshot?.portrait||''),location:String(snapshot?.location||''),relationship:String(snapshot?.relationship||''),availability:String(snapshot?.availability||''),npcType:String(snapshot?.npcType||''),contactLevel:Math.max(0,Math.min(10,Number(snapshot?.contactLevel)||0))};
+    return{version:CREATURE_BUILDER_PRESENTATION_VERSION,mode:'builder',layout:creatureBuilderLayout(snapshot?.layout),profile};
+  }
+  function freshNpcSheet(name='Neues Wesen'){
+    const owner=typeof newAuxEntry==='function'?newAuxEntry('npc',name):{id:global.crypto?.randomUUID?.()||`npc-${Date.now()}`,type:'npc',name,attributes:{},counters:{},skills:{},equipment:[],money:{copper:0,silver:0,gold:0},rationTracker:{max:0,current:0,note:''},layout:defaultCreatureBuilderLayout()};
+    owner.npcSheetVersion=NPC_SHEET_VERSION;owner.type='npc';owner.accounting={...(plainObject(owner.accounting)?owner.accounting:{}),mode:'informational',costSource:'manual',manualCost:0,active:false,reason:'Eigenständiges Weltwesen'};
+    if(typeof ensureUniversalOwnerV173==='function')ensureUniversalOwnerV173(owner);
+    if(typeof ensureOwnerV174==='function')ensureOwnerV174(owner,true);
+    return owner;
+  }
+  function creatureToBuilderNpc(row,statsOverride=null){
+    const stats=plainObject(statsOverride)?statsOverride:creatureStats(row),canonical=plainObject(row?.npc_data)?row.npc_data:stats?.npcSheetVersion===NPC_SHEET_VERSION&&stats?.type==='npc'?stats:null,presentation=creatureBuilderPresentation(stats);
+    const owner=canonical?structuredClone(canonical):freshNpcSheet(row?.name||'Neues Wesen');
+    if(!canonical){
+      for(const key of ['portrait','description','notes','level','cbp','contactLevel','npcType','location','relationship','availability','player','age','gender','appearanceText','accounting'])if(stats[key]!==undefined)owner[key]=structuredClone(stats[key]);
+      owner.attributes={...(plainObject(owner.attributes)?owner.attributes:{}),...(plainObject(stats.attributes)?structuredClone(stats.attributes):{})};
+      owner.counters={...(plainObject(owner.counters)?owner.counters:{}),...(plainObject(stats.counters)?structuredClone(stats.counters):{})};
+      owner.skills={...(plainObject(owner.skills)?owner.skills:{}),...(plainObject(stats.skills)?structuredClone(stats.skills):{})};
+      const inventory=[];for(const key of ['equipment','weapons','armor','items'])for(const entry of Array.isArray(stats[key])?stats[key]:[])if(plainObject(entry)){const item=structuredClone(entry);if(!item.itemType)item.itemType=key==='weapons'?'weapon':key==='armor'?'armor':'gear';inventory.push(typeof normalizeItemV174==='function'?normalizeItemV174(item):item)}
+      owner.equipment=inventory;owner.money=plainObject(stats.money)?structuredClone(stats.money):owner.money;owner.rationTracker=plainObject(stats.rationTracker)?structuredClone(stats.rationTracker):owner.rationTracker;
+      for(const key of ['rations','advantages','disadvantages','activeEffectsV177','fatePath','fatePaths','fateSynergies','startPackage','origin','concept','summary','cardData','appearance'])if(stats[key]!==undefined)owner[key]=structuredClone(stats[key]);
+      const known=new Set(['portrait','description','notes','level','cbp','contactLevel','npcType','location','relationship','availability','player','age','gender','appearanceText','accounting','attributes','counters','skills','equipment','weapons','armor','items','money','rationTracker','rations','advantages','disadvantages','activeEffectsV177','fatePath','fatePaths','fateSynergies','startPackage','origin','concept','summary','cardData','appearance','layout',CREATURE_BUILDER_PRESENTATION_KEY]);
+      const unknown=Object.fromEntries(Object.entries(stats).filter(([key])=>!known.has(key)));
+      if(Object.keys(unknown).length)owner.extensions={...(plainObject(owner.extensions)?owner.extensions:{}),legacyCreatureStats:structuredClone(unknown)};
+      owner.layout=creatureBuilderLayout(Array.isArray(stats.layout)?stats.layout:presentation.layout,owner.layout);owner.portrait=stats.portrait||presentation.profile.portrait||owner.portrait||'';owner.location=stats.location||presentation.profile.location||owner.location||'';owner.relationship=stats.relationship||presentation.profile.relationship||owner.relationship||'';owner.availability=stats.availability||presentation.profile.availability||owner.availability||'';
+    }
+    owner.id=String(owner.id||creatureId(row)||global.crypto?.randomUUID?.()||`world-creature-${Date.now()}`);owner.type='npc';owner.npcSheetVersion=NPC_SHEET_VERSION;
+    owner.name=String(row?.name||owner.name||'Unbenanntes Wesen');owner.npcType=String(row?.species||owner.npcType||'Wesen');owner.weapons=[];owner.armor=[];owner.items=[];owner.v174ItemsMigrated=true;
+    owner.accounting={...(plainObject(owner.accounting)?owner.accounting:{}),mode:'informational',costSource:'manual',manualCost:0,active:false,reason:'Eigenständiges Weltwesen'};
+    if(typeof ensureUniversalOwnerV173==='function')ensureUniversalOwnerV173(owner);
+    if(typeof ensureOwnerV174==='function')ensureOwnerV174(owner,true);
+    return owner;
+  }
+  function serializeNpcSheet(owner){
+    const sheet=structuredClone(owner);sheet.npcSheetVersion=NPC_SHEET_VERSION;sheet.type='npc';sheet.weapons=[];sheet.armor=[];sheet.items=[];sheet.v174ItemsMigrated=true;
+    sheet.equipment=(Array.isArray(sheet.equipment)?sheet.equipment:[]).map(item=>typeof normalizeItemV174==='function'?normalizeItemV174(item):item);
+    delete sheet[CREATURE_BUILDER_PRESENTATION_KEY];return sheet;
+  }
+  function installNpcEditorBridge(){
+    if(npcEditorBridgeInstalled||typeof renderCard!=='function'||typeof updateState!=='function'||typeof saveOwnerV173!=='function')return false;
+    npcEditorBridgeInstalled=true;
+    const base={updateState,saveOwner:saveOwnerV173,saveAux:typeof saveAux==='function'?saveAux:null,renderCards:typeof renderCards==='function'?renderCards:null,renderAuxTabs:typeof renderAuxTabs==='function'?renderAuxTabs:null};
+    updateState=function(mutator,options={}){const context=activeNpcEditorContext;if(!context)return base.updateState(mutator,options);mutator(context.owner,null);context.markDirty();if(options.render!==false)context.render()};
+    saveOwnerV173=function(owner,rerender=false){const context=npcEditorContexts.get(owner)||activeNpcEditorContext;if(!context)return base.saveOwner(owner,rerender);context.markDirty();if(rerender)context.render()};
+    if(base.saveAux)saveAux=function(){const context=activeNpcEditorContext;if(!context)return base.saveAux();context.markDirty()};
+    if(base.renderCards)renderCards=function(){const context=activeNpcEditorContext;if(!context)return base.renderCards();context.render()};
+    if(base.renderAuxTabs)renderAuxTabs=function(){const context=activeNpcEditorContext;if(!context)return base.renderAuxTabs();context.syncMeta()};
+    global.EberosNpcEditorContextV1813=Object.freeze({version:NPC_SHEET_VERSION});return true;
+  }
+  function bindNpcEditorContext(root,context){
+    installNpcEditorBridge();npcEditorContexts.set(context.owner,context);
+    const activate=()=>{activeNpcEditorContext=context;global.setTimeout(()=>{if(activeNpcEditorContext===context)activeNpcEditorContext=null},0)};
+    if(root.__npcEditorActivation)for(const eventName of ['pointerdown','click','input','change','keydown'])root.removeEventListener(eventName,root.__npcEditorActivation,true);
+    root.__npcEditorActivation=activate;for(const eventName of ['pointerdown','click','input','change','keydown'])root.addEventListener(eventName,activate,true);
+  }
+  function mountNpcSheetEditor(root,owner,{beforeRender=null,onDirty=()=>{},syncMeta=()=>{},onError=()=>{}}={}){
+    const context={owner,root,markDirty:onDirty,syncMeta};
+    context.render=()=>{
+      clear(root);if(typeof beforeRender==='function')beforeRender(root);
+      try{const cards=[...(owner.layout||[])].sort((a,b)=>(+a.order||0)-(+b.order||0));for(const card of cards){const node=renderCard(card,owner);node.dataset.gmCreatureBuilderCard=card.type;root.append(node)}root.dataset.gmCreatureBuilderOwnerType=owner.type;root.dataset.gmCreatureBuilderCardCount=String(cards.length)}catch(error){onError(error)}
+    };
+    bindNpcEditorContext(root,context);context.render();return context;
+  }
   function editableStatMap(stats,key){
     if(stats[key]!==null&&stats[key]!==undefined&&!plainObject(stats[key]))throw new Error(`Die vorhandenen ${key}-Daten haben ein unbekanntes Format und wurden nicht überschrieben.`);
     stats[key]=plainObject(stats[key])?stats[key]:{};return stats[key];
   }
   const valueText=value=>value===null||value===undefined?'':String(value);
   function builderSkillCatalog(){return typeof SKILLS==='undefined'||!Array.isArray(SKILLS)?[]:SKILLS.filter(skill=>skill&&typeof skill.id==='string'&&typeof skill.name==='string')}
+  function standardItemCatalog(){return Array.isArray(global.EBEROS_ITEM_DB?.items)?global.EBEROS_ITEM_DB.items:[]}
+  function setItemCatalog(){return(Array.isArray(global.EBEROS_MSE_ITEM_DB_V15?.items)?global.EBEROS_MSE_ITEM_DB_V15.items:[]).filter(entry=>['weapon','armor','gear'].includes(entry?.assetKind)&&entry.isCompletionReward!==true)}
+  function itemCatalog(source){return source==='set'?setItemCatalog():standardItemCatalog()}
+  function itemCatalogCategories(source){const database=source==='set'?global.EBEROS_MSE_ITEM_DB_V15:global.EBEROS_ITEM_DB;return Array.isArray(database?.categories)?database.categories:[]}
+  function itemCatalogVersion(source){const database=source==='set'?global.EBEROS_MSE_ITEM_DB_V15:global.EBEROS_ITEM_DB;return String(database?.meta?.version||'unbekannt')}
+  function itemCatalogLabel(source){return source==='set'?'Set-Datenbank':'Standard-Itemdatenbank'}
+  function itemInventoryKey(entry){return entry?.itemType==='weapon'||entry?.assetKind==='weapon'?'weapons':entry?.itemType==='armor'||entry?.assetKind==='armor'?'armor':'equipment'}
+  function catalogItem(source,id){return itemCatalog(source).find(entry=>entry?.id===id)||null}
+  function catalogReference(source,entry,{quantity=1,loadState='carried',storageLocation=''}={}){
+    return{catalogSource:source,catalogId:entry.id,quantity,loadState:['carried','equipped','stored'].includes(loadState)?loadState:'carried',storageLocation:String(storageLocation||'').slice(0,400)};
+  }
+  function templateItemReferences(raw){
+    const rows=raw?.catalogLoadout?.items;if(rows===undefined)return[];if(!Array.isArray(rows))throw new Error('Die Item-Verknüpfungen der Vorlage haben kein unterstütztes Format.');
+    const result=[];
+    for(const row of rows){
+      if(!plainObject(row)||row.catalogSource!=='standard'||typeof row.catalogId!=='string')throw new Error('Archetypen dürfen nur gültige Verknüpfungen zur Standard-Itemdatenbank enthalten.');
+      const source=catalogItem('standard',row.catalogId);if(!source)throw new Error(`Das Standarditem ${row.catalogId} ist nicht mehr im Katalog vorhanden.`);
+      result.push(catalogReference('standard',source,{quantity:integerStat(String(row.quantity??1),`Anzahl ${source.name}`,1,1000000),loadState:row.loadState,storageLocation:row.storageLocation}));
+    }
+    return result;
+  }
+  function catalogLoadoutSummary(raw){
+    const refs=templateItemReferences(raw);if(!refs.length)return'keine Standarditems';
+    return refs.map(ref=>{const entry=catalogItem('standard',ref.catalogId);return`${ref.quantity>1?`${ref.quantity}× `:''}${entry?.name||ref.catalogId}`}).join(', ');
+  }
+  function catalogInventoryEntry(reference){
+    const source=catalogItem(reference.catalogSource,reference.catalogId);if(!source)throw new Error(`Der Gegenstand ${reference.catalogId} ist im ${itemCatalogLabel(reference.catalogSource)} nicht mehr vorhanden.`);
+    if(typeof global.crypto?.randomUUID!=='function')throw new Error('Dieses Gerät kann keine sichere Gegenstandskennung erzeugen.');
+    const instanceId=global.crypto.randomUUID(),quantity=integerStat(String(reference.quantity??1),`Anzahl ${source.name}`,1,1000000),loadState=['carried','equipped','stored'].includes(reference.loadState)?reference.loadState:'carried';
+    return{...structuredClone(source),id:instanceId,instanceId,catalogId:source.id,catalogSource:reference.catalogSource,catalogVersion:itemCatalogVersion(reference.catalogSource),quantity,qty:quantity,cbpCost:Number(source.cbpCost)||0,cbp:Number(source.cbpCost)||0,loadState,equippedQuantity:loadState==='equipped'?quantity:0,active:true,storageLocation:String(reference.storageLocation||'').slice(0,400),notes:''};
+  }
   function statNumber(marker,id){const control=input('number',marker,{step:1});control.dataset.statId=id;control.inputMode='numeric';return control}
   function statValue(control,value){control.value=valueText(value);control.dataset.originalValue=control.value}
   function statChanged(control){return control.value!==control.dataset.originalValue}
@@ -236,7 +373,7 @@
   }
   function portableCreatureValues(raw){
     if(!plainObject(raw))throw new Error('Diese Werte haben kein unterstütztes Vorlagenformat.');
-    const result={attributes:{},counters:{},skills:{}};
+    const result={attributes:{},counters:{},skills:{},inventoryProfile:{}};
     if(raw.attributes!==undefined&&!plainObject(raw.attributes))throw new Error('Die Grundwerte können nicht sicher als Vorlage gelesen werden.');
     if(raw.counters!==undefined&&!plainObject(raw.counters))throw new Error('Die Counter können nicht sicher als Vorlage gelesen werden.');
     if(raw.skills!==undefined&&!plainObject(raw.skills))throw new Error('Die Fähigkeiten können nicht sicher als Vorlage gelesen werden.');
@@ -255,7 +392,19 @@
       if(!skill)throw new Error(`Fähigkeit ${id} hat kein unterstütztes Vorlagenformat.`);
       result.skills[id]={level:integerStat(String(skill.level??0),`Fähigkeit ${id}`,0,25)};
     }
+    if(raw.inventoryProfile!==undefined&&!plainObject(raw.inventoryProfile))throw new Error('Die Inventarfähigkeit kann nicht sicher als Vorlage gelesen werden.');
+    if(typeof raw.inventoryProfile?.canCarryItems==='boolean')result.inventoryProfile.canCarryItems=raw.inventoryProfile.canCarryItems;
     return result;
+  }
+  function preparedArchetypeTemplate(preset){
+    const skills={},ids=new Map(builderSkillCatalog().map(skill=>[skill.name,skill.id]));
+    for(const [name,level] of Object.entries(preset.skills||{})){const id=ids.get(name);if(id)skills[id]={level}}
+    const items=(preset.standardItems||[]).map(row=>{const entry=catalogItem('standard',row.id);if(!entry)throw new Error(`Vorbereitetes Standarditem ${row.id} fehlt.`);return catalogReference('standard',entry,{quantity:row.quantity,loadState:row.loadState,storageLocation:row.storageLocation})});
+    return{attributes:structuredClone(preset.attributes),counters:Object.fromEntries(Object.entries(preset.counters).map(([id,max])=>[id,{max,current:max}])),skills,inventoryProfile:{canCarryItems:preset.canCarryItems!==false},catalogLoadout:{version:1,items},preparedArchetype:{key:preset.key,version:2}};
+  }
+  function matchingPreparedArchetype(state,preset){
+    const normalized=String(preset.name).trim().toLocaleLowerCase('de-DE');
+    return state.archetypes.find(row=>activeRow(row)&&(row.template_data?.preparedArchetype?.key===preset.key||String(row.name||'').trim().toLocaleLowerCase('de-DE')===normalized));
   }
   function templateValueCount(core){return creatureAttributes.filter(([id])=>core.attributes?.[id]!==undefined).length+creatureCounters.filter(([id])=>core.counters?.[id]!==undefined).length+Object.keys(core.skills||{}).length}
   function templateValueSummary(core){return`${Object.keys(core.attributes||{}).length} Grundwerte, ${Object.keys(core.counters||{}).length} Counter, ${Object.keys(core.skills||{}).length} Regelfähigkeiten`}
@@ -272,6 +421,54 @@
         }
       }
     }
+    if(typeof core.inventoryProfile?.canCarryItems==='boolean'){
+      const profile=editableStatMap(stats,'inventoryProfile');profile.canCarryItems=core.inventoryProfile.canCarryItems;
+    }
+  }
+  function makeItemCatalogPicker(source,onAdd){
+    const details=document.createElement('details');details.className='gm-player-preview';details.dataset.gmItemCatalogPicker=source;
+    const summary=document.createElement('summary');summary.textContent=`${itemCatalogLabel(source)} (${itemCatalog(source).length})`;details.append(summary);
+    const search=input('search','gmItemCatalogSearch',{placeholder:'Name oder Beschreibung suchen'}),category=select('gmItemCatalogCategory',[['','Alle Kategorien']]),choice=select('gmItemCatalogChoice',[['','Gegenstand auswählen']]);
+    search.dataset.catalogSource=source;category.dataset.catalogSource=source;choice.dataset.catalogSource=source;
+    for(const definition of itemCatalogCategories(source)){const option=document.createElement('option');option.value=definition.id;option.textContent=String(definition.label||definition.id).replace(/^MSE-Set\s*·?\s*/i,'');category.append(option)}
+    const quantity=input('number','gmItemCatalogQuantity',{min:1,max:1000000,step:1,value:'1'});quantity.dataset.catalogSource=source;
+    const load=select('gmItemCatalogLoad',[['carried','Mitgeführt'],['equipped','Am Körper / ausgerüstet'],['stored','Verstaut / verborgen']]);load.dataset.catalogSource=source;
+    const storage=input('text','gmItemCatalogStorage',{maxLength:400,placeholder:'optional'});storage.dataset.catalogSource=source;
+    const status=note('');status.dataset.gmItemCatalogStatus=source;
+    const refresh=()=>{
+      const query=String(search.value||'').trim().toLocaleLowerCase('de-DE'),selectedCategory=category.value,rows=itemCatalog(source).filter(entry=>(!selectedCategory||entry.category===selectedCategory)&&(!query||[entry.name,entry.description,entry.subcategory,entry.sourceRecord?.cardNumber].filter(Boolean).join(' ').toLocaleLowerCase('de-DE').includes(query)));
+      const previous=choice.value;clear(choice);const empty=document.createElement('option');empty.value='';empty.textContent=rows.length?'Gegenstand auswählen':'Keine passenden Gegenstände';choice.append(empty);
+      for(const entry of rows.slice(0,120)){const option=document.createElement('option');option.value=entry.id;option.textContent=`${entry.name}${entry.sourceRecord?.cardNumber?` · Karte ${entry.sourceRecord.cardNumber}`:''}`;choice.append(option)}
+      if(rows.some(entry=>entry.id===previous))choice.value=previous;
+      text(status,rows.length>120?`${rows.length} Treffer · die ersten 120 werden angezeigt.`:`${rows.length} Treffer.`);
+    };
+    search.addEventListener('input',refresh);category.addEventListener('change',refresh);
+    const add=button(source==='set'?'Set-Item vormerken':'Standarditem vormerken',()=>{
+      const entry=catalogItem(source,choice.value);if(!entry){text(status,'Bitte wähle zuerst einen Gegenstand.');return}
+      try{const reference=catalogReference(source,entry,{quantity:integerStat(quantity.value,`Anzahl ${entry.name}`,1,1000000),loadState:load.value,storageLocation:storage.value.trim()});onAdd(reference);quantity.value='1';storage.value='';text(status,`${entry.name} wurde vorgemerkt.`)}catch(error){text(status,error.message)}
+    });
+    details.append(labelControl('Suche',search),labelControl('Kategorie',category),labelControl('Gegenstand',choice),labelControl('Anzahl',quantity),labelControl('Tragezustand',load),labelControl('Lagerort / Versteck',storage),add,status);refresh();return details;
+  }
+  function queueCreatureCatalogReference(form,reference,{sourceArchetypeId=null}={}){
+    const source=catalogItem(reference.catalogSource,reference.catalogId);if(!source)throw new Error('Der ausgewählte Kataloggegenstand ist nicht mehr verfügbar.');
+    form.__inventoryAddQueue=Array.isArray(form.__inventoryAddQueue)?form.__inventoryAddQueue:[];
+    form.__inventoryAddQueue.push({...reference,key:itemInventoryKey(source),sourceArchetypeId});renderCreatureInventoryDrafts(form);
+  }
+  function renderArchetypeCatalogLoadout(form){
+    const list=field(form,'[data-gm-archetype-catalog-items]');clear(list);const refs=Array.isArray(form.__catalogLoadoutDraft)?form.__catalogLoadoutDraft:[];
+    if(!refs.length){list.append(item('Noch kein Standarditem mit dieser Vorlage verbunden.'));return}
+    for(const [index,ref] of refs.entries()){
+      const source=catalogItem('standard',ref.catalogId),label=source?.name||ref.catalogId;
+      list.append(item(`${ref.quantity>1?`${ref.quantity}× `:''}${label} · ${ref.loadState==='equipped'?'ausgerüstet':ref.loadState==='stored'?'verstaut':'mitgeführt'}`,button('Verknüpfung entfernen',()=>{refs.splice(index,1);renderArchetypeCatalogLoadout(form)})));
+    }
+  }
+  function addArchetypeCatalogReference(form,reference){
+    if(reference.catalogSource!=='standard')throw new Error('Archetypen können nur mit der Standard-Itemdatenbank verbunden werden.');
+    form.__catalogLoadoutDraft=Array.isArray(form.__catalogLoadoutDraft)?form.__catalogLoadoutDraft:[];form.__catalogLoadoutDraft.push(reference);renderArchetypeCatalogLoadout(form);
+  }
+  function updateCreatureInventoryCapability(form){
+    const canCarry=field(form,'[data-gm-creature-can-carry-items]')?.checked!==false,controls=field(form,'[data-gm-creature-inventory-catalogs]'),manual=field(form,'[data-gm-creature-inventory-add]'),hint=field(form,'[data-gm-creature-inventory-capability-hint]');
+    show(controls,canCarry);show(manual,canCarry);text(hint,canCarry?'Dieses Wesen kann Standarditems und einzelne Set-Items als unabhängige Inventarpositionen erhalten.':'Das bestehende Inventar bleibt erhalten, aber neue Gegenstände können erst nach Aktivierung vorgemerkt werden.');
   }
   function creatureInventoryRow(key,index,entry){
     const row=document.createElement('li');row.dataset.gmCreatureInventoryRow='';row.dataset.inventoryKey=key;row.dataset.inventoryIndex=String(index);
@@ -295,7 +492,7 @@
     const quantity=integerStat(quantityText,'Anzahl',1,1000000),description=field(form,'[data-gm-creature-new-item-description]')?.value||'';
     const storageLocation=field(form,'[data-gm-creature-new-item-storage]')?.value.trim()||'';
     if(storageLocation.length>400)throw new Error('Der Lagerort darf höchstens 400 Zeichen haben.');
-    const draft={key,name,quantity,description,storageLocation};
+    const draft={key,name,quantity,description,storageLocation,loadState:'carried'};
     form.__inventoryAddQueue=Array.isArray(form.__inventoryAddQueue)?form.__inventoryAddQueue:[];
     form.__inventoryAddQueue.push(draft);
     renderCreatureInventoryDrafts(form);
@@ -306,12 +503,15 @@
     const list=field(form,'[data-gm-creature-inventory-drafts]');clear(list);
     const drafts=form.__inventoryAddQueue||[];
     if(!drafts.length){list.append(item('Noch kein neuer Gegenstand vorgemerkt.'));return}
-    for(const [index,draft] of drafts.entries())list.append(item(`${new Map(creatureInventory).get(draft.key)}: ${draft.quantity}× ${draft.name}${draft.storageLocation?` · ${draft.storageLocation}`:''}`,
-      button('Vormerkung entfernen',()=>{drafts.splice(index,1);renderCreatureInventoryDrafts(form)})));
+    for(const [index,draft] of drafts.entries()){
+      const catalog=draft.catalogId?catalogItem(draft.catalogSource,draft.catalogId):null,name=catalog?.name||draft.name||draft.catalogId||'Unbenannter Gegenstand',origin=draft.catalogSource?` · ${itemCatalogLabel(draft.catalogSource)}`:'';
+      list.append(item(`${new Map(creatureInventory).get(draft.key)}: ${draft.quantity}× ${name}${origin}${draft.storageLocation?` · ${draft.storageLocation}`:''}`,
+        button('Vormerkung entfernen',()=>{drafts.splice(index,1);renderCreatureInventoryDrafts(form)})));
+    }
   }
-  function makeCreatureStatsEditor(form){
-    const details=document.createElement('details');details.dataset.gmCreatureStats='';details.className='gm-creature-values-v182';details.open=true;
-    const summary=document.createElement('summary');summary.textContent='Grundwerte, Counter, Fähigkeiten, Effekte, Geld und Inventar';details.append(summary);
+  function makeCreatureStatsEditor(form,container=form){
+    const details=document.createElement('details');details.dataset.gmCreatureStats='';
+    const summary=document.createElement('summary');summary.textContent='Werte, Fähigkeiten und Effekte';details.append(summary);
     details.append(note('Alle Felder sind optional. Nur geänderte Werte werden gespeichert. Nicht angezeigte Daten und Regelmodule bleiben unverändert.'));
     const attributes=document.createElement('div');attributes.dataset.gmCreatureAttributes='';attributes.className='grid two';details.append(heading('h6','Grundwerte'),attributes);
     for(const [id,label] of creatureAttributes)attributes.append(labelControl(`${label} (${id})`,statNumber('gmCreatureAttribute',id)));
@@ -335,7 +535,12 @@
     for(const [id,label] of creatureMoney)money.append(labelControl(label,statNumber('gmCreatureCoin',id)));
     const inventory=document.createElement('div');inventory.dataset.gmCreatureInventory='';details.append(heading('h6','Inventar und Ausrüstung'),inventory);
     inventory.append(note('Gegenstände können hier geändert oder für das Wesen vorgemerkt werden. Speichern erfolgt zusammen mit den Wesenwerten. Unbekannte Zusatzdaten und gebundene Effekte bleiben erhalten.'));
+    const canCarry=input('checkbox','gmCreatureCanCarryItems');canCarry.checked=true;canCarry.addEventListener('change',()=>updateCreatureInventoryCapability(form));inventory.append(labelControl('Dieses Wesen kann Gegenstände tragen oder verwenden',canCarry));
+    const capabilityHint=note('');capabilityHint.dataset.gmCreatureInventoryCapabilityHint='';inventory.append(capabilityHint);
     const inventoryList=document.createElement('ul');inventoryList.dataset.gmCreatureInventoryList='';inventory.append(inventoryList);
+    const inventoryCatalogs=document.createElement('div');inventoryCatalogs.dataset.gmCreatureInventoryCatalogs='';
+    inventoryCatalogs.append(note('Standarditems und einzelne physische Set-Gegenstandskarten werden anhand ihrer stabilen Katalog-ID kopiert. Set-Abschlusskarten, Begleiter, Fahrzeuge, Orte und Zustände sind hier bewusst ausgeschlossen.'));
+    inventoryCatalogs.append(makeItemCatalogPicker('standard',reference=>queueCreatureCatalogReference(form,reference)),makeItemCatalogPicker('set',reference=>queueCreatureCatalogReference(form,reference)));inventory.append(inventoryCatalogs);
     inventory.append(heading('h6','Neuen Gegenstand vormerken'));
     const inventoryAdd=document.createElement('div');inventoryAdd.dataset.gmCreatureInventoryAdd='';
     inventoryAdd.append(
@@ -349,7 +554,7 @@
     const inventoryError=note('','notice error');inventoryError.dataset.gmCreatureInventoryError='';inventoryError.hidden=true;inventoryAdd.append(inventoryError);
     inventory.append(inventoryAdd);
     const inventoryDrafts=document.createElement('ul');inventoryDrafts.dataset.gmCreatureInventoryDrafts='';inventory.append(inventoryDrafts);
-    form.append(details);return{details,skillList,skillChoice,effectList,inventoryList};
+    container.append(details);updateCreatureInventoryCapability(form);return{details,skillList,skillChoice,effectList,inventoryList,canCarry,inventoryCatalogs};
   }
   function creatureSkillRow(id,source){
     const skill=builderSkillCatalog().find(entry=>entry.id===id),data=plainObject(source)?source:typeof source==='number'?{level:source}:{};
@@ -392,6 +597,8 @@
     }
     const money=plainObject(stats.money)?stats.money:{};
     for(const control of form.querySelectorAll('[data-gm-creature-coin]'))statValue(control,money[control.dataset.statId]);
+    const canCarry=field(form,'[data-gm-creature-can-carry-items]'),explicitCapability=stats.inventoryProfile?.canCarryItems;
+    canCarry.checked=typeof explicitCapability==='boolean'?explicitCapability:true;canCarry.dataset.originalValue=String(canCarry.checked);updateCreatureInventoryCapability(form);
     const inventoryList=field(form,'[data-gm-creature-inventory-list]');clear(inventoryList);form.__inventoryAddQueue=[];renderCreatureInventoryDrafts(form);
     const inventoryError=field(form,'[data-gm-creature-inventory-error]');text(inventoryError,'');show(inventoryError,false);
     let inventoryCount=0;
@@ -409,6 +616,9 @@
     if(row?.stats!==null&&row?.stats!==undefined&&!plainObject(row.stats))throw new Error('Die vorhandenen Wesenwerte haben ein unbekanntes Format und wurden nicht überschrieben.');
     const stats=structuredClone(creatureStats(row));
     if(templateCore)overlayTemplateValues(stats,templateCore);
+    const canCarry=field(form,'[data-gm-creature-can-carry-items]');
+    if(canCarry&&String(canCarry.checked)!==canCarry.dataset.originalValue){const profile=editableStatMap(stats,'inventoryProfile');profile.canCarryItems=canCarry.checked}
+    if(canCarry?.checked===false&&(form.__inventoryAddQueue||[]).length)throw new Error('Aktiviere zuerst, dass dieses Wesen Gegenstände tragen oder verwenden kann.');
     for(const control of form.querySelectorAll('[data-gm-creature-attribute]'))if(statChanged(control)){
       const attributes=editableStatMap(stats,'attributes'),id=control.dataset.statId;
       if(control.value==='')delete attributes[id];else attributes[id]=integerStat(control.value,`Grundwert ${id}`,1,25);
@@ -463,16 +673,52 @@
       stats[key][index]=next;
     }
     for(const draft of form.__inventoryAddQueue||[]){
-      if(typeof global.crypto?.randomUUID!=='function')throw new Error('Dieses Gerät kann keine sichere Gegenstandskennung erzeugen.');
-      const instanceId=global.crypto.randomUUID(),entry={id:instanceId,instanceId,catalogId:'',name:draft.name,
-        itemType:draft.key==='weapons'?'weapon':draft.key==='armor'?'armor':'gear',category:'custom',description:draft.description,
-        quantity:draft.quantity,qty:draft.quantity,weightKg:null,valueCopper:0,cbpCost:0,cbp:0,loadState:'carried',
-        equippedQuantity:0,active:true,storageLocation:draft.storageLocation,notes:''};
+      let entry;
+      if(draft.catalogId)entry=catalogInventoryEntry(draft);
+      else{
+        if(typeof global.crypto?.randomUUID!=='function')throw new Error('Dieses Gerät kann keine sichere Gegenstandskennung erzeugen.');
+        const instanceId=global.crypto.randomUUID();entry={id:instanceId,instanceId,catalogId:'',catalogSource:'custom',name:draft.name,
+          itemType:draft.key==='weapons'?'weapon':draft.key==='armor'?'armor':'gear',category:'custom',description:draft.description,
+          quantity:draft.quantity,qty:draft.quantity,weightKg:null,valueCopper:0,cbpCost:0,cbp:0,loadState:draft.loadState||'carried',
+          equippedQuantity:0,active:true,storageLocation:draft.storageLocation,notes:''};
+      }
       if(stats[draft.key]!==undefined&&!Array.isArray(stats[draft.key]))throw new Error('Das vorhandene Weseninventar hat ein unbekanntes Format und wurde nicht überschrieben.');
       stats[draft.key]=Array.isArray(stats[draft.key])?stats[draft.key]:[];stats[draft.key].push(entry);
     }
+    const mode=field(form,'[data-gm-creature-view-mode]')?.value==='builder'?'builder':'form';
+    if(mode==='builder'||plainObject(stats[CREATURE_BUILDER_PRESENTATION_KEY])){
+      const presentation=creatureBuilderPresentation(stats);
+      stats[CREATURE_BUILDER_PRESENTATION_KEY]={...presentation,version:CREATURE_BUILDER_PRESENTATION_VERSION,mode,layout:creatureBuilderLayout(presentation.layout)};
+    }
     return stats;
   }
+
+  function currentCreaturePreviewRecord(state){
+    const ui=state.creatureUi,form=ui?.creatureForm,row=state.creatures.find(entry=>activeRow(entry)&&creatureId(entry)===state.selectedCreatureId),draft=row?null:state.creatureImportDraft,source=row||draft||{};
+    const stats=editedCreatureStats(form,source,form.__archetypeApply?.core||null);
+    return{...source,name:field(form,'[data-gm-creature-name]').value.trim()||source.name||'Unbenanntes Wesen',species:field(form,'[data-gm-creature-species]').value.trim()||source.species||'Wesen',public_summary:field(form,'[data-gm-creature-summary]').value,gm_notes:field(form,'[data-gm-creature-notes]').value,stats};
+  }
+  function markCreatureNpcDirty(state){
+    const ui=state.creatureUi,form=ui?.creatureForm;if(!form)return;
+    form.__npcDirty=true;text(ui.creatureBuilderStatus,'Ungespeicherte Änderungen am gemeinsamen NPC-Dokument. „Wesen speichern“ schreibt Werte, Karten und Layout mit Revisionsprüfung.');
+  }
+  function syncCreatureMetaFromNpc(state){
+    const form=state.creatureUi?.creatureForm,owner=form?.__npcOwner;if(!form||!owner)return;
+    const name=field(form,'[data-gm-creature-name]'),species=field(form,'[data-gm-creature-species]');
+    if(name&&name.value!==owner.name)name.value=owner.name||'';if(species&&species.value!==owner.npcType)species.value=owner.npcType||'';
+  }
+  function addCreatureNpcCard(state){
+    const ui=state.creatureUi,owner=ui?.creatureForm?.__npcOwner,type=ui?.creatureCardType?.value;if(!owner||!type||typeof cardObject!=='function'||typeof CARD_TYPES==='undefined')return;
+    if(type!=='divider'&&owner.layout.some(card=>card.type===type)){text(state.message,`Die NPC-Karte „${CARD_TYPES[type]}“ ist bereits vorhanden.`);return}
+    owner.layout.push(cardObject(type,owner.layout.length,12));markCreatureNpcDirty(state);renderCreatureNpcWindow(state);
+  }
+  function renderCreatureNpcWindow(state){
+    const ui=state.creatureUi,form=ui?.creatureForm,root=ui?.creatureBuilderCards,status=ui?.creatureBuilderStatus,owner=form?.__npcOwner;if(!root||!status||!owner)return;
+    if(typeof renderCard!=='function'){root.append(note('Das gemeinsame NPC-Fenster konnte in dieser App-Sitzung nicht geladen werden.','notice error'));return}
+    mountNpcSheetEditor(root,owner,{beforeRender:target=>target.append(ui.creatureWorldCard),onDirty:()=>markCreatureNpcDirty(state),syncMeta:()=>syncCreatureMetaFromNpc(state),onError:error=>{root.append(note(`NPC-Fenster konnte nicht vollständig dargestellt werden: ${error.message}`,'notice error'));text(status,'Das Wesen wurde nicht verändert. Prüfe die vorhandenen Daten oder verwende eine kompatible App-Fassung.')}});
+    if(!form.__npcDirty)text(status,'Echtes NPC-Fenster: Alle Karten, Werte, Gegenstände und das Layout sind direkt bearbeitbar. Gespeichert wird als Weltwesen.');
+  }
+  function renderCreaturePresentation(state){renderCreatureNpcWindow(state)}
 
   function resetCreatureWorkspace(state){
     state.creatureLoadSerial=(state.creatureLoadSerial||0)+1;
@@ -491,14 +737,20 @@
     const status=note('Wesen werden geladen …');status.setAttribute('role','status');panel.append(status);
     const retry=button('Wesen erneut laden',()=>loadCreatureWorkspace(state,{force:true}));retry.hidden=true;panel.append(retry);
 
+    const preparedSection=document.createElement('details');preparedSection.className='gm-player-preview';preparedSection.dataset.gmPreparedSection='';
+    const preparedSummary=document.createElement('summary');preparedSummary.textContent=`Vorbereitete Archetypen (${preparedArchetypes.length})`;
+    preparedSection.append(preparedSummary,note('Diese sofort nutzbaren Startvorlagen decken Alltag, Kampf, Tiere und übernatürliche Wesen ab. Mit „In diese Welt übernehmen“ entsteht eine eigene, frei bearbeitbare Kopie; noch kein Wesen wird angelegt.'));
+    const preparedArchetypeList=document.createElement('ul');preparedArchetypeList.dataset.gmPreparedArchetypes='';preparedSection.append(preparedArchetypeList);panel.append(preparedSection);
+
     const creatureSection=document.createElement('section');creatureSection.className='gm-player-preview';
     creatureSection.append(heading('h4','Wesen dieser Welt'));
-    const creatureList=document.createElement('ul');creatureSection.append(creatureList);
-    const newCreatureButton=button('Neues Wesen anlegen',()=>{state.selectedCreatureId=null;state.creatureImportDraft=null;renderCreatureForm(state);const form=state.creatureUi?.creatureForm,name=field(form,'[data-gm-creature-name]');form?.scrollIntoView?.({block:'nearest'});name?.focus?.({preventScroll:true});text(state.message,'Das Formular für ein neues Wesen ist bereit.')});creatureSection.append(newCreatureButton);
+    const creatureList=document.createElement('ul');creatureList.dataset.gmCreatureList='';creatureSection.append(creatureList);
+    const newCreatureButton=button('Neues Wesen anlegen',()=>{state.selectedCreatureId=null;state.creatureImportDraft=null;renderCreatureForm(state);const form=state.creatureUi?.creatureForm,name=field(form,'[data-gm-creature-name]');form?.scrollIntoView?.({block:'nearest'});name?.focus?.({preventScroll:true});text(state.message,'Das NPC-Fenster für ein neues Wesen ist bereit.')});creatureSection.append(newCreatureButton);
     const creatureForm=document.createElement('form');creatureForm.dataset.gmCreatureForm='';
     const creatureFormHeading=heading('h5','Neues Wesen anlegen');creatureForm.append(creatureFormHeading);
     const creatureImportHint=note('');creatureImportHint.hidden=true;creatureForm.append(creatureImportHint);
-    creatureForm.append(
+    const creatureEditFields=document.createElement('div');creatureEditFields.dataset.gmCreatureEditFields='';creatureEditFields.style.cssText='display:grid;gap:.65rem;min-width:0';
+    creatureEditFields.append(
       labelControl('Name des Wesens',input('text','gmCreatureName',{required:true,maxLength:120})),
       labelControl('Spezies / Wesenart',input('text','gmCreatureSpecies',{required:true,maxLength:120})),
       labelControl('Archetyp (Vorlage)',select('gmCreatureArchetype',[['','Keine Vorlage']])),
@@ -506,12 +758,28 @@
       labelControl('Öffentliche Grundinformation (noch nicht automatisch freigegeben)',textarea('gmCreatureSummary',4000)),
       labelControl('Geheime Spielleitungsnotizen',textarea('gmCreatureNotes',100000))
     );
-    const creatureTemplateApply=button('Werte der gewählten Vorlage als Entwurf übernehmen',()=>stageArchetypeValuesForCreature(state));creatureTemplateApply.disabled=true;creatureTemplateApply.title='Wähle zuerst einen Archetyp.';creatureForm.append(creatureTemplateApply);
-    const creatureTemplateHint=note('Die Auswahl eines Archetyps allein ändert keine Werte. Eine bewusste Übernahme betrifft nur Grundwerte, Counter und Regelfähigkeiten; vorhandenes Inventar, Geld und Effekte bleiben erhalten.');creatureTemplateHint.dataset.gmCreatureTemplateHint='';creatureForm.append(creatureTemplateHint);
-    const refreshCreatureTemplateAction=()=>{const selectedId=field(creatureForm,'[data-gm-creature-archetype]')?.value,archetype=state.archetypes.find(row=>activeRow(row)&&archetypeId(row)===selectedId);let transferable=false;if(archetype)try{transferable=templateValueCount(portableCreatureValues(archetype.template_data||{}))>0}catch{}creatureTemplateApply.disabled=!transferable;creatureTemplateApply.title=!selectedId?'Wähle zuerst einen Archetyp.':!archetype?'Dieser Archetyp ist nicht mehr aktiv.':!transferable?'Dieser Archetyp enthält keine übertragbaren Werte.':'Vorlagenwerte als noch ungespeicherten Entwurf übernehmen.';if(!selectedId)text(creatureTemplateHint,'Wähle einen Archetyp, wenn du dessen Grundwerte, Counter und Regelfähigkeiten bewusst übernehmen möchtest.');else if(!transferable)text(creatureTemplateHint,`„${archetype?.name||'Diese Vorlage'}“ enthält keine übertragbaren Grundwerte, Counter oder Regelfähigkeiten.`);else text(creatureTemplateHint,`„${archetype.name}“ ist verfügbar. Mit dem Button übernimmst du dessen Werte zunächst nur in dieses Formular.`)};
-    field(creatureForm,'[data-gm-creature-archetype]').addEventListener('change',()=>{creatureForm.__archetypeApply=null;refreshCreatureTemplateAction()});
-    const statsEditor=makeCreatureStatsEditor(creatureForm);
-    creatureForm.append(note('Spezies, Archetyp und Rollen bleiben getrennt. Eine übernommene Vorlage wird erst mit „Wesen speichern“ wirksam.'));
+    field(creatureEditFields,'[data-gm-creature-name]').addEventListener('input',event=>{const owner=creatureForm.__npcOwner;if(owner){owner.name=event.target.value;markCreatureNpcDirty(state)}});
+    field(creatureEditFields,'[data-gm-creature-species]').addEventListener('input',event=>{const owner=creatureForm.__npcOwner;if(owner){owner.npcType=event.target.value;markCreatureNpcDirty(state)}});
+    creatureForm.append(creatureEditFields);
+    const creatureTemplateApply=button('Werte und Standardausrüstung der Vorlage vorbereiten',()=>stageArchetypeValuesForCreature(state));creatureTemplateApply.disabled=true;creatureTemplateApply.title='Wähle zuerst einen Archetyp.';creatureForm.append(creatureTemplateApply);
+    const creatureTemplateHint=note('Die Auswahl eines Archetyps allein ändert nichts. Eine bewusste Übernahme ergänzt verbundene Standarditems als unabhängige Inventarinstanzen; vorhandenes Inventar, Geld und Effekte bleiben erhalten.');creatureTemplateHint.dataset.gmCreatureTemplateHint='';creatureForm.append(creatureTemplateHint);
+    const refreshCreatureTemplateAction=()=>{const selectedId=field(creatureForm,'[data-gm-creature-archetype]')?.value,archetype=state.archetypes.find(row=>activeRow(row)&&archetypeId(row)===selectedId);let transferable=false,itemCount=0;if(archetype)try{transferable=templateValueCount(portableCreatureValues(archetype.template_data||{}))>0||(itemCount=templateItemReferences(archetype.template_data||{}).length)>0}catch{}creatureTemplateApply.disabled=!transferable;creatureTemplateApply.title=!selectedId?'Wähle zuerst einen Archetyp.':!archetype?'Dieser Archetyp ist nicht mehr aktiv.':!transferable?'Dieser Archetyp enthält keine übertragbaren Werte oder Items.':'Vorlagenwerte und verknüpfte Standarditems als noch ungespeicherten Entwurf übernehmen.';if(!selectedId)text(creatureTemplateHint,'Wähle einen Archetyp, wenn du dessen Werte und verbundene Standarditems bewusst übernehmen möchtest.');else if(!transferable)text(creatureTemplateHint,`„${archetype?.name||'Diese Vorlage'}“ enthält keine übertragbaren Werte oder Standarditems.`);else text(creatureTemplateHint,`„${archetype.name}“ ist verfügbar${itemCount?` und mit ${itemCount} Standarditem(s) verbunden`:''}. Mit dem Button übernimmst du alles zunächst nur in dieses Formular.`)};
+    field(creatureForm,'[data-gm-creature-archetype]').addEventListener('change',()=>{creatureForm.__archetypeApply=null;creatureForm.__inventoryAddQueue=(creatureForm.__inventoryAddQueue||[]).filter(draft=>!draft.sourceArchetypeId);renderCreatureInventoryDrafts(creatureForm);refreshCreatureTemplateAction()});
+    creatureEditFields.append(creatureTemplateApply,creatureTemplateHint);
+    creatureEditFields.append(note('Diese Weltangaben umgeben dasselbe NPC-Dokument, das auch ein NPC-Reiter verwendet. Geheime Angaben bleiben außerhalb des NPC-Dokuments.'));
+    const creatureBuilderView=document.createElement('section');creatureBuilderView.dataset.gmCreatureBuilderView='';creatureBuilderView.className='gm-npc-window';
+    const creatureBuilderStatus=note('Das gemeinsame NPC-Fenster wird vorbereitet.','notice');creatureBuilderStatus.dataset.gmCreatureBuilderStatus='';
+    const creatureBuilderToolbar=document.createElement('aside');creatureBuilderToolbar.className='gm-npc-card-palette edit-only';creatureBuilderToolbar.append(heading('h6','NPC-Karten'));
+    const creatureCardType=document.createElement('select');creatureCardType.dataset.gmCreatureCardType='';creatureCardType.setAttribute('aria-label','NPC-Kartentyp');
+    if(typeof CARD_TYPES!=='undefined')for(const [type,label] of Object.entries(CARD_TYPES)){const option=document.createElement('option');option.value=type;option.textContent=label;creatureCardType.append(option)}
+    creatureBuilderToolbar.append(creatureCardType,button('Karte hinzufügen',()=>addCreatureNpcCard(state)));
+    const creatureBuilderCards=document.createElement('div');creatureBuilderCards.className='sheet game';creatureBuilderCards.dataset.gmCreatureBuilderCards='';creatureBuilderCards.setAttribute('aria-label','Wesen in der NPC-Kartenansicht des Builders');
+    const creatureWorldCard=document.createElement('article');creatureWorldCard.className='card gm-world-card';creatureWorldCard.style.cssText='--w:12;--pw:12';creatureWorldCard.dataset.gmCreatureWorldCard='';
+    const creatureWorldHead=document.createElement('header');creatureWorldHead.className='card-head';creatureWorldHead.append(heading('h2','Weltbezug'));
+    const creatureWorldBody=document.createElement('div');creatureWorldBody.className='card-body';creatureWorldBody.append(creatureEditFields);creatureWorldCard.append(creatureWorldHead,creatureWorldBody);
+    creatureBuilderCards.append(creatureWorldCard);
+    const creatureBuilderShell=document.createElement('div');creatureBuilderShell.className='gm-npc-window-shell';creatureBuilderShell.append(creatureBuilderToolbar,creatureBuilderCards);
+    creatureBuilderView.append(creatureBuilderStatus,creatureBuilderShell);creatureForm.append(creatureBuilderView);
     const creatureSave=submitButton('Wesen speichern');creatureForm.append(creatureSave);
     const creatureArchive=button('Wesen archivieren',()=>archiveCreature(state),'danger');creatureArchive.hidden=true;creatureForm.append(creatureArchive);
     creatureForm.addEventListener('submit',event=>{event.preventDefault();saveCreature(state)});
@@ -598,10 +866,14 @@
       labelControl('Archetypgruppe',select('gmArchetypeGroup',archetypeGroups)),
       labelControl('Beschreibung der Vorlage',textarea('gmArchetypeDescription',12000))
     );
-    archetypeForm.append(note('Du kannst Grundwerte, Counter und Regelfähigkeiten eines vorhandenen Wesens als wiederverwendbare Vorlage speichern. Inventar, Geld, Effekte und persönliche Notizen werden dabei nicht kopiert.'));
+    const archetypeCanCarry=input('checkbox','gmArchetypeCanCarryItems');archetypeCanCarry.checked=true;archetypeForm.append(labelControl('Wesen dieses Archetyps können Gegenstände tragen oder verwenden',archetypeCanCarry));
+    archetypeForm.append(note('Du kannst Grundwerte, Counter und Regelfähigkeiten eines vorhandenen Wesens als wiederverwendbare Vorlage speichern. Zusätzlich lassen sich Standarditems über stabile Katalog-IDs verbinden; persönliche Inventarinstanzen, Geld, Effekte und Notizen werden nicht kopiert.'));
     archetypeForm.append(labelControl('Werte von diesem Wesen vorbereiten',select('gmArchetypeSourceCreature',[['','Wesen auswählen']])));
     archetypeForm.append(button('Werte aus Wesen für diese Vorlage vorbereiten',()=>stageArchetypeValuesFromCreature(state)));
     const archetypeTemplateHint=note('Noch keine Werte aus einem Wesen vorbereitet.');archetypeTemplateHint.dataset.gmArchetypeTemplateHint='';archetypeForm.append(archetypeTemplateHint);
+    archetypeForm.append(heading('h6','Verknüpfte Standarditems'));
+    const archetypeCatalogItems=document.createElement('ul');archetypeCatalogItems.dataset.gmArchetypeCatalogItems='';archetypeForm.append(archetypeCatalogItems);
+    archetypeForm.append(makeItemCatalogPicker('standard',reference=>addArchetypeCatalogReference(archetypeForm,reference)));
     archetypeForm.append(submitButton('Archetyp speichern'));
     const archetypeArchive=button('Archetyp archivieren',()=>archiveArchetype(state),'danger');archetypeArchive.hidden=true;archetypeForm.append(archetypeArchive);
     archetypeForm.addEventListener('submit',event=>{event.preventDefault();saveArchetype(state)});
@@ -620,7 +892,7 @@
     factionForm.append(labelControl('Neue Fraktion anlegen',input('text','gmWorldFactionName',{required:true,maxLength:120})),submitButton('Fraktion anlegen'));
     factionForm.addEventListener('submit',event=>{event.preventDefault();createWorldFaction(state)});registrySection.append(factionForm);panel.append(registrySection);
 
-    state.creatureUi={panel,status,retry,editorSections:[creatureSection,referenceSection,lootSection,companionSection,disclosureSection,archetypeSection,registrySection],referenceSection,lootSection,secretLootEffectStatus,secretLootEffectRefresh,secretLootEffectList,companionSection,registrySection,creatureList,newCreatureButton,creatureForm,creatureFormHeading,creatureImportHint,creatureTemplateHint,creatureTemplateApply,refreshCreatureTemplateAction,creatureArchive,statsEditor,referenceHint,referenceEditor,factionLinks,lootHint,lootForm,lootRuleHint,lootList,migrationList,companionList,companionForm,placeList,placeForm,factionList,factionForm,disclosureForm,disclosureHeading,disclosureState,disclosureSave,disclosureHint,archetypeList,archetypeForm,archetypeFormHeading,archetypeTemplateHint,archetypeArchive};
+    state.creatureUi={panel,status,retry,editorSections:[preparedSection,creatureSection,referenceSection,lootSection,companionSection,disclosureSection,archetypeSection,registrySection],preparedSection,preparedArchetypeList,referenceSection,lootSection,secretLootEffectStatus,secretLootEffectRefresh,secretLootEffectList,companionSection,registrySection,creatureList,newCreatureButton,creatureForm,creatureFormHeading,creatureImportHint,creatureEditFields,creatureBuilderView,creatureBuilderStatus,creatureBuilderToolbar,creatureCardType,creatureBuilderCards,creatureWorldCard,creatureTemplateHint,creatureTemplateApply,refreshCreatureTemplateAction,creatureArchive,referenceHint,referenceEditor,factionLinks,lootHint,lootForm,lootRuleHint,lootList,migrationList,companionList,companionForm,placeList,placeForm,factionList,factionForm,disclosureForm,disclosureHeading,disclosureState,disclosureSave,disclosureHint,archetypeList,archetypeForm,archetypeFormHeading,archetypeTemplateHint,archetypeCatalogItems,archetypeArchive};
     return state.creatureUi;
   }
   function renderCreatureList(state){
@@ -635,7 +907,7 @@
       const controls=[button('Bearbeiten',()=>{state.selectedCreatureId=creatureId(row);renderCreatureForm(state)})];
       if(typeof state.repository.transferCreatureLoot==='function')controls.push(button('Beute',()=>{state.selectedCreatureId=creatureId(row);renderCreatureForm(state)}));
       if(typeof state.repository.listCampaignCreatureDisclosures==='function'&&typeof state.repository.saveCampaignCreatureDisclosure==='function')controls.push(button('Kampagnenfreigabe',()=>{state.selectedDisclosureCreatureId=creatureId(row);renderCreatureDisclosure(state)}));
-      ui.creatureList.append(markMediaEntity(item(label,...controls),'creature',creatureId(row)));
+      ui.creatureList.append(item(label,...controls));
     }
     const archived=state.creatures.filter(row=>!activeRow(row));
     if(archived.length)ui.creatureList.append(item('Archivierte Wesen:'));
@@ -649,12 +921,12 @@
   function renderCreatureForm(state){
     const ui=ensureCreatureWorkspace(state);if(!ui)return;
     const form=ui.creatureForm,row=state.creatures.find(entry=>activeRow(entry)&&creatureId(entry)===state.selectedCreatureId),draft=row?null:state.creatureImportDraft,source=row||draft;
-    form.__archetypeApply=null;
+    form.__archetypeApply=null;form.__npcDirty=false;form.__npcOwner=creatureToBuilderNpc(source||{name:'Neues Wesen',species:'Wesen',stats:{}});
     text(ui.creatureFormHeading,row?`${row.name} bearbeiten`:draft?'Wesen aus freigegebener Vorlage vorbereiten':'Neues Wesen anlegen');
-    text(ui.creatureImportHint,draft?'Die Spieler-Vorlage ist nur als Entwurf im Formular. Prüfe insbesondere Spezies, Werte und geheime Daten. Nicht angezeigte Builder-Felder, etwa Vorteile und Nachteile, bleiben im Entwurf erhalten. Speichern legt ein neues Weltwesen an; die Anfrage wird dadurch noch nicht verknüpft.':'');show(ui.creatureImportHint,!!draft);
-    text(ui.creatureTemplateHint,'Die Auswahl eines Archetyps allein ändert keine Werte. Eine bewusste Übernahme betrifft nur Grundwerte, Counter und Regelfähigkeiten; vorhandenes Inventar, Geld und Effekte bleiben erhalten.');
-    field(form,'[data-gm-creature-name]').value=source?.name||'';
-    field(form,'[data-gm-creature-species]').value=source?.species||'';
+    text(ui.creatureImportHint,draft?'Die freigegebene Spieler-Vorlage wurde als vollständiges NPC-Dokument in dieses Fenster übernommen. Prüfe Weltbezug und geheime Angaben; Speichern legt ein unabhängiges Weltwesen an.':'');show(ui.creatureImportHint,!!draft);
+    text(ui.creatureTemplateHint,'Die Auswahl eines Archetyps allein ändert nichts. Eine bewusste Übernahme ergänzt Werte und Standardausrüstung direkt im gemeinsamen NPC-Dokument.');
+    field(form,'[data-gm-creature-name]').value=source?.name||form.__npcOwner.name||'';
+    field(form,'[data-gm-creature-species]').value=source?.species||form.__npcOwner.npcType||'';
     field(form,'[data-gm-creature-roles]').value=roleTags(source?.role_tags).join(', ');
     field(form,'[data-gm-creature-summary]').value=source?.public_summary||'';
     field(form,'[data-gm-creature-notes]').value=source?.gm_notes||'';
@@ -666,7 +938,7 @@
       option.value=row.archetype_id;option.textContent=`${archived?.name||'Vorlage'} (archiviert – bestehende Verknüpfung)`;template.append(option);
     }
     template.value=source?.archetype_id||'';ui.refreshCreatureTemplateAction();ui.creatureArchive.hidden=!row;
-    renderCreatureStats(state,source);renderCreatureReferences(state,row);renderCreatureLootForm(state,row);
+    renderCreatureReferences(state,row);renderCreatureLootForm(state,row);renderCreaturePresentation(state);
   }
   function renderCreatureReferences(state,creature){
     const ui=ensureCreatureWorkspace(state);if(!ui)return;
@@ -699,7 +971,7 @@
     if(!places.length)ui.placeList.append(item('Noch kein Ort angelegt.'));
     for(const row of places)ui.placeList.append(item(row.name));
     if(!factions.length)ui.factionList.append(item('Noch keine Fraktion angelegt.'));
-    for(const row of factions)ui.factionList.append(markMediaEntity(item(row.name),'faction',factionId(row)));
+    for(const row of factions)ui.factionList.append(item(row.name));
     const archivedPlaces=state.worldPlaces.filter(row=>!activeRow(row)),archivedFactions=state.worldFactions.filter(row=>!activeRow(row));
     for(const row of archivedPlaces)ui.placeList.append(item(`${row.name} · archiviert`));
     for(const row of archivedFactions)ui.factionList.append(item(`${row.name} · archiviert`));
@@ -840,17 +1112,15 @@
     let detail;try{detail=await getCreatureMigrationDetail(state,request)}catch(error){text(state.message,friendlyError(error));return}
     if(detail.status!=='pending'){text(state.message,'Die Anfrage wurde inzwischen entschieden. Bitte neu laden.');return}
     const snapshot=plainObject(detail.source_snapshot)?detail.source_snapshot:{};
-    const stats={};
-    for(const key of ['attributes','counters','skills','equipment','weapons','armor','items','rations','rationTracker','money','advantages','disadvantages','activeEffectsV177']){
-      if(snapshot[key]!==undefined)stats[key]=structuredClone(snapshot[key]);
-    }
+    const npcData=creatureToBuilderNpc({name:snapshot.name||request.source_name||'Wesen',species:snapshot.npcType||snapshot.species||'Wesen',stats:structuredClone(snapshot)},structuredClone(snapshot));
+    npcData.id=global.crypto?.randomUUID?.()||`world-creature-draft-${Date.now()}`;npcData.npcSheetVersion=NPC_SHEET_VERSION;npcData.type='npc';
     state.creatureImportDraft={
       name:String(snapshot.name||request.source_name||'').slice(0,120),
-      species:String(snapshot.species||'').slice(0,120),
+      species:String(snapshot.npcType||snapshot.species||'Wesen').slice(0,120),
       role_tags:snapshot.npcType?[String(snapshot.npcType).slice(0,60)]:[],
       public_summary:'',
       gm_notes:[snapshot.description,snapshot.notes].filter(value=>typeof value==='string'&&value.trim()).join('\n\n').slice(0,100000),
-      stats,sourceRequestId:request.request_id
+      stats:npcData,npc_data:npcData,sourceRequestId:request.request_id
     };
     state.selectedCreatureId=null;renderCreatureForm(state);
     text(state.message,`Die vom Spieler freigegebene Vorlage „${request.source_name}“ ist im Wesenformular vorbereitet. Bitte Wesenart, Werte und geheime Angaben prüfen und erst dann speichern. Der Antrag bleibt bis zur gesonderten Verknüpfung offen.`);
@@ -943,8 +1213,23 @@
     field(form,'[data-gm-creature-player-name]').value=disclosure?.player_name||'';
     field(form,'[data-gm-creature-player-summary]').value=disclosure?.player_summary||'';
   }
+  function renderPreparedArchetypeList(state){
+    const ui=ensureCreatureWorkspace(state);if(!ui)return;
+    ui.preparedSection.open=!state.archetypes.some(activeRow);
+    clear(ui.preparedArchetypeList);
+    const groupNames=new Map(archetypeGroups);
+    for(const preset of preparedArchetypes){
+      const existing=matchingPreparedArchetype(state,preset),core=preparedArchetypeTemplate(preset),upgradeable=existing?.template_data?.preparedArchetype?.key===preset.key&&Number(existing.template_data.preparedArchetype.version||0)<2;
+      const action=button(upgradeable?'Standarditems ergänzen':existing?'Bereits übernommen':'In diese Welt übernehmen',()=>importPreparedArchetype(state,preset));
+      if(existing&&!upgradeable){action.disabled=true;action.dataset.gmPermanentDisabled='true';action.title=`Als „${existing.name}“ in dieser Welt vorhanden.`}
+      const loadout=catalogLoadoutSummary(core),carry=core.inventoryProfile.canCarryItems?'trägt Items':'ohne tragbares Inventar';
+      const row=item(`${preset.name} · ${groupNames.get(preset.groupName)||preset.groupName} · ${templateValueSummary(core)} · ${carry} · ${loadout} — ${preset.description}`,action);
+      row.dataset.gmPreparedArchetype=preset.key;ui.preparedArchetypeList.append(row);
+    }
+  }
   function renderArchetypeList(state){
     const ui=ensureCreatureWorkspace(state);if(!ui)return;
+    renderPreparedArchetypeList(state);
     clear(ui.archetypeList);
     const rows=state.archetypes.filter(activeRow);
     if(!rows.length)ui.archetypeList.append(item('Noch kein eigener Archetyp angelegt.'));
@@ -967,11 +1252,13 @@
     field(form,'[data-gm-archetype-name]').value=row?.name||'';
     field(form,'[data-gm-archetype-group]').value=row?.group_name||'other';
     field(form,'[data-gm-archetype-description]').value=row?.description||'';
+    const templateData=plainObject(row?.template_data)?row.template_data:{},canCarry=field(form,'[data-gm-archetype-can-carry-items]');canCarry.checked=typeof templateData.inventoryProfile?.canCarryItems==='boolean'?templateData.inventoryProfile.canCarryItems:true;
+    try{form.__catalogLoadoutDraft=templateItemReferences(templateData)}catch(error){form.__catalogLoadoutDraft=[];text(state.message,error.message)}renderArchetypeCatalogLoadout(form);
     const source=field(form,'[data-gm-archetype-source-creature]');clear(source);
     const empty=document.createElement('option');empty.value='';empty.textContent='Wesen auswählen';source.append(empty);
     for(const creature of state.creatures.filter(activeRow)){const option=document.createElement('option');option.value=creatureId(creature);option.textContent=creature.name;source.append(option)}
     let summary='Noch keine übertragbaren Werte in dieser Vorlage.';
-    try{const core=portableCreatureValues(plainObject(row?.template_data)?row.template_data:{});if(templateValueCount(core))summary=`Gespeicherte Vorlage: ${templateValueSummary(core)}. Änderungen daran wirken nicht rückwirkend auf Wesen.`}catch{summary='Die gespeicherten Vorlagenwerte können hier nicht sicher gelesen werden.'}
+    try{const core=portableCreatureValues(templateData),items=templateItemReferences(templateData);if(templateValueCount(core)||items.length)summary=`Gespeicherte Vorlage: ${templateValueSummary(core)}, ${items.length} verknüpfte Standarditems. Änderungen daran wirken nicht rückwirkend auf Wesen.`}catch{summary='Die gespeicherten Vorlagenwerte können hier nicht sicher gelesen werden.'}
     text(ui.archetypeTemplateHint,summary);
     ui.archetypeArchive.hidden=!row;
   }
@@ -1001,26 +1288,18 @@
     const ui=state.creatureUi,form=ui?.creatureForm,selectedId=field(form,'[data-gm-creature-archetype]')?.value;
     const archetype=state.archetypes.find(row=>activeRow(row)&&archetypeId(row)===selectedId);
     if(!archetype){text(state.message,'Bitte wähle zuerst einen aktiven Archetyp.');return}
-    let core;try{core=portableCreatureValues(archetype.template_data||{})}catch(error){text(state.message,error.message);return}
-    if(!templateValueCount(core)){text(state.message,'Dieser Archetyp enthält noch keine übertragbaren Grundwerte, Counter oder Regelfähigkeiten.');return}
-    const creature=state.creatures.find(row=>activeRow(row)&&creatureId(row)===state.selectedCreatureId),draft=creature||state.creatureImportDraft;
-    try{overlayTemplateValues(structuredClone(creatureStats(draft)),core)}catch(error){text(state.message,error.message);return}
-    for(const control of form.querySelectorAll('[data-gm-creature-attribute]'))if(core.attributes[control.dataset.statId]!==undefined)control.value=String(core.attributes[control.dataset.statId]);
-    for(const counter of form.querySelectorAll('[data-gm-creature-counter-row]')){
-      const value=core.counters[counter.dataset.gmCreatureCounterRow];if(!value)continue;
-      field(counter,'[data-gm-creature-counter-max]').value=String(value.max);
-      field(counter,'[data-gm-creature-counter-current]').value=String(value.current);
-    }
-    const skillList=field(form,'[data-gm-creature-skill-list]');
-    for(const [id,value] of Object.entries(core.skills)){
-      let skillRow=[...skillList.children].find(row=>row.dataset.gmCreatureSkillId===id);
-      if(!skillRow&&value.level!==0){skillRow=creatureSkillRow(id,value);skillRow.dataset.newEntry='true';skillList.append(skillRow)}
-      if(skillRow)field(skillRow,'[data-gm-creature-skill-level]').value=String(value.level);
-    }
-    form.__archetypeApply={archetypeId:selectedId,creatureId:creatureId(creature),worldId:state.selectedCampaign.world_id,core};
-    ui.statsEditor.details.open=true;
-    text(ui.creatureTemplateHint,`Vorlagenwerte aus „${archetype.name}“ im Formular: ${templateValueSummary(core)}. Nur diese Werte werden beim Speichern übernommen; Inventar, Geld, Effekte und nicht angezeigte Builder-Daten bleiben erhalten. Noch nicht gespeichert.`);
-    text(state.message,`Vorlage „${archetype.name}“ ist als Entwurf im Wesenformular. Prüfe die Werte und speichere das Wesen ausdrücklich.`);
+    let core,references;try{core=portableCreatureValues(archetype.template_data||{});references=templateItemReferences(archetype.template_data||{})}catch(error){text(state.message,error.message);return}
+    if(!templateValueCount(core)&&!references.length){text(state.message,'Dieser Archetyp enthält noch keine übertragbaren Werte oder Standarditems.');return}
+    if(core.inventoryProfile?.canCarryItems===false&&references.length){text(state.message,'Dieser Archetyp ist als nicht tragfähig markiert, enthält aber Standarditems. Bitte korrigiere zuerst die Vorlage.');return}
+    const creature=state.creatures.find(row=>activeRow(row)&&creatureId(row)===state.selectedCreatureId),owner=form.__npcOwner;if(!owner)return;
+    try{overlayTemplateValues(owner,core)}catch(error){text(state.message,error.message);return}
+    const known=new Set((owner.equipment||[]).filter(item=>item?.catalogId).map(item=>`${item.catalogSource||(catalogItem('standard',item.catalogId)?'standard':'set')}:${item.catalogId}`));
+    let queuedItems=0;
+    if(core.inventoryProfile?.canCarryItems!==false)for(const reference of references){const token=`${reference.catalogSource}:${reference.catalogId}`;if(known.has(token))continue;owner.equipment.push(catalogInventoryEntry(reference));known.add(token);queuedItems++}
+    else if(references.length){text(state.message,'Die Vorlage ist als nicht tragfähig markiert und kann deshalb keine Standarditems übertragen.');return}
+    form.__archetypeApply={archetypeId:selectedId,creatureId:creatureId(creature),worldId:state.selectedCampaign.world_id,core};markCreatureNpcDirty(state);renderCreatureNpcWindow(state);
+    text(ui.creatureTemplateHint,`Vorlage „${archetype.name}“ im NPC-Fenster: ${templateValueSummary(core)} und ${queuedItems} neue Standarditems${references.length-queuedItems?` · ${references.length-queuedItems} bereits vorhanden`:''}. Vorhandene Karten, Effekte und persönliche Daten bleiben erhalten. Noch nicht gespeichert.`);
+    text(state.message,`Vorlage „${archetype.name}“ wurde direkt im NPC-Fenster vorbereitet. Prüfe die Karten und speichere das Wesen.`);
   }
   function canManageCreatureWorld(state){return !!state.selectedCampaign?.world_id&&state.worlds.some(world=>world.world_id===state.selectedCampaign.world_id)}
   async function loadCreatureWorkspace(state,{force=false}={}){
@@ -1045,6 +1324,7 @@
     state.secretLootEffectLoadSerial++;
     state.creatureWorldId=worldId;state.creatureCampaignId=campaignId;state.creatureLoading=true;state.creatureLoaded=false;
     state.creatures=[];state.archetypes=[];state.creatureDisclosures=[];state.worldPlaces=[];state.worldFactions=[];state.creatureFactionLinks=[];state.creatureLoot=[];state.creatureMigrationRequests=[];state.creatureCompanionLinks=[];state.creatureRequestDetails=new Map();
+    renderPreparedArchetypeList(state);
     clear(ui.secretLootEffectList);show(ui.secretLootEffectList,false);text(ui.secretLootEffectStatus,'Geheime Wirkungen werden geladen …');show(ui.secretLootEffectRefresh,false);
     text(ui.status,'Wesen, Archetypen und Weltreferenzen werden geladen …');show(ui.retry,false);
     try{
@@ -1082,7 +1362,7 @@
       if(serial!==state.creatureLoadSerial||authEpoch!==state.authEpoch)return;
       state.creatures=[];state.archetypes=[];state.creatureDisclosures=[];state.worldPlaces=[];state.worldFactions=[];state.creatureFactionLinks=[];state.creatureLoot=[];state.creatureMigrationRequests=[];state.creatureCompanionLinks=[];state.creatureRequestDetails=new Map();
       state.selectedCreatureId=null;state.selectedArchetypeId=null;state.selectedDisclosureCreatureId=null;
-      clear(ui.creatureList);clear(ui.archetypeList);clear(ui.placeList);clear(ui.factionList);clear(ui.lootList);clear(ui.secretLootEffectList);show(ui.secretLootEffectList,false);clear(ui.migrationList);clear(ui.companionList);renderCreatureForm(state);renderArchetypeForm(state);renderCreatureDisclosure(state);
+      clear(ui.creatureList);clear(ui.archetypeList);clear(ui.placeList);clear(ui.factionList);clear(ui.lootList);clear(ui.secretLootEffectList);show(ui.secretLootEffectList,false);clear(ui.migrationList);clear(ui.companionList);renderPreparedArchetypeList(state);renderCreatureForm(state);renderArchetypeForm(state);renderCreatureDisclosure(state);
       text(ui.status,`Wesen konnten nicht geladen werden: ${friendlyError(error)}`);show(ui.retry,true);
     }finally{if(serial===state.creatureLoadSerial)state.creatureLoading=false}
   }
@@ -1095,19 +1375,21 @@
     if(staged&&(staged.archetypeId!==field(form,'[data-gm-creature-archetype]').value||staged.creatureId!==creatureId(row)||staged.worldId!==state.selectedCampaign.world_id)){
       text(state.message,'Die gewählte Vorlage oder das Wesen wurde geändert. Bitte Vorlagenwerte erneut ausdrücklich übernehmen oder das Formular neu öffnen.');return;
     }
-    let stats;try{stats=editedCreatureStats(form,row||state.creatureImportDraft,staged?.core||null)}catch(error){text(state.message,error.message);return}
+    const owner=form.__npcOwner;if(!owner){text(state.message,'Das NPC-Dokument dieses Wesens ist nicht geladen.');return}
+    owner.name=field(form,'[data-gm-creature-name]').value.trim();owner.npcType=field(form,'[data-gm-creature-species]').value.trim();
+    let npcData;try{npcData=serializeNpcSheet(owner)}catch(error){text(state.message,`Das NPC-Dokument konnte nicht vorbereitet werden: ${error.message}`);return}
     const changes={creatureId:creatureId(row),expectedRevision:row?Number(row.revision):null,
-      name:field(form,'[data-gm-creature-name]').value.trim(),species:field(form,'[data-gm-creature-species]').value.trim(),
+      name:owner.name,species:owner.npcType,
       archetypeId:field(form,'[data-gm-creature-archetype]').value||null,roleTags:tags,
-      publicSummary:field(form,'[data-gm-creature-summary]').value.trim(),stats,
+      publicSummary:field(form,'[data-gm-creature-summary]').value.trim(),stats:npcData,npcData,
       gmNotes:field(form,'[data-gm-creature-notes]').value.trim(),archived:false};
-    try{await runBusy(state,async()=>{const receipt=await state.repository.saveWorldCreature(state.selectedCampaign.world_id,changes);state.selectedCreatureId=creatureId(receipt)||creatureId(row);state.creatureImportDraft=null;await loadCreatureWorkspace(state,{force:true});text(state.message,`Wesen „${changes.name}“ gespeichert. Kampagnenfreigaben und Übernahmeanfragen bleiben getrennt.`)})}catch{}
+    try{await runBusy(state,async()=>{const receipt=await state.repository.saveWorldCreature(state.selectedCampaign.world_id,changes);state.selectedCreatureId=creatureId(receipt)||creatureId(row);state.creatureImportDraft=null;form.__npcDirty=false;await loadCreatureWorkspace(state,{force:true});text(state.message,`Wesen „${changes.name}“ mit vollständigem NPC-Dokument gespeichert. Kampagnenfreigaben und geheime Weltdaten bleiben getrennt.`)})}catch{}
   }
   async function archiveCreature(state){
     if(!canManageCreatureWorld(state)||typeof state.repository.saveWorldCreature!=='function')return;
     const row=state.creatures.find(entry=>activeRow(entry)&&creatureId(entry)===state.selectedCreatureId);if(!row||typeof global.confirm!=='function'||!global.confirm(`Wesen „${row.name}“ archivieren? Es wird nicht gelöscht.`))return;
     const changes={creatureId:creatureId(row),expectedRevision:Number(row.revision),name:row.name,species:row.species,
-      archetypeId:row.archetype_id||null,roleTags:roleTags(row.role_tags),publicSummary:row.public_summary||'',stats:row.stats||{},gmNotes:row.gm_notes||'',archived:true};
+      archetypeId:row.archetype_id||null,roleTags:roleTags(row.role_tags),publicSummary:row.public_summary||'',stats:creatureStats(row),npcData:creatureStats(row),gmNotes:row.gm_notes||'',archived:true};
     try{await runBusy(state,async()=>{await state.repository.saveWorldCreature(state.selectedCampaign.world_id,changes);state.selectedCreatureId=null;state.selectedDisclosureCreatureId=null;await loadCreatureWorkspace(state,{force:true});text(state.message,`Wesen „${row.name}“ archiviert.`)})}catch{}
   }
   async function restoreCreature(state,row){
@@ -1117,7 +1399,7 @@
     }
     if(typeof global.confirm!=='function'||!global.confirm(`Wesen „${row.name}“ wiederherstellen? Frühere Spielerfreigaben bleiben archiviert, bis du sie ausdrücklich erneut veröffentlichst.`))return;
     const worldId=state.selectedCampaign.world_id,changes={creatureId:creatureId(row),expectedRevision:Number(row.revision),name:row.name,species:row.species,
-      archetypeId:row.archetype_id||null,roleTags:roleTags(row.role_tags),publicSummary:row.public_summary||'',stats:row.stats||{},gmNotes:row.gm_notes||'',archived:false};
+      archetypeId:row.archetype_id||null,roleTags:roleTags(row.role_tags),publicSummary:row.public_summary||'',stats:creatureStats(row),npcData:creatureStats(row),gmNotes:row.gm_notes||'',archived:false};
     try{await runBusy(state,async()=>{await state.repository.saveWorldCreature(worldId,changes);await loadCreatureWorkspace(state,{force:true});text(state.message,`Wesen „${row.name}“ wiederhergestellt. Kampagnenfreigaben bleiben verborgen.`)})}catch{}
   }
   async function clearArchivedCreaturePlace(state,row){
@@ -1131,10 +1413,28 @@
     const form=state.creatureUi?.archetypeForm,row=state.archetypes.find(entry=>activeRow(entry)&&archetypeId(entry)===state.selectedArchetypeId);if(!form)return;
     const staged=form.__templateDraft||null;
     if(staged&&(staged.targetId!==archetypeId(row)||staged.worldId!==state.selectedCampaign.world_id)){text(state.message,'Die Welt oder Vorlage wurde gewechselt. Bitte die Werte erneut aus einem Wesen vorbereiten.');return}
+    const canCarry=field(form,'[data-gm-archetype-can-carry-items]').checked,references=Array.isArray(form.__catalogLoadoutDraft)?form.__catalogLoadoutDraft:[];
+    if(!canCarry&&references.length){text(state.message,'Eine Vorlage ohne tragbares Inventar kann keine Standarditems enthalten. Entferne die Verknüpfungen oder aktiviere die Inventarfähigkeit.');return}
+    const templateData=structuredClone(staged?.data||row?.template_data||{});templateData.inventoryProfile={...(plainObject(templateData.inventoryProfile)?templateData.inventoryProfile:{}),canCarryItems:canCarry};
+    if(references.length)templateData.catalogLoadout={version:1,items:structuredClone(references)};else delete templateData.catalogLoadout;
     const changes={archetypeId:archetypeId(row),expectedRevision:row?Number(row.revision):null,
       name:field(form,'[data-gm-archetype-name]').value.trim(),groupName:field(form,'[data-gm-archetype-group]').value,
-      description:field(form,'[data-gm-archetype-description]').value.trim(),templateData:staged?.data||row?.template_data||{},archived:false};
+      description:field(form,'[data-gm-archetype-description]').value.trim(),templateData,archived:false};
     try{await runBusy(state,async()=>{const receipt=await state.repository.saveWorldArchetype(state.selectedCampaign.world_id,changes);state.selectedArchetypeId=archetypeId(receipt)||archetypeId(row);await loadCreatureWorkspace(state,{force:true});text(state.message,`Archetyp „${changes.name}“ gespeichert. Bereits angelegte Wesen wurden nicht verändert.`)})}catch{}
+  }
+  async function importPreparedArchetype(state,preset){
+    if(!canManageCreatureWorld(state)||typeof state.repository.saveWorldArchetype!=='function')return;
+    const existing=matchingPreparedArchetype(state,preset),prepared=preparedArchetypeTemplate(preset),upgradeable=existing?.template_data?.preparedArchetype?.key===preset.key&&Number(existing.template_data.preparedArchetype.version||0)<2;
+    if(existing&&!upgradeable){state.selectedArchetypeId=archetypeId(existing);renderArchetypeForm(state);text(state.message,`„${existing.name}“ ist in dieser Welt bereits als eigener Archetyp vorhanden.`);return}
+    if(upgradeable){
+      const templateData=structuredClone(existing.template_data||{});templateData.catalogLoadout=prepared.catalogLoadout;templateData.inventoryProfile=plainObject(templateData.inventoryProfile)?templateData.inventoryProfile:prepared.inventoryProfile;templateData.preparedArchetype=prepared.preparedArchetype;
+      const changes={archetypeId:archetypeId(existing),expectedRevision:Number(existing.revision),name:existing.name,groupName:existing.group_name||preset.groupName,description:existing.description||preset.description,templateData,archived:false};
+      try{await runBusy(state,async()=>{await state.repository.saveWorldArchetype(state.selectedCampaign.world_id,changes);state.selectedArchetypeId=archetypeId(existing);await loadCreatureWorkspace(state,{force:true});text(state.message,`Standarditems für „${existing.name}“ ergänzt. Eigene Werte und Beschreibungen blieben erhalten.`)})}catch{}return;
+    }
+    const templateData=prepared,core=portableCreatureValues(templateData);
+    if(!templateValueCount(core)){text(state.message,'Die vorbereitete Vorlage enthält keine lesbaren Werte.');return}
+    const changes={archetypeId:null,expectedRevision:null,name:preset.name,groupName:preset.groupName,description:preset.description,templateData,archived:false};
+    try{await runBusy(state,async()=>{const receipt=await state.repository.saveWorldArchetype(state.selectedCampaign.world_id,changes);state.selectedArchetypeId=archetypeId(receipt);await loadCreatureWorkspace(state,{force:true});text(state.message,`Vorbereiteter Archetyp „${preset.name}“ übernommen. Du kannst ihn jetzt bearbeiten oder für ein Wesen verwenden.`)})}catch{}
   }
   async function copyArchetype(state,row){
     if(!canManageCreatureWorld(state)||typeof state.repository.saveWorldArchetype!=='function')return;
@@ -1425,7 +1725,7 @@
   function fillPlaceOptions(state){const ui=ensurePlaceWorkspace(state),rows=state.placeTree.filter(activeRow),choices=rows.map(row=>option(row.place_id,`${'  '.repeat(Math.max(0,+row.depth||0))}${row.name}`)),characters=(state.selectedData?.characters||[]).filter(row=>['approved_locked','change_pending'].includes(row.status)).map(row=>option(row.id,row.public_data?.name||row.id));replaceOptions(field(ui.placeForm,'[data-gm-place-parent]'),choices,'Kein übergeordneter Ort');for(const formMarker of [[ui.stateForm,'[data-gm-place-state-place]'],[ui.disclosureForm,'[data-gm-place-disclosure-place]'],[ui.routeForm,'[data-gm-route-from]'],[ui.routeForm,'[data-gm-route-to]'],[ui.linkForm,'[data-gm-place-link-place]'],[ui.mediaForm,'[data-gm-world-media-place]'],[ui.mapBriefForm,'[data-gm-map-brief-root]'],[ui.mapForm,'[data-gm-map-artifact-root]'],[ui.regionForm,'[data-gm-map-region-place]']])replaceOptions(field(formMarker[0],formMarker[1]),choices,formMarker[1].includes('root')?'Gesamte Welt':'Ort auswählen');replaceOptions(field(ui.disclosureForm,'[data-gm-place-disclosure-character]'),characters,'Für alle Kampagnenmitglieder');replaceOptions(field(ui.stateDisclosureForm,'[data-gm-place-state-disclosure-character]'),characters,'Für alle Kampagnenmitglieder');replaceOptions(field(ui.mediaDisclosureForm,'[data-gm-media-disclosure-character]'),characters,'Für alle Kampagnenmitglieder');replaceOptions(field(ui.stateDisclosureForm,'[data-gm-place-state-disclosure-state]'),state.placeStates.filter(activeRow).map(row=>option(row.state_id,`${state.places.find(place=>place.place_id===row.place_id)?.name||'Ort'} · ${row.truth_label}`)),'Zustand auswählen');const mediaChoices=state.worldMedia.filter(activeRow).map(row=>option(row.asset_id,row.internal_title));replaceOptions(field(ui.mediaDisclosureForm,'[data-gm-media-disclosure-asset]'),mediaChoices,'Bild auswählen');replaceOptions(field(ui.mapForm,'[data-gm-map-artifact-asset]'),state.worldMedia.filter(row=>activeRow(row)&&row.media_kind==='map_image').map(row=>option(row.asset_id,row.internal_title)),'Kartenbild auswählen');replaceOptions(field(ui.regionForm,'[data-gm-map-region-map]'),state.mapArtifacts.filter(activeRow).map(row=>option(row.map_id,row.internal_title)),'Kartenartefakt auswählen');fillPlaceLinkTargets(state)}
   function fillPlaceLinkTargets(state){const ui=ensurePlaceWorkspace(state),kind=field(ui.linkForm,'[data-gm-place-link-kind]')?.value;let rows=[];if(kind==='creature')rows=state.placeCreatures.filter(activeRow).map(row=>option(creatureId(row),row.name));else if(kind==='faction')rows=state.placeFactions.filter(activeRow).map(row=>option(row.faction_id||row.id,row.name));else if(kind==='good')rows=state.tradeGoods.filter(activeRow).map(row=>option(row.good_id,row.name));else if(kind==='route')rows=state.routes.filter(activeRow).map(row=>option(row.route_id,row.name));else if(kind==='event')rows=(state.selectedData?.impacts||[]).map(row=>option(row.id,row.impact_summary||row.id));replaceOptions(field(ui.linkForm,'[data-gm-place-link-target]'),rows,'Ziel auswählen')}
   function renderPlacePreview(state,row){const ui=ensurePlaceWorkspace(state);clear(ui.loreView);clear(ui.tableView);if(!row){ui.loreView.append(note('Wähle einen Ort aus.'));ui.tableView.append(note('Keine kompakte Ansicht ausgewählt.'));return}ui.loreView.append(heading('h5',`Lore/Ausführlich · ${row.name}`));for(const [label,value] of [['Lore',row.lore],['Geschichte',row.history],['Architektur',row.architecture],['Bevölkerung',row.population],['Kultur',row.culture],['Atmosphäre',row.atmosphere]])if(String(value||'').trim())ui.loreView.append(heading('h6',label),note(value));ui.tableView.append(heading('h5',`Am Spieltisch · ${row.name}`),note(row.table_notes||'Keine kompakten Spieltischdaten.'));for(const rule of Array.isArray(row.rules)?row.rules:[])ui.tableView.append(item(typeof rule==='string'?rule:rule?.text||JSON.stringify(rule)));const effective=state.effectivePlaceStates.filter(entry=>entry.place_id===row.place_id);ui.tableView.append(heading('h6',`Wirksame Zustände an Tag ${state.selectedCampaign?.current_day||1}`));if(!effective.length)ui.tableView.append(note('Keine zeitgültigen Zustände.'));for(const entry of effective)ui.tableView.append(item(`${entry.truth_label} · ${entry.truth_summary||entry.state_kind}`))}
-  function renderPlaceWorkspace(state){const ui=ensurePlaceWorkspace(state);fillPlaceOptions(state);clear(ui.placeList);for(const tree of state.placeTree){const row=state.places.find(place=>place.place_id===tree.place_id);if(!row)continue;const line=markMediaEntity(item(`${'↳ '.repeat(Math.max(0,+tree.depth||0))}${tree.name} · ${tree.place_type} · ${tree.status}`,button('Ausführlich & Spieltisch',()=>{state.selectedPlaceId=row.place_id;renderPlacePreview(state,row)}),button('Bearbeiten',()=>editPlace(state,row))),'place',row.place_id);if(activeRow(row))line.append(button('Archivieren',()=>archivePlace(state,row),'danger'));ui.placeList.append(line)}if(!state.placeTree.length)ui.placeList.append(item('Noch keine Orte.'));renderPlacePreview(state,state.places.find(row=>row.place_id===state.selectedPlaceId)||state.places.find(activeRow)||null);renderPhase7Records(state);renderWorldMedia(state);}
+  function renderPlaceWorkspace(state){const ui=ensurePlaceWorkspace(state);fillPlaceOptions(state);clear(ui.placeList);for(const tree of state.placeTree){const row=state.places.find(place=>place.place_id===tree.place_id);if(!row)continue;const line=item(`${'↳ '.repeat(Math.max(0,+tree.depth||0))}${tree.name} · ${tree.place_type} · ${tree.status}`,button('Ausführlich & Spieltisch',()=>{state.selectedPlaceId=row.place_id;renderPlacePreview(state,row)}),button('Bearbeiten',()=>editPlace(state,row)));if(activeRow(row))line.append(button('Archivieren',()=>archivePlace(state,row),'danger'));ui.placeList.append(line)}if(!state.placeTree.length)ui.placeList.append(item('Noch keine Orte.'));renderPlacePreview(state,state.places.find(row=>row.place_id===state.selectedPlaceId)||state.places.find(activeRow)||null);renderPhase7Records(state);renderWorldMedia(state);}
   function renderPhase7Records(state){
     const ui=ensurePlaceWorkspace(state),placeName=id=>state.places.find(row=>row.place_id===id)?.name||id;
     clear(ui.stateList);
@@ -1514,7 +1814,7 @@
     state.chronicleUi={panel,status,retry,impacts,timeline,eventForm,placeSelect,correctionSelect,causes,effective,disclosures,disclosureForm,disclosureEvent,disclosureCharacter,conflicts};renderImpacts(state,state.selectedData?.impacts||[]);return state.chronicleUi}
   function parseChronicleEffects(value){return String(value||'').split(/\r?\n/).map(line=>line.trim()).filter(Boolean).map((line,index)=>{const [subjectKind,subjectId,stateKey,rawValue,...description]=line.split('|').map(part=>part.trim());if(!subjectKind||!stateKey||rawValue===undefined)throw new Error(`Zustandszeile ${index+1} ist unvollständig.`);if(/^clear$/i.test(rawValue))return{subject_kind:subjectKind,subject_id:subjectId||null,state_key:stateKey,operation:'clear',state_value:null,description:description.join(' | ')};let stateValue;try{stateValue=JSON.parse(rawValue)}catch{throw new Error(`JSON-Wert in Zustandszeile ${index+1} ist ungültig.`)}return{subject_kind:subjectKind,subject_id:subjectId||null,state_key:stateKey,operation:'set',state_value:stateValue,description:description.join(' | ')}})}
   function parseChronicleParticipants(value){return String(value||'').split(/\r?\n/).map(line=>line.trim()).filter(Boolean).map((line,index)=>{const [participantKind,participantId,...role]=line.split('|').map(part=>part.trim());if(!participantKind||!participantId)throw new Error(`Beteiligtenzeile ${index+1} ist unvollständig.`);return{participant_kind:participantKind,participant_id:participantId,role_label:role.join(' | ')}})}
-  function renderChronicleWorkspace(state){const ui=ensureChronicleWorkspace(state);fillChronicleOptions(state);renderImpacts(state,state.selectedData?.impacts||[]);clear(ui.timeline);if(!state.worldEvents.length)ui.timeline.append(item('Noch kein Weltereignis erfasst.'));for(const row of state.worldEvents){const correction=row.corrects_event_id?' · Korrektur':'';const conflict=+row.open_conflict_count?` · ${row.open_conflict_count} offener Konflikt`:'';const correct=button('Als Korrektur fortschreiben',()=>{ui.correctionSelect.value=row.event_id;field(ui.eventForm,'[data-gm-chronicle-title]').value=`Korrektur: ${row.title}`;field(ui.eventForm,'[data-gm-chronicle-day]').value=state.selectedCampaign?.current_day||row.occurred_day;ui.eventForm.scrollIntoView?.({block:'nearest'})});const disclose=button('Wissen freigeben',()=>{ui.disclosureEvent.value=row.event_id;field(ui.disclosureForm,'[data-gm-chronicle-player-title]').value=row.public_title||row.title;field(ui.disclosureForm,'[data-gm-chronicle-player-summary]').value=row.public_summary||'';ui.disclosureForm.scrollIntoView?.({block:'nearest'})});ui.timeline.append(markMediaEntity(item(`Tag ${row.occurred_day} · ${row.title}${correction}${conflict} — ${row.truth_summary}`,correct,disclose),'world_event',row.event_id))}clear(ui.effective);if(!state.effectiveWorldState.length)ui.effective.append(item(`Bis Tag ${state.selectedCampaign?.current_day||1} ist kein chronikbasierter Zustand wirksam.`));for(const row of state.effectiveWorldState){const conflict=+row.open_conflict_count?' · WIDERSPRUCH OFFEN':'';ui.effective.append(item(`${row.subject_kind}${row.subject_id?` ${row.subject_id}`:''} · ${row.state_key}: ${JSON.stringify(row.state_value)} (seit Tag ${row.occurred_day}, ${row.event_title})${conflict}`))}clear(ui.disclosures);if(!state.worldEventDisclosures.filter(activeRow).length)ui.disclosures.append(item('Noch kein zusätzliches Kampagnen- oder Figurenwissen freigegeben.'));for(const row of state.worldEventDisclosures.filter(activeRow)){const event=state.worldEvents.find(candidate=>candidate.event_id===row.event_id);ui.disclosures.append(item(`${event?.title||row.event_id} · ab Tag ${row.discovered_at_day} · ${row.audience_character_id?'Figurenwissen':'Kampagnenwissen'} · ${row.knowledge_level}`))}clear(ui.conflicts);if(!state.worldEventConflicts.length)ui.conflicts.append(item('Keine Chronikkonflikte erkannt.'));for(const row of state.worldEventConflicts){const controls=[];if(row.status==='open'){for(const [value,label] of [['resolved','Als gelöst markieren'],['accepted','Bewusst akzeptieren']])controls.push(button(label,()=>resolveWorldEventConflict(state,row,value)))}ui.conflicts.append(item(`${row.status==='open'?'OFFEN':'Entschieden'} · ${row.conflict_kind} · ${row.event_a_title} ↔ ${row.event_b_title}: ${row.summary}${row.resolution_note?` · ${row.resolution_note}`:''}`,...controls))}}
+  function renderChronicleWorkspace(state){const ui=ensureChronicleWorkspace(state);fillChronicleOptions(state);renderImpacts(state,state.selectedData?.impacts||[]);clear(ui.timeline);if(!state.worldEvents.length)ui.timeline.append(item('Noch kein Weltereignis erfasst.'));for(const row of state.worldEvents){const correction=row.corrects_event_id?' · Korrektur':'';const conflict=+row.open_conflict_count?` · ${row.open_conflict_count} offener Konflikt`:'';const correct=button('Als Korrektur fortschreiben',()=>{ui.correctionSelect.value=row.event_id;field(ui.eventForm,'[data-gm-chronicle-title]').value=`Korrektur: ${row.title}`;field(ui.eventForm,'[data-gm-chronicle-day]').value=state.selectedCampaign?.current_day||row.occurred_day;ui.eventForm.scrollIntoView?.({block:'nearest'})});const disclose=button('Wissen freigeben',()=>{ui.disclosureEvent.value=row.event_id;field(ui.disclosureForm,'[data-gm-chronicle-player-title]').value=row.public_title||row.title;field(ui.disclosureForm,'[data-gm-chronicle-player-summary]').value=row.public_summary||'';ui.disclosureForm.scrollIntoView?.({block:'nearest'})});ui.timeline.append(item(`Tag ${row.occurred_day} · ${row.title}${correction}${conflict} — ${row.truth_summary}`,correct,disclose))}clear(ui.effective);if(!state.effectiveWorldState.length)ui.effective.append(item(`Bis Tag ${state.selectedCampaign?.current_day||1} ist kein chronikbasierter Zustand wirksam.`));for(const row of state.effectiveWorldState){const conflict=+row.open_conflict_count?' · WIDERSPRUCH OFFEN':'';ui.effective.append(item(`${row.subject_kind}${row.subject_id?` ${row.subject_id}`:''} · ${row.state_key}: ${JSON.stringify(row.state_value)} (seit Tag ${row.occurred_day}, ${row.event_title})${conflict}`))}clear(ui.disclosures);if(!state.worldEventDisclosures.filter(activeRow).length)ui.disclosures.append(item('Noch kein zusätzliches Kampagnen- oder Figurenwissen freigegeben.'));for(const row of state.worldEventDisclosures.filter(activeRow)){const event=state.worldEvents.find(candidate=>candidate.event_id===row.event_id);ui.disclosures.append(item(`${event?.title||row.event_id} · ab Tag ${row.discovered_at_day} · ${row.audience_character_id?'Figurenwissen':'Kampagnenwissen'} · ${row.knowledge_level}`))}clear(ui.conflicts);if(!state.worldEventConflicts.length)ui.conflicts.append(item('Keine Chronikkonflikte erkannt.'));for(const row of state.worldEventConflicts){const controls=[];if(row.status==='open'){for(const [value,label] of [['resolved','Als gelöst markieren'],['accepted','Bewusst akzeptieren']])controls.push(button(label,()=>resolveWorldEventConflict(state,row,value)))}ui.conflicts.append(item(`${row.status==='open'?'OFFEN':'Entschieden'} · ${row.conflict_kind} · ${row.event_a_title} ↔ ${row.event_b_title}: ${row.summary}${row.resolution_note?` · ${row.resolution_note}`:''}`,...controls))}}
   async function saveWorldEvent(state){const ui=ensureChronicleWorkspace(state),form=ui.eventForm,correctsEventId=ui.correctionSelect.value||null;try{const changes={occurredDay:+field(form,'[data-gm-chronicle-day]').value,eventKind:correctsEventId?'correction':field(form,'[data-gm-chronicle-kind]').value,title:field(form,'[data-gm-chronicle-title]').value,truthSummary:field(form,'[data-gm-chronicle-truth]').value,causeSummary:field(form,'[data-gm-chronicle-cause]').value,sourceCampaignId:field(form,'[data-gm-chronicle-source-campaign]').checked?state.selectedCampaignId:null,placeId:ui.placeSelect.value||null,visibility:field(form,'[data-gm-chronicle-visibility]').value,publicTitle:field(form,'[data-gm-chronicle-public-title]').value,publicSummary:field(form,'[data-gm-chronicle-public-summary]').value,correctsEventId,correctionKind:correctsEventId?field(form,'[data-gm-chronicle-correction-kind]').value:null,effects:parseChronicleEffects(field(form,'[data-gm-chronicle-effects]').value),participants:parseChronicleParticipants(field(form,'[data-gm-chronicle-participants]').value),causeEventIds:[...ui.causes.selectedOptions].map(option=>option.value)};await runBusy(state,async()=>{await state.repository.recordWorldEvent(state.selectedCampaign.world_id,changes);form.reset();field(form,'[data-gm-chronicle-source-campaign]').checked=true;field(form,'[data-gm-chronicle-day]').value=state.selectedCampaign?.current_day||1;await loadChronicleWorkspace(state,{force:true});text(state.message,'Weltereignis unveränderlich erfasst; Zeit- und Kausalkonflikte wurden neu geprüft.')})}catch(error){text(state.message,friendlyError(error))}}
   async function saveWorldEventDisclosure(state){const ui=ensureChronicleWorkspace(state),form=ui.disclosureForm;try{await runBusy(state,async()=>{await state.repository.saveCampaignWorldEventDisclosure(state.selectedCampaignId,{disclosureId:field(form,'[data-gm-chronicle-disclosure-id]').value||null,expectedRevision:phase7Number(field(form,'[data-gm-chronicle-disclosure-revision]').value),eventId:ui.disclosureEvent.value,audienceCharacterId:ui.disclosureCharacter.value||null,knowledgeLevel:field(form,'[data-gm-chronicle-knowledge]').value,playerTitle:field(form,'[data-gm-chronicle-player-title]').value,playerSummary:field(form,'[data-gm-chronicle-player-summary]').value,discoveredAtDay:+field(form,'[data-gm-chronicle-discovered-day]').value,sourceReference:field(form,'[data-gm-chronicle-source]').value});form.reset();field(form,'[data-gm-chronicle-discovered-day]').value=state.selectedCampaign?.current_day||1;await loadChronicleWorkspace(state,{force:true});text(state.message,'Chronikwissen freigegeben, ohne die kanonische Wahrheit zu verändern.')})}catch{}}
   async function resolveWorldEventConflict(state,row,status){const reason=global.prompt?.(status==='accepted'?'Warum wird dieser Widerspruch bewusst akzeptiert?':'Wie wurde dieser Widerspruch nachvollziehbar gelöst?','')||'';if(!reason.trim())return;try{await runBusy(state,async()=>{await state.repository.resolveWorldEventConflict(row.conflict_id,row.revision,status,reason);await loadChronicleWorkspace(state,{force:true});text(state.message,'Chronikkonflikt mit Begründung dokumentiert.')})}catch{}}
@@ -1524,19 +1824,17 @@
   function calendarSummary(row){return row?`Tag ${row.current_day} · Jahr ${row.calendar_year} · ${row.season}, Tag ${row.season_day} von 90`:'Kalenderstand nicht verfügbar.'}
   function resetTimeWorkspace(state){state.timeLoadSerial=(state.timeLoadSerial||0)+1;state.timeLoaded=false;state.timeLoading=false;state.timeCampaignId=null;state.timeCalendar=null;state.timeWeatherHistory=[];state.timeAstronomy=[];state.timeUi=null;const panel=field(state.dialog,'[data-gm-panel="time"]');if(panel){clear(panel);panel.append(heading('h3','Zeit, Wetter & Astronomie'),note('Kalender, manuell gezogenes Wetter und astronomische Wissensfreigaben werden beim Öffnen sicher geladen.','notice'))}}
   function ensureTimeWorkspace(state){const panel=field(state.dialog,'[data-gm-panel="time"]');if(!panel)return null;if(state.timeUi?.panel===panel)return state.timeUi;clear(panel);panel.append(heading('h3','Zeit & Wetter'));const status=note('Kalender und Wetter werden geladen …','notice');status.setAttribute('role','status');const retry=button('Bereich erneut laden',()=>loadTimeWorkspace(state,{force:true}));retry.hidden=true;panel.append(status,retry);
-    const startSection=phase7Section(panel,'Kampagnenstart','Der Start wird als Jahr, Jahreszeit und Tag innerhalb der 90-tägigen Jahreszeit festgelegt. Bei älteren Kampagnen ist dies genau einmal vor dem ersten Zeit- oder Wetterfortschritt möglich.');const startStatus=note('','notice'),startForm=document.createElement('form');startForm.dataset.gmCampaignStartForm='';startForm.append(labelControl('Startjahr',input('number','gmStartYear',{required:true,min:1,max:2778})),labelControl('Start-Jahreszeit',select('gmStartSeason',[['Frühling','Frühling'],['Sommer','Sommer'],['Herbst','Herbst'],['Winter','Winter']])),labelControl('Tag der Jahreszeit',input('number','gmStartDay',{required:true,min:1,max:90})));const startPreview=note('Bitte den Kampagnenstart vollständig angeben.');startPreview.dataset.gmStartPreview='';startForm.append(startPreview,submitButton('Kampagnenstart verbindlich festlegen'));for(const control of startForm.querySelectorAll('input,select'))control.addEventListener('input',()=>updateCampaignStartPreview(startForm,'gm-start'));startForm.addEventListener('submit',event=>{event.preventDefault();setInitialCampaignStart(state)});startSection.append(startStatus,startForm);
     const calendarSection=phase7Section(panel,'Kalenderstand','Vier Jahreszeiten mit jeweils 90 Tagen ergeben ein 360-Tage-Jahr. Monate werden erst nach bestätigter Tagesverteilung ergänzt.');const calendarFacts=document.createElement('div');calendarFacts.dataset.gmTimeCalendar='';calendarFacts.className='gm-stat-grid';const warning=note('','notice');warning.dataset.gmTimeWarning='';calendarSection.append(calendarFacts,warning);
     const advanceSection=phase7Section(panel,'Zeit fortschreiben','Der Fortschritt wird genau einmal protokolliert und vermindert aktives Wetter atomar um die vergangenen Tage. Rückwirkende Korrekturen sind nicht definiert.');const advanceForm=document.createElement('form');advanceForm.dataset.gmTimeAdvanceForm='';const days=input('number','gmTimeAdvanceDays',{required:true,min:1,max:999999,value:1}),preview=note('');preview.dataset.gmTimeAdvancePreview='';advanceForm.append(labelControl('Vergangene Tage',days),preview,submitButton('Zeitfortschritt prüfen und bestätigen'));days.addEventListener('input',()=>renderTimePreview(state));advanceForm.addEventListener('submit',event=>{event.preventDefault();advanceTime(state)});advanceSection.append(advanceForm);
     const weatherSection=phase7Section(panel,'Physische Wetterkarte eintragen','Der Builder zieht keine Karte. Trage die gezogene Karte, ihre ausgewürfelte Dauer und die getrennten Effekte manuell ein.');const activeWeather=document.createElement('div');activeWeather.dataset.gmActiveWeather='';activeWeather.className='gm-live-card';const weatherForm=document.createElement('form');weatherForm.dataset.gmWeatherForm='';const replace=input('checkbox','gmWeatherReplace');weatherForm.append(labelControl('Kartenbezeichnung',input('text','gmWeatherName',{required:true,maxLength:160})),labelControl('Öffentlicher Effekt',textarea('gmWeatherPublic',20000)),labelControl('Geheimer Effekt der Spielleitung',textarea('gmWeatherSecret',100000)),labelControl('Ausgewürfelte Dauer in Tagen',input('number','gmWeatherDuration',{required:true,min:1,max:360,value:1})),labelControl('Aktives Wetter ausdrücklich ersetzen',replace),submitButton('Wetterkarte speichern'));weatherForm.addEventListener('submit',event=>{event.preventDefault();recordWeather(state)});weatherSection.append(activeWeather,weatherForm);
     const historySection=phase7Section(panel,'Wetterhistorie','Abgelaufene oder bewusst ersetzte Karten bleiben nachvollziehbar erhalten.');const history=document.createElement('ul');history.dataset.gmWeatherHistory='';historySection.append(history);
-    const astronomySection=phase7Section(panel,'Astronomische Ereignisse','Pflege jede Informationsstufe ausdrücklich. Spieler erhalten serverseitig nur Ebenen, die sowohl ihre wirksame Fähigkeit als auch die Kampagnenfreigabe zulassen.');const astronomyForm=document.createElement('form');astronomyForm.dataset.gmAstronomyForm='';const astronomyArchived=input('checkbox','gmAstronomyArchived');astronomyForm.append(hiddenInput('gmAstronomyId'),hiddenInput('gmAstronomyRevision'),labelControl('Interner Titel der Spielleitung',input('text','gmAstronomyTitle',{required:true,maxLength:160})),labelControl('Erster Beobachtungstag',input('number','gmAstronomyStart',{required:true,min:1,max:1000000})),labelControl('Letzter Beobachtungstag',input('number','gmAstronomyEnd',{required:true,min:1,max:1000000})),labelControl('Offensichtliche Erscheinung · ohne Astronomie',textarea('gmAstronomyObvious',50000)),labelControl('Niedrige Information · ab wirksam 5',textarea('gmAstronomyLow',50000)),labelControl('Mittlere Information · ab wirksam 10',textarea('gmAstronomyMedium',50000)),labelControl('Hohe Information · ab wirksam 15',textarea('gmAstronomyHigh',50000)),labelControl('Geheime Notizen der Spielleitung',textarea('gmAstronomyNotes',100000)),labelControl('Ereignis archivieren',astronomyArchived),submitButton('Astronomisches Ereignis speichern'),button('Eingabe leeren',()=>clearAstronomyForm(state)));astronomyForm.addEventListener('submit',event=>{event.preventDefault();saveAstronomicalEvent(state)});const astronomyList=document.createElement('ul');astronomyList.dataset.gmAstronomyList='';astronomySection.append(astronomyForm,heading('h5','Ereignisse und Kampagnenfreigaben'),astronomyList);state.timeUi={panel,status,retry,startSection,startStatus,startForm,startPreview,calendarFacts,warning,advanceForm,days,preview,activeWeather,weatherForm,history,astronomyForm,astronomyList};return state.timeUi}
+    const astronomySection=phase7Section(panel,'Astronomische Ereignisse','Pflege jede Informationsstufe ausdrücklich. Spieler erhalten serverseitig nur Ebenen, die sowohl ihre wirksame Fähigkeit als auch die Kampagnenfreigabe zulassen.');const astronomyForm=document.createElement('form');astronomyForm.dataset.gmAstronomyForm='';const astronomyArchived=input('checkbox','gmAstronomyArchived');astronomyForm.append(hiddenInput('gmAstronomyId'),hiddenInput('gmAstronomyRevision'),labelControl('Interner Titel der Spielleitung',input('text','gmAstronomyTitle',{required:true,maxLength:160})),labelControl('Erster Beobachtungstag',input('number','gmAstronomyStart',{required:true,min:1,max:1000000})),labelControl('Letzter Beobachtungstag',input('number','gmAstronomyEnd',{required:true,min:1,max:1000000})),labelControl('Offensichtliche Erscheinung · ohne Astronomie',textarea('gmAstronomyObvious',50000)),labelControl('Niedrige Information · ab wirksam 5',textarea('gmAstronomyLow',50000)),labelControl('Mittlere Information · ab wirksam 10',textarea('gmAstronomyMedium',50000)),labelControl('Hohe Information · ab wirksam 15',textarea('gmAstronomyHigh',50000)),labelControl('Geheime Notizen der Spielleitung',textarea('gmAstronomyNotes',100000)),labelControl('Ereignis archivieren',astronomyArchived),submitButton('Astronomisches Ereignis speichern'),button('Eingabe leeren',()=>clearAstronomyForm(state)));astronomyForm.addEventListener('submit',event=>{event.preventDefault();saveAstronomicalEvent(state)});const astronomyList=document.createElement('ul');astronomyList.dataset.gmAstronomyList='';astronomySection.append(astronomyForm,heading('h5','Ereignisse und Kampagnenfreigaben'),astronomyList);state.timeUi={panel,status,retry,calendarFacts,warning,advanceForm,days,preview,activeWeather,weatherForm,history,astronomyForm,astronomyList};return state.timeUi}
   function renderTimePreview(state){const ui=ensureTimeWorkspace(state),calendar=state.timeCalendar;if(!ui||!calendar)return;const days=+ui.days.value;if(!Number.isInteger(days)||days<1||calendar.current_day>1000000-days){text(ui.preview,'Bitte gib eine gültige positive Anzahl vergangener Tage ein.');return}const target=calendarAt(calendar.current_day+days);text(ui.preview,`Vorschau: ${calendarSummary(target)}${target.season!==calendar.season?` · Jahreszeitenwechsel zu ${target.season}.`:''}`)}
-  function renderTimeWorkspace(state){const ui=ensureTimeWorkspace(state),row=state.timeCalendar;clear(ui.calendarFacts);if(!row){ui.calendarFacts.append(note('Kein Kalenderstand verfügbar.'));return}text(ui.startStatus,row.start_configured?`Verbindlicher Kampagnenstart: Jahr ${row.campaign_start_year} · ${row.campaign_start_season}, Tag ${row.campaign_start_season_day}.`:row.start_can_configure?'Diese ältere Kampagne steht noch auf der automatischen Vorgabe. Lege den tatsächlichen Start jetzt einmalig fest.':'Der automatische Altstand kann nach einem Zeit- oder Wetterfortschritt nicht mehr rückwirkend geändert werden.');show(ui.startForm,!row.start_configured&&!!row.start_can_configure);if(!row.start_configured&&row.start_can_configure)updateCampaignStartPreview(ui.startForm,'gm-start');for(const [label,value] of [['Kampagnentag',row.current_day],['Jahr',row.calendar_year],['Jahreszeit',row.season],['Tag der Jahreszeit',`${row.season_day} / 90`]]){const wrap=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=String(value);wrap.append(dt,dd);ui.calendarFacts.append(wrap)}text(ui.warning,row.season_warning||'Kein Jahreszeitenwechsel in den nächsten drei Tagen.');ui.warning.classList.toggle('ok',!!row.season_warning);clear(ui.activeWeather);if(row.weather_id){ui.activeWeather.append(heading('h5',row.card_name||'Aktuelles Wetter'),note(`Noch ${row.weather_remaining_days} von ${row.rolled_duration_days} Tagen · seit Kampagnentag ${row.start_day}`),note(row.public_effect||'Kein öffentlicher Effekt.'),note(row.gm_effect?`Nur Spielleitung: ${row.gm_effect}`:'Kein geheimer Effekt.'))}else{const latest=state.timeWeatherHistory[0];ui.activeWeather.append(heading('h5','Kein aktives Wetter'),note(latest?.status==='expired'?'Wetter abgelaufen – neue Wetterkarte ziehen.':'Ziehe bei Bedarf eine physische Wetterkarte und trage sie hier ein.','notice'))}clear(ui.history);if(!state.timeWeatherHistory.length)ui.history.append(item('Noch keine Wetterkarte dokumentiert.'));for(const weather of state.timeWeatherHistory){const status=weather.status==='active'?'aktiv':weather.status==='expired'?'abgelaufen':'ersetzt';ui.history.append(markMediaEntity(item(`${weather.card_name} · ab Tag ${weather.start_day} · ${weather.rolled_duration_days} Tage · ${status}${weather.expired_day?` an Tag ${weather.expired_day}`:''}${weather.gm_effect?` · SL: ${weather.gm_effect}`:''}`),'weather',weather.weather_id))}renderAstronomyWorkspace(state);renderTimePreview(state)}
+  function renderTimeWorkspace(state){const ui=ensureTimeWorkspace(state),row=state.timeCalendar;clear(ui.calendarFacts);if(!row){ui.calendarFacts.append(note('Kein Kalenderstand verfügbar.'));return}for(const [label,value] of [['Kampagnentag',row.current_day],['Jahr',row.calendar_year],['Jahreszeit',row.season],['Tag der Jahreszeit',`${row.season_day} / 90`]]){const wrap=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=String(value);wrap.append(dt,dd);ui.calendarFacts.append(wrap)}text(ui.warning,row.season_warning||'Kein Jahreszeitenwechsel in den nächsten drei Tagen.');ui.warning.classList.toggle('ok',!!row.season_warning);clear(ui.activeWeather);if(row.weather_id){ui.activeWeather.append(heading('h5',row.card_name||'Aktuelles Wetter'),note(`Noch ${row.weather_remaining_days} von ${row.rolled_duration_days} Tagen · seit Kampagnentag ${row.start_day}`),note(row.public_effect||'Kein öffentlicher Effekt.'),note(row.gm_effect?`Nur Spielleitung: ${row.gm_effect}`:'Kein geheimer Effekt.'))}else{const latest=state.timeWeatherHistory[0];ui.activeWeather.append(heading('h5','Kein aktives Wetter'),note(latest?.status==='expired'?'Wetter abgelaufen – neue Wetterkarte ziehen.':'Ziehe bei Bedarf eine physische Wetterkarte und trage sie hier ein.','notice'))}clear(ui.history);if(!state.timeWeatherHistory.length)ui.history.append(item('Noch keine Wetterkarte dokumentiert.'));for(const weather of state.timeWeatherHistory){const status=weather.status==='active'?'aktiv':weather.status==='expired'?'abgelaufen':'ersetzt';ui.history.append(item(`${weather.card_name} · ab Tag ${weather.start_day} · ${weather.rolled_duration_days} Tage · ${status}${weather.expired_day?` an Tag ${weather.expired_day}`:''}${weather.gm_effect?` · SL: ${weather.gm_effect}`:''}`))}renderAstronomyWorkspace(state);renderTimePreview(state)}
 
   function clearAstronomyForm(state){const form=ensureTimeWorkspace(state).astronomyForm;form.reset();field(form,'[data-gm-astronomy-id]').value='';field(form,'[data-gm-astronomy-revision]').value=''}
   function editAstronomicalEvent(state,row){const form=ensureTimeWorkspace(state).astronomyForm;field(form,'[data-gm-astronomy-id]').value=row.event_id;field(form,'[data-gm-astronomy-revision]').value=row.event_revision;field(form,'[data-gm-astronomy-title]').value=row.internal_title||'';field(form,'[data-gm-astronomy-start]').value=row.observation_start_day;field(form,'[data-gm-astronomy-end]').value=row.observation_end_day;field(form,'[data-gm-astronomy-obvious]').value=row.obvious_text||'';field(form,'[data-gm-astronomy-low]').value=row.low_text||'';field(form,'[data-gm-astronomy-medium]').value=row.medium_text||'';field(form,'[data-gm-astronomy-high]').value=row.high_text||'';field(form,'[data-gm-astronomy-notes]').value=row.gm_notes||'';field(form,'[data-gm-astronomy-archived]').checked=!!row.event_archived_at;form.scrollIntoView?.({block:'nearest'})}
-  function renderAstronomyWorkspace(state){const ui=ensureTimeWorkspace(state);clear(ui.astronomyList);if(typeof state.repository.listCampaignAstronomyManagement!=='function'){ui.astronomyList.append(item('Astronomie ist in dieser App-Fassung noch nicht verbunden.'));return}if(!state.timeAstronomy.length){ui.astronomyList.append(item('Noch kein astronomisches Ereignis gepflegt.'));return}for(const row of state.timeAstronomy){const archived=!!row.event_archived_at,label=`${row.internal_title} · Tag ${row.observation_start_day}–${row.observation_end_day}${archived?' · archiviert':row.released?` · freigegeben bis ${row.maximum_information_level}`:' · nicht freigegeben'}`,controls=[button('Bearbeiten',()=>editAstronomicalEvent(state,row)),button(archived?'Wiederherstellen':'Archivieren',()=>archiveAstronomicalEvent(state,row,!archived),archived?'':'danger')];if(!archived){const maximum=select('gmAstronomyReleaseLevel',[['obvious','Nur offensichtlich'],['low','Bis niedrig · 5'],['medium','Bis mittel · 10'],['high','Bis hoch · 15']]);maximum.value=row.maximum_information_level||'obvious';controls.push(maximum,button(row.released?'Freigabe zurücknehmen':'Freigeben',()=>setAstronomyRelease(state,row,maximum.value,!row.released),row.released?'danger':''))}ui.astronomyList.append(markMediaEntity(item(label,...controls),'astronomy',row.event_id),item(`Offensichtlich: ${row.obvious_text}`),item(`Niedrig: ${row.low_text}`),item(`Mittel: ${row.medium_text}`),item(`Hoch: ${row.high_text}`),...(row.gm_notes?[item(`Nur Spielleitung: ${row.gm_notes}`)]:[]))}}
-  async function setInitialCampaignStart(state){const ui=ensureTimeWorkspace(state),form=ui.startForm;if(typeof state.repository.setCampaignStart!=='function'){text(state.message,'Die Startzeit-Einstellung ist in dieser App-Fassung noch nicht verbunden.');return}try{await runBusy(state,async()=>{const receipt=await state.repository.setCampaignStart(state.selectedCampaignId,{startYear:+field(form,'[data-gm-start-year]').value,startSeason:field(form,'[data-gm-start-season]').value,startSeasonDay:+field(form,'[data-gm-start-day]').value});state.selectedCampaign.current_day=receipt.current_day;state.selectedCampaign.campaign_start_day=receipt.start_day;state.selectedCampaign.start_configured=true;await loadTimeWorkspace(state,{force:true});text(state.message,`Kampagnenstart festgelegt: Jahr ${receipt.year} · ${receipt.season}, Tag ${receipt.season_day}.`)})}catch{}}
+  function renderAstronomyWorkspace(state){const ui=ensureTimeWorkspace(state);clear(ui.astronomyList);if(typeof state.repository.listCampaignAstronomyManagement!=='function'){ui.astronomyList.append(item('Astronomie ist in dieser App-Fassung noch nicht verbunden.'));return}if(!state.timeAstronomy.length){ui.astronomyList.append(item('Noch kein astronomisches Ereignis gepflegt.'));return}for(const row of state.timeAstronomy){const archived=!!row.event_archived_at,label=`${row.internal_title} · Tag ${row.observation_start_day}–${row.observation_end_day}${archived?' · archiviert':row.released?` · freigegeben bis ${row.maximum_information_level}`:' · nicht freigegeben'}`,controls=[button('Bearbeiten',()=>editAstronomicalEvent(state,row)),button(archived?'Wiederherstellen':'Archivieren',()=>archiveAstronomicalEvent(state,row,!archived),archived?'':'danger')];if(!archived){const maximum=select('gmAstronomyReleaseLevel',[['obvious','Nur offensichtlich'],['low','Bis niedrig · 5'],['medium','Bis mittel · 10'],['high','Bis hoch · 15']]);maximum.value=row.maximum_information_level||'obvious';controls.push(maximum,button(row.released?'Freigabe zurücknehmen':'Freigeben',()=>setAstronomyRelease(state,row,maximum.value,!row.released),row.released?'danger':''))}ui.astronomyList.append(item(label,...controls),item(`Offensichtlich: ${row.obvious_text}`),item(`Niedrig: ${row.low_text}`),item(`Mittel: ${row.medium_text}`),item(`Hoch: ${row.high_text}`),...(row.gm_notes?[item(`Nur Spielleitung: ${row.gm_notes}`)]:[]))}}
   async function saveAstronomicalEvent(state){const ui=ensureTimeWorkspace(state),form=ui.astronomyForm,campaign=state.selectedCampaign;try{await runBusy(state,async()=>{await state.repository.saveAstronomicalEvent(campaign.world_id,{eventId:field(form,'[data-gm-astronomy-id]').value||null,expectedRevision:field(form,'[data-gm-astronomy-revision]').value?+field(form,'[data-gm-astronomy-revision]').value:null,internalTitle:field(form,'[data-gm-astronomy-title]').value,obviousText:field(form,'[data-gm-astronomy-obvious]').value,lowText:field(form,'[data-gm-astronomy-low]').value,mediumText:field(form,'[data-gm-astronomy-medium]').value,highText:field(form,'[data-gm-astronomy-high]').value,observationStartDay:+field(form,'[data-gm-astronomy-start]').value,observationEndDay:+field(form,'[data-gm-astronomy-end]').value,gmNotes:field(form,'[data-gm-astronomy-notes]').value,archived:field(form,'[data-gm-astronomy-archived]').checked});clearAstronomyForm(state);await loadTimeWorkspace(state,{force:true});text(state.message,'Astronomisches Ereignis mit getrennten Wissensebenen gespeichert.')})}catch{}}
   async function archiveAstronomicalEvent(state,row,archived){if(typeof global.confirm==='function'&&!global.confirm(archived?'Ereignis archivieren und aus allen Spieleransichten entfernen?':'Ereignis wiederherstellen?'))return;try{await runBusy(state,async()=>{await state.repository.saveAstronomicalEvent(row.world_id,{eventId:row.event_id,expectedRevision:row.event_revision,internalTitle:row.internal_title,obviousText:row.obvious_text,lowText:row.low_text,mediumText:row.medium_text,highText:row.high_text,observationStartDay:row.observation_start_day,observationEndDay:row.observation_end_day,gmNotes:row.gm_notes,archived});await loadTimeWorkspace(state,{force:true});text(state.message,archived?'Astronomisches Ereignis archiviert.':'Astronomisches Ereignis wiederhergestellt.')})}catch{}}
   async function setAstronomyRelease(state,row,maximumInformationLevel,released){if(!released&&typeof global.confirm==='function'&&!global.confirm('Astronomische Freigabe für diese Kampagne zurücknehmen?'))return;try{await runBusy(state,async()=>{await state.repository.setCampaignAstronomicalEventRelease(state.selectedCampaignId,row.event_id,{maximumInformationLevel,expectedRevision:row.release_revision||null,released});await loadTimeWorkspace(state,{force:true});text(state.message,released?`Astronomiewissen bis ${maximumInformationLevel} freigegeben.`:'Astronomiefreigabe zurückgenommen.')})}catch{}}
@@ -1618,8 +1916,7 @@
     field(state.dialog,'[data-gm-auth-reset]')?.addEventListener('click',async()=>{try{await runBusy(state,async()=>{const result=await state.auth.requestPasswordReset(field(state.authForm,'[data-gm-auth-email]').value);text(state.message,`Wenn ein Konto für ${result.email} besteht, wurde eine E-Mail zum Festlegen eines neuen Passworts gesendet.`)})}catch{}});
     field(state.dialog,'[data-gm-auth-password-form]')?.addEventListener('submit',async event=>{event.preventDefault();const form=event.currentTarget;try{await runBusy(state,async()=>{const password=passwordPair(form,'[data-gm-auth-new-password]','[data-gm-auth-new-password-confirm]');await state.auth.updatePassword(password);form.reset();form.closest('details')?.removeAttribute('open');text(state.message,'Das Passwort wurde gespeichert. Die Anmeldung funktioniert künftig mit E-Mail und Passwort.')})}catch{}});
     field(state.dialog,'[data-gm-sign-out]')?.addEventListener('click',async()=>{try{await runBusy(state,async()=>{await state.auth.signOut();await renderSession(state,null);text(state.message,'Du bist abgemeldet. Private Spielleitungsdaten wurden entfernt.')})}catch{}});
-    field(state.dialog,'[data-gm-campaign-create]')?.addEventListener('input',event=>{if(event.target.matches('[data-gm-create-start-year],[data-gm-create-start-season],[data-gm-create-start-day]'))updateCampaignStartPreview(event.currentTarget,'gm-create-start')});
-    field(state.dialog,'[data-gm-campaign-create]')?.addEventListener('submit',async event=>{event.preventDefault();const form=event.currentTarget,worldId=field(form,'[data-gm-world-select]').value;try{await runBusy(state,async()=>{const created=await state.repository.createCampaign({worldId:worldId==='__new__'?null:worldId,worldName:field(form,'[data-gm-world-name]').value,campaignName:field(form,'[data-gm-campaign-name]').value,summary:field(form,'[data-gm-campaign-summary]').value,startYear:+field(form,'[data-gm-create-start-year]').value,startSeason:field(form,'[data-gm-create-start-season]').value,startSeasonDay:+field(form,'[data-gm-create-start-day]').value});state.selectedCampaignId=created.campaign_id;form.reset();await refresh(state);text(state.message,`Kampagne „${created.name}“ wurde ${worldId==='__new__'?'mit einer neuen Welt':'in der vorhandenen Welt'} angelegt.`)})}catch{}});
+    field(state.dialog,'[data-gm-campaign-create]')?.addEventListener('submit',async event=>{event.preventDefault();const form=event.currentTarget,worldId=field(form,'[data-gm-world-select]').value;try{await runBusy(state,async()=>{const created=await state.repository.createCampaign({worldId:worldId==='__new__'?null:worldId,worldName:field(form,'[data-gm-world-name]').value,campaignName:field(form,'[data-gm-campaign-name]').value,summary:field(form,'[data-gm-campaign-summary]').value});state.selectedCampaignId=created.campaign_id;form.reset();await refresh(state);text(state.message,`Kampagne „${created.name}“ wurde ${worldId==='__new__'?'mit einer neuen Welt':'in der vorhandenen Welt'} angelegt.`)})}catch{}});
     field(state.dialog,'[data-gm-campaign-edit]')?.addEventListener('submit',async event=>{event.preventDefault();if(!state.selectedCampaignId)return;try{await runBusy(state,async()=>{await state.repository.updateCampaign(state.selectedCampaignId,editedCampaign(state));await refresh(state);text(state.message,'Kampagne gespeichert. Die Spieleransicht ist aktualisiert; geheime Notizen bleiben getrennt.')})}catch{}});
     field(state.dialog,'[data-gm-create-invite]')?.addEventListener('click',async()=>{if(!state.selectedCampaignId)return;try{await runBusy(state,async()=>{const invite=await state.repository.createInvite(state.selectedCampaignId,{label:'Spielleitungs-Einladung',maxUses:1});text(field(state.dialog,'[data-gm-invite-output]'),`Einladungscode: ${invite.code} · einmalig verwendbar`);text(state.message,'Einladungscode erstellt.')})}catch{}});
     field(state.dialog,'[data-gm-session-form]')?.addEventListener('submit',async event=>{event.preventDefault();if(!state.selectedCampaignId)return;const form=event.currentTarget,cross=field(form,'[data-gm-session-cross]').checked;try{await runBusy(state,async()=>{const receipt=await state.repository.createSession(state.selectedCampaignId,{title:field(form,'[data-gm-session-title]').value,date:field(form,'[data-gm-session-date]').value,depth:field(form,'[data-gm-session-depth]').value,summary:field(form,'[data-gm-session-summary]').value,notes:field(form,'[data-gm-session-notes]').value,playerVisible:field(form,'[data-gm-session-visible]').checked,status:field(form,'[data-gm-session-status]').value,defaultCbp:+field(form,'[data-gm-session-cbp]').value,crossCampaignDraft:cross,impactSummary:field(form,'[data-gm-session-impact]').value});form.reset();field(form,'[data-gm-session-visible]').checked=true;await selectCampaign(state,state.selectedCampaignId);text(state.message,`Spielabend gespeichert.${receipt.hidden_impact_count?` ${receipt.hidden_impact_count} verdeckte Folge(n) wurden vorgemerkt.`:''}`)})}catch{}});
@@ -1641,5 +1938,7 @@
     try{const result=await state.auth.restoreSession();await renderSession(state,result.user);if(!state.unsubscribe)state.unsubscribe=await state.auth.onAuthStateChange(({event,user})=>renderSession(state,user).then(()=>{if(event==='PASSWORD_RECOVERY'&&user){const panel=field(state.dialog,'[data-gm-auth-password-panel]');if(panel)panel.open=true;text(state.message,'Lege jetzt ein neues Passwort fest und speichere es.')}}).catch(error=>{if(!state.currentUserId)text(state.message,friendlyError(error))}));if(!result.user)text(state.message,'Melde dich mit E-Mail und Passwort an oder erstelle einmalig ein Konto.');return{configured:true,user:result.user}}catch(error){if(state.currentUserId||!state.session?.hidden)hideTentativeSession(state);show(state.authForm?.closest('.auth-account-box'),true);show(state.authForm,true);text(state.message,friendlyError(error));return{configured:true,user:null,error}}
   }
   async function open({root,dialog,services}={}){const view=root||dialog;if(!view)throw new TypeError('Die Spielleiteransicht fehlt.');if(view instanceof HTMLDialogElement){if(typeof view.showModal==='function'&&!view.open)view.showModal();else view.setAttribute('open','')}else view.hidden=false;const state=states.get(view)||createState(view,services);activateView(state,state.activeView);const session=await initialize(state);if(session.error)throw session.error;return{configured:session.configured,authenticated:!!session.user,campaigns:state.campaigns.length}}
+  global.EberosCreatureNpcBridgeV1813=Object.freeze({version:NPC_SHEET_VERSION,create(name){return structuredClone(freshNpcSheet(name))},toNpcSheet(row){return structuredClone(creatureToBuilderNpc(row))},serialize(owner){return serializeNpcSheet(owner)},mount(root,owner,options={}){if(!(root instanceof Element))throw new TypeError('Das Ziel des NPC-Fensters fehlt.');return mountNpcSheetEditor(root,owner,options)}});
+  global.EberosCreatureNpcBridgeV1812=Object.freeze({version:CREATURE_BUILDER_PRESENTATION_VERSION,presentationKey:CREATURE_BUILDER_PRESENTATION_KEY,toNpcSnapshot(row){return structuredClone(creatureToBuilderNpc(row))}});
   global.EberosGameMasterWorkspace=Object.freeze({open,friendlyError});
 })(globalThis);
