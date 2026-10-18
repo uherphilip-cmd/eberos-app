@@ -491,7 +491,7 @@
     const creatureSection=document.createElement('section');creatureSection.className='gm-player-preview';
     creatureSection.append(heading('h4','Wesen dieser Welt'));
     const creatureList=document.createElement('ul');creatureSection.append(creatureList);
-    creatureSection.append(button('Neues Wesen',()=>{state.selectedCreatureId=null;state.creatureImportDraft=null;renderCreatureForm(state)}));
+    const newCreatureButton=button('Neues Wesen anlegen',()=>{state.selectedCreatureId=null;state.creatureImportDraft=null;renderCreatureForm(state);const form=state.creatureUi?.creatureForm,name=field(form,'[data-gm-creature-name]');form?.scrollIntoView?.({block:'nearest'});name?.focus?.({preventScroll:true});text(state.message,'Das Formular für ein neues Wesen ist bereit.')});creatureSection.append(newCreatureButton);
     const creatureForm=document.createElement('form');creatureForm.dataset.gmCreatureForm='';
     const creatureFormHeading=heading('h5','Neues Wesen anlegen');creatureForm.append(creatureFormHeading);
     const creatureImportHint=note('');creatureImportHint.hidden=true;creatureForm.append(creatureImportHint);
@@ -503,8 +503,10 @@
       labelControl('Öffentliche Grundinformation (noch nicht automatisch freigegeben)',textarea('gmCreatureSummary',4000)),
       labelControl('Geheime Spielleitungsnotizen',textarea('gmCreatureNotes',100000))
     );
-    creatureForm.append(button('Werte der gewählten Vorlage als Entwurf übernehmen',()=>stageArchetypeValuesForCreature(state)));
+    const creatureTemplateApply=button('Werte der gewählten Vorlage als Entwurf übernehmen',()=>stageArchetypeValuesForCreature(state));creatureTemplateApply.disabled=true;creatureTemplateApply.title='Wähle zuerst einen Archetyp.';creatureForm.append(creatureTemplateApply);
     const creatureTemplateHint=note('Die Auswahl eines Archetyps allein ändert keine Werte. Eine bewusste Übernahme betrifft nur Grundwerte, Counter und Regelfähigkeiten; vorhandenes Inventar, Geld und Effekte bleiben erhalten.');creatureTemplateHint.dataset.gmCreatureTemplateHint='';creatureForm.append(creatureTemplateHint);
+    const refreshCreatureTemplateAction=()=>{const selectedId=field(creatureForm,'[data-gm-creature-archetype]')?.value,archetype=state.archetypes.find(row=>activeRow(row)&&archetypeId(row)===selectedId);let transferable=false;if(archetype)try{transferable=templateValueCount(portableCreatureValues(archetype.template_data||{}))>0}catch{}creatureTemplateApply.disabled=!transferable;creatureTemplateApply.title=!selectedId?'Wähle zuerst einen Archetyp.':!archetype?'Dieser Archetyp ist nicht mehr aktiv.':!transferable?'Dieser Archetyp enthält keine übertragbaren Werte.':'Vorlagenwerte als noch ungespeicherten Entwurf übernehmen.';if(!selectedId)text(creatureTemplateHint,'Wähle einen Archetyp, wenn du dessen Grundwerte, Counter und Regelfähigkeiten bewusst übernehmen möchtest.');else if(!transferable)text(creatureTemplateHint,`„${archetype?.name||'Diese Vorlage'}“ enthält keine übertragbaren Grundwerte, Counter oder Regelfähigkeiten.`);else text(creatureTemplateHint,`„${archetype.name}“ ist verfügbar. Mit dem Button übernimmst du dessen Werte zunächst nur in dieses Formular.`)};
+    field(creatureForm,'[data-gm-creature-archetype]').addEventListener('change',()=>{creatureForm.__archetypeApply=null;refreshCreatureTemplateAction()});
     const statsEditor=makeCreatureStatsEditor(creatureForm);
     creatureForm.append(note('Spezies, Archetyp und Rollen bleiben getrennt. Eine übernommene Vorlage wird erst mit „Wesen speichern“ wirksam.'));
     const creatureSave=submitButton('Wesen speichern');creatureForm.append(creatureSave);
@@ -615,7 +617,7 @@
     factionForm.append(labelControl('Neue Fraktion anlegen',input('text','gmWorldFactionName',{required:true,maxLength:120})),submitButton('Fraktion anlegen'));
     factionForm.addEventListener('submit',event=>{event.preventDefault();createWorldFaction(state)});registrySection.append(factionForm);panel.append(registrySection);
 
-    state.creatureUi={panel,status,retry,editorSections:[creatureSection,referenceSection,lootSection,companionSection,disclosureSection,archetypeSection,registrySection],referenceSection,lootSection,secretLootEffectStatus,secretLootEffectRefresh,secretLootEffectList,companionSection,registrySection,creatureList,creatureForm,creatureFormHeading,creatureImportHint,creatureTemplateHint,creatureArchive,statsEditor,referenceHint,referenceEditor,factionLinks,lootHint,lootForm,lootRuleHint,lootList,migrationList,companionList,companionForm,placeList,placeForm,factionList,factionForm,disclosureForm,disclosureHeading,disclosureState,disclosureSave,disclosureHint,archetypeList,archetypeForm,archetypeFormHeading,archetypeTemplateHint,archetypeArchive};
+    state.creatureUi={panel,status,retry,editorSections:[creatureSection,referenceSection,lootSection,companionSection,disclosureSection,archetypeSection,registrySection],referenceSection,lootSection,secretLootEffectStatus,secretLootEffectRefresh,secretLootEffectList,companionSection,registrySection,creatureList,newCreatureButton,creatureForm,creatureFormHeading,creatureImportHint,creatureTemplateHint,creatureTemplateApply,refreshCreatureTemplateAction,creatureArchive,statsEditor,referenceHint,referenceEditor,factionLinks,lootHint,lootForm,lootRuleHint,lootList,migrationList,companionList,companionForm,placeList,placeForm,factionList,factionForm,disclosureForm,disclosureHeading,disclosureState,disclosureSave,disclosureHint,archetypeList,archetypeForm,archetypeFormHeading,archetypeTemplateHint,archetypeArchive};
     return state.creatureUi;
   }
   function renderCreatureList(state){
@@ -660,7 +662,7 @@
       const archived=state.archetypes.find(archetype=>archetypeId(archetype)===row.archetype_id),option=document.createElement('option');
       option.value=row.archetype_id;option.textContent=`${archived?.name||'Vorlage'} (archiviert – bestehende Verknüpfung)`;template.append(option);
     }
-    template.value=source?.archetype_id||'';ui.creatureArchive.hidden=!row;
+    template.value=source?.archetype_id||'';ui.refreshCreatureTemplateAction();ui.creatureArchive.hidden=!row;
     renderCreatureStats(state,source);renderCreatureReferences(state,row);renderCreatureLootForm(state,row);
   }
   function renderCreatureReferences(state,creature){
