@@ -834,6 +834,25 @@
   }
   function renderCreaturePresentation(state){renderCreatureNpcWindow(state)}
 
+  function renderCreatureQuickControls(state){
+    const ui=state.creatureUi,choice=ui?.quickArchetype,hint=ui?.quickHint;if(!choice||!hint)return;const previous=choice.value;clear(choice);
+    const preparedGroup=document.createElement('optgroup');preparedGroup.label='Vorbereitete Archetypen';
+    for(const preset of preparedArchetypes){const existing=matchingPreparedArchetype(state,preset),option=document.createElement('option');option.value=`preset:${preset.key}`;option.textContent=`${preset.name}${existing?'':' · wird automatisch übernommen'}`;preparedGroup.append(option)}choice.append(preparedGroup);
+    const preparedIds=new Set(preparedArchetypes.map(preset=>archetypeId(matchingPreparedArchetype(state,preset))).filter(Boolean)),own=state.archetypes.filter(row=>activeRow(row)&&!preparedIds.has(archetypeId(row)));
+    if(own.length){const ownGroup=document.createElement('optgroup');ownGroup.label='Eigene Archetypen';for(const archetype of own){const option=document.createElement('option');option.value=`archetype:${archetypeId(archetype)}`;option.textContent=archetype.name;ownGroup.append(option)}choice.append(ownGroup)}
+    if([...choice.options].some(option=>option.value===previous))choice.value=previous;
+    const value=choice.value;if(value.startsWith('preset:')){const preset=preparedArchetypes.find(row=>row.key===value.slice(7)),existing=matchingPreparedArchetype(state,preset);text(hint,existing?`${preset.name}: Ein Klick öffnet sofort einen vollständigen, ungespeicherten NPC-Entwurf.`:`${preset.name}: Wird automatisch in die Welt übernommen und danach sofort als NPC-Entwurf geöffnet.`)}
+    else{const archetype=state.archetypes.find(row=>archetypeId(row)===value.slice(10));text(hint,archetype?`${archetype.name}: Die Standard-Ausbaustufe wird sofort im NPC-Fenster geöffnet.`:'Wähle einen Archetyp für die Schnellerstellung.')}
+  }
+  async function quickPrepareCreature(state){
+    if(!canManageCreatureWorld(state))return;const value=state.creatureUi?.quickArchetype?.value;if(!value){text(state.message,'Bitte wähle einen Archetyp für die Schnellerstellung.');return}
+    if(value.startsWith('preset:')){
+      const preset=preparedArchetypes.find(row=>row.key===value.slice(7));if(!preset)return;
+      await importPreparedArchetype(state,preset);const archetype=matchingPreparedArchetype(state,preset);if(!archetype){text(state.message,'Der vorbereitete Archetyp konnte nicht in diese Welt übernommen werden.');return}beginCreatureFromArchetype(state,archetypeId(archetype));return;
+    }
+    const selectedId=value.startsWith('archetype:')?value.slice(10):'';if(!state.archetypes.some(row=>activeRow(row)&&archetypeId(row)===selectedId)){text(state.message,'Dieser Archetyp ist nicht mehr aktiv. Bitte lade den Wesen-Reiter neu.');return}beginCreatureFromArchetype(state,selectedId);
+  }
+
   function resetCreatureWorkspace(state){
     state.creatureLoadSerial=(state.creatureLoadSerial||0)+1;
     state.secretLootEffectLoadSerial=(state.secretLootEffectLoadSerial||0)+1;
@@ -851,12 +870,20 @@
     const status=note('Wesen werden geladen …');status.setAttribute('role','status');panel.append(status);
     const retry=button('Wesen erneut laden',()=>loadCreatureWorkspace(state,{force:true}));retry.hidden=true;panel.append(retry);
 
+    const quickBar=document.createElement('section');quickBar.className='gm-creature-quickbar';quickBar.dataset.gmCreatureQuickbar='';
+    quickBar.append(heading('h4','Schnell-NPC'));
+    const quickArchetype=document.createElement('select');quickArchetype.dataset.gmCreatureQuickArchetype='';quickArchetype.setAttribute('aria-label','Archetyp für Schnell-NPC');
+    const quickCreate=button('NPC sofort vorbereiten',()=>quickPrepareCreature(state));
+    const quickHint=note('Archetypen werden geladen …');quickHint.dataset.gmCreatureQuickHint='';
+    const quickActions=document.createElement('div');quickActions.className='gm-creature-quick-actions';quickActions.append(quickCreate,button('Zur Wesenliste',()=>panel.querySelector('[data-gm-creature-section]')?.scrollIntoView?.({behavior:'smooth',block:'start'})),button('Zu Archetypen',()=>panel.querySelector('[data-gm-archetype-section]')?.scrollIntoView?.({behavior:'smooth',block:'start'})));
+    quickArchetype.addEventListener('change',()=>renderCreatureQuickControls(state));quickBar.append(quickArchetype,quickActions,quickHint);panel.append(quickBar);
+
     const preparedSection=document.createElement('details');preparedSection.className='gm-player-preview';preparedSection.dataset.gmPreparedSection='';
     const preparedSummary=document.createElement('summary');preparedSummary.textContent=`Vorbereitete Archetypen (${preparedArchetypes.length})`;
     preparedSection.append(preparedSummary,note('Diese sofort nutzbaren Startvorlagen decken Alltag, Kampf, Tiere und übernatürliche Wesen ab. Mit „In diese Welt übernehmen“ entsteht eine eigene, frei bearbeitbare Kopie; noch kein Wesen wird angelegt.'));
     const preparedArchetypeList=document.createElement('ul');preparedArchetypeList.dataset.gmPreparedArchetypes='';preparedSection.append(preparedArchetypeList);panel.append(preparedSection);
 
-    const creatureSection=document.createElement('section');creatureSection.className='gm-player-preview';
+    const creatureSection=document.createElement('section');creatureSection.className='gm-player-preview';creatureSection.dataset.gmCreatureSection='';
     creatureSection.append(heading('h4','Wesen dieser Welt'));
     const creatureList=document.createElement('ul');creatureList.dataset.gmCreatureList='';creatureSection.append(creatureList);
     const newCreatureButton=button('Neues Wesen anlegen',()=>{state.selectedCreatureId=null;state.creatureImportDraft=null;renderCreatureForm(state);const form=state.creatureUi?.creatureForm,name=field(form,'[data-gm-creature-name]');form?.scrollIntoView?.({block:'nearest'});name?.focus?.({preventScroll:true});text(state.message,'Das NPC-Fenster für ein neues Wesen ist bereit.')});creatureSection.append(newCreatureButton);
@@ -984,7 +1011,7 @@
     const disclosureHint=note('Wähle bei einem Wesen „Kampagnenfreigabe“, um seine Sichtbarkeit festzulegen.');disclosureSection.append(disclosureHint);
     panel.append(disclosureSection);
 
-    const archetypeSection=document.createElement('section');archetypeSection.className='gm-player-preview';
+    const archetypeSection=document.createElement('section');archetypeSection.className='gm-player-preview';archetypeSection.dataset.gmArchetypeSection='';
     archetypeSection.append(heading('h4','Eigene Archetypen'));
     const archetypeList=document.createElement('ul');archetypeSection.append(archetypeList);
     archetypeSection.append(button('Neuen Archetyp anlegen',()=>{state.selectedArchetypeId=null;renderArchetypeForm(state)}));
@@ -1021,7 +1048,10 @@
     factionForm.append(labelControl('Neue Fraktion anlegen',input('text','gmWorldFactionName',{required:true,maxLength:120})),submitButton('Fraktion anlegen'));
     factionForm.addEventListener('submit',event=>{event.preventDefault();createWorldFaction(state)});registrySection.append(factionForm);panel.append(registrySection);
 
-    state.creatureUi={panel,status,retry,editorSections:[preparedSection,creatureSection,referenceSection,lootSection,companionSection,disclosureSection,archetypeSection,registrySection],preparedSection,preparedArchetypeList,referenceSection,lootSection,secretLootEffectStatus,secretLootEffectRefresh,secretLootEffectList,companionSection,registrySection,creatureList,newCreatureButton,creatureForm,creatureFormHeading,creatureImportHint,creatureEditFields,creatureBuilderView,creatureBuilderStatus,creatureBuilderToolbar,creatureCardType,creatureBuilderCards,creatureWorldCard,creatureTemplateHint,creatureTemplateApply,refreshCreatureTemplateAction,creatureArchive,referenceHint,referenceEditor,factionLinks,lootHint,lootForm,lootRuleHint,lootList,migrationList,companionList,companionForm,placeList,placeForm,factionList,factionForm,disclosureForm,disclosureHeading,disclosureState,disclosureSave,disclosureHint,archetypeList,archetypeForm,archetypeFormHeading,archetypeTemplateHint,archetypeCatalogItems,archetypeArchive};
+    panel.insertBefore(archetypeSection,creatureSection);
+
+    state.creatureUi={panel,status,retry,quickBar,quickArchetype,quickCreate,quickHint,editorSections:[quickBar,preparedSection,creatureSection,referenceSection,lootSection,companionSection,disclosureSection,archetypeSection,registrySection],preparedSection,preparedArchetypeList,referenceSection,lootSection,secretLootEffectStatus,secretLootEffectRefresh,secretLootEffectList,companionSection,registrySection,creatureList,newCreatureButton,creatureForm,creatureFormHeading,creatureImportHint,creatureEditFields,creatureBuilderView,creatureBuilderStatus,creatureBuilderToolbar,creatureCardType,creatureBuilderCards,creatureWorldCard,creatureTemplateHint,creatureTemplateApply,refreshCreatureTemplateAction,creatureArchive,referenceHint,referenceEditor,factionLinks,lootHint,lootForm,lootRuleHint,lootList,migrationList,companionList,companionForm,placeList,placeForm,factionList,factionForm,disclosureForm,disclosureHeading,disclosureState,disclosureSave,disclosureHint,archetypeList,archetypeForm,archetypeFormHeading,archetypeTemplateHint,archetypeCatalogItems,archetypeArchive};
+    renderCreatureQuickControls(state);
     return state.creatureUi;
   }
   function renderCreatureList(state){
@@ -1363,7 +1393,7 @@
   }
   function renderArchetypeList(state){
     const ui=ensureCreatureWorkspace(state);if(!ui)return;
-    renderPreparedArchetypeList(state);
+    renderPreparedArchetypeList(state);renderCreatureQuickControls(state);
     clear(ui.archetypeList);
     const rows=state.archetypes.filter(activeRow);
     if(!rows.length)ui.archetypeList.append(item('Noch kein eigener Archetyp angelegt.'));
@@ -1502,7 +1532,7 @@
       if(serial!==state.creatureLoadSerial||authEpoch!==state.authEpoch)return;
       state.creatures=[];state.archetypes=[];state.npcCatalog=[];state.creatureDisclosures=[];state.worldPlaces=[];state.worldFactions=[];state.creatureFactionLinks=[];state.creatureLoot=[];state.creatureMigrationRequests=[];state.creatureCompanionLinks=[];state.creatureRequestDetails=new Map();
       state.selectedCreatureId=null;state.selectedArchetypeId=null;state.selectedDisclosureCreatureId=null;
-      clear(ui.creatureList);clear(ui.archetypeList);clear(ui.placeList);clear(ui.factionList);clear(ui.lootList);clear(ui.secretLootEffectList);show(ui.secretLootEffectList,false);clear(ui.migrationList);clear(ui.companionList);renderPreparedArchetypeList(state);renderCreatureForm(state);renderArchetypeForm(state);renderCreatureDisclosure(state);
+      clear(ui.creatureList);clear(ui.archetypeList);clear(ui.placeList);clear(ui.factionList);clear(ui.lootList);clear(ui.secretLootEffectList);show(ui.secretLootEffectList,false);clear(ui.migrationList);clear(ui.companionList);renderPreparedArchetypeList(state);renderCreatureQuickControls(state);renderCreatureForm(state);renderArchetypeForm(state);renderCreatureDisclosure(state);
       text(ui.status,`Wesen konnten nicht geladen werden: ${friendlyError(error)}`);show(ui.retry,true);
     }finally{if(serial===state.creatureLoadSerial)state.creatureLoading=false}
   }
