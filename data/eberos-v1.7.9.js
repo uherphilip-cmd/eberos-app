@@ -348,5 +348,5 @@ function runTestsV179(){
 }
 runTests=runTestsV179;testsBtn.onclick=runTestsV179;
 
-state.appVersion=V179_VERSION;state.schemaVersion=V179_SCHEMA;state.rulesVersion=V179_RULES;save();renderAll();
+state.appVersion=V179_VERSION;state.schemaVersion=V179_SCHEMA;state.rulesVersion=V179_RULES;/* v1.8.5: Speichern und Rendern erfolgen nach allen Migrationen einmalig. */
 Object.assign(window.Eberos,{version:V179_VERSION,schemaVersion:V179_SCHEMA,rulesVersion:V179_RULES,runTests:runTestsV179,ensureStateV179,refillOwnerV179,visibleAuxOwnersV179,contactCardsV179,npcByIdV179,navigateTo:navigateToV179,searchIndex:searchIndexV177,skillCounterIdsV179,spendCounterV179,undoCounterSpendV179,lastCounterSpendV179:()=>lastCounterSpendV179});

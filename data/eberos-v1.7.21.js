@@ -239,5 +239,5 @@ function runTestsV1721(){
   return[...body.querySelectorAll('tr')].every(row=>row.cells[row.cells.length-1]?.textContent==='Bestanden');
 }
 runTests=runTestsV1721;testsBtn.onclick=runTestsV1721;
-renderAll();save();
+/* v1.8.5: Rendern und Speichern erfolgen nach allen Migrationen einmalig. */
 Object.assign(window.Eberos,{version:V1721_VERSION,revision:V1721_REVISION,schemaVersion:V1721_SCHEMA,rulesVersion:V1721_RULES,runTests:runTestsV1721,ensureStateV1721,ensureCombatRoundV1721,techniquePaymentV1721,useTechniqueV1721,closeCombatRoundV1721,undoCombatRoundV1721,advanceCombatClockV178,advanceEffects:advanceEffectsV177,refillOwnerV179});

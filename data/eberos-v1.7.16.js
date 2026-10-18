@@ -172,5 +172,5 @@ function runTestsV1716(){
 }
 runTests=runTestsV1716;testsBtn.onclick=runTestsV1716;
 
-renderAll();save();
+/* v1.8.5: Rendern und Speichern erfolgen nach allen Migrationen einmalig. */
 Object.assign(window.Eberos,{version:V1716_VERSION,revision:V1716_REVISION,schemaVersion:V1716_SCHEMA,rulesVersion:V1716_RULES,runTests:runTestsV1716,ensureStateV1716,ensureOwnerV1716,attributeDistributionV1716,createPowerEffectV1716,adjustPowerPoolV1716,applyPowerReductionV1716,newMagicSkillIds:[...V1716_SKILL_IDS],newMagicSchoolIds:[...V1716_SCHOOL_IDS]});

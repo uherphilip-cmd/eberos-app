@@ -269,5 +269,5 @@ function runTestsV1725(){
 }
 runTests=runTestsV1725;testsBtn.onclick=runTestsV1725;
 
-document.querySelector('.brand small').textContent='v1.7.25';renderAll();save();
+/* v1.8.5: Rendern und Speichern erfolgen nach allen Migrationen einmalig. */
 Object.assign(window.Eberos,{version:V1725_VERSION,revision:V1725_REVISION,schemaVersion:V1725_SCHEMA,rulesVersion:V1725_RULES,powerCatalogVersion:POWER_DB_V176.meta?.catalogVersion,economyTradeSkillId:ECONOMY_TRADE_SKILL_ID_V1725,ensureStateV1725,ensureOwnerV1725,isExorcismPower:isExorcismPowerV1725,resolvedPowerKind:resolvedPowerKindV1725,resolvedPowerCostText:resolvedPowerCostTextV1725,activeExorcismBindings:activeExorcismBindingsV1725,useExorcismPower:useExorcismPowerV1725,releaseSynergyBinding:releaseSynergyBindingV1721R2,runTests:runTestsV1725});

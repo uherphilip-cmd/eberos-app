@@ -375,6 +375,6 @@ function runTestsV1721R2(){
 }
 runTests=runTestsV1721R2;testsBtn.onclick=runTestsV1721R2;
 
-document.querySelector('.brand small').textContent='v1.7.21-r2';
-renderAll();save();
+
+/* v1.8.5: Rendern und Speichern erfolgen nach allen Migrationen einmalig. */
 Object.assign(window.Eberos,{version:V1721R2_VERSION,revision:V1721R2_REVISION,schemaVersion:V1721R2_SCHEMA,rulesVersion:V1721R2_RULES,synergyCatalog:SYNERGY_DB_V1721R2,synergyValidation:SYNERGY_VALIDATION_V1721R2,schoolSynergyCapacity:schoolSynergyCapacityV1721R2,formatSynergyRuleText:formatSynergyRuleTextV1721R2,playerSynergySections:synergyPlayerSectionsV1721R2,learnSchoolSynergy:learnSchoolPowerV1721R2,restSchoolSynergy:restSchoolPowerV1721R2,useSchoolSynergy:useSchoolSynergyV1721R2,learnHybridSynergy:learnHybridV1721R2,useTechnique:useTechniqueV1721,z11Finstermal:Z11_FINSTERMAL_V1721R2,releaseSynergyBinding:releaseSynergyBindingV1721R2,refillOwner:refillOwnerV179,runTests:runTestsV1721R2});

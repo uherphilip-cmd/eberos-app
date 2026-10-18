@@ -491,7 +491,7 @@ function runTestsV1713(){
 }
 runTests=runTestsV1713;testsBtn.onclick=runTestsV1713;
 
-renderAll();save();
+/* v1.8.5: Rendern und Speichern erfolgen nach allen Migrationen einmalig. */
 Object.assign(window.Eberos,{
   version:V1713_VERSION,revision:V1713_REVISION,schemaVersion:V1713_SCHEMA,rulesVersion:V1713_RULES,runTests:runTestsV1713,
   ensureStateV1713,backgroundCatalog:BACKGROUND_CATALOG_V1713,backgroundDescriptorV1713,effectiveBackgroundV1713,

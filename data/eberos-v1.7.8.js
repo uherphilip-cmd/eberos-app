@@ -331,5 +331,5 @@ function runTestsV178(){
 }
 runTests=runTestsV178;testsBtn.onclick=runTestsV178;
 
-state.appVersion=V178_VERSION;state.schemaVersion=V178_SCHEMA;save();renderAll();
+state.appVersion=V178_VERSION;state.schemaVersion=V178_SCHEMA;/* v1.8.5: Speichern und Rendern erfolgen nach allen Migrationen einmalig. */
 Object.assign(window.Eberos,{version:V178_VERSION,schemaVersion:V178_SCHEMA,rulesVersion:V178_RULES,runTests:runTestsV178,combatTechniqueDb:COMBAT_DB_V178,combatTechniqueValidation:COMBAT_VALIDATION_V178,combatTechniqueCapacity:combatTechniqueCapacityV176,learnCombatTechnique:learnCombatTechniqueV176,unlearnCombatTechnique:unlearnCombatTechniqueV176,canLearnCombatTechnique:canLearnCombatTechniqueV176,ensureStateV178,ensureOwnerV178,allSkillsV178,createCustomSkillV178,archiveCustomSkillV178,restoreCustomSkillV178,advanceCombatClockV178,migrationReport:()=>state.v178MigrationReport});

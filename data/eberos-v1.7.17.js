@@ -241,5 +241,5 @@ function runTestsV1717(){
 }
 runTests=runTestsV1717;testsBtn.onclick=runTestsV1717;
 
-renderAll();save();
+/* v1.8.5: Rendern und Speichern erfolgen nach allen Migrationen einmalig. */
 Object.assign(window.Eberos,{version:V1717_VERSION,revision:V1717_REVISION,schemaVersion:V1717_SCHEMA,rulesVersion:V1717_RULES,runTests:runTestsV1717,ensureStateV1717,ensureOwnerV1717,boundManaV1717,manaStateV1717,activeRunesV1717,createRuneEffectV1717,activateRunePoolV1717,triggerRuneV1717,endRuneV1717,reconcileRuneBindingsV1717,runeWeightReductionV1717,attributeDistributionV1717,runeSkillId:V1717_SKILL.id,runeSchoolId:V1717_SCHOOL_ID});

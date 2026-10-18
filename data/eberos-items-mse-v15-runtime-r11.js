@@ -552,7 +552,7 @@ if(!state.mseCompletionV152Migrated){state.mseCompletionV152Migrated=true;state.
 if(cardCodeMigrationChangedV17)save();
 if(valueMigrationChangedV153)save();
 if(valueMigrationChangedV154)save();
-document.querySelector('.brand small').textContent='v1.7.21-r11';
+
 Object.assign(window.Eberos,{completionProgressV15:mseCompletionProgressV15,syncCompletionRewardsV15:syncMseCompletionRewardsV15,validateMseCatalogV15,unlockMseCardV17,removeCardUnlockV19:removeMseCardUnlockV19,cardIsUnlockedV17:mseCardIsUnlockedV17,valueTextV110:mseValuationTextV110,runTests:()=>runTests()});
-renderAll();
+/* v1.8.5: Abschluss wird zentral ausgeführt. */
 }

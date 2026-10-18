@@ -476,4 +476,4 @@ testsBtn.onclick=runTests;
 installGlobalSearchV177();
 renderAddCards();
 Object.assign(window.Eberos,{version:APP_VERSION,schemaVersion:SCHEMA_VERSION,runTests:()=>runTests(),effectDb:EFFECT_DB_V177,effectDefinitions:EFFECT_DEFINITIONS_V177,ensureStateV177,ensureOwnerV177,effectiveAttributes,effectiveCounters,skillModifiers,blockedLife:blockedLifeV177,advanceEffects:advanceEffectsV177,searchIndex:searchIndexV177,navigateTo:navigateToV177});
-save();renderAll();
+/* v1.8.5: Speichern und Rendern erfolgen nach allen Migrationen einmalig. */

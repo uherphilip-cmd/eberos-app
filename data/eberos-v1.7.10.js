@@ -285,5 +285,5 @@ function runTestsV1710(){
 }
 runTests=runTestsV1710;testsBtn.onclick=runTestsV1710;
 
-state.appVersion=V1710_VERSION;state.schemaVersion=V1710_SCHEMA;state.rulesVersion=V1710_RULES;save();renderAll();
+state.appVersion=V1710_VERSION;state.schemaVersion=V1710_SCHEMA;state.rulesVersion=V1710_RULES;/* v1.8.5: Speichern und Rendern erfolgen nach allen Migrationen einmalig. */
 Object.assign(window.Eberos,{version:V1710_VERSION,schemaVersion:V1710_SCHEMA,rulesVersion:V1710_RULES,runTests:runTestsV1710,ensureStateV1710,ensureOwnerV1710,skillModifiers,skillModifierResultV1710,skillEffectEntriesV1710,advanceEffects:advanceEffectsV1710,refillOwner:refillOwnerV1710,lockedFunctions:lockedFunctionsV1710,functionLocked:functionLockedV1710,renderEffects:renderEffectsV1710,openEffectEditor:openEffectEditorV1710,openAddEffect:openAddEffectV1710,module:newModuleV1710,effect:effectInstanceV177});

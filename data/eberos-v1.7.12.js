@@ -285,5 +285,5 @@ function runTestsV1712R2(){
   const body=testResults.querySelector('tbody');for(const[name,expected,actual,ok]of tests)body?.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return baseOk&&tests.every(test=>test[3]);
 }
 runTests=runTestsV1712R2;testsBtn.onclick=runTestsV1712R2;
-renderAll();save();
+/* v1.8.5: Rendern und Speichern erfolgen nach allen Migrationen einmalig. */
 Object.assign(window.Eberos,{revision:V1712_REVISION,runTests:runTestsV1712R2,ensureStateV1712R2,powerPaymentDefinitionV1712R2,powerPaymentValidation:POWER_PAYMENT_VALIDATION_V1712R2,actionPaymentPlanV1712R2,commitActionPaymentV1712R2,undoActionPaymentV1712R2,lastActionPaymentV1712R2:()=>lastActionPaymentV1712R2});

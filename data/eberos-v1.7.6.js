@@ -799,5 +799,4 @@ Object.assign(window.Eberos,{
   ensureStateV176
 });
 
-save();
-renderAll();
+/* v1.8.5: Abschluss wird zentral ausgeführt. */

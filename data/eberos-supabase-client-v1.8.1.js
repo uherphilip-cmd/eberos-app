@@ -107,9 +107,9 @@
   }
 
   class CampaignAuthGateway{
-    constructor({provider=new SupabaseClientProvider()}={}){this.provider=provider;this.subscription=null}
+    constructor({provider=new SupabaseClientProvider()}={}){this.provider=provider;this.subscription=null;this.restoredUserId=undefined}
     configured(){return this.provider.configured()}
-    async restoreSession(){const client=await this.provider.getClient(),{data,error}=await client.auth.getSession();if(error)throw error;return{session:data?.session||null,user:data?.session?.user||null}}
+    async restoreSession(){const client=await this.provider.getClient(),{data,error}=await client.auth.getSession();if(error)throw error;const user=data?.session?.user||null;this.restoredUserId=user?.id||null;return{session:data?.session||null,user}}
     normalizeEmail(email){const normalized=String(email||'').trim().toLowerCase();if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalized))throw new Error('Bitte gib eine gültige E-Mail-Adresse ein.');return normalized}
     validatePassword(password){const value=String(password??'');if(value.length<8)throw new Error('Das Passwort muss mindestens 8 Zeichen lang sein.');if(value.length>128)throw new Error('Das Passwort darf höchstens 128 Zeichen lang sein.');if(!value.trim())throw new Error('Bitte verwende ein gültiges Passwort.');return value}
     async signInWithPassword(email,password){const normalized=this.normalizeEmail(email),secret=this.validatePassword(password),client=await this.provider.getClient(),{data,error}=await client.auth.signInWithPassword({email:normalized,password:secret});if(error)throw error;return{email:normalized,session:data?.session||null,user:data?.user||data?.session?.user||null}}
@@ -119,7 +119,7 @@
     async requestMagicLink(email,{redirectTo=global.location?.href?.split('#')[0]}={}){const normalized=String(email||'').trim().toLowerCase();if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalized))throw new Error('Bitte gib eine gültige E-Mail-Adresse ein.');const client=await this.provider.getClient(),{error}=await client.auth.signInWithOtp({email:normalized,options:{emailRedirectTo:redirectTo,shouldCreateUser:true}});if(error)throw error;return{email:normalized,sent:true}}
     async signOut(){let error=null;try{const client=await this.provider.getClient(),result=await client.auth.signOut({scope:'local'});error=result.error||null}catch(caught){error=caught}await clearPrivateCaches({storage:this.provider.storage});if(error)throw error;return{signedOut:true}}
     /* Supabase-Aufrufe aus dem Auth-Callback selbst können dessen interne Sperre blockieren. */
-    async onAuthStateChange(listener){const client=await this.provider.getClient();let active=true;const result=client.auth.onAuthStateChange((event,session)=>{global.setTimeout(()=>{if(active)listener({event,session,user:session?.user||null})},0)}),subscription=result?.data?.subscription||null;this.subscription=subscription;return()=>{active=false;subscription?.unsubscribe?.();if(this.subscription===subscription)this.subscription=null}}
+    async onAuthStateChange(listener){const client=await this.provider.getClient(),restoredUserId=this.restoredUserId;this.restoredUserId=undefined;let active=true;const result=client.auth.onAuthStateChange((event,session)=>{global.setTimeout(()=>{const user=session?.user||null;if(active&&!(event==='INITIAL_SESSION'&&(user?.id||null)===restoredUserId))listener({event,session,user})},0)}),subscription=result?.data?.subscription||null;this.subscription=subscription;return()=>{active=false;subscription?.unsubscribe?.();if(this.subscription===subscription)this.subscription=null}}
   }
 
   let liveSyncChannelSerial=0;

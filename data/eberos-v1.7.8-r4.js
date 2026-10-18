@@ -182,5 +182,5 @@ function runTestsV178R4(){
 }
 runTests=runTestsV178R4;testsBtn.onclick=runTestsV178R4;
 
-backupIncomingStateV178R4(state);state=ensureStateV178R4(state,true);state.appVersion='1.7.8';state.schemaVersion=V178_R4_SCHEMA;state.rulesVersion=V178_R4_RULES;save();renderAll();
+backupIncomingStateV178R4(state);state=ensureStateV178R4(state,true);state.appVersion='1.7.8';state.schemaVersion=V178_R4_SCHEMA;state.rulesVersion=V178_R4_RULES;/* v1.8.5: Speichern und Rendern erfolgen nach allen Migrationen einmalig. */
 Object.assign(window.Eberos,{version:'1.7.8',schemaVersion:V178_R4_SCHEMA,rulesVersion:V178_R4_RULES,runTests:runTestsV178R4,ensureStateV178R4,ensureOwnerSynergyPowersV178R4,learnedPowerEntriesForCounterV178R4,synergyPowerStatusV178R4,exhaustiveSynergyPowerCoverageV178R4,migrationReportR4:()=>state.v178r4SynergyPowerMigrationReport});

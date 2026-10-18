@@ -162,6 +162,6 @@ runTests=function(){
   for(const[name,expected,actual,ok]of tests)body.append(el('tr',{},[name,expected,actual,ok?'Bestanden':'Fehler'].map(value=>el('td',{text:String(value)}))));return baseOk&&tests.every(test=>test[3]);
 };
 
-document.querySelector('.brand small').textContent='v1.7.24';
+
 Object.assign(window.Eberos,{version:'1.7.24',revision:'r2',schemaVersion:SCHEMA_VERSION,rulesVersion:RULES_VERSION,skillLoreVersion:'1.7.25',skillLore:()=>SKILL_LORE_V1724,skillLoreContent:skillLoreContentV1724,orderSkills:orderedSkillsForViewR11,runTests:()=>runTests()});
-renderAll();save();
+/* v1.8.5: Rendern und Speichern erfolgen nach allen Migrationen einmalig. */

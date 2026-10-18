@@ -110,5 +110,5 @@ function runTestsV1714(){
 }
 runTests=runTestsV1714;testsBtn.onclick=runTestsV1714;
 
-renderAll();save();
+/* v1.8.5: Rendern und Speichern erfolgen nach allen Migrationen einmalig. */
 Object.assign(window.Eberos,{version:V1714_VERSION,revision:V1714_REVISION,schemaVersion:V1714_SCHEMA,rulesVersion:V1714_RULES,runTests:runTestsV1714,ensureStateV1714,ensureOwnerSkillsV1714,newSkillIds:V1714_NEW_SKILL_IDS});
