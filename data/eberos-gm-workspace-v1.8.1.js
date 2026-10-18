@@ -307,8 +307,8 @@
       button('Vormerkung entfernen',()=>{drafts.splice(index,1);renderCreatureInventoryDrafts(form)})));
   }
   function makeCreatureStatsEditor(form){
-    const details=document.createElement('details');details.dataset.gmCreatureStats='';
-    const summary=document.createElement('summary');summary.textContent='Werte, Fähigkeiten und Effekte';details.append(summary);
+    const details=document.createElement('details');details.dataset.gmCreatureStats='';details.className='gm-creature-values-v182';details.open=true;
+    const summary=document.createElement('summary');summary.textContent='Grundwerte, Counter, Fähigkeiten, Effekte, Geld und Inventar';details.append(summary);
     details.append(note('Alle Felder sind optional. Nur geänderte Werte werden gespeichert. Nicht angezeigte Daten und Regelmodule bleiben unverändert.'));
     const attributes=document.createElement('div');attributes.dataset.gmCreatureAttributes='';attributes.className='grid two';details.append(heading('h6','Grundwerte'),attributes);
     for(const [id,label] of creatureAttributes)attributes.append(labelControl(`${label} (${id})`,statNumber('gmCreatureAttribute',id)));
