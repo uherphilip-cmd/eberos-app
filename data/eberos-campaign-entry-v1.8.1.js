@@ -64,13 +64,13 @@
   }
   function renderCampaigns(state,campaigns){
     const list=state.dialog.querySelector('[data-campaign-list]');clear(list);
-    if(!campaigns.length){state.selectedCampaign=null;list?.append(listItem('Noch keine Kampagne zugeordnet.'));renderSelectedCampaign(state,null);return}
+    if(!campaigns.length){state.selectedCampaign=null;delete state.dialog.dataset.campaignMediaCampaignId;delete state.dialog.dataset.campaignMediaCharacterId;list?.append(listItem('Noch keine Kampagne zugeordnet.'));renderSelectedCampaign(state,null);return}
     const selected=campaigns.find(campaign=>campaign.campaign_id===state.selectedCampaignId)||campaigns[0];state.selectedCampaignId=selected.campaign_id;state.selectedCampaign=selected;
     for(const campaign of campaigns){
       const role=campaign.role==='owner'?'Spielleitung':campaign.role==='game_master'?'Co-Spielleitung':'Spieler';
       list?.append(listItem(`${campaign.name||'Unbenannte Kampagne'} · ${role} · Tag ${campaign.current_day||1}${campaign.campaign_id===state.selectedCampaignId?' · ausgewählt':''}`,...(campaign.campaign_id===state.selectedCampaignId?[]:[button('Auswählen',()=>selectCampaign(state,campaign))])));
     }
-    renderSelectedCampaign(state,selected)
+    renderSelectedCampaign(state,selected);state.dialog.dataset.campaignMediaCampaignId=selected.campaign_id;state.dialog.dataset.campaignMediaCharacterId=state.selectedServerCharacterId||'';global.dispatchEvent?.(new CustomEvent('eberos:campaign-media-selection-v183',{detail:{root:state.dialog,campaignId:selected.campaign_id,characterId:state.selectedServerCharacterId||null}}))
   }
   function renderPlayerCharacters(state,characters){
     const list=state.dialog.querySelector('[data-player-characters]');clear(list);
