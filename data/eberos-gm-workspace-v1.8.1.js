@@ -220,6 +220,20 @@
     {key:'kultwirker',name:'Kultwirker',groupName:'dark',description:'Finstere Ritualfigur für Flüche, verbotene Nachforschungen und verdeckte Gegenspieler.',canCarryItems:true,standardItems:[{id:'wpn_melee_dagger',loadState:'equipped'},{id:'gear_lantern'},{id:'gear_writing_set'}],attributes:{ST:4,KS:6,GS:5,RF:6,FF:7,WL:10,IT:8,IN:7,WN:6,CR:7},counters:{L:7,A:6,FO:8,M:2,GB:2,HS:4,FS:10,GL:2},skills:{'Flüche & Blut-Hexerei':9,'Okkultismus & Arkane Kunde':8,'Heimlichkeit & Schleichen':6,'Überreden & Belügen':6}},
     {key:'konstruktwaechter',name:'Konstruktwächter',groupName:'construct',description:'Massiver künstlicher Wächter für Werkstätten, Ruinen, Tore und magisch gesicherte Orte.',canCarryItems:false,standardItems:[],attributes:{ST:12,KS:13,GS:4,RF:5,FF:3,WL:8,IT:3,IN:3,WN:7,CR:2},counters:{L:14,A:2,FO:4,M:6,GB:2,HS:2,FS:2,GL:2},skills:{'Verteidigung & Blocken':9,'Nahkampf – Raufen & Ringen':9,'Aufmerksamkeit & Wachsamkeit':7,'Handwerk & Baukunst':4}}
   ];
+  const preparedArchetypeProfiles={
+    'alltagsfigur':{species:'Mensch',roles:['Alltag','Zivilist'],name:'Neue Alltagsfigur'},
+    'haendler-informant':{species:'Mensch',roles:['Kontakt','Händler','Informant'],name:'Neuer Händler'},
+    'stadtwache':{species:'Mensch',roles:['Wache','Ordnung','Nahkampf'],name:'Neue Stadtwache'},
+    'wegelagerer':{species:'Mensch',roles:['Räuber','Hinterhalt','Fernkampf'],name:'Neuer Wegelagerer'},
+    'veteran-anfuehrer':{species:'Mensch',roles:['Veteran','Anführer','Elite'],name:'Neuer Veteran'},
+    'spuerwolf':{species:'Wolf',roles:['Tier','Spurensucher','Rudel'],name:'Neuer Spürwolf'},
+    'grosse-raubbestie':{species:'Raubbestie',roles:['Monster','Jäger','Wildnis'],name:'Neue Raubbestie'},
+    'feentrickster':{species:'Feenwesen',roles:['Fee','Trickster','Bote'],name:'Neuer Feentrickster'},
+    'gebundener-geist':{species:'Geist',roles:['Geist','Gebunden','Übernatürlich'],name:'Neuer gebundener Geist'},
+    'untoter-waechter':{species:'Untoter',roles:['Untot','Wächter','Ruine'],name:'Neuer untoter Wächter'},
+    'kultwirker':{species:'Mensch',roles:['Kult','Wirker','Gegenspieler'],name:'Neuer Kultwirker'},
+    'konstruktwaechter':{species:'Konstrukt',roles:['Konstrukt','Wächter','Magisch'],name:'Neuer Konstruktwächter'}
+  };
   const creatureId=row=>row?.creature_id||row?.id||null;
   const archetypeId=row=>row?.archetype_id||row?.id||null;
   const placeId=row=>row?.place_id||row?.id||null;
@@ -396,11 +410,46 @@
     if(typeof raw.inventoryProfile?.canCarryItems==='boolean')result.inventoryProfile.canCarryItems=raw.inventoryProfile.canCarryItems;
     return result;
   }
+  function templateUuid(){
+    if(typeof global.crypto?.randomUUID!=='function')throw new Error('Dieses Gerät kann keine sicheren Kennungen für einen unabhängigen NPC erzeugen.');
+    return global.crypto.randomUUID();
+  }
+  function sanitizeNpcBuildSheet(raw){
+    const sheet=serializeNpcSheet(raw);sheet.id='';sheet.location='';sheet.relationship='';sheet.availability='';
+    delete sheet.contactCardIdsV179;delete sheet.isContactV179;delete sheet.npcTemplateProvenance;delete sheet.effectLogV177;delete sheet.combatRoundV1721;
+    sheet.layout=creatureBuilderLayout(sheet.layout).map((card,index)=>({...card,id:`template-card-${index}-${card.type}`,order:index}));
+    sheet.equipment=(Array.isArray(sheet.equipment)?sheet.equipment:[]).map((entry,index)=>({...structuredClone(entry),id:`template-item-${index}`,instanceId:`template-item-${index}`}));
+    sheet.activeEffectsV177=(Array.isArray(sheet.activeEffectsV177)?sheet.activeEffectsV177:[]).map((entry,index)=>({...structuredClone(entry),id:`template-effect-${index}`}));
+    return sheet;
+  }
+  function independentNpcSheet(raw){
+    const sheet=serializeNpcSheet(raw),itemIds=new Map();sheet.id=templateUuid();
+    sheet.layout=creatureBuilderLayout(sheet.layout).map((card,index)=>({...structuredClone(card),id:templateUuid(),order:index}));
+    sheet.equipment=(Array.isArray(sheet.equipment)?sheet.equipment:[]).map(entry=>{
+      const copy=structuredClone(entry),old=String(copy.instanceId||copy.id||''),next=templateUuid();if(old)itemIds.set(old,next);copy.id=next;copy.instanceId=next;return copy;
+    });
+    sheet.activeEffectsV177=(Array.isArray(sheet.activeEffectsV177)?sheet.activeEffectsV177:[]).map(entry=>{
+      const copy=structuredClone(entry);copy.id=templateUuid();if(itemIds.has(String(copy.sourceId||'')))copy.sourceId=itemIds.get(String(copy.sourceId));
+      if(plainObject(copy.runeBindingV1717)){
+        const old=String(copy.runeBindingV1717.carrierId||'');if(itemIds.has(old)){copy.runeBindingV1717.carrierId=itemIds.get(old);copy.runeBindingV1717.carrierKey=`item:${itemIds.get(old)}`}
+      }
+      return copy;
+    });
+    for(const key of ['advantages','disadvantages'])if(Array.isArray(sheet[key]))sheet[key]=sheet[key].map(entry=>plainObject(entry)?{...structuredClone(entry),id:templateUuid()}:entry);
+    delete sheet.effectLogV177;delete sheet.combatRoundV1721;delete sheet.contactCardIdsV179;delete sheet.isContactV179;
+    return sheet;
+  }
+  function preparedNpcBuild(preset,core,items){
+    const profile=preparedArchetypeProfiles[preset.key]||{species:'Wesen',roles:[],name:`Neues Wesen · ${preset.name}`},owner=freshNpcSheet(profile.name);
+    owner.npcType=profile.species;owner.description=preset.description;owner.notes=`Vorbereitete Ausbaustufe: ${preset.name}`;overlayTemplateValues(owner,core);
+    return{id:'standard',label:'Standard',isDefault:true,profile:{name:profile.name,species:profile.species,roleTags:profile.roles,publicSummary:preset.description,gmNotes:''},npcSheet:sanitizeNpcBuildSheet(owner),catalogLoadout:{version:1,items:structuredClone(items)}};
+  }
   function preparedArchetypeTemplate(preset){
     const skills={},ids=new Map(builderSkillCatalog().map(skill=>[skill.name,skill.id]));
     for(const [name,level] of Object.entries(preset.skills||{})){const id=ids.get(name);if(id)skills[id]={level}}
     const items=(preset.standardItems||[]).map(row=>{const entry=catalogItem('standard',row.id);if(!entry)throw new Error(`Vorbereitetes Standarditem ${row.id} fehlt.`);return catalogReference('standard',entry,{quantity:row.quantity,loadState:row.loadState,storageLocation:row.storageLocation})});
-    return{attributes:structuredClone(preset.attributes),counters:Object.fromEntries(Object.entries(preset.counters).map(([id,max])=>[id,{max,current:max}])),skills,inventoryProfile:{canCarryItems:preset.canCarryItems!==false},catalogLoadout:{version:1,items},preparedArchetype:{key:preset.key,version:2}};
+    const core={attributes:structuredClone(preset.attributes),counters:Object.fromEntries(Object.entries(preset.counters).map(([id,max])=>[id,{max,current:max}])),skills,inventoryProfile:{canCarryItems:preset.canCarryItems!==false}};
+    return{...core,catalogLoadout:{version:1,items},npcBuilds:[preparedNpcBuild(preset,core,items)],preparedArchetype:{key:preset.key,version:3}};
   }
   function matchingPreparedArchetype(state,preset){
     const normalized=String(preset.name).trim().toLocaleLowerCase('de-DE');
@@ -424,6 +473,71 @@
     if(typeof core.inventoryProfile?.canCarryItems==='boolean'){
       const profile=editableStatMap(stats,'inventoryProfile');profile.canCarryItems=core.inventoryProfile.canCarryItems;
     }
+  }
+  const normalizedTemplateName=value=>String(value||'').trim().toLocaleLowerCase('de-DE');
+  function catalogBuildsForArchetype(state,archetype){
+    if(!archetype)return[];const data=plainObject(archetype.template_data)?archetype.template_data:{},link=plainObject(data.npcCatalog)?data.npcCatalog:{},key=data.preparedArchetype?.key,name=normalizedTemplateName(archetype.name);
+    return(state.npcCatalog||[]).filter(row=>row?.build_id&&(link.templateId&&row.template_id===link.templateId||key&&row.catalog_key===key||normalizedTemplateName(row.name)===name&&row.archetype_group===archetype.group_name)).map(row=>({source:'catalog',value:`catalog:${row.build_id}`,id:row.build_id,label:row.build_label||'Standard',isDefault:row.is_default===true,profile:{name:row.name,species:row.species,roleTags:roleTags(row.role_tags),publicSummary:row.public_summary||'',gmNotes:row.gm_notes||''},npcSheet:plainObject(row.build_data?.npcSheet)?row.build_data.npcSheet:row.build_data,templateId:row.template_id,catalogKey:row.catalog_key,rulesVersion:row.rules_version,catalogVersion:row.catalog_version,cbpBudget:row.cbp_budget,cbpSpent:row.cbp_spent}));
+  }
+  function embeddedBuildsForArchetype(archetype){
+    const rows=archetype?.template_data?.npcBuilds;if(!Array.isArray(rows))return[];
+    return rows.filter(plainObject).map((row,index)=>({...structuredClone(row),source:'archetype',value:`archetype:${index}`,id:String(row.id||`build-${index}`),label:String(row.label||`Ausbaustufe ${index+1}`),isDefault:row.isDefault===true||index===0,profile:plainObject(row.profile)?structuredClone(row.profile):{}}));
+  }
+  function legacyBuildForArchetype(archetype){
+    const data=plainObject(archetype?.template_data)?archetype.template_data:{},core=portableCreatureValues(data),items=templateItemReferences(data);
+    if(!templateValueCount(core)&&!items.length)return null;
+    return{source:'legacy',value:'legacy:standard',id:'legacy-standard',label:'Standardwerte',isDefault:true,profile:{name:`Neues Wesen · ${archetype.name}`,species:'Wesen',roleTags:[],publicSummary:archetype.description||'',gmNotes:''},core,catalogLoadout:{version:1,items}};
+  }
+  function archetypeBuildChoices(state,archetype){
+    const catalog=catalogBuildsForArchetype(state,archetype);if(catalog.length)return catalog;
+    const embedded=embeddedBuildsForArchetype(archetype);if(embedded.length)return embedded;
+    const legacy=legacyBuildForArchetype(archetype);return legacy?[legacy]:[];
+  }
+  function buildCatalogReferences(archetype,build){
+    const rows=build?.catalogLoadout?.items??archetype?.template_data?.catalogLoadout?.items;
+    if(rows===undefined)return[];return templateItemReferences({catalogLoadout:{items:rows}});
+  }
+  function instantiateArchetypeBuild(state,archetype,build){
+    let owner;
+    if(plainObject(build?.npcSheet)){
+      const identity={name:build.profile?.name||archetype.name,species:build.profile?.species||'Wesen'};
+      owner=build.npcSheet.npcSheetVersion===NPC_SHEET_VERSION&&build.npcSheet.type==='npc'?creatureToBuilderNpc({...identity,npc_data:build.npcSheet}):creatureToBuilderNpc(identity,build.npcSheet);
+    }
+    else{
+      owner=freshNpcSheet(build?.profile?.name||`Neues Wesen · ${archetype.name}`);
+      owner.npcType=build?.profile?.species||'Wesen';overlayTemplateValues(owner,build?.core||portableCreatureValues(archetype.template_data||{}));
+    }
+    owner=independentNpcSheet(owner);
+    const known=new Set((owner.equipment||[]).filter(entry=>entry?.catalogId).map(entry=>`${entry.catalogSource||(catalogItem('standard',entry.catalogId)?'standard':'set')}:${entry.catalogId}`));
+    for(const reference of buildCatalogReferences(archetype,build)){const token=`${reference.catalogSource}:${reference.catalogId}`;if(known.has(token))continue;owner.equipment.push(catalogInventoryEntry(reference));known.add(token)}
+    owner.npcTemplateProvenance={archetypeId:archetypeId(archetype),archetypeName:archetype.name,source:build.source,templateId:build.templateId||archetype.template_data?.npcCatalog?.templateId||null,buildId:build.id||null,buildLabel:build.label||'Standard',catalogKey:build.catalogKey||archetype.template_data?.preparedArchetype?.key||null,rulesVersion:build.rulesVersion||global.Eberos?.rulesVersion||15,catalogVersion:build.catalogVersion||itemCatalogVersion('standard'),preparedAt:new Date().toISOString()};
+    return{owner,profile:{name:build.profile?.name||owner.name,species:build.profile?.species||owner.npcType||'Wesen',roleTags:roleTags(build.profile?.roleTags),publicSummary:String(build.profile?.publicSummary||archetype.description||''),gmNotes:String(build.profile?.gmNotes||'')}};
+  }
+  function npcBuildSummary(archetype,build){
+    let owner;try{owner=plainObject(build?.npcSheet)?build.npcSheet:null}catch{}
+    const core=owner||build?.core||archetype?.template_data||{},skills=Object.values(plainObject(core.skills)?core.skills:{}).filter(skill=>(plainObject(skill)?Number(skill.level):Number(skill))>0).length,items=(Array.isArray(owner?.equipment)?owner.equipment.length:0)+buildCatalogReferences(archetype,build).length,effects=Array.isArray(owner?.activeEffectsV177)?owner.activeEffectsV177.filter(effect=>effect?.active!==false).length:0,cards=Array.isArray(owner?.layout)?owner.layout.length:defaultCreatureBuilderLayout().length;
+    return`${build.profile?.species||owner?.npcType||'Wesen'} · ${skills} ausgeprägte Fähigkeiten · ${items} Ausrüstungspositionen · ${effects} aktive Effekte · ${cards} NPC-Karten`;
+  }
+  const npcBuildSectionKeys={
+    values:['attributes','counters','money','rationTracker','rations','inventoryProfile'],
+    skills:['skills','customSkills','skillOrder','skillSortView','powerPathChoicesV176'],
+    inventory:['equipment'],
+    effects:['activeEffectsV177'],
+    paths:['fatePath','fatePaths','fateSynergies','advantages','disadvantages','startPackage','origin','concept','summary'],
+    cards:['layout'],
+    profile:['portrait','description','notes','level','cbp','contactLevel','npcType','player','age','gender','appearanceText','appearance']
+  };
+  function emptyTemplateValue(value){return value===undefined||value===null||value===''||Array.isArray(value)&&value.length===0||plainObject(value)&&Object.keys(value).length===0}
+  function applyNpcBuildSections(target,source,sections,mode){
+    for(const section of sections)for(const key of npcBuildSectionKeys[section]||[]){
+      if(source[key]===undefined)continue;
+      if(mode==='fill-empty'){
+        if(key==='skills'&&plainObject(source.skills)){target.skills=plainObject(target.skills)?target.skills:{};for(const [id,value] of Object.entries(source.skills))if(target.skills[id]===undefined||Number(target.skills[id]?.level??target.skills[id]??0)===0)target.skills[id]=structuredClone(value);continue}
+        if(!emptyTemplateValue(target[key]))continue;
+      }
+      target[key]=structuredClone(source[key]);
+    }
+    target.npcSheetVersion=NPC_SHEET_VERSION;target.type='npc';target.npcTemplateProvenance=structuredClone(source.npcTemplateProvenance||{});return target;
   }
   function makeItemCatalogPicker(source,onAdd){
     const details=document.createElement('details');details.className='gm-player-preview';details.dataset.gmItemCatalogPicker=source;
@@ -724,7 +838,7 @@
     state.creatureLoadSerial=(state.creatureLoadSerial||0)+1;
     state.secretLootEffectLoadSerial=(state.secretLootEffectLoadSerial||0)+1;
     state.creatureWorldId=null;state.creatureCampaignId=null;state.creatureLoaded=false;state.creatureLoading=false;
-    state.creatures=[];state.archetypes=[];state.creatureDisclosures=[];state.worldPlaces=[];state.worldFactions=[];state.creatureFactionLinks=[];state.creatureLoot=[];state.creatureMigrationRequests=[];state.creatureCompanionLinks=[];state.creatureRequestDetails=new Map();
+    state.creatures=[];state.archetypes=[];state.npcCatalog=[];state.creatureDisclosures=[];state.worldPlaces=[];state.worldFactions=[];state.creatureFactionLinks=[];state.creatureLoot=[];state.creatureMigrationRequests=[];state.creatureCompanionLinks=[];state.creatureRequestDetails=new Map();
     state.selectedCreatureId=null;state.selectedArchetypeId=null;state.selectedDisclosureCreatureId=null;state.creatureImportDraft=null;
     state.creatureUi=null;
     clear(field(state.dialog,'[data-gm-panel="beings"]'));
@@ -750,10 +864,17 @@
     const creatureFormHeading=heading('h5','Neues Wesen anlegen');creatureForm.append(creatureFormHeading);
     const creatureImportHint=note('');creatureImportHint.hidden=true;creatureForm.append(creatureImportHint);
     const creatureEditFields=document.createElement('div');creatureEditFields.dataset.gmCreatureEditFields='';creatureEditFields.style.cssText='display:grid;gap:.65rem;min-width:0';
+    const creatureBuild=select('gmCreatureBuild',[['','Ausbaustufe auswählen']]);
+    const creatureTemplateMode=select('gmCreatureTemplateMode',[['replace-selected','Ausgewählte Bereiche ersetzen'],['fill-empty','Nur leere Bereiche ergänzen']]);
+    const creatureTemplateSections=document.createElement('div');creatureTemplateSections.className='grid two';creatureTemplateSections.dataset.gmCreatureTemplateSections='';
+    for(const [id,label] of [['profile','Profil, Name und Beschreibung'],['values','Grundwerte, Counter und Vorräte'],['skills','Fähigkeiten und Kraftzuordnungen'],['inventory','Ausrüstung'],['effects','Aktive Effekte'],['paths','Pfade, Vor- und Nachteile'],['cards','NPC-Karten und Anordnung']]){const control=input('checkbox','gmCreatureTemplateSection');control.value=id;control.checked=true;creatureTemplateSections.append(labelControl(label,control))}
     creatureEditFields.append(
       labelControl('Name des Wesens',input('text','gmCreatureName',{required:true,maxLength:120})),
       labelControl('Spezies / Wesenart',input('text','gmCreatureSpecies',{required:true,maxLength:120})),
       labelControl('Archetyp (Vorlage)',select('gmCreatureArchetype',[['','Keine Vorlage']])),
+      labelControl('Ausbaustufe',creatureBuild),
+      labelControl('Übernahmeart',creatureTemplateMode),
+      creatureTemplateSections,
       labelControl('Aktuelle Rollen und Tags, durch Kommas getrennt',input('text','gmCreatureRoles',{maxLength:2000})),
       labelControl('Öffentliche Grundinformation (noch nicht automatisch freigegeben)',textarea('gmCreatureSummary',4000)),
       labelControl('Geheime Spielleitungsnotizen',textarea('gmCreatureNotes',100000))
@@ -761,10 +882,18 @@
     field(creatureEditFields,'[data-gm-creature-name]').addEventListener('input',event=>{const owner=creatureForm.__npcOwner;if(owner){owner.name=event.target.value;markCreatureNpcDirty(state)}});
     field(creatureEditFields,'[data-gm-creature-species]').addEventListener('input',event=>{const owner=creatureForm.__npcOwner;if(owner){owner.npcType=event.target.value;markCreatureNpcDirty(state)}});
     creatureForm.append(creatureEditFields);
-    const creatureTemplateApply=button('Werte und Standardausrüstung der Vorlage vorbereiten',()=>stageArchetypeValuesForCreature(state));creatureTemplateApply.disabled=true;creatureTemplateApply.title='Wähle zuerst einen Archetyp.';creatureForm.append(creatureTemplateApply);
-    const creatureTemplateHint=note('Die Auswahl eines Archetyps allein ändert nichts. Eine bewusste Übernahme ergänzt verbundene Standarditems als unabhängige Inventarinstanzen; vorhandenes Inventar, Geld und Effekte bleiben erhalten.');creatureTemplateHint.dataset.gmCreatureTemplateHint='';creatureForm.append(creatureTemplateHint);
-    const refreshCreatureTemplateAction=()=>{const selectedId=field(creatureForm,'[data-gm-creature-archetype]')?.value,archetype=state.archetypes.find(row=>activeRow(row)&&archetypeId(row)===selectedId);let transferable=false,itemCount=0;if(archetype)try{transferable=templateValueCount(portableCreatureValues(archetype.template_data||{}))>0||(itemCount=templateItemReferences(archetype.template_data||{}).length)>0}catch{}creatureTemplateApply.disabled=!transferable;creatureTemplateApply.title=!selectedId?'Wähle zuerst einen Archetyp.':!archetype?'Dieser Archetyp ist nicht mehr aktiv.':!transferable?'Dieser Archetyp enthält keine übertragbaren Werte oder Items.':'Vorlagenwerte und verknüpfte Standarditems als noch ungespeicherten Entwurf übernehmen.';if(!selectedId)text(creatureTemplateHint,'Wähle einen Archetyp, wenn du dessen Werte und verbundene Standarditems bewusst übernehmen möchtest.');else if(!transferable)text(creatureTemplateHint,`„${archetype?.name||'Diese Vorlage'}“ enthält keine übertragbaren Werte oder Standarditems.`);else text(creatureTemplateHint,`„${archetype.name}“ ist verfügbar${itemCount?` und mit ${itemCount} Standarditem(s) verbunden`:''}. Mit dem Button übernimmst du alles zunächst nur in dieses Formular.`)};
-    field(creatureForm,'[data-gm-creature-archetype]').addEventListener('change',()=>{creatureForm.__archetypeApply=null;creatureForm.__inventoryAddQueue=(creatureForm.__inventoryAddQueue||[]).filter(draft=>!draft.sourceArchetypeId);renderCreatureInventoryDrafts(creatureForm);refreshCreatureTemplateAction()});
+    const creatureTemplateApply=button('NPC aus Vorlage vorbereiten',()=>stageArchetypeValuesForCreature(state));creatureTemplateApply.disabled=true;creatureTemplateApply.title='Wähle zuerst einen Archetyp.';creatureForm.append(creatureTemplateApply);
+    const creatureTemplateHint=note('Die Auswahl allein verändert nichts. Erst der Button bereitet einen unabhängigen, noch ungespeicherten NPC-Entwurf vor.');creatureTemplateHint.dataset.gmCreatureTemplateHint='';creatureForm.append(creatureTemplateHint);
+    const refreshCreatureTemplateAction=()=>{
+      const selectedId=field(creatureForm,'[data-gm-creature-archetype]')?.value,archetype=state.archetypes.find(row=>activeRow(row)&&archetypeId(row)===selectedId),previous=creatureBuild.value;clear(creatureBuild);creatureForm.__npcBuildChoices=new Map();
+      if(!archetype){const option=document.createElement('option');option.value='';option.textContent='Zuerst Archetyp auswählen';creatureBuild.append(option);creatureTemplateApply.disabled=true;text(creatureTemplateHint,'Wähle einen Archetyp. Danach kannst du eine vollständige Ausbaustufe als unabhängigen NPC-Entwurf öffnen.');return}
+      let choices=[];try{choices=archetypeBuildChoices(state,archetype)}catch(error){text(creatureTemplateHint,`Die Vorlage kann nicht sicher gelesen werden: ${error.message}`)}
+      if(!choices.length){const option=document.createElement('option');option.value='';option.textContent='Keine Ausbaustufe vorhanden';creatureBuild.append(option);creatureTemplateApply.disabled=true;text(creatureTemplateHint,`„${archetype.name}“ enthält noch keinen nutzbaren NPC-Datensatz.`);return}
+      for(const build of choices){const option=document.createElement('option');option.value=build.value;option.textContent=`${build.label}${build.isDefault?' · Standard':''}`;creatureBuild.append(option);creatureForm.__npcBuildChoices.set(build.value,build)}
+      creatureBuild.value=creatureForm.__npcBuildChoices.has(previous)?previous:(choices.find(build=>build.isDefault)||choices[0]).value;const build=creatureForm.__npcBuildChoices.get(creatureBuild.value);creatureTemplateApply.disabled=false;creatureTemplateApply.title='Öffnet die Ausbaustufe als unabhängigen, noch ungespeicherten NPC-Entwurf.';text(creatureTemplateHint,`${archetype.name} · ${build.label}: ${npcBuildSummary(archetype,build)}. Die Vorlage bleibt nach der Übernahme unverändert.`);
+    };
+    field(creatureForm,'[data-gm-creature-archetype]').addEventListener('change',()=>{creatureForm.__archetypeApply=null;refreshCreatureTemplateAction()});
+    creatureBuild.addEventListener('change',()=>{const archetype=state.archetypes.find(row=>activeRow(row)&&archetypeId(row)===field(creatureForm,'[data-gm-creature-archetype]').value),build=creatureForm.__npcBuildChoices?.get(creatureBuild.value);if(archetype&&build)text(creatureTemplateHint,`${archetype.name} · ${build.label}: ${npcBuildSummary(archetype,build)}. Die Vorlage bleibt nach der Übernahme unverändert.`)});
     creatureEditFields.append(creatureTemplateApply,creatureTemplateHint);
     creatureEditFields.append(note('Diese Weltangaben umgeben dasselbe NPC-Dokument, das auch ein NPC-Reiter verwendet. Geheime Angaben bleiben außerhalb des NPC-Dokuments.'));
     const creatureBuilderView=document.createElement('section');creatureBuilderView.dataset.gmCreatureBuilderView='';creatureBuilderView.className='gm-npc-window';
@@ -867,9 +996,9 @@
       labelControl('Beschreibung der Vorlage',textarea('gmArchetypeDescription',12000))
     );
     const archetypeCanCarry=input('checkbox','gmArchetypeCanCarryItems');archetypeCanCarry.checked=true;archetypeForm.append(labelControl('Wesen dieses Archetyps können Gegenstände tragen oder verwenden',archetypeCanCarry));
-    archetypeForm.append(note('Du kannst Grundwerte, Counter und Regelfähigkeiten eines vorhandenen Wesens als wiederverwendbare Vorlage speichern. Zusätzlich lassen sich Standarditems über stabile Katalog-IDs verbinden; persönliche Inventarinstanzen, Geld, Effekte und Notizen werden nicht kopiert.'));
-    archetypeForm.append(labelControl('Werte von diesem Wesen vorbereiten',select('gmArchetypeSourceCreature',[['','Wesen auswählen']])));
-    archetypeForm.append(button('Werte aus Wesen für diese Vorlage vorbereiten',()=>stageArchetypeValuesFromCreature(state)));
+    archetypeForm.append(note('Ein vorhandenes Wesen kann als vollständige Standard-Ausbaustufe gespeichert werden: Profil, Werte, Fähigkeiten, Pfade, Effekte, Ausrüstung und NPC-Karten. Beim späteren Erzeugen entstehen stets neue unabhängige Kennungen. Weltort, Fraktionsverknüpfungen und Kampagnenfreigaben werden nicht Teil der Vorlage.'));
+    archetypeForm.append(labelControl('Vollständigen NPC von diesem Wesen vorbereiten',select('gmArchetypeSourceCreature',[['','Wesen auswählen']])));
+    archetypeForm.append(button('Vollständige Standard-Ausbaustufe vorbereiten',()=>stageArchetypeValuesFromCreature(state)));
     const archetypeTemplateHint=note('Noch keine Werte aus einem Wesen vorbereitet.');archetypeTemplateHint.dataset.gmArchetypeTemplateHint='';archetypeForm.append(archetypeTemplateHint);
     archetypeForm.append(heading('h6','Verknüpfte Standarditems'));
     const archetypeCatalogItems=document.createElement('ul');archetypeCatalogItems.dataset.gmArchetypeCatalogItems='';archetypeForm.append(archetypeCatalogItems);
@@ -937,7 +1066,7 @@
       const archived=state.archetypes.find(archetype=>archetypeId(archetype)===row.archetype_id),option=document.createElement('option');
       option.value=row.archetype_id;option.textContent=`${archived?.name||'Vorlage'} (archiviert – bestehende Verknüpfung)`;template.append(option);
     }
-    template.value=source?.archetype_id||'';ui.refreshCreatureTemplateAction();ui.creatureArchive.hidden=!row;
+    template.value=source?.archetype_id||'';field(form,'[data-gm-creature-template-mode]').value=row?'fill-empty':'replace-selected';ui.refreshCreatureTemplateAction();ui.creatureArchive.hidden=!row;
     renderCreatureReferences(state,row);renderCreatureLootForm(state,row);renderCreaturePresentation(state);
   }
   function renderCreatureReferences(state,creature){
@@ -1213,17 +1342,22 @@
     field(form,'[data-gm-creature-player-name]').value=disclosure?.player_name||'';
     field(form,'[data-gm-creature-player-summary]').value=disclosure?.player_summary||'';
   }
+  function beginCreatureFromArchetype(state,selectedArchetypeId){
+    state.selectedCreatureId=null;state.creatureImportDraft=null;renderCreatureForm(state);const form=state.creatureUi?.creatureForm,choice=field(form,'[data-gm-creature-archetype]');if(!form||!choice)return;
+    choice.value=selectedArchetypeId;form.__archetypeApply=null;state.creatureUi.refreshCreatureTemplateAction();form.scrollIntoView?.({block:'nearest'});stageArchetypeValuesForCreature(state);
+  }
   function renderPreparedArchetypeList(state){
     const ui=ensureCreatureWorkspace(state);if(!ui)return;
     ui.preparedSection.open=!state.archetypes.some(activeRow);
     clear(ui.preparedArchetypeList);
     const groupNames=new Map(archetypeGroups);
     for(const preset of preparedArchetypes){
-      const existing=matchingPreparedArchetype(state,preset),core=preparedArchetypeTemplate(preset),upgradeable=existing?.template_data?.preparedArchetype?.key===preset.key&&Number(existing.template_data.preparedArchetype.version||0)<2;
-      const action=button(upgradeable?'Standarditems ergänzen':existing?'Bereits übernommen':'In diese Welt übernehmen',()=>importPreparedArchetype(state,preset));
+      const existing=matchingPreparedArchetype(state,preset),core=preparedArchetypeTemplate(preset),upgradeable=existing?.template_data?.preparedArchetype?.key===preset.key&&Number(existing.template_data.preparedArchetype.version||0)<3;
+      const action=button(upgradeable?'Vollständigen NPC-Build ergänzen':existing?'Vorhanden':'In diese Welt übernehmen',()=>importPreparedArchetype(state,preset));
       if(existing&&!upgradeable){action.disabled=true;action.dataset.gmPermanentDisabled='true';action.title=`Als „${existing.name}“ in dieser Welt vorhanden.`}
+      const create=existing&&!upgradeable?button('NPC daraus erstellen',()=>beginCreatureFromArchetype(state,archetypeId(existing))):null;
       const loadout=catalogLoadoutSummary(core),carry=core.inventoryProfile.canCarryItems?'trägt Items':'ohne tragbares Inventar';
-      const row=item(`${preset.name} · ${groupNames.get(preset.groupName)||preset.groupName} · ${templateValueSummary(core)} · ${carry} · ${loadout} — ${preset.description}`,action);
+      const row=item(`${preset.name} · ${groupNames.get(preset.groupName)||preset.groupName} · vollständiges NPC-Fenster · ${templateValueSummary(core)} · ${carry} · ${loadout} — ${preset.description}`,action,...(create?[create]:[]));
       row.dataset.gmPreparedArchetype=preset.key;ui.preparedArchetypeList.append(row);
     }
   }
@@ -1257,8 +1391,8 @@
     const source=field(form,'[data-gm-archetype-source-creature]');clear(source);
     const empty=document.createElement('option');empty.value='';empty.textContent='Wesen auswählen';source.append(empty);
     for(const creature of state.creatures.filter(activeRow)){const option=document.createElement('option');option.value=creatureId(creature);option.textContent=creature.name;source.append(option)}
-    let summary='Noch keine übertragbaren Werte in dieser Vorlage.';
-    try{const core=portableCreatureValues(templateData),items=templateItemReferences(templateData);if(templateValueCount(core)||items.length)summary=`Gespeicherte Vorlage: ${templateValueSummary(core)}, ${items.length} verknüpfte Standarditems. Änderungen daran wirken nicht rückwirkend auf Wesen.`}catch{summary='Die gespeicherten Vorlagenwerte können hier nicht sicher gelesen werden.'}
+    let summary='Noch keine übertragbare Ausbaustufe in dieser Vorlage.';
+    try{const core=portableCreatureValues(templateData),items=templateItemReferences(templateData),builds=embeddedBuildsForArchetype(row);if(templateValueCount(core)||items.length||builds.length)summary=`Gespeicherte Vorlage: ${templateValueSummary(core)}, ${items.length} verknüpfte Standarditems und ${builds.length} vollständige Ausbaustufe(n). Änderungen daran wirken nicht rückwirkend auf Wesen.`}catch{summary='Die gespeicherten Vorlagenwerte können hier nicht sicher gelesen werden.'}
     text(ui.archetypeTemplateHint,summary);
     ui.archetypeArchive.hidden=!row;
   }
@@ -1268,38 +1402,42 @@
     const source=state.creatures.find(row=>activeRow(row)&&creatureId(row)===sourceId);
     if(!source){text(state.message,'Bitte wähle zuerst ein Wesen dieser Welt.');return}
     const row=state.archetypes.find(entry=>activeRow(entry)&&archetypeId(entry)===state.selectedArchetypeId);
-    let core;try{
+    let core,npcSheet;try{
       const stats=creatureStats(source);
       if(plainObject(stats.skills)&&Object.keys(stats.skills).length&&!builderSkillCatalog().length)throw new Error('Der Fähigkeitskatalog ist noch nicht geladen. Bitte öffne die App erneut.');
-      core=portableCreatureValues(stats);
+      core=portableCreatureValues(stats);npcSheet=sanitizeNpcBuildSheet(creatureToBuilderNpc(source));
     }catch(error){text(state.message,error.message);return}
-    if(!templateValueCount(core)){text(state.message,'Dieses Wesen hat noch keine Grundwerte, Counter oder Regelfähigkeiten, die sich als Vorlage übernehmen lassen.');return}
-    if(row&&typeof global.confirm==='function'&&!global.confirm(`Die bisher vorbereiteten Werte von „${row.name}“ durch Werte von „${source.name}“ ersetzen? Bestehende Wesen ändern sich dadurch nicht.`))return;
+    if(!templateValueCount(core)&&!(npcSheet.equipment?.length||npcSheet.activeEffectsV177?.length||npcSheet.layout?.length)){text(state.message,'Dieses Wesen enthält noch keinen verwendbaren NPC-Datensatz.');return}
+    if(row&&typeof global.confirm==='function'&&!global.confirm(`Die bisherige Standard-Ausbaustufe von „${row.name}“ durch den vollständigen NPC-Datensatz von „${source.name}“ ersetzen? Bestehende Wesen ändern sich dadurch nicht.`))return;
     const data=structuredClone(plainObject(row?.template_data)?row.template_data:{});
     for(const key of ['attributes','counters','skills']){
       if(Object.keys(core[key]).length)data[key]=structuredClone(core[key]);else delete data[key];
     }
+    const profile={name:source.name,species:source.species||npcSheet.npcType||'Wesen',roleTags:roleTags(source.role_tags),publicSummary:source.public_summary||'',gmNotes:source.gm_notes||''};
+    data.npcBuilds=[{id:'standard',label:'Standard',isDefault:true,profile,npcSheet}];
     form.__templateDraft={targetId:archetypeId(row),worldId:state.selectedCampaign.world_id,data,sourceName:source.name};
-    text(ui.archetypeTemplateHint,`Aus „${source.name}“ vorbereitet: ${templateValueSummary(core)}. Erst „Archetyp speichern“ schreibt die Vorlage. Andere Wesen bleiben unverändert.`);
-    text(state.message,`Vorlagenwerte aus „${source.name}“ vorbereitet. Prüfe den Archetyp und speichere ihn ausdrücklich.`);
+    text(ui.archetypeTemplateHint,`Vollständige Standard-Ausbaustufe aus „${source.name}“ vorbereitet: ${templateValueSummary(core)}, ${npcSheet.equipment?.length||0} Ausrüstungspositionen, ${npcSheet.activeEffectsV177?.length||0} Effekte und ${npcSheet.layout?.length||0} NPC-Karten. Erst „Archetyp speichern“ schreibt die Vorlage.`);
+    text(state.message,`Vollständigen NPC-Datensatz aus „${source.name}“ vorbereitet. Andere Wesen bleiben unverändert.`);
   }
   function stageArchetypeValuesForCreature(state){
     if(!canManageCreatureWorld(state))return;
     const ui=state.creatureUi,form=ui?.creatureForm,selectedId=field(form,'[data-gm-creature-archetype]')?.value;
     const archetype=state.archetypes.find(row=>activeRow(row)&&archetypeId(row)===selectedId);
     if(!archetype){text(state.message,'Bitte wähle zuerst einen aktiven Archetyp.');return}
-    let core,references;try{core=portableCreatureValues(archetype.template_data||{});references=templateItemReferences(archetype.template_data||{})}catch(error){text(state.message,error.message);return}
-    if(!templateValueCount(core)&&!references.length){text(state.message,'Dieser Archetyp enthält noch keine übertragbaren Werte oder Standarditems.');return}
-    if(core.inventoryProfile?.canCarryItems===false&&references.length){text(state.message,'Dieser Archetyp ist als nicht tragfähig markiert, enthält aber Standarditems. Bitte korrigiere zuerst die Vorlage.');return}
-    const creature=state.creatures.find(row=>activeRow(row)&&creatureId(row)===state.selectedCreatureId),owner=form.__npcOwner;if(!owner)return;
-    try{overlayTemplateValues(owner,core)}catch(error){text(state.message,error.message);return}
-    const known=new Set((owner.equipment||[]).filter(item=>item?.catalogId).map(item=>`${item.catalogSource||(catalogItem('standard',item.catalogId)?'standard':'set')}:${item.catalogId}`));
-    let queuedItems=0;
-    if(core.inventoryProfile?.canCarryItems!==false)for(const reference of references){const token=`${reference.catalogSource}:${reference.catalogId}`;if(known.has(token))continue;owner.equipment.push(catalogInventoryEntry(reference));known.add(token);queuedItems++}
-    else if(references.length){text(state.message,'Die Vorlage ist als nicht tragfähig markiert und kann deshalb keine Standarditems übertragen.');return}
-    form.__archetypeApply={archetypeId:selectedId,creatureId:creatureId(creature),worldId:state.selectedCampaign.world_id,core};markCreatureNpcDirty(state);renderCreatureNpcWindow(state);
-    text(ui.creatureTemplateHint,`Vorlage „${archetype.name}“ im NPC-Fenster: ${templateValueSummary(core)} und ${queuedItems} neue Standarditems${references.length-queuedItems?` · ${references.length-queuedItems} bereits vorhanden`:''}. Vorhandene Karten, Effekte und persönliche Daten bleiben erhalten. Noch nicht gespeichert.`);
-    text(state.message,`Vorlage „${archetype.name}“ wurde direkt im NPC-Fenster vorbereitet. Prüfe die Karten und speichere das Wesen.`);
+    const build=form.__npcBuildChoices?.get(field(form,'[data-gm-creature-build]')?.value);if(!build){text(state.message,'Bitte wähle eine verfügbare Ausbaustufe.');return}
+    const creature=state.creatures.find(row=>activeRow(row)&&creatureId(row)===state.selectedCreatureId),sections=[...form.querySelectorAll('[data-gm-creature-template-section]:checked')].map(control=>control.value),mode=field(form,'[data-gm-creature-template-mode]')?.value==='fill-empty'?'fill-empty':'replace-selected';
+    if(!sections.length){text(state.message,'Wähle mindestens einen Bereich für die Übernahme aus.');return}
+    if(creature&&typeof global.confirm==='function'&&!global.confirm(`Ausbaustufe „${build.label}“ auf „${creature.name}“ anwenden? ${mode==='fill-empty'?'Nur leere Bereiche werden ergänzt.':'Die ausgewählten Bereiche werden durch unabhängige Kopien ersetzt.'}`))return;
+    let prepared;try{prepared=instantiateArchetypeBuild(state,archetype,build)}catch(error){text(state.message,`Die Ausbaustufe konnte nicht vorbereitet werden: ${error.message}`);return}
+    if(creature)applyNpcBuildSections(form.__npcOwner,prepared.owner,sections,mode);else form.__npcOwner=prepared.owner;
+    if(sections.includes('profile')){
+      const onlyEmpty=creature&&mode==='fill-empty',assign=(selector,value)=>{const control=field(form,selector);if(control&&(!onlyEmpty||!control.value.trim()))control.value=value||''};
+      assign('[data-gm-creature-name]',prepared.profile.name||form.__npcOwner.name);assign('[data-gm-creature-species]',prepared.profile.species||form.__npcOwner.npcType);assign('[data-gm-creature-roles]',prepared.profile.roleTags.join(', '));assign('[data-gm-creature-summary]',prepared.profile.publicSummary);assign('[data-gm-creature-notes]',prepared.profile.gmNotes);
+      form.__npcOwner.name=field(form,'[data-gm-creature-name]').value||form.__npcOwner.name;form.__npcOwner.npcType=field(form,'[data-gm-creature-species]').value||form.__npcOwner.npcType;
+    }
+    form.__archetypeApply={archetypeId:selectedId,buildValue:build.value,creatureId:creatureId(creature),worldId:state.selectedCampaign.world_id};markCreatureNpcDirty(state);renderCreatureNpcWindow(state);
+    text(ui.creatureTemplateHint,`„${archetype.name} · ${build.label}“ ist als unabhängiger NPC-Entwurf geöffnet. Gegenstände, Effekte, Karten und der NPC selbst besitzen neue Kennungen. Noch nicht gespeichert.`);
+    text(state.message,`NPC aus „${archetype.name} · ${build.label}“ vorbereitet. Du kannst jetzt jeden Wert verändern oder den Entwurf verwerfen.`);
   }
   function canManageCreatureWorld(state){return !!state.selectedCampaign?.world_id&&state.worlds.some(world=>world.world_id===state.selectedCampaign.world_id)}
   async function loadCreatureWorkspace(state,{force=false}={}){
@@ -1323,7 +1461,7 @@
     const serial=++state.creatureLoadSerial,authEpoch=state.authEpoch;
     state.secretLootEffectLoadSerial++;
     state.creatureWorldId=worldId;state.creatureCampaignId=campaignId;state.creatureLoading=true;state.creatureLoaded=false;
-    state.creatures=[];state.archetypes=[];state.creatureDisclosures=[];state.worldPlaces=[];state.worldFactions=[];state.creatureFactionLinks=[];state.creatureLoot=[];state.creatureMigrationRequests=[];state.creatureCompanionLinks=[];state.creatureRequestDetails=new Map();
+    state.creatures=[];state.archetypes=[];state.npcCatalog=[];state.creatureDisclosures=[];state.worldPlaces=[];state.worldFactions=[];state.creatureFactionLinks=[];state.creatureLoot=[];state.creatureMigrationRequests=[];state.creatureCompanionLinks=[];state.creatureRequestDetails=new Map();
     renderPreparedArchetypeList(state);
     clear(ui.secretLootEffectList);show(ui.secretLootEffectList,false);text(ui.secretLootEffectStatus,'Geheime Wirkungen werden geladen …');show(ui.secretLootEffectRefresh,false);
     text(ui.status,'Wesen, Archetypen und Weltreferenzen werden geladen …');show(ui.retry,false);
@@ -1333,17 +1471,19 @@
         Promise.allSettled([
           Promise.resolve().then(()=>state.repository.listWorldPlaces(worldId)),Promise.resolve().then(()=>state.repository.listWorldFactions(worldId)),
           Promise.resolve().then(()=>state.repository.listCreatureFactionLinks(worldId)),Promise.resolve().then(()=>state.repository.listCampaignCreatureLoot(campaignId)),
-          Promise.resolve().then(()=>state.repository.listCampaignCreatureAuxMigrations(campaignId)),Promise.resolve().then(()=>state.repository.listCampaignCompanionLinks(campaignId))
+          Promise.resolve().then(()=>state.repository.listCampaignCreatureAuxMigrations(campaignId)),Promise.resolve().then(()=>state.repository.listCampaignCompanionLinks(campaignId)),
+          typeof state.repository.listNpcCatalog==='function'?Promise.resolve().then(()=>state.repository.listNpcCatalog(worldId)):Promise.resolve([])
         ])
       ]);
       if(serial!==state.creatureLoadSerial||authEpoch!==state.authEpoch||state.selectedCampaignId!==campaignId||state.selectedCampaign?.world_id!==worldId)return;
-      const [creatures,archetypes,disclosures]=core,[places,factions,factionLinks,loot,migrations,companions]=optional.map(result=>result.status==='fulfilled'?result.value:[]);
+      const [creatures,archetypes,disclosures]=core,[places,factions,factionLinks,loot,migrations,companions,npcCatalog]=optional.map(result=>result.status==='fulfilled'?result.value:[]);
       const registryAvailable=optional.slice(0,3).every(result=>result.status==='fulfilled')&&['saveWorldPlace','saveWorldFaction','saveCreatureFactionLink','setCreaturePlace'].every(name=>typeof state.repository[name]==='function');
       const lootAvailable=optional[3].status==='fulfilled'&&['transferCreatureLoot','reverseCreatureLoot'].every(name=>typeof state.repository[name]==='function');
       const companionAvailable=optional.slice(4,6).every(result=>result.status==='fulfilled')&&['getCreatureAuxMigrationRequest','reviewCreatureAuxMigration','saveCreatureCompanionLink'].every(name=>typeof state.repository[name]==='function');
       show(ui.referenceSection,registryAvailable);show(ui.registrySection,registryAvailable);show(ui.lootSection,lootAvailable);show(ui.companionSection,companionAvailable);
       state.creatures=Array.isArray(creatures)?creatures:[];
       state.archetypes=Array.isArray(archetypes)?archetypes:[];
+      state.npcCatalog=Array.isArray(npcCatalog)?npcCatalog:[];
       state.creatureDisclosures=Array.isArray(disclosures)?disclosures:[];
       state.worldPlaces=Array.isArray(places)?places:[];
       state.worldFactions=Array.isArray(factions)?factions:[];
@@ -1355,12 +1495,12 @@
       renderArchetypeList(state);renderReferenceRegistries(state);renderCreatureList(state);renderCreatureLootReceipts(state);renderCreatureCompanions(state);
       if(lootAvailable)loadSecretLootEffects(state);
       const unavailable=[!registryAvailable?'Orte/Fraktionen':null,!lootAvailable?'Beute':null,!companionAvailable?'Begleiter/Übernahme':null].filter(Boolean);
-      text(ui.status,`${state.creatures.filter(activeRow).length} Wesen · ${state.archetypes.filter(activeRow).length} Archetypen · ${state.worldPlaces.filter(activeRow).length} Orte · ${state.worldFactions.filter(activeRow).length} Fraktionen.${unavailable.length?` Teilbereiche derzeit nicht verfügbar: ${unavailable.join(', ')}.`:''}`);
+      text(ui.status,`${state.creatures.filter(activeRow).length} Wesen · ${state.archetypes.filter(activeRow).length} Archetypen · ${state.npcCatalog.length} Katalog-Ausbaustufen · ${state.worldPlaces.filter(activeRow).length} Orte · ${state.worldFactions.filter(activeRow).length} Fraktionen.${unavailable.length?` Teilbereiche derzeit nicht verfügbar: ${unavailable.join(', ')}.`:''}`);
       show(ui.retry,unavailable.length>0);
       if(state.busy)setBusy(state,true);
     }catch(error){
       if(serial!==state.creatureLoadSerial||authEpoch!==state.authEpoch)return;
-      state.creatures=[];state.archetypes=[];state.creatureDisclosures=[];state.worldPlaces=[];state.worldFactions=[];state.creatureFactionLinks=[];state.creatureLoot=[];state.creatureMigrationRequests=[];state.creatureCompanionLinks=[];state.creatureRequestDetails=new Map();
+      state.creatures=[];state.archetypes=[];state.npcCatalog=[];state.creatureDisclosures=[];state.worldPlaces=[];state.worldFactions=[];state.creatureFactionLinks=[];state.creatureLoot=[];state.creatureMigrationRequests=[];state.creatureCompanionLinks=[];state.creatureRequestDetails=new Map();
       state.selectedCreatureId=null;state.selectedArchetypeId=null;state.selectedDisclosureCreatureId=null;
       clear(ui.creatureList);clear(ui.archetypeList);clear(ui.placeList);clear(ui.factionList);clear(ui.lootList);clear(ui.secretLootEffectList);show(ui.secretLootEffectList,false);clear(ui.migrationList);clear(ui.companionList);renderPreparedArchetypeList(state);renderCreatureForm(state);renderArchetypeForm(state);renderCreatureDisclosure(state);
       text(ui.status,`Wesen konnten nicht geladen werden: ${friendlyError(error)}`);show(ui.retry,true);
@@ -1372,7 +1512,7 @@
     const tags=roleTags(field(form,'[data-gm-creature-roles]').value);
     if(tags.length>32||tags.some(tag=>tag.length>60)||new Set(tags.map(tag=>tag.toLocaleLowerCase('de-DE'))).size!==tags.length){text(state.message,'Bitte höchstens 32 unterschiedliche Rollen/Tags mit je höchstens 60 Zeichen eingeben.');return}
     const staged=form.__archetypeApply||null;
-    if(staged&&(staged.archetypeId!==field(form,'[data-gm-creature-archetype]').value||staged.creatureId!==creatureId(row)||staged.worldId!==state.selectedCampaign.world_id)){
+    if(staged&&(staged.archetypeId!==field(form,'[data-gm-creature-archetype]').value||staged.buildValue!==field(form,'[data-gm-creature-build]').value||staged.creatureId!==creatureId(row)||staged.worldId!==state.selectedCampaign.world_id)){
       text(state.message,'Die gewählte Vorlage oder das Wesen wurde geändert. Bitte Vorlagenwerte erneut ausdrücklich übernehmen oder das Formular neu öffnen.');return;
     }
     const owner=form.__npcOwner;if(!owner){text(state.message,'Das NPC-Dokument dieses Wesens ist nicht geladen.');return}
@@ -1424,12 +1564,12 @@
   }
   async function importPreparedArchetype(state,preset){
     if(!canManageCreatureWorld(state)||typeof state.repository.saveWorldArchetype!=='function')return;
-    const existing=matchingPreparedArchetype(state,preset),prepared=preparedArchetypeTemplate(preset),upgradeable=existing?.template_data?.preparedArchetype?.key===preset.key&&Number(existing.template_data.preparedArchetype.version||0)<2;
+    const existing=matchingPreparedArchetype(state,preset),prepared=preparedArchetypeTemplate(preset),upgradeable=existing?.template_data?.preparedArchetype?.key===preset.key&&Number(existing.template_data.preparedArchetype.version||0)<3;
     if(existing&&!upgradeable){state.selectedArchetypeId=archetypeId(existing);renderArchetypeForm(state);text(state.message,`„${existing.name}“ ist in dieser Welt bereits als eigener Archetyp vorhanden.`);return}
     if(upgradeable){
-      const templateData=structuredClone(existing.template_data||{});templateData.catalogLoadout=prepared.catalogLoadout;templateData.inventoryProfile=plainObject(templateData.inventoryProfile)?templateData.inventoryProfile:prepared.inventoryProfile;templateData.preparedArchetype=prepared.preparedArchetype;
+      const templateData=structuredClone(existing.template_data||{});templateData.catalogLoadout=prepared.catalogLoadout;templateData.inventoryProfile=plainObject(templateData.inventoryProfile)?templateData.inventoryProfile:prepared.inventoryProfile;if(!Array.isArray(templateData.npcBuilds)||!templateData.npcBuilds.length)templateData.npcBuilds=prepared.npcBuilds;templateData.preparedArchetype=prepared.preparedArchetype;
       const changes={archetypeId:archetypeId(existing),expectedRevision:Number(existing.revision),name:existing.name,groupName:existing.group_name||preset.groupName,description:existing.description||preset.description,templateData,archived:false};
-      try{await runBusy(state,async()=>{await state.repository.saveWorldArchetype(state.selectedCampaign.world_id,changes);state.selectedArchetypeId=archetypeId(existing);await loadCreatureWorkspace(state,{force:true});text(state.message,`Standarditems für „${existing.name}“ ergänzt. Eigene Werte und Beschreibungen blieben erhalten.`)})}catch{}return;
+      try{await runBusy(state,async()=>{await state.repository.saveWorldArchetype(state.selectedCampaign.world_id,changes);state.selectedArchetypeId=archetypeId(existing);await loadCreatureWorkspace(state,{force:true});text(state.message,`Vollständige NPC-Ausbaustufe für „${existing.name}“ ergänzt. Eigene Werte und Beschreibungen blieben erhalten.`)})}catch{}return;
     }
     const templateData=prepared,core=portableCreatureValues(templateData);
     if(!templateValueCount(core)){text(state.message,'Die vorbereitete Vorlage enthält keine lesbaren Werte.');return}
@@ -1922,7 +2062,7 @@
     field(state.dialog,'[data-gm-session-form]')?.addEventListener('submit',async event=>{event.preventDefault();if(!state.selectedCampaignId)return;const form=event.currentTarget,cross=field(form,'[data-gm-session-cross]').checked;try{await runBusy(state,async()=>{const receipt=await state.repository.createSession(state.selectedCampaignId,{title:field(form,'[data-gm-session-title]').value,date:field(form,'[data-gm-session-date]').value,depth:field(form,'[data-gm-session-depth]').value,summary:field(form,'[data-gm-session-summary]').value,notes:field(form,'[data-gm-session-notes]').value,playerVisible:field(form,'[data-gm-session-visible]').checked,status:field(form,'[data-gm-session-status]').value,defaultCbp:+field(form,'[data-gm-session-cbp]').value,crossCampaignDraft:cross,impactSummary:field(form,'[data-gm-session-impact]').value});form.reset();field(form,'[data-gm-session-visible]').checked=true;await selectCampaign(state,state.selectedCampaignId);text(state.message,`Spielabend gespeichert.${receipt.hidden_impact_count?` ${receipt.hidden_impact_count} verdeckte Folge(n) wurden vorgemerkt.`:''}`)})}catch{}});
     field(state.dialog,'[data-gm-thread-form]')?.addEventListener('submit',async event=>{event.preventDefault();if(!state.selectedCampaignId)return;const form=event.currentTarget;try{await runBusy(state,async()=>{await state.repository.createThread(state.selectedCampaignId,{title:field(form,'[data-gm-thread-title]').value,details:field(form,'[data-gm-thread-details]').value,playerVisible:field(form,'[data-gm-thread-visible]').checked});form.reset();await selectCampaign(state,state.selectedCampaignId);text(state.message,'Handlungsfaden gespeichert.')})}catch{}});
   }
-  function createState(dialog,services={}){const Client=global.EberosSupabaseClient,provider=services.provider||new Client.SupabaseClientProvider(),state={dialog,provider,auth:services.auth||new Client.CampaignAuthGateway({provider}),repository:services.repository||new Client.SupabaseCampaignRepository({provider}),liveSync:services.liveSync||(!services.repository&&Client.CampaignLiveSyncGateway?new Client.CampaignLiveSyncGateway({provider}):null),authForm:field(dialog,'[data-gm-auth-form]'),session:field(dialog,'[data-gm-session]'),message:field(dialog,'[data-gm-message]'),busy:false,unsubscribe:null,worlds:[],campaigns:[],selectedCampaignId:null,selectedCampaign:null,selectedCharacterId:null,selectedSessionId:null,selectedData:null,activeView:'overview',authEpoch:0,currentUserId:null,revisionCache:new Map(),revisionErrors:new Map(),revisionLoading:new Set(),creatureLoadSerial:0,secretLootEffectLoadSerial:0,creatureWorldId:null,creatureCampaignId:null,creatureLoaded:false,creatureLoading:false,creatures:[],archetypes:[],creatureDisclosures:[],worldPlaces:[],worldFactions:[],creatureFactionLinks:[],creatureLoot:[],creatureMigrationRequests:[],creatureCompanionLinks:[],creatureRequestDetails:new Map(),creatureImportDraft:null,selectedCreatureId:null,selectedArchetypeId:null,selectedDisclosureCreatureId:null,creatureUi:null,relationshipLoadSerial:0,relationshipWorldId:null,relationshipCampaignId:null,relationshipLoaded:false,relationshipLoading:false,relationships:[],reputationScopes:[],reputations:[],warrants:[],pursuits:[],disadvantageLinks:[],phase6Creatures:[],phase6Places:[],phase6Factions:[],relationshipUi:null,placeLoadSerial:0,placeWorldId:null,placeCampaignId:null,placeLoaded:false,placeLoading:false,places:[],placeTree:[],placeStates:[],effectivePlaceStates:[],placeDisclosures:[],placeStateDisclosures:[],tradeGoods:[],routes:[],placeLinks:[],placeCreatures:[],placeFactions:[],selectedPlaceId:null,placeUi:null,chronicleLoadSerial:0,chronicleWorldId:null,chronicleCampaignId:null,chronicleLoaded:false,chronicleLoading:false,worldEvents:[],effectiveWorldState:[],worldEventDisclosures:[],worldEventConflicts:[],chroniclePlaces:[],chronicleUi:null,timeLoadSerial:0,timeCampaignId:null,timeLoaded:false,timeLoading:false,timeCalendar:null,timeWeatherHistory:[],timeUi:null,liveLoadSerial:0,liveWorldId:null,liveCampaignId:null,liveLoaded:false,liveLoading:false,liveContext:null,liveCharacters:[],liveActions:[],liveInventory:[],liveCreatures:[],livePlaces:[],livePlaceStates:[],liveUi:null,liveSyncGeneration:0,liveSyncCampaignId:null,liveSyncStatus:null,liveSyncUnsubscribe:null,liveSyncRefreshPending:false,liveStatusBase:''};bindActions(state);states.set(dialog,state);return state}
+  function createState(dialog,services={}){const Client=global.EberosSupabaseClient,provider=services.provider||new Client.SupabaseClientProvider(),state={dialog,provider,auth:services.auth||new Client.CampaignAuthGateway({provider}),repository:services.repository||new Client.SupabaseCampaignRepository({provider}),liveSync:services.liveSync||(!services.repository&&Client.CampaignLiveSyncGateway?new Client.CampaignLiveSyncGateway({provider}):null),authForm:field(dialog,'[data-gm-auth-form]'),session:field(dialog,'[data-gm-session]'),message:field(dialog,'[data-gm-message]'),busy:false,unsubscribe:null,worlds:[],campaigns:[],selectedCampaignId:null,selectedCampaign:null,selectedCharacterId:null,selectedSessionId:null,selectedData:null,activeView:'overview',authEpoch:0,currentUserId:null,revisionCache:new Map(),revisionErrors:new Map(),revisionLoading:new Set(),creatureLoadSerial:0,secretLootEffectLoadSerial:0,creatureWorldId:null,creatureCampaignId:null,creatureLoaded:false,creatureLoading:false,creatures:[],archetypes:[],npcCatalog:[],creatureDisclosures:[],worldPlaces:[],worldFactions:[],creatureFactionLinks:[],creatureLoot:[],creatureMigrationRequests:[],creatureCompanionLinks:[],creatureRequestDetails:new Map(),creatureImportDraft:null,selectedCreatureId:null,selectedArchetypeId:null,selectedDisclosureCreatureId:null,creatureUi:null,relationshipLoadSerial:0,relationshipWorldId:null,relationshipCampaignId:null,relationshipLoaded:false,relationshipLoading:false,relationships:[],reputationScopes:[],reputations:[],warrants:[],pursuits:[],disadvantageLinks:[],phase6Creatures:[],phase6Places:[],phase6Factions:[],relationshipUi:null,placeLoadSerial:0,placeWorldId:null,placeCampaignId:null,placeLoaded:false,placeLoading:false,places:[],placeTree:[],placeStates:[],effectivePlaceStates:[],placeDisclosures:[],placeStateDisclosures:[],tradeGoods:[],routes:[],placeLinks:[],placeCreatures:[],placeFactions:[],selectedPlaceId:null,placeUi:null,chronicleLoadSerial:0,chronicleWorldId:null,chronicleCampaignId:null,chronicleLoaded:false,chronicleLoading:false,worldEvents:[],effectiveWorldState:[],worldEventDisclosures:[],worldEventConflicts:[],chroniclePlaces:[],chronicleUi:null,timeLoadSerial:0,timeCampaignId:null,timeLoaded:false,timeLoading:false,timeCalendar:null,timeWeatherHistory:[],timeUi:null,liveLoadSerial:0,liveWorldId:null,liveCampaignId:null,liveLoaded:false,liveLoading:false,liveContext:null,liveCharacters:[],liveActions:[],liveInventory:[],liveCreatures:[],livePlaces:[],livePlaceStates:[],liveUi:null,liveSyncGeneration:0,liveSyncCampaignId:null,liveSyncStatus:null,liveSyncUnsubscribe:null,liveSyncRefreshPending:false,liveStatusBase:''};bindActions(state);states.set(dialog,state);return state}
   function hideTentativeSession(state){state.authEpoch++;state.currentUserId=null;state.campaigns=[];state.worlds=[];clearWorkspace(state);renderCampaignTabs(state);show(state.authForm?.closest('.auth-account-box'),true);show(state.authForm,true);show(state.session,false);text(field(state.dialog,'[data-gm-auth-user]'),'Angemeldetes Konto')}
   async function renderSession(state,user){
     const authEpoch=++state.authEpoch,userId=user?.id||null,accountChanged=state.currentUserId!==userId;state.currentUserId=userId;
@@ -1938,7 +2078,9 @@
     try{const result=await state.auth.restoreSession();await renderSession(state,result.user);if(!state.unsubscribe)state.unsubscribe=await state.auth.onAuthStateChange(({event,user})=>renderSession(state,user).then(()=>{if(event==='PASSWORD_RECOVERY'&&user){const panel=field(state.dialog,'[data-gm-auth-password-panel]');if(panel)panel.open=true;text(state.message,'Lege jetzt ein neues Passwort fest und speichere es.')}}).catch(error=>{if(!state.currentUserId)text(state.message,friendlyError(error))}));if(!result.user)text(state.message,'Melde dich mit E-Mail und Passwort an oder erstelle einmalig ein Konto.');return{configured:true,user:result.user}}catch(error){if(state.currentUserId||!state.session?.hidden)hideTentativeSession(state);show(state.authForm?.closest('.auth-account-box'),true);show(state.authForm,true);text(state.message,friendlyError(error));return{configured:true,user:null,error}}
   }
   async function open({root,dialog,services}={}){const view=root||dialog;if(!view)throw new TypeError('Die Spielleiteransicht fehlt.');if(view instanceof HTMLDialogElement){if(typeof view.showModal==='function'&&!view.open)view.showModal();else view.setAttribute('open','')}else view.hidden=false;const state=states.get(view)||createState(view,services);activateView(state,state.activeView);const session=await initialize(state);if(session.error)throw session.error;return{configured:session.configured,authenticated:!!session.user,campaigns:state.campaigns.length}}
-  global.EberosCreatureNpcBridgeV1813=Object.freeze({version:NPC_SHEET_VERSION,create(name){return structuredClone(freshNpcSheet(name))},toNpcSheet(row){return structuredClone(creatureToBuilderNpc(row))},serialize(owner){return serializeNpcSheet(owner)},mount(root,owner,options={}){if(!(root instanceof Element))throw new TypeError('Das Ziel des NPC-Fensters fehlt.');return mountNpcSheetEditor(root,owner,options)}});
+  const creatureNpcBridge=Object.freeze({version:NPC_SHEET_VERSION,create(name){return structuredClone(freshNpcSheet(name))},toNpcSheet(row){return structuredClone(creatureToBuilderNpc(row))},independent(owner){return independentNpcSheet(owner)},serialize(owner){return serializeNpcSheet(owner)},mount(root,owner,options={}){if(!(root instanceof Element))throw new TypeError('Das Ziel des NPC-Fensters fehlt.');return mountNpcSheetEditor(root,owner,options)}});
+  global.EberosCreatureNpcBridgeV1814=creatureNpcBridge;
+  global.EberosCreatureNpcBridgeV1813=creatureNpcBridge;
   global.EberosCreatureNpcBridgeV1812=Object.freeze({version:CREATURE_BUILDER_PRESENTATION_VERSION,presentationKey:CREATURE_BUILDER_PRESENTATION_KEY,toNpcSnapshot(row){return structuredClone(creatureToBuilderNpc(row))}});
   global.EberosGameMasterWorkspace=Object.freeze({open,friendlyError});
 })(globalThis);
