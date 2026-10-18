@@ -218,7 +218,25 @@
     {key:'gebundener-geist',name:'Gebundener Geist',groupName:'spirit',description:'Orts- oder erinnerungsgebundene Erscheinung mit starkem Willen und übernatürlicher Wahrnehmung.',canCarryItems:false,standardItems:[],attributes:{ST:3,KS:8,GS:6,RF:7,FF:2,WL:11,IT:7,IN:9,WN:10,CR:6},counters:{L:8,A:2,FO:10,M:6,GB:2,HS:2,FS:5,GL:2},skills:{'Spiritismus & Geisterkunde':9,'Spiritismus & Seelenmagie':9,'Magiewahrnehmung & Wahrnehmung für Übernatürliches':9,'Meditation & mentaler Selbstschutz':8}},
     {key:'untoter-waechter',name:'Untoter Wächter',groupName:'undead',description:'Zäher, furchtloser Grab- oder Ruinenwächter mit wenig Beweglichkeit und hoher Widerstandskraft.',canCarryItems:true,standardItems:[{id:'wpn_melee_kriegsspeer',loadState:'equipped'},{id:'armor_shield_holzschild',loadState:'equipped'}],attributes:{ST:9,KS:11,GS:4,RF:4,FF:3,WL:9,IT:3,IN:4,WN:6,CR:2},counters:{L:12,A:2,FO:3,M:2,GB:2,HS:2,FS:7,GL:2},skills:{'Nahkampf – schwere Waffen':8,'Verteidigung & Blocken':8,'Aufmerksamkeit & Wachsamkeit':5,'Nekromantie & Totenmagie':4}},
     {key:'kultwirker',name:'Kultwirker',groupName:'dark',description:'Finstere Ritualfigur für Flüche, verbotene Nachforschungen und verdeckte Gegenspieler.',canCarryItems:true,standardItems:[{id:'wpn_melee_dagger',loadState:'equipped'},{id:'gear_lantern'},{id:'gear_writing_set'}],attributes:{ST:4,KS:6,GS:5,RF:6,FF:7,WL:10,IT:8,IN:7,WN:6,CR:7},counters:{L:7,A:6,FO:8,M:2,GB:2,HS:4,FS:10,GL:2},skills:{'Flüche & Blut-Hexerei':9,'Okkultismus & Arkane Kunde':8,'Heimlichkeit & Schleichen':6,'Überreden & Belügen':6}},
-    {key:'konstruktwaechter',name:'Konstruktwächter',groupName:'construct',description:'Massiver künstlicher Wächter für Werkstätten, Ruinen, Tore und magisch gesicherte Orte.',canCarryItems:false,standardItems:[],attributes:{ST:12,KS:13,GS:4,RF:5,FF:3,WL:8,IT:3,IN:3,WN:7,CR:2},counters:{L:14,A:2,FO:4,M:6,GB:2,HS:2,FS:2,GL:2},skills:{'Verteidigung & Blocken':9,'Nahkampf – Raufen & Ringen':9,'Aufmerksamkeit & Wachsamkeit':7,'Handwerk & Baukunst':4}}
+    {key:'konstruktwaechter',name:'Konstruktwächter',groupName:'construct',description:'Massiver künstlicher Wächter für Werkstätten, Ruinen, Tore und magisch gesicherte Orte.',canCarryItems:false,standardItems:[],attributes:{ST:12,KS:13,GS:4,RF:5,FF:3,WL:8,IT:3,IN:3,WN:7,CR:2},counters:{L:14,A:2,FO:4,M:6,GB:2,HS:2,FS:2,GL:2},skills:{'Verteidigung & Blocken':9,'Nahkampf – Raufen & Ringen':9,'Aufmerksamkeit & Wachsamkeit':7,'Handwerk & Baukunst':4}},
+    {key:'wirt-gastgeber',name:'Wirt & Gastgeber',groupName:'humanoid',description:'Aufmerksame Schank- oder Herbergsfigur, die Gerüchte kennt, Stimmungen liest und Konflikte beruhigen kann.',canCarryItems:true,standardItems:[{id:'gear_lantern'},{id:'gear_writing_set'}],attributes:{ST:5,KS:6,GS:4,RF:4,FF:6,WL:6,IT:6,IN:8,WN:7,CR:8},counters:{L:6,A:6,FO:7,M:2,GB:2,HS:6,FS:2,GL:3},skills:{'Folklore & Gassenwissen':7,'Menschenkenntnis & Wesen erkennen':7,'Beruhigen & Trösten':6,'Wirtschaft & Handel':5}},
+    {key:'heiler-feldscher',name:'Heiler & Feldscher',groupName:'society',description:'Weltliche Heilperson für Erste Hilfe, Diagnose, Kräuter, Nachsorge und medizinische Hinweise.',canCarryItems:true,standardItems:[{id:'gear_healer_kit'},{id:'gear_backpack'}],attributes:{ST:4,KS:6,GS:5,RF:5,FF:8,WL:8,IT:8,IN:8,WN:8,CR:6},counters:{L:6,A:6,FO:9,M:2,GB:3,HS:3,FS:2,GL:2},skills:{'Heiler & Helfer':9,'Alchemist & Apotheker':7,'Beruhigen & Trösten':6,'Erforschen & Untersuchen':6}},
+    {key:'gelehrter-schreiber',name:'Gelehrter & Schreiber',groupName:'society',description:'Gebildete Auskunftsfigur für Chroniken, Übersetzungen, Urkunden, Recherche und alte Geheimnisse.',canCarryItems:true,standardItems:[{id:'gear_writing_set'},{id:'gear_backpack'}],attributes:{ST:3,KS:4,GS:4,RF:4,FF:7,WL:7,IT:10,IN:7,WN:7,CR:5},counters:{L:5,A:5,FO:10,M:3,GB:2,HS:3,FS:2,GL:2},skills:{'Sprachen & Schriftkunde':9,'Heraldik & Geschichte':8,'Schreiber & Fälscher':8,'Erforschen & Untersuchen':7}},
+    {key:'adliger-diplomat',name:'Adliger & Diplomat',groupName:'society',description:'Einflussreiche höfische Figur für Verhandlungen, Etikette, politische Kontakte und gesellschaftlichen Druck.',canCarryItems:true,standardItems:[{id:'wpn_melee_long_sword',loadState:'carried'},{id:'gear_writing_set'}],attributes:{ST:5,KS:5,GS:5,RF:5,FF:6,WL:8,IT:8,IN:7,WN:6,CR:10},counters:{L:6,A:6,FO:8,M:2,GB:2,HS:10,FS:2,GL:4},skills:{'Etikette & höfisches Auftreten':10,'Überreden & Belügen':8,'Menschenkenntnis & Wesen erkennen':8,'Heraldik & Geschichte':7}},
+    {key:'soeldner-leibwaechter',name:'Söldner & Leibwächter',groupName:'combat',description:'Professionelle Schutz- und Kampfperson für Eskorte, Frontlinie, Wachaufgaben und kontrollierte Gewalt.',canCarryItems:true,standardItems:[{id:'wpn_melee_long_sword',loadState:'equipped'},{id:'armor_chain_shirt',loadState:'equipped'},{id:'armor_shield_round',loadState:'equipped'}],attributes:{ST:8,KS:9,GS:6,RF:7,FF:5,WL:8,IT:5,IN:6,WN:7,CR:5},counters:{L:10,A:10,FO:5,M:2,GB:2,HS:3,FS:2,GL:2},skills:{'Nahkampf – schwere Waffen':8,'Verteidigung & Blocken':9,'Aufmerksamkeit & Wachsamkeit':7,'Fesseln & Sichern':6}},
+    {key:'spaeher-jaeger',name:'Späher & Jäger',groupName:'combat',description:'Geländesichere Fernkampffigur für Aufklärung, Fährten, Wildnisreisen und vorbereitete Hinterhalte.',canCarryItems:true,standardItems:[{id:'wpn_ranged_shortbow',loadState:'equipped'},{id:'wpn_melee_dagger',loadState:'equipped'},{id:'armor_reinforced_leather',loadState:'equipped'},{id:'gear_rope_hemp_10m'}],attributes:{ST:6,KS:7,GS:8,RF:8,FF:8,WL:6,IT:5,IN:8,WN:9,CR:4},counters:{L:7,A:10,FO:7,M:2,GB:2,HS:2,FS:2,GL:3},skills:{'Fernkampf – leichte Waffen':8,'Fährtenlesen & Spurensuche':9,'Wildniskunde & Wildnisleben':8,'Aufmerksamkeit & Wachsamkeit':7}},
+    {key:'dieb-einbrecher',name:'Dieb & Einbrecher',groupName:'outlaw',description:'Unauffällige Spezialfigur für Schlösser, Taschendiebstahl, Infiltration und Fluchtwege.',canCarryItems:true,standardItems:[{id:'wpn_melee_dagger',loadState:'equipped'},{id:'gear_lockpicks'},{id:'gear_rope_fine_10m'}],attributes:{ST:4,KS:5,GS:9,RF:9,FF:10,WL:5,IT:7,IN:7,WN:8,CR:6},counters:{L:6,A:9,FO:7,M:2,GB:2,HS:3,FS:3,GL:4},skills:{'Taschendiebstahl & Schlösser knacken':10,'Heimlichkeit & Schleichen':9,'Akrobatik & Klettern':8,'Aufmerksamkeit & Wachsamkeit':7}},
+    {key:'attentaeter',name:'Attentäter & Schattenklinge',groupName:'outlaw',description:'Gefährliche Elitefigur für verdeckte Verfolgung, Überraschungsangriffe, Sabotage und schnelle Flucht.',canCarryItems:true,standardItems:[{id:'wpn_melee_dagger',loadState:'equipped'},{id:'wpn_ranged_shortbow',loadState:'carried'},{id:'armor_reinforced_leather',loadState:'equipped'}],attributes:{ST:7,KS:7,GS:10,RF:10,FF:9,WL:8,IT:7,IN:8,WN:9,CR:5},counters:{L:8,A:11,FO:8,M:2,GB:2,HS:2,FS:6,GL:3},skills:{'Aufmerksamkeit & Wachsamkeit':10,'Nahkampf – leichte Waffen':9,'Heimlichkeit & Schleichen':10,'Vermeiden & Ausweichen':9}},
+    {key:'priester-seelsorger',name:'Priester & Seelsorger',groupName:'holy',description:'Geistliche Kontaktfigur für Heilung, Schutz, Trost, religiöses Wissen und den Umgang mit übernatürlichen Gefahren.',canCarryItems:true,standardItems:[{id:'wpn_melee_quarterstaff',loadState:'carried'},{id:'gear_healer_kit'},{id:'gear_lantern'}],attributes:{ST:4,KS:6,GS:4,RF:5,FF:5,WL:10,IT:8,IN:9,WN:7,CR:8},counters:{L:7,A:6,FO:9,M:2,GB:11,HS:5,FS:2,GL:3},skills:{'Heilrituale & Heilwunder':9,'Religion & Theologie':9,'Beruhigen & Trösten':8,'Schutz- & Bewahrungswunder':7}},
+    {key:'arkanist-hofmagier',name:'Arkanist & Hofmagier',groupName:'arcane',description:'Vielseitige magische Fachfigur für Analyse, Schutz, Telekinese, Beratung und kontrollierte Zauberduelle.',canCarryItems:true,standardItems:[{id:'wpn_melee_quarterstaff',loadState:'carried'},{id:'gear_writing_set'}],attributes:{ST:3,KS:5,GS:5,RF:7,FF:7,WL:10,IT:10,IN:8,WN:8,CR:6},counters:{L:6,A:6,FO:10,M:12,GB:2,HS:3,FS:2,GL:3},skills:{'Okkultismus & Arkane Kunde':10,'Meta-Magie & Arkane Ordnung':9,'Hermetische Magie & Telekinetik':9,'Magiewahrnehmung & Wahrnehmung für Übernatürliches':8}},
+    {key:'feuer-elementar',name:'Feuer-Elementar',groupName:'arcane',description:'Aggressives Elementarwesen aus Hitze und Flamme für magische Gefahrenzonen und direkte Konfrontationen.',canCarryItems:false,standardItems:[],attributes:{ST:8,KS:9,GS:8,RF:10,FF:3,WL:9,IT:4,IN:7,WN:7,CR:5},counters:{L:10,A:9,FO:6,M:12,GB:2,HS:2,FS:3,GL:2},skills:{'Feuermagie & Pyrokinetik':10,'Nahkampf – Raufen & Ringen':8,'Vermeiden & Ausweichen':8,'Magiewahrnehmung & Wahrnehmung für Übernatürliches':7}},
+    {key:'niederer-daemon',name:'Niederer Dämon',groupName:'demon',description:'Bösartige beschworene Kreatur für Pakte, Kultbegegnungen, Versuchung und gewaltsame Durchbrüche.',canCarryItems:false,standardItems:[],attributes:{ST:10,KS:10,GS:7,RF:8,FF:4,WL:10,IT:6,IN:8,WN:8,CR:8},counters:{L:11,A:10,FO:7,M:8,GB:2,HS:4,FS:11,GL:2},skills:{'Dämonologie & Höllen-Beschwörungen':9,'Nahkampf – Raufen & Ringen':9,'Einschüchtern & Zermürben':9,'Flüche & Blut-Hexerei':7}},
+    {key:'vampirischer-hoefling',name:'Vampirischer Höfling',groupName:'undead',description:'Eleganter untoter Gegenspieler für Intrigen, Verführung, Lebensraub und überraschend brutale Nahkämpfe.',canCarryItems:true,standardItems:[{id:'wpn_melee_long_sword',loadState:'equipped'}],attributes:{ST:9,KS:9,GS:9,RF:10,FF:8,WL:10,IT:8,IN:9,WN:9,CR:11},counters:{L:11,A:10,FO:8,M:4,GB:2,HS:9,FS:12,GL:3},skills:{'Vampirismus & Lebensraub':10,'Betören & Verzaubern':10,'Nahkampf – leichte Waffen':9,'Etikette & höfisches Auftreten':8}},
+    {key:'dornenhueter',name:'Dornenhüter',groupName:'nature',description:'Pflanzliches Schutzwesen für heilige Haine, verwunschene Wälder, Wurzelmagie und zähe Gebietskontrolle.',canCarryItems:false,standardItems:[],attributes:{ST:10,KS:12,GS:5,RF:5,FF:2,WL:9,IT:4,IN:8,WN:9,CR:4},counters:{L:14,A:8,FO:7,M:9,GB:5,HS:2,FS:2,GL:2},skills:{'Druiden – Flora-Pfad':10,'Verteidigung & Blocken':9,'Wildniskunde & Wildnisleben':8,'Aufmerksamkeit & Wachsamkeit':7}},
+    {key:'rattenschwarm',name:'Rattenschwarm',groupName:'swarm',description:'Dichter, schwer greifbarer Schwarm für Kanalisationen, Seuchenherde, Fluchtwege und bedrängende Nahkampfszenen.',canCarryItems:false,standardItems:[],attributes:{ST:5,KS:7,GS:9,RF:10,FF:2,WL:5,IT:2,IN:8,WN:9,CR:2},counters:{L:9,A:10,FO:4,M:2,GB:2,HS:2,FS:4,GL:2},skills:{'Nahkampf – Raufen & Ringen':8,'Vermeiden & Ausweichen':9,'Heimlichkeit & Schleichen':8,'Aufmerksamkeit & Wachsamkeit':7}},
+    {key:'wasserjaeger',name:'Wasserjäger',groupName:'aquatic',description:'Amphibische Raubkreatur für Flüsse, Küsten, versunkene Ruinen und Angriffe aus trübem Wasser.',canCarryItems:false,standardItems:[],attributes:{ST:9,KS:10,GS:8,RF:9,FF:3,WL:7,IT:3,IN:8,WN:9,CR:3},counters:{L:11,A:12,FO:5,M:6,GB:2,HS:2,FS:3,GL:2},skills:{'Athletik & Schwimmen':10,'Aufmerksamkeit & Wachsamkeit':8,'Nahkampf – Raufen & Ringen':9,'Wassermagie & Hydromantie':6}},
+    {key:'huegelriese',name:'Hügelriese',groupName:'giant',description:'Gewaltige körperliche Bedrohung für Wildnis, Festungen und Schlachtfelder mit enormer Kraft und Zähigkeit.',canCarryItems:false,standardItems:[],attributes:{ST:16,KS:15,GS:5,RF:5,FF:3,WL:8,IT:3,IN:5,WN:7,CR:4},counters:{L:18,A:15,FO:4,M:2,GB:2,HS:3,FS:2,GL:2},skills:{'Nahkampf – Raufen & Ringen':12,'Athletik & Schwimmen':11,'Einschüchtern & Zermürben':10,'Verteidigung & Blocken':7}},
+    {key:'jungdrache',name:'Jungdrache',groupName:'monster',description:'Junger, bereits hochgefährlicher Drache für Hort, Revierkampf, Verhandlung und elementare Angriffe.',canCarryItems:false,standardItems:[],attributes:{ST:14,KS:14,GS:9,RF:9,FF:3,WL:11,IT:8,IN:9,WN:11,CR:9},counters:{L:17,A:14,FO:8,M:12,GB:2,HS:6,FS:5,GL:4},skills:{'Nahkampf – Raufen & Ringen':12,'Feuermagie & Pyrokinetik':10,'Monsterkunde & Jägerwissen':8,'Einschüchtern & Zermürben':11}}
   ];
   const preparedArchetypeProfiles={
     'alltagsfigur':{species:'Mensch',roles:['Alltag','Zivilist'],name:'Neue Alltagsfigur'},
@@ -232,7 +250,25 @@
     'gebundener-geist':{species:'Geist',roles:['Geist','Gebunden','Übernatürlich'],name:'Neuer gebundener Geist'},
     'untoter-waechter':{species:'Untoter',roles:['Untot','Wächter','Ruine'],name:'Neuer untoter Wächter'},
     'kultwirker':{species:'Mensch',roles:['Kult','Wirker','Gegenspieler'],name:'Neuer Kultwirker'},
-    'konstruktwaechter':{species:'Konstrukt',roles:['Konstrukt','Wächter','Magisch'],name:'Neuer Konstruktwächter'}
+    'konstruktwaechter':{species:'Konstrukt',roles:['Konstrukt','Wächter','Magisch'],name:'Neuer Konstruktwächter'},
+    'wirt-gastgeber':{species:'Mensch',roles:['Kontakt','Gastgeber','Gerüchte'],name:'Neuer Wirt'},
+    'heiler-feldscher':{species:'Mensch',roles:['Heiler','Unterstützung','Kontakt'],name:'Neuer Feldscher'},
+    'gelehrter-schreiber':{species:'Mensch',roles:['Gelehrter','Recherche','Kontakt'],name:'Neuer Gelehrter'},
+    'adliger-diplomat':{species:'Mensch',roles:['Adel','Diplomatie','Einfluss'],name:'Neuer Diplomat'},
+    'soeldner-leibwaechter':{species:'Mensch',roles:['Leibwächter','Frontlinie','Schutz'],name:'Neuer Leibwächter'},
+    'spaeher-jaeger':{species:'Mensch',roles:['Späher','Jäger','Fernkampf'],name:'Neuer Späher'},
+    'dieb-einbrecher':{species:'Mensch',roles:['Dieb','Infiltration','Flucht'],name:'Neuer Einbrecher'},
+    'attentaeter':{species:'Mensch',roles:['Attentäter','Elite','Hinterhalt'],name:'Neue Schattenklinge'},
+    'priester-seelsorger':{species:'Mensch',roles:['Priester','Heiler','Schutz'],name:'Neuer Priester'},
+    'arkanist-hofmagier':{species:'Mensch',roles:['Magier','Berater','Arkan'],name:'Neuer Hofmagier'},
+    'feuer-elementar':{species:'Elementar',roles:['Elementar','Feuer','Angreifer'],name:'Neues Feuer-Elementar'},
+    'niederer-daemon':{species:'Dämon',roles:['Dämon','Beschworen','Gegenspieler'],name:'Neuer niederer Dämon'},
+    'vampirischer-hoefling':{species:'Vampir',roles:['Untot','Höfling','Intrige'],name:'Neuer vampirischer Höfling'},
+    'dornenhueter':{species:'Pflanzenwesen',roles:['Natur','Wächter','Gebietskontrolle'],name:'Neuer Dornenhüter'},
+    'rattenschwarm':{species:'Schwarm',roles:['Schwarm','Plage','Nahkampf'],name:'Neuer Rattenschwarm'},
+    'wasserjaeger':{species:'Wasserwesen',roles:['Aquatisch','Jäger','Hinterhalt'],name:'Neuer Wasserjäger'},
+    'huegelriese':{species:'Riese',roles:['Riese','Brecher','Wildnis'],name:'Neuer Hügelriese'},
+    'jungdrache':{species:'Drache',roles:['Drache','Boss','Elementar'],name:'Neuer Jungdrache'}
   };
   const creatureId=row=>row?.creature_id||row?.id||null;
   const archetypeId=row=>row?.archetype_id||row?.id||null;
@@ -836,9 +872,9 @@
 
   function renderCreatureQuickControls(state){
     const ui=state.creatureUi,choice=ui?.quickArchetype,hint=ui?.quickHint;if(!choice||!hint)return;const previous=choice.value;clear(choice);
-    const preparedGroup=document.createElement('optgroup');preparedGroup.label='Vorbereitete Archetypen';
-    for(const preset of preparedArchetypes){const existing=matchingPreparedArchetype(state,preset),option=document.createElement('option');option.value=`preset:${preset.key}`;option.textContent=`${preset.name}${existing?'':' · wird automatisch übernommen'}`;preparedGroup.append(option)}choice.append(preparedGroup);
-    const preparedIds=new Set(preparedArchetypes.map(preset=>archetypeId(matchingPreparedArchetype(state,preset))).filter(Boolean)),own=state.archetypes.filter(row=>activeRow(row)&&!preparedIds.has(archetypeId(row)));
+    const matches=new Map(preparedArchetypes.map(preset=>[preset.key,matchingPreparedArchetype(state,preset)]));
+    for(const [groupName,groupLabel] of archetypeGroups){const presets=preparedArchetypes.filter(preset=>preset.groupName===groupName);if(!presets.length)continue;const preparedGroup=document.createElement('optgroup');preparedGroup.label=`Vorbereitet · ${groupLabel}`;for(const preset of presets){const option=document.createElement('option');option.value=`preset:${preset.key}`;option.textContent=`${preset.name}${matches.get(preset.key)?'':' · wird automatisch übernommen'}`;preparedGroup.append(option)}choice.append(preparedGroup)}
+    const preparedIds=new Set([...matches.values()].map(archetypeId).filter(Boolean)),own=state.archetypes.filter(row=>activeRow(row)&&!preparedIds.has(archetypeId(row)));
     if(own.length){const ownGroup=document.createElement('optgroup');ownGroup.label='Eigene Archetypen';for(const archetype of own){const option=document.createElement('option');option.value=`archetype:${archetypeId(archetype)}`;option.textContent=archetype.name;ownGroup.append(option)}choice.append(ownGroup)}
     if([...choice.options].some(option=>option.value===previous))choice.value=previous;
     const value=choice.value;if(value.startsWith('preset:')){const preset=preparedArchetypes.find(row=>row.key===value.slice(7)),existing=matchingPreparedArchetype(state,preset);text(hint,existing?`${preset.name}: Ein Klick öffnet sofort einen vollständigen, ungespeicherten NPC-Entwurf.`:`${preset.name}: Wird automatisch in die Welt übernommen und danach sofort als NPC-Entwurf geöffnet.`)}
@@ -881,7 +917,11 @@
     const preparedSection=document.createElement('details');preparedSection.className='gm-player-preview';preparedSection.dataset.gmPreparedSection='';
     const preparedSummary=document.createElement('summary');preparedSummary.textContent=`Vorbereitete Archetypen (${preparedArchetypes.length})`;
     preparedSection.append(preparedSummary,note('Diese sofort nutzbaren Startvorlagen decken Alltag, Kampf, Tiere und übernatürliche Wesen ab. Mit „In diese Welt übernehmen“ entsteht eine eigene, frei bearbeitbare Kopie; noch kein Wesen wird angelegt.'));
-    const preparedArchetypeList=document.createElement('ul');preparedArchetypeList.dataset.gmPreparedArchetypes='';preparedSection.append(preparedArchetypeList);panel.append(preparedSection);
+    const preparedFilters=document.createElement('div');preparedFilters.className='gm-archetype-filters';
+    const preparedSearch=input('search','gmPreparedSearch',{placeholder:'Name, Rolle oder Beschreibung'}),preparedGroupFilter=select('gmPreparedGroup',[['','Alle Gruppen'],...archetypeGroups]);
+    const preparedResult=note('');preparedResult.dataset.gmPreparedResult='';preparedFilters.append(labelControl('Archetypen durchsuchen',preparedSearch),labelControl('Gruppe',preparedGroupFilter),preparedResult);preparedSection.append(preparedFilters);
+    const preparedArchetypeList=document.createElement('div');preparedArchetypeList.className='gm-archetype-card-grid';preparedArchetypeList.dataset.gmPreparedArchetypes='';preparedSection.append(preparedArchetypeList);panel.append(preparedSection);
+    preparedSearch.addEventListener('input',()=>renderPreparedArchetypeList(state));preparedGroupFilter.addEventListener('change',()=>renderPreparedArchetypeList(state));
 
     const creatureSection=document.createElement('section');creatureSection.className='gm-player-preview';creatureSection.dataset.gmCreatureSection='';
     creatureSection.append(heading('h4','Wesen dieser Welt'));
@@ -1013,7 +1053,7 @@
 
     const archetypeSection=document.createElement('section');archetypeSection.className='gm-player-preview';archetypeSection.dataset.gmArchetypeSection='';
     archetypeSection.append(heading('h4','Eigene Archetypen'));
-    const archetypeList=document.createElement('ul');archetypeSection.append(archetypeList);
+    const archetypeList=document.createElement('div');archetypeList.className='gm-archetype-card-grid';archetypeSection.append(archetypeList);
     archetypeSection.append(button('Neuen Archetyp anlegen',()=>{state.selectedArchetypeId=null;renderArchetypeForm(state)}));
     const archetypeForm=document.createElement('form');archetypeForm.dataset.gmArchetypeForm='';
     const archetypeFormHeading=heading('h5','Neuen Archetyp anlegen');archetypeForm.append(archetypeFormHeading);
@@ -1050,7 +1090,7 @@
 
     panel.insertBefore(archetypeSection,creatureSection);
 
-    state.creatureUi={panel,status,retry,quickBar,quickArchetype,quickCreate,quickHint,editorSections:[quickBar,preparedSection,creatureSection,referenceSection,lootSection,companionSection,disclosureSection,archetypeSection,registrySection],preparedSection,preparedArchetypeList,referenceSection,lootSection,secretLootEffectStatus,secretLootEffectRefresh,secretLootEffectList,companionSection,registrySection,creatureList,newCreatureButton,creatureForm,creatureFormHeading,creatureImportHint,creatureEditFields,creatureBuilderView,creatureBuilderStatus,creatureBuilderToolbar,creatureCardType,creatureBuilderCards,creatureWorldCard,creatureTemplateHint,creatureTemplateApply,refreshCreatureTemplateAction,creatureArchive,referenceHint,referenceEditor,factionLinks,lootHint,lootForm,lootRuleHint,lootList,migrationList,companionList,companionForm,placeList,placeForm,factionList,factionForm,disclosureForm,disclosureHeading,disclosureState,disclosureSave,disclosureHint,archetypeList,archetypeForm,archetypeFormHeading,archetypeTemplateHint,archetypeCatalogItems,archetypeArchive};
+    state.creatureUi={panel,status,retry,quickBar,quickArchetype,quickCreate,quickHint,editorSections:[quickBar,preparedSection,creatureSection,referenceSection,lootSection,companionSection,disclosureSection,archetypeSection,registrySection],preparedSection,preparedSearch,preparedGroupFilter,preparedResult,preparedArchetypeList,referenceSection,lootSection,secretLootEffectStatus,secretLootEffectRefresh,secretLootEffectList,companionSection,registrySection,creatureList,newCreatureButton,creatureForm,creatureFormHeading,creatureImportHint,creatureEditFields,creatureBuilderView,creatureBuilderStatus,creatureBuilderToolbar,creatureCardType,creatureBuilderCards,creatureWorldCard,creatureTemplateHint,creatureTemplateApply,refreshCreatureTemplateAction,creatureArchive,referenceHint,referenceEditor,factionLinks,lootHint,lootForm,lootRuleHint,lootList,migrationList,companionList,companionForm,placeList,placeForm,factionList,factionForm,disclosureForm,disclosureHeading,disclosureState,disclosureSave,disclosureHint,archetypeList,archetypeForm,archetypeFormHeading,archetypeTemplateHint,archetypeCatalogItems,archetypeArchive};
     renderCreatureQuickControls(state);
     return state.creatureUi;
   }
@@ -1376,36 +1416,50 @@
     state.selectedCreatureId=null;state.creatureImportDraft=null;renderCreatureForm(state);const form=state.creatureUi?.creatureForm,choice=field(form,'[data-gm-creature-archetype]');if(!form||!choice)return;
     choice.value=selectedArchetypeId;form.__archetypeApply=null;state.creatureUi.refreshCreatureTemplateAction();form.scrollIntoView?.({block:'nearest'});stageArchetypeValuesForCreature(state);
   }
+  function archetypeOverviewCard({name,group,description='',roles=[],meta='',status='',tone='',actions=[]}){
+    const card=document.createElement('article');card.className='gm-archetype-card';
+    const head=document.createElement('header'),title=heading('h5',name),groupBadge=document.createElement('span');groupBadge.className='gm-archetype-group';groupBadge.textContent=group;head.append(title,groupBadge);card.append(head);
+    if(status){const badge=document.createElement('span');badge.className=`gm-archetype-status${tone?` ${tone}`:''}`;badge.textContent=status;card.append(badge)}
+    if(description){const copy=document.createElement('p');copy.className='gm-archetype-description';copy.textContent=description;card.append(copy)}
+    if(roles.length){const roleList=document.createElement('div');roleList.className='gm-archetype-roles';for(const role of roles){const chip=document.createElement('span');chip.textContent=role;roleList.append(chip)}card.append(roleList)}
+    if(meta){const summary=document.createElement('p');summary.className='gm-archetype-meta';summary.textContent=meta;card.append(summary)}
+    if(actions.length){const controls=document.createElement('footer');controls.className='gm-archetype-actions';controls.append(...actions);card.append(controls)}
+    return card;
+  }
   function renderPreparedArchetypeList(state){
     const ui=ensureCreatureWorkspace(state);if(!ui)return;
-    ui.preparedSection.open=!state.archetypes.some(activeRow);
+    if(!ui.preparedSection.dataset.gmInitialized){ui.preparedSection.open=!state.archetypes.some(activeRow);ui.preparedSection.dataset.gmInitialized='true'}
     clear(ui.preparedArchetypeList);
-    const groupNames=new Map(archetypeGroups);
-    for(const preset of preparedArchetypes){
-      const existing=matchingPreparedArchetype(state,preset),core=preparedArchetypeTemplate(preset),upgradeable=existing?.template_data?.preparedArchetype?.key===preset.key&&Number(existing.template_data.preparedArchetype.version||0)<3;
+    const groupNames=new Map(archetypeGroups),groupOrder=new Map(archetypeGroups.map(([id],index)=>[id,index])),query=String(ui.preparedSearch?.value||'').trim().toLocaleLowerCase('de-DE'),selectedGroup=ui.preparedGroupFilter?.value||'';
+    const rows=preparedArchetypes.filter(preset=>!selectedGroup||preset.groupName===selectedGroup).filter(preset=>{const profile=preparedArchetypeProfiles[preset.key]||{};return!query||[preset.name,preset.description,groupNames.get(preset.groupName),...(profile.roles||[])].join(' ').toLocaleLowerCase('de-DE').includes(query)}).sort((left,right)=>(groupOrder.get(left.groupName)??99)-(groupOrder.get(right.groupName)??99)||left.name.localeCompare(right.name,'de'));
+    text(ui.preparedResult,`${rows.length} von ${preparedArchetypes.length} vorbereiteten Archetypen angezeigt.`);
+    if(!rows.length){ui.preparedArchetypeList.append(note('Keine Archetypen passen zu dieser Suche.'));return}
+    for(const preset of rows){
+      const existing=matchingPreparedArchetype(state,preset),upgradeable=existing?.template_data?.preparedArchetype?.key===preset.key&&Number(existing.template_data.preparedArchetype.version||0)<3;
       const action=button(upgradeable?'Vollständigen NPC-Build ergänzen':existing?'Vorhanden':'In diese Welt übernehmen',()=>importPreparedArchetype(state,preset));
       if(existing&&!upgradeable){action.disabled=true;action.dataset.gmPermanentDisabled='true';action.title=`Als „${existing.name}“ in dieser Welt vorhanden.`}
       const create=existing&&!upgradeable?button('NPC daraus erstellen',()=>beginCreatureFromArchetype(state,archetypeId(existing))):null;
-      const loadout=catalogLoadoutSummary(core),carry=core.inventoryProfile.canCarryItems?'trägt Items':'ohne tragbares Inventar';
-      const row=item(`${preset.name} · ${groupNames.get(preset.groupName)||preset.groupName} · vollständiges NPC-Fenster · ${templateValueSummary(core)} · ${carry} · ${loadout} — ${preset.description}`,action,...(create?[create]:[]));
-      row.dataset.gmPreparedArchetype=preset.key;ui.preparedArchetypeList.append(row);
+      const profile=preparedArchetypeProfiles[preset.key]||{},meta=`ST ${preset.attributes.ST} · Leben ${preset.counters.L} · ${Object.keys(preset.skills||{}).length} Kernfähigkeiten · ${(preset.standardItems||[]).length} Standarditems · ${preset.canCarryItems===false?'kein Inventar':'Inventar möglich'}`;
+      const card=archetypeOverviewCard({name:preset.name,group:groupNames.get(preset.groupName)||preset.groupName,description:preset.description,roles:profile.roles||[],meta,status:upgradeable?'Aktualisierung verfügbar':existing?'In dieser Welt':'Sofort verfügbar',tone:upgradeable?'warning':existing?'ok':'ready',actions:[action,...(create?[create]:[])]});
+      card.dataset.gmPreparedArchetype=preset.key;ui.preparedArchetypeList.append(card);
     }
   }
   function renderArchetypeList(state){
     const ui=ensureCreatureWorkspace(state);if(!ui)return;
     renderPreparedArchetypeList(state);renderCreatureQuickControls(state);
     clear(ui.archetypeList);
-    const rows=state.archetypes.filter(activeRow);
-    if(!rows.length)ui.archetypeList.append(item('Noch kein eigener Archetyp angelegt.'));
-    const groupNames=new Map(archetypeGroups);
+    const groupNames=new Map(archetypeGroups),groupOrder=new Map(archetypeGroups.map(([id],index)=>[id,index]));
+    const rows=state.archetypes.filter(activeRow).sort((left,right)=>(groupOrder.get(left.group_name)??99)-(groupOrder.get(right.group_name)??99)||String(left.name).localeCompare(String(right.name),'de'));
+    if(!rows.length)ui.archetypeList.append(note('Noch kein eigener Archetyp angelegt. Nutze oben eine vorbereitete Vorlage oder lege eine eigene an.'));
     for(const row of rows){
-      ui.archetypeList.append(item(`${row.name} · ${groupNames.get(row.group_name)||row.group_name||'Andere'}`,
-        button('Bearbeiten',()=>{state.selectedArchetypeId=archetypeId(row);renderArchetypeForm(state)}),
-        button('Kopie anlegen',()=>copyArchetype(state,row))));
+      let builds=[],core={attributes:{},counters:{},skills:{}};try{builds=archetypeBuildChoices(state,row);core=portableCreatureValues(row.template_data||{})}catch{}
+      const preferred=builds.find(build=>build.isDefault)||builds[0],roles=roleTags(preferred?.profile?.roleTags),meta=`${builds.length} ${builds.length===1?'Ausbaustufe':'Ausbaustufen'} · ${templateValueSummary(core)}${row.template_data?.catalogLoadout?.items?.length?` · ${row.template_data.catalogLoadout.items.length} Standarditems`:''}`;
+      const card=archetypeOverviewCard({name:row.name,group:groupNames.get(row.group_name)||row.group_name||'Andere',description:row.description||'Keine Beschreibung hinterlegt.',roles,meta,status:row.template_data?.preparedArchetype?.key?'Bearbeitbare Weltkopie':'Eigene Vorlage',tone:'ok',actions:[button('NPC erstellen',()=>beginCreatureFromArchetype(state,archetypeId(row))),button('Bearbeiten',()=>{state.selectedArchetypeId=archetypeId(row);renderArchetypeForm(state)}),button('Kopie anlegen',()=>copyArchetype(state,row))]});
+      card.dataset.gmWorldArchetype=archetypeId(row);ui.archetypeList.append(card);
     }
     const archived=state.archetypes.filter(row=>!activeRow(row));
-    if(archived.length)ui.archetypeList.append(item('Archivierte Archetypen:'));
-    for(const row of archived)ui.archetypeList.append(item(`${row.name} · ${groupNames.get(row.group_name)||row.group_name||'Andere'} · archiviert`,button('Wiederherstellen',()=>restoreArchetype(state,row))));
+    if(archived.length)ui.archetypeList.append(heading('h5','Archivierte Archetypen'));
+    for(const row of archived){const card=archetypeOverviewCard({name:row.name,group:groupNames.get(row.group_name)||row.group_name||'Andere',description:row.description||'',status:'Archiviert',tone:'archived',actions:[button('Wiederherstellen',()=>restoreArchetype(state,row))]});card.dataset.gmWorldArchetype=archetypeId(row);card.classList.add('archived');ui.archetypeList.append(card)}
     renderArchetypeForm(state);
   }
   function renderArchetypeForm(state){
