@@ -29,7 +29,9 @@ const effectStyleV177=el('style',{text:`
 document.head.append(effectStyleV177);
 
 function moduleV177(raw={}){
-  return{id:raw.id||uid(),type:raw.type||'attribute',target:raw.target||'ST',operation:raw.operation||'add',value:Number.isFinite(+raw.value)?+raw.value:0,display:raw.display||'',interval:raw.interval||'manual',scope:raw.scope||'',progress:Math.max(0,+raw.progress||0)};
+  const module={id:raw.id||uid(),type:raw.type||'attribute',target:raw.target||'ST',operation:raw.operation||'add',value:Number.isFinite(+raw.value)?+raw.value:0,display:raw.display||'',interval:raw.interval||'manual',scope:raw.scope||'',progress:Math.max(0,+raw.progress||0)};
+  if(raw.immediateAppliedV1710===true)module.immediateAppliedV1710=true;
+  return module;
 }
 
 function effectInstanceV177(raw={}){
@@ -476,4 +478,4 @@ testsBtn.onclick=runTests;
 installGlobalSearchV177();
 renderAddCards();
 Object.assign(window.Eberos,{version:APP_VERSION,schemaVersion:SCHEMA_VERSION,runTests:()=>runTests(),effectDb:EFFECT_DB_V177,effectDefinitions:EFFECT_DEFINITIONS_V177,ensureStateV177,ensureOwnerV177,effectiveAttributes,effectiveCounters,skillModifiers,blockedLife:blockedLifeV177,advanceEffects:advanceEffectsV177,searchIndex:searchIndexV177,navigateTo:navigateToV177});
-/* v1.8.5: Speichern und Rendern erfolgen nach allen Migrationen einmalig. */
+save();renderAll();

@@ -1,0 +1,1306 @@
+{
+  "version": "1.8.17",
+  "generatedAt": "2026-10-26",
+  "count": 30,
+  "rows": [
+    {
+      "key": "alltagsfigur",
+      "name": "Alltagsfigur",
+      "group": "humanoid",
+      "roleClass": "civilian",
+      "combatExpected": false,
+      "offense": [],
+      "defense": [],
+      "skills": [
+        "Aufmerksamkeit & Wachsamkeit",
+        "Folklore & Gassenwissen"
+      ],
+      "standardItems": [
+        "gear_backpack",
+        "gear_torch"
+      ],
+      "equipment": [
+        "gear_backpack",
+        "gear_torch"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 2,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "haendler-informant",
+      "name": "Händler & Informant",
+      "group": "society",
+      "roleClass": "social",
+      "combatExpected": false,
+      "offense": [],
+      "defense": [],
+      "skills": [
+        "Wirtschaft & Handel",
+        "Überreden & Belügen",
+        "Menschenkenntnis & Wesen erkennen",
+        "Folklore & Gassenwissen"
+      ],
+      "standardItems": [
+        "gear_backpack",
+        "gear_writing_set"
+      ],
+      "equipment": [
+        "gear_backpack",
+        "gear_writing_set"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 2,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "stadtwache",
+      "name": "Stadtwache",
+      "group": "combat",
+      "roleClass": "combatant",
+      "combatExpected": true,
+      "offense": [
+        "Nahkampf – leichte Waffen"
+      ],
+      "defense": [
+        "Verteidigung & Blocken"
+      ],
+      "skills": [
+        "Nahkampf – leichte Waffen",
+        "Verteidigung & Blocken",
+        "Aufmerksamkeit & Wachsamkeit",
+        "Fesseln & Sichern"
+      ],
+      "standardItems": [
+        "wpn_melee_spear",
+        "armor_gambeson",
+        "armor_shield_holzschild",
+        "gear_lantern"
+      ],
+      "equipment": [
+        "wpn_melee_spear",
+        "armor_gambeson",
+        "armor_shield_holzschild",
+        "gear_lantern"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 4,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "wegelagerer",
+      "name": "Räuber & Wegelagerer",
+      "group": "outlaw",
+      "roleClass": "stealth-opponent",
+      "combatExpected": true,
+      "offense": [
+        "Fernkampf – leichte Waffen",
+        "Nahkampf – leichte Waffen"
+      ],
+      "defense": [
+        "Vermeiden & Ausweichen"
+      ],
+      "skills": [
+        "Fernkampf – leichte Waffen",
+        "Nahkampf – leichte Waffen",
+        "Vermeiden & Ausweichen",
+        "Heimlichkeit & Schleichen"
+      ],
+      "standardItems": [
+        "wpn_ranged_shortbow",
+        "wpn_melee_dagger",
+        "armor_reinforced_leather",
+        "gear_rope_hemp_10m"
+      ],
+      "equipment": [
+        "wpn_ranged_shortbow",
+        "wpn_melee_dagger",
+        "armor_reinforced_leather",
+        "gear_rope_hemp_10m"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 4,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "veteran-anfuehrer",
+      "name": "Veteran & Anführer",
+      "group": "combat",
+      "roleClass": "combatant",
+      "combatExpected": true,
+      "offense": [
+        "Nahkampf – schwere Waffen"
+      ],
+      "defense": [
+        "Verteidigung & Blocken"
+      ],
+      "skills": [
+        "Nahkampf – schwere Waffen",
+        "Verteidigung & Blocken",
+        "Athletik & Schwimmen",
+        "Strategie & Taktik",
+        "Führung & Befehlsgewalt"
+      ],
+      "standardItems": [
+        "wpn_melee_long_sword",
+        "armor_chain_shirt",
+        "armor_shield_round"
+      ],
+      "equipment": [
+        "wpn_melee_long_sword",
+        "armor_chain_shirt",
+        "armor_shield_round"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 3,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "spuerwolf",
+      "name": "Spürhund & Wolf",
+      "group": "animal",
+      "roleClass": "animal-swarm",
+      "combatExpected": true,
+      "offense": [
+        "Nahkampf – Raufen & Ringen"
+      ],
+      "defense": [
+        "Vermeiden & Ausweichen"
+      ],
+      "skills": [
+        "Nahkampf – Raufen & Ringen",
+        "Fährtenlesen & Spurensuche",
+        "Aufmerksamkeit & Wachsamkeit",
+        "Vermeiden & Ausweichen"
+      ],
+      "standardItems": [],
+      "equipment": [],
+      "lootMode": "none",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 0,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "grosse-raubbestie",
+      "name": "Große Raubbestie",
+      "group": "monster",
+      "roleClass": "monster-boss",
+      "combatExpected": true,
+      "offense": [
+        "Nahkampf – Raufen & Ringen"
+      ],
+      "defense": [
+        "Vermeiden & Ausweichen"
+      ],
+      "skills": [
+        "Nahkampf – Raufen & Ringen",
+        "Vermeiden & Ausweichen",
+        "Athletik & Schwimmen",
+        "Aufmerksamkeit & Wachsamkeit",
+        "Einschüchtern & Zermürben"
+      ],
+      "standardItems": [],
+      "equipment": [],
+      "lootMode": "none",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 0,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [
+        {
+          "severity": "high",
+          "finding": "Kampferwartete Vorlage ohne Defensive.",
+          "correction": "Ausweichen 7 ergänzt."
+        }
+      ],
+      "plannedCorrection": "Ausweichen 7 ergänzt.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "feentrickster",
+      "name": "Feenbote & Trickster",
+      "group": "fae",
+      "roleClass": "social",
+      "combatExpected": false,
+      "offense": [],
+      "defense": [
+        "Vermeiden & Ausweichen"
+      ],
+      "skills": [
+        "Trugbild-Magie & Illusionistik",
+        "Betören & Verzaubern",
+        "Vermeiden & Ausweichen",
+        "Heimlichkeit & Schleichen"
+      ],
+      "standardItems": [],
+      "equipment": [],
+      "lootMode": "none",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 0,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "gebundener-geist",
+      "name": "Gebundener Geist",
+      "group": "spirit",
+      "roleClass": "spirit-bound",
+      "combatExpected": false,
+      "offense": [],
+      "defense": [],
+      "skills": [
+        "Spiritismus & Geisterkunde",
+        "Spiritismus & Seelenmagie",
+        "Magiewahrnehmung & Wahrnehmung für Übernatürliches",
+        "Meditation & mentaler Selbstschutz"
+      ],
+      "standardItems": [],
+      "equipment": [],
+      "lootMode": "none",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 0,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "untoter-waechter",
+      "name": "Untoter Wächter",
+      "group": "undead",
+      "roleClass": "combatant",
+      "combatExpected": true,
+      "offense": [
+        "Nahkampf – schwere Waffen"
+      ],
+      "defense": [
+        "Verteidigung & Blocken"
+      ],
+      "skills": [
+        "Nahkampf – schwere Waffen",
+        "Verteidigung & Blocken",
+        "Aufmerksamkeit & Wachsamkeit",
+        "Nekromantie & Totenmagie"
+      ],
+      "standardItems": [
+        "wpn_melee_kriegsspeer",
+        "armor_shield_holzschild"
+      ],
+      "equipment": [
+        "wpn_melee_kriegsspeer",
+        "armor_shield_holzschild"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 2,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "kultwirker",
+      "name": "Kultwirker",
+      "group": "dark",
+      "roleClass": "caster",
+      "combatExpected": true,
+      "offense": [
+        "Flüche & Blut-Hexerei",
+        "Nahkampf – leichte Waffen"
+      ],
+      "defense": [
+        "Vermeiden & Ausweichen"
+      ],
+      "skills": [
+        "Flüche & Blut-Hexerei",
+        "Okkultismus & Arkane Kunde",
+        "Heimlichkeit & Schleichen",
+        "Überreden & Belügen",
+        "Nahkampf – leichte Waffen",
+        "Vermeiden & Ausweichen"
+      ],
+      "standardItems": [
+        "wpn_melee_dagger",
+        "gear_lantern",
+        "gear_writing_set"
+      ],
+      "equipment": [
+        "wpn_melee_dagger",
+        "gear_lantern",
+        "gear_writing_set"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 3,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [
+        {
+          "severity": "high",
+          "finding": "Dolch ohne leichte Nahkampffähigkeit und keine Defensive.",
+          "correction": "Leichter Nahkampf 5 und Ausweichen 5 ergänzt."
+        }
+      ],
+      "plannedCorrection": "Leichter Nahkampf 5 und Ausweichen 5 ergänzt.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "konstruktwaechter",
+      "name": "Konstruktwächter",
+      "group": "construct",
+      "roleClass": "monster-boss",
+      "combatExpected": true,
+      "offense": [
+        "Nahkampf – Raufen & Ringen"
+      ],
+      "defense": [
+        "Verteidigung & Blocken"
+      ],
+      "skills": [
+        "Verteidigung & Blocken",
+        "Nahkampf – Raufen & Ringen",
+        "Aufmerksamkeit & Wachsamkeit",
+        "Handwerk & Baukunst"
+      ],
+      "standardItems": [],
+      "equipment": [],
+      "lootMode": "none",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 0,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "wirt-gastgeber",
+      "name": "Wirt & Gastgeber",
+      "group": "humanoid",
+      "roleClass": "civilian",
+      "combatExpected": false,
+      "offense": [],
+      "defense": [],
+      "skills": [
+        "Folklore & Gassenwissen",
+        "Menschenkenntnis & Wesen erkennen",
+        "Beruhigen & Trösten",
+        "Wirtschaft & Handel"
+      ],
+      "standardItems": [
+        "gear_lantern",
+        "gear_writing_set"
+      ],
+      "equipment": [
+        "gear_lantern",
+        "gear_writing_set"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 2,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "heiler-feldscher",
+      "name": "Heiler & Feldscher",
+      "group": "society",
+      "roleClass": "support",
+      "combatExpected": false,
+      "offense": [],
+      "defense": [],
+      "skills": [
+        "Heiler & Helfer",
+        "Alchemist & Apotheker",
+        "Beruhigen & Trösten",
+        "Erforschen & Untersuchen"
+      ],
+      "standardItems": [
+        "gear_healer_kit",
+        "gear_backpack"
+      ],
+      "equipment": [
+        "gear_healer_kit",
+        "gear_backpack"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 2,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "gelehrter-schreiber",
+      "name": "Gelehrter & Schreiber",
+      "group": "society",
+      "roleClass": "social",
+      "combatExpected": false,
+      "offense": [],
+      "defense": [],
+      "skills": [
+        "Sprachen & Schriftkunde",
+        "Heraldik & Geschichte",
+        "Schreiber & Fälscher",
+        "Erforschen & Untersuchen"
+      ],
+      "standardItems": [
+        "gear_writing_set",
+        "gear_backpack"
+      ],
+      "equipment": [
+        "gear_writing_set",
+        "gear_backpack"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 2,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "adliger-diplomat",
+      "name": "Adliger & Diplomat",
+      "group": "society",
+      "roleClass": "social",
+      "combatExpected": false,
+      "offense": [],
+      "defense": [],
+      "skills": [
+        "Etikette & höfisches Auftreten",
+        "Überreden & Belügen",
+        "Menschenkenntnis & Wesen erkennen",
+        "Heraldik & Geschichte"
+      ],
+      "standardItems": [
+        "wpn_melee_long_sword",
+        "gear_writing_set"
+      ],
+      "equipment": [
+        "wpn_melee_long_sword",
+        "gear_writing_set"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 2,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [
+        {
+          "severity": "medium",
+          "finding": "Langschwert einer Nichtkampfrolle war nicht eingeordnet.",
+          "correction": "Als Standeszeichen gekennzeichnet."
+        }
+      ],
+      "plannedCorrection": "Als Standeszeichen gekennzeichnet.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "soeldner-leibwaechter",
+      "name": "Söldner & Leibwächter",
+      "group": "combat",
+      "roleClass": "combatant",
+      "combatExpected": true,
+      "offense": [
+        "Nahkampf – schwere Waffen"
+      ],
+      "defense": [
+        "Verteidigung & Blocken"
+      ],
+      "skills": [
+        "Nahkampf – schwere Waffen",
+        "Verteidigung & Blocken",
+        "Aufmerksamkeit & Wachsamkeit",
+        "Fesseln & Sichern"
+      ],
+      "standardItems": [
+        "wpn_melee_long_sword",
+        "armor_chain_shirt",
+        "armor_shield_round"
+      ],
+      "equipment": [
+        "wpn_melee_long_sword",
+        "armor_chain_shirt",
+        "armor_shield_round"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 3,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "spaeher-jaeger",
+      "name": "Späher & Jäger",
+      "group": "combat",
+      "roleClass": "combatant",
+      "combatExpected": true,
+      "offense": [
+        "Fernkampf – leichte Waffen",
+        "Nahkampf – leichte Waffen"
+      ],
+      "defense": [
+        "Vermeiden & Ausweichen"
+      ],
+      "skills": [
+        "Fernkampf – leichte Waffen",
+        "Nahkampf – leichte Waffen",
+        "Vermeiden & Ausweichen",
+        "Fährtenlesen & Spurensuche",
+        "Wildniskunde & Wildnisleben",
+        "Aufmerksamkeit & Wachsamkeit"
+      ],
+      "standardItems": [
+        "wpn_ranged_shortbow",
+        "wpn_melee_dagger",
+        "armor_reinforced_leather",
+        "gear_rope_hemp_10m"
+      ],
+      "equipment": [
+        "wpn_ranged_shortbow",
+        "wpn_melee_dagger",
+        "armor_reinforced_leather",
+        "gear_rope_hemp_10m"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 4,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [
+        {
+          "severity": "high",
+          "finding": "Dolch ohne leichte Nahkampffähigkeit und keine Defensive.",
+          "correction": "Leichter Nahkampf 6 und Ausweichen 7 ergänzt."
+        }
+      ],
+      "plannedCorrection": "Leichter Nahkampf 6 und Ausweichen 7 ergänzt.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "dieb-einbrecher",
+      "name": "Dieb & Einbrecher",
+      "group": "outlaw",
+      "roleClass": "stealth-opponent",
+      "combatExpected": true,
+      "offense": [
+        "Nahkampf – leichte Waffen"
+      ],
+      "defense": [
+        "Vermeiden & Ausweichen"
+      ],
+      "skills": [
+        "Taschendiebstahl & Schlösser knacken",
+        "Heimlichkeit & Schleichen",
+        "Akrobatik & Klettern",
+        "Aufmerksamkeit & Wachsamkeit",
+        "Nahkampf – leichte Waffen",
+        "Vermeiden & Ausweichen"
+      ],
+      "standardItems": [
+        "wpn_melee_dagger",
+        "gear_lockpicks",
+        "gear_rope_fine_10m"
+      ],
+      "equipment": [
+        "wpn_melee_dagger",
+        "gear_lockpicks",
+        "gear_rope_fine_10m"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 3,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [
+        {
+          "severity": "high",
+          "finding": "Dolch ohne passende Kampffähigkeit und keine Defensive; konkrete Inventarzeilen fehlten.",
+          "correction": "Leichter Nahkampf 7, Ausweichen 8 und drei konkrete Standardgegenstände ergänzt."
+        }
+      ],
+      "plannedCorrection": "Leichter Nahkampf 7, Ausweichen 8 und drei konkrete Standardgegenstände ergänzt.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "attentaeter",
+      "name": "Attentäter & Schattenklinge",
+      "group": "outlaw",
+      "roleClass": "stealth-opponent",
+      "combatExpected": true,
+      "offense": [
+        "Nahkampf – leichte Waffen",
+        "Fernkampf – leichte Waffen"
+      ],
+      "defense": [
+        "Vermeiden & Ausweichen"
+      ],
+      "skills": [
+        "Aufmerksamkeit & Wachsamkeit",
+        "Nahkampf – leichte Waffen",
+        "Fernkampf – leichte Waffen",
+        "Heimlichkeit & Schleichen",
+        "Vermeiden & Ausweichen"
+      ],
+      "standardItems": [
+        "wpn_melee_dagger",
+        "wpn_ranged_shortbow",
+        "armor_reinforced_leather"
+      ],
+      "equipment": [
+        "wpn_melee_dagger",
+        "wpn_ranged_shortbow",
+        "armor_reinforced_leather"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 3,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [
+        {
+          "severity": "high",
+          "finding": "Kurzbogen ohne passende Fernkampffähigkeit.",
+          "correction": "Leichter Fernkampf 8 ergänzt."
+        }
+      ],
+      "plannedCorrection": "Leichter Fernkampf 8 ergänzt.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "priester-seelsorger",
+      "name": "Priester & Seelsorger",
+      "group": "holy",
+      "roleClass": "support",
+      "combatExpected": false,
+      "offense": [],
+      "defense": [],
+      "skills": [
+        "Heilrituale & Heilwunder",
+        "Religion & Theologie",
+        "Beruhigen & Trösten",
+        "Schutz- & Bewahrungswunder"
+      ],
+      "standardItems": [
+        "wpn_melee_quarterstaff",
+        "gear_healer_kit",
+        "gear_lantern"
+      ],
+      "equipment": [
+        "wpn_melee_quarterstaff",
+        "gear_healer_kit",
+        "gear_lantern"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 3,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [
+        {
+          "severity": "medium",
+          "finding": "Kampfstab einer Nichtkampfrolle war nicht eingeordnet.",
+          "correction": "Als Werkzeug gekennzeichnet."
+        }
+      ],
+      "plannedCorrection": "Als Werkzeug gekennzeichnet.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "arkanist-hofmagier",
+      "name": "Arkanist & Hofmagier",
+      "group": "arcane",
+      "roleClass": "caster",
+      "combatExpected": true,
+      "offense": [
+        "Hermetische Magie & Telekinetik"
+      ],
+      "defense": [
+        "Vermeiden & Ausweichen"
+      ],
+      "skills": [
+        "Okkultismus & Arkane Kunde",
+        "Meta-Magie & Arkane Ordnung",
+        "Hermetische Magie & Telekinetik",
+        "Magiewahrnehmung & Wahrnehmung für Übernatürliches",
+        "Vermeiden & Ausweichen"
+      ],
+      "standardItems": [
+        "wpn_melee_quarterstaff",
+        "gear_writing_set"
+      ],
+      "equipment": [
+        "wpn_melee_quarterstaff",
+        "gear_writing_set"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 2,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [
+        {
+          "severity": "high",
+          "finding": "Kampferwarteter Wirker ohne Defensive.",
+          "correction": "Ausweichen 6 ergänzt; Stab als Fokus gekennzeichnet."
+        }
+      ],
+      "plannedCorrection": "Ausweichen 6 ergänzt; Stab als Fokus gekennzeichnet.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "feuer-elementar",
+      "name": "Feuer-Elementar",
+      "group": "arcane",
+      "roleClass": "monster-boss",
+      "combatExpected": true,
+      "offense": [
+        "Feuermagie & Pyrokinetik",
+        "Nahkampf – Raufen & Ringen"
+      ],
+      "defense": [
+        "Vermeiden & Ausweichen"
+      ],
+      "skills": [
+        "Feuermagie & Pyrokinetik",
+        "Nahkampf – Raufen & Ringen",
+        "Vermeiden & Ausweichen",
+        "Magiewahrnehmung & Wahrnehmung für Übernatürliches"
+      ],
+      "standardItems": [],
+      "equipment": [],
+      "lootMode": "none",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 0,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "niederer-daemon",
+      "name": "Niederer Dämon",
+      "group": "demon",
+      "roleClass": "monster-boss",
+      "combatExpected": true,
+      "offense": [
+        "Nahkampf – Raufen & Ringen",
+        "Flüche & Blut-Hexerei"
+      ],
+      "defense": [
+        "Verteidigung & Blocken"
+      ],
+      "skills": [
+        "Dämonologie & Höllen-Beschwörungen",
+        "Nahkampf – Raufen & Ringen",
+        "Verteidigung & Blocken",
+        "Einschüchtern & Zermürben",
+        "Flüche & Blut-Hexerei"
+      ],
+      "standardItems": [],
+      "equipment": [],
+      "lootMode": "none",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 0,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [
+        {
+          "severity": "high",
+          "finding": "Kampferwartete Vorlage ohne Defensive.",
+          "correction": "Blocken 7 ergänzt."
+        }
+      ],
+      "plannedCorrection": "Blocken 7 ergänzt.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "vampirischer-hoefling",
+      "name": "Vampirischer Höfling",
+      "group": "undead",
+      "roleClass": "stealth-opponent",
+      "combatExpected": true,
+      "offense": [
+        "Vampirismus & Lebensraub",
+        "Nahkampf – schwere Waffen"
+      ],
+      "defense": [
+        "Vermeiden & Ausweichen"
+      ],
+      "skills": [
+        "Vampirismus & Lebensraub",
+        "Betören & Verzaubern",
+        "Nahkampf – schwere Waffen",
+        "Vermeiden & Ausweichen",
+        "Etikette & höfisches Auftreten"
+      ],
+      "standardItems": [
+        "wpn_melee_long_sword"
+      ],
+      "equipment": [
+        "wpn_melee_long_sword"
+      ],
+      "lootMode": "inventory",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 1,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [
+        {
+          "severity": "high",
+          "finding": "Langschwert war der falschen Waffenklasse zugeordnet; Defensive fehlte.",
+          "correction": "Schwerer Nahkampf 9 und Ausweichen 8 gesetzt."
+        }
+      ],
+      "plannedCorrection": "Schwerer Nahkampf 9 und Ausweichen 8 gesetzt.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "dornenhueter",
+      "name": "Dornenhüter",
+      "group": "nature",
+      "roleClass": "monster-boss",
+      "combatExpected": true,
+      "offense": [
+        "Druiden – Flora-Pfad"
+      ],
+      "defense": [
+        "Verteidigung & Blocken"
+      ],
+      "skills": [
+        "Druiden – Flora-Pfad",
+        "Verteidigung & Blocken",
+        "Wildniskunde & Wildnisleben",
+        "Aufmerksamkeit & Wachsamkeit"
+      ],
+      "standardItems": [],
+      "equipment": [],
+      "lootMode": "none",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 0,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "rattenschwarm",
+      "name": "Rattenschwarm",
+      "group": "swarm",
+      "roleClass": "animal-swarm",
+      "combatExpected": true,
+      "offense": [
+        "Nahkampf – Raufen & Ringen"
+      ],
+      "defense": [
+        "Vermeiden & Ausweichen"
+      ],
+      "skills": [
+        "Nahkampf – Raufen & Ringen",
+        "Vermeiden & Ausweichen",
+        "Heimlichkeit & Schleichen",
+        "Aufmerksamkeit & Wachsamkeit"
+      ],
+      "standardItems": [],
+      "equipment": [],
+      "lootMode": "none",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 0,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "wasserjaeger",
+      "name": "Wasserjäger",
+      "group": "aquatic",
+      "roleClass": "monster-boss",
+      "combatExpected": true,
+      "offense": [
+        "Nahkampf – Raufen & Ringen",
+        "Wassermagie & Hydromantie"
+      ],
+      "defense": [
+        "Vermeiden & Ausweichen"
+      ],
+      "skills": [
+        "Athletik & Schwimmen",
+        "Aufmerksamkeit & Wachsamkeit",
+        "Nahkampf – Raufen & Ringen",
+        "Vermeiden & Ausweichen",
+        "Wassermagie & Hydromantie"
+      ],
+      "standardItems": [],
+      "equipment": [],
+      "lootMode": "none",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 0,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [
+        {
+          "severity": "high",
+          "finding": "Kampferwartete Vorlage ohne Defensive.",
+          "correction": "Ausweichen 8 ergänzt."
+        }
+      ],
+      "plannedCorrection": "Ausweichen 8 ergänzt.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "huegelriese",
+      "name": "Hügelriese",
+      "group": "giant",
+      "roleClass": "monster-boss",
+      "combatExpected": true,
+      "offense": [
+        "Nahkampf – Raufen & Ringen"
+      ],
+      "defense": [
+        "Verteidigung & Blocken"
+      ],
+      "skills": [
+        "Nahkampf – Raufen & Ringen",
+        "Athletik & Schwimmen",
+        "Einschüchtern & Zermürben",
+        "Verteidigung & Blocken"
+      ],
+      "standardItems": [],
+      "equipment": [],
+      "lootMode": "none",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 0,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [],
+      "plannedCorrection": "Keine weitere Korrektur erforderlich.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    },
+    {
+      "key": "jungdrache",
+      "name": "Jungdrache",
+      "group": "monster",
+      "roleClass": "monster-boss",
+      "combatExpected": true,
+      "offense": [
+        "Nahkampf – Raufen & Ringen",
+        "Feuermagie & Pyrokinetik"
+      ],
+      "defense": [
+        "Verteidigung & Blocken"
+      ],
+      "skills": [
+        "Nahkampf – Raufen & Ringen",
+        "Feuermagie & Pyrokinetik",
+        "Verteidigung & Blocken",
+        "Monsterkunde & Jägerwissen",
+        "Einschüchtern & Zermürben"
+      ],
+      "standardItems": [],
+      "equipment": [],
+      "lootMode": "none",
+      "preparedVersion": 4,
+      "runtime": {
+        "cards": 13,
+        "effects": 0,
+        "inventory": 0,
+        "loot": 0,
+        "independent": true,
+        "roundTrip": true
+      },
+      "issues": [],
+      "valid": true,
+      "resolvedFindings": [
+        {
+          "severity": "high",
+          "finding": "Kampferwartete Vorlage ohne Defensive.",
+          "correction": "Blocken 9 ergänzt."
+        }
+      ],
+      "plannedCorrection": "Blocken 9 ergänzt.",
+      "staticResult": "passed",
+      "browserResult": "passed"
+    }
+  ]
+}

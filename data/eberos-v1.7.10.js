@@ -228,7 +228,7 @@ function moduleEditorRowV1710(owner,module,list,redraw,refreshPreview,readOnly=f
   row.append(remove);return row;
 }
 
-function applyImmediateEffectsV1710(owner,effect){for(const module of effect.modules||[])if(module.type==='counter-current'&&module.triggerV1710==='immediate-once'&&!module.immediateAppliedV1710&&owner.counters?.[module.target]){const before=owner.counters[module.target].current,after=boundedCounterV1710(owner,module.target,before,before+signedModuleValueV1710(module));setCounterCurrentR8(owner,module.target,after);module.immediateAppliedV1710=true}}
+function applyImmediateEffectsV1710(owner,effect){for(const module of effect.modules||[])if(module.type==='counter-current'&&module.triggerV1710==='immediate-once'&&!module.immediateAppliedV1710&&owner.counters?.[module.target]){module.immediateAppliedV1710=true;const before=owner.counters[module.target].current,after=boundedCounterV1710(owner,module.target,before,before+signedModuleValueV1710(module));setCounterCurrentR8(owner,module.target,after)}}
 function openEffectEditorV1710(owner,effect){
   hideEffectInfoV177();ensureOwnerV1710(owner);const dialog=editorDialogV177();dialog.classList.add('effect-dialog-v1710');const managed=effect.sourceManaged===true,draft=effectInstanceV177(cloneV177(effect));
   const draw=()=>{
@@ -285,5 +285,5 @@ function runTestsV1710(){
 }
 runTests=runTestsV1710;testsBtn.onclick=runTestsV1710;
 
-state.appVersion=V1710_VERSION;state.schemaVersion=V1710_SCHEMA;state.rulesVersion=V1710_RULES;/* v1.8.5: Speichern und Rendern erfolgen nach allen Migrationen einmalig. */
+state.appVersion=V1710_VERSION;state.schemaVersion=V1710_SCHEMA;state.rulesVersion=V1710_RULES;save();renderAll();
 Object.assign(window.Eberos,{version:V1710_VERSION,schemaVersion:V1710_SCHEMA,rulesVersion:V1710_RULES,runTests:runTestsV1710,ensureStateV1710,ensureOwnerV1710,skillModifiers,skillModifierResultV1710,skillEffectEntriesV1710,advanceEffects:advanceEffectsV1710,refillOwner:refillOwnerV1710,lockedFunctions:lockedFunctionsV1710,functionLocked:functionLockedV1710,renderEffects:renderEffectsV1710,openEffectEditor:openEffectEditorV1710,openAddEffect:openAddEffectV1710,module:newModuleV1710,effect:effectInstanceV177});

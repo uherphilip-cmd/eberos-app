@@ -213,31 +213,48 @@
     {key:'wegelagerer',name:'Räuber & Wegelagerer',groupName:'outlaw',description:'Beweglicher Gegner für Hinterhalte, Überfälle, Verfolgungen und zwielichtige Gruppen.',canCarryItems:true,standardItems:[{id:'wpn_ranged_shortbow',loadState:'equipped'},{id:'wpn_melee_dagger',loadState:'equipped'},{id:'armor_reinforced_leather',loadState:'equipped'},{id:'gear_rope_hemp_10m'}],attributes:{ST:6,KS:6,GS:7,RF:7,FF:6,WL:5,IT:4,IN:5,WN:7,CR:4},counters:{L:7,A:8,FO:5,M:2,GB:2,HS:2,FS:3,GL:2},skills:{'Fernkampf – leichte Waffen':7,'Nahkampf – leichte Waffen':6,'Vermeiden & Ausweichen':6,'Heimlichkeit & Schleichen':6}},
     {key:'veteran-anfuehrer',name:'Veteran & Anführer',groupName:'combat',description:'Erfahrene Elite- oder Anführerfigur für anspruchsvolle Kämpfe und taktische Entscheidungen.',canCarryItems:true,standardItems:[{id:'wpn_melee_long_sword',loadState:'equipped'},{id:'armor_chain_shirt',loadState:'equipped'},{id:'armor_shield_round',loadState:'equipped'}],attributes:{ST:9,KS:9,GS:7,RF:8,FF:6,WL:9,IT:6,IN:7,WN:7,CR:8},counters:{L:11,A:11,FO:6,M:2,GB:2,HS:6,FS:2,GL:3},skills:{'Nahkampf – schwere Waffen':9,'Verteidigung & Blocken':9,'Athletik & Schwimmen':8,'Strategie & Taktik':8,'Führung & Befehlsgewalt':8}},
     {key:'spuerwolf',name:'Spürhund & Wolf',groupName:'animal',description:'Schnelles Rudel- oder Begleittier mit starken Sinnen, Fährtenarbeit und Nahkampfbiss.',canCarryItems:false,standardItems:[],attributes:{ST:6,KS:6,GS:8,RF:9,FF:2,WL:5,IT:2,IN:7,WN:10,CR:3},counters:{L:7,A:9,FO:5,M:2,GB:2,HS:2,FS:2,GL:2},skills:{'Nahkampf – Raufen & Ringen':7,'Fährtenlesen & Spurensuche':8,'Aufmerksamkeit & Wachsamkeit':8,'Vermeiden & Ausweichen':6}},
-    {key:'grosse-raubbestie',name:'Große Raubbestie',groupName:'monster',description:'Kräftige Bestie für gefährliche Wildnisbegegnungen, Jagd und körperliche Bedrohung.',canCarryItems:false,standardItems:[],attributes:{ST:11,KS:10,GS:8,RF:8,FF:2,WL:7,IT:2,IN:7,WN:8,CR:4},counters:{L:13,A:11,FO:4,M:2,GB:2,HS:2,FS:2,GL:2},skills:{'Nahkampf – Raufen & Ringen':10,'Athletik & Schwimmen':9,'Aufmerksamkeit & Wachsamkeit':7,'Einschüchtern & Zermürben':8}},
+    {key:'grosse-raubbestie',name:'Große Raubbestie',groupName:'monster',description:'Kräftige Bestie für gefährliche Wildnisbegegnungen, Jagd und körperliche Bedrohung.',canCarryItems:false,standardItems:[],attributes:{ST:11,KS:10,GS:8,RF:8,FF:2,WL:7,IT:2,IN:7,WN:8,CR:4},counters:{L:13,A:11,FO:4,M:2,GB:2,HS:2,FS:2,GL:2},skills:{'Nahkampf – Raufen & Ringen':10,'Vermeiden & Ausweichen':7,'Athletik & Schwimmen':9,'Aufmerksamkeit & Wachsamkeit':7,'Einschüchtern & Zermürben':8}},
     {key:'feentrickster',name:'Feenbote & Trickster',groupName:'fae',description:'Wendige, schwer greifbare Feenfigur für Täuschung, Verhandlung und übernatürliche Szenen.',canCarryItems:true,standardItems:[],attributes:{ST:3,KS:5,GS:10,RF:10,FF:8,WL:8,IT:7,IN:9,WN:8,CR:10},counters:{L:6,A:8,FO:9,M:7,GB:2,HS:4,FS:2,GL:4},skills:{'Trugbild-Magie & Illusionistik':8,'Betören & Verzaubern':8,'Vermeiden & Ausweichen':8,'Heimlichkeit & Schleichen':7}},
     {key:'gebundener-geist',name:'Gebundener Geist',groupName:'spirit',description:'Orts- oder erinnerungsgebundene Erscheinung mit starkem Willen und übernatürlicher Wahrnehmung.',canCarryItems:false,standardItems:[],attributes:{ST:3,KS:8,GS:6,RF:7,FF:2,WL:11,IT:7,IN:9,WN:10,CR:6},counters:{L:8,A:2,FO:10,M:6,GB:2,HS:2,FS:5,GL:2},skills:{'Spiritismus & Geisterkunde':9,'Spiritismus & Seelenmagie':9,'Magiewahrnehmung & Wahrnehmung für Übernatürliches':9,'Meditation & mentaler Selbstschutz':8}},
     {key:'untoter-waechter',name:'Untoter Wächter',groupName:'undead',description:'Zäher, furchtloser Grab- oder Ruinenwächter mit wenig Beweglichkeit und hoher Widerstandskraft.',canCarryItems:true,standardItems:[{id:'wpn_melee_kriegsspeer',loadState:'equipped'},{id:'armor_shield_holzschild',loadState:'equipped'}],attributes:{ST:9,KS:11,GS:4,RF:4,FF:3,WL:9,IT:3,IN:4,WN:6,CR:2},counters:{L:12,A:2,FO:3,M:2,GB:2,HS:2,FS:7,GL:2},skills:{'Nahkampf – schwere Waffen':8,'Verteidigung & Blocken':8,'Aufmerksamkeit & Wachsamkeit':5,'Nekromantie & Totenmagie':4}},
-    {key:'kultwirker',name:'Kultwirker',groupName:'dark',description:'Finstere Ritualfigur für Flüche, verbotene Nachforschungen und verdeckte Gegenspieler.',canCarryItems:true,standardItems:[{id:'wpn_melee_dagger',loadState:'equipped'},{id:'gear_lantern'},{id:'gear_writing_set'}],attributes:{ST:4,KS:6,GS:5,RF:6,FF:7,WL:10,IT:8,IN:7,WN:6,CR:7},counters:{L:7,A:6,FO:8,M:2,GB:2,HS:4,FS:10,GL:2},skills:{'Flüche & Blut-Hexerei':9,'Okkultismus & Arkane Kunde':8,'Heimlichkeit & Schleichen':6,'Überreden & Belügen':6}},
+    {key:'kultwirker',name:'Kultwirker',groupName:'dark',description:'Finstere Ritualfigur für Flüche, verbotene Nachforschungen und verdeckte Gegenspieler.',canCarryItems:true,standardItems:[{id:'wpn_melee_dagger',loadState:'equipped'},{id:'gear_lantern'},{id:'gear_writing_set'}],attributes:{ST:4,KS:6,GS:5,RF:6,FF:7,WL:10,IT:8,IN:7,WN:6,CR:7},counters:{L:7,A:6,FO:8,M:2,GB:2,HS:4,FS:10,GL:2},skills:{'Flüche & Blut-Hexerei':9,'Okkultismus & Arkane Kunde':8,'Heimlichkeit & Schleichen':6,'Überreden & Belügen':6,'Nahkampf – leichte Waffen':5,'Vermeiden & Ausweichen':5}},
     {key:'konstruktwaechter',name:'Konstruktwächter',groupName:'construct',description:'Massiver künstlicher Wächter für Werkstätten, Ruinen, Tore und magisch gesicherte Orte.',canCarryItems:false,standardItems:[],attributes:{ST:12,KS:13,GS:4,RF:5,FF:3,WL:8,IT:3,IN:3,WN:7,CR:2},counters:{L:14,A:2,FO:4,M:6,GB:2,HS:2,FS:2,GL:2},skills:{'Verteidigung & Blocken':9,'Nahkampf – Raufen & Ringen':9,'Aufmerksamkeit & Wachsamkeit':7,'Handwerk & Baukunst':4}},
     {key:'wirt-gastgeber',name:'Wirt & Gastgeber',groupName:'humanoid',description:'Aufmerksame Schank- oder Herbergsfigur, die Gerüchte kennt, Stimmungen liest und Konflikte beruhigen kann.',canCarryItems:true,standardItems:[{id:'gear_lantern'},{id:'gear_writing_set'}],attributes:{ST:5,KS:6,GS:4,RF:4,FF:6,WL:6,IT:6,IN:8,WN:7,CR:8},counters:{L:6,A:6,FO:7,M:2,GB:2,HS:6,FS:2,GL:3},skills:{'Folklore & Gassenwissen':7,'Menschenkenntnis & Wesen erkennen':7,'Beruhigen & Trösten':6,'Wirtschaft & Handel':5}},
     {key:'heiler-feldscher',name:'Heiler & Feldscher',groupName:'society',description:'Weltliche Heilperson für Erste Hilfe, Diagnose, Kräuter, Nachsorge und medizinische Hinweise.',canCarryItems:true,standardItems:[{id:'gear_healer_kit'},{id:'gear_backpack'}],attributes:{ST:4,KS:6,GS:5,RF:5,FF:8,WL:8,IT:8,IN:8,WN:8,CR:6},counters:{L:6,A:6,FO:9,M:2,GB:3,HS:3,FS:2,GL:2},skills:{'Heiler & Helfer':9,'Alchemist & Apotheker':7,'Beruhigen & Trösten':6,'Erforschen & Untersuchen':6}},
     {key:'gelehrter-schreiber',name:'Gelehrter & Schreiber',groupName:'society',description:'Gebildete Auskunftsfigur für Chroniken, Übersetzungen, Urkunden, Recherche und alte Geheimnisse.',canCarryItems:true,standardItems:[{id:'gear_writing_set'},{id:'gear_backpack'}],attributes:{ST:3,KS:4,GS:4,RF:4,FF:7,WL:7,IT:10,IN:7,WN:7,CR:5},counters:{L:5,A:5,FO:10,M:3,GB:2,HS:3,FS:2,GL:2},skills:{'Sprachen & Schriftkunde':9,'Heraldik & Geschichte':8,'Schreiber & Fälscher':8,'Erforschen & Untersuchen':7}},
-    {key:'adliger-diplomat',name:'Adliger & Diplomat',groupName:'society',description:'Einflussreiche höfische Figur für Verhandlungen, Etikette, politische Kontakte und gesellschaftlichen Druck.',canCarryItems:true,standardItems:[{id:'wpn_melee_long_sword',loadState:'carried'},{id:'gear_writing_set'}],attributes:{ST:5,KS:5,GS:5,RF:5,FF:6,WL:8,IT:8,IN:7,WN:6,CR:10},counters:{L:6,A:6,FO:8,M:2,GB:2,HS:10,FS:2,GL:4},skills:{'Etikette & höfisches Auftreten':10,'Überreden & Belügen':8,'Menschenkenntnis & Wesen erkennen':8,'Heraldik & Geschichte':7}},
+    {key:'adliger-diplomat',name:'Adliger & Diplomat',groupName:'society',description:'Einflussreiche höfische Figur für Verhandlungen, Etikette, politische Kontakte und gesellschaftlichen Druck.',canCarryItems:true,standardItems:[{id:'wpn_melee_long_sword',loadState:'carried',purpose:'ceremonial'},{id:'gear_writing_set'}],attributes:{ST:5,KS:5,GS:5,RF:5,FF:6,WL:8,IT:8,IN:7,WN:6,CR:10},counters:{L:6,A:6,FO:8,M:2,GB:2,HS:10,FS:2,GL:4},skills:{'Etikette & höfisches Auftreten':10,'Überreden & Belügen':8,'Menschenkenntnis & Wesen erkennen':8,'Heraldik & Geschichte':7}},
     {key:'soeldner-leibwaechter',name:'Söldner & Leibwächter',groupName:'combat',description:'Professionelle Schutz- und Kampfperson für Eskorte, Frontlinie, Wachaufgaben und kontrollierte Gewalt.',canCarryItems:true,standardItems:[{id:'wpn_melee_long_sword',loadState:'equipped'},{id:'armor_chain_shirt',loadState:'equipped'},{id:'armor_shield_round',loadState:'equipped'}],attributes:{ST:8,KS:9,GS:6,RF:7,FF:5,WL:8,IT:5,IN:6,WN:7,CR:5},counters:{L:10,A:10,FO:5,M:2,GB:2,HS:3,FS:2,GL:2},skills:{'Nahkampf – schwere Waffen':8,'Verteidigung & Blocken':9,'Aufmerksamkeit & Wachsamkeit':7,'Fesseln & Sichern':6}},
-    {key:'spaeher-jaeger',name:'Späher & Jäger',groupName:'combat',description:'Geländesichere Fernkampffigur für Aufklärung, Fährten, Wildnisreisen und vorbereitete Hinterhalte.',canCarryItems:true,standardItems:[{id:'wpn_ranged_shortbow',loadState:'equipped'},{id:'wpn_melee_dagger',loadState:'equipped'},{id:'armor_reinforced_leather',loadState:'equipped'},{id:'gear_rope_hemp_10m'}],attributes:{ST:6,KS:7,GS:8,RF:8,FF:8,WL:6,IT:5,IN:8,WN:9,CR:4},counters:{L:7,A:10,FO:7,M:2,GB:2,HS:2,FS:2,GL:3},skills:{'Fernkampf – leichte Waffen':8,'Fährtenlesen & Spurensuche':9,'Wildniskunde & Wildnisleben':8,'Aufmerksamkeit & Wachsamkeit':7}},
-    {key:'dieb-einbrecher',name:'Dieb & Einbrecher',groupName:'outlaw',description:'Unauffällige Spezialfigur für Schlösser, Taschendiebstahl, Infiltration und Fluchtwege.',canCarryItems:true,standardItems:[{id:'wpn_melee_dagger',loadState:'equipped'},{id:'gear_lockpicks'},{id:'gear_rope_fine_10m'}],attributes:{ST:4,KS:5,GS:9,RF:9,FF:10,WL:5,IT:7,IN:7,WN:8,CR:6},counters:{L:6,A:9,FO:7,M:2,GB:2,HS:3,FS:3,GL:4},skills:{'Taschendiebstahl & Schlösser knacken':10,'Heimlichkeit & Schleichen':9,'Akrobatik & Klettern':8,'Aufmerksamkeit & Wachsamkeit':7}},
-    {key:'attentaeter',name:'Attentäter & Schattenklinge',groupName:'outlaw',description:'Gefährliche Elitefigur für verdeckte Verfolgung, Überraschungsangriffe, Sabotage und schnelle Flucht.',canCarryItems:true,standardItems:[{id:'wpn_melee_dagger',loadState:'equipped'},{id:'wpn_ranged_shortbow',loadState:'carried'},{id:'armor_reinforced_leather',loadState:'equipped'}],attributes:{ST:7,KS:7,GS:10,RF:10,FF:9,WL:8,IT:7,IN:8,WN:9,CR:5},counters:{L:8,A:11,FO:8,M:2,GB:2,HS:2,FS:6,GL:3},skills:{'Aufmerksamkeit & Wachsamkeit':10,'Nahkampf – leichte Waffen':9,'Heimlichkeit & Schleichen':10,'Vermeiden & Ausweichen':9}},
-    {key:'priester-seelsorger',name:'Priester & Seelsorger',groupName:'holy',description:'Geistliche Kontaktfigur für Heilung, Schutz, Trost, religiöses Wissen und den Umgang mit übernatürlichen Gefahren.',canCarryItems:true,standardItems:[{id:'wpn_melee_quarterstaff',loadState:'carried'},{id:'gear_healer_kit'},{id:'gear_lantern'}],attributes:{ST:4,KS:6,GS:4,RF:5,FF:5,WL:10,IT:8,IN:9,WN:7,CR:8},counters:{L:7,A:6,FO:9,M:2,GB:11,HS:5,FS:2,GL:3},skills:{'Heilrituale & Heilwunder':9,'Religion & Theologie':9,'Beruhigen & Trösten':8,'Schutz- & Bewahrungswunder':7}},
-    {key:'arkanist-hofmagier',name:'Arkanist & Hofmagier',groupName:'arcane',description:'Vielseitige magische Fachfigur für Analyse, Schutz, Telekinese, Beratung und kontrollierte Zauberduelle.',canCarryItems:true,standardItems:[{id:'wpn_melee_quarterstaff',loadState:'carried'},{id:'gear_writing_set'}],attributes:{ST:3,KS:5,GS:5,RF:7,FF:7,WL:10,IT:10,IN:8,WN:8,CR:6},counters:{L:6,A:6,FO:10,M:12,GB:2,HS:3,FS:2,GL:3},skills:{'Okkultismus & Arkane Kunde':10,'Meta-Magie & Arkane Ordnung':9,'Hermetische Magie & Telekinetik':9,'Magiewahrnehmung & Wahrnehmung für Übernatürliches':8}},
+    {key:'spaeher-jaeger',name:'Späher & Jäger',groupName:'combat',description:'Geländesichere Fernkampffigur für Aufklärung, Fährten, Wildnisreisen und vorbereitete Hinterhalte.',canCarryItems:true,standardItems:[{id:'wpn_ranged_shortbow',loadState:'equipped'},{id:'wpn_melee_dagger',loadState:'equipped'},{id:'armor_reinforced_leather',loadState:'equipped'},{id:'gear_rope_hemp_10m'}],attributes:{ST:6,KS:7,GS:8,RF:8,FF:8,WL:6,IT:5,IN:8,WN:9,CR:4},counters:{L:7,A:10,FO:7,M:2,GB:2,HS:2,FS:2,GL:3},skills:{'Fernkampf – leichte Waffen':8,'Nahkampf – leichte Waffen':6,'Vermeiden & Ausweichen':7,'Fährtenlesen & Spurensuche':9,'Wildniskunde & Wildnisleben':8,'Aufmerksamkeit & Wachsamkeit':7}},
+    {key:'dieb-einbrecher',name:'Dieb & Einbrecher',groupName:'outlaw',description:'Unauffällige Spezialfigur für Schlösser, Taschendiebstahl, Infiltration und Fluchtwege.',canCarryItems:true,standardItems:[{id:'wpn_melee_dagger',loadState:'equipped'},{id:'gear_lockpicks'},{id:'gear_rope_fine_10m'}],attributes:{ST:4,KS:5,GS:9,RF:9,FF:10,WL:5,IT:7,IN:7,WN:8,CR:6},counters:{L:6,A:9,FO:7,M:2,GB:2,HS:3,FS:3,GL:4},skills:{'Taschendiebstahl & Schlösser knacken':10,'Heimlichkeit & Schleichen':9,'Akrobatik & Klettern':8,'Aufmerksamkeit & Wachsamkeit':7,'Nahkampf – leichte Waffen':7,'Vermeiden & Ausweichen':8}},
+    {key:'attentaeter',name:'Attentäter & Schattenklinge',groupName:'outlaw',description:'Gefährliche Elitefigur für verdeckte Verfolgung, Überraschungsangriffe, Sabotage und schnelle Flucht.',canCarryItems:true,standardItems:[{id:'wpn_melee_dagger',loadState:'equipped'},{id:'wpn_ranged_shortbow',loadState:'carried'},{id:'armor_reinforced_leather',loadState:'equipped'}],attributes:{ST:7,KS:7,GS:10,RF:10,FF:9,WL:8,IT:7,IN:8,WN:9,CR:5},counters:{L:8,A:11,FO:8,M:2,GB:2,HS:2,FS:6,GL:3},skills:{'Aufmerksamkeit & Wachsamkeit':10,'Nahkampf – leichte Waffen':9,'Fernkampf – leichte Waffen':8,'Heimlichkeit & Schleichen':10,'Vermeiden & Ausweichen':9}},
+    {key:'priester-seelsorger',name:'Priester & Seelsorger',groupName:'holy',description:'Geistliche Kontaktfigur für Heilung, Schutz, Trost, religiöses Wissen und den Umgang mit übernatürlichen Gefahren.',canCarryItems:true,standardItems:[{id:'wpn_melee_quarterstaff',loadState:'carried',purpose:'tool'},{id:'gear_healer_kit'},{id:'gear_lantern'}],attributes:{ST:4,KS:6,GS:4,RF:5,FF:5,WL:10,IT:8,IN:9,WN:7,CR:8},counters:{L:7,A:6,FO:9,M:2,GB:11,HS:5,FS:2,GL:3},skills:{'Heilrituale & Heilwunder':9,'Religion & Theologie':9,'Beruhigen & Trösten':8,'Schutz- & Bewahrungswunder':7}},
+    {key:'arkanist-hofmagier',name:'Arkanist & Hofmagier',groupName:'arcane',description:'Vielseitige magische Fachfigur für Analyse, Schutz, Telekinese, Beratung und kontrollierte Zauberduelle.',canCarryItems:true,standardItems:[{id:'wpn_melee_quarterstaff',loadState:'carried',purpose:'focus'},{id:'gear_writing_set'}],attributes:{ST:3,KS:5,GS:5,RF:7,FF:7,WL:10,IT:10,IN:8,WN:8,CR:6},counters:{L:6,A:6,FO:10,M:12,GB:2,HS:3,FS:2,GL:3},skills:{'Okkultismus & Arkane Kunde':10,'Meta-Magie & Arkane Ordnung':9,'Hermetische Magie & Telekinetik':9,'Magiewahrnehmung & Wahrnehmung für Übernatürliches':8,'Vermeiden & Ausweichen':6}},
     {key:'feuer-elementar',name:'Feuer-Elementar',groupName:'arcane',description:'Aggressives Elementarwesen aus Hitze und Flamme für magische Gefahrenzonen und direkte Konfrontationen.',canCarryItems:false,standardItems:[],attributes:{ST:8,KS:9,GS:8,RF:10,FF:3,WL:9,IT:4,IN:7,WN:7,CR:5},counters:{L:10,A:9,FO:6,M:12,GB:2,HS:2,FS:3,GL:2},skills:{'Feuermagie & Pyrokinetik':10,'Nahkampf – Raufen & Ringen':8,'Vermeiden & Ausweichen':8,'Magiewahrnehmung & Wahrnehmung für Übernatürliches':7}},
-    {key:'niederer-daemon',name:'Niederer Dämon',groupName:'demon',description:'Bösartige beschworene Kreatur für Pakte, Kultbegegnungen, Versuchung und gewaltsame Durchbrüche.',canCarryItems:false,standardItems:[],attributes:{ST:10,KS:10,GS:7,RF:8,FF:4,WL:10,IT:6,IN:8,WN:8,CR:8},counters:{L:11,A:10,FO:7,M:8,GB:2,HS:4,FS:11,GL:2},skills:{'Dämonologie & Höllen-Beschwörungen':9,'Nahkampf – Raufen & Ringen':9,'Einschüchtern & Zermürben':9,'Flüche & Blut-Hexerei':7}},
-    {key:'vampirischer-hoefling',name:'Vampirischer Höfling',groupName:'undead',description:'Eleganter untoter Gegenspieler für Intrigen, Verführung, Lebensraub und überraschend brutale Nahkämpfe.',canCarryItems:true,standardItems:[{id:'wpn_melee_long_sword',loadState:'equipped'}],attributes:{ST:9,KS:9,GS:9,RF:10,FF:8,WL:10,IT:8,IN:9,WN:9,CR:11},counters:{L:11,A:10,FO:8,M:4,GB:2,HS:9,FS:12,GL:3},skills:{'Vampirismus & Lebensraub':10,'Betören & Verzaubern':10,'Nahkampf – leichte Waffen':9,'Etikette & höfisches Auftreten':8}},
+    {key:'niederer-daemon',name:'Niederer Dämon',groupName:'demon',description:'Bösartige beschworene Kreatur für Pakte, Kultbegegnungen, Versuchung und gewaltsame Durchbrüche.',canCarryItems:false,standardItems:[],attributes:{ST:10,KS:10,GS:7,RF:8,FF:4,WL:10,IT:6,IN:8,WN:8,CR:8},counters:{L:11,A:10,FO:7,M:8,GB:2,HS:4,FS:11,GL:2},skills:{'Dämonologie & Höllen-Beschwörungen':9,'Nahkampf – Raufen & Ringen':9,'Verteidigung & Blocken':7,'Einschüchtern & Zermürben':9,'Flüche & Blut-Hexerei':7}},
+    {key:'vampirischer-hoefling',name:'Vampirischer Höfling',groupName:'undead',description:'Eleganter untoter Gegenspieler für Intrigen, Verführung, Lebensraub und überraschend brutale Nahkämpfe.',canCarryItems:true,standardItems:[{id:'wpn_melee_long_sword',loadState:'equipped'}],attributes:{ST:9,KS:9,GS:9,RF:10,FF:8,WL:10,IT:8,IN:9,WN:9,CR:11},counters:{L:11,A:10,FO:8,M:4,GB:2,HS:9,FS:12,GL:3},skills:{'Vampirismus & Lebensraub':10,'Betören & Verzaubern':10,'Nahkampf – schwere Waffen':9,'Vermeiden & Ausweichen':8,'Etikette & höfisches Auftreten':8}},
     {key:'dornenhueter',name:'Dornenhüter',groupName:'nature',description:'Pflanzliches Schutzwesen für heilige Haine, verwunschene Wälder, Wurzelmagie und zähe Gebietskontrolle.',canCarryItems:false,standardItems:[],attributes:{ST:10,KS:12,GS:5,RF:5,FF:2,WL:9,IT:4,IN:8,WN:9,CR:4},counters:{L:14,A:8,FO:7,M:9,GB:5,HS:2,FS:2,GL:2},skills:{'Druiden – Flora-Pfad':10,'Verteidigung & Blocken':9,'Wildniskunde & Wildnisleben':8,'Aufmerksamkeit & Wachsamkeit':7}},
     {key:'rattenschwarm',name:'Rattenschwarm',groupName:'swarm',description:'Dichter, schwer greifbarer Schwarm für Kanalisationen, Seuchenherde, Fluchtwege und bedrängende Nahkampfszenen.',canCarryItems:false,standardItems:[],attributes:{ST:5,KS:7,GS:9,RF:10,FF:2,WL:5,IT:2,IN:8,WN:9,CR:2},counters:{L:9,A:10,FO:4,M:2,GB:2,HS:2,FS:4,GL:2},skills:{'Nahkampf – Raufen & Ringen':8,'Vermeiden & Ausweichen':9,'Heimlichkeit & Schleichen':8,'Aufmerksamkeit & Wachsamkeit':7}},
-    {key:'wasserjaeger',name:'Wasserjäger',groupName:'aquatic',description:'Amphibische Raubkreatur für Flüsse, Küsten, versunkene Ruinen und Angriffe aus trübem Wasser.',canCarryItems:false,standardItems:[],attributes:{ST:9,KS:10,GS:8,RF:9,FF:3,WL:7,IT:3,IN:8,WN:9,CR:3},counters:{L:11,A:12,FO:5,M:6,GB:2,HS:2,FS:3,GL:2},skills:{'Athletik & Schwimmen':10,'Aufmerksamkeit & Wachsamkeit':8,'Nahkampf – Raufen & Ringen':9,'Wassermagie & Hydromantie':6}},
+    {key:'wasserjaeger',name:'Wasserjäger',groupName:'aquatic',description:'Amphibische Raubkreatur für Flüsse, Küsten, versunkene Ruinen und Angriffe aus trübem Wasser.',canCarryItems:false,standardItems:[],attributes:{ST:9,KS:10,GS:8,RF:9,FF:3,WL:7,IT:3,IN:8,WN:9,CR:3},counters:{L:11,A:12,FO:5,M:6,GB:2,HS:2,FS:3,GL:2},skills:{'Athletik & Schwimmen':10,'Aufmerksamkeit & Wachsamkeit':8,'Nahkampf – Raufen & Ringen':9,'Vermeiden & Ausweichen':8,'Wassermagie & Hydromantie':6}},
     {key:'huegelriese',name:'Hügelriese',groupName:'giant',description:'Gewaltige körperliche Bedrohung für Wildnis, Festungen und Schlachtfelder mit enormer Kraft und Zähigkeit.',canCarryItems:false,standardItems:[],attributes:{ST:16,KS:15,GS:5,RF:5,FF:3,WL:8,IT:3,IN:5,WN:7,CR:4},counters:{L:18,A:15,FO:4,M:2,GB:2,HS:3,FS:2,GL:2},skills:{'Nahkampf – Raufen & Ringen':12,'Athletik & Schwimmen':11,'Einschüchtern & Zermürben':10,'Verteidigung & Blocken':7}},
-    {key:'jungdrache',name:'Jungdrache',groupName:'monster',description:'Junger, bereits hochgefährlicher Drache für Hort, Revierkampf, Verhandlung und elementare Angriffe.',canCarryItems:false,standardItems:[],attributes:{ST:14,KS:14,GS:9,RF:9,FF:3,WL:11,IT:8,IN:9,WN:11,CR:9},counters:{L:17,A:14,FO:8,M:12,GB:2,HS:6,FS:5,GL:4},skills:{'Nahkampf – Raufen & Ringen':12,'Feuermagie & Pyrokinetik':10,'Monsterkunde & Jägerwissen':8,'Einschüchtern & Zermürben':11}}
+    {key:'jungdrache',name:'Jungdrache',groupName:'monster',description:'Junger, bereits hochgefährlicher Drache für Hort, Revierkampf, Verhandlung und elementare Angriffe.',canCarryItems:false,standardItems:[],attributes:{ST:14,KS:14,GS:9,RF:9,FF:3,WL:11,IT:8,IN:9,WN:11,CR:9},counters:{L:17,A:14,FO:8,M:12,GB:2,HS:6,FS:5,GL:4},skills:{'Nahkampf – Raufen & Ringen':12,'Feuermagie & Pyrokinetik':10,'Verteidigung & Blocken':9,'Monsterkunde & Jägerwissen':8,'Einschüchtern & Zermürben':11}}
   ];
+  const preparedArchetypePolicies=Object.freeze({
+    'alltagsfigur':{roleClass:'civilian',combatExpected:false},'haendler-informant':{roleClass:'social',combatExpected:false},
+    'stadtwache':{roleClass:'combatant',combatExpected:true},'wegelagerer':{roleClass:'stealth-opponent',combatExpected:true},
+    'veteran-anfuehrer':{roleClass:'combatant',combatExpected:true},'spuerwolf':{roleClass:'animal-swarm',combatExpected:true},
+    'grosse-raubbestie':{roleClass:'monster-boss',combatExpected:true},'feentrickster':{roleClass:'social',combatExpected:false},
+    'gebundener-geist':{roleClass:'spirit-bound',combatExpected:false},'untoter-waechter':{roleClass:'combatant',combatExpected:true},
+    'kultwirker':{roleClass:'caster',combatExpected:true},'konstruktwaechter':{roleClass:'monster-boss',combatExpected:true},
+    'wirt-gastgeber':{roleClass:'civilian',combatExpected:false},'heiler-feldscher':{roleClass:'support',combatExpected:false},
+    'gelehrter-schreiber':{roleClass:'social',combatExpected:false},'adliger-diplomat':{roleClass:'social',combatExpected:false},
+    'soeldner-leibwaechter':{roleClass:'combatant',combatExpected:true},'spaeher-jaeger':{roleClass:'combatant',combatExpected:true},
+    'dieb-einbrecher':{roleClass:'stealth-opponent',combatExpected:true},'attentaeter':{roleClass:'stealth-opponent',combatExpected:true},
+    'priester-seelsorger':{roleClass:'support',combatExpected:false},'arkanist-hofmagier':{roleClass:'caster',combatExpected:true},
+    'feuer-elementar':{roleClass:'monster-boss',combatExpected:true},'niederer-daemon':{roleClass:'monster-boss',combatExpected:true},
+    'vampirischer-hoefling':{roleClass:'stealth-opponent',combatExpected:true},'dornenhueter':{roleClass:'monster-boss',combatExpected:true},
+    'rattenschwarm':{roleClass:'animal-swarm',combatExpected:true},'wasserjaeger':{roleClass:'monster-boss',combatExpected:true},
+    'huegelriese':{roleClass:'monster-boss',combatExpected:true},'jungdrache':{roleClass:'monster-boss',combatExpected:true}
+  });
   const preparedArchetypeProfiles={
     'alltagsfigur':{species:'Mensch',roles:['Alltag','Zivilist'],name:'Neue Alltagsfigur'},
     'haendler-informant':{species:'Mensch',roles:['Kontakt','Händler','Informant'],name:'Neuer Händler'},
@@ -319,6 +336,7 @@
   }
   function freshNpcSheet(name='Neues Wesen'){
     const owner=typeof newAuxEntry==='function'?newAuxEntry('npc',name):{id:global.crypto?.randomUUID?.()||`npc-${Date.now()}`,type:'npc',name,attributes:{},counters:{},skills:{},equipment:[],money:{copper:0,silver:0,gold:0},rationTracker:{max:0,current:0,note:''},layout:defaultCreatureBuilderLayout()};
+    owner.loot=Array.isArray(owner.loot)?owner.loot:[];
     owner.npcSheetVersion=NPC_SHEET_VERSION;owner.type='npc';owner.accounting={...(plainObject(owner.accounting)?owner.accounting:{}),mode:'informational',costSource:'manual',manualCost:0,active:false,reason:'Eigenständiges Weltwesen'};
     if(typeof ensureUniversalOwnerV173==='function')ensureUniversalOwnerV173(owner);
     if(typeof ensureOwnerV174==='function')ensureOwnerV174(owner,true);
@@ -333,15 +351,15 @@
       owner.counters={...(plainObject(owner.counters)?owner.counters:{}),...(plainObject(stats.counters)?structuredClone(stats.counters):{})};
       owner.skills={...(plainObject(owner.skills)?owner.skills:{}),...(plainObject(stats.skills)?structuredClone(stats.skills):{})};
       const inventory=[];for(const key of ['equipment','weapons','armor','items'])for(const entry of Array.isArray(stats[key])?stats[key]:[])if(plainObject(entry)){const item=structuredClone(entry);if(!item.itemType)item.itemType=key==='weapons'?'weapon':key==='armor'?'armor':'gear';inventory.push(typeof normalizeItemV174==='function'?normalizeItemV174(item):item)}
-      owner.equipment=inventory;owner.money=plainObject(stats.money)?structuredClone(stats.money):owner.money;owner.rationTracker=plainObject(stats.rationTracker)?structuredClone(stats.rationTracker):owner.rationTracker;
+      owner.equipment=inventory;owner.loot=Array.isArray(stats.loot)?structuredClone(stats.loot):[];owner.lootProfile=plainObject(stats.lootProfile)?structuredClone(stats.lootProfile):null;owner.money=plainObject(stats.money)?structuredClone(stats.money):owner.money;owner.rationTracker=plainObject(stats.rationTracker)?structuredClone(stats.rationTracker):owner.rationTracker;
       for(const key of ['rations','advantages','disadvantages','activeEffectsV177','fatePath','fatePaths','fateSynergies','startPackage','origin','concept','summary','cardData','appearance'])if(stats[key]!==undefined)owner[key]=structuredClone(stats[key]);
-      const known=new Set(['portrait','description','notes','level','cbp','contactLevel','npcType','location','relationship','availability','player','age','gender','appearanceText','accounting','attributes','counters','skills','equipment','weapons','armor','items','money','rationTracker','rations','advantages','disadvantages','activeEffectsV177','fatePath','fatePaths','fateSynergies','startPackage','origin','concept','summary','cardData','appearance','layout',CREATURE_BUILDER_PRESENTATION_KEY]);
+      const known=new Set(['portrait','description','notes','level','cbp','contactLevel','npcType','location','relationship','availability','player','age','gender','appearanceText','accounting','attributes','counters','skills','equipment','weapons','armor','items','loot','lootProfile','money','rationTracker','rations','advantages','disadvantages','activeEffectsV177','fatePath','fatePaths','fateSynergies','startPackage','origin','concept','summary','cardData','appearance','layout',CREATURE_BUILDER_PRESENTATION_KEY]);
       const unknown=Object.fromEntries(Object.entries(stats).filter(([key])=>!known.has(key)));
       if(Object.keys(unknown).length)owner.extensions={...(plainObject(owner.extensions)?owner.extensions:{}),legacyCreatureStats:structuredClone(unknown)};
       owner.layout=creatureBuilderLayout(Array.isArray(stats.layout)?stats.layout:presentation.layout,owner.layout);owner.portrait=stats.portrait||presentation.profile.portrait||owner.portrait||'';owner.location=stats.location||presentation.profile.location||owner.location||'';owner.relationship=stats.relationship||presentation.profile.relationship||owner.relationship||'';owner.availability=stats.availability||presentation.profile.availability||owner.availability||'';
     }
     owner.id=String(owner.id||creatureId(row)||global.crypto?.randomUUID?.()||`world-creature-${Date.now()}`);owner.type='npc';owner.npcSheetVersion=NPC_SHEET_VERSION;
-    owner.name=String(row?.name||owner.name||'Unbenanntes Wesen');owner.npcType=String(row?.species||owner.npcType||'Wesen');owner.weapons=[];owner.armor=[];owner.items=[];owner.v174ItemsMigrated=true;
+    owner.name=String(row?.name||owner.name||'Unbenanntes Wesen');owner.npcType=String(row?.species||owner.npcType||'Wesen');owner.weapons=[];owner.armor=[];owner.items=[];owner.loot=Array.isArray(owner.loot)?owner.loot:[];owner.v174ItemsMigrated=true;
     owner.accounting={...(plainObject(owner.accounting)?owner.accounting:{}),mode:'informational',costSource:'manual',manualCost:0,active:false,reason:'Eigenständiges Weltwesen'};
     if(typeof ensureUniversalOwnerV173==='function')ensureUniversalOwnerV173(owner);
     if(typeof ensureOwnerV174==='function')ensureOwnerV174(owner,true);
@@ -350,6 +368,7 @@
   function serializeNpcSheet(owner){
     const sheet=structuredClone(owner);sheet.npcSheetVersion=NPC_SHEET_VERSION;sheet.type='npc';sheet.weapons=[];sheet.armor=[];sheet.items=[];sheet.v174ItemsMigrated=true;
     sheet.equipment=(Array.isArray(sheet.equipment)?sheet.equipment:[]).map(item=>typeof normalizeItemV174==='function'?normalizeItemV174(item):item);
+    sheet.loot=(Array.isArray(sheet.loot)?sheet.loot:[]).filter(plainObject).map(item=>structuredClone(item));
     delete sheet[CREATURE_BUILDER_PRESENTATION_KEY];return sheet;
   }
   function installNpcEditorBridge(){
@@ -391,8 +410,8 @@
   function itemCatalogLabel(source){return source==='set'?'Set-Datenbank':'Standard-Itemdatenbank'}
   function itemInventoryKey(entry){return entry?.itemType==='weapon'||entry?.assetKind==='weapon'?'weapons':entry?.itemType==='armor'||entry?.assetKind==='armor'?'armor':'equipment'}
   function catalogItem(source,id){return itemCatalog(source).find(entry=>entry?.id===id)||null}
-  function catalogReference(source,entry,{quantity=1,loadState='carried',storageLocation=''}={}){
-    return{catalogSource:source,catalogId:entry.id,quantity,loadState:['carried','equipped','stored'].includes(loadState)?loadState:'carried',storageLocation:String(storageLocation||'').slice(0,400)};
+  function catalogReference(source,entry,{quantity=1,loadState='carried',storageLocation='',purpose=''}={}){
+    return{catalogSource:source,catalogId:entry.id,quantity,loadState:['carried','equipped','stored'].includes(loadState)?loadState:'carried',storageLocation:String(storageLocation||'').slice(0,400),purpose:['ceremonial','focus','tool'].includes(purpose)?purpose:''};
   }
   function templateItemReferences(raw){
     const rows=raw?.catalogLoadout?.items;if(rows===undefined)return[];if(!Array.isArray(rows))throw new Error('Die Item-Verknüpfungen der Vorlage haben kein unterstütztes Format.');
@@ -400,7 +419,7 @@
     for(const row of rows){
       if(!plainObject(row)||row.catalogSource!=='standard'||typeof row.catalogId!=='string')throw new Error('Archetypen dürfen nur gültige Verknüpfungen zur Standard-Itemdatenbank enthalten.');
       const source=catalogItem('standard',row.catalogId);if(!source)throw new Error(`Das Standarditem ${row.catalogId} ist nicht mehr im Katalog vorhanden.`);
-      result.push(catalogReference('standard',source,{quantity:integerStat(String(row.quantity??1),`Anzahl ${source.name}`,1,1000000),loadState:row.loadState,storageLocation:row.storageLocation}));
+      result.push(catalogReference('standard',source,{quantity:integerStat(String(row.quantity??1),`Anzahl ${source.name}`,1,1000000),loadState:row.loadState,storageLocation:row.storageLocation,purpose:row.purpose}));
     }
     return result;
   }
@@ -412,7 +431,7 @@
     const source=catalogItem(reference.catalogSource,reference.catalogId);if(!source)throw new Error(`Der Gegenstand ${reference.catalogId} ist im ${itemCatalogLabel(reference.catalogSource)} nicht mehr vorhanden.`);
     if(typeof global.crypto?.randomUUID!=='function')throw new Error('Dieses Gerät kann keine sichere Gegenstandskennung erzeugen.');
     const instanceId=global.crypto.randomUUID(),quantity=integerStat(String(reference.quantity??1),`Anzahl ${source.name}`,1,1000000),loadState=['carried','equipped','stored'].includes(reference.loadState)?reference.loadState:'carried';
-    return{...structuredClone(source),id:instanceId,instanceId,catalogId:source.id,catalogSource:reference.catalogSource,catalogVersion:itemCatalogVersion(reference.catalogSource),quantity,qty:quantity,cbpCost:Number(source.cbpCost)||0,cbp:Number(source.cbpCost)||0,loadState,equippedQuantity:loadState==='equipped'?quantity:0,active:true,storageLocation:String(reference.storageLocation||'').slice(0,400),notes:''};
+    return{...structuredClone(source),id:instanceId,instanceId,catalogId:source.id,catalogSource:reference.catalogSource,catalogVersion:itemCatalogVersion(reference.catalogSource),quantity,qty:quantity,cbpCost:Number(source.cbpCost)||0,cbp:Number(source.cbpCost)||0,loadState,equippedQuantity:loadState==='equipped'?quantity:0,active:true,storageLocation:String(reference.storageLocation||'').slice(0,400),templatePurpose:String(reference.purpose||''),notes:''};
   }
   function statNumber(marker,id){const control=input('number',marker,{step:1});control.dataset.statId=id;control.inputMode='numeric';return control}
   function statValue(control,value){control.value=valueText(value);control.dataset.originalValue=control.value}
@@ -455,6 +474,7 @@
     delete sheet.contactCardIdsV179;delete sheet.isContactV179;delete sheet.npcTemplateProvenance;delete sheet.effectLogV177;delete sheet.combatRoundV1721;
     sheet.layout=creatureBuilderLayout(sheet.layout).map((card,index)=>({...card,id:`template-card-${index}-${card.type}`,order:index}));
     sheet.equipment=(Array.isArray(sheet.equipment)?sheet.equipment:[]).map((entry,index)=>({...structuredClone(entry),id:`template-item-${index}`,instanceId:`template-item-${index}`}));
+    sheet.loot=(Array.isArray(sheet.loot)?sheet.loot:[]).map((entry,index)=>({...structuredClone(entry),id:`template-loot-${index}`,instanceId:`template-loot-${index}`}));
     sheet.activeEffectsV177=(Array.isArray(sheet.activeEffectsV177)?sheet.activeEffectsV177:[]).map((entry,index)=>({...structuredClone(entry),id:`template-effect-${index}`}));
     return sheet;
   }
@@ -464,6 +484,7 @@
     sheet.equipment=(Array.isArray(sheet.equipment)?sheet.equipment:[]).map(entry=>{
       const copy=structuredClone(entry),old=String(copy.instanceId||copy.id||''),next=templateUuid();if(old)itemIds.set(old,next);copy.id=next;copy.instanceId=next;return copy;
     });
+    sheet.loot=(Array.isArray(sheet.loot)?sheet.loot:[]).map(entry=>{const copy=structuredClone(entry),next=templateUuid();copy.id=next;copy.instanceId=next;return copy});
     sheet.activeEffectsV177=(Array.isArray(sheet.activeEffectsV177)?sheet.activeEffectsV177:[]).map(entry=>{
       const copy=structuredClone(entry);copy.id=templateUuid();if(itemIds.has(String(copy.sourceId||'')))copy.sourceId=itemIds.get(String(copy.sourceId));
       if(plainObject(copy.runeBindingV1717)){
@@ -475,17 +496,27 @@
     delete sheet.effectLogV177;delete sheet.combatRoundV1721;delete sheet.contactCardIdsV179;delete sheet.isContactV179;
     return sheet;
   }
+  function preparedLootProfile(preset){
+    const policy=preparedArchetypePolicies[preset.key];if(!policy)throw new Error(`Für ${preset.name} fehlt die v4-Rollenklassifikation.`);
+    const mode=preset.standardItems?.length?'inventory':'none';
+    return{version:1,mode,moneyPolicy:'none',entries:[]};
+  }
+  function materializePreparedLoot(profile){
+    const rows=Array.isArray(profile?.entries)?profile.entries:[];
+    return rows.map((entry,index)=>{if(!plainObject(entry)||!String(entry.name||'').trim())throw new Error(`Vorbereitete Beute ${index+1} ist unvollständig.`);const id=templateUuid(),quantity=integerStat(String(entry.quantity??1),`Beutemenge ${entry.name}`,1,1000000);return{id,instanceId:id,source:'prepared-loot',name:String(entry.name).trim().slice(0,160),description:String(entry.description||'').slice(0,4000),gmNotes:String(entry.gmNotes||'').slice(0,4000),quantity,qty:quantity,itemType:'gear',category:'loot',transferable:entry.transferable!==false}});
+  }
   function preparedNpcBuild(preset,core,items){
-    const profile=preparedArchetypeProfiles[preset.key]||{species:'Wesen',roles:[],name:`Neues Wesen · ${preset.name}`},owner=freshNpcSheet(profile.name);
-    owner.npcType=profile.species;owner.description=preset.description;owner.notes=`Vorbereitete Ausbaustufe: ${preset.name}`;overlayTemplateValues(owner,core);
-    return{id:'standard',label:'Standard',isDefault:true,profile:{name:profile.name,species:profile.species,roleTags:profile.roles,publicSummary:preset.description,gmNotes:''},npcSheet:sanitizeNpcBuildSheet(owner),catalogLoadout:{version:1,items:structuredClone(items)}};
+    const profile=preparedArchetypeProfiles[preset.key]||{species:'Wesen',roles:[],name:`Neues Wesen · ${preset.name}`},lootProfile=preparedLootProfile(preset),owner=freshNpcSheet(profile.name);
+    owner.npcType=profile.species;owner.description=preset.description;owner.notes=`Vorbereitete Ausbaustufe: ${preset.name}`;owner.equipment=items.map(catalogInventoryEntry);owner.lootProfile=structuredClone(lootProfile);owner.loot=materializePreparedLoot(lootProfile);overlayTemplateValues(owner,core);
+    return{id:'standard',label:'Standard',isDefault:true,profile:{name:profile.name,species:profile.species,roleTags:profile.roles,publicSummary:preset.description,gmNotes:''},npcSheet:sanitizeNpcBuildSheet(owner),catalogLoadout:{version:1,items:structuredClone(items)},lootProfile};
   }
   function preparedArchetypeTemplate(preset){
     const skills={},ids=new Map(builderSkillCatalog().map(skill=>[skill.name,skill.id]));
     for(const [name,level] of Object.entries(preset.skills||{})){const id=ids.get(name);if(id)skills[id]={level}}
-    const items=(preset.standardItems||[]).map(row=>{const entry=catalogItem('standard',row.id);if(!entry)throw new Error(`Vorbereitetes Standarditem ${row.id} fehlt.`);return catalogReference('standard',entry,{quantity:row.quantity,loadState:row.loadState,storageLocation:row.storageLocation})});
+    const items=(preset.standardItems||[]).map(row=>{const entry=catalogItem('standard',row.id);if(!entry)throw new Error(`Vorbereitetes Standarditem ${row.id} fehlt.`);return catalogReference('standard',entry,{quantity:row.quantity,loadState:row.loadState,storageLocation:row.storageLocation,purpose:row.purpose})});
     const core={attributes:structuredClone(preset.attributes),counters:Object.fromEntries(Object.entries(preset.counters).map(([id,max])=>[id,{max,current:max}])),skills,inventoryProfile:{canCarryItems:preset.canCarryItems!==false}};
-    return{...core,catalogLoadout:{version:1,items},npcBuilds:[preparedNpcBuild(preset,core,items)],preparedArchetype:{key:preset.key,version:3}};
+    const policy=preparedArchetypePolicies[preset.key],lootProfile=preparedLootProfile(preset);
+    return{...core,catalogLoadout:{version:1,items},lootProfile,npcBuilds:[preparedNpcBuild(preset,core,items)],preparedArchetype:{key:preset.key,version:4,roleClass:policy.roleClass,combatExpected:policy.combatExpected}};
   }
   function matchingPreparedArchetype(state,preset){
     const normalized=String(preset.name).trim().toLocaleLowerCase('de-DE');
@@ -513,7 +544,7 @@
   const normalizedTemplateName=value=>String(value||'').trim().toLocaleLowerCase('de-DE');
   function catalogBuildsForArchetype(state,archetype){
     if(!archetype)return[];const data=plainObject(archetype.template_data)?archetype.template_data:{},link=plainObject(data.npcCatalog)?data.npcCatalog:{},key=data.preparedArchetype?.key,name=normalizedTemplateName(archetype.name);
-    return(state.npcCatalog||[]).filter(row=>row?.build_id&&(link.templateId&&row.template_id===link.templateId||key&&row.catalog_key===key||normalizedTemplateName(row.name)===name&&row.archetype_group===archetype.group_name)).map(row=>({source:'catalog',value:`catalog:${row.build_id}`,id:row.build_id,label:row.build_label||'Standard',isDefault:row.is_default===true,profile:{name:row.name,species:row.species,roleTags:roleTags(row.role_tags),publicSummary:row.public_summary||'',gmNotes:row.gm_notes||''},npcSheet:plainObject(row.build_data?.npcSheet)?row.build_data.npcSheet:row.build_data,templateId:row.template_id,catalogKey:row.catalog_key,rulesVersion:row.rules_version,catalogVersion:row.catalog_version,cbpBudget:row.cbp_budget,cbpSpent:row.cbp_spent}));
+    return(state.npcCatalog||[]).filter(row=>row?.build_id&&(link.templateId&&row.template_id===link.templateId||key&&row.catalog_key===key||normalizedTemplateName(row.name)===name&&row.archetype_group===archetype.group_name)).map(row=>{const build=plainObject(row.build_data)?row.build_data:{};return{source:'catalog',value:`catalog:${row.build_id}`,id:row.build_id,label:row.build_label||'Standard',isDefault:row.is_default===true,profile:{name:row.name,species:row.species,roleTags:roleTags(row.role_tags),publicSummary:row.public_summary||'',gmNotes:row.gm_notes||''},npcSheet:plainObject(build.npcSheet)?build.npcSheet:build,catalogLoadout:plainObject(build.catalogLoadout)?structuredClone(build.catalogLoadout):undefined,lootProfile:plainObject(build.lootProfile)?structuredClone(build.lootProfile):undefined,preparedArchetype:plainObject(build.preparedArchetype)?structuredClone(build.preparedArchetype):undefined,templateId:row.template_id,catalogKey:row.catalog_key,rulesVersion:row.rules_version,catalogVersion:row.catalog_version,cbpBudget:row.cbp_budget,cbpSpent:row.cbp_spent}});
   }
   function embeddedBuildsForArchetype(archetype){
     const rows=archetype?.template_data?.npcBuilds;if(!Array.isArray(rows))return[];
@@ -533,6 +564,7 @@
     const rows=build?.catalogLoadout?.items??archetype?.template_data?.catalogLoadout?.items;
     if(rows===undefined)return[];return templateItemReferences({catalogLoadout:{items:rows}});
   }
+  function buildLootProfile(archetype,build){const value=build?.lootProfile??build?.npcSheet?.lootProfile??archetype?.template_data?.lootProfile;return plainObject(value)?structuredClone(value):{version:1,mode:'none',moneyPolicy:'none',entries:[]}}
   function instantiateArchetypeBuild(state,archetype,build){
     let owner;
     if(plainObject(build?.npcSheet)){
@@ -546,18 +578,19 @@
     owner=independentNpcSheet(owner);
     const known=new Set((owner.equipment||[]).filter(entry=>entry?.catalogId).map(entry=>`${entry.catalogSource||(catalogItem('standard',entry.catalogId)?'standard':'set')}:${entry.catalogId}`));
     for(const reference of buildCatalogReferences(archetype,build)){const token=`${reference.catalogSource}:${reference.catalogId}`;if(known.has(token))continue;owner.equipment.push(catalogInventoryEntry(reference));known.add(token)}
+    owner.lootProfile=buildLootProfile(archetype,build);if(!Array.isArray(owner.loot)||!owner.loot.length)owner.loot=materializePreparedLoot(owner.lootProfile);
     owner.npcTemplateProvenance={archetypeId:archetypeId(archetype),archetypeName:archetype.name,source:build.source,templateId:build.templateId||archetype.template_data?.npcCatalog?.templateId||null,buildId:build.id||null,buildLabel:build.label||'Standard',catalogKey:build.catalogKey||archetype.template_data?.preparedArchetype?.key||null,rulesVersion:build.rulesVersion||global.Eberos?.rulesVersion||15,catalogVersion:build.catalogVersion||itemCatalogVersion('standard'),preparedAt:new Date().toISOString()};
     return{owner,profile:{name:build.profile?.name||owner.name,species:build.profile?.species||owner.npcType||'Wesen',roleTags:roleTags(build.profile?.roleTags),publicSummary:String(build.profile?.publicSummary||archetype.description||''),gmNotes:String(build.profile?.gmNotes||'')}};
   }
   function npcBuildSummary(archetype,build){
     let owner;try{owner=plainObject(build?.npcSheet)?build.npcSheet:null}catch{}
-    const core=owner||build?.core||archetype?.template_data||{},skills=Object.values(plainObject(core.skills)?core.skills:{}).filter(skill=>(plainObject(skill)?Number(skill.level):Number(skill))>0).length,items=(Array.isArray(owner?.equipment)?owner.equipment.length:0)+buildCatalogReferences(archetype,build).length,effects=Array.isArray(owner?.activeEffectsV177)?owner.activeEffectsV177.filter(effect=>effect?.active!==false).length:0,cards=Array.isArray(owner?.layout)?owner.layout.length:defaultCreatureBuilderLayout().length;
-    return`${build.profile?.species||owner?.npcType||'Wesen'} · ${skills} ausgeprägte Fähigkeiten · ${items} Ausrüstungspositionen · ${effects} aktive Effekte · ${cards} NPC-Karten`;
+    const core=owner||build?.core||archetype?.template_data||{},skills=Object.values(plainObject(core.skills)?core.skills:{}).filter(skill=>(plainObject(skill)?Number(skill.level):Number(skill))>0).length,items=(Array.isArray(owner?.equipment)?owner.equipment.length:0)+buildCatalogReferences(archetype,build).filter(ref=>!owner?.equipment?.some(item=>item?.catalogSource===ref.catalogSource&&item?.catalogId===ref.catalogId)).length,loot=Array.isArray(owner?.loot)?owner.loot.length:0,effects=Array.isArray(owner?.activeEffectsV177)?owner.activeEffectsV177.filter(effect=>effect?.active!==false).length:0,cards=Array.isArray(owner?.layout)?owner.layout.length:defaultCreatureBuilderLayout().length;
+    return`${build.profile?.species||owner?.npcType||'Wesen'} · ${skills} ausgeprägte Fähigkeiten · ${items} Ausrüstungspositionen · ${loot} vorbereitete Beute · ${effects} aktive Effekte · ${cards} NPC-Karten`;
   }
   const npcBuildSectionKeys={
     values:['attributes','counters','money','rationTracker','rations','inventoryProfile'],
     skills:['skills','customSkills','skillOrder','skillSortView','powerPathChoicesV176'],
-    inventory:['equipment'],
+    inventory:['equipment','loot','lootProfile'],
     effects:['activeEffectsV177'],
     paths:['fatePath','fatePaths','fateSynergies','advantages','disadvantages','startPackage','origin','concept','summary'],
     cards:['layout'],
@@ -992,15 +1025,16 @@
 
     const lootSection=document.createElement('section');lootSection.className='gm-player-preview';
     lootSection.append(heading('h4','Beute für Kampagnenfiguren'));
-    lootSection.append(note('Eine Übertragung entfernt den Gegenstand atomar aus dem Inventar des Wesens und legt einen privaten Beutezugang bei der Figur an. Beute kostet keine CBP; Spieler übernehmen sie anschließend selbst.'));
-    const lootHint=note('Wähle ein bestehendes Wesen, um Ausrüstung, Waffen oder Rüstung als Beute zuzuordnen.');lootSection.append(lootHint);
+    lootSection.append(note('Inventar des Wesens, vorbereitete Beute und bereits erzeugte Beutezugänge sind getrennte Bestände. Eine Übertragung entfernt genau die gewählte Instanz atomar und legt einen privaten Beutezugang bei der Figur an.'));
+    const lootHint=note('Wähle ein bestehendes Wesen, um vorhandenes Inventar oder vorbereitete Beute zuzuordnen.');lootHint.dataset.gmCreatureLootStatus='';lootSection.append(lootHint);
     const lootForm=document.createElement('form');lootForm.dataset.gmCreatureLootForm='';lootForm.hidden=true;
+    const lootPlayerName=input('text','gmCreatureLootPlayerName',{required:true,maxLength:160,readOnly:true}),lootPlayerDescription=textarea('gmCreatureLootPlayerDescription',4000);lootPlayerDescription.readOnly=true;
     lootForm.append(
       labelControl('Gegenstand des Wesens',select('gmCreatureLootItem',[['','Gegenstand auswählen']])),
       labelControl('Zielfigur dieser Kampagne',select('gmCreatureLootCharacter',[['','Figur auswählen']])),
       labelControl('Menge',input('number','gmCreatureLootQuantity',{required:true,min:1,max:1000000,value:'1'})),
-      labelControl('Für Spieler freigegebener Gegenstandsname',input('text','gmCreatureLootPlayerName',{required:true,maxLength:160})),
-      labelControl('Für Spieler freigegebene Beschreibung',textarea('gmCreatureLootPlayerDescription',4000)),
+      labelControl('Aus der Beutequelle geprüfter Spielername',lootPlayerName),
+      labelControl('Aus der Beutequelle geprüfte Spielerbeschreibung',lootPlayerDescription),
       submitButton('Beute zuordnen')
     );
     const lootRuleHint=note('Gegenstände mit gebundenen Wirkungen können nur als ganzer Stapel übertragen werden. Runengebundene Gegenstände brauchen zuerst eine eigene Bindungsregel.');lootRuleHint.dataset.gmCreatureLootRule='';lootForm.append(lootRuleHint);
@@ -1177,11 +1211,11 @@
   }
   function transferableCreatureItems(creature){
     const stats=creatureStats(creature),rows=[];
-    for(const key of ['equipment','weapons','armor'])for(const entry of Array.isArray(stats[key])?stats[key]:[]){
-      if(!plainObject(entry)||!String(entry.instanceId||'').trim())continue;
+    for(const key of ['equipment','weapons','armor','loot'])for(const entry of Array.isArray(stats[key])?stats[key]:[]){
+      if(!plainObject(entry)||!String(entry.instanceId||'').trim()||entry.transferable===false)continue;
       const quantity=Number(entry.quantity??entry.qty??1);
       if(!Number.isSafeInteger(quantity)||quantity<1)continue;
-      rows.push({key,instanceId:String(entry.instanceId),name:String(entry.name||'Unbenannter Gegenstand'),quantity});
+      rows.push({key,instanceId:String(entry.instanceId),name:String(entry.name||'Unbenannter Gegenstand'),description:String(entry.description||''),quantity,sourceLabel:key==='loot'?'Vorbereitete Beute':'Inventar'});
     }
     return rows;
   }
@@ -1208,18 +1242,21 @@
     const rule=selectedCreatureLootRule(state),quantity=field(form,'[data-gm-creature-loot-quantity]');
     if(!rule){quantity.min='1';quantity.max='1000000';text(hint,'Gegenstände mit gebundenen Wirkungen können nur als ganzer Stapel übertragen werden. Runengebundene Gegenstände brauchen zuerst eine eigene Bindungsregel.');return}
     quantity.max=String(rule.quantity);
+    const playerName=field(form,'[data-gm-creature-loot-player-name]'),playerDescription=field(form,'[data-gm-creature-loot-player-description]');if(playerName)playerName.value=String(rule.entry.playerName||rule.entry.name||'').slice(0,160);if(playerDescription)playerDescription.value=String(rule.entry.playerDescription||rule.entry.description||'').slice(0,4000);
     if(rule.blocked){text(hint,rule.reason);return}
     if(rule.requiresWhole){quantity.min=String(rule.quantity);quantity.value=String(rule.quantity);text(hint,`Dieser Gegenstand hat gebundene Wirkungen. Der gesamte Stapel (${rule.quantity} Stück) muss zusammen übertragen werden.`)}
     else{quantity.min='1';quantity.value='1';text(hint,'Teilmengen sind möglich, sofern der Server für diesen Gegenstand keine besondere Bindung erkennt. Beute kostet keine CBP.')}
   }
   function renderCreatureLootForm(state,creature){
     const ui=ensureCreatureWorkspace(state);if(!ui)return;
-    show(ui.lootForm,!!creature);show(ui.lootHint,!creature);if(!creature)return;
+    show(ui.lootForm,!!creature);show(ui.lootHint,true);if(!creature){text(ui.lootHint,'Wähle ein bestehendes Wesen, um vorhandenes Inventar oder vorbereitete Beute zuzuordnen.');return}
     const itemChoice=field(ui.lootForm,'[data-gm-creature-loot-item]');clear(itemChoice);
     const emptyItem=document.createElement('option');emptyItem.value='';emptyItem.textContent='Gegenstand auswählen';itemChoice.append(emptyItem);
-    for(const row of transferableCreatureItems(creature)){
-      const option=document.createElement('option');option.value=JSON.stringify([row.key,row.instanceId]);option.textContent=`${row.name} · ${row.quantity}× · ${row.key}`;itemChoice.append(option);
+    const transferable=transferableCreatureItems(creature),stats=creatureStats(creature),mode=String(stats.lootProfile?.mode||'inventory');
+    for(const row of transferable){
+      const option=document.createElement('option');option.value=JSON.stringify([row.key,row.instanceId]);option.textContent=`${row.name} · ${row.quantity}× · ${row.sourceLabel}`;itemChoice.append(option);
     }
+    text(ui.lootHint,!transferable.length&&mode==='none'?'Keine Beute vorgesehen.':!transferable.length?'Der Beutestatus ist festgelegt, aktuell ist aber keine übertragbare Instanz vorhanden.':`${transferable.filter(row=>row.key!=='loot').length} Inventarpositionen und ${transferable.filter(row=>row.key==='loot').length} vorbereitete Beuteeinträge sind übertragbar. Noch keine Übertragung ist kein leerer Beutebestand.`);
     const characterChoice=field(ui.lootForm,'[data-gm-creature-loot-character]');clear(characterChoice);
     const emptyCharacter=document.createElement('option');emptyCharacter.value='';emptyCharacter.textContent='Figur auswählen';characterChoice.append(emptyCharacter);
     for(const row of state.selectedData?.characters||[])if(['approved_locked','change_pending'].includes(row.status)){
@@ -1435,11 +1472,11 @@
     text(ui.preparedResult,`${rows.length} von ${preparedArchetypes.length} vorbereiteten Archetypen angezeigt.`);
     if(!rows.length){ui.preparedArchetypeList.append(note('Keine Archetypen passen zu dieser Suche.'));return}
     for(const preset of rows){
-      const existing=matchingPreparedArchetype(state,preset),upgradeable=existing?.template_data?.preparedArchetype?.key===preset.key&&Number(existing.template_data.preparedArchetype.version||0)<3;
+      const existing=matchingPreparedArchetype(state,preset),upgradeable=existing?.template_data?.preparedArchetype?.key===preset.key&&Number(existing.template_data.preparedArchetype.version||0)<4;
       const action=button(upgradeable?'Vollständigen NPC-Build ergänzen':existing?'Vorhanden':'In diese Welt übernehmen',()=>importPreparedArchetype(state,preset));
       if(existing&&!upgradeable){action.disabled=true;action.dataset.gmPermanentDisabled='true';action.title=`Als „${existing.name}“ in dieser Welt vorhanden.`}
       const create=existing&&!upgradeable?button('NPC daraus erstellen',()=>beginCreatureFromArchetype(state,archetypeId(existing))):null;
-      const profile=preparedArchetypeProfiles[preset.key]||{},meta=`ST ${preset.attributes.ST} · Leben ${preset.counters.L} · ${Object.keys(preset.skills||{}).length} Kernfähigkeiten · ${(preset.standardItems||[]).length} Standarditems · ${preset.canCarryItems===false?'kein Inventar':'Inventar möglich'}`;
+      const profile=preparedArchetypeProfiles[preset.key]||{},baseMeta=`ST ${preset.attributes.ST} · Leben ${preset.counters.L} · ${Object.keys(preset.skills||{}).length} Kernfähigkeiten · ${(preset.standardItems||[]).length} Standarditems · ${preset.canCarryItems===false?'kein Inventar':'Inventar möglich'}`,meta=upgradeable?`${baseMeta} · Ergänzt nur fehlende v4-Fähigkeiten, Standardgegenstände und Beutemetadaten; eigene Werte, Texte und Gegenstände bleiben erhalten.`:baseMeta;
       const card=archetypeOverviewCard({name:preset.name,group:groupNames.get(preset.groupName)||preset.groupName,description:preset.description,roles:profile.roles||[],meta,status:upgradeable?'Aktualisierung verfügbar':existing?'In dieser Welt':'Sofort verfügbar',tone:upgradeable?'warning':existing?'ok':'ready',actions:[action,...(create?[create]:[])]});
       card.dataset.gmPreparedArchetype=preset.key;ui.preparedArchetypeList.append(card);
     }
@@ -1646,12 +1683,36 @@
       description:field(form,'[data-gm-archetype-description]').value.trim(),templateData,archived:false};
     try{await runBusy(state,async()=>{const receipt=await state.repository.saveWorldArchetype(state.selectedCampaign.world_id,changes);state.selectedArchetypeId=archetypeId(receipt)||archetypeId(row);await loadCreatureWorkspace(state,{force:true});text(state.message,`Archetyp „${changes.name}“ gespeichert. Bereits angelegte Wesen wurden nicht verändert.`)})}catch{}
   }
+  function mergedCatalogLoadout(existing,prepared){
+    const current=Array.isArray(existing?.items)?structuredClone(existing.items):[],seen=new Set(current.map(row=>`${row?.catalogSource}:${row?.catalogId}`));
+    for(const row of Array.isArray(prepared?.items)?prepared.items:[]){const token=`${row?.catalogSource}:${row?.catalogId}`;if(!seen.has(token)){current.push(structuredClone(row));seen.add(token)}}
+    return{version:1,items:current};
+  }
+  function mergePreparedNpcBuild(existing,prepared){
+    if(!plainObject(existing))return structuredClone(prepared);
+    const result=structuredClone(existing),source=plainObject(prepared)?prepared:{};result.id=result.id||source.id||'standard';result.label=result.label||source.label||'Standard';result.isDefault=result.isDefault===true||source.isDefault===true;
+    result.profile={...(plainObject(source.profile)?structuredClone(source.profile):{}),...(plainObject(result.profile)?result.profile:{})};
+    const sheet=plainObject(result.npcSheet)?result.npcSheet:{},preparedSheet=plainObject(source.npcSheet)?source.npcSheet:{};
+    for(const key of ['attributes','counters','skills']){const target=plainObject(sheet[key])?sheet[key]:{};for(const [id,value] of Object.entries(plainObject(preparedSheet[key])?preparedSheet[key]:{}))if(target[id]===undefined)target[id]=structuredClone(value);sheet[key]=target}
+    if(!Array.isArray(sheet.layout)||!sheet.layout.length)sheet.layout=structuredClone(preparedSheet.layout||[]);
+    const equipment=Array.isArray(sheet.equipment)?sheet.equipment:[],known=new Set(equipment.filter(plainObject).map(row=>`${row.catalogSource||''}:${row.catalogId||''}`));
+    for(const row of Array.isArray(preparedSheet.equipment)?preparedSheet.equipment:[]){const token=`${row?.catalogSource||''}:${row?.catalogId||''}`;if(row?.catalogId&&!known.has(token)){const copy=structuredClone(row),id=`template-item-v4-${row.catalogId}`;copy.id=id;copy.instanceId=id;equipment.push(copy);known.add(token)}}
+    sheet.equipment=equipment;sheet.loot=Array.isArray(sheet.loot)&&sheet.loot.length?sheet.loot:structuredClone(preparedSheet.loot||[]);sheet.lootProfile=plainObject(sheet.lootProfile)?sheet.lootProfile:structuredClone(source.lootProfile||preparedSheet.lootProfile||{version:1,mode:'none',moneyPolicy:'none',entries:[]});result.npcSheet=sheet;
+    result.catalogLoadout=mergedCatalogLoadout(result.catalogLoadout,source.catalogLoadout);result.lootProfile=plainObject(result.lootProfile)?result.lootProfile:structuredClone(source.lootProfile||sheet.lootProfile);return result;
+  }
+  function mergePreparedArchetypeV4(existingData,prepared){
+    const result=plainObject(existingData)?structuredClone(existingData):{};
+    for(const key of ['attributes','counters','skills']){const target=plainObject(result[key])?result[key]:{};for(const [id,value] of Object.entries(prepared[key]||{}))if(target[id]===undefined)target[id]=structuredClone(value);result[key]=target}
+    result.inventoryProfile=plainObject(result.inventoryProfile)?result.inventoryProfile:structuredClone(prepared.inventoryProfile);result.catalogLoadout=mergedCatalogLoadout(result.catalogLoadout,prepared.catalogLoadout);result.lootProfile=plainObject(result.lootProfile)?result.lootProfile:structuredClone(prepared.lootProfile);
+    const currentBuilds=Array.isArray(result.npcBuilds)?result.npcBuilds:[],preparedBuild=prepared.npcBuilds?.[0],standardIndex=currentBuilds.findIndex(row=>row?.id==='standard');
+    if(standardIndex>=0)currentBuilds[standardIndex]=mergePreparedNpcBuild(currentBuilds[standardIndex],preparedBuild);else currentBuilds.push(structuredClone(preparedBuild));result.npcBuilds=currentBuilds;result.preparedArchetype=structuredClone(prepared.preparedArchetype);return result;
+  }
   async function importPreparedArchetype(state,preset){
     if(!canManageCreatureWorld(state)||typeof state.repository.saveWorldArchetype!=='function')return;
-    const existing=matchingPreparedArchetype(state,preset),prepared=preparedArchetypeTemplate(preset),upgradeable=existing?.template_data?.preparedArchetype?.key===preset.key&&Number(existing.template_data.preparedArchetype.version||0)<3;
+    const existing=matchingPreparedArchetype(state,preset),prepared=preparedArchetypeTemplate(preset),upgradeable=existing?.template_data?.preparedArchetype?.key===preset.key&&Number(existing.template_data.preparedArchetype.version||0)<4;
     if(existing&&!upgradeable){state.selectedArchetypeId=archetypeId(existing);renderArchetypeForm(state);text(state.message,`„${existing.name}“ ist in dieser Welt bereits als eigener Archetyp vorhanden.`);return}
     if(upgradeable){
-      const templateData=structuredClone(existing.template_data||{});templateData.catalogLoadout=prepared.catalogLoadout;templateData.inventoryProfile=plainObject(templateData.inventoryProfile)?templateData.inventoryProfile:prepared.inventoryProfile;if(!Array.isArray(templateData.npcBuilds)||!templateData.npcBuilds.length)templateData.npcBuilds=prepared.npcBuilds;templateData.preparedArchetype=prepared.preparedArchetype;
+      const templateData=mergePreparedArchetypeV4(existing.template_data,prepared);
       const changes={archetypeId:archetypeId(existing),expectedRevision:Number(existing.revision),name:existing.name,groupName:existing.group_name||preset.groupName,description:existing.description||preset.description,templateData,archived:false};
       try{await runBusy(state,async()=>{await state.repository.saveWorldArchetype(state.selectedCampaign.world_id,changes);state.selectedArchetypeId=archetypeId(existing);await loadCreatureWorkspace(state,{force:true});text(state.message,`Vollständige NPC-Ausbaustufe für „${existing.name}“ ergänzt. Eigene Werte und Beschreibungen blieben erhalten.`)})}catch{}return;
     }
@@ -2162,7 +2223,16 @@
     try{const result=await state.auth.restoreSession();await renderSession(state,result.user);if(!state.unsubscribe)state.unsubscribe=await state.auth.onAuthStateChange(({event,user})=>renderSession(state,user).then(()=>{if(event==='PASSWORD_RECOVERY'&&user){const panel=field(state.dialog,'[data-gm-auth-password-panel]');if(panel)panel.open=true;text(state.message,'Lege jetzt ein neues Passwort fest und speichere es.')}}).catch(error=>{if(!state.currentUserId)text(state.message,friendlyError(error))}));if(!result.user)text(state.message,'Melde dich mit E-Mail und Passwort an oder erstelle einmalig ein Konto.');return{configured:true,user:result.user}}catch(error){if(state.currentUserId||!state.session?.hidden)hideTentativeSession(state);show(state.authForm?.closest('.auth-account-box'),true);show(state.authForm,true);text(state.message,friendlyError(error));return{configured:true,user:null,error}}
   }
   async function open({root,dialog,services}={}){const view=root||dialog;if(!view)throw new TypeError('Die Spielleiteransicht fehlt.');if(view instanceof HTMLDialogElement){if(typeof view.showModal==='function'&&!view.open)view.showModal();else view.setAttribute('open','')}else view.hidden=false;const state=states.get(view)||createState(view,services);activateView(state,state.activeView);const session=await initialize(state);if(session.error)throw session.error;return{configured:session.configured,authenticated:!!session.user,campaigns:state.campaigns.length}}
+  function auditPreparedArchetypes(){
+    const offensePattern=/^(Nahkampf|Fernkampf)|^(Flüche & Blut-Hexerei|Vampirismus & Lebensraub|Druiden – Flora-Pfad|Feuermagie & Pyrokinetik|Hermetische Magie & Telekinetik|Wassermagie & Hydromantie)$/,defenseNames=new Set(['Verteidigung & Blocken','Vermeiden & Ausweichen']);
+    return preparedArchetypes.map(preset=>{const template=preparedArchetypeTemplate(preset),build=template.npcBuilds[0],policy=preparedArchetypePolicies[preset.key],skillNames=Object.keys(preset.skills||{}),weaponIssues=(preset.standardItems||[]).filter(row=>{if(row.purpose||!row.id.startsWith('wpn_'))return false;if(row.id.includes('ranged_'))return!skillNames.some(name=>name.startsWith('Fernkampf'));if(row.id.includes('long_sword')||row.id.includes('kriegsspeer'))return!skillNames.includes('Nahkampf – schwere Waffen');return!skillNames.some(name=>name.startsWith('Nahkampf'))}).map(row=>row.id),issues=[];
+      const first=independentNpcSheet(build.npcSheet),second=independentNpcSheet(build.npcSheet),roundTrip=creatureToBuilderNpc({name:build.profile.name,species:build.profile.species,npc_data:serializeNpcSheet(first)}),identityRows=sheet=>[sheet.id,...sheet.layout.map(row=>row.id),...sheet.equipment.map(row=>row.instanceId),...sheet.loot.map(row=>row.instanceId),...(sheet.activeEffectsV177||[]).map(row=>row.id)],firstIds=identityRows(first),secondIds=new Set(identityRows(second)),runtimeIndependent=firstIds.length===new Set(firstIds).size&&firstIds.every(id=>id&&!secondIds.has(id)),roundTripValid=roundTrip.equipment.length===first.equipment.length&&roundTrip.loot.length===first.loot.length&&roundTrip.layout.length===first.layout.length&&roundTrip.equipment.every((row,index)=>row.instanceId===first.equipment[index].instanceId&&row.catalogId===first.equipment[index].catalogId);
+      if(policy.combatExpected&&!skillNames.some(name=>offensePattern.test(name)))issues.push('Keine offensive Fähigkeit');if(policy.combatExpected&&!skillNames.some(name=>defenseNames.has(name)))issues.push('Keine defensive Fähigkeit');if(weaponIssues.length)issues.push(`Waffe ohne passende Fähigkeit: ${weaponIssues.join(', ')}`);if(preset.canCarryItems===false&&preset.standardItems.length)issues.push('Inventar trotz canCarryItems=false');if(build.npcSheet.equipment.length!==preset.standardItems.length)issues.push('Konkretes Inventar weicht vom Katalog-Loadout ab');if(!runtimeIndependent)issues.push('Instanzen teilen Kennungen oder enthalten Dubletten');if(!roundTripValid)issues.push('Speichern und Neuladen verändert den NPC-Build');
+      return{key:preset.key,name:preset.name,group:preset.groupName,roleClass:policy.roleClass,combatExpected:policy.combatExpected,offense:skillNames.filter(name=>offensePattern.test(name)),defense:skillNames.filter(name=>defenseNames.has(name)),skills:skillNames,standardItems:preset.standardItems.map(row=>row.id),equipment:build.npcSheet.equipment.map(row=>row.catalogId),lootMode:template.lootProfile.mode,preparedVersion:template.preparedArchetype.version,runtime:{cards:first.layout.length,effects:(first.activeEffectsV177||[]).length,inventory:first.equipment.length,loot:first.loot.length,independent:runtimeIndependent,roundTrip:roundTripValid},issues,valid:issues.length===0}
+    });
+  }
   const creatureNpcBridge=Object.freeze({version:NPC_SHEET_VERSION,create(name){return structuredClone(freshNpcSheet(name))},toNpcSheet(row){return structuredClone(creatureToBuilderNpc(row))},independent(owner){return independentNpcSheet(owner)},serialize(owner){return serializeNpcSheet(owner)},mount(root,owner,options={}){if(!(root instanceof Element))throw new TypeError('Das Ziel des NPC-Fensters fehlt.');return mountNpcSheetEditor(root,owner,options)}});
+  global.EberosNpcArchetypeAuditV1817=Object.freeze({version:1,list(){return structuredClone(auditPreparedArchetypes())}});
   global.EberosCreatureNpcBridgeV1814=creatureNpcBridge;
   global.EberosCreatureNpcBridgeV1813=creatureNpcBridge;
   global.EberosCreatureNpcBridgeV1812=Object.freeze({version:CREATURE_BUILDER_PRESENTATION_VERSION,presentationKey:CREATURE_BUILDER_PRESENTATION_KEY,toNpcSnapshot(row){return structuredClone(creatureToBuilderNpc(row))}});
