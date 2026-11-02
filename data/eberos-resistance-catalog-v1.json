@@ -1,0 +1,33 @@
+{
+  "format": "eberos-resistance-catalog",
+  "formatVersion": 1,
+  "version": "1.0.0",
+  "classification": "secondary_derived_value",
+  "activeEffectRule": "Aktive Effekte sind zeitlich begrenzte Quellen; der Widerstand selbst bleibt ein sekundärer abgeleiteter Wert.",
+  "physicalDamageRule": "Gewöhnlicher Waffen- und Fallschaden wird über Rüstung, Blocken oder Ausweichen behandelt und erzeugt keine eigene Resistenzkategorie.",
+  "elementRule": "Elementare Resistenz gilt für alle Unterarten. Ein ausdrücklich benannter Elementwiderstand gilt zusätzlich nur für seine Unterart.",
+  "categories": [
+    { "id": "magic", "label": "Magische Resistenz", "group": "supernatural", "scope": "Telepathie, Telekinese, Illusionistik, Traummagie, Verwandlung, Runen-, Meta- und andere nicht elementare arkane Magie" },
+    { "id": "elemental", "label": "Elementare Resistenz", "group": "supernatural", "scope": "Übergreifender Schutz gegen elementare Magie", "children": ["elemental.fire", "elemental.water", "elemental.earth", "elemental.wind", "elemental.lightning", "elemental.ice"] },
+    { "id": "elemental.fire", "label": "Feuerresistenz", "group": "elemental", "parent": "elemental" },
+    { "id": "elemental.water", "label": "Wasserresistenz", "group": "elemental", "parent": "elemental" },
+    { "id": "elemental.earth", "label": "Erdresistenz", "group": "elemental", "parent": "elemental" },
+    { "id": "elemental.wind", "label": "Windresistenz", "group": "elemental", "parent": "elemental" },
+    { "id": "elemental.lightning", "label": "Blitzresistenz", "group": "elemental", "parent": "elemental" },
+    { "id": "elemental.ice", "label": "Eisresistenz", "group": "elemental", "parent": "elemental" },
+    { "id": "darkness", "label": "Finsternisresistenz", "group": "supernatural", "scope": "Flüche, Bluthexerei, Nekromantie, Dämonologie, Lebensraub und andere Finsterniskräfte" },
+    { "id": "light", "label": "Lichtresistenz", "group": "supernatural", "scope": "Wunder, geweihte Wirkungen und übernatürliches Licht" },
+    { "id": "poison", "label": "Giftresistenz", "group": "biological", "scope": "Gifte und Toxine; Übertragungsweg bleibt Teil der Giftregel" },
+    { "id": "disease", "label": "Krankheitsresistenz", "group": "biological", "scope": "Gewöhnliche Krankheiten; magische Krankheiten verwenden zusätzlich die Resistenz ihrer übernatürlichen Quelle" },
+    { "id": "acid", "label": "Säureresistenz", "group": "chemical", "scope": "Säure, Lauge und ätzende Stoffe" },
+    { "id": "environment.heat", "label": "Hitzeresistenz", "group": "environment", "scope": "Nichtmagische Hitze und Wetterbelastung" },
+    { "id": "environment.cold", "label": "Kälteresistenz", "group": "environment", "scope": "Nichtmagische Kälte und Wetterbelastung" },
+    { "id": "environment.wet", "label": "Nässeresistenz", "group": "environment", "scope": "Nässe, Regen und Durchnässung" }
+  ],
+  "forbiddenAliases": ["Seelenresistenz"],
+  "legacyAliases": {
+    "Magie-Resistenz": "magic",
+    "Resistenz gegen Zauber": "magic",
+    "Frostresistenz": "elemental.ice"
+  }
+}

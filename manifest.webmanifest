@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "Eberos Charakter-Builder v1.8.17",
-  "short_name": "Eberos 1.8.17",
-  "description": "Eberos Charakter-Builder mit Open Play, geschützter Gesamtverwaltung, reduziertem Live-Modus und nachvollziehbaren Gegenänderungen.",
+  "name": "Eberos Charakter-Builder v1.8.25",
+  "short_name": "Eberos 1.8.25",
+  "description": "Eberos Charakter-Builder v1.8.25 mit vollständig auditierten Set-Begleitern als Kampagnen-NPCs.",
   "lang": "de",
   "start_url": "./",
   "scope": "./",

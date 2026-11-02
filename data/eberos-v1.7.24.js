@@ -2,7 +2,7 @@
 
 /* v1.7.24: Fähigkeiten nach Art ordnen und kanonische Lore stufenweise anzeigen. */
 const SKILL_LORE_V1724=window.EBEROS_SKILL_LORE_V1725;
-if(!SKILL_LORE_V1724||SKILL_LORE_V1724.meta?.version!=='1.7.25'||!Array.isArray(SKILL_LORE_V1724.documents))throw new Error('Lore-Daten v1.7.25 fehlen oder sind ungültig.');
+if(!SKILL_LORE_V1724||SKILL_LORE_V1724.meta?.version!=='1.8.21'||!Array.isArray(SKILL_LORE_V1724.documents))throw new Error('Lore-Daten v1.8.21 fehlen oder sind ungültig.');
 const SKILL_LORE_BY_NAME_V1724=new Map(SKILL_LORE_V1724.documents.map(document=>[document.skillName,document]));
 const SKILL_CATEGORY_RANK_V1724=new Map(SKILL_CATEGORY_ORDER.map((category,index)=>[category,index]));
 
@@ -163,5 +163,5 @@ runTests=function(){
 };
 
 
-Object.assign(window.Eberos,{version:'1.7.24',revision:'r2',schemaVersion:SCHEMA_VERSION,rulesVersion:RULES_VERSION,skillLoreVersion:'1.7.25',skillLore:()=>SKILL_LORE_V1724,skillLoreContent:skillLoreContentV1724,orderSkills:orderedSkillsForViewR11,runTests:()=>runTests()});
+Object.assign(window.Eberos,{version:'1.7.24',revision:'r2',schemaVersion:SCHEMA_VERSION,rulesVersion:RULES_VERSION,skillLoreVersion:'1.8.21',skillLore:()=>SKILL_LORE_V1724,skillLoreContent:skillLoreContentV1724,orderSkills:orderedSkillsForViewR11,runTests:()=>runTests()});
 /* v1.8.5: Rendern und Speichern erfolgen nach allen Migrationen einmalig. */

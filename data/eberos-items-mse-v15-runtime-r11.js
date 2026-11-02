@@ -315,10 +315,14 @@ const MSE_COMPANION_PROFILE_VERSION_V16=1;
 const MSE_COMPANION_TYPES_V16={npc:'NPC-Begleiter',familiar:'Begleiter',mount:'Reittier'};
 const MSE_MOUNT_NAME_V16=/(pferd|ross|stute|kaltblut|pegasus|einhorn|hippocamp|maultier|riesenhirsch|dracheneinhorn|kelpie|feldross|panzerross|siegelstute|granitwidder)/i;
 const MSE_NPC_NAME_V16=/(kanzleischreiberin|geselle der esse|junge kopistin|informantin|noble des blumenhofs|see[- ]nixe|gefaehrtin der fremden namen|gefährtin der fremden namen|begleiter der pilger|umseni)/i;
+const MSE_COMPANION_AUDIT_V1825=window.EBEROS_MSE_COMPANION_NPCS_V1825||null;
+const MSE_COMPANION_AUDIT_BY_ID_V1825=new Map(Array.isArray(MSE_COMPANION_AUDIT_V1825?.entries)?MSE_COMPANION_AUDIT_V1825.entries.map(entry=>[entry.catalogId,entry]):[]);
 
 function mseCompanionCatalogV16(item){return MSE_BY_ID_V15.get(item?.catalogId||item?.id)||item}
+function mseCompanionAuditEntryV1825(item){return MSE_COMPANION_AUDIT_BY_ID_V1825.get(mseCompanionCatalogV16(item)?.id)||null}
 function mseCompanionKindV16(item){
-  const catalog=mseCompanionCatalogV16(item),source=catalog?.sourceRecord||{},stats=[...(source.primaryStats||[]),...(source.secondaryStats||[])].join(' '),effect=source.effectText||'';
+  const catalog=mseCompanionCatalogV16(item),audited=mseCompanionAuditEntryV1825(catalog);if(audited)return audited.localTabType;
+  const source=catalog?.sourceRecord||{},stats=[...(source.primaryStats||[]),...(source.secondaryStats||[])].join(' '),effect=source.effectText||'';
   if(catalog?.assetKind!=='companion'||!/(begleiter|reittier)/i.test(stats))return null;
   if(/reittier/i.test(stats)||MSE_MOUNT_NAME_V16.test(catalog.name||'')||/Besitzer:\s*Reiten\s*&\s*Tierfuehrung|Besitzer:\s*Reiten\s*&\s*Tierführung/i.test(effect))return'mount';
   if(MSE_NPC_NAME_V16.test(catalog.name||''))return'npc';
@@ -335,10 +339,19 @@ function mseLinkValueV16(target,key,value){const previous=target?.[key],same=JSO
 function mseSkillByNameV16(name){const wanted=normalizeNameV174(name);return SKILLS.find(skill=>normalizeNameV174(skill.name)===wanted)||SKILLS.find(skill=>normalizeNameV174(skill.name).includes(wanted)||wanted.includes(normalizeNameV174(skill.name)))}
 function mseSetSkillV16(owner,name,level,note){const skill=mseSkillByNameV16(name);if(!skill)return false;const data=owner.skills[skill.id]||(owner.skills[skill.id]={level:0,fav:false,note:''});data.level=Math.max(+data.level||0,Math.max(0,Math.min(25,+level||0)));data.fav=data.level>0||data.fav;data.note=data.note||note||'';return true}
 function mseSetCounterV16(owner,id,value){const max=Math.max(2,Math.min(25,+value||2));owner.counters[id]={...(owner.counters[id]||{}),max,current:max}}
+function mseApplyCompanionAuditMetadataV1825(owner,item,kind){
+  const catalog=mseCompanionCatalogV16(item),audited=mseCompanionAuditEntryV1825(catalog);if(!audited)return false;
+  const metadata={auditVersion:Number(MSE_COMPANION_AUDIT_V1825?.formatVersion)||1,catalogId:audited.catalogId,sourceHash:audited.sourceHash,cardNumber:audited.cardNumber,setNumber:audited.setNumber,localTabType:audited.localTabType,worldEntityType:'npc',npcType:audited.npcType,roleTags:structuredClone(audited.roleTags||[]),ownerBonuses:structuredClone(audited.ownerBonuses||[]),selfEffects:structuredClone(audited.selfEffects||[])};
+  let changed=mseLinkValueV16(owner,'sourceMseCompanionV1825',metadata),currentType=String(owner.npcType||'').trim();
+  if(!currentType||['NPC','Begleiter','Vertrauter','Reittier','Wesen'].includes(currentType)){owner.npcType=audited.npcType;changed=true}
+  if(kind!==audited.localTabType){owner.type=audited.localTabType;changed=true}
+  return changed;
+}
 
 function mseApplyCompanionProfileV16(owner,item,kind){
-  if(owner.mseCompanionProfileVersion>=MSE_COMPANION_PROFILE_VERSION_V16)return owner;
   const catalog=mseCompanionCatalogV16(item),name=catalog?.name||owner.name||'',effect=catalog?.sourceRecord?.effectText||'';
+  mseApplyCompanionAuditMetadataV1825(owner,catalog,kind);
+  if(owner.mseCompanionProfileVersion>=MSE_COMPANION_PROFILE_VERSION_V16)return owner;
   const profiles={
     npc:{attributes:{ST:3,KS:3,GS:3,RF:3,FF:3,WL:3,IT:3,IN:3,WN:3,CR:3},counters:{L:5,A:5,FO:4,M:2,GB:2,HS:2,FS:2,GL:2}},
     familiar:{attributes:{ST:3,KS:3,GS:4,RF:4,FF:1,WL:3,IT:2,IN:4,WN:5,CR:3},counters:{L:5,A:5,FO:3,M:2,GB:2,HS:2,FS:2,GL:3}},
@@ -433,7 +446,7 @@ function mseCreateCompanionAuxV16(character,inventoryOwner,item,kind){
   entry.notes=[source.effectText,source.notes].filter(Boolean).join('\n\n');
   entry.accounting={mode:'informational',costSource:'manual',manualCost:0,reason:'Über die verknüpfte Set-Gegenstandskarte erworben; keine zusätzlichen CBP-Kosten.',active:false};
   entry.npcCreationCostInitialized=true;entry.mseAutoCreated=true;
-  entry.sourceMseItemV16={catalogId:catalog.id,sourceHash:catalog.sourceHash,cardNumber:source.cardNumber||'',inventoryOwnerId:inventoryOwner.id,itemInstanceIds:[item.instanceId],kind,linkedAt:new Date().toISOString(),status:'linked',profileVersion:MSE_COMPANION_PROFILE_VERSION_V16};
+  entry.sourceMseItemV16={catalogId:catalog.id,sourceHash:catalog.sourceHash,cardNumber:source.cardNumber||'',setNumber:Number(source.setNumber)||null,inventoryOwnerId:inventoryOwner.id,itemInstanceIds:[item.instanceId],kind,worldEntityType:'npc',auditVersion:Number(MSE_COMPANION_AUDIT_V1825?.formatVersion)||null,linkedAt:new Date().toISOString(),status:'linked',profileVersion:MSE_COMPANION_PROFILE_VERSION_V16};
   mseApplyCompanionProfileV16(entry,catalog,kind);character.auxiliaryTabs.push(entry);return entry;
 }
 
@@ -451,10 +464,11 @@ function syncMseCompanionLinksForCharacterV16(character){
   for(const[catalogId,links]of groups){
     const preferredIds=links.map(link=>link.item.linkedMseAuxId).filter(Boolean),candidates=character.auxiliaryTabs.filter(entry=>preferredIds.includes(entry.id)||entry.sourceMseItemV16?.catalogId===catalogId),first=links[0];
     let entry=candidates[0];if(!entry){entry=mseCreateCompanionAuxV16(character,first.inventoryOwner,first.item,first.kind);created.push(entry.name);changed=true}
-    const instanceIds=[...new Set(links.map(link=>link.item.instanceId).filter(Boolean))],linkedAt=entry.sourceMseItemV16?.linkedAt||new Date().toISOString(),sourceData={catalogId,sourceHash:first.catalog.sourceHash,cardNumber:first.catalog.sourceRecord?.cardNumber||'',inventoryOwnerId:first.inventoryOwner.id,itemInstanceIds:instanceIds,kind:first.kind,linkedAt,status:'linked',profileVersion:entry.mseCompanionProfileVersion||MSE_COMPANION_PROFILE_VERSION_V16};
+    const audited=mseCompanionAuditEntryV1825(first.catalog),instanceIds=[...new Set(links.map(link=>link.item.instanceId).filter(Boolean))],linkedAt=entry.sourceMseItemV16?.linkedAt||new Date().toISOString(),sourceData={catalogId,sourceHash:first.catalog.sourceHash,cardNumber:first.catalog.sourceRecord?.cardNumber||'',setNumber:Number(first.catalog.sourceRecord?.setNumber)||null,inventoryOwnerId:first.inventoryOwner.id,itemInstanceIds:instanceIds,kind:first.kind,worldEntityType:'npc',auditVersion:Number(MSE_COMPANION_AUDIT_V1825?.formatVersion)||null,linkedAt,status:'linked',profileVersion:entry.mseCompanionProfileVersion||MSE_COMPANION_PROFILE_VERSION_V16};
     changed=mseLinkValueV16(entry,'sourceMseItemV16',sourceData)||changed;
     if(entry.type!==first.kind){entry.type=first.kind;changed=true}
-    mseEnsureMountFeatureCardsV16(entry);mseApplyCompanionProfileV16(entry,first.catalog,first.kind);
+    mseEnsureMountFeatureCardsV16(entry);changed=mseApplyCompanionAuditMetadataV1825(entry,first.catalog,first.kind)||changed;mseApplyCompanionProfileV16(entry,first.catalog,first.kind);
+    if(audited&&entry.sourceMseCompanionV1825?.catalogId!==catalogId)throw new Error(`Begleiter-Auditidentität stimmt nicht: ${catalogId}`);
     for(const link of links){
       changed=mseLinkValueV16(link.item,'linkedMseAuxId',entry.id)||changed;
       changed=mseLinkValueV16(link.item,'mseCompanionLinkV16',{catalogId,auxId:entry.id,kind:first.kind,linkedAt})||changed;
@@ -510,8 +524,9 @@ const runTestsBeforeMseCompanionV16=runTests;
 runTests=function(){
   const baseOk=runTestsBeforeMseCompanionV16(),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),eligible=MSE_ITEMS_V15.filter(mseCompanionKindV16),horse=MSE_BY_ID_V15.get('mse_item_0278'),dog=MSE_BY_ID_V15.get('mse_item_0089'),owner=newCharacter(),make=catalog=>normalizeItemV174({...structuredClone(catalog),id:undefined,instanceId:uid(),catalogId:catalog.id,quantity:1,qty:1,loadState:'stored'});
   eq('78 echte MSE-Begleiter oder Reittiere erkannt',78,eligible.length);eq('Reisepferd wird als Reittier erkannt','mount',mseCompanionKindV16(horse));eq('Wachhund wird als Begleiter erkannt','familiar',mseCompanionKindV16(dog));
+  eq('Explizites Begleiter-NPC-Auditregister geladen',78,MSE_COMPANION_AUDIT_BY_ID_V1825.size);eq('Auditregister deckt alle Begleiterkarten eindeutig ab',true,eligible.every(item=>mseCompanionAuditEntryV1825(item)?.sourceHash===item.sourceHash));eq('Auditregister klassifiziert 9 NPC-Begleiter',9,[...MSE_COMPANION_AUDIT_BY_ID_V1825.values()].filter(entry=>entry.localTabType==='npc').length);eq('Auditregister klassifiziert 42 Begleiter',42,[...MSE_COMPANION_AUDIT_BY_ID_V1825.values()].filter(entry=>entry.localTabType==='familiar').length);eq('Auditregister klassifiziert 27 Reittiere',27,[...MSE_COMPANION_AUDIT_BY_ID_V1825.values()].filter(entry=>entry.localTabType==='mount').length);eq('Alle Set-Begleiter werden im Kampagnenmodul NPCs',true,[...MSE_COMPANION_AUDIT_BY_ID_V1825.values()].every(entry=>entry.worldEntityType==='npc'));
   owner.equipment.push(make(horse));let result=syncMseCompanionLinksForCharacterV16(owner),entry=owner.auxiliaryTabs.find(tab=>tab.sourceMseItemV16?.catalogId===horse.id),item=owner.equipment[0];
-  eq('Reittierreiter automatisch angelegt',true,result.created.length===1&&entry?.type==='mount');eq('Inventarkarte verweist dauerhaft auf Reiter',entry?.id,item.linkedMseAuxId);eq('Reiter verweist dauerhaft auf Inventarinstanz',item.instanceId,entry?.sourceMseItemV16?.itemInstanceIds?.[0]);eq('Reittier besitzt eigene Grundwerte',true,entry.attributes.ST>1&&entry.counters.L.max>2);eq('Reittier besitzt eigene Fähigkeiten',true,Object.values(entry.skills).some(skill=>skill.level>0));eq('Reittier besitzt vollständige Mechanikkarten',true,NPC_FEATURE_CARDS_R4.every(([type])=>entry.layout.some(card=>card.type===type)));
+  eq('Reittierreiter automatisch angelegt',true,result.created.length===1&&entry?.type==='mount');eq('Inventarkarte verweist dauerhaft auf Reiter',entry?.id,item.linkedMseAuxId);eq('Reiter verweist dauerhaft auf Inventarinstanz',item.instanceId,entry?.sourceMseItemV16?.itemInstanceIds?.[0]);eq('Reittier besitzt eigene Grundwerte',true,entry.attributes.ST>1&&entry.counters.L.max>2);eq('Reittier besitzt eigene Fähigkeiten',true,Object.values(entry.skills).some(skill=>skill.level>0));eq('Reittier besitzt vollständige Mechanikkarten',true,NPC_FEATURE_CARDS_R4.every(([type])=>entry.layout.some(card=>card.type===type)));eq('Reittier trägt geprüfte Kartenherkunft für den Kampagnen-NPC',true,entry.sourceMseCompanionV1825?.catalogId===horse.id&&entry.sourceMseCompanionV1825?.worldEntityType==='npc'&&entry.npcType==='Set-Reittier');
   const tabCount=owner.auxiliaryTabs.length;result=syncMseCompanionLinksForCharacterV16(owner);eq('Wiederholte Synchronisierung erzeugt keinen Reiter',tabCount,owner.auxiliaryTabs.length);eq('Wiederholte Synchronisierung bleibt unverändert',false,result.changed);
   owner.equipment.push(make(horse));syncMseCompanionLinksForCharacterV16(owner);eq('Doppelte Inventarinstanz nutzt denselben Reiter',1,new Set(owner.equipment.map(row=>row.linkedMseAuxId)).size);eq('Doppelte Inventarinstanz erzeugt keinen zweiten Reiter',1,owner.auxiliaryTabs.filter(tab=>tab.sourceMseItemV16?.catalogId===horse.id).length);
   const backup=JSON.parse(JSON.stringify({appVersion:APP_VERSION,schemaVersion:SCHEMA_VERSION,settings:structuredClone(state.settings),migrationLog:[],activeCharacterId:owner.id,characters:[owner]})),restored=migrateState(backup),restoredOwner=restored.characters[0],restoredEntry=restoredOwner.auxiliaryTabs.find(tab=>tab.sourceMseItemV16?.catalogId===horse.id);eq('Backup und Import erhalten die Reiter-ID',entry.id,restoredEntry?.id);eq('Backup und Import erhalten Grundwerte',entry.attributes.ST,restoredEntry?.attributes.ST);eq('Backup und Import erhalten Fähigkeiten',entry.skills[mseSkillByNameV16('Athletik & Schwimmen').id].level,restoredEntry?.skills[mseSkillByNameV16('Athletik & Schwimmen').id].level);
@@ -521,7 +536,7 @@ runTests=function(){
 
 const initialMseCompanionSyncV16=syncAllMseCompanionLinksV16();
 if(!state.mseCompanionTabsV16Migrated){state.mseCompanionTabsV16Migrated=true;state.migrationLog=Array.isArray(state.migrationLog)?state.migrationLog:[];state.migrationLog.push({at:new Date().toISOString(),changes:[`${initialMseCompanionSyncV16.created.length} vorhandene Begleiter-/Reittier-Set-Gegenstandskarten mit eigenen Reitern verknüpft`,'Dauerhafte Inventarverknüpfung, Duplikatschutz und Wiederherstellung beim Import aktiviert']});save()}else if(initialMseCompanionSyncV16.changed)save();
-queueMicrotask(()=>Object.assign(window.Eberos,{mseCompanionKindV16,syncCompanionLinksV16:syncMseCompanionLinksForCharacterV16,syncAllCompanionLinksV16:syncAllMseCompanionLinksV16,linkedCompanionAuxV16:mseLinkedAuxV16}));
+queueMicrotask(()=>Object.assign(window.Eberos,{mseCompanionKindV16,mseCompanionAuditEntryV1825:item=>structuredClone(mseCompanionAuditEntryV1825(item)),mseCompanionAuditListV1825:()=>structuredClone([...MSE_COMPANION_AUDIT_BY_ID_V1825.values()]),syncCompanionLinksV16:syncMseCompanionLinksForCharacterV16,syncAllCompanionLinksV16:syncAllMseCompanionLinksV16,linkedCompanionAuxV16:mseLinkedAuxV16}));
 }
 
 const migrateStateBeforeMseCardCodesV17=migrateState;
@@ -552,7 +567,7 @@ if(!state.mseCompletionV152Migrated){state.mseCompletionV152Migrated=true;state.
 if(cardCodeMigrationChangedV17)save();
 if(valueMigrationChangedV153)save();
 if(valueMigrationChangedV154)save();
-
-Object.assign(window.Eberos,{completionProgressV15:mseCompletionProgressV15,syncCompletionRewardsV15:syncMseCompletionRewardsV15,validateMseCatalogV15,unlockMseCardV17,removeCardUnlockV19:removeMseCardUnlockV19,cardIsUnlockedV17:mseCardIsUnlockedV17,valueTextV110:mseValuationTextV110,runTests:()=>runTests()});
-/* v1.8.5: Abschluss wird zentral ausgeführt. */
+document.querySelector('.brand small').textContent='v1.7.21-r11';
+Object.assign(window.Eberos,{getMseItemV1824:id=>MSE_BY_ID_V15.get(id)||null,createMseCardV1824:item=>createMseCardV15(item),completionProgressV15:mseCompletionProgressV15,syncCompletionRewardsV15:syncMseCompletionRewardsV15,validateMseCatalogV15,unlockMseCardV17,removeCardUnlockV19:removeMseCardUnlockV19,cardIsUnlockedV17:mseCardIsUnlockedV17,valueTextV110:mseValuationTextV110,runTests:()=>runTests()});
+renderAll();
 }

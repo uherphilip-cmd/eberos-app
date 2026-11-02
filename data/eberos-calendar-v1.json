@@ -1,0 +1,62 @@
+{
+  "$schema": "../schemas/calendar-source-contract.schema.json",
+  "format": "eberos-calendar-source-contract",
+  "formatVersion": 1,
+  "calendarId": "eberos.calendar.pegra.default",
+  "revisionId": "eberos.calendar.pegra.default.rev.2026-11-01-source-audit",
+  "yearLengthDays": 360,
+  "boundaryStatus": "undecided",
+  "boundaryDecisionRef": "eberos.lore.decision.2026-11-01.calendar-boundaries",
+  "sourceRevisionRefs": [
+    "eberos.lore.pegra.atlas-twelve-principalities.rev.5bb0c440039f",
+    "eberos.lore.pegra.geography-player.rev.27c4d815709b"
+  ],
+  "seasons": [
+    {
+      "id": "spring",
+      "name": "Frühling",
+      "lengthDays": 90,
+      "months": [
+        { "id": "buds", "name": "Knospen", "orderInSeason": 1, "lengthDays": null, "startDay": null, "endDay": null },
+        { "id": "thaw", "name": "Tauen", "orderInSeason": 2, "lengthDays": null, "startDay": null, "endDay": null },
+        { "id": "love", "name": "Lieben", "orderInSeason": 3, "lengthDays": null, "startDay": null, "endDay": null }
+      ]
+    },
+    {
+      "id": "summer",
+      "name": "Sommer",
+      "lengthDays": 90,
+      "months": [
+        { "id": "embers", "name": "Gluten", "orderInSeason": 1, "lengthDays": null, "startDay": null, "endDay": null },
+        { "id": "flow", "name": "Strömen", "orderInSeason": 2, "lengthDays": null, "startDay": null, "endDay": null },
+        { "id": "harvest", "name": "Ernten", "orderInSeason": 3, "lengthDays": null, "startDay": null, "endDay": null }
+      ]
+    },
+    {
+      "id": "autumn",
+      "name": "Herbst",
+      "lengthDays": 90,
+      "months": [
+        { "id": "realm-of-mist", "name": "Nebelreich", "orderInSeason": 1, "lengthDays": null, "startDay": null, "endDay": null },
+        { "id": "falling-leaves", "name": "Blätterfall", "orderInSeason": 2, "lengthDays": null, "startDay": null, "endDay": null },
+        { "id": "twilight-song", "name": "Dämmersang", "orderInSeason": 3, "lengthDays": null, "startDay": null, "endDay": null }
+      ]
+    },
+    {
+      "id": "winter",
+      "name": "Winter",
+      "lengthDays": 90,
+      "months": [
+        { "id": "frost", "name": "Frosten", "orderInSeason": 1, "lengthDays": null, "startDay": null, "endDay": null },
+        { "id": "shadows", "name": "Schatten", "orderInSeason": 2, "lengthDays": null, "startDay": null, "endDay": null },
+        { "id": "sleep", "name": "Schlafen", "orderInSeason": 3, "lengthDays": null, "startDay": null, "endDay": null }
+      ]
+    }
+  ],
+  "festivals": [],
+  "notes": [
+    "Die Jahreszeitenlänge von jeweils 90 Tagen ist im Kampagnenmodul festgelegt.",
+    "Monatsnamen und Reihenfolge sind belegt.",
+    "Numerische Monatsgrenzen werden erst durch eine neue ausdrückliche Kalenderrevision ergänzt."
+  ]
+}

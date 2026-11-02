@@ -1,0 +1,2218 @@
+{
+  "format": "eberos-mse-companion-npc-audit",
+  "formatVersion": 1,
+  "version": "1.8.25",
+  "generatedAt": "2026-11-02",
+  "source": {
+    "catalogId": "eberos-items-mse-v15",
+    "catalogVersion": "15.4.0-no-rarity-pricing",
+    "itemCount": 496,
+    "sha256": "1f04a99ecaa9f9487362e36633397bc9dc7339a8b984a7f7dd64cb9c74abc47c"
+  },
+  "policy": {
+    "identity": "catalogId und sourceHash bleiben beim lokalen Reiter und im Kampagnen-NPC erhalten.",
+    "localPresentation": "Setkarten erzeugen weiterhin NPC-, Begleiter- oder Reittier-Reiter.",
+    "campaignEntity": "Jeder freigegebene Reiter wird im Kampagnenmodul als eigenständiges NpcSheetV1-Weltwesen vorbereitet.",
+    "values": "Vorhandene v1.6-Startprofile bleiben erhalten; das Audit erfindet keine neuen Kartenwerte.",
+    "ownerBonuses": "Gedruckte Besitzerboni bleiben Quelltext der Setkarte und werden nicht als Kampagnen-NPC-Bonus umgedeutet."
+  },
+  "counts": {
+    "cards": 78,
+    "npc": 9,
+    "familiar": 42,
+    "mount": 27,
+    "sets": 38,
+    "selfEffectCards": 5
+  },
+  "entries": [
+    {
+      "catalogId": "mse_item_0009",
+      "name": "Lund, Kaltblut der Barden",
+      "sourceHash": "18e372906d7fd3ba",
+      "cardNumber": "0009",
+      "setNumber": 1,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 1",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Betören & Verzaubern +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Betören & Verzaubern +1 (Fähigkeit)",
+      "artFile": "0009.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0010",
+      "name": "Poi, Papagei der Barden",
+      "sourceHash": "b34b8831f1e33ee0",
+      "cardNumber": "0010",
+      "setNumber": 1,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 1",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Musizieren & Auftreten +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Musizieren & Auftreten +2 (Fähigkeit)",
+      "artFile": "0010.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0021",
+      "name": "Morpheus, Pegasus der Nacht",
+      "sourceHash": "b30f4a79fd06c3e9",
+      "cardNumber": "0021",
+      "setNumber": 2,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 2",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Traummagie & Oneiromantie +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Traummagie & Oneiromantie +1 (Fähigkeit)",
+      "artFile": "0021.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0024",
+      "name": "Somnium, Eule der Oreinonauten",
+      "sourceHash": "52fa95a3424f1c99",
+      "cardNumber": "0024",
+      "setNumber": 2,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 2",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Heraldik & Geschichte +1 (Fähigkeit)",
+        "Besitzer: Okkultismus & Arkane Kunde +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Heraldik & Geschichte +1 (Fähigkeit)\n\n• Besitzer: Okkultismus & Arkane Kunde +1 (Fähigkeit)",
+      "artFile": "0024.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0034",
+      "name": "Bavlior, Pferd der Astronomen",
+      "sourceHash": "59b63614ff6deacb",
+      "cardNumber": "0034",
+      "setNumber": 3,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 3",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Orientierung & Navigation +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Orientierung & Navigation +2 (Fähigkeit)",
+      "artFile": "0034.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0037",
+      "name": "Lirma die Kosmische Katze",
+      "sourceHash": "8ca3ad17106941be",
+      "cardNumber": "0037",
+      "setNumber": 3,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 3",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Psychische Magie & Telepathie +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Psychische Magie & Telepathie +2 (Fähigkeit)",
+      "artFile": "0037.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0045",
+      "name": "Anima, Pferd der Tänzer",
+      "sourceHash": "f949fea842e3bfa9",
+      "cardNumber": "0045",
+      "setNumber": 4,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 4",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Musizieren & Auftreten +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Musizieren & Auftreten +1 (Fähigkeit)",
+      "artFile": "0045.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0048",
+      "name": "Joi, Papagei der Tänzer",
+      "sourceHash": "f596908d2bc2a33b",
+      "cardNumber": "0048",
+      "setNumber": 4,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 4",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Musizieren & Auftreten +2 (Fähigkeit)",
+        "Besitzer: Ablenken & Verwirren +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Musizieren & Auftreten +2 (Fähigkeit)\n\n• Besitzer: Ablenken & Verwirren +1 (Fähigkeit)",
+      "artFile": "0048.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0056",
+      "name": "Tanzbär der Tänzer",
+      "sourceHash": "4933e6bf3c8aca70",
+      "cardNumber": "0056",
+      "setNumber": 4,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 4",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Musizieren & Auftreten +2 (Fähigkeit)",
+        "Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)",
+        "Besitzer: Nahkampf – Raufen & Ringen +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Musizieren & Auftreten +2 (Fähigkeit)\n\n• Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)\n\n• Besitzer: Nahkampf – Raufen & Ringen +1 (Fähigkeit)",
+      "artFile": "0056.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0058",
+      "name": "Drasufe, Pferd der Schurken",
+      "sourceHash": "d2f2eea95067647d",
+      "cardNumber": "0058",
+      "setNumber": 5,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 5",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Heimlichkeit & Schleichen +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Heimlichkeit & Schleichen +1 (Fähigkeit)",
+      "artFile": "0058.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0062",
+      "name": "Harwisch, Kettenhund der Schurken",
+      "sourceHash": "8e5f5499a9b774a9",
+      "cardNumber": "0062",
+      "setNumber": 5,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 5",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit)",
+        "Besitzer: Erforschen & Untersuchen +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit)\n\n• Besitzer: Erforschen & Untersuchen +1 (Fähigkeit)",
+      "artFile": "0062.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0076",
+      "name": "Kalavir, der blinde Rabe des Mediums",
+      "sourceHash": "918cbec2b4f8a273",
+      "cardNumber": "0076",
+      "setNumber": 6,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 6",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Spiritismus & Geisterkunde +2 (Fähigkeit)",
+        "Besitzer: Magiewahrnehmung & Wahrnehmung für Übernatürliches +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Spiritismus & Geisterkunde +2 (Fähigkeit)\n\n• Besitzer: Magiewahrnehmung & Wahrnehmung für Übernatürliches +1 (Fähigkeit)",
+      "artFile": "0076.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0079",
+      "name": "Nalir, Pferd des Mediums",
+      "sourceHash": "214e13d6e8217d53",
+      "cardNumber": "0079",
+      "setNumber": 6,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 6",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Meditation & mentaler Selbstschutz +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Meditation & mentaler Selbstschutz +1 (Fähigkeit)",
+      "artFile": "0079.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0089",
+      "name": "Lhaki der Karawanen-Wachhund",
+      "sourceHash": "a7e0ae0e8736001c",
+      "cardNumber": "0089",
+      "setNumber": 7,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 7",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)",
+        "Besitzer: Aufmerksamkeit & Wachsamkeit +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)\n\n• Besitzer: Aufmerksamkeit & Wachsamkeit +1 (Fähigkeit)",
+      "artFile": "0089.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0090",
+      "name": "Lui der Karawanen-Schutzhund",
+      "sourceHash": "18d2213d61fac686",
+      "cardNumber": "0090",
+      "setNumber": 7,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 7",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit)",
+      "artFile": "0090.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0093",
+      "name": "Barbul, Schutzhund der Seuchenhexe",
+      "sourceHash": "9083f7f5519a5484",
+      "cardNumber": "0093",
+      "setNumber": 8,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 8",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)",
+        "Besitzer: Fährtenlesen & Spurensuche +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)\n\n• Besitzer: Fährtenlesen & Spurensuche +1 (Fähigkeit)",
+      "artFile": "0093.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0096",
+      "name": "Lotta, die gepanzerte Stute",
+      "sourceHash": "386ebf64d117ad92",
+      "cardNumber": "0096",
+      "setNumber": 8,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 8",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+      "artFile": "0096.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0107",
+      "name": "Tio’s Dracheneinhorn",
+      "sourceHash": "db49ee8c725c7e3f",
+      "cardNumber": "0107",
+      "setNumber": 11,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 11",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Gestaltwandler & Polymorphmagie +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Gestaltwandler & Polymorphmagie +1 (Fähigkeit)",
+      "artFile": "0107.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0109",
+      "name": "Tio’s Fisch-Vogel-Puma",
+      "sourceHash": "28e9b6eb94d54d83",
+      "cardNumber": "0109",
+      "setNumber": 11,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 11",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Monsterkunde & Jägerwissen +2 (Fähigkeit)",
+        "Besitzer: Gestaltwandler & Polymorphmagie +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Monsterkunde & Jägerwissen +2 (Fähigkeit)\n\n• Besitzer: Gestaltwandler & Polymorphmagie +1 (Fähigkeit)",
+      "artFile": "0109.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0122",
+      "name": "Ikar, Pegasus der fliegenden Helden",
+      "sourceHash": "63614b991571e880",
+      "cardNumber": "0122",
+      "setNumber": 12,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 12",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Orientierung & Navigation +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Orientierung & Navigation +1 (Fähigkeit)",
+      "artFile": "0122.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0123",
+      "name": "Magischer Kriegsadler",
+      "sourceHash": "47d2388120a5be4b",
+      "cardNumber": "0123",
+      "setNumber": 12,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 12",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit)",
+        "Besitzer: Monsterkunde & Jägerwissen +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit)\n\n• Besitzer: Monsterkunde & Jägerwissen +1 (Fähigkeit)",
+      "artFile": "0123.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0125",
+      "name": "Baju, Fährtenschwein der Alchemisten",
+      "sourceHash": "44ab571a823b4951",
+      "cardNumber": "0125",
+      "setNumber": 13,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 13",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)",
+        "Besitzer: Alchemist & Apotheker +1 (Fähigkeit)",
+        "Besitzer: Erforschen Untersuchen +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)\n\n• Besitzer: Alchemist & Apotheker +1 (Fähigkeit)\n\n• Besitzer: Erforschen Untersuchen +1 (Fähigkeit)",
+      "artFile": "0125.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0140",
+      "name": "Baia, Belin’s Gefährin",
+      "sourceHash": "d510441d1dce25ef",
+      "cardNumber": "0140",
+      "setNumber": 14,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 14",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +3 (Fähigkeit)",
+        "Besitzer: Hermetische Magie & Telekinetik +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +3 (Fähigkeit)\n\n• Besitzer: Hermetische Magie & Telekinetik +1 (Fähigkeit)",
+      "artFile": "0140.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0150",
+      "name": "Lavrant die sprechende Katze",
+      "sourceHash": "624b21973fc3a98e",
+      "cardNumber": "0150",
+      "setNumber": 14,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 14",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Heraldik & Geschichte +2 (Fähigkeit)",
+        "Besitzer: Okkultismus & Arkane Kunde +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Heraldik & Geschichte +2 (Fähigkeit)\n\n• Besitzer: Okkultismus & Arkane Kunde +2 (Fähigkeit)",
+      "artFile": "0150.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0162",
+      "name": "Phalzu, Krähe der arkanen Ebene",
+      "sourceHash": "3843c5babddd2b04",
+      "cardNumber": "0162",
+      "setNumber": 17,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 17",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Psychische Magie & Telepathie +1 (Fähigkeit)",
+        "Besitzer: Magische Wahrnehmung +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Psychische Magie & Telepathie +1 (Fähigkeit)\n\n• Besitzer: Magische Wahrnehmung +2 (Fähigkeit)",
+      "artFile": "0162.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0163",
+      "name": "Trigalton, Einhorn der arkanen Ebene",
+      "sourceHash": "7cc707b63b3a39b8",
+      "cardNumber": "0163",
+      "setNumber": 17,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 17",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Meta-Magie +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Meta-Magie +1 (Fähigkeit)",
+      "artFile": "0163.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0165",
+      "name": "Ravella die See-Nixe",
+      "sourceHash": "e0606b06b465ca81",
+      "cardNumber": "0165",
+      "setNumber": 21,
+      "localTabType": "npc",
+      "localTabLabel": "NPC-Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-NPC-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 21",
+        "NPC-Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit)",
+      "artFile": "0165.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0166",
+      "name": "Ulgu, die magische Hecht-Echse",
+      "sourceHash": "2164420016fce6bb",
+      "cardNumber": "0166",
+      "setNumber": 21,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 21",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit)",
+        "Besitzer: Monsterkunde & Jägerwissen +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit)\n\n• Besitzer: Monsterkunde & Jägerwissen +1 (Fähigkeit)",
+      "artFile": "0166.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0168",
+      "name": "Begleiter der Pilger",
+      "sourceHash": "24a0b08886a4aa69",
+      "cardNumber": "0168",
+      "setNumber": 22,
+      "localTabType": "npc",
+      "localTabLabel": "NPC-Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-NPC-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 22",
+        "NPC-Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Heilrituale & Heilwunder +2 (Fähigkeit)",
+        "Besitzer: Religion & Theologie +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Heilrituale & Heilwunder +2 (Fähigkeit)\n\n• Besitzer: Religion & Theologie +1 (Fähigkeit)",
+      "artFile": "0168.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0172",
+      "name": "Maultier der Pilger",
+      "sourceHash": "06d36683229beff6",
+      "cardNumber": "0172",
+      "setNumber": 22,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 22",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit)",
+        "Besitzer: Orientierung & Navigation +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit)\n\n• Besitzer: Orientierung & Navigation +1 (Fähigkeit)",
+      "artFile": "0172.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0185",
+      "name": "Mastiff des Henkers",
+      "sourceHash": "7efe1da8dd695e3c",
+      "cardNumber": "0185",
+      "setNumber": 23,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 23",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit)",
+        "Besitzer: Fährtenlesen & Spurensuche +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit)\n\n• Besitzer: Fährtenlesen & Spurensuche +1 (Fähigkeit)",
+      "artFile": "0185.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0191",
+      "name": "Brelathyn das Sonnen Einhorn",
+      "sourceHash": "b900c97aeea52131",
+      "cardNumber": "0191",
+      "setNumber": 15,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 15",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +3 (Fähigkeit)",
+        "Besitzer: Licht- & Sonnenmagie +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +3 (Fähigkeit)\n\n• Besitzer: Licht- & Sonnenmagie +1 (Fähigkeit)",
+      "artFile": "0191.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0192",
+      "name": "Kleine Sonnen Phönix",
+      "sourceHash": "306ef80d8b29566a",
+      "cardNumber": "0192",
+      "setNumber": 15,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 15",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Licht- & Sonnenmagie +2 (Fähigkeit)",
+        "Besitzer: Feuermagie & Pyrokinetik +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Licht- & Sonnenmagie +2 (Fähigkeit)\n\n• Besitzer: Feuermagie & Pyrokinetik +1 (Fähigkeit)",
+      "artFile": "0192.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0206",
+      "name": "Feen Noble des Blumenhofs",
+      "sourceHash": "9a2557a97e2e42b1",
+      "cardNumber": "0206",
+      "setNumber": 19,
+      "localTabType": "npc",
+      "localTabLabel": "NPC-Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-NPC-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 19",
+        "NPC-Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Betören & Verzaubern +2 (Fähigkeit)",
+        "Besitzer: Druiden – Flora-Pfad +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [
+        "Herrschaft +1 (Counter)"
+      ],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Betören & Verzaubern +2 (Fähigkeit)\n\n• Besitzer: Druiden – Flora-Pfad +1 (Fähigkeit)\n\n• Herrschaft +1 (Counter)",
+      "artFile": "0206.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0210",
+      "name": "Grildruin der Wächter der Feen",
+      "sourceHash": "b56b9490ad50bafc",
+      "cardNumber": "0210",
+      "setNumber": 19,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 19",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit)",
+        "Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit)\n\n• Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit)",
+      "artFile": "0210.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0213",
+      "name": "Malinta, Uralte magische Seerose",
+      "sourceHash": "c1ecd0625b7ff9bf",
+      "cardNumber": "0213",
+      "setNumber": 19,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 19",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Meditation & mentaler Selbstschutz +2 (Fähigkeit)",
+        "Besitzer: Meta-Magie & Arkane Ordnung +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Meditation & mentaler Selbstschutz +2 (Fähigkeit)\n\n• Besitzer: Meta-Magie & Arkane Ordnung +1 (Fähigkeit)",
+      "artFile": "0213.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0214",
+      "name": "Scilanthia das tänzelnde Licht",
+      "sourceHash": "9aba75b3b8d4d749",
+      "cardNumber": "0214",
+      "setNumber": 19,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 19",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+      "artFile": "0214.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0215",
+      "name": "🦋Kleine Fee der Ausdauer🦋",
+      "sourceHash": "28223152d2da70c5",
+      "cardNumber": "0215",
+      "setNumber": 19,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 19",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Athletik & Schwimmen +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Athletik & Schwimmen +2 (Fähigkeit)",
+      "artFile": "0215.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0216",
+      "name": "🦋Kleine Fee der Heilung🦋",
+      "sourceHash": "16fec8b39dc00131",
+      "cardNumber": "0216",
+      "setNumber": 19,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 19",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Heilrituale & Heilwunder +2 (Fähigkeit)",
+        "Besitzer: Heiler & Helfer +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Heilrituale & Heilwunder +2 (Fähigkeit)\n\n• Besitzer: Heiler & Helfer +1 (Fähigkeit)",
+      "artFile": "0216.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0217",
+      "name": "🦋Kleine Fee der Magie🦋",
+      "sourceHash": "e5f3a14f484f2271",
+      "cardNumber": "0217",
+      "setNumber": 19,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 19",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Meta-Magie & Arkane Ordnung +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Meta-Magie & Arkane Ordnung +2 (Fähigkeit)",
+      "artFile": "0217.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0223",
+      "name": "Ouhn, Hippocamp der See-Nixen",
+      "sourceHash": "d61452f7d167d3b5",
+      "cardNumber": "0223",
+      "setNumber": 21,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 21",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit)",
+        "Besitzer: Reiten & Tierführung +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit)\n\n• Besitzer: Reiten & Tierführung +1 (Fähigkeit)",
+      "artFile": "0223.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0229",
+      "name": "Brish, Schutzhund des Seelenhirten",
+      "sourceHash": "6fa6b2d1f9279e87",
+      "cardNumber": "0229",
+      "setNumber": 9,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 9",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)",
+        "Besitzer: Aufmerksamkeit & Wachsamkeit +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)\n\n• Besitzer: Aufmerksamkeit & Wachsamkeit +1 (Fähigkeit)",
+      "artFile": "0229.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0241",
+      "name": "Tirwilh, Reittier des Seelenhirten",
+      "sourceHash": "c2f610dc86a8f2dd",
+      "cardNumber": "0241",
+      "setNumber": 9,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 9",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Umbramantie +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Umbramantie +2 (Fähigkeit)",
+      "artFile": "0241.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0245",
+      "name": "Izdraguls Imp Beschwörung I.",
+      "sourceHash": "63e2d7636696394c",
+      "cardNumber": "0245",
+      "setNumber": 16,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 16",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Dämonologie & Höllen-Beschwörungen +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Dämonologie & Höllen-Beschwörungen +1 (Fähigkeit)",
+      "artFile": "0245.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0246",
+      "name": "Izdraguls Imp Beschwörung II.",
+      "sourceHash": "a1d13bc4c1f3c7df",
+      "cardNumber": "0246",
+      "setNumber": 16,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 16",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Dämonologie & Höllen-Beschwörungen +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Dämonologie & Höllen-Beschwörungen +1 (Fähigkeit)",
+      "artFile": "0246.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0254",
+      "name": "Nanzdrag, Ross von Barasch",
+      "sourceHash": "bae567910a3395ed",
+      "cardNumber": "0254",
+      "setNumber": 16,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 16",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Dämonologie & Höllen-Beschwörungen +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Dämonologie & Höllen-Beschwörungen +1 (Fähigkeit)",
+      "artFile": "0254.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0259",
+      "name": "Hugin, Rabe der dunklen Feen",
+      "sourceHash": "a4638b778ed0f059",
+      "cardNumber": "0259",
+      "setNumber": 20,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 20",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit)",
+        "Besitzer: Heimlichkeit & Schleichen +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit)\n\n• Besitzer: Heimlichkeit & Schleichen +1 (Fähigkeit)",
+      "artFile": "0259.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0261",
+      "name": "Jhulmi, Kelpie der dunklen Fee",
+      "sourceHash": "5bda7bf7e6f6dd26",
+      "cardNumber": "0261",
+      "setNumber": 20,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 20",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit)",
+      "artFile": "0261.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0266",
+      "name": "Zardrul der Rächer der dunklen Feen",
+      "sourceHash": "3c40cbb3597ac00d",
+      "cardNumber": "0266",
+      "setNumber": 20,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 20",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)",
+        "Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)\n\n• Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit)",
+      "artFile": "0266.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0268",
+      "name": "Kleiner Feuer Phönix der Tänzer",
+      "sourceHash": "81b249bf2b2765a6",
+      "cardNumber": "0268",
+      "setNumber": 4,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 4",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Musizieren & Auftreten +2 (Fähigkeit)",
+        "Besitzer: Feuermagie & Pyrokinetik +1 (Fähigkeit)"
+      ],
+      "selfEffects": [
+        "Begleiter selbst: Resistenz gegen Feuer 2 (Schadensminderung)."
+      ],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Musizieren & Auftreten +2 (Fähigkeit)\n\n• Besitzer: Feuermagie & Pyrokinetik +1 (Fähigkeit)\n\n• Begleiter selbst: Resistenz gegen Feuer 2 (Schadensminderung).",
+      "artFile": "0268.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0274",
+      "name": "Heltenholmer Jagdhund, Huldi",
+      "sourceHash": "eb726d2ba7a5860a",
+      "cardNumber": "0274",
+      "setNumber": 10,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 10",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)",
+        "Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)\n\n• Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit)",
+      "artFile": "0274.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0275",
+      "name": "Heltenholmer Jagdhund, Terna",
+      "sourceHash": "cb77cae44d893cb8",
+      "cardNumber": "0275",
+      "setNumber": 10,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 10",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)",
+        "Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)\n\n• Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit)",
+      "artFile": "0275.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0278",
+      "name": "Heltenholmer Reisepferd",
+      "sourceHash": "69c52ff590b7fbeb",
+      "cardNumber": "0278",
+      "setNumber": 10,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 10",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+      "artFile": "0278.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0292",
+      "name": "Lagur, Grünwald Grauwolf",
+      "sourceHash": "21415f64e961496a",
+      "cardNumber": "0292",
+      "setNumber": 18,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 18",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)",
+        "Besitzer: Wildniskunde & Wildnisleben +2 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)\n\n• Besitzer: Wildniskunde & Wildnisleben +2 (Fähigkeit)",
+      "artFile": "0292.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0293",
+      "name": "Sani, das Grünwald Kaltblut",
+      "sourceHash": "be462a1e59be255e",
+      "cardNumber": "0293",
+      "setNumber": 18,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 18",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit)",
+      "artFile": "0293.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0314",
+      "name": "Umseni vom Feenhof der Schatten",
+      "sourceHash": "646749a73b1d9a33",
+      "cardNumber": "0314",
+      "setNumber": 20,
+      "localTabType": "npc",
+      "localTabLabel": "NPC-Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-NPC-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 20",
+        "NPC-Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Flüche & Blut-Hexerei +2 (Fähigkeit)",
+        "Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Flüche & Blut-Hexerei +2 (Fähigkeit)\n\n• Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)",
+      "artFile": "0314.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0316",
+      "name": "Earthas Grünwald Golem",
+      "sourceHash": "d9e9e05eee8ca931",
+      "cardNumber": "0316",
+      "setNumber": 18,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 18",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Druiden – Flora-Pfad +2 (Fähigkeit)",
+        "Besitzer: Verteidigung & Blocken +1 (Fähigkeit)",
+        "Besitzer: Erdmagie & Geomantie +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Begleiter — Besitzerbonus"
+      ],
+      "sourceEffectText": "• Besitzer: Druiden – Flora-Pfad +2 (Fähigkeit)\n\n• Besitzer: Verteidigung & Blocken +1 (Fähigkeit)\n\n• Besitzer: Erdmagie & Geomantie +1 (Fähigkeit)",
+      "artFile": "0316.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0323",
+      "name": "Raska, Glutsalamander",
+      "sourceHash": "ce3595d58dd06c52",
+      "cardNumber": "0323",
+      "setNumber": 24,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 24",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Feuermagie & Pyrokinetik +2 (Fähigkeit)",
+        "Besitzer: Konzentration & Gedächtnis +1 (Fähigkeit)"
+      ],
+      "selfEffects": [
+        "Begleiter selbst: Resistenz gegen Hitze +2 (Wetterprobe).",
+        "Begleiter selbst: Resistenz gegen Feuer 2 (Schadensminderung)."
+      ],
+      "otherEffects": [],
+      "sourceStats": [
+        "Frontmagier · Begleiter"
+      ],
+      "sourceEffectText": "• Besitzer: Feuermagie & Pyrokinetik +2 (Fähigkeit)\n\n• Besitzer: Konzentration & Gedächtnis +1 (Fähigkeit)\n\n• Begleiter selbst: Resistenz gegen Hitze +2 (Wetterprobe).\n\n• Begleiter selbst: Resistenz gegen Feuer 2 (Schadensminderung).",
+      "artFile": "0323.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0325",
+      "name": "Karden, gepanzertes Feldross",
+      "sourceHash": "bb0e214ac29afddb",
+      "cardNumber": "0325",
+      "setNumber": 24,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 24",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Strategie & Taktik +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Frontmagier · Reittier"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Strategie & Taktik +1 (Fähigkeit)",
+      "artFile": "0325.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0335",
+      "name": "Varka, Bluthund der Roten Bastion",
+      "sourceHash": "9a46433c5fba61d5",
+      "cardNumber": "0335",
+      "setNumber": 25,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 25",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)",
+        "Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Blutritter · Begleiter"
+      ],
+      "sourceEffectText": "• Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit)\n\n• Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)",
+      "artFile": "0335.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0337",
+      "name": "Mordain, schwarzes Panzerross",
+      "sourceHash": "cae8725e4f9ba7c9",
+      "cardNumber": "0337",
+      "setNumber": 25,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 25",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Blutritter · Reittier"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)",
+      "artFile": "0337.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0347",
+      "name": "Grum, kleiner Steingolem",
+      "sourceHash": "abecdb88ea11dd5a",
+      "cardNumber": "0347",
+      "setNumber": 26,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 26",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Erdmagie & Geomantie +1 (Fähigkeit)",
+        "Besitzer: Verteidigung & Blocken +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Runenbastion · Begleiter"
+      ],
+      "sourceEffectText": "• Besitzer: Erdmagie & Geomantie +1 (Fähigkeit)\n\n• Besitzer: Verteidigung & Blocken +1 (Fähigkeit)",
+      "artFile": "0347.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0349",
+      "name": "Bromm, Granitwidder",
+      "sourceHash": "6107a56a8d24d3e2",
+      "cardNumber": "0349",
+      "setNumber": 26,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 26",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Verteidigung & Blocken +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Runenbastion · Reittier"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Verteidigung & Blocken +1 (Fähigkeit)",
+      "artFile": "0349.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0359",
+      "name": "Arel, Sturmfalke",
+      "sourceHash": "fe7c5a9aea52c2b2",
+      "cardNumber": "0359",
+      "setNumber": 27,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 27",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit)",
+        "Besitzer: Windmagie & Aeromantie +1 (Fähigkeit)"
+      ],
+      "selfEffects": [
+        "Begleiter selbst: Resistenz gegen Wind/Sturm +2 (Wetterprobe)."
+      ],
+      "otherEffects": [],
+      "sourceStats": [
+        "Sturmrufer · Begleiter"
+      ],
+      "sourceEffectText": "• Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit)\n\n• Besitzer: Windmagie & Aeromantie +1 (Fähigkeit)\n\n• Begleiter selbst: Resistenz gegen Wind/Sturm +2 (Wetterprobe).",
+      "artFile": "0359.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0361",
+      "name": "Cael, Hochlandross der Sturmrufer",
+      "sourceHash": "7469ef6db2e34628",
+      "cardNumber": "0361",
+      "setNumber": 27,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 27",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Orientierung & Navigation +1 (Fähigkeit)"
+      ],
+      "selfEffects": [
+        "Begleiter selbst: Resistenz gegen Kälte +1 (Wetterprobe).",
+        "Begleiter selbst: Resistenz gegen Nässe/Regen +1 (Wetterprobe)."
+      ],
+      "otherEffects": [],
+      "sourceStats": [
+        "Sturmrufer · Reittier"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Orientierung & Navigation +1 (Fähigkeit)\n\n• Begleiter selbst: Resistenz gegen Kälte +1 (Wetterprobe).\n\n• Begleiter selbst: Resistenz gegen Nässe/Regen +1 (Wetterprobe).",
+      "artFile": "0361.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0371",
+      "name": "Skarn, Rudelwolf",
+      "sourceHash": "5253d69859066dbb",
+      "cardNumber": "0371",
+      "setNumber": 28,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 28",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Tierkunde & Tierpflege +2 (Fähigkeit)",
+        "Besitzer: Fährtenlesen & Spurensuche +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Rudelhüter · Begleiter"
+      ],
+      "sourceEffectText": "• Besitzer: Tierkunde & Tierpflege +2 (Fähigkeit)\n\n• Besitzer: Fährtenlesen & Spurensuche +1 (Fähigkeit)",
+      "artFile": "0371.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0373",
+      "name": "Elgar, Riesenhirsch",
+      "sourceHash": "16d537a24bc95632",
+      "cardNumber": "0373",
+      "setNumber": 28,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 28",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Tierkunde & Tierpflege +1 (Fähigkeit)"
+      ],
+      "selfEffects": [
+        "Begleiter selbst: Resistenz gegen Kälte +1 (Wetterprobe)."
+      ],
+      "otherEffects": [],
+      "sourceStats": [
+        "Rudelhüter · Reittier"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Tierkunde & Tierpflege +1 (Fähigkeit)\n\n• Begleiter selbst: Resistenz gegen Kälte +1 (Wetterprobe).",
+      "artFile": "0373.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0383",
+      "name": "Metrik, Runeneule",
+      "sourceHash": "b3cd955f8cb947d0",
+      "cardNumber": "0383",
+      "setNumber": 29,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 29",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Magiewahrnehmung & Wahrnehmung für Übernatürliches +2 (Fähigkeit)",
+        "Besitzer: Meta-Magie & Arkane Ordnung +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Bannmagier · Begleiter"
+      ],
+      "sourceEffectText": "• Besitzer: Magiewahrnehmung & Wahrnehmung für Übernatürliches +2 (Fähigkeit)\n\n• Besitzer: Meta-Magie & Arkane Ordnung +1 (Fähigkeit)",
+      "artFile": "0383.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0385",
+      "name": "Sella, Siegelstute",
+      "sourceHash": "b4f481f0a91e052b",
+      "cardNumber": "0385",
+      "setNumber": 29,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 29",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Reiten & Tierführung +2 (Fähigkeit)",
+        "Besitzer: Magiewahrnehmung & Wahrnehmung für Übernatürliches +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Bannmagier · Reittier"
+      ],
+      "sourceEffectText": "• Besitzer: Reiten & Tierführung +2 (Fähigkeit)\n\n• Besitzer: Magiewahrnehmung & Wahrnehmung für Übernatürliches +1 (Fähigkeit)",
+      "artFile": "0385.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0395",
+      "name": "Alda, Kanzleischreiberin",
+      "sourceHash": "63e205303aa37d34",
+      "cardNumber": "0395",
+      "setNumber": 30,
+      "localTabType": "npc",
+      "localTabLabel": "NPC-Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-NPC-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 30",
+        "NPC-Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Rechtskunde & Verwaltung +1 (Fähigkeit)",
+        "Besitzer: Schreiber & Fälscher +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Hofschlichter · Begleiter"
+      ],
+      "sourceEffectText": "• Besitzer: Rechtskunde & Verwaltung +1 (Fähigkeit)\n\n• Besitzer: Schreiber & Fälscher +1 (Fähigkeit)",
+      "artFile": "0395.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0407",
+      "name": "Marek, Geselle der Esse",
+      "sourceHash": "6b1db3ea0b8a269c",
+      "cardNumber": "0407",
+      "setNumber": 31,
+      "localTabType": "npc",
+      "localTabLabel": "NPC-Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-NPC-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 31",
+        "NPC-Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Waffenschmied & Bogenbauer +1 (Fähigkeit)",
+        "Besitzer: Handwerk & Baukunst +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Arkaner Waffenschmied · Begleiter"
+      ],
+      "sourceEffectText": "• Besitzer: Waffenschmied & Bogenbauer +1 (Fähigkeit)\n\n• Besitzer: Handwerk & Baukunst +1 (Fähigkeit)",
+      "artFile": "0407.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0419",
+      "name": "Mirren, junge Kopistin",
+      "sourceHash": "d9804a09bc61e79e",
+      "cardNumber": "0419",
+      "setNumber": 32,
+      "localTabType": "npc",
+      "localTabLabel": "NPC-Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-NPC-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 32",
+        "NPC-Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Schreiber & Fälscher +1 (Fähigkeit)",
+        "Besitzer: Sprachen & Schriftkunde +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Runenmagier der Schriftkammer · Begleiter"
+      ],
+      "sourceEffectText": "• Besitzer: Schreiber & Fälscher +1 (Fähigkeit)\n\n• Besitzer: Sprachen & Schriftkunde +1 (Fähigkeit)",
+      "artFile": "0419.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0431",
+      "name": "Hob, Packmaultier der Baumeister",
+      "sourceHash": "01248574163e8afe",
+      "cardNumber": "0431",
+      "setNumber": 33,
+      "localTabType": "mount",
+      "localTabLabel": "Reittier",
+      "worldEntityType": "npc",
+      "npcType": "Set-Reittier",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 33",
+        "Reittier"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Handwerk & Baukunst +1 (Fähigkeit)",
+        "Besitzer: Orientierung & Navigation +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Feldbaumeister · Begleiter"
+      ],
+      "sourceEffectText": "• Besitzer: Handwerk & Baukunst +1 (Fähigkeit)\n\n• Besitzer: Orientierung & Navigation +1 (Fähigkeit)",
+      "artFile": "0431.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0443",
+      "name": "Brenn, Jagdhund der Grenzlande",
+      "sourceHash": "30560f1911223eb0",
+      "cardNumber": "0443",
+      "setNumber": 34,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 34",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Fährtenlesen & Spurensuche +1 (Fähigkeit)",
+        "Besitzer: Monsterkunde & Jägerwissen +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Monsterjäger · Begleiter"
+      ],
+      "sourceEffectText": "• Besitzer: Fährtenlesen & Spurensuche +1 (Fähigkeit)\n\n• Besitzer: Monsterkunde & Jägerwissen +1 (Fähigkeit)",
+      "artFile": "0443.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0455",
+      "name": "Terek, Bergziege der Grabungen",
+      "sourceHash": "63313ff9f9c291ac",
+      "cardNumber": "0455",
+      "setNumber": 35,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 35",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Akrobatik & Klettern +1 (Fähigkeit)",
+        "Besitzer: Aufmerksamkeit & Wachsamkeit +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Arkaner Archäologe · Begleiter"
+      ],
+      "sourceEffectText": "• Besitzer: Akrobatik & Klettern +1 (Fähigkeit)\n\n• Besitzer: Aufmerksamkeit & Wachsamkeit +1 (Fähigkeit)",
+      "artFile": "0455.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0467",
+      "name": "Veya, Rabe der Schwelle",
+      "sourceHash": "4751dabecad2d4b1",
+      "cardNumber": "0467",
+      "setNumber": 36,
+      "localTabType": "familiar",
+      "localTabLabel": "Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 36",
+        "Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Spiritismus & Seelenmagie +1 (Fähigkeit)",
+        "Besitzer: Aufmerksamkeit & Wachsamkeit +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Schwellenwächter · Begleiter"
+      ],
+      "sourceEffectText": "• Besitzer: Spiritismus & Seelenmagie +1 (Fähigkeit)\n\n• Besitzer: Aufmerksamkeit & Wachsamkeit +1 (Fähigkeit)",
+      "artFile": "0467.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0479",
+      "name": "Dori, Gefährtin der fremden Namen",
+      "sourceHash": "af33f5a654a8d851",
+      "cardNumber": "0479",
+      "setNumber": 37,
+      "localTabType": "npc",
+      "localTabLabel": "NPC-Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-NPC-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 37",
+        "NPC-Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Empathische Magie & Thymoturgie +1 (Fähigkeit)",
+        "Besitzer: Menschenkenntnis & Wesen erkennen +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Maskenweber · Begleiter"
+      ],
+      "sourceEffectText": "• Besitzer: Empathische Magie & Thymoturgie +1 (Fähigkeit)\n\n• Besitzer: Menschenkenntnis & Wesen erkennen +1 (Fähigkeit)",
+      "artFile": "0479.jpg",
+      "reviewStatus": "balanced"
+    },
+    {
+      "catalogId": "mse_item_0491",
+      "name": "Nera, Informantin der Gassen",
+      "sourceHash": "9993d633c6163553",
+      "cardNumber": "0491",
+      "setNumber": 38,
+      "localTabType": "npc",
+      "localTabLabel": "NPC-Begleiter",
+      "worldEntityType": "npc",
+      "npcType": "Set-NPC-Begleiter",
+      "roleTags": [
+        "Set-Begleiter",
+        "MSE-Set 38",
+        "NPC-Begleiter"
+      ],
+      "ownerBonuses": [
+        "Besitzer: Folklore & Gassenwissen +1 (Fähigkeit)",
+        "Besitzer: Lügen erkennen & Motive verstehen +1 (Fähigkeit)"
+      ],
+      "selfEffects": [],
+      "otherEffects": [],
+      "sourceStats": [
+        "Kopfgeldjäger · Begleiter"
+      ],
+      "sourceEffectText": "• Besitzer: Folklore & Gassenwissen +1 (Fähigkeit)\n\n• Besitzer: Lügen erkennen & Motive verstehen +1 (Fähigkeit)",
+      "artFile": "0491.jpg",
+      "reviewStatus": "balanced"
+    }
+  ]
+}

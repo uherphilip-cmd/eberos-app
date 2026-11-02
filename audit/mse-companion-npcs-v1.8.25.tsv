@@ -1,0 +1,79 @@
+catalogId	cardNumber	setNumber	name	localTabType	worldEntityType	npcType	sourceHash	ownerBonuses	selfEffects	otherEffects
+mse_item_0009	0009	1	Lund, Kaltblut der Barden	mount	npc	Set-Reittier	18e372906d7fd3ba	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Betören & Verzaubern +1 (Fähigkeit)	—	—
+mse_item_0010	0010	1	Poi, Papagei der Barden	familiar	npc	Set-Begleiter	b34b8831f1e33ee0	Besitzer: Musizieren & Auftreten +2 (Fähigkeit)	—	—
+mse_item_0021	0021	2	Morpheus, Pegasus der Nacht	mount	npc	Set-Reittier	b30f4a79fd06c3e9	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Traummagie & Oneiromantie +1 (Fähigkeit)	—	—
+mse_item_0024	0024	2	Somnium, Eule der Oreinonauten	familiar	npc	Set-Begleiter	52fa95a3424f1c99	Besitzer: Heraldik & Geschichte +1 (Fähigkeit) | Besitzer: Okkultismus & Arkane Kunde +1 (Fähigkeit)	—	—
+mse_item_0034	0034	3	Bavlior, Pferd der Astronomen	mount	npc	Set-Reittier	59b63614ff6deacb	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Orientierung & Navigation +2 (Fähigkeit)	—	—
+mse_item_0037	0037	3	Lirma die Kosmische Katze	familiar	npc	Set-Begleiter	8ca3ad17106941be	Besitzer: Psychische Magie & Telepathie +2 (Fähigkeit)	—	—
+mse_item_0045	0045	4	Anima, Pferd der Tänzer	mount	npc	Set-Reittier	f949fea842e3bfa9	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Musizieren & Auftreten +1 (Fähigkeit)	—	—
+mse_item_0048	0048	4	Joi, Papagei der Tänzer	familiar	npc	Set-Begleiter	f596908d2bc2a33b	Besitzer: Musizieren & Auftreten +2 (Fähigkeit) | Besitzer: Ablenken & Verwirren +1 (Fähigkeit)	—	—
+mse_item_0056	0056	4	Tanzbär der Tänzer	familiar	npc	Set-Begleiter	4933e6bf3c8aca70	Besitzer: Musizieren & Auftreten +2 (Fähigkeit) | Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit) | Besitzer: Nahkampf – Raufen & Ringen +1 (Fähigkeit)	—	—
+mse_item_0058	0058	5	Drasufe, Pferd der Schurken	mount	npc	Set-Reittier	d2f2eea95067647d	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Heimlichkeit & Schleichen +1 (Fähigkeit)	—	—
+mse_item_0062	0062	5	Harwisch, Kettenhund der Schurken	familiar	npc	Set-Begleiter	8e5f5499a9b774a9	Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit) | Besitzer: Erforschen & Untersuchen +1 (Fähigkeit)	—	—
+mse_item_0076	0076	6	Kalavir, der blinde Rabe des Mediums	familiar	npc	Set-Begleiter	918cbec2b4f8a273	Besitzer: Spiritismus & Geisterkunde +2 (Fähigkeit) | Besitzer: Magiewahrnehmung & Wahrnehmung für Übernatürliches +1 (Fähigkeit)	—	—
+mse_item_0079	0079	6	Nalir, Pferd des Mediums	mount	npc	Set-Reittier	214e13d6e8217d53	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Meditation & mentaler Selbstschutz +1 (Fähigkeit)	—	—
+mse_item_0089	0089	7	Lhaki der Karawanen-Wachhund	familiar	npc	Set-Begleiter	a7e0ae0e8736001c	Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit) | Besitzer: Aufmerksamkeit & Wachsamkeit +1 (Fähigkeit)	—	—
+mse_item_0090	0090	7	Lui der Karawanen-Schutzhund	familiar	npc	Set-Begleiter	18d2213d61fac686	Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit)	—	—
+mse_item_0093	0093	8	Barbul, Schutzhund der Seuchenhexe	familiar	npc	Set-Begleiter	9083f7f5519a5484	Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit) | Besitzer: Fährtenlesen & Spurensuche +1 (Fähigkeit)	—	—
+mse_item_0096	0096	8	Lotta, die gepanzerte Stute	mount	npc	Set-Reittier	386ebf64d117ad92	Besitzer: Reiten & Tierführung +2 (Fähigkeit)	—	—
+mse_item_0107	0107	11	Tio’s Dracheneinhorn	mount	npc	Set-Reittier	db49ee8c725c7e3f	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Gestaltwandler & Polymorphmagie +1 (Fähigkeit)	—	—
+mse_item_0109	0109	11	Tio’s Fisch-Vogel-Puma	familiar	npc	Set-Begleiter	28e9b6eb94d54d83	Besitzer: Monsterkunde & Jägerwissen +2 (Fähigkeit) | Besitzer: Gestaltwandler & Polymorphmagie +1 (Fähigkeit)	—	—
+mse_item_0122	0122	12	Ikar, Pegasus der fliegenden Helden	mount	npc	Set-Reittier	63614b991571e880	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Orientierung & Navigation +1 (Fähigkeit)	—	—
+mse_item_0123	0123	12	Magischer Kriegsadler	familiar	npc	Set-Begleiter	47d2388120a5be4b	Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit) | Besitzer: Monsterkunde & Jägerwissen +1 (Fähigkeit)	—	—
+mse_item_0125	0125	13	Baju, Fährtenschwein der Alchemisten	familiar	npc	Set-Begleiter	44ab571a823b4951	Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit) | Besitzer: Alchemist & Apotheker +1 (Fähigkeit) | Besitzer: Erforschen Untersuchen +1 (Fähigkeit)	—	—
+mse_item_0140	0140	14	Baia, Belin’s Gefährin	mount	npc	Set-Reittier	d510441d1dce25ef	Besitzer: Reiten & Tierführung +3 (Fähigkeit) | Besitzer: Hermetische Magie & Telekinetik +1 (Fähigkeit)	—	—
+mse_item_0150	0150	14	Lavrant die sprechende Katze	familiar	npc	Set-Begleiter	624b21973fc3a98e	Besitzer: Heraldik & Geschichte +2 (Fähigkeit) | Besitzer: Okkultismus & Arkane Kunde +2 (Fähigkeit)	—	—
+mse_item_0162	0162	17	Phalzu, Krähe der arkanen Ebene	familiar	npc	Set-Begleiter	3843c5babddd2b04	Besitzer: Psychische Magie & Telepathie +1 (Fähigkeit) | Besitzer: Magische Wahrnehmung +2 (Fähigkeit)	—	—
+mse_item_0163	0163	17	Trigalton, Einhorn der arkanen Ebene	mount	npc	Set-Reittier	7cc707b63b3a39b8	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Meta-Magie +1 (Fähigkeit)	—	—
+mse_item_0165	0165	21	Ravella die See-Nixe	npc	npc	Set-NPC-Begleiter	e0606b06b465ca81	Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit)	—	—
+mse_item_0166	0166	21	Ulgu, die magische Hecht-Echse	familiar	npc	Set-Begleiter	2164420016fce6bb	Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit) | Besitzer: Monsterkunde & Jägerwissen +1 (Fähigkeit)	—	—
+mse_item_0168	0168	22	Begleiter der Pilger	npc	npc	Set-NPC-Begleiter	24a0b08886a4aa69	Besitzer: Heilrituale & Heilwunder +2 (Fähigkeit) | Besitzer: Religion & Theologie +1 (Fähigkeit)	—	—
+mse_item_0172	0172	22	Maultier der Pilger	mount	npc	Set-Reittier	06d36683229beff6	Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit) | Besitzer: Orientierung & Navigation +1 (Fähigkeit)	—	—
+mse_item_0185	0185	23	Mastiff des Henkers	familiar	npc	Set-Begleiter	7efe1da8dd695e3c	Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit) | Besitzer: Fährtenlesen & Spurensuche +1 (Fähigkeit)	—	—
+mse_item_0191	0191	15	Brelathyn das Sonnen Einhorn	mount	npc	Set-Reittier	b900c97aeea52131	Besitzer: Reiten & Tierführung +3 (Fähigkeit) | Besitzer: Licht- & Sonnenmagie +1 (Fähigkeit)	—	—
+mse_item_0192	0192	15	Kleine Sonnen Phönix	familiar	npc	Set-Begleiter	306ef80d8b29566a	Besitzer: Licht- & Sonnenmagie +2 (Fähigkeit) | Besitzer: Feuermagie & Pyrokinetik +1 (Fähigkeit)	—	—
+mse_item_0206	0206	19	Feen Noble des Blumenhofs	npc	npc	Set-NPC-Begleiter	9a2557a97e2e42b1	Besitzer: Betören & Verzaubern +2 (Fähigkeit) | Besitzer: Druiden – Flora-Pfad +1 (Fähigkeit)	—	Herrschaft +1 (Counter)
+mse_item_0210	0210	19	Grildruin der Wächter der Feen	familiar	npc	Set-Begleiter	b56b9490ad50bafc	Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit) | Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit)	—	—
+mse_item_0213	0213	19	Malinta, Uralte magische Seerose	familiar	npc	Set-Begleiter	c1ecd0625b7ff9bf	Besitzer: Meditation & mentaler Selbstschutz +2 (Fähigkeit) | Besitzer: Meta-Magie & Arkane Ordnung +1 (Fähigkeit)	—	—
+mse_item_0214	0214	19	Scilanthia das tänzelnde Licht	mount	npc	Set-Reittier	9aba75b3b8d4d749	Besitzer: Reiten & Tierführung +2 (Fähigkeit)	—	—
+mse_item_0215	0215	19	🦋Kleine Fee der Ausdauer🦋	familiar	npc	Set-Begleiter	28223152d2da70c5	Besitzer: Athletik & Schwimmen +2 (Fähigkeit)	—	—
+mse_item_0216	0216	19	🦋Kleine Fee der Heilung🦋	familiar	npc	Set-Begleiter	16fec8b39dc00131	Besitzer: Heilrituale & Heilwunder +2 (Fähigkeit) | Besitzer: Heiler & Helfer +1 (Fähigkeit)	—	—
+mse_item_0217	0217	19	🦋Kleine Fee der Magie🦋	familiar	npc	Set-Begleiter	e5f3a14f484f2271	Besitzer: Meta-Magie & Arkane Ordnung +2 (Fähigkeit)	—	—
+mse_item_0223	0223	21	Ouhn, Hippocamp der See-Nixen	mount	npc	Set-Reittier	d61452f7d167d3b5	Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit) | Besitzer: Reiten & Tierführung +1 (Fähigkeit)	—	—
+mse_item_0229	0229	9	Brish, Schutzhund des Seelenhirten	familiar	npc	Set-Begleiter	6fa6b2d1f9279e87	Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit) | Besitzer: Aufmerksamkeit & Wachsamkeit +1 (Fähigkeit)	—	—
+mse_item_0241	0241	9	Tirwilh, Reittier des Seelenhirten	mount	npc	Set-Reittier	c2f610dc86a8f2dd	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Umbramantie +2 (Fähigkeit)	—	—
+mse_item_0245	0245	16	Izdraguls Imp Beschwörung I.	familiar	npc	Set-Begleiter	63e2d7636696394c	Besitzer: Dämonologie & Höllen-Beschwörungen +1 (Fähigkeit)	—	—
+mse_item_0246	0246	16	Izdraguls Imp Beschwörung II.	familiar	npc	Set-Begleiter	a1d13bc4c1f3c7df	Besitzer: Dämonologie & Höllen-Beschwörungen +1 (Fähigkeit)	—	—
+mse_item_0254	0254	16	Nanzdrag, Ross von Barasch	mount	npc	Set-Reittier	bae567910a3395ed	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Dämonologie & Höllen-Beschwörungen +1 (Fähigkeit)	—	—
+mse_item_0259	0259	20	Hugin, Rabe der dunklen Feen	familiar	npc	Set-Begleiter	a4638b778ed0f059	Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit) | Besitzer: Heimlichkeit & Schleichen +1 (Fähigkeit)	—	—
+mse_item_0261	0261	20	Jhulmi, Kelpie der dunklen Fee	mount	npc	Set-Reittier	5bda7bf7e6f6dd26	Besitzer: Wassermagie & Hydromantie +2 (Fähigkeit)	—	—
+mse_item_0266	0266	20	Zardrul der Rächer der dunklen Feen	familiar	npc	Set-Begleiter	3c40cbb3597ac00d	Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit) | Besitzer: Einschüchtern & Zermürben +2 (Fähigkeit)	—	—
+mse_item_0268	0268	4	Kleiner Feuer Phönix der Tänzer	familiar	npc	Set-Begleiter	81b249bf2b2765a6	Besitzer: Musizieren & Auftreten +2 (Fähigkeit) | Besitzer: Feuermagie & Pyrokinetik +1 (Fähigkeit)	Begleiter selbst: Resistenz gegen Feuer 2 (Schadensminderung).	—
+mse_item_0274	0274	10	Heltenholmer Jagdhund, Huldi	familiar	npc	Set-Begleiter	eb726d2ba7a5860a	Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit) | Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit)	—	—
+mse_item_0275	0275	10	Heltenholmer Jagdhund, Terna	familiar	npc	Set-Begleiter	cb77cae44d893cb8	Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit) | Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit)	—	—
+mse_item_0278	0278	10	Heltenholmer Reisepferd	mount	npc	Set-Reittier	69c52ff590b7fbeb	Besitzer: Reiten & Tierführung +2 (Fähigkeit)	—	—
+mse_item_0292	0292	18	Lagur, Grünwald Grauwolf	familiar	npc	Set-Begleiter	21415f64e961496a	Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit) | Besitzer: Wildniskunde & Wildnisleben +2 (Fähigkeit)	—	—
+mse_item_0293	0293	18	Sani, das Grünwald Kaltblut	mount	npc	Set-Reittier	be462a1e59be255e	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Wildniskunde & Wildnisleben +1 (Fähigkeit)	—	—
+mse_item_0314	0314	20	Umseni vom Feenhof der Schatten	npc	npc	Set-NPC-Begleiter	646749a73b1d9a33	Besitzer: Flüche & Blut-Hexerei +2 (Fähigkeit) | Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)	—	—
+mse_item_0316	0316	18	Earthas Grünwald Golem	familiar	npc	Set-Begleiter	d9e9e05eee8ca931	Besitzer: Druiden – Flora-Pfad +2 (Fähigkeit) | Besitzer: Verteidigung & Blocken +1 (Fähigkeit) | Besitzer: Erdmagie & Geomantie +1 (Fähigkeit)	—	—
+mse_item_0323	0323	24	Raska, Glutsalamander	familiar	npc	Set-Begleiter	ce3595d58dd06c52	Besitzer: Feuermagie & Pyrokinetik +2 (Fähigkeit) | Besitzer: Konzentration & Gedächtnis +1 (Fähigkeit)	Begleiter selbst: Resistenz gegen Hitze +2 (Wetterprobe). | Begleiter selbst: Resistenz gegen Feuer 2 (Schadensminderung).	—
+mse_item_0325	0325	24	Karden, gepanzertes Feldross	mount	npc	Set-Reittier	bb0e214ac29afddb	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Strategie & Taktik +1 (Fähigkeit)	—	—
+mse_item_0335	0335	25	Varka, Bluthund der Roten Bastion	familiar	npc	Set-Begleiter	9a46433c5fba61d5	Besitzer: Fährtenlesen & Spurensuche +2 (Fähigkeit) | Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)	—	—
+mse_item_0337	0337	25	Mordain, schwarzes Panzerross	mount	npc	Set-Reittier	cae8725e4f9ba7c9	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Einschüchtern & Zermürben +1 (Fähigkeit)	—	—
+mse_item_0347	0347	26	Grum, kleiner Steingolem	familiar	npc	Set-Begleiter	abecdb88ea11dd5a	Besitzer: Erdmagie & Geomantie +1 (Fähigkeit) | Besitzer: Verteidigung & Blocken +1 (Fähigkeit)	—	—
+mse_item_0349	0349	26	Bromm, Granitwidder	mount	npc	Set-Reittier	6107a56a8d24d3e2	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Verteidigung & Blocken +1 (Fähigkeit)	—	—
+mse_item_0359	0359	27	Arel, Sturmfalke	familiar	npc	Set-Begleiter	fe7c5a9aea52c2b2	Besitzer: Aufmerksamkeit & Wachsamkeit +2 (Fähigkeit) | Besitzer: Windmagie & Aeromantie +1 (Fähigkeit)	Begleiter selbst: Resistenz gegen Wind/Sturm +2 (Wetterprobe).	—
+mse_item_0361	0361	27	Cael, Hochlandross der Sturmrufer	mount	npc	Set-Reittier	7469ef6db2e34628	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Orientierung & Navigation +1 (Fähigkeit)	Begleiter selbst: Resistenz gegen Kälte +1 (Wetterprobe). | Begleiter selbst: Resistenz gegen Nässe/Regen +1 (Wetterprobe).	—
+mse_item_0371	0371	28	Skarn, Rudelwolf	familiar	npc	Set-Begleiter	5253d69859066dbb	Besitzer: Tierkunde & Tierpflege +2 (Fähigkeit) | Besitzer: Fährtenlesen & Spurensuche +1 (Fähigkeit)	—	—
+mse_item_0373	0373	28	Elgar, Riesenhirsch	mount	npc	Set-Reittier	16d537a24bc95632	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Tierkunde & Tierpflege +1 (Fähigkeit)	Begleiter selbst: Resistenz gegen Kälte +1 (Wetterprobe).	—
+mse_item_0383	0383	29	Metrik, Runeneule	familiar	npc	Set-Begleiter	b3cd955f8cb947d0	Besitzer: Magiewahrnehmung & Wahrnehmung für Übernatürliches +2 (Fähigkeit) | Besitzer: Meta-Magie & Arkane Ordnung +1 (Fähigkeit)	—	—
+mse_item_0385	0385	29	Sella, Siegelstute	mount	npc	Set-Reittier	b4f481f0a91e052b	Besitzer: Reiten & Tierführung +2 (Fähigkeit) | Besitzer: Magiewahrnehmung & Wahrnehmung für Übernatürliches +1 (Fähigkeit)	—	—
+mse_item_0395	0395	30	Alda, Kanzleischreiberin	npc	npc	Set-NPC-Begleiter	63e205303aa37d34	Besitzer: Rechtskunde & Verwaltung +1 (Fähigkeit) | Besitzer: Schreiber & Fälscher +1 (Fähigkeit)	—	—
+mse_item_0407	0407	31	Marek, Geselle der Esse	npc	npc	Set-NPC-Begleiter	6b1db3ea0b8a269c	Besitzer: Waffenschmied & Bogenbauer +1 (Fähigkeit) | Besitzer: Handwerk & Baukunst +1 (Fähigkeit)	—	—
+mse_item_0419	0419	32	Mirren, junge Kopistin	npc	npc	Set-NPC-Begleiter	d9804a09bc61e79e	Besitzer: Schreiber & Fälscher +1 (Fähigkeit) | Besitzer: Sprachen & Schriftkunde +1 (Fähigkeit)	—	—
+mse_item_0431	0431	33	Hob, Packmaultier der Baumeister	mount	npc	Set-Reittier	01248574163e8afe	Besitzer: Handwerk & Baukunst +1 (Fähigkeit) | Besitzer: Orientierung & Navigation +1 (Fähigkeit)	—	—
+mse_item_0443	0443	34	Brenn, Jagdhund der Grenzlande	familiar	npc	Set-Begleiter	30560f1911223eb0	Besitzer: Fährtenlesen & Spurensuche +1 (Fähigkeit) | Besitzer: Monsterkunde & Jägerwissen +1 (Fähigkeit)	—	—
+mse_item_0455	0455	35	Terek, Bergziege der Grabungen	familiar	npc	Set-Begleiter	63313ff9f9c291ac	Besitzer: Akrobatik & Klettern +1 (Fähigkeit) | Besitzer: Aufmerksamkeit & Wachsamkeit +1 (Fähigkeit)	—	—
+mse_item_0467	0467	36	Veya, Rabe der Schwelle	familiar	npc	Set-Begleiter	4751dabecad2d4b1	Besitzer: Spiritismus & Seelenmagie +1 (Fähigkeit) | Besitzer: Aufmerksamkeit & Wachsamkeit +1 (Fähigkeit)	—	—
+mse_item_0479	0479	37	Dori, Gefährtin der fremden Namen	npc	npc	Set-NPC-Begleiter	af33f5a654a8d851	Besitzer: Empathische Magie & Thymoturgie +1 (Fähigkeit) | Besitzer: Menschenkenntnis & Wesen erkennen +1 (Fähigkeit)	—	—
+mse_item_0491	0491	38	Nera, Informantin der Gassen	npc	npc	Set-NPC-Begleiter	9993d633c6163553	Besitzer: Folklore & Gassenwissen +1 (Fähigkeit) | Besitzer: Lügen erkennen & Motive verstehen +1 (Fähigkeit)	—	—

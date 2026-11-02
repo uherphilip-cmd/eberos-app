@@ -1,0 +1,99 @@
+{
+  "revision": "r084-balance-builder-20261029",
+  "modelVersion": "r084-unit-aware-discrete-budget-v1",
+  "carryCapacity": {
+    "domain": "construction",
+    "effects": [
+      {
+        "effectId": "v06:construction:capacity:10",
+        "targetId": "builder:construction:carry_capacity_percent",
+        "points": 1,
+        "module": {
+          "id": "r084-module-carry-capacity-10",
+          "type": "carry_capacity_percent",
+          "target": "holder_or_object",
+          "operation": "percent_add",
+          "value": 10,
+          "unit": "Prozent",
+          "sourceDomain": "construction",
+          "stacking": "highest_only",
+          "capPercent": 20
+        }
+      },
+      {
+        "effectId": "v06:construction:capacity:20",
+        "targetId": "builder:construction:carry_capacity_percent",
+        "points": 2,
+        "module": {
+          "id": "r084-module-carry-capacity-20",
+          "type": "carry_capacity_percent",
+          "target": "holder_or_object",
+          "operation": "percent_add",
+          "value": 20,
+          "unit": "Prozent",
+          "sourceDomain": "construction",
+          "stacking": "highest_only",
+          "capPercent": 20
+        }
+      }
+    ],
+    "targets": [
+      "character",
+      "npc",
+      "object"
+    ],
+    "stacking": "highest_only",
+    "capPercent": 20
+  },
+  "structurePoints": {
+    "domain": "construction",
+    "effects": [
+      {
+        "effectId": "v06:construction:structure:2",
+        "targetId": "builder:object:structure_points",
+        "points": 1,
+        "module": {
+          "id": "r084-module-structure-points-2",
+          "type": "object_structure_points",
+          "target": "object",
+          "operation": "max_add",
+          "value": 2,
+          "unit": "Strukturpunkte",
+          "damageRule": "current_minus_damage",
+          "destroyedAt": 0,
+          "repairCap": "maximum"
+        }
+      },
+      {
+        "effectId": "v06:construction:structure:4",
+        "targetId": "builder:object:structure_points",
+        "points": 2,
+        "module": {
+          "id": "r084-module-structure-points-4",
+          "type": "object_structure_points",
+          "target": "object",
+          "operation": "max_add",
+          "value": 4,
+          "unit": "Strukturpunkte",
+          "damageRule": "current_minus_damage",
+          "destroyedAt": 0,
+          "repairCap": "maximum"
+        }
+      }
+    ],
+    "objectExamples": [
+      "barrier",
+      "door",
+      "cart",
+      "bridge",
+      "rope"
+    ],
+    "fields": [
+      "current",
+      "maximum"
+    ],
+    "damageRule": "current_minus_damage",
+    "destroyedAt": 0,
+    "repairCap": "maximum"
+  }
+}

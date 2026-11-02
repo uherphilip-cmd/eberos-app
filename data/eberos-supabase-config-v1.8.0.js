@@ -11,7 +11,7 @@
     url:'https://qcpwzvlucqcirrozxywt.supabase.co',
     publishableKey:'sb_publishable_RchsOhgwJJMsGwdiuthR_g_vl4zmRit',
     sdkVersion:'2.117.2',
-    sdkPath:'./data/vendor/supabase-2.117.2.js?v=1.8.17-npc-combat-inventory-loot-audit'
+    sdkPath:'./data/vendor/supabase-2.117.2.js?v=1.8.22-calendar-boundaries-open'
   });
 })(globalThis);
 

@@ -22,6 +22,12 @@ window.EBEROS_ITEM_DB={
     "currency": {
       "copperPerSilver": 100,
       "silverPerGold": 100
+    },
+    "art": {
+      "format": "eberos-standard-item-web-art",
+      "formatVersion": 1,
+      "itemCount": 203,
+      "path": "./data/standard-item-art-v1.3.1/manifest.json"
     }
   },
   "categories": [
@@ -603,7 +609,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 0.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_messer.jpg",
+      "illustrationSha256": "baf3dfa011d5ee34d9a74b8b0b72920241448def5a521b36f37155258034789d",
+      "illustrationSourceSha256": "89723989a9528bc930e59278b695e712a48fa6cc40d37e12146f98b6e89f6e31"
     },
     {
       "id": "wpn_melee_sax",
@@ -645,7 +654,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 0.7,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_sax.jpg",
+      "illustrationSha256": "07fd2fe006078e48cb4eb9ea7eb8ac41df75703e89112fd358c063013fa793e2",
+      "illustrationSourceSha256": "0e1cb375b081f9cd7917121a3dad6e27dea6f7e29e67e7283d06f92ad9c41813"
     },
     {
       "id": "wpn_melee_dagger",
@@ -695,7 +707,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_dagger.jpg",
+      "illustrationSha256": "f474f584d31733e750ac8d0fcef49d8d74fe50f20d33eac6b7668c5fc5e42f2b",
+      "illustrationSourceSha256": "7cbe68199c4595b1f06ff8dcf547201ad9cf451e1b1fb1752ae15ed411a90a94"
     },
     {
       "id": "wpn_melee_rondelldolch",
@@ -737,7 +752,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 0.5,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_rondelldolch.jpg",
+      "illustrationSha256": "c0b0f2f9e0289e9601afec5b55a11684de66f9f2329fa2d35010aa276c9f30c0",
+      "illustrationSourceSha256": "82cf41bc25d11eb95733ba31d82207e883a565cc8448e3baf60a93f331696ef2"
     },
     {
       "id": "wpn_melee_short_sword",
@@ -787,7 +805,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_short_sword.jpg",
+      "illustrationSha256": "216cffba97ce43519eed13667103a6e17ed92989e911651bb67001dc0886e346",
+      "illustrationSourceSha256": "cacb8ec92d84d44b46a03549f90bf141f085f02631b8c5ce9e54dce3436f0bda"
     },
     {
       "id": "wpn_melee_falchion",
@@ -829,7 +850,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_falchion.jpg",
+      "illustrationSha256": "48aaf8837fc3ccd6046e87a52c8f38e866ebe1113935d66655307ae16fcaad1d",
+      "illustrationSourceSha256": "3e7adb34a8e6875bec3eabc0f7f330526a0ea243365763e905548a2aad80c72a"
     },
     {
       "id": "wpn_melee_long_sword",
@@ -879,7 +903,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_long_sword.jpg",
+      "illustrationSha256": "67f68b12dd667defe3bbe9ef0663c131d932aca2a5fecdf76814f1b9516200d7",
+      "illustrationSourceSha256": "a576128f9e0d27eac326690de4616077f77febf135d8e4108e8db67c005c1838"
     },
     {
       "id": "wpn_melee_saebel",
@@ -921,7 +948,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 0.9,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_saebel.jpg",
+      "illustrationSha256": "2c50285018f6ad4a8d65b056a68415ab8cc4322ae24a040da2c8896b127ae353",
+      "illustrationSourceSha256": "ee313083ff2c70d13e0132300c16ef3c14a92a273717d975848ae175a1d16e19"
     },
     {
       "id": "wpn_melee_rapier",
@@ -971,7 +1001,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_rapier.jpg",
+      "illustrationSha256": "2c1323c89c4949e804437a9d0c788ecc1e9a9b4986cecbd208b79f7540044252",
+      "illustrationSourceSha256": "40a897f72818129b1e42691b86fe318d4f89d76c41b9e4ba3441d3ef26d582ec"
     },
     {
       "id": "wpn_melee_entermesser",
@@ -1013,7 +1046,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.1,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_entermesser.jpg",
+      "illustrationSha256": "e9513a5e5710c6bdee3e67fdbbe14b40a9615bf95b639fa1a58589f32c3070f4",
+      "illustrationSourceSha256": "5405c6ae93b71d5caedeaa7ac84f5847de0440df4ca525375aeead84966c8033"
     },
     {
       "id": "wpn_melee_katzbalger",
@@ -1055,7 +1091,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_katzbalger.jpg",
+      "illustrationSha256": "f99d61f3785f80f4ea673637b69c90e1f981d3800c56368affb502c79e48979e",
+      "illustrationSourceSha256": "78664a440b466726847c34ed411cf1aefe8fd178a1ad5595511bde262d3bae70"
     },
     {
       "id": "wpn_melee_kriegsmesser",
@@ -1097,7 +1136,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.5,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_kriegsmesser.jpg",
+      "illustrationSha256": "7527b5ebc442f94a24f29576b65aab85eb13a32a6949c8a1e31576152bdec548",
+      "illustrationSourceSha256": "7b91db357a97c57106076999bd4b03a60abedbb4bd1341118aebb43d589d6e0d"
     },
     {
       "id": "wpn_melee_tulwar",
@@ -1139,7 +1181,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_tulwar.jpg",
+      "illustrationSha256": "ef1e553b0ac591902eb37b805c1dc1e241b95c46fff9ef26feedf71ddb7b0262",
+      "illustrationSourceSha256": "a3d42c3b4f7e31b30801e0e8805d376a4d48e3d07f1f7633efb88c42c55a039a"
     },
     {
       "id": "wpn_melee_krummschwert",
@@ -1181,7 +1226,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_krummschwert.jpg",
+      "illustrationSha256": "779460263cab397a3b444646e6e16d7c0c48eab4b9ce81f50fee7d233189a5d6",
+      "illustrationSourceSha256": "614ac4e119a50008bdf4513bff1da0dadf8e32b5669d4f1e5d253c769f6bd538"
     },
     {
       "id": "wpn_melee_panzerstecher",
@@ -1223,7 +1271,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.3,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_panzerstecher.jpg",
+      "illustrationSha256": "7add0227fa50672e9cdef4947f71a7c026e705f111ad7a45b40247cbaaafd878",
+      "illustrationSourceSha256": "a43bcf23154c1e37de9bea712be131b2b1b38bece510ea3a715a0b5523b26815"
     },
     {
       "id": "wpn_melee_handbeil",
@@ -1265,7 +1316,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 0.7,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_handbeil.jpg",
+      "illustrationSha256": "900b8372415220b714896209587bdb1aa51f3ce1744fb4679a69503fa02dc8ae",
+      "illustrationSourceSha256": "756c417b618fa20023393407ea698c9ab3533e78983bbe3964c84405bd89efe7"
     },
     {
       "id": "wpn_ranged_wurfaxt",
@@ -1325,7 +1379,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 0.8,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_wurfaxt.jpg",
+      "illustrationSha256": "bfe62604a6c9da1ae4e70f47d660c792d739cbd2f917a52cef025bb729406845",
+      "illustrationSourceSha256": "aa57f122870dfc63cc4c70955e4d4c9233e7a72708f4a6f7765814ebd055d9d9"
     },
     {
       "id": "wpn_ranged_franziska",
@@ -1385,7 +1442,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 0.9,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_franziska.jpg",
+      "illustrationSha256": "a29ddad291ff03929333306f968304165d979b69ec87000a145ee2a600e0a606",
+      "illustrationSourceSha256": "99cbd13edab3bf1fc4b532ebb827f12fdded316bf8ac871bcd6ae8fc9f0275db"
     },
     {
       "id": "wpn_melee_bartaxt",
@@ -1427,7 +1487,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_bartaxt.jpg",
+      "illustrationSha256": "af9cf988f2af0b35030a1fc2a16c6176f77bab7d51542113d053bf0fb2c2cf27",
+      "illustrationSourceSha256": "c19f98db051e529d83ef7510237baee8aba52a87fa6b62c2db493e9608744ab8"
     },
     {
       "id": "wpn_melee_breitaxt",
@@ -1469,7 +1532,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.6,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_breitaxt.jpg",
+      "illustrationSha256": "423c7193a34cbf2d5ad24711cfaeb0a2dff1d7f16bd63545da91352926af59ce",
+      "illustrationSourceSha256": "0ea3e016540f1f336faa10c3e82d8af5eb5f412e01f3691f4e97931570e27f09"
     },
     {
       "id": "wpn_melee_daenenaxt",
@@ -1511,7 +1577,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_daenenaxt.jpg",
+      "illustrationSha256": "6c615babf0bf7902333a22f97d1b04a92447667190348a1a35e536046d612491",
+      "illustrationSourceSha256": "f6b4d38539d529d80e2fc7ccc4b15f63ac1165d61204a334e4468308602e539f"
     },
     {
       "id": "wpn_melee_kriegsaxt",
@@ -1553,7 +1622,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_kriegsaxt.jpg",
+      "illustrationSha256": "5a17e674ba87e3d2a6e1ed83547f63649da46d83fb4e250985d1405bd82c643f",
+      "illustrationSourceSha256": "d486797e7c179b8d9d28bd12b2d14e963d5d8b576c5904203bf6dd93159f59e3"
     },
     {
       "id": "wpn_melee_langstielaxt",
@@ -1595,7 +1667,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2.4,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_langstielaxt.jpg",
+      "illustrationSha256": "db2562875997c563c93713ff250f9e98223f5218b588842faa97506fe36f3c59",
+      "illustrationSourceSha256": "7563c1b037f59afcf03ee1bc8c2ad6267cc2d504219adbe60baea8c711fae2f0"
     },
     {
       "id": "wpn_melee_zweihand_streitaxt",
@@ -1637,7 +1712,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 3.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_zweihand_streitaxt.jpg",
+      "illustrationSha256": "7ceb5f7d8cbdfb67e379bcc0b734db23aea37ad846249aceefdba500a8a5f0ad",
+      "illustrationSourceSha256": "c24e6855030ac65ebd693aa7686f1cc09aeb1beea4168480c6ce9431787d2672"
     },
     {
       "id": "wpn_melee_grosse_kriegsaxt",
@@ -1679,7 +1757,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 4.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_grosse_kriegsaxt.jpg",
+      "illustrationSha256": "ddeb36da36e7c40c8b9fd5a7e5f396cc6e8c8f15ceb712de427128d7726fca72",
+      "illustrationSourceSha256": "b614f2dbb1943d8c93fe13b4b6fb956f4f3cdedb837f0ab791fec9aa0be9fce9"
     },
     {
       "id": "wpn_melee_knueppel",
@@ -1721,7 +1802,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 0.8,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_knueppel.jpg",
+      "illustrationSha256": "02f88b5f679a7f37a6824d54fcfe2079b09c53515b3d29885a9acfd2222ef357",
+      "illustrationSourceSha256": "24ee01f4a9ac302a2aa19fd8dd3e0f912c22bc8806d6b54f2bab092f0e1083f5"
     },
     {
       "id": "wpn_melee_club",
@@ -1771,7 +1855,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_club.jpg",
+      "illustrationSha256": "5b653a736b946f3616e1b7b928448f2aa2168e295adbe73df074e105035fcd65",
+      "illustrationSourceSha256": "e65d7d1691cd7e3e98a34259df38d6257004ff65e83ad81353a9bba3a7434cbd"
     },
     {
       "id": "wpn_melee_mace",
@@ -1821,7 +1908,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_mace.jpg",
+      "illustrationSha256": "88d0b14c52560bfbad91f4a3cbd260fc086c5b6f1e9120dc3a3e50d88dd2e529",
+      "illustrationSourceSha256": "13b611952b27bfd291117fafd0bcc4535b1cd50a7caaf26c5a3d2367730964ef"
     },
     {
       "id": "wpn_melee_morgenstern",
@@ -1863,7 +1953,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.5,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_morgenstern.jpg",
+      "illustrationSha256": "da6aa31220e7d3f2a0d3d756e4f21fae0b71568259777e900555c93993b5aa0e",
+      "illustrationSourceSha256": "cbcbb2264fa68d98b42a0bfbcd8f84fd4837d682ce40c2415ff7988aade57604"
     },
     {
       "id": "wpn_melee_flegel",
@@ -1905,7 +1998,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.4,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_flegel.jpg",
+      "illustrationSha256": "01ba0e304c2500d6097b4f30c89a993fe660dc04235663746290204d28de37c5",
+      "illustrationSourceSha256": "55f4ef641c7e9427f745bb12253599100ddd7334850aa15dc82c1038a6acba0c"
     },
     {
       "id": "wpn_melee_warhammer",
@@ -1955,7 +2051,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_warhammer.jpg",
+      "illustrationSha256": "b6fd22e121c16eeb2a96de26ad89c9d6d9d963a6619ca9a4e0d1d6f5ac4baae1",
+      "illustrationSourceSha256": "281b406ab5daa53f2bb5da2d4daf9d21c3522b4c22ff7925741acd4b0d0162ae"
     },
     {
       "id": "wpn_melee_kettenflegel",
@@ -1997,7 +2096,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.8,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_kettenflegel.jpg",
+      "illustrationSha256": "d5cd43c6d96608f17da5337fd9555953c6eccf044e12014ac85bd9c6867bd0ec",
+      "illustrationSourceSha256": "a1cfaba70cef54bf335eb326aa7fd0502f8fbbd85954eb45df86f508eecec96b"
     },
     {
       "id": "wpn_melee_schwerer_morgenstern",
@@ -2039,7 +2141,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_schwerer_morgenstern.jpg",
+      "illustrationSha256": "70f0d58bca8e32e44a154182211eadd5a3741dd5a32f809d78a973359b6211ac",
+      "illustrationSourceSha256": "10c13649f64e374f65ac62d30dd0d0d03b9861dad5500609e349f6ff0ca57a29"
     },
     {
       "id": "wpn_melee_schwerer_flegel",
@@ -2081,7 +2186,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2.4,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_schwerer_flegel.jpg",
+      "illustrationSha256": "627fc665cb914ff91f541ad7d7e39cecfa41591d7de29a72d61a4926457b4c4c",
+      "illustrationSourceSha256": "d34d992565be57b11553255273b0a6869b279fa5c8fd9819c5a27039c18deb7b"
     },
     {
       "id": "wpn_melee_grosser_kriegshammer",
@@ -2123,7 +2231,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 3,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_grosser_kriegshammer.jpg",
+      "illustrationSha256": "28709bc3ab5c1e3d84b10ab575096250c253ad29cbfca65f8e096460163bfe51",
+      "illustrationSourceSha256": "1b0258f22dbdc9b39323269bb00c869d4a2b0050df4876a68a22c352a163c711"
     },
     {
       "id": "wpn_melee_langstieliger_kriegshammer",
@@ -2165,7 +2276,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 3.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_langstieliger_kriegshammer.jpg",
+      "illustrationSha256": "28cf63781de7f8fa6c5a9a5e4329775376b85beea789545443deec02971c0b6a",
+      "illustrationSourceSha256": "d2a93a9a44c7546a49262cfeaed699beffa23417a5e01517a05cd6b84f186c3a"
     },
     {
       "id": "wpn_melee_belagerungshammer",
@@ -2207,7 +2321,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 5,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_belagerungshammer.jpg",
+      "illustrationSha256": "bdec258bc8c4acd6cced1ca08945474a65e9d0dad312f809f0d26cc95d02d53a",
+      "illustrationSourceSha256": "bb89e2f76a81a61366fb1d8ca468647fd7c0d20234bd101577cb5c33a06726d1"
     },
     {
       "id": "wpn_melee_anderthalbhaender",
@@ -2249,7 +2366,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.8,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_anderthalbhaender.jpg",
+      "illustrationSha256": "095822ba18cf72cce619b915fe5740a0f8d8f2941e2cab1c958bceea57cabe34",
+      "illustrationSourceSha256": "09379e35757d15331e8e5fefea55c517d7b47830c83d764f099fc4350354c1a6"
     },
     {
       "id": "wpn_melee_greatsword",
@@ -2300,7 +2420,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "melee"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_greatsword.jpg",
+      "illustrationSha256": "726ed8c3806c2db84b1467e8f23f0165be7fdfe818cf80d55b678821d70e6408",
+      "illustrationSourceSha256": "8247c477cc24ac3d1952e0aab25a7caa9dcb6cecad8d5cd4662a8bbdc2b765fc"
     },
     {
       "id": "wpn_melee_grossschwert",
@@ -2342,7 +2465,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 3.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_grossschwert.jpg",
+      "illustrationSha256": "df4602c371a8c62f49cb03c18275fa32a683b3199c92c8a77f6984d65bbcf9bf",
+      "illustrationSourceSha256": "1ee19c9e6b9ce4ea9b4185dd37b28fb3350122f760ba17a38ff7492d359dbac2"
     },
     {
       "id": "wpn_melee_riesenzweihaender",
@@ -2384,7 +2510,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 4.5,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_riesenzweihaender.jpg",
+      "illustrationSha256": "408909a71ed63397652bf53dbd4b45839c83315f97a6ac7ea002298e7ed66ac9",
+      "illustrationSourceSha256": "2aa4b03796a56506ec1e6f627378b4d4160490ab88226a222d31eaa4c86f437d"
     },
     {
       "id": "wpn_ranged_javelin",
@@ -2454,7 +2583,10 @@ window.EBEROS_ITEM_DB={
         "melee",
         "thrown"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_javelin.jpg",
+      "illustrationSha256": "efee248579555ea8240a12388f3b982dd1fa1ff6761c7cc9e163319dbb7cb205",
+      "illustrationSourceSha256": "0c7a0111bcfe03c676bbc116735dc339e231f4429078eec88858bb064fb19ba4"
     },
     {
       "id": "wpn_melee_jagdspeer",
@@ -2496,7 +2628,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.5,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_jagdspeer.jpg",
+      "illustrationSha256": "6ba86fd1523098dd04cf1ae4f6767febe717d09f1fab16a6e4eda75d4e756e4d",
+      "illustrationSourceSha256": "3783ba9d8b77ca666d3a2c8cc08d596ed7ac9156ecb9b0a4fd4266e4fbda171d"
     },
     {
       "id": "wpn_melee_kriegsspeer",
@@ -2538,7 +2673,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_kriegsspeer.jpg",
+      "illustrationSha256": "462ad043b8388375396d0a7f88fe0f17f58de89e42a6395384a58e9b9da773ae",
+      "illustrationSourceSha256": "125fb270a9b6f3ac1c5cdc4c35abe71058de9834bef041b6eb5ce82eeff7f218"
     },
     {
       "id": "wpn_melee_fluegellanze",
@@ -2580,7 +2718,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_fluegellanze.jpg",
+      "illustrationSha256": "7c9fe0e407ea179a5a2d53a80b87a2dc561cd3738d73527d4fe5be6627a89e00",
+      "illustrationSourceSha256": "b3ef025a86ab434a7aee23b3281cd818ee83478c6eb616adbbbb6b8a3da04e11"
     },
     {
       "id": "wpn_melee_stosslanze",
@@ -2622,7 +2763,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2.5,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_stosslanze.jpg",
+      "illustrationSha256": "e39119b0e4d3bf74634a58469b617dd88aac65507421419c7e98562b4df55524",
+      "illustrationSourceSha256": "2696ee8ee5e998583a7958952f7d2fb933b83172e7e6e4db3676a11736054578"
     },
     {
       "id": "wpn_melee_reiterlanze",
@@ -2664,7 +2808,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 3,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_reiterlanze.jpg",
+      "illustrationSha256": "45978dde0ce7e89d03573d1959cc916a094792e7e2b0b28ddb39929366510994",
+      "illustrationSourceSha256": "cfb3f9430b7d6f3d1dc4ca9bdb53171bc964edd8903dcaf49310b3b15a450a2d"
     },
     {
       "id": "wpn_melee_spiess",
@@ -2706,7 +2853,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2.8,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_spiess.jpg",
+      "illustrationSha256": "eb1c5056822a0777c3874501a31067a4b17d11a1cb468ebd3569ad321fa8d7a4",
+      "illustrationSourceSha256": "f616512fe0406b515fdbfde8843eb774678e7dc01d5b256abd139997c97923a9"
     },
     {
       "id": "wpn_melee_pike",
@@ -2748,7 +2898,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 3.5,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_pike.jpg",
+      "illustrationSha256": "d52a6901b8f207dfe41029c49a79912e47c3249babb0b6cbdd8d88e5180621e4",
+      "illustrationSourceSha256": "a006b4328ad66ede258300e915372a7dda9ce34cef69a3570b44e667be5bf093"
     },
     {
       "id": "wpn_melee_grosse_pike",
@@ -2790,7 +2943,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 4.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_grosse_pike.jpg",
+      "illustrationSha256": "04ebd99a4bbcbaaa93ae3b232c843f10953de570796c6b04ce73058e1788db54",
+      "illustrationSourceSha256": "ffeb0711cae0935302d1f7d6d08b8c4a6bef083b7a7987a2da8a500f1b78e7b3"
     },
     {
       "id": "wpn_melee_schwerer_kriegsspiess",
@@ -2832,7 +2988,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 4.5,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_schwerer_kriegsspiess.jpg",
+      "illustrationSha256": "e08dda8628f8b2479d4045bfc3c17e8400c1053cace7fd5217546796472b8dab",
+      "illustrationSourceSha256": "30fbe5115fa339ab163b539822dd00ceb794e978918a6eb35f5b49e153df424d"
     },
     {
       "id": "wpn_melee_kriegssense",
@@ -2874,7 +3033,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2.5,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_kriegssense.jpg",
+      "illustrationSha256": "cd47c1f7c4fc6e870f071bd3831eeb87dba86cf6fcd5b8d43347d39bcef79f74",
+      "illustrationSourceSha256": "3d820d66a530994575be1a0a34cd6546115968ebb657fa28b03f91bbc4cb4cc0"
     },
     {
       "id": "wpn_melee_bec_de_corbin",
@@ -2916,7 +3078,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2.8,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_bec_de_corbin.jpg",
+      "illustrationSha256": "c9ade90a015b78c3a6846ebfe4f7c54f1eafbfb1d4fa17be9299210ffb0e8b2f",
+      "illustrationSourceSha256": "8a6eb8df3a33cd87abd6e763cc0939f3be9f564f0c2bb0813d3ee3e6dfeeeb1f"
     },
     {
       "id": "wpn_melee_glefe",
@@ -2958,7 +3123,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2.5,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_glefe.jpg",
+      "illustrationSha256": "8ac0d455afc5ad193e75018bc41eb1dba8e9a43a0dff15e80465e60375ea213d",
+      "illustrationSourceSha256": "ef235094afd2741ca32b2db8feafd4db92da25a86f4dcfefc4cd3e313c5026ed"
     },
     {
       "id": "wpn_melee_partisane",
@@ -3000,7 +3168,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2.6,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_partisane.jpg",
+      "illustrationSha256": "62611718632aa55975e11f4f8934152e1b30ee90a4ea5c939ade30d564831523",
+      "illustrationSourceSha256": "ae38e766c9c202ced718639cf86b711f7c21ffdbc44a8d840084bcc1ee09bec4"
     },
     {
       "id": "wpn_melee_bardiche",
@@ -3042,7 +3213,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 3.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_bardiche.jpg",
+      "illustrationSha256": "2a64083375da4ce4c45d56b52ba4ee87f8d5f880e0a7e1545f984336e7a3417d",
+      "illustrationSourceSha256": "889d57cf0297279e6dc408ec5006cb802e8a52ad2a7edc147298d6d65518354a"
     },
     {
       "id": "wpn_melee_luzerner_hammer",
@@ -3084,7 +3258,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 3.5,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_luzerner_hammer.jpg",
+      "illustrationSha256": "0f97f7f308d6aa446a74dce7195c1dc5dd61a8a305b7ac7ef4ca42d9b44ac585",
+      "illustrationSourceSha256": "25f4fe0c6df1efea6e738cc5b28c376422de4d89eba2d1ffc3d95d274674e609"
     },
     {
       "id": "wpn_melee_schwere_partisane",
@@ -3126,7 +3303,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 3.4,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_schwere_partisane.jpg",
+      "illustrationSha256": "9875230d7f1dc94bd74b2c01ea637d95d34b69bc9d9f4d6a21c8364d6917b376",
+      "illustrationSourceSha256": "be00b3cb7f2d5bb105381f6d06f609a2a512f7c034572d2e71730ae090a68c42"
     },
     {
       "id": "wpn_melee_grosse_hellebarde",
@@ -3168,7 +3348,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 4.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_grosse_hellebarde.jpg",
+      "illustrationSha256": "b2872090731665e99882a5592803af3a8bc5606f617d36f38aea581dcf4a5f3c",
+      "illustrationSourceSha256": "e0c3c98ab9ec58c22db17902d24217529549a7f7e9db6208243a2b3707c52c45"
     },
     {
       "id": "wpn_melee_grosse_bardiche",
@@ -3210,7 +3393,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 4.3,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_grosse_bardiche.jpg",
+      "illustrationSha256": "9406942aae6cb173d797d31da40aec426e1723a0e90247789b574b1dcdfe8e87",
+      "illustrationSourceSha256": "85b9c0640cfd11db7aab314432da804baaf7275c2e7e89a9d1b22d18bb5d3ffa"
     },
     {
       "id": "wpn_melee_schlachtglefe",
@@ -3252,7 +3438,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 3.8,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_schlachtglefe.jpg",
+      "illustrationSha256": "dac9a6158fae08a576e956ce6608bf31f39668d679bbc2345bf42c9f78fa8fca",
+      "illustrationSourceSha256": "dd3e63c3ddc88560d8da5a7bbd8bf23082ec0effe93e348afacda25350d73aa3"
     },
     {
       "id": "wpn_melee_schwerer_rabenschnabel",
@@ -3294,7 +3483,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 4,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_schwerer_rabenschnabel.jpg",
+      "illustrationSha256": "031943b444538b52ba30bf96a1eb013a78bed69f6292767496a49a32a6ba57ca",
+      "illustrationSourceSha256": "4a84fb91e5ef4cd0557a4fc0efbd720a62914d6cfa2c9ec8ad9d6d47c560fb2e"
     },
     {
       "id": "wpn_melee_schwere_poleaxe",
@@ -3336,7 +3528,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 4.5,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_schwere_poleaxe.jpg",
+      "illustrationSha256": "c084218baacb9b1e3f6a09106804d8d365dbb23d524df832c3ac218088fee769",
+      "illustrationSourceSha256": "85976505febf721dd3426499cbb57754e5f1be898552cd879bd35387b5bf531c"
     },
     {
       "id": "wpn_melee_schwerer_kriegsspitz",
@@ -3378,7 +3573,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 4.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_schwerer_kriegsspitz.jpg",
+      "illustrationSha256": "23610df52a4c46cecd574da5aae08698836b89d4f135f07a5b06a6a80b6b8f63",
+      "illustrationSourceSha256": "0e69b4d52c720c49fbe0d9d2154487447656f6a1f78ae25a308bcaebc18b0334"
     },
     {
       "id": "wpn_ranged_throwing_knife",
@@ -3430,7 +3628,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "thrown"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_throwing_knife.jpg",
+      "illustrationSha256": "f70254cf1d4e0eed3667cf830e86151e98421f52a7ee03bb4bd2a7f270fd52ed",
+      "illustrationSourceSha256": "5c44d2e82d4c1191b36a27fb17bc17df79edd2a781ef3d0fe5e0dbe64bd9dd64"
     },
     {
       "id": "wpn_ranged_wurfdolch",
@@ -3472,7 +3673,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 0.25,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_wurfdolch.jpg",
+      "illustrationSha256": "a3d9f104b5469445c41b9dfde1e481f1db0b9a06f633fb6b5dba61bd0405a38f",
+      "illustrationSourceSha256": "8ee170210207189a315a67995765be10fb7a1148e873c2aaf3189fe8430175af"
     },
     {
       "id": "wpn_ranged_chakram",
@@ -3514,7 +3718,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 0.4,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_chakram.jpg",
+      "illustrationSha256": "22f1eebdd5863c180d5baa2378221b53bf67298ddf7dec94a7b3e0b49a64a4d5",
+      "illustrationSourceSha256": "99d3face1e8239d3d9790437d5efcd36ea97ff00f7399815c7dbbee9a9c22619"
     },
     {
       "id": "wpn_ranged_pilum",
@@ -3556,7 +3763,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_pilum.jpg",
+      "illustrationSha256": "9a896dfd674ebd51b793a78c257a8b5ec0aacc9fb75a428ba61fd47eb92ce1eb",
+      "illustrationSourceSha256": "f504076c6bc17698a41dc6f0c650d090dd39e61c1e30c245721e1140cd8c5944"
     },
     {
       "id": "wpn_ranged_schwere_wurfaxt",
@@ -3598,7 +3808,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.3,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_schwere_wurfaxt.jpg",
+      "illustrationSha256": "335404751c48fff2fda370b19deb6140a8d7e02b8981c763e7c434cdf16f72d4",
+      "illustrationSourceSha256": "2ae373882cd2f8279cd758865b730a602eccb66e95c3e4642dd12ff5dce6b9a5"
     },
     {
       "id": "wpn_ranged_uebungsbogen",
@@ -3640,7 +3853,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 0.8,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_uebungsbogen.jpg",
+      "illustrationSha256": "b8899ff0e9e0e3cd90f9b7fd5846550098157a6f7269f522f95e189424618730",
+      "illustrationSourceSha256": "2848f4c0c0c29de67683dbb308cd24f718e1da16d4f963799a227b5a85088e60"
     },
     {
       "id": "wpn_ranged_shortbow",
@@ -3692,7 +3908,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "ranged"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_shortbow.jpg",
+      "illustrationSha256": "5341bac6ee1f8f2226d33019c79a8e55d0bf704a9d84be7af707aec4da444a40",
+      "illustrationSourceSha256": "88c91ef337ac80ac0caf98cb17993587ec9d4044145fc24bbc545728a33a8e0f"
     },
     {
       "id": "wpn_ranged_jagdbogen",
@@ -3734,7 +3953,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_jagdbogen.jpg",
+      "illustrationSha256": "f296c558b4060d3dc2c9a594d6dfc11796dc530b3ad5eee951728329c5df6461",
+      "illustrationSourceSha256": "784e386a027f25da200e426c37add7a69aa983aa88856497e21818a67fa79d46"
     },
     {
       "id": "wpn_ranged_reflexbogen",
@@ -3776,7 +3998,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.3,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_reflexbogen.jpg",
+      "illustrationSha256": "78194f867bdc01cdc7531e6fbc6c6878b7f379b8498f446a34054b22d7f6752f",
+      "illustrationSourceSha256": "78e02202fadba03d237f1f7837d0ebb945afa17bca45e11c608f15ab72450126"
     },
     {
       "id": "wpn_ranged_longbow",
@@ -3829,7 +4054,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "ranged"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_longbow.jpg",
+      "illustrationSha256": "5d75b4f33d9c0412c8e9c3ece36351150734476cbe9c48c59183149d6b9419f3",
+      "illustrationSourceSha256": "1d4fc6722cc408104e5a644381d58fddebe30b90b5c79950ebf21d68fb78f462"
     },
     {
       "id": "wpn_ranged_kompositbogen",
@@ -3871,7 +4099,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 1.6,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_kompositbogen.jpg",
+      "illustrationSha256": "49e45fedabddbffb95f0b5e18056d2630abd8c7a8f1ebf990462d1e501a7a967",
+      "illustrationSourceSha256": "fb4a5464f3db28ee75608a22e4a3dd87029113451e0a3f3225aa1131a697a9d0"
     },
     {
       "id": "wpn_ranged_kriegsbogen",
@@ -3913,7 +4144,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_kriegsbogen.jpg",
+      "illustrationSha256": "a9d91ba0b01d2d88be7f6e376fd245388ee430d720b1fa0b1457281587b5c2d1",
+      "illustrationSourceSha256": "f212105fba9a5cac81495745e30a885914c94fab2516bc53e7e809bfa587a5d7"
     },
     {
       "id": "wpn_ranged_schwerer_kriegsbogen",
@@ -3955,7 +4189,10 @@ window.EBEROS_ITEM_DB={
       ],
       "weightKg": 2.4,
       "weightUnknown": false,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_schwerer_kriegsbogen.jpg",
+      "illustrationSha256": "4f348485599521f23544460234293cfe597c16a9ad4a5d72f9cec31acdfa9140",
+      "illustrationSourceSha256": "484de7f1f27c2bdc74892be7b20a61314e4e691c3f992ab055ab40b88328a574"
     },
     {
       "id": "wpn_ranged_pistolenarmbrust",
@@ -3998,7 +4235,10 @@ window.EBEROS_ITEM_DB={
       "weightKg": 1,
       "weightUnknown": false,
       "reloadActions": 1,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_pistolenarmbrust.jpg",
+      "illustrationSha256": "3c59e139fd36e0038c984315533f34cec4cb91084daaa6624fa80391f22f22ce",
+      "illustrationSourceSha256": "5c0451516cba02f0061c9267944698d91dc4a84e08657d37894f9f5e29f30ce8"
     },
     {
       "id": "wpn_ranged_light_crossbow",
@@ -4050,7 +4290,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "ranged"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_light_crossbow.jpg",
+      "illustrationSha256": "21ea958b83d03d3087cc67afe5b20d20df770004fdb7e86942d6c6b0e8908bd4",
+      "illustrationSourceSha256": "36ca66a81106bf0b4c870f16b940021657a0ad7aa11f7910a307ab1be7256b4b"
     },
     {
       "id": "wpn_ranged_jagdarmbrust",
@@ -4093,7 +4336,10 @@ window.EBEROS_ITEM_DB={
       "weightKg": 2.5,
       "weightUnknown": false,
       "reloadActions": 1,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_jagdarmbrust.jpg",
+      "illustrationSha256": "faefc96e49531244e63c27326da2a487d8677b57452c2216dbbdaf486e827946",
+      "illustrationSourceSha256": "babb613dccb2ada02cebbdae875d10550e6a5814f7e7193f185a11c70a8f27f5"
     },
     {
       "id": "wpn_ranged_heavy_crossbow",
@@ -4147,7 +4393,10 @@ window.EBEROS_ITEM_DB={
       "combatModes": [
         "ranged"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_heavy_crossbow.jpg",
+      "illustrationSha256": "a5e5244310193c9a9d7746d85ff4d41fb58c4d7f9c3399213a2a04c7e1be9433",
+      "illustrationSourceSha256": "4e05d5e36d151b1a8571f2ca4042d744f5c842c4058c26f060852df856dca9b7"
     },
     {
       "id": "wpn_ranged_kriegsarmbrust",
@@ -4190,7 +4439,10 @@ window.EBEROS_ITEM_DB={
       "weightKg": 4.5,
       "weightUnknown": false,
       "reloadActions": 2,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_kriegsarmbrust.jpg",
+      "illustrationSha256": "e39f5dadb424eb92d6eb5839a8dad8307fab9a8869986ea98099acc307e4248e",
+      "illustrationSourceSha256": "c29409b72114734f3fc65d82a36b37047caee1b4e81bf32cf516b107023095bf"
     },
     {
       "id": "wpn_ranged_windenarmbrust",
@@ -4233,7 +4485,10 @@ window.EBEROS_ITEM_DB={
       "weightKg": 6.5,
       "weightUnknown": false,
       "reloadActions": 3,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_windenarmbrust.jpg",
+      "illustrationSha256": "7807c1f0158736d1efcda897ca9408965294070309743cbbfd3e0fc34a58fb45",
+      "illustrationSourceSha256": "ada7919b84104eaf7b2e9ecd865454528ce507e21ad24742d7c584a3296bc80d"
     },
     {
       "id": "wpn_ranged_schwere_windenarmbrust",
@@ -4276,7 +4531,10 @@ window.EBEROS_ITEM_DB={
       "weightKg": 9,
       "weightUnknown": false,
       "reloadActions": 4,
-      "weightSource": "system-estimate-v1.7.9"
+      "weightSource": "system-estimate-v1.7.9",
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_schwere_windenarmbrust.jpg",
+      "illustrationSha256": "6c03b7e4d26cf9e309d60f8967fda6a4d231d40b56fa9e34d050184259a480d3",
+      "illustrationSourceSha256": "898e4721198d16dd1796f0c59cbc2055b4007ad43f8e7851c43439160437925a"
     },
     {
       "id": "armor_part_stoffhaube",
@@ -4310,7 +4568,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Kopf"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_stoffhaube.jpg",
+      "illustrationSha256": "d6c52920649550364379fb42b0e2346c95384578ea8e3add50001e56ea5cdc64",
+      "illustrationSourceSha256": "c2205b7bd8ca88d95928f72c7c7cb8cd80dc664bcf90abc818f0ea198f04244a"
     },
     {
       "id": "armor_part_leather_cap",
@@ -4353,7 +4614,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Lederkappe"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_leather_cap.jpg",
+      "illustrationSha256": "a67fc1b94187a82ebb4ca7ba09022c43dc7b6c185a6beff24c00fbbf54897c08",
+      "illustrationSourceSha256": "c0e9a45b1d3fff451b9e06bf4d1ffc0af589c6712ff67c77d134e2144a326acf"
     },
     {
       "id": "armor_part_verstaerkte_lederhaube",
@@ -4387,7 +4651,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Kopf"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_verstaerkte_lederhaube.jpg",
+      "illustrationSha256": "b0b2a177e6ca14be2ced83e280b16bd91ae34c6d7b06e11fa2d6614729d5268f",
+      "illustrationSourceSha256": "e5062d322dc41f24283ae7b884226246d5193fd857c5c0f6e11bf6a2e7b1d264"
     },
     {
       "id": "armor_part_chain_coif",
@@ -4431,7 +4698,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Kettenhaube"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_chain_coif.jpg",
+      "illustrationSha256": "f6a176496c69781ff7f1c32fd1caa0ae9cb010186c8ee933cf2bb7382fb087af",
+      "illustrationSourceSha256": "e951d74b72b5d822126560e54cdeae009ca73f3937bd41a49518490252e338cd"
     },
     {
       "id": "armor_part_iron_helmet",
@@ -4474,7 +4744,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Eisenhelm"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_iron_helmet.jpg",
+      "illustrationSha256": "a998e190abe9ddf9f1cb5df3a5dc1839cae6b8722548ccc2e1485991a83aee4a",
+      "illustrationSourceSha256": "ea00719d3c53824867230eb75c03dc6fd58e4adf9e53b757cacdc3fca3ee80df"
     },
     {
       "id": "armor_part_spangenhelm",
@@ -4508,7 +4781,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Kopf"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_spangenhelm.jpg",
+      "illustrationSha256": "3b836e09d21dd5bec1426c0ff46e3b438ea53af04d862a75d5c38eac1f4ece8b",
+      "illustrationSourceSha256": "12f601b5a271465886112998eee7c3fa42fe79f507bc91f1e56fadd1d70beaf8"
     },
     {
       "id": "armor_part_topfhelm",
@@ -4542,7 +4818,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Kopf"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_topfhelm.jpg",
+      "illustrationSha256": "03b66f23d608e7bd1090dd9befdedfe34ec37e92c6f1ee75b6f72ea2ec65af39",
+      "illustrationSourceSha256": "dfdb45526f9028d0d910dde5f1083e2d596b962515f5546d8262c3371e3eb181"
     },
     {
       "id": "armor_part_visierhelm",
@@ -4576,7 +4855,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Kopf"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_visierhelm.jpg",
+      "illustrationSha256": "b4f02bb01836caa609424ab6edeca4ab58e0bd502d6795a9e74ecaae46650d41",
+      "illustrationSourceSha256": "4ba69739945311f7afee54363a7d5b72ce5993587d11822ac5e9ce8a27096a81"
     },
     {
       "id": "armor_gepolsterte_weste",
@@ -4610,7 +4892,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Torso"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_gepolsterte_weste.jpg",
+      "illustrationSha256": "c5c8de196405774e641e27daa9814544fad90cd94f60c3318b237e45386ad6da",
+      "illustrationSourceSha256": "d4fef804d9f8427ae012e3960d6283ab2e851e09037fd761cfe8842d463a719b"
     },
     {
       "id": "armor_gambeson",
@@ -4644,7 +4929,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Torso"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_gambeson.jpg",
+      "illustrationSha256": "480a0f78d545686a3ea51e1545e75125100bda929d9229e250c2161dde0da0d9",
+      "illustrationSourceSha256": "046a58d8e7552d8223815042f85c0a6d66b3fc85b04bb58a2d2ceda8d2140e83"
     },
     {
       "id": "armor_lederharnisch",
@@ -4678,7 +4966,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Torso"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_lederharnisch.jpg",
+      "illustrationSha256": "62aeb5f5eced5a6096284d8a20ddea9c6e248ab08625c2335e39a8404774935c",
+      "illustrationSourceSha256": "4a0f54a9def4cd0ac4dd7d6ac5dad00a63568242d9654331008fab856fdcbd29"
     },
     {
       "id": "armor_verstaerkter_lederharnisch",
@@ -4712,7 +5003,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Torso"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_verstaerkter_lederharnisch.jpg",
+      "illustrationSha256": "be7c58aa180227fe30a04335246b78483bdb992fd0f3a475c52db9158b568b72",
+      "illustrationSourceSha256": "294e710122729f4dd90f7b5c9ed8b80c60ca2814afa069674538599583beaaf9"
     },
     {
       "id": "armor_chain_shirt",
@@ -4754,7 +5048,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Kettenhemd"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_chain_shirt.jpg",
+      "illustrationSha256": "e15eb50f9e75210b9d6bba98b715e66192fa8e2462ef1df3ebccd87c34ee10ac",
+      "illustrationSourceSha256": "034afd8ad017442f12833220570e4f228ba83a97aa59c3c6b62807efce9ac622"
     },
     {
       "id": "armor_chain_hauberk",
@@ -4796,7 +5093,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Kettenpanzer"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_chain_hauberk.jpg",
+      "illustrationSha256": "d17898d5f9cc3bbdc1309d967cc29a148cbdc7418e3ee872bf96fc61944b3c0d",
+      "illustrationSourceSha256": "5ad47bd1326ab0342fe4153d1d578aa61523cbc853745d3318859236500e6135"
     },
     {
       "id": "armor_scale",
@@ -4838,7 +5138,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Schuppenpanzer"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_scale.jpg",
+      "illustrationSha256": "b0a11f11481001c995eacd1d0f04a57dad8744e5ee99bfed64f02300d9901370",
+      "illustrationSourceSha256": "492a2c6edb5beb0ac9343470b63b2de81a8e836632f4c3b8c574d11f0002ca54"
     },
     {
       "id": "armor_lamellenpanzer",
@@ -4872,7 +5175,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Torso"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_lamellenpanzer.jpg",
+      "illustrationSha256": "ddf74235308b6dedb31e65621a530d4115c8564a411309311e60a2dc5c5ca133",
+      "illustrationSourceSha256": "50185a26ea478464c1c3d459299e4108d90b6e6f45262afba2b73b8366006565"
     },
     {
       "id": "armor_brigantine",
@@ -4906,7 +5212,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Torso"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_brigantine.jpg",
+      "illustrationSha256": "eb72c65aaa16187446159d2c8dd983afda7af689b0fcfd31eb6998362cb6b1bc",
+      "illustrationSourceSha256": "d917e3e7e43c66c2e6021134f5fd05b69656be22b876108ce20f2de1ed14d98f"
     },
     {
       "id": "armor_einfacher_plattenharnisch",
@@ -4940,7 +5249,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Torso"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_einfacher_plattenharnisch.jpg",
+      "illustrationSha256": "af6759df141c1e3a7e960adca37bd1ba4c18453410df6dde6c4afd6ccca89cb4",
+      "illustrationSourceSha256": "4ea71d3bcaedf306243129793566c1499db9a7b9b537a5e0f97315ab6fa4b950"
     },
     {
       "id": "armor_part_gepolsterte_armschoner",
@@ -4975,7 +5287,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Schultern",
         "Oberarme"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_gepolsterte_armschoner.jpg",
+      "illustrationSha256": "15d3872524caab2bb35b00252fbca854d2e569bbae35e8fb775db4c810b42786",
+      "illustrationSourceSha256": "87294b8a41779957fbc1f7d214c5de886c91a820975f07dd3d78a1ae0255bd3a"
     },
     {
       "id": "armor_part_lederarmschutz",
@@ -5010,7 +5325,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Schultern",
         "Oberarme"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_lederarmschutz.jpg",
+      "illustrationSha256": "b5f4e76f053cbfca679a3e77552bfe46a56aafa1322b4a392cceca0be248be8c",
+      "illustrationSourceSha256": "32b90ed26dd1a25798f176339ee3f5f19879063f9e93018d8af3e78b8937a84b"
     },
     {
       "id": "armor_part_verstaerkter_lederarmschutz",
@@ -5045,7 +5363,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Schultern",
         "Oberarme"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_verstaerkter_lederarmschutz.jpg",
+      "illustrationSha256": "3c6ad9cf78607b7eb6807530b29d575d20b7e09da24659a8d5babb93c69cbe18",
+      "illustrationSourceSha256": "00394ea242938d29f9d17a8e44db5b28fdaa7a3dde87414d37792632dfe90190"
     },
     {
       "id": "armor_part_chain_sleeves",
@@ -5089,7 +5410,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Kettenärmel"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_chain_sleeves.jpg",
+      "illustrationSha256": "8253c0c81112fcda7726f4344fafe7b99d12d3d4f882709483b39d180785d14f",
+      "illustrationSourceSha256": "7dcc16374c044ca9eba90ab5ff8a271fcdc78ec38c9c2818012d86bc7793bbc5"
     },
     {
       "id": "armor_part_metallarmschienen",
@@ -5124,7 +5448,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Schultern",
         "Oberarme"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_metallarmschienen.jpg",
+      "illustrationSha256": "0e05575a3df492c0944a53d72dd86b3935b2008e9971305467705356b6c5bb51",
+      "illustrationSourceSha256": "05ba564106aadf1182a48678eb6ec29fec16e9d82d49eb9baa95aa08839a5446"
     },
     {
       "id": "armor_part_schuppenarmschutz",
@@ -5159,7 +5486,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Schultern",
         "Oberarme"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_schuppenarmschutz.jpg",
+      "illustrationSha256": "1c76feca1fe4954e386fb7b351c1efd19750f0020861af15dcd318c8212d4ce2",
+      "illustrationSourceSha256": "55046bb6c0ee2ef68fafa1a00c478282be4fa9797958d34e0dfa587d25e75081"
     },
     {
       "id": "armor_part_plate_arms",
@@ -5203,7 +5533,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Plattenarme"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_plate_arms.jpg",
+      "illustrationSha256": "9135ec6096dd8c16a187b86d4f7b5dc2ef6290d9759fc772fa06abb645d9198f",
+      "illustrationSourceSha256": "d79972f1528a0f9c1b448bc31120de4002066ba256e0964ff9dd8f6f77b22c8c"
     },
     {
       "id": "armor_part_gelenkige_plattenarme",
@@ -5238,7 +5571,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Schultern",
         "Oberarme"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_gelenkige_plattenarme.jpg",
+      "illustrationSha256": "5396c51e225829aace4fb6f99a572e5143c461ea10d3a32ad0869c0f1c737552",
+      "illustrationSourceSha256": "a13e4903eaa098350cb63833da468004ad0acffac665cc99e498544aca0b43d6"
     },
     {
       "id": "armor_part_lederhandschuhe",
@@ -5272,7 +5608,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Hände"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_lederhandschuhe.jpg",
+      "illustrationSha256": "5515c8e974f6e26697b9c3d845b60591d5195d48cca4cbfd65f997e730164197",
+      "illustrationSourceSha256": "f10afabe386a3cd87486ab1b3fdd444e69d1c5e0bce62607f71309609763e6d7"
     },
     {
       "id": "armor_part_reinforced_gloves",
@@ -5315,7 +5654,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Verstärkte Lederhandschuhe"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_reinforced_gloves.jpg",
+      "illustrationSha256": "eb88d850a8bd0d069a5f01cf25ae0fc9a4dc26a76189508c21c9da2ee6ebf281",
+      "illustrationSourceSha256": "925e20e3d7aa3ba34f614051172851594592838d960753bca5f470bcdfe7ccca"
     },
     {
       "id": "armor_part_chain_gloves",
@@ -5358,7 +5700,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Kettenhandschuhe"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_chain_gloves.jpg",
+      "illustrationSha256": "696f1c9d4162e8b651fc3b914a6b107218b39c87152f95373d4f16e6f719371c",
+      "illustrationSourceSha256": "8a0ae57bbafde1acaa63286bc90d45e97d85065730d38d53d7757e06e69fd012"
     },
     {
       "id": "armor_part_eisenhandschuhe",
@@ -5392,7 +5737,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Hände"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_eisenhandschuhe.jpg",
+      "illustrationSha256": "cdd2674e2efdd76241ce89b3886f831b2570bc402abfaa14b066dbc759053ae7",
+      "illustrationSourceSha256": "fa9ab6c2d3c15b63e0655cd55746e47fa8fc1f496ca793ab18fe4f61fab3213f"
     },
     {
       "id": "armor_part_plate_gauntlets",
@@ -5435,7 +5783,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Panzerhandschuhe"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_plate_gauntlets.jpg",
+      "illustrationSha256": "d21f82ac0072e01ce8f6586b2ec1d816d626dce1f138201e8b7fd49d23a73ce6",
+      "illustrationSourceSha256": "ed13a5c4dad2efdbfc4519b680050b08e60aeb903bd536c7594019fa87a4d59a"
     },
     {
       "id": "armor_part_gelenkige_plattenhandschuhe",
@@ -5469,7 +5820,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Hände"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_gelenkige_plattenhandschuhe.jpg",
+      "illustrationSha256": "b36e3e145ec23ad55be69e6ff149f5ecb8707a1c64566d15a77ff722f3146cbb",
+      "illustrationSourceSha256": "12c4fa708377b6e2409f67346a53128d4099a1d0b629de779c77afb882c0d67b"
     },
     {
       "id": "armor_part_gepolsterter_hueftschutz",
@@ -5504,7 +5858,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Hüfte",
         "Oberschenkel"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_gepolsterter_hueftschutz.jpg",
+      "illustrationSha256": "be8e3a70a097c597b6a0e53b8a45dcdb113493453e87636f54383c69d6f3b55b",
+      "illustrationSourceSha256": "a5178f01c03d499595c1cae42d23c0cd2631a4def578a997488fa71ff3df9187"
     },
     {
       "id": "armor_part_lederschurz",
@@ -5539,7 +5896,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Hüfte",
         "Oberschenkel"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_lederschurz.jpg",
+      "illustrationSha256": "61dd3cd48b244dca709757a2b826733882ff5d700880ae8dd42f5441a938e339",
+      "illustrationSourceSha256": "4f7e88f9f4e4800add3d7b0ba3725ca81535c927f0991e9f7a0f2ce23a8b4479"
     },
     {
       "id": "armor_part_verstaerkter_lederschurz",
@@ -5574,7 +5934,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Hüfte",
         "Oberschenkel"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_verstaerkter_lederschurz.jpg",
+      "illustrationSha256": "d33d1f33a6f4031b20c776ccd99cd6152b56b63c3140311bacb8205c17aa9f14",
+      "illustrationSourceSha256": "3f7b7e0aa6fdaef66ae8edb7babf44a6cc0c0ee97917a35e27461ffaa6f3d199"
     },
     {
       "id": "armor_part_kettenschurz",
@@ -5609,7 +5972,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Hüfte",
         "Oberschenkel"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_kettenschurz.jpg",
+      "illustrationSha256": "20d384ac6247eb270b806215630413b6d1a2040970fbeb53a605f77a67f988de",
+      "illustrationSourceSha256": "1b2ae6d55866df652e111e8734280234674b3919ef941f31239cdf7dc7a84459"
     },
     {
       "id": "armor_part_schuppenrock",
@@ -5644,7 +6010,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Hüfte",
         "Oberschenkel"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_schuppenrock.jpg",
+      "illustrationSha256": "2f01691a033e0fe5ac40bfb69c4a829eab7da22b585fc36d24530d0f44d19bc1",
+      "illustrationSourceSha256": "cf3f92429f080aa18dd1c17bdfb3927574fe92266a2535b53ddc2e80f8e5dedb"
     },
     {
       "id": "armor_part_plattenrock",
@@ -5679,7 +6048,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Hüfte",
         "Oberschenkel"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_plattenrock.jpg",
+      "illustrationSha256": "c42b73f745f2d51302cab111aa43651e410b7e559a53f3340f96ddd6cabb9f47",
+      "illustrationSourceSha256": "e6b4eed28489ecccd5716e9359620a45ffc87482873c34772a474f8f9baafab4"
     },
     {
       "id": "armor_part_gelenkiger_plattenrock",
@@ -5714,7 +6086,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Hüfte",
         "Oberschenkel"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_gelenkiger_plattenrock.jpg",
+      "illustrationSha256": "53717e7dc1a42bce8fcef12ee90570d1badb240cc915768299f6db106c4fba17",
+      "illustrationSourceSha256": "eb2163bd551c341b5782a250721b4813a8098434301191c984ce2894120997f4"
     },
     {
       "id": "armor_part_padded_leggings",
@@ -5757,7 +6132,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Gepolsterte Beinlinge"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_padded_leggings.jpg",
+      "illustrationSha256": "885d740aad9c2863c030c6ebb93799872a78286079ed6dacfb1e8ded8d384b82",
+      "illustrationSourceSha256": "700d6f849fd580f9942f602fd78004013f91b959b8f2dd808e7e5b8862a17d12"
     },
     {
       "id": "armor_part_leather_legs",
@@ -5800,7 +6178,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Lederbeinschienen"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_leather_legs.jpg",
+      "illustrationSha256": "ecd7cf7d18bbade04736431e7d7a54734880879074fc06efab3d619437fd4c21",
+      "illustrationSourceSha256": "a86de08678a8fe0792d54d6f4ea9bfd62158c7b463ab9a83d017edf60183dda6"
     },
     {
       "id": "armor_part_verstaerkte_lederbeine",
@@ -5834,7 +6215,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Beine"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_verstaerkte_lederbeine.jpg",
+      "illustrationSha256": "ca637f76b47dfbcf68af74187312d675e5173f023c3100dd6adf63a098d6d76f",
+      "illustrationSourceSha256": "4b1acdb17d0de9d0c05b6e82ea9eabeb17d85a0a251451c42f7dadf335c60142"
     },
     {
       "id": "armor_part_metal_greaves",
@@ -5877,7 +6261,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Metallbeinschienen"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_metal_greaves.jpg",
+      "illustrationSha256": "edaacfd073530ddbf4377cb6410a46e567f183963392313d35493abf0752fbd8",
+      "illustrationSourceSha256": "be51ad3d8b4c53c1c6921ebfaa1f12c777f26a69290209bab317abf8dc85be62"
     },
     {
       "id": "armor_part_chain_leggings",
@@ -5920,7 +6307,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Kettenbeinlinge"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_chain_leggings.jpg",
+      "illustrationSha256": "6b1507b8978d9f0a9b312cee06f716dfb4780eab3e46a356cdc0094c19df99c0",
+      "illustrationSourceSha256": "cfb57e25908973a4417839eed9378554aeabc8f3486c3932b05523830dba1203"
     },
     {
       "id": "armor_part_plate_legs",
@@ -5963,7 +6353,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Plattenbeine"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_plate_legs.jpg",
+      "illustrationSha256": "4dfc32e62faee26d95b4c1365bc5b25444e8c4839885cd5cc42279f015d966d8",
+      "illustrationSourceSha256": "8a62fe7bc770c2654b0d4149b762da1d8c4a9ff651cfd5a74b58f3c7f28cca55"
     },
     {
       "id": "armor_part_schuppenbeinlinge",
@@ -5997,7 +6390,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Beine"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_schuppenbeinlinge.jpg",
+      "illustrationSha256": "44a22e740b9d08e537fdc453efdca4a96f450e403ce12f69eec10045e9c13ba9",
+      "illustrationSourceSha256": "4e56376c859e111286047bab945e4da597149304cb8b323cc1917d452c7aa153"
     },
     {
       "id": "armor_part_gelenkige_plattenbeine",
@@ -6031,7 +6427,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Beine"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_gelenkige_plattenbeine.jpg",
+      "illustrationSha256": "a7704f61224f1ac7cf3dc04ba148afa827ee3de794c6d164daade3e8bd45421f",
+      "illustrationSourceSha256": "fc74821dca869e483d1bef0dd95bb3067aa659a760ab74dcd10ebd857d1a3b26"
     },
     {
       "id": "armor_part_leather_boots",
@@ -6074,7 +6473,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Feste Lederstiefel"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_leather_boots.jpg",
+      "illustrationSha256": "621998973ae07329ec0fdad087f9b41f9b2d647583a6a6e667abc5dec7a103d9",
+      "illustrationSourceSha256": "34f460d281369b0386c18bbe8a1b788d702c1706ff35e60b037045c89710e4d1"
     },
     {
       "id": "armor_part_reinforced_boots",
@@ -6117,7 +6519,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Verstärkte Stiefel"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_reinforced_boots.jpg",
+      "illustrationSha256": "56b93e22de15fbdf376d3b4e7a4453b773262f3aa16fdbbc62d2cc6e1630004a",
+      "illustrationSourceSha256": "c14767b9cb86eac3a5c5702e6a6a763dd9861c756ec53a2cc2e3cf1f69e47f31"
     },
     {
       "id": "armor_part_beschlagene_stiefel",
@@ -6151,7 +6556,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Füße"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_beschlagene_stiefel.jpg",
+      "illustrationSha256": "18960771b704710ae6cb7cb606958fbdbb11dc76ad4dc7fa49f438c3dad4849b",
+      "illustrationSourceSha256": "73f8a29adc2901f16e10f9aa0f15d88d0594a25cefdcbb4649cde539b0ed6576"
     },
     {
       "id": "armor_part_chain_shoes",
@@ -6194,7 +6602,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Kettenschuhe"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_chain_shoes.jpg",
+      "illustrationSha256": "08964d7de69efeb39be7f8a687c6e93711f240986b05dcdca28ad5d7fa99efd1",
+      "illustrationSourceSha256": "8fcebb0734b1d74787d985d9d0b48911a48c5f05cc0caad2613afca5ee5ce560"
     },
     {
       "id": "armor_part_plate_sabatons",
@@ -6237,7 +6648,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Plattenschuhe"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_plate_sabatons.jpg",
+      "illustrationSha256": "72cfc92cee37363b8f01aac9df3cd9e1e44785db765f231c213b62a79e796fd8",
+      "illustrationSourceSha256": "61c7b18f5033ad1a8b45a7008ece21ec8023b89e73930867a8f48b3331f35280"
     },
     {
       "id": "armor_part_gepanzerte_reiterstiefel",
@@ -6271,7 +6685,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Füße"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_gepanzerte_reiterstiefel.jpg",
+      "illustrationSha256": "629eadd764ff542ad3541a56e76d4ac95c3660900f4e75bf6b5bb278f564e4b8",
+      "illustrationSourceSha256": "8e59a7cda1e57330e43e4d815c80042be10456b8c675b46c4ada95b1e055f2f5"
     },
     {
       "id": "armor_part_gelenkige_sabatons",
@@ -6305,7 +6722,10 @@ window.EBEROS_ITEM_DB={
       "weightUnknown": false,
       "zones": [
         "Füße"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_gelenkige_sabatons.jpg",
+      "illustrationSha256": "1c1209d92138c0866f2cce5b841e1f903f8eb63b42eb1d1958980135bd94fb26",
+      "illustrationSourceSha256": "c34130e2f8f3842d00d73fe76d4a60c8f779a2f06def7d2dea1143709a17303a"
     },
     {
       "id": "armor_shield_buckler",
@@ -6351,7 +6771,10 @@ window.EBEROS_ITEM_DB={
         "Faustschild",
         "Buckler"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_shield_buckler.jpg",
+      "illustrationSha256": "2a1cbf8d9bc8a991a516c00564982de208a36fa86255167f1f81920113524305",
+      "illustrationSourceSha256": "b81a96707b7fb048ba28a6f6ceaa5ab11c14c55ad0edef9bb53866af5c851b91"
     },
     {
       "id": "armor_shield_holzschild",
@@ -6386,7 +6809,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Front"
       ],
-      "blockBonus": 1
+      "blockBonus": 1,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_shield_holzschild.jpg",
+      "illustrationSha256": "241c4d3861c8577b3553f4012867f2120385bcae7101fedff89775c34d065326",
+      "illustrationSourceSha256": "0e0f2592f00f7c5d7f3873c407c5088a862cf027b5c88462430e0bee3c4fb44a"
     },
     {
       "id": "armor_shield_round",
@@ -6430,7 +6856,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Rundschild"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_shield_round.jpg",
+      "illustrationSha256": "741e9e5ef697a8ee9cb9c78dbcada42d923a09a22d58736a36ab16748684fa5f",
+      "illustrationSourceSha256": "6400e27871d31f94d02d5eced775381a44d7c2ffbacf132504b767a9daa811d7"
     },
     {
       "id": "armor_shield_heaterschild",
@@ -6465,7 +6894,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Front"
       ],
-      "blockBonus": 2
+      "blockBonus": 2,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_shield_heaterschild.jpg",
+      "illustrationSha256": "d40e90d94d0b73e4f470d909c013ad519e9745cfe2ffe3d331b7b8f8bca68591",
+      "illustrationSourceSha256": "e935758c3e5067b9a0b5c8c131fec2ac55467935ba0d1d50716e798295f23d44"
     },
     {
       "id": "armor_shield_kiteschild",
@@ -6500,7 +6932,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Front"
       ],
-      "blockBonus": 3
+      "blockBonus": 3,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_shield_kiteschild.jpg",
+      "illustrationSha256": "5ff36abf03f24071146fb68f105a18293b4a24fb2590efd0f1b415a226a8c124",
+      "illustrationSourceSha256": "8de559343ec31d2197825e283f569c8120c59c8b0762a21bc418318c4dd37f32"
     },
     {
       "id": "armor_shield_tower",
@@ -6545,7 +6980,10 @@ window.EBEROS_ITEM_DB={
       "aliases": [
         "Turmschild"
       ],
-      "weightUnknown": false
+      "weightUnknown": false,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_shield_tower.jpg",
+      "illustrationSha256": "eed42a504432c8689885c3caed09d1b76c2cce43d2685f3ff7486889e9821db6",
+      "illustrationSourceSha256": "e4218bd7ba97faf835b178fbe01567b44be5bd6f5f51dbc2883b5d45f01c2e11"
     },
     {
       "id": "armor_shield_verstaerkter_turmschild",
@@ -6580,7 +7018,10 @@ window.EBEROS_ITEM_DB={
       "zones": [
         "Front"
       ],
-      "blockBonus": 4
+      "blockBonus": 4,
+      "illustration": "./data/standard-item-art-v1.3.1/armor_shield_verstaerkter_turmschild.jpg",
+      "illustrationSha256": "083b389a946516107e6e8b9d621491616f99773dc45fdbb2ce02fa4a4bb203b1",
+      "illustrationSourceSha256": "16dc357198a7d4be9d4d1d5299c5da31ec7fff058ac6fb63a43c0d04ec599bfd"
     },
     {
       "id": "wpn_melee_hand_axe",
@@ -6614,7 +7055,10 @@ window.EBEROS_ITEM_DB={
       "minStrength": 3,
       "aliases": [
         "Handaxt"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_hand_axe.jpg",
+      "illustrationSha256": "9234b05645b0c27dcd3668e0a60aaa2c6205f4a0cda7684a84537f77501c8183",
+      "illustrationSourceSha256": "ec3cd645e924b83fe9c8b8935c4e0f5970dbc61fc9d11601442f63a8015d2fca"
     },
     {
       "id": "wpn_melee_halberd",
@@ -6650,7 +7094,10 @@ window.EBEROS_ITEM_DB={
       "minStrength": 6,
       "aliases": [
         "Hellebarde"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_halberd.jpg",
+      "illustrationSha256": "523574457c02619f96a9cb3ec6af38f63cc0fd3efd5700e271ab7655d33eb261",
+      "illustrationSourceSha256": "74e5c6ec327399c82a9fb902f903d2572c3b8be2028af2dc42ea9c64b9e35292"
     },
     {
       "id": "wpn_melee_improvised",
@@ -6684,7 +7131,10 @@ window.EBEROS_ITEM_DB={
       "minStrength": 1,
       "aliases": [
         "Improvisierte Nahkampfwaffe"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_improvised.jpg",
+      "illustrationSha256": "24cde40290cf591aa25f29bb771b1d3245691f469aaaa427e8706134c87bf68c",
+      "illustrationSourceSha256": "e5ee8ab7d5776046ad1d4face8206c7752e21398f961b7fcda9aa671d29ff8bf"
     },
     {
       "id": "wpn_melee_quarterstaff",
@@ -6719,7 +7169,10 @@ window.EBEROS_ITEM_DB={
       "minStrength": 2,
       "aliases": [
         "Kampfstab"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_quarterstaff.jpg",
+      "illustrationSha256": "de4cfb89332bef3ffed1ae04123e4d0d80c593d6e59d9abc943f4fcc73a94083",
+      "illustrationSourceSha256": "f523f865084f9c9dc2342f22d007d8db9933d0b4c36cf4ef9a879855833d4e8b"
     },
     {
       "id": "wpn_melee_small_simple",
@@ -6753,7 +7206,10 @@ window.EBEROS_ITEM_DB={
       "minStrength": 1,
       "aliases": [
         "Kleine simple Nahkampfwaffe"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_small_simple.jpg",
+      "illustrationSha256": "272ca257318e05c734fbca1097e5a9c37d26312516ba8345f1de7052c8bc3637",
+      "illustrationSourceSha256": "01fc9589406bb5e362a8f43110f0185dbfdde8e4c2d27ee7d7985080f1bd2fa3"
     },
     {
       "id": "wpn_melee_light_simple",
@@ -6787,7 +7243,10 @@ window.EBEROS_ITEM_DB={
       "minStrength": 2,
       "aliases": [
         "Leichte simple Nahkampfwaffe"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_light_simple.jpg",
+      "illustrationSha256": "cdd1b1a34adaf0bd2e17f1f254eab32db99076234945dec269b8b2e56afa43e7",
+      "illustrationSourceSha256": "e869ee18be43df00d8f7da36c90c485fafa8cebc4e15760830cdc7e43383e53d"
     },
     {
       "id": "wpn_melee_heavy_simple",
@@ -6822,7 +7281,10 @@ window.EBEROS_ITEM_DB={
       "minStrength": 5,
       "aliases": [
         "Schwere simple Nahkampfwaffe"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_heavy_simple.jpg",
+      "illustrationSha256": "e50c532d05fbad8eefbbb0e0e9e5e5464b5da1442caa51423601e38efc7162fb",
+      "illustrationSourceSha256": "61632d5a0cdb1255a39e1ade9d28a6939282e90df311b2dfbc6dc0d4a6674ec8"
     },
     {
       "id": "wpn_melee_spear",
@@ -6857,7 +7319,10 @@ window.EBEROS_ITEM_DB={
       "minStrength": 3,
       "aliases": [
         "Speer"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_spear.jpg",
+      "illustrationSha256": "e7b96ff0f24a2fab8ff93f48821a1b2de1b45e577c557f727d3a03cbfa84d5b2",
+      "illustrationSourceSha256": "cb050d2da98a2f4cfa5ed89e53bd810c54433f0270084f4b61577440806ae1e9"
     },
     {
       "id": "wpn_melee_greataxe",
@@ -6892,7 +7357,10 @@ window.EBEROS_ITEM_DB={
       "minStrength": 7,
       "aliases": [
         "Zweihandaxt"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_melee_greataxe.jpg",
+      "illustrationSha256": "bccb8de9b8b54cfd52ef7c73ff254f6bcad8cff1994a63f638d8fd7772ea5ae3",
+      "illustrationSourceSha256": "34d8eda6bfa32b95355c61051d9b40e3e1f691e57687b6a12bd972a841e83775"
     },
     {
       "id": "wpn_ranged_hand_crossbow",
@@ -6928,7 +7396,10 @@ window.EBEROS_ITEM_DB={
       "reloadActions": 1,
       "aliases": [
         "Handarmbrust"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_hand_crossbow.jpg",
+      "illustrationSha256": "967a24ab139884ad2a820bb8721250bad8545d81326b98e2b5a5224814d86ea7",
+      "illustrationSourceSha256": "15810f55540b23e4632e7c25c802d8de55e78fe4c0557a6a040d0f9ef1717d19"
     },
     {
       "id": "wpn_ranged_sling",
@@ -6964,7 +7435,10 @@ window.EBEROS_ITEM_DB={
       "reloadActions": 0,
       "aliases": [
         "Schleuder"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/wpn_ranged_sling.jpg",
+      "illustrationSha256": "913c431a89a6a58887ce82e4973665dea81398abc3af5b206c9e9498ec5c29fa",
+      "illustrationSourceSha256": "64726ee2a259e1d5a552588caef0881b9e58903874a2aa16e11b1cb3b7cdc9a3"
     },
     {
       "id": "ammo_bolt_12",
@@ -6991,7 +7465,10 @@ window.EBEROS_ITEM_DB={
       ],
       "aliases": [
         "Bolzen, 12 Stück"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/ammo_bolt_12.jpg",
+      "illustrationSha256": "64109aafc26afd4b3d8939d96e1c2d8a989847d97bdcd57e60a49c7665bd3149",
+      "illustrationSourceSha256": "adf837bdc7ec284bb9d4b7fbeedc1060f887a4aedcc9ff4a854594417b550b34"
     },
     {
       "id": "ammo_short_bolt_12",
@@ -7018,7 +7495,10 @@ window.EBEROS_ITEM_DB={
       ],
       "aliases": [
         "Kurze Bolzen, 12 Stück"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/ammo_short_bolt_12.jpg",
+      "illustrationSha256": "bd9422d8f55ee7aae281b08ae7f216ee4157a07bf7a7131f9133ad19860b52f1",
+      "illustrationSourceSha256": "950395d218f6ac8d17f26b602ee9d76ac5d2681e6903f3dc59d728d0ee1d43fa"
     },
     {
       "id": "ammo_arrow_12",
@@ -7046,7 +7526,10 @@ window.EBEROS_ITEM_DB={
       ],
       "aliases": [
         "Pfeile, 12 Stück"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/ammo_arrow_12.jpg",
+      "illustrationSha256": "4451abb32c3ec8e76353d4f360feb88835a48eda0d7fa8f8f3b12fcfc1f61bc5",
+      "illustrationSourceSha256": "63a7e6a9ffa33ed40fc56bdc05d3ace688b08fe1ea2f9bb973f67bc390849360"
     },
     {
       "id": "ammo_sling_stone_20",
@@ -7073,7 +7556,10 @@ window.EBEROS_ITEM_DB={
       ],
       "aliases": [
         "Schleudersteine, 20 Stück"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/ammo_sling_stone_20.jpg",
+      "illustrationSha256": "81edb57b0744563cb6bbcd5a37d1a753eff6c1a8fd0b26d9270c905e5e99970b",
+      "illustrationSourceSha256": "bec030dda903d72be34ddd2835416ab216b57884b3a1249f9c79f2c4c4142827"
     },
     {
       "id": "ammo_heavy_bolt_8",
@@ -7100,7 +7586,10 @@ window.EBEROS_ITEM_DB={
       ],
       "aliases": [
         "Schwere Bolzen, 8 Stück"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/ammo_heavy_bolt_8.jpg",
+      "illustrationSha256": "74b21702d1410a4430fe7575793a9990d0bab6ce067601f75e395db11fe5a898",
+      "illustrationSourceSha256": "eb2b0afaade5580d67e191fb49a1042cae12112e69482f42d9798f3517f5cc26"
     },
     {
       "id": "armor_breastplate",
@@ -7130,7 +7619,10 @@ window.EBEROS_ITEM_DB={
       "combatSkill": "Verteidigung & Blocken",
       "aliases": [
         "Brustplatte"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_breastplate.jpg",
+      "illustrationSha256": "273b4dd35f941cd648025866f1b0a94ffe31d808329fc11088a2667e3745f1ea",
+      "illustrationSourceSha256": "d4c1aaabf70802702fe5f3241a2829d892fb3a29f0119fcc1647925d56063c79"
     },
     {
       "id": "armor_padded_jacket",
@@ -7161,7 +7653,10 @@ window.EBEROS_ITEM_DB={
       "combatSkill": "Verteidigung & Blocken",
       "aliases": [
         "Gepolsterte Jacke"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_padded_jacket.jpg",
+      "illustrationSha256": "9be83b47585dc0ca87782d2513dd1265a145d713a17ad777a1dfbce825373b47",
+      "illustrationSourceSha256": "37e80eef8ffbdad32f4c43e4b0b674095accabfd74e285ba0db429a0e7b49a05"
     },
     {
       "id": "armor_half_plate",
@@ -7193,7 +7688,10 @@ window.EBEROS_ITEM_DB={
       "combatSkill": "Verteidigung & Blocken",
       "aliases": [
         "Halbplatte"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_half_plate.jpg",
+      "illustrationSha256": "d2e7dcf29e98394fa01d443eee70e9fcbca288330e96bece1c3f7d7dbdc8111b",
+      "illustrationSourceSha256": "86596cc075d2210ac3ab5790254533fb6239d38c1801b2a22e4f75bdb3399dcc"
     },
     {
       "id": "armor_leather_jerkin",
@@ -7223,7 +7721,10 @@ window.EBEROS_ITEM_DB={
       "combatSkill": "Verteidigung & Blocken",
       "aliases": [
         "Lederwams"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_leather_jerkin.jpg",
+      "illustrationSha256": "628d846ea7121dd905a4a48508880e830c77e764c55832e1bb86a31570e79087",
+      "illustrationSourceSha256": "80007c3bd8e93e44eb2bc6c5b306ea165118ee2bb1dca52104fc753e880280e7"
     },
     {
       "id": "armor_reinforced_leather",
@@ -7254,7 +7755,10 @@ window.EBEROS_ITEM_DB={
       "combatSkill": "Verteidigung & Blocken",
       "aliases": [
         "Verstärkte Lederrüstung"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_reinforced_leather.jpg",
+      "illustrationSha256": "87e7e17ca005bb3d3654c91baff2db3043b4ef36ebdfa331a4957b9f55dc0e3e",
+      "illustrationSourceSha256": "24c1cfbbfa5cb9b36a00b349780cd700b550d41a72436e0d3b5028b53306bc51"
     },
     {
       "id": "armor_full_plate",
@@ -7291,7 +7795,10 @@ window.EBEROS_ITEM_DB={
       "combatSkill": "Verteidigung & Blocken",
       "aliases": [
         "Vollplatte"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_full_plate.jpg",
+      "illustrationSha256": "5c60c237528275c676795fd9af37fad8eeb1a44d53162b5a3226314a0e2a70c9",
+      "illustrationSourceSha256": "9ce780c931c55081dcff042e677b60ad097d5015e4ab3405f780a09f7d75eb31"
     },
     {
       "id": "armor_part_padded_hood",
@@ -7323,7 +7830,10 @@ window.EBEROS_ITEM_DB={
       "combatSkill": "Verteidigung & Blocken",
       "aliases": [
         "Gepolsterte Haube"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_padded_hood.jpg",
+      "illustrationSha256": "d3bb95691f692a6239f531e190e5f2819f0080a7e64d64663a4cca4da8de6dac",
+      "illustrationSourceSha256": "c439e21b3a68b0ebff1f006d79b722938a81493954448dcf71e83ece3c9a60ba"
     },
     {
       "id": "armor_part_closed_helmet",
@@ -7357,7 +7867,10 @@ window.EBEROS_ITEM_DB={
       "combatSkill": "Verteidigung & Blocken",
       "aliases": [
         "Geschlossener Plattenhelm"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_closed_helmet.jpg",
+      "illustrationSha256": "5ec6adcb58cdcf8948b1978e77c14250804ed564e8bfc51c103caa6902ca4e7b",
+      "illustrationSourceSha256": "b706bb4539143c16e903d2fc667b762e816277cd46659c584ab0da251eb5f67f"
     },
     {
       "id": "armor_part_padded_shoulder_collar",
@@ -7390,7 +7903,10 @@ window.EBEROS_ITEM_DB={
       "combatSkill": "Verteidigung & Blocken",
       "aliases": [
         "Gepolsterter Schulterkragen"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_padded_shoulder_collar.jpg",
+      "illustrationSha256": "28d965d79c34932ac2a3cb6deebfee1fb4b97dcd9104871d970821704185a903",
+      "illustrationSourceSha256": "f40bc3711ed5e38acfe80642114e2c0d774976344992a79534fa89ec46879d06"
     },
     {
       "id": "armor_part_leather_shoulders",
@@ -7422,7 +7938,10 @@ window.EBEROS_ITEM_DB={
       "combatSkill": "Verteidigung & Blocken",
       "aliases": [
         "Lederschultern"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_leather_shoulders.jpg",
+      "illustrationSha256": "d56b879d2fa40eb6ae7d08567e3c97dacc5b8d9ceffa50e8efbce40409e10f60",
+      "illustrationSourceSha256": "88fe839286be3db69d8bf8fbc057e4ebf41e3476e83204b8f728167fe3693b1d"
     },
     {
       "id": "armor_part_chain_shoulders",
@@ -7455,7 +7974,10 @@ window.EBEROS_ITEM_DB={
       "combatSkill": "Verteidigung & Blocken",
       "aliases": [
         "Kettenschultern"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_chain_shoulders.jpg",
+      "illustrationSha256": "5e5885275c19d21cd46e3f79c5aa32fa4dd1943533b90d825bf04493a344531f",
+      "illustrationSourceSha256": "a45fd4150eeac8ccea73d2f689a216634514b04b79f7adf961212602af3c386d"
     },
     {
       "id": "armor_part_plate_shoulders",
@@ -7487,7 +8009,10 @@ window.EBEROS_ITEM_DB={
       "combatSkill": "Verteidigung & Blocken",
       "aliases": [
         "Schulterplatten"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_plate_shoulders.jpg",
+      "illustrationSha256": "5dc356fde447efffd4d597f7991688da35ec781d2c69ccfd58bb6607b79e91a0",
+      "illustrationSourceSha256": "c69ba97c7bef34108d637dc8836b3a56659e2a759e0cf2d8c8cf5559d96da686"
     },
     {
       "id": "armor_part_padded_sleeves",
@@ -7519,7 +8044,10 @@ window.EBEROS_ITEM_DB={
       "combatSkill": "Verteidigung & Blocken",
       "aliases": [
         "Gepolsterte Ärmel"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_padded_sleeves.jpg",
+      "illustrationSha256": "035ba817fb31a2ed947637d34aebd2bec304fc2df01ffa825b862b145dc1f896",
+      "illustrationSourceSha256": "427220af191608c0ba1a5445cc7358f38b423937b6819d1d199cc447cde2b9d9"
     },
     {
       "id": "armor_part_leather_bracers",
@@ -7551,7 +8079,10 @@ window.EBEROS_ITEM_DB={
       "combatSkill": "Verteidigung & Blocken",
       "aliases": [
         "Lederarmschienen"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/armor_part_leather_bracers.jpg",
+      "illustrationSha256": "ecae2ee1bea359dfd0a762c92999104112afd13a38f4d451190de8d68c4eb5eb",
+      "illustrationSourceSha256": "9e37662d5e1eedd58da460bc38e80aa21327d9f01d9f52c8bead3ecb72b76df3"
     },
     {
       "id": "gear_pouch",
@@ -7576,7 +8107,10 @@ window.EBEROS_ITEM_DB={
       "capacity": "2 kg",
       "aliases": [
         "Gürteltasche"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_pouch.jpg",
+      "illustrationSha256": "8ad12bcade0aa7327d41d3403134da4c4890d1be2cdb4d1c5bcda59bcaf0eeac",
+      "illustrationSourceSha256": "4b0d0e73205e48d8afd45149971af379596bee5d562be48ab85766fadfaa7000"
     },
     {
       "id": "gear_quiver",
@@ -7601,7 +8135,10 @@ window.EBEROS_ITEM_DB={
       "capacity": "24 Pfeile oder Bolzen",
       "aliases": [
         "Köcher"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_quiver.jpg",
+      "illustrationSha256": "002ec39a2300359b708bc58585b52e1cc1dbd501052bd740dce2f415037c87c5",
+      "illustrationSourceSha256": "b47d54e5efdc41cbd88b673c2eb8985646519b2b84835774a9349a44d4ec9cb3"
     },
     {
       "id": "gear_backpack",
@@ -7626,7 +8163,10 @@ window.EBEROS_ITEM_DB={
       "capacity": "15 kg",
       "aliases": [
         "Rucksack"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_backpack.jpg",
+      "illustrationSha256": "043a46e370792b19aae7b8d798d15283c140196cd5e1bbacc557b89e997b1d40",
+      "illustrationSourceSha256": "e1448c46e3c23d674047bac3e789637e17aa7c8a660b43b3d4519618bcb4b18e"
     },
     {
       "id": "gear_waterskin",
@@ -7651,7 +8191,10 @@ window.EBEROS_ITEM_DB={
       "capacity": "2 Liter",
       "aliases": [
         "Wasserschlauch"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_waterskin.jpg",
+      "illustrationSha256": "d62a8562a704950ce01808619e96ec2cb97441d8958a5db1ad68c51c997270f9",
+      "illustrationSourceSha256": "ca48f1ee8a2f1e523fec5e217ae96abf0784bea1d789a9debffe41cda205cde9"
     },
     {
       "id": "gear_rope_fine_10m",
@@ -7677,7 +8220,10 @@ window.EBEROS_ITEM_DB={
       "capacity": "10 m",
       "aliases": [
         "Feines Seil, 10 m"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_rope_fine_10m.jpg",
+      "illustrationSha256": "19218b9cc730c77293593148dfcf147e327b5421e9a260684aa754a5e1a257fd",
+      "illustrationSourceSha256": "c651c398712dd556fa93d1741c4d26fb7cb803d2d9d1808f111d4836674bd906"
     },
     {
       "id": "gear_rope_hemp_10m",
@@ -7702,7 +8248,10 @@ window.EBEROS_ITEM_DB={
       "capacity": "10 m",
       "aliases": [
         "Hanfseil, 10 m"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_rope_hemp_10m.jpg",
+      "illustrationSha256": "15a7423e5bb281d7f5e06099344c129850e987ff589a6302785b18895159ee38",
+      "illustrationSourceSha256": "df4d5c750a5771a3a816ae167febc0be0e899a64dc998f2e07c0dc1564d27c24"
     },
     {
       "id": "gear_cooking_pot",
@@ -7727,7 +8276,10 @@ window.EBEROS_ITEM_DB={
       "capacity": "4 Liter",
       "aliases": [
         "Kochkessel"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_cooking_pot.jpg",
+      "illustrationSha256": "1adcf48ce36833ca7a47926a4f15cb5629fa5b8cb728d3388c01b641eec30ace",
+      "illustrationSourceSha256": "43d8ac4a9f823f3550bb44aa7f8f74b2535f552488fff072ff88a78f8fad2367"
     },
     {
       "id": "gear_shovel",
@@ -7751,7 +8303,10 @@ window.EBEROS_ITEM_DB={
       "customizable": true,
       "aliases": [
         "Schaufel"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_shovel.jpg",
+      "illustrationSha256": "40486a51be76a222d4708c1206d9e272919e025cd5e3d114a2c92e00a4165833",
+      "illustrationSourceSha256": "665f6eeb3f8a34b22f948565967be7c75119a9dbebfe0f97a3b18af802a539c9"
     },
     {
       "id": "gear_bedroll",
@@ -7775,7 +8330,10 @@ window.EBEROS_ITEM_DB={
       "customizable": true,
       "aliases": [
         "Schlafrolle"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_bedroll.jpg",
+      "illustrationSha256": "c6f230bba0d59f55bd8ecd490e0537860d3c4d332ac0f2c292c5bc32b08f0998",
+      "illustrationSourceSha256": "139e649cd7f348920cd8fe3400a09e6ad2f55a7991eaf703c3dfe9664ef6dabb"
     },
     {
       "id": "gear_blanket",
@@ -7799,7 +8357,10 @@ window.EBEROS_ITEM_DB={
       "customizable": true,
       "aliases": [
         "Wolldecke"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_blanket.jpg",
+      "illustrationSha256": "63955597afd491c7151c9e30d35bcb650c0e63a71eb0835209e4fafc196a2f32",
+      "illustrationSourceSha256": "94d35c0a897d31fa2a7d7ec65c3c2c98f12acc3f2df91c0347b1b59e01bf0386"
     },
     {
       "id": "gear_tent_2p",
@@ -7824,7 +8385,10 @@ window.EBEROS_ITEM_DB={
       "capacity": "2 Personen",
       "aliases": [
         "Zweierzelt"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_tent_2p.jpg",
+      "illustrationSha256": "6d1e0c5da1f76e5a7120d5ddf54b3207f30eca589d6ca260495dc4dc9e0a92ed",
+      "illustrationSourceSha256": "9410dc6b2023dc91810c5c547dcf2d74ccf8c699b8978cae67d7b85c10b69545"
     },
     {
       "id": "gear_torch",
@@ -7850,7 +8414,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Erzeugt helles Licht für etwa 1 Stunde.",
       "aliases": [
         "Fackel"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_torch.jpg",
+      "illustrationSha256": "b074f9b1483261677d728286c1cf9eb38078ce319e4322743dcac9a1eb77842e",
+      "illustrationSourceSha256": "64181132cdf0c2e14898296920a705119324734071ccf004e3c040751924bd6a"
     },
     {
       "id": "gear_tinderbox",
@@ -7876,7 +8443,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Hilft beim Entfachen eines Feuers.",
       "aliases": [
         "Feuerzeugkasten"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_tinderbox.jpg",
+      "illustrationSha256": "4b0ea9749a4b9bdb7aeac61c1b58a3c9292472f841b432829e915fa66bc7fce1",
+      "illustrationSourceSha256": "910bffda75c5e931bf2dbd6a5e643048335cb3f741e27856d1fceea0fc758690"
     },
     {
       "id": "gear_oil_flask",
@@ -7902,7 +8472,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Versorgt eine Laterne für mehrere Stunden.",
       "aliases": [
         "Lampenöl"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_oil_flask.jpg",
+      "illustrationSha256": "6bd8bf1d973df87c8563892bf1ad60e47f0a2d02e0834ec3755fbd6c88e3fe9c",
+      "illustrationSourceSha256": "89d497ec0f0b4ed8e8d0584c23d35b40e874ca5626da4fcdaf2cce0b69f50aca"
     },
     {
       "id": "gear_lantern",
@@ -7928,7 +8501,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Erzeugt gerichtetes oder rundes Licht.",
       "aliases": [
         "Laterne"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_lantern.jpg",
+      "illustrationSha256": "5d7af7a0a77b01d0241ab0ad729d636ef1588fe6c6203f2c74a4c1531917fda7",
+      "illustrationSourceSha256": "17e01c7726481328471aa6b6ea567293d8f5663c5d845337b44c1d7402709158"
     },
     {
       "id": "gear_crowbar",
@@ -7953,7 +8529,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Unterstützt passende Kraft- und Handwerksproben.",
       "aliases": [
         "Brecheisen"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_crowbar.jpg",
+      "illustrationSha256": "8d2e425e3438cfd65b1263c0255c4fe6deeb9ad922fe633639d4be24bd1b7a3c",
+      "illustrationSourceSha256": "39b4bd4a322d5366f6321bb3fbfbc73e52d03e8b63fb28dfee300f4113f3af77"
     },
     {
       "id": "gear_toolkit_basic",
@@ -7979,7 +8558,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Arbeitsgrundlage für allgemeines Handwerk und Reparaturen.",
       "aliases": [
         "Einfacher Werkzeugkasten"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_toolkit_basic.jpg",
+      "illustrationSha256": "3e027652985f89a4a24f16aec73158629272a909c01a67c5484e16adfb28653a",
+      "illustrationSourceSha256": "e08d80e3f7f508127d26790bd1baf66e315ab68044a604da2820fd56705e32e0"
     },
     {
       "id": "gear_armor_repair",
@@ -8005,7 +8587,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Ermöglicht einfache Reparaturen an Rüstungen und Schilden.",
       "aliases": [
         "Rüstungsreparatur-Set"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_armor_repair.jpg",
+      "illustrationSha256": "5b5468e2f2d7239384435b8f74b8fae20ce816fb844347526d7d8960375bfe48",
+      "illustrationSourceSha256": "8cef17839b2f1d2a2205a476fc9f43ca675403603659f09f84c875b98002e4fe"
     },
     {
       "id": "gear_lockpicks",
@@ -8031,7 +8616,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Arbeitsgrundlage für Schlösser und kleine Mechanismen.",
       "aliases": [
         "Schlosswerkzeug"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_lockpicks.jpg",
+      "illustrationSha256": "e58f1e8764e5fa39f30c22d8464108645fffa127e194a042c774f47fb17d725a",
+      "illustrationSourceSha256": "f73733b9ff5de99fa42210259a8a10c9f48d1ea4feeb6502b3aadd1a5fd07429"
     },
     {
       "id": "gear_weapon_care",
@@ -8057,7 +8645,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Pflegt Klingen, Bögen und Metallteile.",
       "aliases": [
         "Waffenpflege-Set"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_weapon_care.jpg",
+      "illustrationSha256": "94aeed9fc031919640fc2a33d7cf52d2786eeb0e4b77196050b8fc206db3b740",
+      "illustrationSourceSha256": "560f82cbbe43318def321a01ca39e16f254be454e9f28a9bcd1c9ecf74183202"
     },
     {
       "id": "gear_healer_kit",
@@ -8086,7 +8677,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Wird gegen negative Effekte wie Bluten, Gift und Säure verwendet.",
       "aliases": [
         "Heilerbesteck"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_healer_kit.jpg",
+      "illustrationSha256": "6aff094aa5f2257f35d10d1b3b24747c74e9ac4066a918bb4e23f30d1582b80e",
+      "illustrationSourceSha256": "4c695aee299f9679bc4d1f11feb4381045f2b5a2dfacc771de351cc47425491f"
     },
     {
       "id": "gear_bandage",
@@ -8113,7 +8707,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Wird für Heilung und Wiederherstellung von Lebenspunkten verwendet.",
       "aliases": [
         "Verbandspaket"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_bandage.jpg",
+      "illustrationSha256": "98c93846b9e954d1c71cc2bd38f6bc25fec1235d456ece81992da16ce64e30a7",
+      "illustrationSourceSha256": "21dee2b2b9f94814bbf0b306a4973dcdf5241bbf6dc89904e588dbe61451c1b9"
     },
     {
       "id": "gear_map_case",
@@ -8138,7 +8735,10 @@ window.EBEROS_ITEM_DB={
       "capacity": "10 Dokumente",
       "aliases": [
         "Kartenrolle"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_map_case.jpg",
+      "illustrationSha256": "6e10b565ff3d644e07c064d0b761c10211888b2b81f56190baac23bdf7eb3289",
+      "illustrationSourceSha256": "92f613956f91f76bdc5f56a6e94542ecfc73fbf7c94b47cc5fbda963534b8317"
     },
     {
       "id": "gear_chalk_10",
@@ -8164,7 +8764,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Markiert Stein, Holz und dunkle Flächen.",
       "aliases": [
         "Kreide, 10 Stück"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_chalk_10.jpg",
+      "illustrationSha256": "5c77eb9e35fb25e5b0a4b53d2075fffc7966132d45f704ff3d88a0a16a18dcf4",
+      "illustrationSourceSha256": "25b6a40e44ba0393d83ff2d692496a432769a6e257853c1f254a481ba8e1c0ac"
     },
     {
       "id": "gear_writing_set",
@@ -8190,7 +8793,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Arbeitsgrundlage für Schreiben, Karten und Dokumente.",
       "aliases": [
         "Schreibzeug"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_writing_set.jpg",
+      "illustrationSha256": "3204c473c38adcc28b0945d8e5e43b8aae1f95aab9a13c0acd035d2ea7926107",
+      "illustrationSourceSha256": "3cd4ad22326beef02c00c3e8827b3a1a390a188b70a1b62316def6d8cee2ccb9"
     },
     {
       "id": "gear_candle_5",
@@ -8216,7 +8822,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Jede Kerze spendet mehrere Stunden schwaches Licht.",
       "aliases": [
         "Kerzen, 5 Stück"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_candle_5.jpg",
+      "illustrationSha256": "23d25a12f1453266056bcac29665996fc35a59fb63420f40dd859af798e0ad56",
+      "illustrationSourceSha256": "5f1bd647557bd45bbc0b638a735aebda41027352fbb6f24bc1bd8af19c4ebcea"
     },
     {
       "id": "gear_soap",
@@ -8242,7 +8851,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Unterstützt Hygiene und Reinigung.",
       "aliases": [
         "Seife"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_soap.jpg",
+      "illustrationSha256": "83e499d22b786e988c439b09b0a51150aadaf7c455624286d124262c169d8f65",
+      "illustrationSourceSha256": "407b582d0b84400b4a92305e410d9e96e78755fc7e4c25bbf2811988f4a58d23"
     },
     {
       "id": "gear_wax",
@@ -8268,7 +8880,10 @@ window.EBEROS_ITEM_DB={
       "effect": "Versiegelt Briefe, Behälter und Fäden.",
       "aliases": [
         "Siegelwachs"
-      ]
+      ],
+      "illustration": "./data/standard-item-art-v1.3.1/gear_wax.jpg",
+      "illustrationSha256": "08b2de9ee6692587352e0b9f976563f6e54f267ec06935340d2d25b158e4f229",
+      "illustrationSourceSha256": "f6bab15b2f40b06d4dbbc17edeb809dd3a91e7d80cd2c94dde1eb4c54ee03b0d"
     }
   ]
 };
