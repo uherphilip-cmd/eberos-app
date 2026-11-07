@@ -6,12 +6,12 @@ const V1716_SKILLS=[
   {
     id:'skill_magic_clairvoyance_prophecy',category:'Magie',name:'Hellsicht & Vorhersagen',attrs:'WN, RF',use:'M',
     scope:'Beschreibt das magische Wahrnehmen verborgener Zusammenhänge, wahrscheinlicher Entwicklungen, ferner Orte und zeitlicher Möglichkeiten.',
-    reasons:[['WN','Wahrnehmung erfasst Zeichen, verborgene Einzelheiten und feine Veränderungen in Visionen und Omen.'],['RF','Reflexion ordnet mehrdeutige Bilder, Möglichkeiten und zeitliche Zusammenhänge zu einer belastbaren Deutung.']]
+    reasons:[['WN','Wahrnehmung erfasst Zeichen, verborgene Einzelheiten und feine Veränderungen in Visionen und Omen.'],['RF','Reflexe verarbeiten flüchtige, rasch wechselnde Eindrücke rechtzeitig, bevor mögliche Bilder und zeitliche Verläufe wieder zerfallen.']]
   },
   {
     id:'skill_magic_umbramancy',category:'Magie',name:'Umbramantie – Schatten, Geheimnis & Schwellen',attrs:'GS, RF',use:'M',
     scope:'Beschreibt die magische Kontrolle von Schatten, verborgenen Räumen, Übergängen, Schwellen, Dämmerung und schützender Verhüllung.',
-    reasons:[['GS','Geschick kontrolliert Position, Kontur, Bewegung und Übergänge der geformten Schatten.'],['RF','Reflexion stabilisiert verborgene Räume, Schwellen und Schattenkonstrukte nach einer einheitlichen magischen Ordnung.']]
+    reasons:[['GS','Geschick kontrolliert Position, Kontur, Bewegung und Übergänge der geformten Schatten.'],['RF','Reflexe erfassen und führen den flüchtigen Umschlag zwischen Licht und Schatten, offen und verborgen oder diesseits und jenseits einer Schwelle im richtigen Moment.']]
   }
 ];
 const V1716_SKILL_IDS=new Set(V1716_SKILLS.map(function(skill){return skill.id}));

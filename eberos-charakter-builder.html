@@ -112,7 +112,7 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 
 .lore-panel>section{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}.lore-toolbar,.lore-actions,.lore-tags{display:flex;gap:.45rem;flex-wrap:wrap;align-items:end}.lore-toolbar>.field{flex:1 1 14rem}.lore-card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:.7rem;margin-top:.7rem}.lore-card-list.compact{grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr))}.lore-card{padding:.8rem;border:1px solid var(--border);border-radius:9px;background:var(--panel);min-width:0;overflow-wrap:anywhere}.lore-card.archived{opacity:.68}.lore-card h4{margin:.05rem 0 .45rem}.lore-preserve{white-space:pre-wrap}.lore-tags{margin:.35rem 0}.lore-tag{display:inline-block;padding:.18rem .45rem;border:1px solid var(--border);border-radius:999px;background:var(--panel-alt);font-size:.8rem}.lore-tag-open-core,.lore-tag-gm-truth{border-color:var(--accent-2)}.lore-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;margin:.7rem 0}.lore-form>.field:has(textarea),.lore-form>.lore-actions{grid-column:1/-1}.lore-form textarea{min-height:7rem}.campaign-lore-player{margin-top:1rem;padding:1rem;border:2px solid var(--accent-2);border-radius:10px;background:var(--panel-alt)}@media(max-width:700px){.lore-form{grid-template-columns:1fr}.lore-form>.field:has(textarea),.lore-form>.lore-actions{grid-column:1}.lore-card-list{grid-template-columns:1fr}}
 </style>
-<link rel="stylesheet" href="./assets/fonts/fonts.css?v=1.8.25-set-companion-npc-campaign-audit">
+<link rel="stylesheet" href="./assets/fonts/fonts.css?v=1.8.25-grundwertdefinitionen-r1">
 </head>
 <body><div class="app" id="app">
 <div id="updateBanner" class="update-banner hidden no-print" role="status"><strong>Eine neue Version ist verfügbar.</strong><button id="applyUpdateBtn">Jetzt aktualisieren</button></div>
@@ -130,9 +130,9 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 <dialog id="adventureCbpDialog"><div class="dialog-head"><h2>Abenteuer-CBP gutschreiben</h2><button data-close>✕</button></div><p class="notice">Die Gutschrift erhöht dauerhaft das verfügbare Gesamtbudget und bleibt mit Datum und Anlass nachvollziehbar.</p><div class="settings-grid"><label>Erhaltene CBP<input id="adventureCbpAmount" type="number" min="1" max="999" value="1"></label><label>Anlass<input id="adventureCbpLabel" placeholder="z. B. Die Nebelburg"></label></div><button id="grantAdventureCbp" class="primary">CBP gutschreiben</button><h3>Bisherige Gutschriften</h3><div id="adventureCbpList"></div></dialog>
 
 <button id="testsBtn" type="button" hidden aria-hidden="true" tabindex="-1"></button>
-<script src="./data/eberos-items-anfaenger-v1.3.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-magie-wunder-flueche-v1.4.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-open-play-core-v1.8.0.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
+<script src="./data/eberos-items-anfaenger-v1.3.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-magie-wunder-flueche-v1.4.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-open-play-core-v1.8.0.js?v=1.8.25-grundwertdefinitionen-r1"></script>
 <script>
 'use strict';
 /* 1. Konstanten und Seed-Daten */
@@ -1296,17 +1296,18 @@ const POWER_PATHS_R5={
   ]}
 };
 FATE_PATHS.GL={name:POWER_PATHS_R5.GL.type,label:'Glück'};
+const ATTRIBUTE_DEFINITION_REVISION_R1='grundwertdefinitionen-r1';
 const ATTRIBUTE_GUIDES_R5={
-  ST:{name:'Stärke',text:'Beschreibt, wie viel körperliche Kraft eine Figur entfalten kann. Wirkt bei Heben, Tragen, Ringen, Drücken und kraftvoll geführten Waffen.'},
-  KS:{name:'Konstitution',text:'Beschreibt Widerstandskraft, Zähigkeit und Durchhaltevermögen. Wirkt gegen Krankheit, Gift, Hunger, Kälte, Erschöpfung und körperlichen Zusammenbruch.'},
-  GS:{name:'Geschick',text:'Beschreibt Gewandtheit, Balance und kontrollierte Bewegung. Wirkt bei Schleichen, Akrobatik, Ausweichen und Bewegung durch schwieriges Gelände.'},
-  RF:{name:'Reflexe',text:'Beschreiben die Geschwindigkeit einer Reaktion auf Gefahr und Bewegung. Sie prägen Initiative, Ausweichen und Entscheidungen im richtigen Augenblick.'},
-  FF:{name:'Fingerfertigkeit',text:'Beschreibt Genauigkeit, ruhige Hände und Werkzeuggefühl. Wirkt bei Schlössern, Schreiben, Handwerk, Alchemie und anderen feinen Arbeiten.'},
-  WL:{name:'Wille',text:'Beschreibt Entschlossenheit und innere Festigkeit. Wirkt gegen Angst, Verführung, Folter und geistigen Druck und trägt viele magische Disziplinen.'},
-  IT:{name:'Intelligenz',text:'Beschreibt Wissen, Analyse und die Fähigkeit, Zusammenhänge zu erkennen. Wirkt bei Forschung, Strategie, Sprachen, Recht, Verwaltung und Magietheorie.'},
-  IN:{name:'Intuition',text:'Beschreibt Gespür, Vorahnung und Erkenntnis vor dem Beweis. Wirkt bei Motiven, Gefahren, Lügen, Omen und schnellen Einschätzungen.'},
-  WN:{name:'Wahrnehmung',text:'Beschreibt, wie gut eine Figur sieht, hört, riecht, sucht und Unstimmigkeiten bemerkt. Wirkt bei Spuren, Geräuschen, Hinterhalten und Untersuchungen.'},
-  CR:{name:'Charisma',text:'Beschreibt Ausstrahlung und Wirkung auf andere. Wirkt bei Auftreten, Überreden, Führung, Diplomatie und gesellschaftlichem Einfluss.'}
+  ST:{name:'Stärke',text:'Stärke beschreibt, wie viel unmittelbare körperliche Kraft eine Figur erzeugen, übertragen und kontrolliert einsetzen kann. Sie umfasst kraftvolles Heben, Drücken, Ziehen, Ringen, Schlagen und das Bewegen von Widerständen.'},
+  KS:{name:'Konstitution',text:'Konstitution beschreibt, wie belastbar der Körper einer Figur ist und wie lange er Beanspruchung aufrechterhalten kann. Sie umfasst Zähigkeit, Ausdauer, Regeneration und Widerstand gegen Erschöpfung, Krankheit, Gift, Hunger, Kälte und körperlichen Zusammenbruch.'},
+  GS:{name:'Geschick',text:'Geschick beschreibt, wie sicher eine Figur ihren Körper als Ganzes koordiniert und in Bewegung beherrscht. Es umfasst Balance, Haltung, Gewandtheit, räumliche Körperkontrolle und fließende oder abrupte Bewegungswechsel.'},
+  RF:{name:'Reflexe',text:'Reflexe beschreiben, wie schnell eine Figur aufgenommene Reize und veränderte Lagen verarbeitet, eine unmittelbare Reaktion auswählt und sie im richtigen Moment einleitet. Sie umfassen Reaktionsbereitschaft, Verarbeitungsgeschwindigkeit, rasches Umschalten und zeitgenaues Handeln.'},
+  FF:{name:'Fingerfertigkeit',text:'Fingerfertigkeit beschreibt, wie präzise und kontrolliert eine Figur mit Händen, Fingern, Werkzeugen oder kleinen Gegenständen arbeitet. Sie umfasst Feinmotorik, ruhige Führung, Genauigkeit, Timing und Werkzeuggefühl.'},
+  WL:{name:'Wille',text:'Wille beschreibt, wie kraftvoll eine Figur eine Absicht bildet, aufrechterhält und gegen inneren oder äußeren Druck behauptet. Er umfasst Entschlossenheit, Selbstbeherrschung, Konzentration, Standhaftigkeit und das bewusste Lenken eigener Kräfte.'},
+  IT:{name:'Intelligenz',text:'Intelligenz beschreibt, wie gut eine Figur Informationen bewusst ordnet, Wissen erwirbt und anwendet sowie Zusammenhänge nachvollziehbar erschließt. Sie umfasst Lernen, Erinnern, Analysieren, Planen, Schlussfolgern und systematisches Problemlösen.'},
+  IN:{name:'Intuition',text:'Intuition beschreibt, wie gut eine Figur aus unvollständigen Eindrücken, Erfahrung und unbewusster Mustererkennung zu einer stimmigen Einschätzung gelangt. Sie umfasst Gespür, Vorahnung, improvisierte Deutung und das Erfassen von Motiven, Entwicklungen und Möglichkeiten.'},
+  WN:{name:'Wahrnehmung',text:'Wahrnehmung beschreibt, wie fein und zuverlässig eine Figur Reize aufnimmt, richtet und voneinander unterscheidet. Sie umfasst Sehen, Hören, Riechen, Tasten, Suchen, Beobachten und das Erkennen auffälliger Einzelheiten oder Veränderungen.'},
+  CR:{name:'Charisma',text:'Charisma beschreibt, wie stark und gezielt eine Figur durch Präsenz, Ausdruck und Auftreten auf andere wirkt. Es umfasst Ausstrahlung, Verständlichkeit, Überzeugungskraft, Führung, soziale Sicherheit und die Fähigkeit, Aufmerksamkeit und Stimmung zu lenken.'}
 };
 const COUNTER_GUIDES_R5={
   L:{name:'Leben',text:'Steht für Schaden, Verwundung und Überleben.'},A:{name:'Ausdauer',text:'Wird für Kampf, Reise und körperliche Belastung eingesetzt.'},
@@ -2021,13 +2022,15 @@ function skillAttributeValuesR10(owner,id){
   return{bought,modifier,load,effective,die:DICE[effective]||'—'};
 }
 function skillAttributeInfoContentR10(owner,id){
-  const name=ATTRIBUTE_NAMES_R10[id]||id,{bought,modifier,load,effective,die}=skillAttributeValuesR10(owner,id),parts=[`Gekauft ${bought}`];
+  const name=ATTRIBUTE_NAMES_R10[id]||id,guide=ATTRIBUTE_GUIDES_R5[id],{bought,modifier,load,effective,die}=skillAttributeValuesR10(owner,id),parts=[`Gekauft ${bought}`];
   if(modifier)parts.push(`Modifikator ${modifier>0?'+':''}${modifier}`);
   if(load)parts.push(`Belastung −${load}`);
   if(parts.length===1&&bought===effective)parts.push('keine Modifikatoren');
   return el('div',{class:'skill-attribute-info-r10'},[
     el('p',{class:'skill-attribute-current-r10'},[el('strong',{text:`${name} (${id})`}),el('span',{text:`Grundwert ${effective}`}),el('span',{class:'die',text:die})]),
     el('p',{class:'skill-attribute-breakdown-r10',text:parts.join(' · ')}),
+    el('h4',{text:'Definition'}),
+    el('p',{text:guide?.text||''}),
     el('p',{class:'muted',text:'Dieser wirksame Grundwert und Würfel gelten für Proben mit dieser Fähigkeit.'})
   ]);
 }
@@ -2171,7 +2174,7 @@ function buildColors(){colorControls.replaceChildren();const vals=THEMES[state.s
 const fonts=['Palatino, Georgia, serif','Georgia, serif','Cormorant Garamond, Georgia, serif','Alegreya, Book Antiqua, serif','Uncial Antiqua, fantasy, serif','IM Fell English, Baskerville, serif','system-ui, serif'];document.querySelectorAll('[data-setting^=font]').forEach(s=>{fonts.forEach(f=>s.append(el('option',{value:f,text:f.split(',')[0]})));s.value=state.settings[s.dataset.setting];s.onchange=e=>{state.settings[s.dataset.setting]=e.target.value;save();applyTheme()}});document.querySelectorAll('input[data-setting]').forEach(i=>{i.value=state.settings[i.dataset.setting];i.oninput=e=>{state.settings[i.dataset.setting]=+e.target.value;save();applyTheme()}});
 applyRules.onclick=()=>{try{const parsed=JSON.parse(rulesJson.value),n=migrateRulesV1718(parsed);if(!n)throw Error('Regeldatei ungültig. Der verbindliche Rennfaktor muss bei Regelstand 12 exakt 2 sein.');previousRules=structuredClone(rules);rules=n;localStorage.setItem(STORE+'.rules',JSON.stringify(rules));rulesJson.value=JSON.stringify(rules,null,2);rulesDialog.close();renderAll()}catch(e){showError('Regeln ungültig: '+e.message)}};resetRules.onclick=()=>{previousRules=structuredClone(rules);rules=structuredClone(DEFAULT_RULES);localStorage.setItem(STORE+'.rules',JSON.stringify(rules));rulesJson.value=JSON.stringify(rules,null,2);renderAll()};undoRules.onclick=()=>{if(previousRules){[rules,previousRules]=[previousRules,rules];rules.skillBands=structuredClone(HANDBOOK_SKILL_BANDS);rules.rulesVersion=RULES_VERSION;rules.derivedValues={...(rules.derivedValues||{}),runningMultiplier:OFFICIAL_RUNNING_MULTIPLIER};rules.combat=structuredClone(DEFAULT_RULES.combat);localStorage.setItem(STORE+'.rules',JSON.stringify(rules));rulesJson.value=JSON.stringify(rules,null,2);renderAll()}};exportRules.onclick=()=>download(rules,'eberos-regeln.json');
 ['Cinzel, Georgia, serif','Marcellus, Georgia, serif','Libre Baskerville, Georgia, serif','EB Garamond, Georgia, serif','Merriweather, Georgia, serif','Noto Serif, Georgia, serif','system-ui, sans-serif'].forEach(font=>document.querySelectorAll('[data-setting^=font]').forEach(select=>{if(![...select.options].some(o=>o.value===font))select.append(el('option',{value:font,text:font.split(',')[0]}))}));
-try{const key=STORE+'.rules',stored=localStorage.getItem(key);if(stored){const parsed=JSON.parse(stored);if(validStoredRules(parsed))rules=parsed;else{const migrated=migrateRulesV1718(parsed);if(migrated){localStorage.setItem(key+'.backup.pre-v1718.'+Date.now(),stored);rules=migrated;localStorage.setItem(key,JSON.stringify(rules))}else{localStorage.setItem(key+'.backup.invalid.'+Date.now(),stored);rules=structuredClone(DEFAULT_RULES);localStorage.setItem(key,JSON.stringify(rules))}}}}catch{rules=structuredClone(DEFAULT_RULES)}window.Eberos={state:()=>state,costs:()=>costs(ch()),runTests,attributeCost,counterCost,skillCost,skillNextLevelCost,auxDisplayCost,auxChargedCost,version:APP_VERSION};
+try{const key=STORE+'.rules',stored=localStorage.getItem(key);if(stored){const parsed=JSON.parse(stored);if(validStoredRules(parsed))rules=parsed;else{const migrated=migrateRulesV1718(parsed);if(migrated){localStorage.setItem(key+'.backup.pre-v1718.'+Date.now(),stored);rules=migrated;localStorage.setItem(key,JSON.stringify(rules))}else{localStorage.setItem(key+'.backup.invalid.'+Date.now(),stored);rules=structuredClone(DEFAULT_RULES);localStorage.setItem(key,JSON.stringify(rules))}}}}catch{rules=structuredClone(DEFAULT_RULES)}window.Eberos={state:()=>state,costs:()=>costs(ch()),runTests,attributeCost,counterCost,skillCost,skillNextLevelCost,auxDisplayCost,auxChargedCost,version:APP_VERSION,attributeDefinitionRevision:ATTRIBUTE_DEFINITION_REVISION_R1};
 Object.assign(window.Eberos,{schemaVersion:SCHEMA_VERSION,rulesVersion:RULES_VERSION,ensureStateV175,normalizeFatePath,normalizeFateSynergy,fatePathLevel,openedFatePaths,synergyKind,synergyThreshold,synergyLevel,synergyUnlocked,synergySummary,validateFateSynergy,runTests:()=>runTests()});
 /* PWA-Installation und Offlinebetrieb */
 let installPrompt=null;
@@ -2180,45 +2183,45 @@ installBtn.addEventListener('click',async()=>{if(installPrompt){installPrompt.pr
 window.addEventListener('appinstalled',()=>installBtn.classList.add('hidden'));
 if('serviceWorker' in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',async()=>{try{const hadController=!!navigator.serviceWorker.controller,registration=await navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'});let refreshing=false,updateRequested=false;const showUpdate=worker=>{if(!worker)return;document.body.append(updateBanner);updateBanner.classList.remove('hidden');applyUpdateBtn.onclick=()=>{updateRequested=true;applyUpdateBtn.disabled=true;applyUpdateBtn.textContent='Aktualisierung läuft…';worker.postMessage({type:'SKIP_WAITING'})}};if(registration.waiting)showUpdate(registration.waiting);registration.addEventListener('updatefound',()=>{const worker=registration.installing;worker?.addEventListener('statechange',()=>{if(worker.state==='installed'&&hadController)showUpdate(worker)})});navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing||!hadController||!updateRequested)return;refreshing=true;location.reload()});await registration.update()}catch(e){showError('Offline-Modus konnte nicht aktiviert werden: '+e.message)}});
 </script>
-<script src="./data/eberos-v1.7.6.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-kampftechniken-v1.0.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-effekte-v1.7.7.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.7.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-kampftechniken-v1.1.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.8.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.8-r4.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.9.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.10.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.11.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.12.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.13.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.14.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.15.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.16.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.17.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.18.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.19.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.20.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.21.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-synergien-v1.7.21-r2.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.21-r2.5.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-items-mse-v15.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-mse-companion-npcs-v1.8.25.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-items-mse-v15-runtime-r11.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-skill-lore-v1.8.21.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.24.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-builder-lore-provenance-v1.8.21.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-effekte-v1.7.25.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.7.25.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-v1.8.25.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-skill-scroll-v1.8.7.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-sticky-tabs-v1.8.8.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-quality-v1.8.2.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-universal-media-v1.8.6.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-campaign-start-v1.8.4.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-material-effects-v1.8.18.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-resistances-v1.8.19.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-standard-item-cards-v1.3.1.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-standard-item-card-ui-v1.8.24.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
-<script src="./data/eberos-startup-v1.8.25.js?v=1.8.25-set-companion-npc-campaign-audit"></script>
+<script src="./data/eberos-v1.7.6.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-kampftechniken-v1.0.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-effekte-v1.7.7.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.7.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-kampftechniken-v1.1.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.8.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.8-r4.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.9.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.10.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.11.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.12.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.13.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.14.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.15.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.16.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.17.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.18.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.19.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.20.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.21.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-synergien-v1.7.21-r2.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.21-r2.5.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-items-mse-v15.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-mse-companion-npcs-v1.8.25.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-items-mse-v15-runtime-r11.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-skill-lore-v1.8.21.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.24.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-builder-lore-provenance-v1.8.21.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-effekte-v1.7.25.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.25.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.8.25.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-skill-scroll-v1.8.7.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-sticky-tabs-v1.8.8.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-quality-v1.8.2.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-universal-media-v1.8.6.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-campaign-start-v1.8.4.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-material-effects-v1.8.18.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-resistances-v1.8.19.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-standard-item-cards-v1.3.1.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-standard-item-card-ui-v1.8.24.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-startup-v1.8.25.js?v=1.8.25-grundwertdefinitionen-r1"></script>
 </body></html>
