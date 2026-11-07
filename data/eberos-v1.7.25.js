@@ -293,45 +293,51 @@ Object.assign(window.Eberos,{version:V1725_VERSION,revision:V1725_REVISION,schem
 
 'use strict';
 
-/* Eberos v1.8.25 · Grundwertdefinitionen R3: in bestehende UI-Laufzeit integriert. */
+/* Eberos v1.8.25 · Grundwertdefinitionen R4: wiederholbarer Hover innerhalb einer Wertezeile. */
 (()=>{
-  const REVISION='grundwertdefinitionen-r3';
-  const renderAttributesBeforeHoverR3=renderAttributesV174;
-  let attributeHoverTimerR3=0;
+  const REVISION='grundwertdefinitionen-r4';
+  const renderAttributesBeforeHoverR4=renderAttributesV174;
+  let attributeHoverTimerR4=0;
 
-  function bindAttributeRowHoverR3(row,button,title,build){
+  function bindAttributeRowHoverR4(row,button,title,build){
     const interactive=target=>!!target.closest?.('input,select,textarea,button,a');
     const schedule=()=>{
-      clearTimeout(attributeHoverTimerR3);
-      attributeHoverTimerR3=setTimeout(()=>{
+      clearTimeout(attributeHoverTimerR4);
+      attributeHoverTimerR4=setTimeout(()=>{
         if(row.matches(':hover'))showRuleInfoR5(button,title,build);
       },800);
     };
     row.classList.add('info-ready-r5');
     row.addEventListener('mouseenter',schedule);
     row.addEventListener('mouseover',event=>{
-      if(!interactive(event.target)||event.target.closest('.info-button-r5'))return;
-      clearTimeout(attributeHoverTimerR3);attributeHoverTimerR3=0;
-      if(infoAnchorR5===button)hideRuleInfoR5(true);
+      if(interactive(event.target)){
+        if(event.target.closest('.info-button-r5'))return;
+        clearTimeout(attributeHoverTimerR4);attributeHoverTimerR4=0;
+        if(infoAnchorR5===button)hideRuleInfoR5(true);
+        return;
+      }
+      const box=document.getElementById('ruleInfoR5');
+      if(infoAnchorR5===button&&!box?.hidden)return;
+      schedule();
     });
-    row.addEventListener('mouseleave',()=>{clearTimeout(attributeHoverTimerR3);attributeHoverTimerR3=0;hideRuleInfoR5()});
+    row.addEventListener('mouseleave',()=>{clearTimeout(attributeHoverTimerR4);attributeHoverTimerR4=0;hideRuleInfoR5()});
   }
 
-  function decorateAttributeHoverR3(box){
+  function decorateAttributeHoverR4(box){
     [...box.querySelectorAll('.value-row')].forEach((row,index)=>{
       const [id,name]=ATTRS[index]||[];
-      if(!id||row.dataset.attributeDefinitionHoverR3==='true')return;
+      if(!id||row.dataset.attributeDefinitionHoverR4==='true')return;
       const build=()=>attributeInfoContentR5(id);
-      row.dataset.attributeDefinitionHoverR3='true';
+      row.dataset.attributeDefinitionHoverR4='true';
       row.classList.add('info-value-row-r8');
       row.tabIndex=0;
       let button=row.querySelector('.info-button-r5');
       if(!button){button=infoButtonR5(row,name,build);row.append(button)}
-      bindAttributeRowHoverR3(row,button,`${name} (${id})`,build);
+      bindAttributeRowHoverR4(row,button,`${name} (${id})`,build);
     });
     return box;
   }
 
-  renderAttributesV174=function(owner){return decorateAttributeHoverR3(renderAttributesBeforeHoverR3(owner))};
+  renderAttributesV174=function(owner){return decorateAttributeHoverR4(renderAttributesBeforeHoverR4(owner))};
   Object.assign(window.Eberos,{attributeHoverRevision:REVISION});
 })();
