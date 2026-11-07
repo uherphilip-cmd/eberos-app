@@ -112,7 +112,7 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 
 .lore-panel>section{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}.lore-toolbar,.lore-actions,.lore-tags{display:flex;gap:.45rem;flex-wrap:wrap;align-items:end}.lore-toolbar>.field{flex:1 1 14rem}.lore-card-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:.7rem;margin-top:.7rem}.lore-card-list.compact{grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr))}.lore-card{padding:.8rem;border:1px solid var(--border);border-radius:9px;background:var(--panel);min-width:0;overflow-wrap:anywhere}.lore-card.archived{opacity:.68}.lore-card h4{margin:.05rem 0 .45rem}.lore-preserve{white-space:pre-wrap}.lore-tags{margin:.35rem 0}.lore-tag{display:inline-block;padding:.18rem .45rem;border:1px solid var(--border);border-radius:999px;background:var(--panel-alt);font-size:.8rem}.lore-tag-open-core,.lore-tag-gm-truth{border-color:var(--accent-2)}.lore-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;margin:.7rem 0}.lore-form>.field:has(textarea),.lore-form>.lore-actions{grid-column:1/-1}.lore-form textarea{min-height:7rem}.campaign-lore-player{margin-top:1rem;padding:1rem;border:2px solid var(--accent-2);border-radius:10px;background:var(--panel-alt)}@media(max-width:700px){.lore-form{grid-template-columns:1fr}.lore-form>.field:has(textarea),.lore-form>.lore-actions{grid-column:1}.lore-card-list{grid-template-columns:1fr}}
 </style>
-<link rel="stylesheet" href="./assets/fonts/fonts.css?v=1.8.25-grundwertdefinitionen-r1">
+<link rel="stylesheet" href="./assets/fonts/fonts.css?v=1.8.25-grundwertdefinitionen-r2">
 </head>
 <body><div class="app" id="app">
 <div id="updateBanner" class="update-banner hidden no-print" role="status"><strong>Eine neue Version ist verfügbar.</strong><button id="applyUpdateBtn">Jetzt aktualisieren</button></div>
@@ -130,9 +130,9 @@ html[data-theme="Sternenarchiv"],html[data-theme="Blutmond"],html[data-theme="Ma
 <dialog id="adventureCbpDialog"><div class="dialog-head"><h2>Abenteuer-CBP gutschreiben</h2><button data-close>✕</button></div><p class="notice">Die Gutschrift erhöht dauerhaft das verfügbare Gesamtbudget und bleibt mit Datum und Anlass nachvollziehbar.</p><div class="settings-grid"><label>Erhaltene CBP<input id="adventureCbpAmount" type="number" min="1" max="999" value="1"></label><label>Anlass<input id="adventureCbpLabel" placeholder="z. B. Die Nebelburg"></label></div><button id="grantAdventureCbp" class="primary">CBP gutschreiben</button><h3>Bisherige Gutschriften</h3><div id="adventureCbpList"></div></dialog>
 
 <button id="testsBtn" type="button" hidden aria-hidden="true" tabindex="-1"></button>
-<script src="./data/eberos-items-anfaenger-v1.3.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-magie-wunder-flueche-v1.4.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-open-play-core-v1.8.0.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-items-anfaenger-v1.3.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-magie-wunder-flueche-v1.4.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-open-play-core-v1.8.0.js?v=1.8.25-grundwertdefinitionen-r2"></script>
 <script>
 'use strict';
 /* 1. Konstanten und Seed-Daten */
@@ -2183,45 +2183,46 @@ installBtn.addEventListener('click',async()=>{if(installPrompt){installPrompt.pr
 window.addEventListener('appinstalled',()=>installBtn.classList.add('hidden'));
 if('serviceWorker' in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',async()=>{try{const hadController=!!navigator.serviceWorker.controller,registration=await navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'});let refreshing=false,updateRequested=false;const showUpdate=worker=>{if(!worker)return;document.body.append(updateBanner);updateBanner.classList.remove('hidden');applyUpdateBtn.onclick=()=>{updateRequested=true;applyUpdateBtn.disabled=true;applyUpdateBtn.textContent='Aktualisierung läuft…';worker.postMessage({type:'SKIP_WAITING'})}};if(registration.waiting)showUpdate(registration.waiting);registration.addEventListener('updatefound',()=>{const worker=registration.installing;worker?.addEventListener('statechange',()=>{if(worker.state==='installed'&&hadController)showUpdate(worker)})});navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing||!hadController||!updateRequested)return;refreshing=true;location.reload()});await registration.update()}catch(e){showError('Offline-Modus konnte nicht aktiviert werden: '+e.message)}});
 </script>
-<script src="./data/eberos-v1.7.6.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-kampftechniken-v1.0.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-effekte-v1.7.7.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.7.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-kampftechniken-v1.1.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.8.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.8-r4.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.9.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.10.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.11.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.12.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.13.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.14.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.15.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.16.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.17.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.18.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.19.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.20.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.21.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-synergien-v1.7.21-r2.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.21-r2.5.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-items-mse-v15.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-mse-companion-npcs-v1.8.25.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-items-mse-v15-runtime-r11.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-skill-lore-v1.8.21.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.24.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-builder-lore-provenance-v1.8.21.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-effekte-v1.7.25.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.7.25.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-v1.8.25.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-skill-scroll-v1.8.7.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-sticky-tabs-v1.8.8.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-quality-v1.8.2.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-universal-media-v1.8.6.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-campaign-start-v1.8.4.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-material-effects-v1.8.18.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-resistances-v1.8.19.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-standard-item-cards-v1.3.1.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-standard-item-card-ui-v1.8.24.js?v=1.8.25-grundwertdefinitionen-r1"></script>
-<script src="./data/eberos-startup-v1.8.25.js?v=1.8.25-grundwertdefinitionen-r1"></script>
+<script src="./data/eberos-v1.7.6.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-kampftechniken-v1.0.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-effekte-v1.7.7.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.7.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-kampftechniken-v1.1.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.8.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.8-r4.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.9.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.10.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.11.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.12.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.13.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.14.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.15.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.16.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.17.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.18.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.19.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.20.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.21.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-synergien-v1.7.21-r2.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.21-r2.5.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-items-mse-v15.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-mse-companion-npcs-v1.8.25.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-items-mse-v15-runtime-r11.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-skill-lore-v1.8.21.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.24.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-builder-lore-provenance-v1.8.21.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-effekte-v1.7.25.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.7.25.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-v1.8.25.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-skill-scroll-v1.8.7.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-sticky-tabs-v1.8.8.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-quality-v1.8.2.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-universal-media-v1.8.6.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-campaign-start-v1.8.4.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-material-effects-v1.8.18.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-resistances-v1.8.19.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-standard-item-cards-v1.3.1.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-standard-item-card-ui-v1.8.24.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-attribute-hover-v1.8.25-r2.js?v=1.8.25-grundwertdefinitionen-r2"></script>
+<script src="./data/eberos-startup-v1.8.25.js?v=1.8.25-grundwertdefinitionen-r2"></script>
 </body></html>
