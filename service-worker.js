@@ -1,7 +1,7 @@
 'use strict';
-const CACHE='eberos-pwa-v1.8.25-runtime-konsolidiert-r1';
+const CACHE='eberos-pwa-v1.8.25-runtime-konsolidiert-r2';
 const OFFLINE='./index.html';
-const CORE_ASSETS=["./index.html","./manifest.webmanifest","./icons/eberos-icon.svg","./icons/eberos-icon-180.png","./icons/eberos-icon-192.png","./icons/eberos-icon-512.png","./data/rohstoff-builder-contract-v0.8.4.json","./data/eberos-resistance-catalog-v1.json","./data/eberos-bootstrap-v1.8.25-r1.js?v=1.8.25-runtime-konsolidiert-r1","./data/eberos-runtime-v1.8.25-r1.js?v=1.8.25-runtime-konsolidiert-r1","./assets/fonts/fonts.css?v=1.8.25-runtime-konsolidiert-r1","./assets/ornaments/waldkrone.jpg"];
+const CORE_ASSETS=["./index.html","./manifest.webmanifest","./icons/eberos-icon.svg","./icons/eberos-icon-180.png","./icons/eberos-icon-192.png","./icons/eberos-icon-512.png","./data/rohstoff-builder-contract-v0.8.4.json","./data/eberos-resistance-catalog-v1.json","./data/eberos-bootstrap-v1.8.25-r2.js?v=1.8.25-runtime-konsolidiert-r2","./data/eberos-runtime-v1.8.25-r2.js?v=1.8.25-runtime-konsolidiert-r2","./assets/fonts/fonts.css?v=1.8.25-runtime-konsolidiert-r2","./assets/ornaments/waldkrone.jpg"];
 const APP_SHELL_ASSETS=["./data/eberos-calendar-v1.json","./data/eberos-calendar-contract-v1.8.22.js","./data/eberos-supabase-config-v1.8.0.js","./data/eberos-supabase-client-v1.8.1.js","./data/eberos-campaign-entry-v1.8.1.js","./data/eberos-gm-workspace-v1.8.1.js","./data/eberos-skill-lore-v1.8.21.json"];
 async function warmAppShell(){const cache=await caches.open(CACHE);for(const asset of APP_SHELL_ASSETS){if(await cache.match(asset))continue;try{await cache.add(asset)}catch{}}}
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE_ASSETS))));

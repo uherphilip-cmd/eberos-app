@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Eberos Charakter-Builder v1.8.25",
   "short_name": "Eberos 1.8.25",
-  "description": "Eberos Charakter-Builder v1.8.25 mit konsolidiertem Bootstrap und konsolidierter Runtime statt historischer Skriptkette.",
+  "description": "Eberos Charakter-Builder v1.8.25 mit konsolidierter Runtime und korrigierten Skill-Counter-Hoverfenstern.",
   "lang": "de",
   "start_url": "./",
   "scope": "./",
