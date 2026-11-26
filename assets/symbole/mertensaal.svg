@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img"><title>Haus Mertensaal</title>
+  <path d="m80 9 6 16 18 1-14 11 4 18-14-10-15 10 4-18-14-11 18-1z" fill="#d6d5cb" stroke="#29231e" stroke-width="4" stroke-linejoin="round"/>
+  <g fill="#40332c" stroke="#29231e" stroke-width="3" stroke-linejoin="round">
+    <path d="M24 70 117 59l21 8-7 12-91 10-18-7z"/>
+    <path d="m19 96 98-10 19 8-9 11-89 10-20-9z"/>
+    <path d="m24 122 90-10 26 9-9 12-88 10-21-9z"/>
+  </g>
+  <g fill="none" stroke="#e0d5be" stroke-width="3" stroke-linecap="round"><path d="m34 77 81-9m-85 35 79-9m-71 35 77-9"/></g>
+</svg>

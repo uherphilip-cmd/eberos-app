@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img"><title>Die zwei Monde von Eberos</title>
+  <circle cx="74" cy="85" r="58" fill="#fffdf4" stroke="#201d1c" stroke-width="4.8"/>
+  <g fill="#c5c2b4">
+    <path d="M34 79q-1-18 14-32 6-5 12-6-16 18-16 34l3 11-7 7z"/>
+    <path d="M49 109q12 15 31 17l13-2q-15 10-32 3z"/>
+    <path d="M80 66q5-5 12-2l5 7-3 5-9 1-6-5z"/>
+  </g>
+  <circle cx="119" cy="47" r="16" fill="#100f10"/>
+</svg>

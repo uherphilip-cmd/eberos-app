@@ -1,0 +1,67 @@
+{
+  "format": "eberos-coin-standard",
+  "formatVersion": 1,
+  "revision": "coin-standard-2026-11-14-v1",
+  "status": "user_approved",
+  "currency": {
+    "copperPerSilver": 100,
+    "silverPerGold": 100
+  },
+  "coins": {
+    "copper": {
+      "name": "Kupfer",
+      "faceValueCopper": 1,
+      "weightGrams": 10,
+      "referencePurityPermille": 1000
+    },
+    "silver": {
+      "name": "Silber",
+      "faceValueCopper": 100,
+      "weightGrams": 5,
+      "referencePurityPermille": 1000
+    },
+    "gold": {
+      "name": "Gold",
+      "faceValueCopper": 10000,
+      "weightGrams": 5,
+      "referencePurityPermille": 1000
+    }
+  },
+  "metalValueBasis": "reference-coin-face-value-equals-pure-metal-value",
+  "mintPremiumPercent": 0,
+  "regionalPolicy": {
+    "visualVariationAllowed": true,
+    "ordinaryInventoryUsesReferenceWeight": true,
+    "ordinaryTradeUsesRecognizedFaceValue": true,
+    "metalRecoveryUsesActualRecoverableMetal": true,
+    "specialCoinComposition": "explicit-record-required"
+  },
+  "materialLots": {
+    "RM-094": {
+      "id": "mat-kupfer",
+      "coin": "copper",
+      "weightGrams": 1000,
+      "valueCopper": 100,
+      "priceText": "1 Silber"
+    },
+    "RM-095": {
+      "id": "mat-silber",
+      "coin": "silver",
+      "weightGrams": 100,
+      "valueCopper": 2000,
+      "priceText": "20 Silber"
+    },
+    "RM-097": {
+      "id": "mat-gold",
+      "coin": "gold",
+      "weightGrams": 10,
+      "valueCopper": 20000,
+      "priceText": "2 Gold"
+    }
+  },
+  "limits": [
+    "Unbekanntes Erz wird nicht wie reines Referenzmetall bewertet.",
+    "Regionale Sonderprägungen benötigen für Metallrückgewinnung tatsächliche Masse und Feingehalt.",
+    "Prägearbeit, Verluste und Verfahrenskosten sind getrennte Größen."
+  ]
+}

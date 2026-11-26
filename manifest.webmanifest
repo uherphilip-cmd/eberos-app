@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "Eberos Charakter-Builder v1.8.25",
-  "short_name": "Eberos 1.8.25",
-  "description": "Eberos Charakter-Builder v1.8.25 mit konsolidierter Runtime und korrigierten Skill-Counter-Hoverfenstern.",
+  "name": "Eberos Charakter-Builder v1.8.42",
+  "short_name": "Eberos 1.8.42",
+  "description": "Eberos Charakter-Builder mit Standardwerkzeugen und Pergament-Itemkarten.",
   "lang": "de",
   "start_url": "./",
   "scope": "./",

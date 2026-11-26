@@ -1,0 +1,188 @@
+[
+  {
+    "id": "theme-waldkrone",
+    "theme": "Waldkrone",
+    "name": "Kanninger Holztrift",
+    "file": "holztrift.png",
+    "cell": 1,
+    "lore": "Geographie 41, 67"
+  },
+  {
+    "id": "theme-sternenarchiv",
+    "theme": "Sternenarchiv",
+    "name": "Die zwei Monde von Eberos",
+    "file": "zwei-monde.svg",
+    "lore": "Hohlstein · später Abend",
+    "tone": "moons"
+  },
+  {
+    "id": "theme-blutmond",
+    "theme": "Blutmond",
+    "name": "Galinthras geschlossenes Tor",
+    "file": "galinthras-tor.png",
+    "cell": 2,
+    "lore": "Geschichte 79"
+  },
+  {
+    "id": "theme-frostmeer",
+    "theme": "Frostmeer",
+    "name": "Kogge vor Grauwarths Klippe",
+    "file": "kogge-grauwarth.png",
+    "cell": 3,
+    "lore": "Heraldik 181"
+  },
+  {
+    "id": "theme-feenhof",
+    "theme": "Feenhof",
+    "name": "Pilzring des Hofs des Verfalls",
+    "file": "pilzring.png",
+    "cell": 4,
+    "lore": "Monsterkunde 23, 45–47"
+  },
+  {
+    "id": "theme-tintenchronik",
+    "theme": "Tintenchronik",
+    "name": "Leselampe der Sophisten",
+    "file": "leselampe.png",
+    "cell": 5,
+    "lore": "Kirche des Lichts 115"
+  },
+  {
+    "id": "theme-magus",
+    "theme": "Magus",
+    "name": "Die schwebende Insel Tal’Rah",
+    "file": "tal-rah.png",
+    "cell": 6,
+    "lore": "Arkane Kunde 78"
+  },
+  {
+    "id": "theme-glaube",
+    "theme": "Glaube",
+    "name": "Galinthras Innere Flamme",
+    "file": "innere-flamme.png",
+    "cell": 7,
+    "lore": "Geschichte 78"
+  },
+  {
+    "id": "theme-finsternis",
+    "theme": "Finsternis",
+    "name": "Das Fenster der Totenstunde",
+    "file": "totenfenster.png",
+    "cell": 8,
+    "lore": "Spiritismus 96–97"
+  },
+  {
+    "id": "theme-royal",
+    "theme": "Royal",
+    "name": "Haus von Hohenbrück · Brücke unter Krone",
+    "file": "hohenbrueck.svg",
+    "lore": "Heraldik 128"
+  },
+  {
+    "id": "theme-drachenglut",
+    "theme": "Drachenglut",
+    "name": "Glutsalamander",
+    "file": "glutsalamander.png",
+    "cell": 9,
+    "lore": "Monsterkunde 249–250"
+  },
+  {
+    "id": "theme-wuestenorakel",
+    "theme": "Wüstenorakel",
+    "name": "Trockener Brunnen des Hofs der Dürre",
+    "file": "duerrebrunnen.png",
+    "cell": 10,
+    "lore": "Monsterkunde 37–39"
+  },
+  {
+    "id": "theme-tiefenreich",
+    "theme": "Tiefenreich",
+    "name": "Hippokamp des Zentralmeers",
+    "file": "hippokamp.png",
+    "cell": 11,
+    "lore": "Monsterkunde 145–148"
+  },
+  {
+    "id": "theme-runenschmiede",
+    "theme": "Runenschmiede",
+    "name": "Die Feuerweisen von Ilzh Ahdran",
+    "file": "feuerweisen.png",
+    "cell": 12,
+    "lore": "Arkane Kunde 86, 101"
+  },
+  {
+    "id": "theme-traumweber",
+    "theme": "Traumweber",
+    "name": "Raureif des Hofs der Stille",
+    "file": "raureif.png",
+    "cell": 13,
+    "lore": "Monsterkunde 49–51"
+  },
+  {
+    "id": "celestial-sword",
+    "name": "Orden vom Brennenden Schwert",
+    "file": "brennendes-schwert.png",
+    "cell": 14,
+    "lore": "Kirche des Lichts 67"
+  },
+  {
+    "id": "horned-blade-beast",
+    "name": "Der Basilisk von Pegra",
+    "file": "basilisk.png",
+    "cell": 15,
+    "lore": "Monsterkunde 177–178"
+  },
+  {
+    "id": "arcane-hourglass",
+    "name": "Haus Aursteg · Rad über der Furt",
+    "file": "aursteg.png",
+    "cell": 16,
+    "lore": "Heraldik 134"
+  },
+  {
+    "id": "moon-spirit",
+    "name": "Grand Eaux im Hochwasser",
+    "file": "grand-eaux.png",
+    "cell": 17,
+    "lore": "Geographie 42, 99"
+  },
+  {
+    "id": "ritual-moth",
+    "name": "Jahreszweig der Naturkünste",
+    "file": "jahreszweig.png",
+    "cell": 18,
+    "lore": "Arkane Kunde 116"
+  },
+  {
+    "id": "oracle-eye",
+    "name": "Spiegel von Elryaen",
+    "file": "spiegel-elryaen.png",
+    "cell": 19,
+    "lore": "Arkane Kunde 82"
+  },
+  {
+    "id": "night-owl",
+    "name": "Sieben Steine der Kirche des Lichts",
+    "file": "sieben-steine.svg",
+    "lore": "Kirche des Lichts 25"
+  },
+  {
+    "id": "shadow-rooster",
+    "name": "Kanningen · Eichenblatt im Geweih",
+    "file": "kanningen.svg",
+    "lore": "Korrigiertes Hauszeichen von Kanningen"
+  },
+  {
+    "id": "fractured-skull",
+    "name": "Lotus von Lotringen",
+    "file": "lotus.png",
+    "cell": 20,
+    "lore": "Geographie 99"
+  },
+  {
+    "id": "sword-skull-shield",
+    "name": "Haus Mertensaal · Tücher und Stern",
+    "file": "mertensaal.svg",
+    "lore": "Heraldik 131"
+  }
+]

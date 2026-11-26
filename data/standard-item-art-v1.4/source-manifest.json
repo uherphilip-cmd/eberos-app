@@ -1,0 +1,1987 @@
+{
+  "format": "eberos-standard-item-source-art",
+  "formatVersion": 1,
+  "items": [
+    {
+      "id": "wpn_melee_messer",
+      "order": 1,
+      "file": "wpn_melee_messer.png",
+      "name": "Messer",
+      "sha256": "21a23489755e9d3b5a52bbb2cbae115747eee34bb995a0890544a922c6748177"
+    },
+    {
+      "id": "wpn_melee_sax",
+      "order": 2,
+      "file": "wpn_melee_sax.png",
+      "name": "Sax",
+      "sha256": "c5dc8e8ccaac1c067da36e2b51dca6a1779cec78522aafba9faa42cc7e60968b"
+    },
+    {
+      "id": "wpn_melee_dagger",
+      "order": 3,
+      "file": "wpn_melee_dagger.png",
+      "name": "Dolch",
+      "sha256": "1d7086b6142121b9aa6351bfac91bbbb40853caee5f401a9ee00f12e35de7453"
+    },
+    {
+      "id": "wpn_melee_rondelldolch",
+      "order": 4,
+      "file": "wpn_melee_rondelldolch.png",
+      "name": "Rondelldolch",
+      "sha256": "7ee2a344f719e5241e14f824c39d59d074bd2d05fbe9edb64b088754b7c508d7"
+    },
+    {
+      "id": "wpn_melee_short_sword",
+      "order": 5,
+      "file": "wpn_melee_short_sword.png",
+      "name": "Kurzschwert",
+      "sha256": "962559873ab7b87c2140b124357abf53d8cc4877af122ae267e6d236c26c00d8"
+    },
+    {
+      "id": "wpn_melee_falchion",
+      "order": 6,
+      "file": "wpn_melee_falchion.png",
+      "name": "Falchion",
+      "sha256": "7b99bd93fcb525597083cf240eb360eafa380008cbd75c908b02eb54ac662ad1"
+    },
+    {
+      "id": "wpn_melee_long_sword",
+      "order": 7,
+      "file": "wpn_melee_long_sword.png",
+      "name": "Langschwert",
+      "sha256": "8c4c73f0e7b2209f581e47b93fa0b603026a342f1692111c81fa397d66cb6b44"
+    },
+    {
+      "id": "wpn_melee_saebel",
+      "order": 8,
+      "file": "wpn_melee_saebel.png",
+      "name": "Säbel",
+      "sha256": "b3bcbb560349ce803d35f36e002de3da6f714c03ff78b0d59a75d76b6569a540"
+    },
+    {
+      "id": "wpn_melee_rapier",
+      "order": 9,
+      "file": "wpn_melee_rapier.png",
+      "name": "Rapier",
+      "sha256": "923f03d9ee3e66ef619492112de5214ec0fc80226834e4c97d8729ecf5b1d65a"
+    },
+    {
+      "id": "wpn_melee_entermesser",
+      "order": 10,
+      "file": "wpn_melee_entermesser.png",
+      "name": "Entermesser",
+      "sha256": "77d6a0578491d605e1ab2ddcf28a6cc8807cf354a18763b4b3bf20d09596d021"
+    },
+    {
+      "id": "wpn_melee_katzbalger",
+      "order": 11,
+      "file": "wpn_melee_katzbalger.png",
+      "name": "Katzbalger",
+      "sha256": "652de3c471f753814b0b5ab04f7b29d1a8a0d83949e45af7508c9efde2675da8"
+    },
+    {
+      "id": "wpn_melee_kriegsmesser",
+      "order": 12,
+      "file": "wpn_melee_kriegsmesser.png",
+      "name": "Kriegsmesser",
+      "sha256": "71755e3238c275e5fa511a45b7a3af4d524f8fd3856a991cc5455ab276ac1b42"
+    },
+    {
+      "id": "wpn_melee_tulwar",
+      "order": 13,
+      "file": "wpn_melee_tulwar.png",
+      "name": "Tulwar",
+      "sha256": "316e7319758e54a8662fce730bad2ed617be0e779eed7526b85b393dfbe7e46c"
+    },
+    {
+      "id": "wpn_melee_krummschwert",
+      "order": 14,
+      "file": "wpn_melee_krummschwert.png",
+      "name": "Krummschwert",
+      "sha256": "d7f2c60a3029df519b0382812b5d32964d3e6ce2c49f7101026724db4487c235"
+    },
+    {
+      "id": "wpn_melee_panzerstecher",
+      "order": 15,
+      "file": "wpn_melee_panzerstecher.png",
+      "name": "Panzerstecher",
+      "sha256": "986322dce9f0dbcbe55edafead191bc4b6225ad94a276fbbc3b1db2241d96644"
+    },
+    {
+      "id": "wpn_melee_handbeil",
+      "order": 16,
+      "file": "wpn_melee_handbeil.png",
+      "name": "Handbeil",
+      "sha256": "6f11ce2f91c51e661de7d06b72e9c9c1401ba9819d9d687c4d496ffcc6eb5918"
+    },
+    {
+      "id": "wpn_ranged_wurfaxt",
+      "order": 17,
+      "file": "wpn_ranged_wurfaxt.png",
+      "name": "Wurfaxt",
+      "sha256": "3fd7fb9da14f99867b3e49e60e646c8587b88b04d6f4394ce6dcfd035fb03be2"
+    },
+    {
+      "id": "wpn_ranged_franziska",
+      "order": 18,
+      "file": "wpn_ranged_franziska.png",
+      "name": "Franziska",
+      "sha256": "0c3e4ed43dd94d1ff76949a4dbfdb19b32ec1b85b3fe1cbeeae311170a44ecb1"
+    },
+    {
+      "id": "wpn_melee_bartaxt",
+      "order": 19,
+      "file": "wpn_melee_bartaxt.png",
+      "name": "Bartaxt",
+      "sha256": "1b33c90250963a66ea6a8547c33f00a74f3b2ff34d215517d7fedb4cd2db3cab"
+    },
+    {
+      "id": "wpn_melee_breitaxt",
+      "order": 20,
+      "file": "wpn_melee_breitaxt.png",
+      "name": "Breitaxt",
+      "sha256": "27b52dd6dfc3c9fc7da97d6c22cef55eb815a86595112b506949a8ffb778055d"
+    },
+    {
+      "id": "wpn_melee_daenenaxt",
+      "order": 21,
+      "file": "wpn_melee_daenenaxt.png",
+      "name": "Dänenaxt",
+      "sha256": "1e2cbad660569f565244964f1cb54078a40286960aaaa93b361b6bca7ecef5f1"
+    },
+    {
+      "id": "wpn_melee_kriegsaxt",
+      "order": 22,
+      "file": "wpn_melee_kriegsaxt.png",
+      "name": "Kriegsaxt",
+      "sha256": "537153ce84c764df3b9cc327225d068dd0ba35fb62445b79a33998fef0a076be"
+    },
+    {
+      "id": "wpn_melee_langstielaxt",
+      "order": 23,
+      "file": "wpn_melee_langstielaxt.png",
+      "name": "Langstielaxt",
+      "sha256": "0d03947d340b8176d159fdd55e012baec97392c91cb0cc428b8fb9124608d840"
+    },
+    {
+      "id": "wpn_melee_zweihand_streitaxt",
+      "order": 24,
+      "file": "wpn_melee_zweihand_streitaxt.png",
+      "name": "Zweihand-Streitaxt",
+      "sha256": "8c5da3ade8443c6dfc14f04510ec9c7dc42ddb3b01ea258e2ce25dd12a2f1c9f"
+    },
+    {
+      "id": "wpn_melee_grosse_kriegsaxt",
+      "order": 25,
+      "file": "wpn_melee_grosse_kriegsaxt.png",
+      "name": "Große Kriegsaxt",
+      "sha256": "6263b0384893513b71b247ab5804677e63ab928c6cb0f01556f1605ffc14c453"
+    },
+    {
+      "id": "wpn_melee_knueppel",
+      "order": 26,
+      "file": "wpn_melee_knueppel.png",
+      "name": "Knüppel",
+      "sha256": "c4c2855fb7f78ffa84b287f0405f7a7130b804738bb731f4682e8d1e4ffae0ce"
+    },
+    {
+      "id": "wpn_melee_club",
+      "order": 27,
+      "file": "wpn_melee_club.png",
+      "name": "Keule",
+      "sha256": "93e2ad9a91dee32198babb83518ad05e60803b12beec07ec4eff6b4c6458ddc3"
+    },
+    {
+      "id": "wpn_melee_mace",
+      "order": 28,
+      "file": "wpn_melee_mace.png",
+      "name": "Streitkolben",
+      "sha256": "96f7a60e8e5a83e2ec36458649c3c5eaeb1f110581c35cb8b35ea712d8c6c236"
+    },
+    {
+      "id": "wpn_melee_morgenstern",
+      "order": 29,
+      "file": "wpn_melee_morgenstern.png",
+      "name": "Morgenstern",
+      "sha256": "e4eba76b17d261d5f63820bc11efa68fd75d47c6fb4f76e729901f26e184ff65"
+    },
+    {
+      "id": "wpn_melee_flegel",
+      "order": 30,
+      "file": "wpn_melee_flegel.png",
+      "name": "Flegel",
+      "sha256": "07986bf6bf91daa2a6ed367980bbaee8713565501890bd29e1331434b9dec0a8"
+    },
+    {
+      "id": "wpn_melee_warhammer",
+      "order": 31,
+      "file": "wpn_melee_warhammer.png",
+      "name": "Kriegshammer",
+      "sha256": "56dad81648046317ee0ddeba6f86cd866a536d84d31a8bef6054e8f6327bdf7e"
+    },
+    {
+      "id": "wpn_melee_kettenflegel",
+      "order": 32,
+      "file": "wpn_melee_kettenflegel.png",
+      "name": "Kettenflegel",
+      "sha256": "1387e6fb5c6af36f76688af53ed481f35b476aff01b7079c187ecd0e9c36feee"
+    },
+    {
+      "id": "wpn_melee_schwerer_morgenstern",
+      "order": 33,
+      "file": "wpn_melee_schwerer_morgenstern.png",
+      "name": "Schwerer Morgenstern",
+      "sha256": "dd8c33628e02cacd1389d1fd90362e95089a9ebfe3b0c143aa93688dd68c4c81"
+    },
+    {
+      "id": "wpn_melee_schwerer_flegel",
+      "order": 34,
+      "file": "wpn_melee_schwerer_flegel.png",
+      "name": "Schwerer Flegel",
+      "sha256": "96ff87dbb6aa66335887f6dd7c19c4f05c5d1bb9115d42605a42a2e9e941e739"
+    },
+    {
+      "id": "wpn_melee_grosser_kriegshammer",
+      "order": 35,
+      "file": "wpn_melee_grosser_kriegshammer.png",
+      "name": "Großer Kriegshammer",
+      "sha256": "98e49fd0976c5a279d6e5973e7b9227e7efdf60a42626978c1e989d1cc29be99"
+    },
+    {
+      "id": "wpn_melee_langstieliger_kriegshammer",
+      "order": 36,
+      "file": "wpn_melee_langstieliger_kriegshammer.png",
+      "name": "Langstieliger Kriegshammer",
+      "sha256": "678caa35b529b1f919d54d57ee0de0d22a8ddc1d3daf344c12f6d6de908bff5c"
+    },
+    {
+      "id": "wpn_melee_belagerungshammer",
+      "order": 37,
+      "file": "wpn_melee_belagerungshammer.png",
+      "name": "Belagerungshammer",
+      "sha256": "5bcc83df32854548f92e81d8fa87cdc9bdb02ad635df1618d4e955722a07a953"
+    },
+    {
+      "id": "wpn_melee_anderthalbhaender",
+      "order": 38,
+      "file": "wpn_melee_anderthalbhaender.png",
+      "name": "Anderthalbhänder",
+      "sha256": "ac3c11d6de1cc10277da856df17ae7d9009ad730981417f55291c3e8c76c858d"
+    },
+    {
+      "id": "wpn_melee_greatsword",
+      "order": 39,
+      "file": "wpn_melee_greatsword.png",
+      "name": "Zweihänder",
+      "sha256": "ebb37941ccc4f02b9518574ab66122429a3c1a8f32bea228811381e721917d27"
+    },
+    {
+      "id": "wpn_melee_grossschwert",
+      "order": 40,
+      "file": "wpn_melee_grossschwert.png",
+      "name": "Großschwert",
+      "sha256": "b773bb321b66465dcefe8db4c000a65a32dc1e8e1aba7ce9f7627cb335a7900f"
+    },
+    {
+      "id": "wpn_melee_riesenzweihaender",
+      "order": 41,
+      "file": "wpn_melee_riesenzweihaender.png",
+      "name": "Riesenzweihänder",
+      "sha256": "b1491d68010b63a0647a01b15cfd0911a5b684441ad74c7ac9311af3102cc4e6"
+    },
+    {
+      "id": "wpn_ranged_javelin",
+      "order": 42,
+      "file": "wpn_ranged_javelin.png",
+      "name": "Wurfspeer",
+      "sha256": "c45a1559580b1d807b9cc16bad219eb65bb27a4d3581f3fb4d93863ab9402bc8"
+    },
+    {
+      "id": "wpn_melee_jagdspeer",
+      "order": 43,
+      "file": "wpn_melee_jagdspeer.png",
+      "name": "Jagdspeer",
+      "sha256": "ee8ac5b0a2384b993c4bb7da2d4c313b347fb6bad7dfe7c0144739fa132b1905"
+    },
+    {
+      "id": "wpn_melee_kriegsspeer",
+      "order": 44,
+      "file": "wpn_melee_kriegsspeer.png",
+      "name": "Kriegsspeer",
+      "sha256": "623be74d131988eb51a4015b8eec06795c5b0331ce2ca336ad0045f09f647eba"
+    },
+    {
+      "id": "wpn_melee_fluegellanze",
+      "order": 45,
+      "file": "wpn_melee_fluegellanze.png",
+      "name": "Flügellanze",
+      "sha256": "9ee0e7ac2a321a9abcfc354ea4d443e172d997ece40b939d3551adacd9f871ca"
+    },
+    {
+      "id": "wpn_melee_stosslanze",
+      "order": 46,
+      "file": "wpn_melee_stosslanze.png",
+      "name": "Stoßlanze",
+      "sha256": "4c82adef01eeb2a3eadfc919be9ac49db8bfbe08d4f13a28a8950c0e30f08f2a"
+    },
+    {
+      "id": "wpn_melee_reiterlanze",
+      "order": 47,
+      "file": "wpn_melee_reiterlanze.png",
+      "name": "Reiterlanze",
+      "sha256": "6139d0847a26d06d6ffdeb36ffc76a164c13409a69e14134dd9ab4781151feb1"
+    },
+    {
+      "id": "wpn_melee_spiess",
+      "order": 48,
+      "file": "wpn_melee_spiess.png",
+      "name": "Spieß",
+      "sha256": "171200f7b4ef730799be6949d780e30c31c55a159e10e10efcfd322a38688e9c"
+    },
+    {
+      "id": "wpn_melee_pike",
+      "order": 49,
+      "file": "wpn_melee_pike.png",
+      "name": "Pike",
+      "sha256": "76d8a596bb3927a65e0e56b65040ed4f0b8c25952c06904add8e4da27e5f1324"
+    },
+    {
+      "id": "wpn_melee_grosse_pike",
+      "order": 50,
+      "file": "wpn_melee_grosse_pike.png",
+      "name": "Große Pike",
+      "sha256": "0b53fd71ce4da7d106b733b4d740ac614a30ab3636e1522712b06acdc1185263"
+    },
+    {
+      "id": "wpn_melee_schwerer_kriegsspiess",
+      "order": 51,
+      "file": "wpn_melee_schwerer_kriegsspiess.png",
+      "name": "Schwerer Kriegsspieß",
+      "sha256": "542394909ed9ca50764b556c1cb860914d25f8207f017a167f16d9e61f9b1eef"
+    },
+    {
+      "id": "wpn_melee_kriegssense",
+      "order": 52,
+      "file": "wpn_melee_kriegssense.png",
+      "name": "Kriegssense",
+      "sha256": "b6b12ac33c0432b80363489d850d0835b80a3a030aa7c93a36b475586c7d6c7f"
+    },
+    {
+      "id": "wpn_melee_bec_de_corbin",
+      "order": 53,
+      "file": "wpn_melee_bec_de_corbin.png",
+      "name": "Bec de Corbin",
+      "sha256": "21e7395ed83030c2022fae0a7f6d86d190e4621fe66692eb6ee0319a1fb79a4f"
+    },
+    {
+      "id": "wpn_melee_glefe",
+      "order": 54,
+      "file": "wpn_melee_glefe.png",
+      "name": "Glefe",
+      "sha256": "85ff23d22661ffb77593fdb1210f255691226aa5f9fc0f35a5d3bfa25daee539"
+    },
+    {
+      "id": "wpn_melee_partisane",
+      "order": 55,
+      "file": "wpn_melee_partisane.png",
+      "name": "Partisane",
+      "sha256": "7df1a1355beb7e60a8e40502c38cdb6676d68993e658583bab63e96783221c2d"
+    },
+    {
+      "id": "wpn_melee_bardiche",
+      "order": 56,
+      "file": "wpn_melee_bardiche.png",
+      "name": "Bardiche",
+      "sha256": "be359afe46f7a86b49a66c18b9d7a11f508213bcac6cd0bde412b0b665ad5cc3"
+    },
+    {
+      "id": "wpn_melee_luzerner_hammer",
+      "order": 57,
+      "file": "wpn_melee_luzerner_hammer.png",
+      "name": "Luzerner Hammer",
+      "sha256": "4fffdf1ef442b2baeb8a2902be14d97cad63d4884cfef302e50ed32cf5868981"
+    },
+    {
+      "id": "wpn_melee_schwere_partisane",
+      "order": 58,
+      "file": "wpn_melee_schwere_partisane.png",
+      "name": "Schwere Partisane",
+      "sha256": "460e4923476f69ba545fb7a62c64a3b112ebbd260baae46ea643fafa2ebd90f1"
+    },
+    {
+      "id": "wpn_melee_grosse_hellebarde",
+      "order": 59,
+      "file": "wpn_melee_grosse_hellebarde.png",
+      "name": "Große Hellebarde",
+      "sha256": "9d3c8fba0432994de74e8e83c71ac1d1e50297b3d50b3a71e9a53caba6e3ad6e"
+    },
+    {
+      "id": "wpn_melee_grosse_bardiche",
+      "order": 60,
+      "file": "wpn_melee_grosse_bardiche.png",
+      "name": "Große Bardiche",
+      "sha256": "26c0791e46429b7736a71dac955d1d59bf86c049b8622ec2b04c48c3e2a12f8e"
+    },
+    {
+      "id": "wpn_melee_schlachtglefe",
+      "order": 61,
+      "file": "wpn_melee_schlachtglefe.png",
+      "name": "Schlachtglefe",
+      "sha256": "b94a8f1fcdf9ed8a4c6406af360f797c3bfd9a0641c3a6c3133331605a65b7c8"
+    },
+    {
+      "id": "wpn_melee_schwerer_rabenschnabel",
+      "order": 62,
+      "file": "wpn_melee_schwerer_rabenschnabel.png",
+      "name": "Schwerer Rabenschnabel",
+      "sha256": "71be744c520b2f86f5fc7009dc2b7df7d992366fdff7aa4ba8cb57a30d9b6496"
+    },
+    {
+      "id": "wpn_melee_schwere_poleaxe",
+      "order": 63,
+      "file": "wpn_melee_schwere_poleaxe.png",
+      "name": "Schwere Poleaxe",
+      "sha256": "9c536de91e7e74f366631a31da1fd9a1c7100a89522857555d513854a9ec5496"
+    },
+    {
+      "id": "wpn_melee_schwerer_kriegsspitz",
+      "order": 64,
+      "file": "wpn_melee_schwerer_kriegsspitz.png",
+      "name": "Schwerer Kriegsspitz",
+      "sha256": "52bec84ef48a0fd88fd25835330e6d8d20a56b58d3683f5eadf9d5f7fa70177c"
+    },
+    {
+      "id": "wpn_ranged_throwing_knife",
+      "order": 65,
+      "file": "wpn_ranged_throwing_knife.png",
+      "name": "Wurfmesser",
+      "sha256": "1bec64828b91a1a03a253d5cf1c64739c107af6dfe78fb0261fc9ae0a07a1a58"
+    },
+    {
+      "id": "wpn_ranged_wurfdolch",
+      "order": 66,
+      "file": "wpn_ranged_wurfdolch.png",
+      "name": "Wurfdolch",
+      "sha256": "35c6eea971941762d5eed3f3957cd996f47c470de1c18d3cec2437bc2297d959"
+    },
+    {
+      "id": "wpn_ranged_chakram",
+      "order": 67,
+      "file": "wpn_ranged_chakram.png",
+      "name": "Chakram",
+      "sha256": "5f9475f047b57514acbd46627c7d3b62f5dbf69214d1e2a5613b8580aaf7f621"
+    },
+    {
+      "id": "wpn_ranged_pilum",
+      "order": 68,
+      "file": "wpn_ranged_pilum.png",
+      "name": "Pilum",
+      "sha256": "0d2951443b65126174836ab690b6dcd0973c8413d0f361169653ae601d07414f"
+    },
+    {
+      "id": "wpn_ranged_schwere_wurfaxt",
+      "order": 69,
+      "file": "wpn_ranged_schwere_wurfaxt.png",
+      "name": "Schwere Wurfaxt",
+      "sha256": "7a9682643708a6fb9993c3c96ac37b01679910cfa6df1f2911aca6743aea7a1d"
+    },
+    {
+      "id": "wpn_ranged_uebungsbogen",
+      "order": 70,
+      "file": "wpn_ranged_uebungsbogen.png",
+      "name": "Übungsbogen",
+      "sha256": "dc76b7c8ebe50ec35d25becc0c69fd4c865d74f1e6db3d94985a074c35835621"
+    },
+    {
+      "id": "wpn_ranged_shortbow",
+      "order": 71,
+      "file": "wpn_ranged_shortbow.png",
+      "name": "Kurzbogen",
+      "sha256": "44355d6032f48183866f06de59a0ba300ac7acbb68b34277ce4281d380c6f086"
+    },
+    {
+      "id": "wpn_ranged_jagdbogen",
+      "order": 72,
+      "file": "wpn_ranged_jagdbogen.png",
+      "name": "Jagdbogen",
+      "sha256": "138e03701558dc7aa3602ccc75e43a6501ba3c68f05f28f600744d84f7606cdb"
+    },
+    {
+      "id": "wpn_ranged_reflexbogen",
+      "order": 73,
+      "file": "wpn_ranged_reflexbogen.png",
+      "name": "Reflexbogen",
+      "sha256": "d4be5d1ab0077dd3b716beb8c055d531c2a46e328f7588116d99779de59b7125"
+    },
+    {
+      "id": "wpn_ranged_longbow",
+      "order": 74,
+      "file": "wpn_ranged_longbow.png",
+      "name": "Langbogen",
+      "sha256": "6d51e9f6ab19b4e3f0730026f82bd85e1d0d68ca15bc0f66d1797a1c5ba8ad25"
+    },
+    {
+      "id": "wpn_ranged_kompositbogen",
+      "order": 75,
+      "file": "wpn_ranged_kompositbogen.png",
+      "name": "Kompositbogen",
+      "sha256": "f90df7e140b32014771e5c167e184a4fdf77ee69c08599fd6ffa0906f6bccadd"
+    },
+    {
+      "id": "wpn_ranged_kriegsbogen",
+      "order": 76,
+      "file": "wpn_ranged_kriegsbogen.png",
+      "name": "Kriegsbogen",
+      "sha256": "e4691fc43a30fb99305a260ae8cf4c59d873664932b3aa38152b4f27d7c23084"
+    },
+    {
+      "id": "wpn_ranged_schwerer_kriegsbogen",
+      "order": 77,
+      "file": "wpn_ranged_schwerer_kriegsbogen.png",
+      "name": "Schwerer Kriegsbogen",
+      "sha256": "c11cf6c2b59be53cf9ae4a2a64955aa8f91039df75936c814a0bfb16c5a8aa30"
+    },
+    {
+      "id": "wpn_ranged_pistolenarmbrust",
+      "order": 78,
+      "file": "wpn_ranged_pistolenarmbrust.png",
+      "name": "Pistolenarmbrust",
+      "sha256": "9bdc447522ffa683c0b8e77ddaf0fe00213c99b0309e594bd09473fbd28b349b"
+    },
+    {
+      "id": "wpn_ranged_light_crossbow",
+      "order": 79,
+      "file": "wpn_ranged_light_crossbow.png",
+      "name": "Leichte Armbrust",
+      "sha256": "1f9fe2f75df45a6951c65067671f749ed8529f91331160c9a3222caf9bdc4b94"
+    },
+    {
+      "id": "wpn_ranged_jagdarmbrust",
+      "order": 80,
+      "file": "wpn_ranged_jagdarmbrust.png",
+      "name": "Jagdarmbrust",
+      "sha256": "daa283e15d6f263a5bd9b3050ad3cc35a0c56cb2fd47314c401529227e5d43f7"
+    },
+    {
+      "id": "wpn_ranged_heavy_crossbow",
+      "order": 81,
+      "file": "wpn_ranged_heavy_crossbow.png",
+      "name": "Schwere Armbrust",
+      "sha256": "3d4e34a103a2f6d9c348f048df1c7840195d5daaab978cee41a5a90daabcf9c2"
+    },
+    {
+      "id": "wpn_ranged_kriegsarmbrust",
+      "order": 82,
+      "file": "wpn_ranged_kriegsarmbrust.png",
+      "name": "Kriegsarmbrust",
+      "sha256": "57dada46a039dcab72b565eced3974726bf50c83d96ecc3dc94b48698ab3ce74"
+    },
+    {
+      "id": "wpn_ranged_windenarmbrust",
+      "order": 83,
+      "file": "wpn_ranged_windenarmbrust.png",
+      "name": "Windenarmbrust",
+      "sha256": "e16e4a4e383b88c08f30cc32ebb4f78b9db8e46f12b4b5e6e760e238517114d2"
+    },
+    {
+      "id": "wpn_ranged_schwere_windenarmbrust",
+      "order": 84,
+      "file": "wpn_ranged_schwere_windenarmbrust.png",
+      "name": "Schwere Windenarmbrust",
+      "sha256": "80e2972e199c2ad339cc41f1ce4fb3eed66f361c630464b730d4541b7b85d871"
+    },
+    {
+      "id": "armor_part_stoffhaube",
+      "order": 85,
+      "file": "armor_part_stoffhaube.png",
+      "name": "Stoffhaube",
+      "sha256": "a2848a0ab89d1d02f3cf97caefc9e3f67333d842645bc32d0999565df989076c"
+    },
+    {
+      "id": "armor_part_leather_cap",
+      "order": 86,
+      "file": "armor_part_leather_cap.png",
+      "name": "Lederkappe",
+      "sha256": "c59e5c15561a7653f8533705e21a8fabad9d80944a43bcce09b7768ad0ee0945"
+    },
+    {
+      "id": "armor_part_verstaerkte_lederhaube",
+      "order": 87,
+      "file": "armor_part_verstaerkte_lederhaube.png",
+      "name": "Verstärkte Lederhaube",
+      "sha256": "fdd61889f4a87dcc7c7c6a2582c0c045d1c174ed0ec1a2a2283e047a5eb215b9"
+    },
+    {
+      "id": "armor_part_chain_coif",
+      "order": 88,
+      "file": "armor_part_chain_coif.png",
+      "name": "Kettenhaube",
+      "sha256": "7a5702b1e962cceaca0f231c63cdf7e1ca321b277f98f5952e2061f912b437a3"
+    },
+    {
+      "id": "armor_part_iron_helmet",
+      "order": 89,
+      "file": "armor_part_iron_helmet.png",
+      "name": "Eisenhelm",
+      "sha256": "7a0c4ed1e45b16877a13a62584a44e01371b8035309826f645c26069d02e05d2"
+    },
+    {
+      "id": "armor_part_spangenhelm",
+      "order": 90,
+      "file": "armor_part_spangenhelm.png",
+      "name": "Spangenhelm",
+      "sha256": "2661a6325144dc8f7b50fb8e4b56f17468c35ec7cf2b282bdb3984f7df9d5bc9"
+    },
+    {
+      "id": "armor_part_topfhelm",
+      "order": 91,
+      "file": "armor_part_topfhelm.png",
+      "name": "Topfhelm",
+      "sha256": "8b45d9f103143109e06618476317e9770e80b77d3fa8764f521c74157d6ab43c"
+    },
+    {
+      "id": "armor_part_visierhelm",
+      "order": 92,
+      "file": "armor_part_visierhelm.png",
+      "name": "Visierhelm",
+      "sha256": "e7ab4eb0bbddecec171853e6ac40d4ff071fcb79107b9333b29f4293d00fe0be"
+    },
+    {
+      "id": "armor_gepolsterte_weste",
+      "order": 93,
+      "file": "armor_gepolsterte_weste.png",
+      "name": "Gepolsterte Weste",
+      "sha256": "5ff6a0294d9a507a18a58d30f8e226948d57a3e295d4f77d29fc843cca679bde"
+    },
+    {
+      "id": "armor_gambeson",
+      "order": 94,
+      "file": "armor_gambeson.png",
+      "name": "Gambeson",
+      "sha256": "cc885868725c9cc68e529efd50fd805d4020db5eaff5b72ef0f96351ad274915"
+    },
+    {
+      "id": "armor_lederharnisch",
+      "order": 95,
+      "file": "armor_lederharnisch.png",
+      "name": "Lederharnisch",
+      "sha256": "7a0348096602336e63a182fad73e9e3a4d52b344d6d362513513426e9703f6b9"
+    },
+    {
+      "id": "armor_verstaerkter_lederharnisch",
+      "order": 96,
+      "file": "armor_verstaerkter_lederharnisch.png",
+      "name": "Verstärkter Lederharnisch",
+      "sha256": "bc444f94b54dbd1187022ffc3dbd83d8a9d2e4585590cad6b6bacc093c0b0b86"
+    },
+    {
+      "id": "armor_chain_shirt",
+      "order": 97,
+      "file": "armor_chain_shirt.png",
+      "name": "Kettenhemd",
+      "sha256": "c60523dbb2e6af703b8be2bd978a45976f7c76ef900d5bd22bc91c5a67f8487b"
+    },
+    {
+      "id": "armor_chain_hauberk",
+      "order": 98,
+      "file": "armor_chain_hauberk.png",
+      "name": "Kettenpanzer",
+      "sha256": "d3901a019cd150bf996edcb7cee87a4fc71fa39f060b0a7b6817d9f543e536cb"
+    },
+    {
+      "id": "armor_scale",
+      "order": 99,
+      "file": "armor_scale.png",
+      "name": "Schuppenpanzer",
+      "sha256": "425a1110ac08f1e32fd980f103511bd688bd7fc5900fa68d6d90f96844916e65"
+    },
+    {
+      "id": "armor_lamellenpanzer",
+      "order": 100,
+      "file": "armor_lamellenpanzer.png",
+      "name": "Lamellenpanzer",
+      "sha256": "780d60aa36eed172db931d6f4bda1d619f2a6d0c414fa3b422bb1b35b48c3c39"
+    },
+    {
+      "id": "armor_brigantine",
+      "order": 101,
+      "file": "armor_brigantine.png",
+      "name": "Brigantine",
+      "sha256": "6ca5a21b643a4ac28c9eda9630a52557d104fab03fb7f0c7597fcef79dd1d871"
+    },
+    {
+      "id": "armor_einfacher_plattenharnisch",
+      "order": 102,
+      "file": "armor_einfacher_plattenharnisch.png",
+      "name": "Einfacher Plattenharnisch",
+      "sha256": "fe4dd481a567ebdce78633faed3eb994d7dd6f2d5ef2c7d965e8942532727958"
+    },
+    {
+      "id": "armor_part_gepolsterte_armschoner",
+      "order": 103,
+      "file": "armor_part_gepolsterte_armschoner.png",
+      "name": "Gepolsterte Armschoner",
+      "sha256": "753e4bf7f69f5a74cac650206e466b7573197a76bd146bfae00a9a69537d51e1"
+    },
+    {
+      "id": "armor_part_lederarmschutz",
+      "order": 104,
+      "file": "armor_part_lederarmschutz.png",
+      "name": "Lederarmschutz",
+      "sha256": "e42b85701f318de444301084a20be79a3df99128afd071c49f9d1e3c35061ea3"
+    },
+    {
+      "id": "armor_part_verstaerkter_lederarmschutz",
+      "order": 105,
+      "file": "armor_part_verstaerkter_lederarmschutz.png",
+      "name": "Verstärkter Lederarmschutz",
+      "sha256": "115b722f3d0554dfdb02a794d401afc2f0e866a4eabb0c5c36f4ac30090be536"
+    },
+    {
+      "id": "armor_part_chain_sleeves",
+      "order": 106,
+      "file": "armor_part_chain_sleeves.png",
+      "name": "Kettenärmel",
+      "sha256": "141aa944a76acbf27e7783a2f3c4a905b8822e82605f01b6ed1643afd54c2066"
+    },
+    {
+      "id": "armor_part_metallarmschienen",
+      "order": 107,
+      "file": "armor_part_metallarmschienen.png",
+      "name": "Metallarmschienen",
+      "sha256": "44503c9ae0344eb6d93134570c60a178327f466281da47f34680e947b6c2e84f"
+    },
+    {
+      "id": "armor_part_schuppenarmschutz",
+      "order": 108,
+      "file": "armor_part_schuppenarmschutz.png",
+      "name": "Schuppenarmschutz",
+      "sha256": "63a17a8bbed60a9534b81ced533737dee875ff1f92ffbdd14bd0190dfe582941"
+    },
+    {
+      "id": "armor_part_plate_arms",
+      "order": 109,
+      "file": "armor_part_plate_arms.png",
+      "name": "Plattenarme",
+      "sha256": "6339978888aae93df58b760457c977b355dd3ac900ca705d25e3a80ba232ae1d"
+    },
+    {
+      "id": "armor_part_gelenkige_plattenarme",
+      "order": 110,
+      "file": "armor_part_gelenkige_plattenarme.png",
+      "name": "Gelenkige Plattenarme",
+      "sha256": "f3796996e1ebeb33b8a02b5cf75b24380def59be597ca6b9223421f5273800ed"
+    },
+    {
+      "id": "armor_part_lederhandschuhe",
+      "order": 111,
+      "file": "armor_part_lederhandschuhe.png",
+      "name": "Lederhandschuhe",
+      "sha256": "82d6c338d39b64f08a1c8e42400aafe0e731bd66692f3940a6f99cccf99bd16d"
+    },
+    {
+      "id": "armor_part_reinforced_gloves",
+      "order": 112,
+      "file": "armor_part_reinforced_gloves.png",
+      "name": "Verstärkte Lederhandschuhe",
+      "sha256": "dffdaa54c31c81fd870b21e3e5b290e4da7d68330585c8df04fe475901b7e201"
+    },
+    {
+      "id": "armor_part_chain_gloves",
+      "order": 113,
+      "file": "armor_part_chain_gloves.png",
+      "name": "Kettenhandschuhe",
+      "sha256": "b9436a0d241bbedd03e1c2bd0b6aee028ec308b1285faae4c35987ccbb71705e"
+    },
+    {
+      "id": "armor_part_eisenhandschuhe",
+      "order": 114,
+      "file": "armor_part_eisenhandschuhe.png",
+      "name": "Eisenhandschuhe",
+      "sha256": "a26b811e849b2b09d95ee827df63120293941aaad44c0f9d0207411a22c8dfb5"
+    },
+    {
+      "id": "armor_part_plate_gauntlets",
+      "order": 115,
+      "file": "armor_part_plate_gauntlets.png",
+      "name": "Panzerhandschuhe",
+      "sha256": "ac40a9d8980548e21f29fff3c91178ae00d441d2286789f2913068a6e326ef76"
+    },
+    {
+      "id": "armor_part_gelenkige_plattenhandschuhe",
+      "order": 116,
+      "file": "armor_part_gelenkige_plattenhandschuhe.png",
+      "name": "Gelenkige Plattenhandschuhe",
+      "sha256": "cb0257affb463ebaf7bba669307170bcfa16cd881852076c6cb37d32bd69331c"
+    },
+    {
+      "id": "armor_part_gepolsterter_hueftschutz",
+      "order": 117,
+      "file": "armor_part_gepolsterter_hueftschutz.png",
+      "name": "Gepolsterter Hüftschutz",
+      "sha256": "64afeb24b45fea2ca8d633de37d6c93ff3f69c4b39801f1610ccd13081b96814"
+    },
+    {
+      "id": "armor_part_lederschurz",
+      "order": 118,
+      "file": "armor_part_lederschurz.png",
+      "name": "Lederschurz",
+      "sha256": "66b59d1c38c8454817ad6b06631d1b2d2033490b937d26cad088ced47ff96f92"
+    },
+    {
+      "id": "armor_part_verstaerkter_lederschurz",
+      "order": 119,
+      "file": "armor_part_verstaerkter_lederschurz.png",
+      "name": "Verstärkter Lederschurz",
+      "sha256": "876fa66d04e1daf3477b3c21d3c8ad3684e233d4c9a79c48c76efc7500cfb90f"
+    },
+    {
+      "id": "armor_part_kettenschurz",
+      "order": 120,
+      "file": "armor_part_kettenschurz.png",
+      "name": "Kettenschurz",
+      "sha256": "b602b5495b339e09e5c446c989d1a589113994be70f8ea4e0656c6975c9475f5"
+    },
+    {
+      "id": "armor_part_schuppenrock",
+      "order": 121,
+      "file": "armor_part_schuppenrock.png",
+      "name": "Schuppenrock",
+      "sha256": "0cf13b1beb6c26a2ea1aa916efcc544547baa0319d8dfa0b442cc8f872ccdffc"
+    },
+    {
+      "id": "armor_part_plattenrock",
+      "order": 122,
+      "file": "armor_part_plattenrock.png",
+      "name": "Plattenrock",
+      "sha256": "f91d9c04e54e0c45f881cf217685d8a8ca7a95ca3984600a44196fd6eb39de70"
+    },
+    {
+      "id": "armor_part_gelenkiger_plattenrock",
+      "order": 123,
+      "file": "armor_part_gelenkiger_plattenrock.png",
+      "name": "Gelenkiger Plattenrock",
+      "sha256": "ec99b2c840c7c840074acb22643604ecf3ccefccc106014a1252e08f83a1668b"
+    },
+    {
+      "id": "armor_part_padded_leggings",
+      "order": 124,
+      "file": "armor_part_padded_leggings.png",
+      "name": "Gepolsterte Beinlinge",
+      "sha256": "eaf1a09a12cb6c492ce3d2317703a059de63e62f95d3f796f0d774bf2d786044"
+    },
+    {
+      "id": "armor_part_leather_legs",
+      "order": 125,
+      "file": "armor_part_leather_legs.png",
+      "name": "Lederbeinschienen",
+      "sha256": "33bc343a54e7933a8c54e131cd1ab6061ef22ef5e7935b6edc1cf693b398314d"
+    },
+    {
+      "id": "armor_part_verstaerkte_lederbeine",
+      "order": 126,
+      "file": "armor_part_verstaerkte_lederbeine.png",
+      "name": "Verstärkte Lederbeine",
+      "sha256": "6dca623deac06f9f2d6cd9f6bbb43b2ca81e0753b5de9db3ad897620bd56fd8f"
+    },
+    {
+      "id": "armor_part_metal_greaves",
+      "order": 127,
+      "file": "armor_part_metal_greaves.png",
+      "name": "Metallbeinschienen",
+      "sha256": "29cbd9ccf848b2fe5093bed1d6c7d76266f2aa36b0b4812669a1cbf1773d5078"
+    },
+    {
+      "id": "armor_part_chain_leggings",
+      "order": 128,
+      "file": "armor_part_chain_leggings.png",
+      "name": "Kettenbeinlinge",
+      "sha256": "8a0a5a0e4897730bc27210e35f320a1e85a4a02e1ba362e9ab59e02c0ded9efa"
+    },
+    {
+      "id": "armor_part_plate_legs",
+      "order": 129,
+      "file": "armor_part_plate_legs.png",
+      "name": "Plattenbeine",
+      "sha256": "b552cbcf49bf865090462cb8c4001253239d1b9af5fc2774605a73dd6d15bf96"
+    },
+    {
+      "id": "armor_part_schuppenbeinlinge",
+      "order": 130,
+      "file": "armor_part_schuppenbeinlinge.png",
+      "name": "Schuppenbeinlinge",
+      "sha256": "8027cdc50d7b916fbefd0a1af79914944692f16ba5d658ffe8e9ae6ef5d06124"
+    },
+    {
+      "id": "armor_part_gelenkige_plattenbeine",
+      "order": 131,
+      "file": "armor_part_gelenkige_plattenbeine.png",
+      "name": "Gelenkige Plattenbeine",
+      "sha256": "cc7370c3307496530182384e9a97386239a64bb1d2c301f13eddc23f649fa5f9"
+    },
+    {
+      "id": "armor_part_leather_boots",
+      "order": 132,
+      "file": "armor_part_leather_boots.png",
+      "name": "Feste Lederstiefel",
+      "sha256": "ef12c8228e3a6eefeff408b1965b71b6649cd5a6104ed34bbbc6e422f4db8fee"
+    },
+    {
+      "id": "armor_part_reinforced_boots",
+      "order": 133,
+      "file": "armor_part_reinforced_boots.png",
+      "name": "Verstärkte Stiefel",
+      "sha256": "01e65179c500a6e9ac818e375ff84acc9c241c3b767df71576659528af671d9c"
+    },
+    {
+      "id": "armor_part_beschlagene_stiefel",
+      "order": 134,
+      "file": "armor_part_beschlagene_stiefel.png",
+      "name": "Beschlagene Stiefel",
+      "sha256": "dee28584cb4cf2aaef242b5ebfbf51b12c07f6ab03f3b04a127e1aa53fab0626"
+    },
+    {
+      "id": "armor_part_chain_shoes",
+      "order": 135,
+      "file": "armor_part_chain_shoes.png",
+      "name": "Kettenschuhe",
+      "sha256": "52d654d1689a1e3e875e6b4dcf1fbc8d356c08bb927d01a8b5debbc0ecdd79e1"
+    },
+    {
+      "id": "armor_part_plate_sabatons",
+      "order": 136,
+      "file": "armor_part_plate_sabatons.png",
+      "name": "Plattenschuhe",
+      "sha256": "e77bbc952d25c820ff2a0728180d0b16349af075d03ff4db1292a5f299e83e18"
+    },
+    {
+      "id": "armor_part_gepanzerte_reiterstiefel",
+      "order": 137,
+      "file": "armor_part_gepanzerte_reiterstiefel.png",
+      "name": "Gepanzerte Reiterstiefel",
+      "sha256": "5221289940568d7421fe5ac9d979b0670ceda52cfd53b4f4f1c410bcd6a78346"
+    },
+    {
+      "id": "armor_part_gelenkige_sabatons",
+      "order": 138,
+      "file": "armor_part_gelenkige_sabatons.png",
+      "name": "Gelenkige Sabatons",
+      "sha256": "d163bcde779483e98842587bc82c560644308c05bd7a34234a2f1a063291b7b3"
+    },
+    {
+      "id": "armor_shield_buckler",
+      "order": 139,
+      "file": "armor_shield_buckler.png",
+      "name": "Faustschild / Buckler",
+      "sha256": "3628bd52e290a605e47a30e501d6aaf9e8fd2e08a4c47d9b3f3fb7ab8b1cda18"
+    },
+    {
+      "id": "armor_shield_holzschild",
+      "order": 140,
+      "file": "armor_shield_holzschild.png",
+      "name": "Holzschild",
+      "sha256": "b719405a9809263eb7e1673aed2a0f1f5f608c01dac269cb7a6d8778486e1391"
+    },
+    {
+      "id": "armor_shield_round",
+      "order": 141,
+      "file": "armor_shield_round.png",
+      "name": "Rundschild",
+      "sha256": "8a6de52131c8088eb6705db835afaa2814bf8da7cd62c746e92164ee65aae331"
+    },
+    {
+      "id": "armor_shield_heaterschild",
+      "order": 142,
+      "file": "armor_shield_heaterschild.png",
+      "name": "Heaterschild",
+      "sha256": "15dd9d3aabddaf95a2bfc794a5ae786bad16085cae772dfa15ce90bdd359f9d2"
+    },
+    {
+      "id": "armor_shield_kiteschild",
+      "order": 143,
+      "file": "armor_shield_kiteschild.png",
+      "name": "Kiteschild",
+      "sha256": "bf7dfdd49e0c5d411ec899e385d4d2a3b357b443cd2311273af7813ab98a1f3a"
+    },
+    {
+      "id": "armor_shield_tower",
+      "order": 144,
+      "file": "armor_shield_tower.png",
+      "name": "Turmschild",
+      "sha256": "2b8bc047998c0ceb0b6b2bf8afc521dfa49172a90cee690e4e539b12782ae17d"
+    },
+    {
+      "id": "armor_shield_verstaerkter_turmschild",
+      "order": 145,
+      "file": "armor_shield_verstaerkter_turmschild.png",
+      "name": "Verstärkter Turmschild",
+      "sha256": "e88a07473d965db975b65965e9402c5e4b0f86d4c43db46564a509cf961291f1"
+    },
+    {
+      "id": "wpn_melee_hand_axe",
+      "order": 146,
+      "file": "wpn_melee_hand_axe.png",
+      "name": "Handaxt",
+      "sha256": "da658ee17ad4bf3083dead29ce33ca8dbfa608fd2447c4c733fcb07bbda29cd2"
+    },
+    {
+      "id": "wpn_melee_halberd",
+      "order": 147,
+      "file": "wpn_melee_halberd.png",
+      "name": "Hellebarde",
+      "sha256": "5d8cf46dff87d418eec3e8f64e4241749d85dd83c83750fd69cb59af2d189b84"
+    },
+    {
+      "id": "wpn_melee_improvised",
+      "order": 148,
+      "file": "wpn_melee_improvised.png",
+      "name": "Improvisierte Nahkampfwaffe",
+      "sha256": "55181b01115c9a7a00598eb4b20c99199dd2515ce1fd6e395e5188423f1ad9f8"
+    },
+    {
+      "id": "wpn_melee_quarterstaff",
+      "order": 149,
+      "file": "wpn_melee_quarterstaff.png",
+      "name": "Kampfstab",
+      "sha256": "9918e63a142f9fa3c46c4f9942e3543034f7449fe85725f810e4859778a59af0"
+    },
+    {
+      "id": "wpn_melee_small_simple",
+      "order": 150,
+      "file": "wpn_melee_small_simple.png",
+      "name": "Kleine simple Nahkampfwaffe",
+      "sha256": "eba5499670efb8af2ac3d42764a59ee146785f3ada4803f330ca2eb71e491da7"
+    },
+    {
+      "id": "wpn_melee_light_simple",
+      "order": 151,
+      "file": "wpn_melee_light_simple.png",
+      "name": "Leichte simple Nahkampfwaffe",
+      "sha256": "049c1981891f334d7d807f050102adb324256c39d4f6ccb1e5f771f231800525"
+    },
+    {
+      "id": "wpn_melee_heavy_simple",
+      "order": 152,
+      "file": "wpn_melee_heavy_simple.png",
+      "name": "Schwere simple Nahkampfwaffe",
+      "sha256": "8a2dd1d3f6de41e43e4173b1986ec0b12cf7b0a08348340da9cc1b30225b307f"
+    },
+    {
+      "id": "wpn_melee_spear",
+      "order": 153,
+      "file": "wpn_melee_spear.png",
+      "name": "Speer",
+      "sha256": "5cd2ac32af2fbf16cef64a8a09a3174f0f5ef1a600e1ace795252e0942e463e5"
+    },
+    {
+      "id": "wpn_melee_greataxe",
+      "order": 154,
+      "file": "wpn_melee_greataxe.png",
+      "name": "Zweihandaxt",
+      "sha256": "0705cd2670367023cec12a1e5d78581029f7595b21d73ae324bd5e3525490383"
+    },
+    {
+      "id": "wpn_ranged_hand_crossbow",
+      "order": 155,
+      "file": "wpn_ranged_hand_crossbow.png",
+      "name": "Handarmbrust",
+      "sha256": "8dfc23f186f37f35c249d5c863f730cdecb51cd8d73f8399161b311691bf3f47"
+    },
+    {
+      "id": "wpn_ranged_sling",
+      "order": 156,
+      "file": "wpn_ranged_sling.png",
+      "name": "Schleuder",
+      "sha256": "e59700d78ea2f661f8f5e35d2b82219223129cdb9c20e701931b8c87466ace2a"
+    },
+    {
+      "id": "ammo_bolt_12",
+      "order": 157,
+      "file": "ammo_bolt_12.png",
+      "name": "Bolzen, 12 Stück",
+      "sha256": "e254c2a0943ee67ef1cbf41baef8c9a321b6c3dc053d07912c86f3b7fabfef1b"
+    },
+    {
+      "id": "ammo_short_bolt_12",
+      "order": 158,
+      "file": "ammo_short_bolt_12.png",
+      "name": "Kurze Bolzen, 12 Stück",
+      "sha256": "497208969a6fc04960c286cd591889102b16f154e7c8df65cde3f5d093273f50"
+    },
+    {
+      "id": "ammo_arrow_12",
+      "order": 159,
+      "file": "ammo_arrow_12.png",
+      "name": "Pfeile, 12 Stück",
+      "sha256": "7cf2fd8fbe09c24b69136ccd7c10169de28ca5ba410b627829653ef9cdfa9e2d"
+    },
+    {
+      "id": "ammo_sling_stone_20",
+      "order": 160,
+      "file": "ammo_sling_stone_20.png",
+      "name": "Schleudersteine, 20 Stück",
+      "sha256": "48f8cf71347777c477bcd222378f478bb336e9fb27dffcf221dafec6c73116f1"
+    },
+    {
+      "id": "ammo_heavy_bolt_8",
+      "order": 161,
+      "file": "ammo_heavy_bolt_8.png",
+      "name": "Schwere Bolzen, 8 Stück",
+      "sha256": "4b5c3e61280d8b6336bd20dd6e7a02c4dbbf9ae931351a340c5cf02c9e4596ec"
+    },
+    {
+      "id": "armor_breastplate",
+      "order": 162,
+      "file": "armor_breastplate.png",
+      "name": "Brustplatte",
+      "sha256": "68362c55ed4d0b368fe6f3c05ac32a5b9e0734835cf63f6d325883fbfa9beb88"
+    },
+    {
+      "id": "armor_padded_jacket",
+      "order": 163,
+      "file": "armor_padded_jacket.png",
+      "name": "Gepolsterte Jacke",
+      "sha256": "102816677cbf4cfa8bdbeaa7a303dff43046c76cb3c00b51985b5ae684ef56cd"
+    },
+    {
+      "id": "armor_half_plate",
+      "order": 164,
+      "file": "armor_half_plate.png",
+      "name": "Halbplatte",
+      "sha256": "de628422453ec47b224990383f7b7c411b2489cb9296dce4a57dc0a1fc08a2d3"
+    },
+    {
+      "id": "armor_leather_jerkin",
+      "order": 165,
+      "file": "armor_leather_jerkin.png",
+      "name": "Lederwams",
+      "sha256": "d78916c87a6e6eb7302c9fe98e56e7c6613a5064e167a1e4049ff91c7ba4f315"
+    },
+    {
+      "id": "armor_reinforced_leather",
+      "order": 166,
+      "file": "armor_reinforced_leather.png",
+      "name": "Verstärkte Lederrüstung",
+      "sha256": "dd19e02219c4d4b3647904ebb25e508ffc162758893c0b71d9fa745b67c1218b"
+    },
+    {
+      "id": "armor_full_plate",
+      "order": 167,
+      "file": "armor_full_plate.png",
+      "name": "Vollplatte",
+      "sha256": "38a490dce964e91723ed51fddc4da9e9c12190c906cc3ebc0d54ed403075fdd2"
+    },
+    {
+      "id": "armor_part_padded_hood",
+      "order": 168,
+      "file": "armor_part_padded_hood.png",
+      "name": "Gepolsterte Haube",
+      "sha256": "6e81cb8219f4ed3725db2fbec209ce15465314bef5b7bfdb4cff28f20caf5d80"
+    },
+    {
+      "id": "armor_part_closed_helmet",
+      "order": 169,
+      "file": "armor_part_closed_helmet.png",
+      "name": "Geschlossener Plattenhelm",
+      "sha256": "c46ca944d3e3f45759c15cdd0dde0e8c4b8628d4474092cf2cb50fe3908c07e6"
+    },
+    {
+      "id": "armor_part_padded_shoulder_collar",
+      "order": 170,
+      "file": "armor_part_padded_shoulder_collar.png",
+      "name": "Gepolsterter Schulterkragen",
+      "sha256": "e2e184ab401d69c5801783fe5765fa4e44eea7e56ef645098929fd2de3d88f7a"
+    },
+    {
+      "id": "armor_part_leather_shoulders",
+      "order": 171,
+      "file": "armor_part_leather_shoulders.png",
+      "name": "Lederschultern",
+      "sha256": "190b98e5d3468d64983c0291958b0e18ef18890284c163f2b6d2521283952134"
+    },
+    {
+      "id": "armor_part_chain_shoulders",
+      "order": 172,
+      "file": "armor_part_chain_shoulders.png",
+      "name": "Kettenschultern",
+      "sha256": "73ee56c885fd0eee7928f74f0f0d1bdb1a71f5d47d8dddbab69dcb57525646f9"
+    },
+    {
+      "id": "armor_part_plate_shoulders",
+      "order": 173,
+      "file": "armor_part_plate_shoulders.png",
+      "name": "Schulterplatten",
+      "sha256": "28b5c54baa29ec21242293f840652dca310d49e76d3825fe844d41f6ed4adccf"
+    },
+    {
+      "id": "armor_part_padded_sleeves",
+      "order": 174,
+      "file": "armor_part_padded_sleeves.png",
+      "name": "Gepolsterte Ärmel",
+      "sha256": "21c47286f2d8a2a24fd72620e4113a7e39abdc758d26cc90f3b8c7624da85e3f"
+    },
+    {
+      "id": "armor_part_leather_bracers",
+      "order": 175,
+      "file": "armor_part_leather_bracers.png",
+      "name": "Lederarmschienen",
+      "sha256": "54bc7df6037bdc1df698d13b0102726f4f307953e0bd7ca9d5c179ecaefc4ec6"
+    },
+    {
+      "id": "gear_pouch",
+      "order": 176,
+      "file": "gear_pouch.png",
+      "name": "Gürteltasche",
+      "sha256": "8b0c8adaa8566f82a09c227eddcb8412c58f7938e5a1600141915c27b9865fb2"
+    },
+    {
+      "id": "gear_quiver",
+      "order": 177,
+      "file": "gear_quiver.png",
+      "name": "Köcher",
+      "sha256": "c09d1e80665fcbfa6744ede7dd1b2f08822792b52ad42b40dc225f1acd2bf893"
+    },
+    {
+      "id": "gear_backpack",
+      "order": 178,
+      "file": "gear_backpack.png",
+      "name": "Rucksack",
+      "sha256": "a407364ecb96c8da8a7552afd37efc89a3562950010aa6ecd9cba2fcab26bf13"
+    },
+    {
+      "id": "gear_waterskin",
+      "order": 179,
+      "file": "gear_waterskin.png",
+      "name": "Wasserschlauch",
+      "sha256": "d4f07452379e651cbc6bad8e8ec63c5c4d235824a64a73c0cf2ff32a5b3ded24"
+    },
+    {
+      "id": "gear_rope_fine_10m",
+      "order": 180,
+      "file": "gear_rope_fine_10m.png",
+      "name": "Feines Seil, 10 m",
+      "sha256": "1c70283e92526841ae91c6d2ae2ea8bda556962a27e236b9d5234125fd319f32"
+    },
+    {
+      "id": "gear_rope_hemp_10m",
+      "order": 181,
+      "file": "gear_rope_hemp_10m.png",
+      "name": "Hanfseil, 10 m",
+      "sha256": "3a113ec8b0386b8cc6a2d7dd0385af4829080084034d66f04335e520c9944aa6"
+    },
+    {
+      "id": "gear_cooking_pot",
+      "order": 182,
+      "file": "gear_cooking_pot.png",
+      "name": "Kochkessel",
+      "sha256": "d27ccb00f47b0c1b918754877bae685a52825a286b739d6ebf85bde585f8201e"
+    },
+    {
+      "id": "gear_shovel",
+      "order": 183,
+      "file": "gear_shovel.png",
+      "name": "Schaufel",
+      "sha256": "da5a92ef23749b47791f34ae9685ca90a79416f6a61100f56011b79ff3c39758"
+    },
+    {
+      "id": "gear_bedroll",
+      "order": 184,
+      "file": "gear_bedroll.png",
+      "name": "Schlafrolle",
+      "sha256": "0a8e81ed71b2ec6e2a421886dd551ea963c3774c3fad7208f6f1dc1c97e62c5c"
+    },
+    {
+      "id": "gear_blanket",
+      "order": 185,
+      "file": "gear_blanket.png",
+      "name": "Wolldecke",
+      "sha256": "635e17452d0e305be2718d285489c072132142a7b3ba65fe0cb7b411d75f8e36"
+    },
+    {
+      "id": "gear_tent_2p",
+      "order": 186,
+      "file": "gear_tent_2p.png",
+      "name": "Zweierzelt",
+      "sha256": "472db06c27f82d870d1131e30e18f2b30e080107ab9c6dca620149bfd4036d21"
+    },
+    {
+      "id": "gear_torch",
+      "order": 187,
+      "file": "gear_torch.png",
+      "name": "Fackel",
+      "sha256": "ba54e757dec55182e9b2abb390411375971297a7524b4fc98bf537d4856f01b5"
+    },
+    {
+      "id": "gear_tinderbox",
+      "order": 188,
+      "file": "gear_tinderbox.png",
+      "name": "Feuerzeugkasten",
+      "sha256": "784eb04172bc6d266b7acdc5225afc157c74f30c074cdf16c48d03c0dc0e624a"
+    },
+    {
+      "id": "gear_oil_flask",
+      "order": 189,
+      "file": "gear_oil_flask.png",
+      "name": "Lampenöl",
+      "sha256": "597a13b745f74f663a4c5636315a1b82f434a295f164d4fcafa13da3452f2a34"
+    },
+    {
+      "id": "gear_lantern",
+      "order": 190,
+      "file": "gear_lantern.png",
+      "name": "Laterne",
+      "sha256": "ceb87b99f4f46865b52ddd86a214800d3492486872d954cba4ab97bc1e9efa75"
+    },
+    {
+      "id": "gear_crowbar",
+      "order": 191,
+      "file": "gear_crowbar.png",
+      "name": "Brecheisen",
+      "sha256": "d1b661d128952f591a5d3331d607147388f70cf39cecbdca375d03133bbde1cc"
+    },
+    {
+      "id": "gear_toolkit_basic",
+      "order": 192,
+      "file": "gear_toolkit_basic.png",
+      "name": "Einfacher Werkzeugkasten",
+      "sha256": "483eb91f36e476f6a3ed7cb1252369b65dfb099d6dbaaf8a530e517a531fef86"
+    },
+    {
+      "id": "gear_armor_repair",
+      "order": 193,
+      "file": "gear_armor_repair.png",
+      "name": "Rüstungsreparatur-Set",
+      "sha256": "dd0fb0539be15f7ae4301403687a06923512cc2821024f12ad69ad7b802c9b10"
+    },
+    {
+      "id": "gear_lockpicks",
+      "order": 194,
+      "file": "gear_lockpicks.png",
+      "name": "Schlosswerkzeug",
+      "sha256": "ac45fd4d3716199b9b09a6427463b06ebba56d02c872e5cb7d2ca9a9ab81f0b5"
+    },
+    {
+      "id": "gear_weapon_care",
+      "order": 195,
+      "file": "gear_weapon_care.png",
+      "name": "Waffenpflege-Set",
+      "sha256": "d136f4f2bf1e4c281b078b5d9be71628decc6f5a0866f02a99f8d8ecce3fa70e"
+    },
+    {
+      "id": "gear_healer_kit",
+      "order": 196,
+      "file": "gear_healer_kit.png",
+      "name": "Heilerbesteck",
+      "sha256": "70387993cf1a190ba16e39022189fc622ac80b9d40c63b68309128b396b86821"
+    },
+    {
+      "id": "gear_bandage",
+      "order": 197,
+      "file": "gear_bandage.png",
+      "name": "Verbandspaket",
+      "sha256": "a58d048c3fa6c4fe0615d33f457bf23ecb3c1cdea51e47cedd7375db585430e6"
+    },
+    {
+      "id": "gear_map_case",
+      "order": 198,
+      "file": "gear_map_case.png",
+      "name": "Kartenrolle",
+      "sha256": "7a3f662c201a7351f506cfb8821bd73d372b8c2fcc88f080d46562c9a00fb7b5"
+    },
+    {
+      "id": "gear_chalk_10",
+      "order": 199,
+      "file": "gear_chalk_10.png",
+      "name": "Kreide, 10 Stück",
+      "sha256": "3e29aeb6deff877874c5a3ef8a938e9101cea6f89412a1c46599695d3418117d"
+    },
+    {
+      "id": "gear_writing_set",
+      "order": 200,
+      "file": "gear_writing_set.png",
+      "name": "Schreibzeug",
+      "sha256": "8c63e6259de25b3b7ea11ddcfb7962fea5b99114dde00cd00699d69068b48cf0"
+    },
+    {
+      "id": "gear_candle_5",
+      "order": 201,
+      "file": "gear_candle_5.png",
+      "name": "Kerzen, 5 Stück",
+      "sha256": "6d6ca8e51ac12b34bb410de27ff86e999bb440913acb6eae18df99468df1f056"
+    },
+    {
+      "id": "gear_soap",
+      "order": 202,
+      "file": "gear_soap.png",
+      "name": "Seife",
+      "sha256": "480b441a070af8d81005557bb9321e66b593ec57231abde50615e21c5248a56e"
+    },
+    {
+      "id": "gear_wax",
+      "order": 203,
+      "file": "gear_wax.png",
+      "name": "Siegelwachs",
+      "sha256": "f6b85b7797575f81148081016fa3e683bec7090a1ea9e30037ba46adce28cd1b"
+    },
+    {
+      "id": "gear_tool_werkhammer",
+      "order": 204,
+      "file": "gear_tool_werkhammer.png",
+      "name": "Werkhammer",
+      "sha256": "7f38fd2998ce4811fc058b97cacc4fdef1dc3e8829262598a1ba2ed6fedcef11"
+    },
+    {
+      "id": "gear_tool_bogenhobel",
+      "order": 205,
+      "file": "gear_tool_bogenhobel.png",
+      "name": "Bogenhobel",
+      "sha256": "84be6632c134a2a1e6161ebf8c5a4dc7f5b6b09e6f2583eab720488828ea82e6"
+    },
+    {
+      "id": "gear_tool_nietzange",
+      "order": 206,
+      "file": "gear_tool_nietzange.png",
+      "name": "Nietzange",
+      "sha256": "ad26362281ae7969fa9e6be2cbaa6a5a22ca749b7f49b6c4c03074cf6fcdd109"
+    },
+    {
+      "id": "gear_tool_schreib_und_siegelbesteck",
+      "order": 207,
+      "file": "gear_tool_schreib_und_siegelbesteck.png",
+      "name": "Schreib- und Siegelbesteck",
+      "sha256": "76f45367612213d9178cf979f714123c4f56e4f3124ab376aeb27a8b91361137"
+    },
+    {
+      "id": "gear_tool_alchemistentasche",
+      "order": 208,
+      "file": "gear_tool_alchemistentasche.png",
+      "name": "Alchemistentasche",
+      "sha256": "4be202c017bba49d1582bbb6ccf6a40d1cdb42e3dd0136f04be7a35980206047"
+    },
+    {
+      "id": "gear_tool_heilertasche",
+      "order": 209,
+      "file": "gear_tool_heilertasche.png",
+      "name": "Heilertasche",
+      "sha256": "5273961f8d98995df20795bd4c3f65db3433bffc98c8bec52bf63ea59953aa96"
+    },
+    {
+      "id": "gear_tool_schwimmguertel",
+      "order": 210,
+      "file": "gear_tool_schwimmguertel.png",
+      "name": "Schwimmgürtel",
+      "sha256": "bd5fb7e022c74898910bc80dd1f276428e9d98f9beab70c37ea9da601b059f87"
+    },
+    {
+      "id": "gear_tool_filzueberschuhe",
+      "order": 211,
+      "file": "gear_tool_filzueberschuhe.png",
+      "name": "Filzüberschuhe",
+      "sha256": "f46fcdc756fe6d122e9d45a27ed455dd438774b686229aaa4814c35d4ec14a3b"
+    },
+    {
+      "id": "gear_tool_doppelbodentruhe",
+      "order": 212,
+      "file": "gear_tool_doppelbodentruhe.png",
+      "name": "Doppelbodentruhe",
+      "sha256": "05876110f8a996e762eb90993359cd1bf7a822f1d6487f84fe747e2c2e812451"
+    },
+    {
+      "id": "gear_tool_verkleidungskoffer",
+      "order": 213,
+      "file": "gear_tool_verkleidungskoffer.png",
+      "name": "Verkleidungskoffer",
+      "sha256": "14e38264a2441a17fdd5347c74610ebf94bad01c18a25018cd311d9cc46bece9"
+    },
+    {
+      "id": "gear_tool_hanfseil",
+      "order": 214,
+      "file": "gear_tool_hanfseil.png",
+      "name": "Hanfseil",
+      "sha256": "fe704bf506739c09f0b9153f8aa00231f0a3f13f29af90fbd6cb37405bb2519e"
+    },
+    {
+      "id": "gear_tool_rettungsschere",
+      "order": 215,
+      "file": "gear_tool_rettungsschere.png",
+      "name": "Rettungsschere",
+      "sha256": "38cf1c290a126928581d877406d42d8ea8be06a32a9ae38b274d05f6ac4cd293"
+    },
+    {
+      "id": "gear_tool_waldlaeufertasche",
+      "order": 216,
+      "file": "gear_tool_waldlaeufertasche.png",
+      "name": "Waldläufertasche",
+      "sha256": "688787e5fbfbce41ed0ccb518d41aacd00d5832b5040c5b5d0075c95b08c8503"
+    },
+    {
+      "id": "gear_tool_netzmacherbesteck",
+      "order": 217,
+      "file": "gear_tool_netzmacherbesteck.png",
+      "name": "Netzmacherbesteck",
+      "sha256": "656ca42ca35f9c76a17602bd7b3e26c7c63f1dd4aa351cf70a11f40df2479d9c"
+    },
+    {
+      "id": "gear_tool_spurenlesertasche",
+      "order": 218,
+      "file": "gear_tool_spurenlesertasche.png",
+      "name": "Spurenlesertasche",
+      "sha256": "fd52ef290bfb5ae46e4ed6ac8916d40548a81b9e42b7ed8e5877ce77cde6fe02"
+    },
+    {
+      "id": "gear_tool_marschkompass",
+      "order": 219,
+      "file": "gear_tool_marschkompass.png",
+      "name": "Marschkompass",
+      "sha256": "2eac1f8a9a586381fa6648d96b7e83167763e742d4806c6e0d43e3f9f57fdc5a"
+    },
+    {
+      "id": "gear_tool_zaumzeug",
+      "order": 220,
+      "file": "gear_tool_zaumzeug.png",
+      "name": "Zaumzeug",
+      "sha256": "d3c8967af5adf9bc5b8f19b54b58d0b49118a5961065b61c537590bf4d794a1d"
+    },
+    {
+      "id": "gear_tool_fahrhandschuhe",
+      "order": 221,
+      "file": "gear_tool_fahrhandschuhe.png",
+      "name": "Fahrhandschuhe",
+      "sha256": "3279598bf3469ed3e74aa98a00f829e5f70b69eeeba7bab40210f6beb61cd4ef"
+    },
+    {
+      "id": "gear_tool_tierpflegetasche",
+      "order": 222,
+      "file": "gear_tool_tierpflegetasche.png",
+      "name": "Tierpflegetasche",
+      "sha256": "e55a501c60286ff566eacbbbe146fc86f8b3c3291250119de594f2a3c0ed1ec8"
+    },
+    {
+      "id": "gear_tool_beutel_mit_goldschimmerndem_falschgeld",
+      "order": 223,
+      "file": "gear_tool_beutel_mit_goldschimmerndem_falschgeld.png",
+      "name": "Beutel mit goldschimmerndem Falschgeld",
+      "sha256": "33980a1ca7cd89c6ea891d34b72ddecc88eaac6ebeb7ce0714383a17cb25f093"
+    },
+    {
+      "id": "gear_tool_gauklerbeutel",
+      "order": 224,
+      "file": "gear_tool_gauklerbeutel.png",
+      "name": "Gauklerbeutel",
+      "sha256": "43ba517e1db56f67a9380ecb1bd6704c6025c8d097544e2a9e3f54cbb7fe454b"
+    },
+    {
+      "id": "gear_tool_spieluhr",
+      "order": 225,
+      "file": "gear_tool_spieluhr.png",
+      "name": "Spieluhr",
+      "sha256": "ff38950e7adab6a837d0651b5f4c7441694a74e8cc640bdc1eaafa977b2821c5"
+    },
+    {
+      "id": "gear_tool_nasen_und_lippenring",
+      "order": 226,
+      "file": "gear_tool_nasen_und_lippenring.png",
+      "name": "Nasen- und Lippenring",
+      "sha256": "c0a27c7f6f8144296a3ecda67af8a20b92d46463691f33f5202d04628337beff"
+    },
+    {
+      "id": "gear_tool_folterwerkzeug",
+      "order": 227,
+      "file": "gear_tool_folterwerkzeug.png",
+      "name": "Folterwerkzeug",
+      "sha256": "4af067690b0bccc31dd004aeb1a804628fc5dfb4d98e8130a55959012c8f4959"
+    },
+    {
+      "id": "gear_tool_hoffaecher",
+      "order": 228,
+      "file": "gear_tool_hoffaecher.png",
+      "name": "Hoffächer",
+      "sha256": "1c411d85ac46e7bbc5d8511740b26a8a0bdf7ca63a53e676f353948c3b665e24"
+    },
+    {
+      "id": "gear_tool_tagebuch",
+      "order": 229,
+      "file": "gear_tool_tagebuch.png",
+      "name": "Tagebuch",
+      "sha256": "ddf535159c48c57ce6b7b57f15ffd2536b6b1ca59848723a137b3a1fbfd33a65"
+    },
+    {
+      "id": "gear_tool_ereigniskalender",
+      "order": 230,
+      "file": "gear_tool_ereigniskalender.png",
+      "name": "Ereigniskalender",
+      "sha256": "24463b72c0049750fc79756a1477269d5201ab66a4ed7a4a9b8d6b04eecc7064"
+    },
+    {
+      "id": "gear_tool_adlige_ansteckfeder",
+      "order": 231,
+      "file": "gear_tool_adlige_ansteckfeder.png",
+      "name": "Adlige Ansteckfeder",
+      "sha256": "f63cdbfdbf2436f5f1d6eea201567081b265359fb46fe3be6e525082aeedff4d"
+    },
+    {
+      "id": "gear_tool_signalhorn",
+      "order": 232,
+      "file": "gear_tool_signalhorn.png",
+      "name": "Signalhorn",
+      "sha256": "51791abf69f02b6d69ade5c2f83014ef71beb4f9b517150d00c4fec5b133da93"
+    },
+    {
+      "id": "gear_tool_laute",
+      "order": 233,
+      "file": "gear_tool_laute.png",
+      "name": "Laute",
+      "sha256": "83ec94cbc42b86dd565ce4f3061eb55ee2b7e76d5273ee5796553f348ab6aa0b"
+    },
+    {
+      "id": "gear_tool_brosche_der_reisenden",
+      "order": 234,
+      "file": "gear_tool_brosche_der_reisenden.png",
+      "name": "Brosche der Reisenden",
+      "sha256": "1f020449503d9379d4b413c5b909a3a21beb4fcf709948469d8f575be94c8c24"
+    },
+    {
+      "id": "gear_tool_tarotdeck",
+      "order": 235,
+      "file": "gear_tool_tarotdeck.png",
+      "name": "Tarotdeck",
+      "sha256": "656230c7d5641c5ca47203b327bcb8ea20f2353113d73798201b79a1f1552fe6"
+    },
+    {
+      "id": "gear_tool_wappenrolle",
+      "order": 236,
+      "file": "gear_tool_wappenrolle.png",
+      "name": "Wappenrolle",
+      "sha256": "5984dd52edc2619ab5c1bc93ec94d4e70df52946f13463f9f9910c4d1aa87937"
+    },
+    {
+      "id": "gear_tool_gesetzbuch",
+      "order": 237,
+      "file": "gear_tool_gesetzbuch.png",
+      "name": "Gesetzbuch",
+      "sha256": "3b6cc91da71698da7cd5de9a28535b76be571e744573c39558c3cfdccb7bb285"
+    },
+    {
+      "id": "gear_tool_glossar",
+      "order": 238,
+      "file": "gear_tool_glossar.png",
+      "name": "Glossar",
+      "sha256": "8432fba197ab937cfbb99da0af6ddc547b9968432dd787a480ddd54afc90058c"
+    },
+    {
+      "id": "gear_tool_reiseatlas",
+      "order": 239,
+      "file": "gear_tool_reiseatlas.png",
+      "name": "Reiseatlas",
+      "sha256": "96ace84e6b2e08809f5ab9397c761a90f2da040130ccb15e72e5c4ae975aefce"
+    },
+    {
+      "id": "gear_tool_mappe_fuer_ruinenkundler",
+      "order": 240,
+      "file": "gear_tool_mappe_fuer_ruinenkundler.png",
+      "name": "Mappe für Ruinenkundler",
+      "sha256": "46496206e1e52eeb145d1355436f92e3ffef15e0e9a8631d86cd6161adfbbfb6"
+    },
+    {
+      "id": "gear_tool_astrolabium",
+      "order": 241,
+      "file": "gear_tool_astrolabium.png",
+      "name": "Astrolabium",
+      "sha256": "ae48a141675f52b59c464859cf80dc5ad18e89bdfb124f9cd06c18c9b79691cc"
+    },
+    {
+      "id": "gear_tool_merktafel",
+      "order": 242,
+      "file": "gear_tool_merktafel.png",
+      "name": "Merktafel",
+      "sha256": "9670456f67f0fca25e8c11fed5900b6037f33cc51db16dca62367a5158d292e6"
+    },
+    {
+      "id": "gear_tool_lagebrett",
+      "order": 243,
+      "file": "gear_tool_lagebrett.png",
+      "name": "Lagebrett",
+      "sha256": "e3d780692084f1c6eb89fbfc0f065084f854e4e1e6b84163546355ce0196bb13"
+    },
+    {
+      "id": "gear_tool_bestiarium",
+      "order": 244,
+      "file": "gear_tool_bestiarium.png",
+      "name": "Bestiarium",
+      "sha256": "cddcd48d9f1aed640f0f84be343a5ea7a8847ec43440f2b24852f23fcdf15526"
+    },
+    {
+      "id": "gear_tool_balkenwaage",
+      "order": 245,
+      "file": "gear_tool_balkenwaage.png",
+      "name": "Balkenwaage",
+      "sha256": "7e837fb5f398974cb1133152c14ae908dd9a720357520ac2d84cc34acde4e0dc"
+    },
+    {
+      "id": "gear_tool_hoerrohr",
+      "order": 246,
+      "file": "gear_tool_hoerrohr.png",
+      "name": "Hörrohr",
+      "sha256": "c696ee6e4cf729dd1e1d8efa2d0466fccedf2a5102777224b39a731782342f52"
+    },
+    {
+      "id": "gear_tool_untersuchungsbesteck",
+      "order": 247,
+      "file": "gear_tool_untersuchungsbesteck.png",
+      "name": "Untersuchungsbesteck",
+      "sha256": "00b8fed8348b4dc1ccbf2f5986c2835896fc98af212f832aae3b60e5237a246c"
+    },
+    {
+      "id": "gear_tool_aurenprisma",
+      "order": 248,
+      "file": "gear_tool_aurenprisma.png",
+      "name": "Aurenprisma",
+      "sha256": "dd44683c61a36b636454fe1fa891068116f94b949a6606eefc90cf30fcf15920"
+    },
+    {
+      "id": "gear_tool_reiseset_fuer_heilsegen",
+      "order": 249,
+      "file": "gear_tool_reiseset_fuer_heilsegen.png",
+      "name": "Reiseset für Heilsegen",
+      "sha256": "37c2ad172b016aaf111aca5783034a01c13dd6685d1807a90fadec09eb8a7da9"
+    },
+    {
+      "id": "gear_tool_liturgienbuch",
+      "order": 250,
+      "file": "gear_tool_liturgienbuch.png",
+      "name": "Liturgienbuch",
+      "sha256": "e488d6965f0e1092177b53bb17c92b1213cf764b2b47b698f05c6360138ee30c"
+    },
+    {
+      "id": "gear_tool_buch_der_geister",
+      "order": 251,
+      "file": "gear_tool_buch_der_geister.png",
+      "name": "Buch der Geister",
+      "sha256": "d28461f283cfa67e2dae2a7e3fddb6ff3cdd96c29a23a38e4afa332b9ce5ff4e"
+    },
+    {
+      "id": "gear_tool_ahnenglocke",
+      "order": 252,
+      "file": "gear_tool_ahnenglocke.png",
+      "name": "Ahnenglocke",
+      "sha256": "5005f1e4e4ec617a6f60ec863e8a9def9ba91eba105d9de51471e1900fd34f7f"
+    },
+    {
+      "id": "gear_tool_sonnenspiegel",
+      "order": 253,
+      "file": "gear_tool_sonnenspiegel.png",
+      "name": "Sonnenspiegel",
+      "sha256": "01785a3caa8c375033b908f611cede602fa4f31d3fbe35dd58c7901ff65d52ee"
+    },
+    {
+      "id": "gear_tool_schutzamulett",
+      "order": 254,
+      "file": "gear_tool_schutzamulett.png",
+      "name": "Schutzamulett",
+      "sha256": "ef277eb6ce51e002bfecf2e5ca2a2f356816e3589c88d9189d0519737857e531"
+    },
+    {
+      "id": "gear_tool_gebetskette",
+      "order": 255,
+      "file": "gear_tool_gebetskette.png",
+      "name": "Gebetskette",
+      "sha256": "3cb2fc8a9edc45f6f7eb35cbe9a2117c8e349b2bb597f40d77a3ae6200722a1b"
+    },
+    {
+      "id": "gear_tool_offenbarungsleuchte",
+      "order": 256,
+      "file": "gear_tool_offenbarungsleuchte.png",
+      "name": "Offenbarungsleuchte",
+      "sha256": "586c415a4730e64abb5fa4d1530ba2532d91f6cde94c4c17c21b7717e1a50979"
+    },
+    {
+      "id": "gear_tool_waechtersiegel",
+      "order": 257,
+      "file": "gear_tool_waechtersiegel.png",
+      "name": "Wächtersiegel",
+      "sha256": "d8f9476595a03b3c8817ed6b9ee2db7f6a38de6c1ebfc9286d294e0666dc395e"
+    },
+    {
+      "id": "gear_tool_bannreliquiar",
+      "order": 258,
+      "file": "gear_tool_bannreliquiar.png",
+      "name": "Bannreliquiar",
+      "sha256": "d7ab375974fa8c5850c7678c8aa7fc1677aa3a78350b34d3775d6c7fd132a586"
+    },
+    {
+      "id": "gear_tool_schaedelglocke",
+      "order": 259,
+      "file": "gear_tool_schaedelglocke.png",
+      "name": "Schädelglocke",
+      "sha256": "4fabb5c2a0c83014b47a6a0f6522fd5adc67142f272a594d40ec212bdee884f5"
+    },
+    {
+      "id": "gear_tool_ritualmesser_und_auffangschale",
+      "order": 260,
+      "file": "gear_tool_ritualmesser_und_auffangschale.png",
+      "name": "Ritualmesser und Auffangschale",
+      "sha256": "511059cdaea96555a37021cdeebade4787bc5195c97baa5bd9e00c42e3974eca"
+    },
+    {
+      "id": "gear_tool_rituelles_blutmesser",
+      "order": 261,
+      "file": "gear_tool_rituelles_blutmesser.png",
+      "name": "Rituelles Blutmesser",
+      "sha256": "ce63055e2e0fb017d343ef8636456db1debc8c2196ceb08a0a7a45932f395658"
+    },
+    {
+      "id": "gear_tool_kelch_der_uebertragung",
+      "order": 262,
+      "file": "gear_tool_kelch_der_uebertragung.png",
+      "name": "Kelch der Übertragung",
+      "sha256": "5f968cd090ec839a7391697ca671de9f7b6bf7ba9f0c2673ae80ed3e8d71b815"
+    },
+    {
+      "id": "gear_tool_werwolfguertel",
+      "order": 263,
+      "file": "gear_tool_werwolfguertel.png",
+      "name": "Werwolfgürtel",
+      "sha256": "cd13c6c7c418e92d68ff4f673392ce7ea955eff4845f7122e050d2e00722884e"
+    },
+    {
+      "id": "gear_tool_narrenschelle",
+      "order": 264,
+      "file": "gear_tool_narrenschelle.png",
+      "name": "Narrenschelle",
+      "sha256": "279285c6fbee26a823de513d55c9af9ad73da2a553865160d781a8659ddccd29"
+    },
+    {
+      "id": "gear_tool_fluchpuppe_aus_grablinnen",
+      "order": 265,
+      "file": "gear_tool_fluchpuppe_aus_grablinnen.png",
+      "name": "Fluchpuppe aus Grablinnen",
+      "sha256": "57d1bc1a1b81c15ee78cdda5fa34e98fe5d2beb2a31f8abc0f7e46fb7dc2c33f"
+    },
+    {
+      "id": "gear_tool_glutschale",
+      "order": 266,
+      "file": "gear_tool_glutschale.png",
+      "name": "Glutschale",
+      "sha256": "48387874076085951b02eec6a42389be0c508e018a74acf579e8129ccf12c91d"
+    },
+    {
+      "id": "gear_tool_klopfstein",
+      "order": 267,
+      "file": "gear_tool_klopfstein.png",
+      "name": "Klopfstein",
+      "sha256": "88b4d7c985527bd396c89589e52ceae94464d454a3a5bca15d1c9485dd6da6f0"
+    },
+    {
+      "id": "gear_tool_windfaecher",
+      "order": 268,
+      "file": "gear_tool_windfaecher.png",
+      "name": "Windfächer",
+      "sha256": "f0b2aa3cd3a9d7175d77e65e1444c18fdf7d39f1b08a12e0530582a9e98aa574"
+    },
+    {
+      "id": "gear_tool_gezeitenschale",
+      "order": 269,
+      "file": "gear_tool_gezeitenschale.png",
+      "name": "Gezeitenschale",
+      "sha256": "17396843f98d67805cb154dfb831a6a60ce114a554ce31c7bf4451268f3ec815"
+    },
+    {
+      "id": "gear_tool_runenstimmgabel",
+      "order": 270,
+      "file": "gear_tool_runenstimmgabel.png",
+      "name": "Runenstimmgabel",
+      "sha256": "b0efa18503d2dfb675d3beb32ad01c2009b0d8b531df275b2fb9889c17f21e68"
+    },
+    {
+      "id": "gear_tool_herzpendel",
+      "order": 271,
+      "file": "gear_tool_herzpendel.png",
+      "name": "Herzpendel",
+      "sha256": "d5383d04f2803989da40094d5c883deb71e8887b92b7dae1d29fbda01798c5a5"
+    },
+    {
+      "id": "gear_tool_lenkring",
+      "order": 272,
+      "file": "gear_tool_lenkring.png",
+      "name": "Lenkring",
+      "sha256": "d4386d0deed97574ae230a589ab7d8dce0f9ee5f6be5541226ff446939ee0557"
+    },
+    {
+      "id": "gear_tool_gedankenreif",
+      "order": 273,
+      "file": "gear_tool_gedankenreif.png",
+      "name": "Gedankenreif",
+      "sha256": "d7ea9e162a266982486a9859f1912b8228886939db830f13a3245d9f44b982e0"
+    },
+    {
+      "id": "gear_tool_facettenprisma",
+      "order": 274,
+      "file": "gear_tool_facettenprisma.png",
+      "name": "Facettenprisma",
+      "sha256": "919050261e76fca470dcda770c6dfc209515c6fc9ce4a2b2a7ac715821119fd0"
+    },
+    {
+      "id": "gear_tool_resonanzgabel",
+      "order": 275,
+      "file": "gear_tool_resonanzgabel.png",
+      "name": "Resonanzgabel",
+      "sha256": "2257d89f64a954e70b2074cd203ee93f41b7497db9b0355f32566f326972eeb4"
+    },
+    {
+      "id": "gear_tool_keimstab",
+      "order": 276,
+      "file": "gear_tool_keimstab.png",
+      "name": "Keimstab",
+      "sha256": "aa2d86cf699b572ce78175847be9afaa60c102b9d654612eedf06cd50a35abae"
+    },
+    {
+      "id": "gear_tool_rufpfeife",
+      "order": 277,
+      "file": "gear_tool_rufpfeife.png",
+      "name": "Rufpfeife",
+      "sha256": "95eee5ca8a58748e754c18b524f0ad8b73063547cbc53a10b9e4d9a4c20f4d8b"
+    },
+    {
+      "id": "gear_tool_traumspindel",
+      "order": 278,
+      "file": "gear_tool_traumspindel.png",
+      "name": "Traumspindel",
+      "sha256": "b744eef03262bc9320369de9b89b25cedff5909c63fcadb8f841c770cbdc7947"
+    },
+    {
+      "id": "gear_tool_wandelmaske",
+      "order": 279,
+      "file": "gear_tool_wandelmaske.png",
+      "name": "Wandelmaske",
+      "sha256": "154e0f2d79c77136e127359b1596a69ea15a5db086545760810a842ddc0bbc36"
+    },
+    {
+      "id": "gear_tool_ritualtasche",
+      "order": 280,
+      "file": "gear_tool_ritualtasche.png",
+      "name": "Ritualtasche",
+      "sha256": "a45aa2afeabb2a1559b57824f8386e758122af9d179b1d9b4bad4a03cf36681b"
+    },
+    {
+      "id": "gear_tool_orakelsteine",
+      "order": 281,
+      "file": "gear_tool_orakelsteine.png",
+      "name": "Orakelsteine",
+      "sha256": "77a68c3c519e2277309dac329a3b75cb4c4de5275e42f45626423cab86635969"
+    },
+    {
+      "id": "gear_tool_schattenbrosche",
+      "order": 282,
+      "file": "gear_tool_schattenbrosche.png",
+      "name": "Schattenbrosche",
+      "sha256": "52ca90d9352e56286f777da794205683475ee36ea0959b0669146284e8ea2488"
+    },
+    {
+      "id": "gear_tool_runenschneider_etui",
+      "order": 283,
+      "file": "gear_tool_runenschneider_etui.png",
+      "name": "Runenschneider-Etui",
+      "sha256": "a50613f6da4168fa695c98c81518c756a809e186a62422e0d76ca2cc21d571ad"
+    }
+  ]
+}
