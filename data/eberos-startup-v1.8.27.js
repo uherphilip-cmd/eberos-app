@@ -2,7 +2,7 @@
 
 /* Eberos v1.8.27: ein einziger sichtbarer Abschluss nach allen Fachmodulen. */
 (()=>{
-  const VERSION='1.8.42',REVISION='webmedien-1';
+  const VERSION='1.8.43',REVISION='kataloge-1';
   const badge=document.querySelector('.brand small');if(badge)badge.textContent='v'+VERSION;
   Object.assign(window.Eberos,{version:VERSION,revision:REVISION});
   const drawCards=renderCards,drawAll=renderAll;

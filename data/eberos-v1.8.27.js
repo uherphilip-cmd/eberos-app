@@ -2,7 +2,7 @@
 
 /* Eberos v1.8.27 · layout-sichere Kartenbilder in Builder und Kampagnenmodul */
 (function installV181Foundation(){
-  const VERSION='1.8.42',REVISION='webmedien-1',SCHEMA=46,RULES=21,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
+  const VERSION='1.8.43',REVISION='kataloge-1',SCHEMA=46,RULES=21,BACKEND_APP_VERSION='1.8.0',BACKEND_SCHEMA=30,core=window.EberosOpenPlayCore;
   if(!core)throw new Error('Open-Play-Kern v1.8.0 fehlt.');
   if(typeof LOCAL_DRAFT_REPOSITORY==='undefined')throw new Error('LocalDraftRepository ist nicht mit dem Builder verbunden.');
   const commandService=new core.DraftCommandService({repository:LOCAL_DRAFT_REPOSITORY,appVersion:VERSION,schemaVersion:SCHEMA});

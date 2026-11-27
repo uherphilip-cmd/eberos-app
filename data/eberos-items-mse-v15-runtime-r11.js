@@ -12,6 +12,22 @@ const MSE_PICKER_STATE_V15=window.__EBEROS_MSE_PICKER_STATE_V15||(window.__EBERO
 const MSE_ASSET_LABELS_V15={weapon:'Waffe',armor:'Rüstung & Kleidung',gear:'Artefakt & Ausrüstung',companion:'Begleiter & Kreatur',vehicle:'Fahrzeug & Transport',property:'Ort & großer Besitz',boon:'Segen, Titel & Zustand'};
 const MSE_COMPLETION_REWARDS_V15=MSE_ITEMS_V15.filter(item=>item.isCompletionReward);
 
+function mseLegacyVariant(item) {
+  const id = item?.catalogId || item?.id;
+  const legacy = MSE_DB_V15.legacyNpcVariants?.[id];
+  if (!legacy) return null;
+  const printed = MSE_BY_ID_V15.get(id);
+  return item.cardVariant === 'familiar' || item.kind === 'familiar' ||
+    item.localTabType === 'familiar' || item.sourceHash === printed.sourceHash ? null : legacy;
+}
+function mseCompanionCatalogV16(item) {
+  return mseLegacyVariant(item)?.item || MSE_BY_ID_V15.get(item?.catalogId || item?.id) || item;
+}
+function mseVariantKey(item) {
+  const id = item?.catalogId || item?.id;
+  return mseLegacyVariant(item) ? id + ':npc' : id;
+}
+
 function validateMseCatalogV15(){
   const errors=[],ids=new Set();
   if(MSE_ITEMS_V15.length!==496)errors.push(`496 Einträge erwartet, ${MSE_ITEMS_V15.length} gefunden`);
@@ -104,8 +120,8 @@ function unlockMseCardV17(owner,rawCode){
   if(!catalog)return{ok:false,reason:'invalid',message:'Kartencode ungültig. Es wurden keine Kartendaten angezeigt.'};
   if(catalog.isCompletionReward)return{ok:false,reason:'completion',message:'Vollendungskarten werden ausschließlich automatisch vergeben, sobald das zugehörige Set vollständig gesammelt wurde.'};
   const unlocked=mseUnlockedCardIdsV17(owner);
-  if(unlocked.includes(catalog.id))return{ok:false,reason:'already',item:catalog,message:`${catalog.name} ist bereits freigeschaltet.`};
-  owner.mseUnlockedCardIdsV17=[...unlocked,catalog.id];
+  if(unlocked.includes(catalog.id)&&!(catalog.cardVariant==='familiar'&&!(owner.equipment||[]).some(i=>mseVariantKey(i)===catalog.id)))return{ok:false,reason:'already',item:catalog,message:`${catalog.name} ist bereits freigeschaltet.`};
+  owner.mseUnlockedCardIdsV17=[...new Set([...unlocked,catalog.id])];
   const ui=msePickerStateV15(owner);ui.open=true;ui.message=`${catalog.name} wurde freigeschaltet und dem Inventar hinzugefügt.`;
   const added=addMseItemV15(owner,catalog);
   if(!added)saveOwnerV173(owner,true);
@@ -151,17 +167,17 @@ function removeMseCardUnlockV19(owner,catalogOrId,options={}){
   if(!owner||!catalog||catalog.isCompletionReward)return{ok:false,reason:'not-removable',removedItems:0,removedTabs:0};
   const unlocked=mseUnlockedCardIdsV17(owner);
   if(!unlocked.includes(catalog.id))return{ok:false,reason:'not-unlocked',removedItems:0,removedTabs:0};
-  const character=mseRootCharacterForRemovalV19(owner),items=(owner.equipment||[]).filter(item=>item.catalogId===catalog.id),linkedTabs=(character?.auxiliaryTabs||[]).filter(entry=>entry.mseAutoCreated&&entry.sourceMseItemV16?.catalogId===catalog.id),removedItems=items.length;
+  const character=mseRootCharacterForRemovalV19(owner),items=(owner.equipment||[]).filter(item=>mseVariantKey(item)===mseVariantKey(catalog)),linkedTabs=(character?.auxiliaryTabs||[]).filter(entry=>entry.mseAutoCreated&&mseVariantKey(entry.sourceMseItemV16)===mseVariantKey(catalog)),removedItems=items.length;
   if(options.confirm!==false){
     const consequences=[`${removedItems||'Keine'} Inventarposition${removedItems===1?'':'en'}`];
     if(linkedTabs.length)consequences.push(`${linkedTabs.length} automatisch angelegte${linkedTabs.length===1?'r':'e'} Begleiter-/Reittier-Reiter`);
     if(!confirm(`Set-Gegenstandskarte „${catalog.name}“ wirklich vollständig entfernen?\n\n${consequences.join(' und ')} werden entfernt. Die Karte wird wieder verborgen und kann nur mit ihrem Code erneut freigeschaltet werden.`))return{ok:false,reason:'cancelled',removedItems:0,removedTabs:0};
   }
-  owner.equipment=(owner.equipment||[]).filter(item=>item.catalogId!==catalog.id);
+  owner.equipment=(owner.equipment||[]).filter(item=>mseVariantKey(item)!==mseVariantKey(catalog));
   owner.mseUnlockedCardIdsV17=unlocked.filter(id=>id!==catalog.id);
   let removedTabs=0,removedActiveTab=false;
   if(character){
-    const stillOwned=[character,...(character.auxiliaryTabs||[])].some(entry=>(entry.equipment||[]).some(item=>item.catalogId===catalog.id&&(+item.quantity||0)>0));
+    const stillOwned=[character,...(character.auxiliaryTabs||[])].some(entry=>(entry.equipment||[]).some(item=>mseVariantKey(item)===mseVariantKey(catalog)&&(+item.quantity||0)>0));
     if(!stillOwned&&linkedTabs.length){const ids=new Set(linkedTabs.map(entry=>entry.id));removedTabs=ids.size;removedActiveTab=ids.has(activeAuxId);character.auxiliaryTabs=(character.auxiliaryTabs||[]).filter(entry=>!ids.has(entry.id))}
   }
   const ui=msePickerStateV15(owner);ui.open=true;ui.message='Die Set-Gegenstandskarte wurde vollständig entfernt und ist wieder verborgen.';
@@ -217,7 +233,7 @@ function migrateSelectedMseItemsV152(){
   for(const character of state.characters||[]){
     for(const owner of[character,...(character.auxiliaryTabs||[])])for(const item of owner.equipment||[]){
       if(item.sourceVersion!=='mse-v15')continue;
-      const catalog=MSE_BY_ID_V15.get(item.catalogId);
+      const catalog=mseCompanionCatalogV16(item);
       if(!catalog||item.sourceHash!==catalog.sourceHash)continue;
       for(const key of['valueCopper','valueText','tradeStatus','isCompletionReward','completionRequirement','weightKg','weightUnknown','weightSource','assetKind','category','itemType','artFile','balance','editorialCorrections'])item[key]=structuredClone(catalog[key]);
       changed=true;
@@ -235,7 +251,7 @@ function migrateSelectedMseItemsV153(data=state,writeLog=false){
   for(const character of data.characters||[]){
     for(const owner of[character,...(character.auxiliaryTabs||[])])for(const item of owner.equipment||[]){
       if(item.sourceVersion!=='mse-v15')continue;
-      const catalog=MSE_BY_ID_V15.get(item.catalogId);
+      const catalog=mseCompanionCatalogV16(item);
       if(!catalog||item.sourceHash!==catalog.sourceHash)continue;
       for(const key of['valueCopper','valueText','tradeStatus','isCompletionReward','completionRequirement','weightKg','weightUnknown','weightSource','assetKind','category','itemType','artFile','balance','editorialCorrections','valuation'])item[key]=structuredClone(catalog[key]);
       changed=true;
@@ -252,7 +268,7 @@ function migrateSelectedMseItemsV154(data=state,writeLog=false){
   for(const character of data.characters||[]){
     for(const owner of[character,...(character.auxiliaryTabs||[])])for(const item of owner.equipment||[]){
       if(item.sourceVersion!=='mse-v15')continue;
-      const catalog=MSE_BY_ID_V15.get(item.catalogId);
+      const catalog=mseCompanionCatalogV16(item);
       if(!catalog||item.sourceHash!==catalog.sourceHash)continue;
       for(const key of['valueCopper','valueText','tradeStatus','isCompletionReward','completionRequirement','weightKg','weightUnknown','weightSource','assetKind','category','itemType','artFile','balance','editorialCorrections','valuation'])item[key]=structuredClone(catalog[key]);
       changed=true;
@@ -318,8 +334,15 @@ const MSE_NPC_NAME_V16=/(kanzleischreiberin|geselle der esse|junge kopistin|info
 const MSE_COMPANION_AUDIT_V1825=window.EBEROS_MSE_COMPANION_NPCS_V1827||window.EBEROS_MSE_COMPANION_NPCS_V1826||window.EBEROS_MSE_COMPANION_NPCS_V1825||null;
 const MSE_COMPANION_AUDIT_BY_ID_V1825=new Map(Array.isArray(MSE_COMPANION_AUDIT_V1825?.entries)?MSE_COMPANION_AUDIT_V1825.entries.map(entry=>[entry.catalogId,entry]):[]);
 
-function mseCompanionCatalogV16(item){return MSE_BY_ID_V15.get(item?.catalogId||item?.id)||item}
-function mseCompanionAuditEntryV1825(item){return MSE_COMPANION_AUDIT_BY_ID_V1825.get(mseCompanionCatalogV16(item)?.id)||null}
+function mseCompanionAuditEntryV1825(item) {
+  return mseLegacyVariant(item)?.audit || MSE_COMPANION_AUDIT_BY_ID_V1825.get(item?.catalogId || item?.id) || null;
+}
+function mseKeepPortrait(owner, catalog) {
+  // These five historical NPC sheets may already have user-supplied portraits.
+  if (mseLegacyVariant(catalog) && owner.portrait) return false;
+  return mseLinkValueV16(owner, 'portrait', mseArtUrlV15(catalog));
+}
+
 function mseCompanionKindV16(item){
   const catalog=mseCompanionCatalogV16(item),audited=mseCompanionAuditEntryV1825(catalog);if(audited)return audited.localTabType;
   const source=catalog?.sourceRecord||{},stats=[...(source.primaryStats||[]),...(source.secondaryStats||[])].join(' '),effect=source.effectText||'';
@@ -343,16 +366,16 @@ function migrateMseCardArtV156(data=state,writeLog=false){
     for(const owner of owners){
       for(const item of owner?.equipment||[]){
         if(item?.sourceVersion!=='mse-v15')continue;
-        const catalog=MSE_BY_ID_V15.get(item.catalogId);if(!catalog)continue;
+        const catalog=mseCompanionCatalogV16(item);if(!catalog)continue;
         if(mseLinkValueV16(item,'artFile',catalog.artFile)){changed=true;itemsUpdated++}
         if(['mse_item_0017','mse_item_0020','mse_item_0024'].includes(catalog.id)&&typeof item.name==='string'&&item.name.replaceAll('Oreinonauten','Oneironauten')===catalog.name&&item.name!==catalog.name){item.name=catalog.name;changed=true}
       }
       const catalogId=owner?.sourceMseItemV16?.catalogId||owner?.sourceMseCompanionV1825?.catalogId;
-      const catalog=catalogId?MSE_BY_ID_V15.get(catalogId):null;if(!catalog)continue;
+      const catalog=catalogId?mseCompanionCatalogV16(owner.sourceMseItemV16||owner.sourceMseCompanionV1825):null;if(!catalog)continue;
       if(catalog.id==='mse_item_0024'&&typeof owner.name==='string'&&owner.name.replaceAll('Oreinonauten','Oneironauten')===catalog.name&&owner.name!==catalog.name){owner.name=catalog.name;changed=true}
       if(owner.sourceMseItemV16&&owner.sourceMseItemV16.artFile!==catalog.artFile){owner.sourceMseItemV16={...owner.sourceMseItemV16,artFile:catalog.artFile};changed=true;metadataUpdated++}
       if(owner.sourceMseCompanionV1825&&owner.sourceMseCompanionV1825.artFile!==catalog.artFile){owner.sourceMseCompanionV1825={...owner.sourceMseCompanionV1825,artFile:catalog.artFile};changed=true;metadataUpdated++}
-      if(mseLinkValueV16(owner,'portrait',mseArtUrlV15(catalog))){changed=true;portraitsUpdated++}
+      if(mseKeepPortrait(owner,catalog)){changed=true;portraitsUpdated++}
     }
   }
   const firstRun=!data.mseCardArtV156Migrated;
@@ -481,16 +504,16 @@ function syncMseCompanionLinksForCharacterV16(character){
   const inventories=mseOwnersForCharacterV16(character),groups=new Map();
   for(const inventoryOwner of inventories)for(const item of inventoryOwner.equipment||[]){
     const kind=mseCompanionKindV16(item);if(!kind)continue;
-    const catalog=mseCompanionCatalogV16(item),key=catalog.id||item.catalogId;if(!key)continue;
+    const catalog=mseCompanionCatalogV16(item),key=mseVariantKey(catalog);if(!key)continue;
     if(!groups.has(key))groups.set(key,[]);groups.get(key).push({inventoryOwner,item,kind,catalog});
   }
   const liveCatalogIds=new Set(groups.keys());
-  for(const[catalogId,links]of groups){
-    const preferredIds=links.map(link=>link.item.linkedMseAuxId).filter(Boolean),candidates=character.auxiliaryTabs.filter(entry=>preferredIds.includes(entry.id)||entry.sourceMseItemV16?.catalogId===catalogId),first=links[0];
+  for(const[variantKey,links]of groups){const catalogId=links[0].catalog.id;
+    const preferredIds=links.map(link=>link.item.linkedMseAuxId).filter(Boolean),candidates=character.auxiliaryTabs.filter(entry=>preferredIds.includes(entry.id)||mseVariantKey(entry.sourceMseItemV16)===variantKey),first=links[0];
     let entry=candidates[0];if(!entry){entry=mseCreateCompanionAuxV16(character,first.inventoryOwner,first.item,first.kind);created.push(entry.name);changed=true}
     const audited=mseCompanionAuditEntryV1825(first.catalog),instanceIds=[...new Set(links.map(link=>link.item.instanceId).filter(Boolean))],linkedAt=entry.sourceMseItemV16?.linkedAt||new Date().toISOString(),sourceData={catalogId,sourceHash:first.catalog.sourceHash,cardNumber:first.catalog.sourceRecord?.cardNumber||'',setNumber:Number(first.catalog.sourceRecord?.setNumber)||null,artFile:first.catalog.artFile,inventoryOwnerId:first.inventoryOwner.id,itemInstanceIds:instanceIds,kind:first.kind,worldEntityType:'npc',auditVersion:Number(MSE_COMPANION_AUDIT_V1825?.formatVersion)||null,linkedAt,status:'linked',profileVersion:entry.mseCompanionProfileVersion||MSE_COMPANION_PROFILE_VERSION_V16};
     changed=mseLinkValueV16(entry,'sourceMseItemV16',sourceData)||changed;
-    changed=mseLinkValueV16(entry,'portrait',mseArtUrlV15(first.catalog))||changed;
+    changed=mseKeepPortrait(entry,first.catalog)||changed;
     if(entry.type!==first.kind){entry.type=first.kind;changed=true}
     mseEnsureMountFeatureCardsV16(entry);changed=mseApplyCompanionAuditMetadataV1825(entry,first.catalog,first.kind)||changed;mseApplyCompanionProfileV16(entry,first.catalog,first.kind);
     if(audited&&entry.sourceMseCompanionV1825?.catalogId!==catalogId)throw new Error(`Begleiter-Auditidentität stimmt nicht: ${catalogId}`);
@@ -500,7 +523,7 @@ function syncMseCompanionLinksForCharacterV16(character){
       if(link.item.instanceId!==instanceIds[0])repaired.push(link.item.name);
     }
   }
-  for(const entry of character.auxiliaryTabs){const source=entry.sourceMseItemV16;if(!source?.catalogId||liveCatalogIds.has(source.catalogId))continue;const next={...source,itemInstanceIds:[],status:'missing-item'};if(mseLinkValueV16(entry,'sourceMseItemV16',next)){changed=true;missing.push(entry.name)}}
+  for(const entry of character.auxiliaryTabs){const source=entry.sourceMseItemV16;if(!source?.catalogId||liveCatalogIds.has(mseVariantKey(source)))continue;const next={...source,itemInstanceIds:[],status:'missing-item'};if(mseLinkValueV16(entry,'sourceMseItemV16',next)){changed=true;missing.push(entry.name)}}
   return{changed,created,repaired,missing};
 }
 function syncMseCompanionLinksForOwnerV16(owner,data=state){const character=mseRootCharacterV16(owner,data);return syncMseCompanionLinksForCharacterV16(character)}
@@ -510,7 +533,7 @@ const addMseItemBeforeCompanionV16=addMseItemV15;
 addMseItemV15=function(owner,catalog){
   const kind=mseCompanionKindV16(catalog),character=kind?mseRootCharacterV16(owner):null;
   if(kind&&character){
-    const existing=mseOwnersForCharacterV16(character).flatMap(entry=>(entry.equipment||[]).map(item=>({entry,item}))).find(link=>link.item.catalogId===catalog.id&&(+link.item.quantity||0)>0);
+    const existing=mseOwnersForCharacterV16(character).flatMap(entry=>(entry.equipment||[]).map(item=>({entry,item}))).find(link=>mseVariantKey(link.item)===mseVariantKey(catalog)&&(+link.item.quantity||0)>0);
     if(existing){const result=syncMseCompanionLinksForCharacterV16(character),entry=mseLinkedAuxV16(character,existing.item);if(result.changed)save();renderAuxTabs();if(entry&&character===ch())openAux(entry.id);return false}
   }
   const added=addMseItemBeforeCompanionV16(owner,catalog);if(!added||!kind)return added;
@@ -536,7 +559,7 @@ renderMseSelectedSourceV15=function(owner,item){
 const renderAuxProfileBeforeMseCompanionV16=renderAuxProfileV171;
 renderAuxProfileV171=function(owner){
   const box=renderAuxProfileBeforeMseCompanionV16(owner);if(owner.type==='mount')for(const label of box.querySelectorAll('label.field')){const caption=label.querySelector('span');if(caption?.textContent==='NPC-Art'){caption.textContent='Reittier-Art';const select=label.querySelector('select');if(select&&!select.querySelector('option[value="Reittier / Tiergefährte"]'))select.append(el('option',{value:'Reittier / Tiergefährte',text:'Reittier / Tiergefährte'}));if(select){owner.npcType=owner.npcType||'Reittier / Tiergefährte';select.value=owner.npcType}}}
-  if(owner.sourceMseItemV16?.catalogId){const catalog=MSE_BY_ID_V15.get(owner.sourceMseItemV16.catalogId),status=owner.sourceMseItemV16.status==='missing-item'?'Inventarkarte fehlt – der ausgearbeitete Reiter bleibt erhalten.':'Dauerhaft mit der Inventarkarte verknüpft.';box.prepend(el('section',{class:'notice ok mse-companion-link-v16'},[el('strong',{text:`${mseCompanionTypeLabelV16(owner.type)} aus Set-Gegenstandskarte ${owner.sourceMseItemV16.cardNumber||'—'}`}),el('p',{text:status}),catalog?el('button',{type:'button',text:'Set-Gegenstandskarte anzeigen',onclick:()=>showMseCardV15(catalog,mseRootCharacterV16(owner))}):el('span')]))}
+  if(owner.sourceMseItemV16?.catalogId){const catalog=mseCompanionCatalogV16(owner.sourceMseItemV16),status=owner.sourceMseItemV16.status==='missing-item'?'Inventarkarte fehlt – der ausgearbeitete Reiter bleibt erhalten.':'Dauerhaft mit der Inventarkarte verknüpft.';box.prepend(el('section',{class:'notice ok mse-companion-link-v16'},[el('strong',{text:`${mseCompanionTypeLabelV16(owner.type)} aus Set-Gegenstandskarte ${owner.sourceMseItemV16.cardNumber||'—'}`}),el('p',{text:status}),catalog?el('button',{type:'button',text:'Set-Gegenstandskarte anzeigen',onclick:()=>showMseCardV15(catalog,mseRootCharacterV16(owner))}):el('span')]))}
   return box;
 };
 
@@ -551,7 +574,7 @@ const runTestsBeforeMseCompanionV16=runTests;
 runTests=function(){
   const baseOk=runTestsBeforeMseCompanionV16(),tests=[],eq=(name,expected,actual)=>tests.push([name,expected,actual,expected===actual]),eligible=MSE_ITEMS_V15.filter(mseCompanionKindV16),horse=MSE_BY_ID_V15.get('mse_item_0278'),dog=MSE_BY_ID_V15.get('mse_item_0089'),owner=newCharacter(),make=catalog=>normalizeItemV174({...structuredClone(catalog),id:undefined,instanceId:uid(),catalogId:catalog.id,quantity:1,qty:1,loadState:'stored'});
   eq('78 echte MSE-Begleiter oder Reittiere erkannt',78,eligible.length);eq('Reisepferd wird als Reittier erkannt','mount',mseCompanionKindV16(horse));eq('Wachhund wird als Begleiter erkannt','familiar',mseCompanionKindV16(dog));
-  eq('Explizites Begleiter-NPC-Auditregister geladen',78,MSE_COMPANION_AUDIT_BY_ID_V1825.size);eq('Auditregister deckt alle Begleiterkarten eindeutig ab',true,eligible.every(item=>mseCompanionAuditEntryV1825(item)?.sourceHash===item.sourceHash));eq('Auditregister klassifiziert 9 NPC-Begleiter',9,[...MSE_COMPANION_AUDIT_BY_ID_V1825.values()].filter(entry=>entry.localTabType==='npc').length);eq('Auditregister klassifiziert 42 Begleiter',42,[...MSE_COMPANION_AUDIT_BY_ID_V1825.values()].filter(entry=>entry.localTabType==='familiar').length);eq('Auditregister klassifiziert 27 Reittiere',27,[...MSE_COMPANION_AUDIT_BY_ID_V1825.values()].filter(entry=>entry.localTabType==='mount').length);eq('Alle Set-Begleiter werden im Kampagnenmodul NPCs',true,[...MSE_COMPANION_AUDIT_BY_ID_V1825.values()].every(entry=>entry.worldEntityType==='npc'));
+  eq('Explizites Begleiter-NPC-Auditregister geladen',78,MSE_COMPANION_AUDIT_BY_ID_V1825.size);eq('Auditregister deckt alle Begleiterkarten eindeutig ab',true,eligible.every(item=>mseCompanionAuditEntryV1825(item)?.sourceHash===item.sourceHash));eq('Auditregister klassifiziert 4 NPC-Begleiter',4,[...MSE_COMPANION_AUDIT_BY_ID_V1825.values()].filter(entry=>entry.localTabType==='npc').length);eq('Auditregister klassifiziert 47 Begleiter',47,[...MSE_COMPANION_AUDIT_BY_ID_V1825.values()].filter(entry=>entry.localTabType==='familiar').length);eq('Auditregister klassifiziert 27 Reittiere',27,[...MSE_COMPANION_AUDIT_BY_ID_V1825.values()].filter(entry=>entry.localTabType==='mount').length);eq('Alle Set-Begleiter werden im Kampagnenmodul NPCs',true,[...MSE_COMPANION_AUDIT_BY_ID_V1825.values()].every(entry=>entry.worldEntityType==='npc'));
   owner.equipment.push(make(horse));let result=syncMseCompanionLinksForCharacterV16(owner),entry=owner.auxiliaryTabs.find(tab=>tab.sourceMseItemV16?.catalogId===horse.id),item=owner.equipment[0];
   eq('Reittierreiter automatisch angelegt',true,result.created.length===1&&entry?.type==='mount');eq('Inventarkarte verweist dauerhaft auf Reiter',entry?.id,item.linkedMseAuxId);eq('Reiter verweist dauerhaft auf Inventarinstanz',item.instanceId,entry?.sourceMseItemV16?.itemInstanceIds?.[0]);eq('Reittier besitzt eigene Grundwerte',true,entry.attributes.ST>1&&entry.counters.L.max>2);eq('Reittier besitzt eigene Fähigkeiten',true,Object.values(entry.skills).some(skill=>skill.level>0));eq('Reittier besitzt vollständige Mechanikkarten',true,NPC_FEATURE_CARDS_R4.every(([type])=>entry.layout.some(card=>card.type===type)));eq('Reittier trägt geprüfte Kartenherkunft für den Kampagnen-NPC',true,entry.sourceMseCompanionV1825?.catalogId===horse.id&&entry.sourceMseCompanionV1825?.worldEntityType==='npc'&&entry.npcType==='Set-Reittier');
   const tabCount=owner.auxiliaryTabs.length;result=syncMseCompanionLinksForCharacterV16(owner);eq('Wiederholte Synchronisierung erzeugt keinen Reiter',tabCount,owner.auxiliaryTabs.length);eq('Wiederholte Synchronisierung bleibt unverändert',false,result.changed);
@@ -597,5 +620,5 @@ if(cardCodeMigrationChangedV17)save();
 if(valueMigrationChangedV153)save();
 if(valueMigrationChangedV154)save();
 document.querySelector('.brand small').textContent='v1.7.21-r11';
-Object.assign(window.Eberos,{getMseItemV1824:id=>MSE_BY_ID_V15.get(id)||null,createMseCardV1824:item=>createMseCardV15(item),completionProgressV15:mseCompletionProgressV15,syncCompletionRewardsV15:syncMseCompletionRewardsV15,validateMseCatalogV15,unlockMseCardV17,removeCardUnlockV19:removeMseCardUnlockV19,cardIsUnlockedV17:mseCardIsUnlockedV17,valueTextV110:mseValuationTextV110,runTests:()=>runTests()});
+Object.assign(window.Eberos,{getMseItemV1824:id=>MSE_BY_ID_V15.get(id)||null,getMseInstanceCatalog:mseCompanionCatalogV16,createMseCardV1824:item=>createMseCardV15(item),completionProgressV15:mseCompletionProgressV15,syncCompletionRewardsV15:syncMseCompletionRewardsV15,validateMseCatalogV15,unlockMseCardV17,removeCardUnlockV19:removeMseCardUnlockV19,cardIsUnlockedV17:mseCardIsUnlockedV17,valueTextV110:mseValuationTextV110,runTests:()=>runTests()});
 }

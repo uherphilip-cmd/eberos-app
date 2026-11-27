@@ -42,6 +42,69 @@
  function check(label){const wrap=node('label'),e=node('input');e.type='checkbox';wrap.append(e,document.createTextNode(label));return{wrap,e}}
  function select(label,values,fn){const wrap=node('label',label),e=node('select');for(const [id,text]of values){const o=node('option',text);o.value=id;e.append(o)}e.setAttribute('aria-label',label);e.onchange=()=>{try{fn(e.value)}catch(err){message.textContent=err.message}};wrap.append(e);return{wrap,e}}
  function section(title){const e=node('section');e.className='travel-section';e.append(node('h3',title));dialog.append(e);return e}
+// Included in the Reisegruppe dialog with its existing DOM and persistence helpers.
+function renderMercenaryCatalog(section, catalog, travel, party) {
+  const records = catalog.records;
+  const label = row => {
+    const sold = row.builder.monthlySold;
+    return row.cardNumber + ' · ' + row.name + ' · ' +
+      (sold.display || (sold.totalCopper / 100).toLocaleString('de') + ' S / Monat');
+  };
+  const filter = node('input');
+  filter.type = 'search';
+  filter.setAttribute('aria-label', 'Söldner nach Name oder Kartencode suchen');
+  filter.placeholder = 'Name oder Kartencode';
+  const chosen = select('Figur auswählen', [], showProfile);
+  const profile = node('div');
+  const hire = action('Als neue Begleitfigur aufnehmen', () => {
+    const r = records.find(row => row.id === chosen.e.value);
+    if (!r) return;
+    const blank = newAuxEntry('npc', r.name);
+    const owner = Object.assign(blank, structuredClone(r.builder.npcSheet), {
+      id: blank.id, layout: blank.layout,
+      accounting: {mode:'free', costSource:'manual', manualCost:0, active:false, reason:'Söldner: Monatssold statt Spieler-CBP'}
+    });
+    for (const ref of r.builder.catalogLoadout?.items || []) {
+      const item = (globalThis.EBEROS_ITEM_DB?.items || []).find(row => row.id === ref.catalogId);
+      if (item) owner.equipment.push({...structuredClone(item), id:uid(), instanceId:uid(), quantity:ref.quantity || 1, active:true});
+    }
+    ch().auxiliaryTabs.push(owner);
+    api.assign(travel, owner.id, party.id);
+    for (const service of owner.travelServicesV1 || []) {
+      party.transport.push({...structuredClone(service), id:uid(), providerId:owner.id});
+    }
+    saveTravel();
+    renderAll();
+    message.textContent = owner.name + ' als neue Begleitfigur aufgenommen.';
+  });
+  function showProfile() {
+    const r = records.find(row => row.id === chosen.e.value);
+    profile.replaceChildren();
+    hire.disabled = !r;
+    if (!r) { profile.textContent = 'Keine passende Figur gefunden.'; return; }
+    const portrait = node('img');
+    portrait.src = r.art.portrait;
+    portrait.alt = r.name;
+    portrait.width = 96;
+    const card = node('a', 'Söldnerkarte öffnen');
+    card.href = r.art.cardFront;
+    card.target = '_blank';
+    card.rel = 'noopener';
+    profile.append(portrait, node('p', r.legacyType + ' · ' + label(r)), card);
+  }
+  function findRecords() {
+    const normalize = value => value.toLocaleLowerCase('de').replace(/[-\s]/g, '');
+    const query = normalize(filter.value);
+    const matches = records.filter(r => [r.name, r.cardNumber, ...r.previousCodes].some(v => normalize(v).includes(query)));
+    const previous = chosen.e.value;
+    chosen.e.replaceChildren(...matches.map(r => new Option(label(r), r.id)));
+    if (matches.some(r => r.id === previous)) chosen.e.value = previous;
+    showProfile();
+  }
+  filter.addEventListener('input', findRecords);
+  section.append(filter, chosen.wrap, profile, hire);
+  findRecords();
+}
  function render(){
   dialog.replaceChildren();const travel=state.travelV1,p=api.party(travel),owners=allOwners(),n=api.needs(travel,p,owners);
   dialog.append(action('Schließen',()=>dialog.close()),node('h2','Reisegruppe & Lager'),message);
@@ -60,7 +123,7 @@
   for(const o of owners.filter(o=>o.type!=='possession')){const c=check(o.name||'Unbenannt');c.wrap.className='travel-member';c.e.checked=p.memberIds.includes(o.id);c.e.setAttribute('aria-label',(o.name||'Figur')+' reist mit');c.e.onchange=()=>{api.assign(travel,o.id,c.e.checked?p.id:null);saveTravel()};grid.append(c.wrap)}roster.append(grid);
   const personal=select('Persönliche Rationen in Gruppenvorrat',groupMembers.map(o=>[o.id,`${o.name} (${o.rationTracker?.current||0})`]),()=>{});roster.append(personal.wrap,action('Eine Ration übertragen',()=>{const o=owners.find(o=>o.id===personal.e.value);if(!o)throw Error('Figur wählen.');api.transferRations(p,o,1);saveTravel()}));
   const add=section('Söldner aus dem aktualisierten Katalog');const catalog=globalThis.EBEROS_ZWISCHENFURT_NPC_SET_V1;
-  if(catalog){const chosen=select('Figur auswählen',catalog.records.map(r=>[r.id,`${r.name} · ${r.builder.monthlySold.display}`]),()=>{});add.append(chosen.wrap,action('Als neue Begleitfigur aufnehmen',()=>{const r=catalog.records.find(r=>r.id===chosen.e.value),o=Object.assign(newAuxEntry('npc',r.name),structuredClone(r.builder.npcSheet));o.id=uid();o.layout=newAuxEntry('npc',r.name).layout;o.accounting={mode:'free',costSource:'manual',manualCost:0,active:false,reason:'Söldner: Monatssold statt Spieler-CBP'};o.equipment=[];for(const ref of r.builder.catalogLoadout.items||[]){const item=(globalThis.EBEROS_ITEM_DB?.items||[]).find(x=>x.id===ref.catalogId);if(item)o.equipment.push({...structuredClone(item),id:uid(),instanceId:uid(),quantity:ref.quantity||1,active:true})}ch().auxiliaryTabs.push(o);api.assign(travel,o.id,p.id);for(const t of o.travelServicesV1||[])p.transport.push({...structuredClone(t),id:uid(),providerId:o.id});saveTravel();renderAll();message.textContent=`${o.name} als neue Figur aufgenommen; bestehende Figuren bleiben erhalten.`}))}else add.append(node('p','Katalog nicht geladen.'));
+  if(catalog)renderMercenaryCatalog(add,catalog,travel,p);else add.append(node('p','Katalog nicht geladen.'));
   const transport=section('Tiere, Tross und Fahrzeuge');transport.append(node('p','Tiere mit eigenem Namen/Kennzeichen und täglichem Futterbedarf eintragen. Unbekannte Lasten und Zugtierzahl bleiben offen, bis sie am Spieltisch festgelegt sind.'));
   transport.append(action('Tier hinzufügen',()=>{p.animals.push({id:uid(),name:'Tier',fodderPerDay:null});saveTravel()}));
   for(const a of p.animals){const r=node('div');r.className='travel-row';const link=select('Tierfigur '+a.id.slice(-4),[['','Eigenes Tross-Tier'],...owners.filter(o=>o.type!=='possession').map(o=>[o.id,o.name])],v=>{a.ownerId=v||null;saveTravel()});link.e.value=a.ownerId||'';r.append(link.wrap);const draft=select('Zugtier für '+a.id.slice(-4),[['','Kein Zugtier'],...(p.transport||[]).filter(t=>t.kind==='ox-cart').map(t=>[t.id,t.name])],v=>{a.draftForId=v||null;saveTravel()});draft.e.value=a.draftForId||'';r.append(draft.wrap);const hired=check('Mietpferd (+6 S/Monat)');hired.e.checked=!!a.hiredHorse;hired.e.onchange=()=>{a.hiredHorse=hired.e.checked;saveTravel()};r.append(hired.wrap);r.append(input('Tiername '+a.id.slice(-4),a.name,v=>a.name=v),input('Futter/Tag '+a.id.slice(-4),a.fodderPerDay,v=>a.fodderPerDay=v===''?null:Math.max(0,Math.floor(+v)||0),'number'),action('Tier entfernen',()=>{p.animals=p.animals.filter(x=>x!==a);saveTravel()}));transport.append(r)}

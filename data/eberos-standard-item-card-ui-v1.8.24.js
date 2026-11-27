@@ -20,7 +20,7 @@
   };
   const mseCatalogFor=item=>{
     if(!isMseItem(item)||!item.catalogId||typeof window.Eberos?.getMseItemV1824!=='function')return null;
-    return window.Eberos.getMseItemV1824(item.catalogId)||null;
+    return window.Eberos.getMseInstanceCatalog(item);
   };
 
   function installStyles(){
